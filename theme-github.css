@@ -412,9 +412,249 @@
     color: var(--color-orange);
 }
 
+.ui.label:not(.basic) {
+    border-radius: var(--border-radius);
+}
+
+a,
+.ui.breadcrumb a {
+    color: var(--color-blue);
+}
+
+a[href="#"] {
+    color: var(--color-text);
+}
+
+a:hover,
+a.muted:hover,
+.ui.breadcrumb a:hover,
+.ui.floating.jump.select-label.dropdown:hover,
+.ui.floating.jump.select-milestone.dropdown:hover,
+.ui.floating.jump.select-project.dropdown:hover,
+.ui.floating.jump.select-assignees.dropdown:hover,
+.muted-links a:hover {
+    color: var(--color-blue);
+}
+
+.interact-fg:hover {
+    color: var(--color-blue) !important;
+}
+
+.repository.file.list .file-actions .btn-octicon:hover {
+    color: var(--color-blue) !important;
+}
+
+.repo-list-link {
+    color: var(--color-blue) !important;
+}
+
+.repository.file.list #repo-files-table td a:hover {
+    color: var(--color-blue);
+}
+
+.repository #commits-table .author a {
+    color: var(--color-text);
+}
+
+/* gpg commit label  */
+.repository #commits-table td.sha .sha.label.isSigned.isVerified,
+.repository #repo-files-table .sha.label.isSigned.isVerified,
+.repository #rev-list .sha.label.isSigned.isVerified,
+.repository .timeline-item.commits-list .singular-commit .sha.label.isSigned.isVerified {
+    border: 1.5px solid #21ba45 !important;
+    background: transparent;
+    border-radius: 6px;
+}
+
+.header-wrapper .ui.tabular.menu .item,
+.ui.secondary.menu .item {
+    transition: 0.3s;
+}
+
+.header-wrapper .ui.tabular.menu .item:hover,
+.ui.secondary.menu .item:hover {
+    background: var(--color-hover) !important;
+}
+
+.ui.secondary.pointing.menu .active.item,
+.ui.secondary.pointing.menu .active.item:hover {
+    border-color: #f78166;
+}
+
+/* hover font color */
+.ui.secondary.pointing.menu .active.item,
+.ui.secondary.pointing.menu .active.item:hover,
+.ui.secondary.pointing.menu .dropdown.item:hover,
+.ui.secondary.pointing.menu .link.item:hover,
+.ui.secondary.pointing.menu a.item:hover {
+    color: var(--color-text);
+}
+
+.ui.cards>.card>.extra a:not(.ui):hover,
+.ui.card>.extra a:not(.ui):hover {
+    color: var(--color-blue);
+}
+
+/* font color line numbers */
+.lines-num span:after {
+    color: var(--color-text);
+}
+
+/* default border radius */
+.ui.button,
+.ui.basic.buttons .button,
+.ui.basic.button,
+.ui.dropdown .menu,
+.ui.form input:not([type]),
+.ui.form input[type="date"],
+.ui.form input[type="datetime-local"],
+.ui.form input[type="email"],
+.ui.form input[type="number"],
+.ui.form input[type="password"],
+.ui.form input[type="search"],
+.ui.form input[type="tel"],
+.ui.form input[type="time"],
+.ui.form input[type="text"],
+.ui.form input[type="file"],
+.ui.form input[type="url"],
+.ui.form textarea,
+.ui.input textarea,
+.ui.label,
+.ui.menu,
+.ui.segment,
+.ui.segments,
+.ui.segments:not(.horizontal)>.segment:only-child,
+.ui.secondary.menu .dropdown.item>.menu,
+.ui.selection.dropdown,
+.ui.selection.dropdown .menu,
+.ui.table,
+.ui.text.menu .dropdown.item>.menu {
+    border-radius: var(--border-radius);
+}
+
+.ui.floating.dropdown>.menu {
+    border-radius: var(--border-radius) !important;
+}
+
+/* default left border radius */
+.ui.action.input>.dropdown:first-child,
+.ui.action.input>.button:first-child,
+.ui.action.input>.buttons:first-child>.button,
+.ui.compact.menu:not(.secondary) .item:first-child,
+.ui.horizontal.segments>.segment:first-child {
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+}
+
+/* default right border radius */
+.ui.action.input>.dropdown:last-child,
+.ui.action.input>.button:last-child,
+.ui.action.input>.buttons:last-child>.button,
+.ui.compact.menu:not(.secondary) .item:last-child,
+.ui.horizontal.segments>.segment:last-child {
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+/* default top border radius */
+.ui.secondary.pointing.menu .active.item,
+.ui.secondary.pointing.menu .item:hover {
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.ui.tabular.menu .active.item,
+.repository.view.issue .comment-list .comment>.content>div:first-child {
+    border-top-left-radius: var(--border-radius) !important;
+    border-top-right-radius: var(--border-radius) !important;
+}
+
+/* default bottom border radius */
+.ui.segment[class*="bottom attached"] {
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
+
+.repository.view.issue .comment-list .comment>.content>div:last-child {
+    border-bottom-right-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+}
+
+.ui.table>thead>tr:first-child>th:first-child {
+    border-radius: var(--border-radius) 0 0;
+}
+
+.ui.table>thead>tr:first-child>th:last-child {
+    border-radius: 0 var(--border-radius) 0 0;
+}
+
+/* border color form fields */
+input,
+textarea,
+.ui.input>input,
+.ui.form input:not([type]),
+.ui.form select,
+.ui.form textarea,
+.ui.form input[type="date"],
+.ui.form input[type="datetime-local"],
+.ui.form input[type="email"],
+.ui.form input[type="file"],
+.ui.form input[type="number"],
+.ui.form input[type="password"],
+.ui.form input[type="search"],
+.ui.form input[type="tel"],
+.ui.form input[type="text"],
+.ui.form input[type="time"],
+.ui.form input[type="url"],
+.ui.selection.dropdown,
+.ui.checkbox label:before,
+.ui.checkbox input:checked~label:before,
+.ui.checkbox input:not([type="radio"]):indeterminate~label:before {
+    border-color: var(--color-secondary);
+}
+
+input:focus,
+textarea:focus,
+.ui.input input:focus,
+.ui.form input:not([type]):focus,
+.ui.form select:focus,
+.ui.form textarea:focus,
+.ui.form input[type="date"]:focus,
+.ui.form input[type="datetime-local"]:focus,
+.ui.form input[type="email"]:focus,
+.ui.form input[type="file"]:focus,
+.ui.form input[type="number"]:focus,
+.ui.form input[type="password"]:focus,
+.ui.form input[type="search"]:focus,
+.ui.form input[type="tel"]:focus,
+.ui.form input[type="text"]:focus,
+.ui.form input[type="time"]:focus,
+.ui.form input[type="url"]:focus,
+.ui.selection.dropdown:focus {
+    border: 1.5px solid var(--color-blue) !important;
+    border-radius: var(--border-radius);
+}
+
+.ui.checkbox input:focus~label:before,
+.ui.checkbox input:focus~label::before,
+.ui.checkbox input:not([type="radio"]):indeterminate:focus~label:before,
+.ui.checkbox input:not([type="radio"]):indeterminate:focus~label::before,
+.ui.checkbox input:checked:focus~label:before,
+.ui.checkbox input:checked:focus~label::before,
+.ui.radio.checkbox input:focus:checked~label:before,
+.ui.radio.checkbox input:focus:checked~label::before {
+    border-color: var(--color-blue);
+}
+
+.issue.list a:not(.label):hover {
+    color: var(--color-blue) !important;
+}
+
+.vch__day__square,
+.vch__legend__wrapper rect {
+    rx: 2px;
+    ry: 2px;
+}
 
 :root {
     --is-dark-theme: true;
+    --border-radius: 6px;
     --color-primary: rgba(57, 211, 83, 0.6);
     --color-primary-contrast: #fff;
     --color-primary-dark-1: rgba(57, 211, 83, 0.7);
@@ -475,7 +715,7 @@
     --color-olive: #c8df36;
     --color-green: #3bc75b;
     --color-teal: #69d4cf;
-    --color-blue: #4b80ca;
+    --color-blue: #4493f8;
     --color-violet: #754ad3;
     --color-purple: #b65dd4;
     --color-pink: #e04b9f;
