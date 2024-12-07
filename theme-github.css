@@ -1,12 +1,11 @@
 /* Made by Rainnny <3 */
 
-* {
-    font-family: 'Victor Mono', 'HYZhengYuan';
-    font-weight: 500;
+:root :lang(zh-CN) {
+    --fonts-override: "Maple Hand", "VictorMono Nerd Font", "HYZhengYuan";
 }
 
-body {
-    font-family: 'Victor Mono', 'HYZhengYuan';
+.job-step-logs {
+    font-family: "VictorMono Nerd Font", "Maple Hand", "HYZhengYuan" !important;
     font-weight: 500;
 }
 
@@ -498,7 +497,11 @@ body {
     --color-pink-dark-2: #a9246f;
     --color-brown-dark-2: #835b42;
     --color-black-dark-2: #252832;
-    --color-console-bg: #11171f;
+    --color-console-fg: #f7f8f9;
+    --color-console-bg: #0d1117;
+    --color-console-active-bg: #2a313c;
+    --color-console-hover-bg: #2a313c88;
+    --color-console-border: var(--color-light-border);
     --color-ansi-black: var(--color-black);
     --color-ansi-red: var(--color-red);
     --color-ansi-green: var(--color-green);
