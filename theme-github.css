@@ -665,9 +665,9 @@ textarea:focus,
     --color-primary-dark-6: #e7eee0;
     --color-primary-dark-7: #f8faf6;
     --color-primary-light-1: rgba(57, 211, 83, 0.5);
-    --color-primary-light-2: rgba(57, 211, 83, 0.4);
+    --color-primary-light-2: #006d32;
     --color-primary-light-3: rgba(57, 211, 83, 0.3);
-    --color-primary-light-4: rgba(57, 211, 83, 0.2);
+    --color-primary-light-4: #0e4429;
     --color-primary-light-5: #223546;
     --color-primary-light-6: #131923;
     --color-primary-light-7: #06090b;
@@ -705,7 +705,7 @@ textarea:focus,
     --color-secondary-alpha-30: #2c2f354b;
     --color-secondary-alpha-40: #2c2f3566;
     --color-secondary-alpha-50: #ffffff28;
-    --color-secondary-alpha-60: #2c2f3599;
+    --color-secondary-alpha-60: #161b22;
     --color-secondary-alpha-70: #2c2f35b3;
     --color-secondary-alpha-80: #2c2f35cc;
     --color-secondary-alpha-90: #2c2f35e1;
@@ -876,29 +876,6 @@ textarea:focus,
     --color-active-line: #534d1b;
     accent-color: var(--color-accent);
     color-scheme: dark;
-}
-
-.emoji[aria-label="check\ mark"],
-.emoji[aria-label="currency\ exchange"],
-.emoji[aria-label="TOP\ arrow"],
-.emoji[aria-label="END\ arrow"],
-.emoji[aria-label="ON! arrow"],
-.emoji[aria-label="SOON\ arrow"],
-.emoji[aria-label="heavy dollar sign"],
-.emoji[aria-label="copyright"],
-.emoji[aria-label="registered"],
-.emoji[aria-label="trade\ mark"],
-.emoji[aria-label="multiply"],
-.emoji[aria-label="plus"],
-.emoji[aria-label="minus"],
-.emoji[aria-label="divide"],
-.emoji[aria-label="curly\ loop"],
-.emoji[aria-label="double curly loop"],
-.emoji[aria-label="wavy\ dash"],
-.emoji[aria-label="paw\ prints"],
-.emoji[aria-label="musical\ note"],
-.emoji[aria-label="musical\ notes"] {
-    filter: invert() hue-rotate(180deg);
 }
 
 .emoji[aria-label="check\ mark"],
