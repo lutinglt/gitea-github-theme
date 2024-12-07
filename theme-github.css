@@ -390,6 +390,10 @@
     color: #dbdbeb;
 }
 
+.job-step-summary {
+    color: #9198a1;
+}
+
 :root {
     --is-dark-theme: true;
     --color-primary: rgba(57, 211, 83, 0.6);
@@ -497,10 +501,10 @@
     --color-pink-dark-2: #a9246f;
     --color-brown-dark-2: #835b42;
     --color-black-dark-2: #252832;
-    --color-console-fg: #ffffff;
-    --color-console-bg: #0d1117;
-    --color-console-active-bg: #2a313c;
-    --color-console-hover-bg: #212830;
+    --color-console-fg: #f0f6fc;
+    --color-console-bg: #010409;
+    --color-console-active-bg: var(--color-active);
+    --color-console-hover-bg: var(--color-hover);
     --color-console-border: var(--color-light-border);
     --color-ansi-black: var(--color-black);
     --color-ansi-red: var(--color-red);
@@ -563,7 +567,7 @@
     --color-box-body: #0d1117;
     --color-box-body-highlight: #262b36;
     --color-text-dark: #dbe0ea;
-    --color-text: #d0d5da;
+    --color-text: #dce2e7;
     --color-text-light: #a6aab5;
     --color-text-light-1: rgb(125, 133, 144);
     --color-text-light-2: #8a8e99;
@@ -580,7 +584,7 @@
     --color-light: #00000028;
     --color-light-mimic-enabled: rgba(0, 0, 0, calc(40 / 255 * 222 / 255 / var(--opacity-disabled)));
     --color-light-border: #ffffff28;
-    --color-hover: #212830;
+    --color-hover: #15191f;
     --color-active: #2a313c;
     --color-menu: #0d1117;
     --color-card: #0d1117;
@@ -613,6 +617,29 @@
     --color-active-line: #534d1b;
     accent-color: var(--color-accent);
     color-scheme: dark;
+}
+
+.emoji[aria-label="check\ mark"],
+.emoji[aria-label="currency\ exchange"],
+.emoji[aria-label="TOP\ arrow"],
+.emoji[aria-label="END\ arrow"],
+.emoji[aria-label="ON! arrow"],
+.emoji[aria-label="SOON\ arrow"],
+.emoji[aria-label="heavy dollar sign"],
+.emoji[aria-label="copyright"],
+.emoji[aria-label="registered"],
+.emoji[aria-label="trade\ mark"],
+.emoji[aria-label="multiply"],
+.emoji[aria-label="plus"],
+.emoji[aria-label="minus"],
+.emoji[aria-label="divide"],
+.emoji[aria-label="curly\ loop"],
+.emoji[aria-label="double curly loop"],
+.emoji[aria-label="wavy\ dash"],
+.emoji[aria-label="paw\ prints"],
+.emoji[aria-label="musical\ note"],
+.emoji[aria-label="musical\ notes"] {
+    filter: invert() hue-rotate(180deg);
 }
 
 .emoji[aria-label="check\ mark"],
