@@ -436,8 +436,26 @@ a.muted:hover,
     color: var(--color-blue);
 }
 
+.diff-toggle-file-tree-button:hover {
+    color: var(--color-blue);
+}
+
+.text.primary,
+.flex-item a:not(.label, .button):hover {
+    color: var(--color-blue) !important;
+}
+
 .interact-fg:hover {
     color: var(--color-blue) !important;
+}
+
+.issue.list a:not(.label):hover {
+    color: var(--color-blue) !important;
+}
+
+/* font color line numbers */
+.lines-num span:after {
+    color: var(--color-text);
 }
 
 .repository.file.list .file-actions .btn-octicon:hover {
@@ -454,6 +472,11 @@ a.muted:hover,
 
 .repository #commits-table .author a {
     color: var(--color-text);
+}
+
+.repository.view.issue .comment-list .comment>.content>div:last-child {
+    border-bottom-right-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
 }
 
 /* gpg commit label  */
@@ -493,11 +516,6 @@ a.muted:hover,
 .ui.cards>.card>.extra a:not(.ui):hover,
 .ui.card>.extra a:not(.ui):hover {
     color: var(--color-blue);
-}
-
-/* font color line numbers */
-.lines-num span:after {
-    color: var(--color-text);
 }
 
 /* default border radius */
@@ -571,11 +589,6 @@ a.muted:hover,
     border-radius: 0 0 var(--border-radius) var(--border-radius);
 }
 
-.repository.view.issue .comment-list .comment>.content>div:last-child {
-    border-bottom-right-radius: var(--border-radius);
-    border-bottom-left-radius: var(--border-radius);
-}
-
 .ui.table>thead>tr:first-child>th:first-child {
     border-radius: var(--border-radius) 0 0;
 }
@@ -628,6 +641,7 @@ textarea:focus,
 .ui.form input[type="url"]:focus,
 .ui.selection.dropdown:focus {
     border: 1.5px solid var(--color-blue) !important;
+    border-color: var(--color-blue);
     border-radius: var(--border-radius);
 }
 
@@ -642,8 +656,15 @@ textarea:focus,
     border-color: var(--color-blue);
 }
 
-.issue.list a:not(.label):hover {
-    color: var(--color-blue) !important;
+.ui.selection.active.dropdown,
+.ui.selection.active.dropdown:hover,
+.ui.selection.active.dropdown .menu,
+.ui.selection.active.dropdown:hover .menu {
+    border-color: var(--color-blue);
+}
+
+.ui.label.sha {
+    color: var(--color-text);
 }
 
 .vch__day__square,
@@ -807,7 +828,7 @@ textarea:focus,
     --color-warning-text: #fbbd08;
     --color-info-border: #306090;
     --color-info-bg: #26354c;
-    --color-info-text: #38a8e8;
+    --color-info-text: var(--color-blue);
     --color-red-badge: #db2828;
     --color-red-badge-bg: #db28281a;
     --color-red-badge-hover-bg: #db28284d;
@@ -867,7 +888,7 @@ textarea:focus,
     --color-tooltip-bg: #000000f0;
     --color-nav-bg: #010409;
     --color-nav-hover-bg: #383c47;
-    --color-label-text: #dfe3ec;
+    --color-label-text: var(--color-green);
     --color-label-bg: #7c84974b;
     --color-label-hover-bg: #7c8497a0;
     --color-label-active-bg: #7c8497;
@@ -877,7 +898,6 @@ textarea:focus,
     accent-color: var(--color-accent);
     color-scheme: dark;
 }
-
 .emoji[aria-label="check\ mark"],
 .emoji[aria-label="currency\ exchange"],
 .emoji[aria-label="TOP\ arrow"],
