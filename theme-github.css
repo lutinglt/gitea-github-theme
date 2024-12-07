@@ -394,6 +394,25 @@
     color: #9198a1;
 }
 
+.ui.ui.ui.green.label {
+    background: var(--color-body);
+    border-color: var(--color-green);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 25px;
+    color: var(--color-green);
+}
+
+.ui.ui.ui.orange.label {
+    background: var(--color-body);
+    border-color: var(--color-orange);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 25px;
+    color: var(--color-orange);
+}
+
+
 :root {
     --is-dark-theme: true;
     --color-primary: rgba(57, 211, 83, 0.6);
