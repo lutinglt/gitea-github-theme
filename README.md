@@ -1,10 +1,5 @@
 # gitea-github-theme
 
-本仓库来源于 https://github.com/Rainnny7/gitea-github-theme
-
-在原主题基础上做了以下修改:
-
-- 主题色从蓝色改为绿色
 - UI 默认字体 [Maple Hand](https://github.com/subframe7536/maple-font/tree/other-resources/cn-resource/maple-hand) & [VictorMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/VictorMono.zip) & [汉仪正圆](https://www.hanyi.com.cn/productdetail.php?id=2913) (优先匹配左侧, 需要系统包含相应字体)
 - Actions 日志默认字体 VictorMono 优先
 
@@ -28,3 +23,17 @@ THEMES = gitea-dark, github
 ```
 
 > 详细请查看 Gitea 文档 [Gitea docs](https://docs.gitea.com/next/administration/customizing-gitea#customizing-the-look-of-gitea)
+
+## 截图
+
+![仓库](/screenshots/repo.png)
+
+![仓库文件列表](/screenshots/file_list.png)
+
+![仓库发布](/screenshots/release.png)
+
+![仓库提交](/screenshots/commit.png)
+
+![Actions](/screenshots/action.png)
+
+![Actions Step](/screenshots/step.png)
