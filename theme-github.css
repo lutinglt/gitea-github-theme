@@ -888,7 +888,7 @@ textarea:focus,
     --color-tooltip-bg: #000000f0;
     --color-nav-bg: #010409;
     --color-nav-hover-bg: #383c47;
-    --color-label-text: var(--color-green);
+    --color-label-text: #fff;
     --color-label-bg: #7c84974b;
     --color-label-hover-bg: #7c8497a0;
     --color-label-active-bg: #7c8497;
