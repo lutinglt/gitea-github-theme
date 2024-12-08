@@ -9,6 +9,45 @@
     font-weight: 500;
 }
 
+#navbar .item,
+.menu .item,
+.header-wrapper .ui.tabular.menu .item,
+input,
+textarea,
+tr,
+button,
+.job-step-summary,
+.job-log-line,
+.ui.input>input,
+.ui.form input:not([type]),
+.ui.form select,
+.ui.form textarea,
+.ui.form input[type="date"],
+.ui.form input[type="datetime-local"],
+.ui.form input[type="email"],
+.ui.form input[type="file"],
+.ui.form input[type="number"],
+.ui.form input[type="password"],
+.ui.form input[type="search"],
+.ui.form input[type="tel"],
+.ui.form input[type="text"],
+.ui.form input[type="time"],
+.ui.form input[type="url"],
+.ui.label,
+.ui.selection.dropdown,
+.ui.checkbox label:before,
+.ui.checkbox input:checked~label:before,
+.ui.checkbox input:not([type="radio"]):indeterminate~label:before,
+.ui.selection.active.dropdown,
+.ui.selection.active.dropdown:hover,
+.ui.selection.active.dropdown .menu,
+.ui.selection.active.dropdown:hover .menu,
+.ui.menu .item,
+.ui.vertical.menu .header.item,
+.ui.secondary.menu .item {
+    transition: 0.2s;
+}
+
 .chroma {
     background-color: var(--color-code-bg);
 }
@@ -462,9 +501,9 @@ a.muted:hover,
     color: var(--color-blue) !important;
 }
 
-.repo-list-link {
+/* .repo-list-link {
     color: var(--color-blue) !important;
-}
+} */
 
 .repository.file.list #repo-files-table td a:hover {
     color: var(--color-blue);
@@ -487,11 +526,6 @@ a.muted:hover,
     border: 1.5px solid #21ba45 !important;
     background: transparent;
     border-radius: 6px;
-}
-
-.header-wrapper .ui.tabular.menu .item,
-.ui.secondary.menu .item {
-    transition: 0.3s;
 }
 
 .header-wrapper .ui.tabular.menu .item:hover,
@@ -678,8 +712,8 @@ textarea:focus,
 
 .vch__day__square,
 .vch__legend__wrapper rect {
-    rx: 2px;
-    ry: 2px;
+    rx: 3px;
+    ry: 3px;
 }
 
 :root {
@@ -837,7 +871,7 @@ textarea:focus,
     --color-warning-text: #fbbd08;
     --color-info-border: #306090;
     --color-info-bg: #26354c;
-    --color-info-text: var(--color-blue);
+    --color-info-text: #38a8e8;
     --color-red-badge: #db2828;
     --color-red-badge-bg: #db28281a;
     --color-red-badge-hover-bg: #db28284d;
@@ -861,6 +895,8 @@ textarea:focus,
     --color-text-light-1: rgb(125, 133, 144);
     --color-text-light-2: #8a8e99;
     --color-text-light-3: #707687;
+    --color-console-menu-bg: var(--color-body);
+    --color-console-menu-border: var(--color-light-border);
     --color-footer: #010409;
     --color-timeline: #4c525e;
     --color-input-text: #d5dbe6;
@@ -907,6 +943,7 @@ textarea:focus,
     accent-color: var(--color-accent);
     color-scheme: dark;
 }
+
 .emoji[aria-label="check\ mark"],
 .emoji[aria-label="currency\ exchange"],
 .emoji[aria-label="TOP\ arrow"],
