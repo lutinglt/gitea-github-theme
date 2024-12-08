@@ -667,6 +667,15 @@ textarea:focus,
     color: var(--color-text);
 }
 
+.ui.label:not(.basic, .sha) {
+    color: var(--color-blue);
+    background: #121d2f;
+}
+
+.ui.label>a {
+    opacity: 1;
+}
+
 .vch__day__square,
 .vch__legend__wrapper rect {
     rx: 2px;
