@@ -442,13 +442,17 @@ button,
     color: var(--color-console-fg);
 }
 
+.text.green {
+    color: #3fb950 !important;
+}
+
 .ui.ui.ui.green.label {
     background: var(--color-body);
-    border-color: var(--color-green);
+    border-color: #3fb950;
     border-width: 1px;
     border-style: solid;
     border-radius: 25px;
-    color: var(--color-green);
+    color: #3fb950;
 }
 
 .ui.ui.ui.orange.label {
@@ -532,9 +536,7 @@ a.muted:hover,
 .repository #repo-files-table .sha.label.isSigned.isVerified,
 .repository #rev-list .sha.label.isSigned.isVerified,
 .repository .timeline-item.commits-list .singular-commit .sha.label.isSigned.isVerified {
-    border: 1.5px solid #21ba45 !important;
-    background: transparent;
-    border-radius: 6px;
+    border: 1px solid #3fb950 !important;
 }
 
 .header-wrapper .ui.tabular.menu .item:hover,
@@ -720,7 +722,7 @@ a.muted:hover,
     --color-orange: #f17a2b;
     --color-yellow: #f3c640;
     --color-olive: #c8df36;
-    --color-green: #3bc75b;
+    --color-green: #39d353;
     --color-teal: #69d4cf;
     --color-blue: #4493f8;
     --color-violet: #754ad3;
