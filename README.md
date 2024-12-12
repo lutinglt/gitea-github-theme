@@ -1,11 +1,13 @@
 # gitea-github-theme
 
+> 基于 https://github.com/Rainnny7/gitea-github-theme
+
 - UI 默认字体 [Maple Hand](https://github.com/subframe7536/maple-font/tree/other-resources/cn-resource/maple-hand) & [VictorMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/VictorMono.zip) & [汉仪正圆](https://www.hanyi.com.cn/productdetail.php?id=2913) (优先匹配左侧, 需要系统包含相应字体)
 - Actions 日志默认字体 VictorMono 优先
 
 > Victor Mono 相比其他等宽字体更为紧凑, 可以减少换行
 
-## Gitea 版本
+## 版本
 
 - Gitea 1.22+
 
