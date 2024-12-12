@@ -7,10 +7,6 @@
 
 > Victor Mono 相比其他等宽字体更为紧凑, 可以减少换行
 
-## 版本
-
-- Gitea 1.22+
-
 ## 安装
 
 1. 将 theme-github.css 放入 gitea/public/assets/css 目录下
