@@ -465,6 +465,37 @@ button,
     color: var(--color-orange);
 }
 
+.ui.ui.ui.purple.label {
+    border-radius: 25px !important;
+}
+
+.ui.ui.ui.green.label.issue-state-label {
+    background: var(--color-primary);
+    border-radius: 25px !important;
+}
+
+.ui.ui.ui.red.label.issue-state-label {
+    background: var(--color-purple);
+    border-radius: 25px !important;
+}
+
+.tw-bg-green {
+    background-color: var(--color-primary) !important;
+}
+
+.tw-bg-red {
+    background-color: var(--color-purple) !important;
+}
+
+.ui.dropdown .menu>.divider,
+.ui.dropdown .menu>.item {
+    background: var(--color-box-header);
+}
+
+.ui.dropdown .menu>.item:hover {
+    background: #1f6feb;
+}
+
 .ui.label:not(.basic) {
     border-radius: var(--border-radius);
 }
