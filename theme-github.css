@@ -1,56 +1,4 @@
 /* Made by Rainnny <3 */
-/* Made by Luting ^-^ */
-
-:root :lang(zh-CN) {
-    --fonts-override: "Maple Hand", "VictorMono Nerd Font", "HYZhengYuan";
-}
-
-.job-step-logs {
-    font-family: "VictorMono Nerd Font", "Maple Hand", "HYZhengYuan" !important;
-    font-weight: 500;
-}
-
-#navbar .item,
-.menu .item,
-.header-wrapper .ui.tabular.menu .item,
-input,
-textarea,
-tr,
-button,
-.job-step-summary,
-.job-log-line,
-.job-brief-item,
-.ui.input>input,
-.ui.form input:not([type]),
-.ui.form select,
-.ui.form textarea,
-.ui.form input[type="date"],
-.ui.form input[type="datetime-local"],
-.ui.form input[type="email"],
-.ui.form input[type="file"],
-.ui.form input[type="number"],
-.ui.form input[type="password"],
-.ui.form input[type="search"],
-.ui.form input[type="tel"],
-.ui.form input[type="text"],
-.ui.form input[type="time"],
-.ui.form input[type="url"],
-.ui.label,
-.ui.selection.dropdown,
-.ui.checkbox label:before,
-.ui.checkbox input:checked~label:before,
-.ui.checkbox input:not([type="radio"]):indeterminate~label:before,
-.ui.selection.active.dropdown,
-.ui.selection.active.dropdown:hover,
-.ui.selection.active.dropdown .menu,
-.ui.selection.active.dropdown:hover .menu,
-.ui.button,
-.ui.button:hover,
-.ui.menu .item,
-.ui.vertical.menu .header.item,
-.ui.secondary.menu .item {
-    transition: 0.3s;
-}
 
 .chroma {
     background-color: var(--color-code-bg);
@@ -433,369 +381,45 @@ button,
     color: #dbdbeb;
 }
 
-.job-step-summary {
-    color: var(--color-console-fg-subtle);
+/* Made by Luting ^-^ */
+
+:root :lang(zh-CN) {
+    --fonts-override: "Maple Hand", "VictorMono Nerd Font", "HYZhengYuan";
 }
 
-.job-log-line {
-    color: var(--color-text);
-}
-
-.job-log-line:hover {
-    color: var(--color-console-fg);
-}
-
-.text.green {
-    color: #3fb950 !important;
-}
-
-.ui.ui.ui.green.label:not(.issue-state-label) {
-    background: var(--color-body);
-    border-color: #3fb950;
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 25px !important;
-    color: #3fb950;
-}
-
-.ui.ui.ui.orange.label {
-    background: var(--color-body);
-    border-color: var(--color-orange);
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 25px !important;
-    color: var(--color-orange);
-}
-
-.ui.ui.ui.purple.label {
-    border-radius: 25px !important;
-}
-
-.ui.ui.ui.green.label.issue-state-label {
-    background: var(--color-primary);
-    border-radius: 25px !important;
-}
-
-.ui.ui.ui.red.label.issue-state-label {
-    background: var(--color-purple);
-    border-radius: 25px !important;
-}
-
-.ui.ui.ui.basic.primary.label {
-    color: var(--color-blue);
-    background-color: #388bfd33 !important;
-    border-color: #1f6feb !important;
-    border-radius: 25px !important;
-}
-
-a.ui.ui.ui.basic.primary.label:hover {
-    color: #79c0ff;
-    background-color: #3a83fd5c !important;
-}
-
-.comment:target .comment-container {
-    border-color: #1e4273 !important;
-    box-shadow: 0 0 0 2px #1e4273 !important;
-}
-
-.comment:target .header {
-    background-color: #121d2f;
-    border-color: #1e4273 !important;
-}
-
-.comment:target .header:before {
-    border-right-color: #1e4273 !important;
-    filter: drop-shadow(-2px 0 0 #1e4273) !important;
-}
-
-.tw-bg-green {
-    background-color: var(--color-primary) !important;
-}
-
-.tw-bg-red {
-    background-color: var(--color-purple) !important;
-}
-
-.ui.dropdown .menu,
-.branch-tag-item.active,
-.ui.pointing.dropdown>.menu:not(.hidden):after {
-    background: var(--color-box-header) !important;
-}
-
-.ui.fluid.ui.button:hover,
-.ui.button.branch-dropdown-button:hover,
-.ui.ui.icon.button:hover,
-.ui.two.wide.button:hover,
-.ui.dropdown .menu>.item:hover {
-    background: #1f6feb;
-}
-
-.ui.label:not(.basic) {
-    border-radius: var(--border-radius);
-}
-
-a,
-.ui.breadcrumb a {
-    color: var(--color-blue);
-}
-
-a[href="#"] {
-    color: var(--color-text);
-}
-
-a:hover,
-a.muted:hover,
-.ui.breadcrumb a:hover,
-.ui.floating.jump.select-label.dropdown:hover,
-.ui.floating.jump.select-milestone.dropdown:hover,
-.ui.floating.jump.select-project.dropdown:hover,
-.ui.floating.jump.select-assignees.dropdown:hover,
-.muted-links a:hover {
-    color: var(--color-blue);
-}
-
-.diff-toggle-file-tree-button:hover {
-    color: var(--color-blue);
-}
-
-.text.primary,
-.flex-item a:not(.label, .button):hover {
-    color: var(--color-blue) !important;
-}
-
-.interact-fg:hover {
-    color: var(--color-blue) !important;
-}
-
-.issue.list a:not(.label):hover {
-    color: var(--color-blue) !important;
-}
-
-/* font color line numbers */
-.lines-num span:after {
-    color: var(--color-text);
-}
-
-.repository.file.list .file-actions .btn-octicon:hover {
-    color: var(--color-blue) !important;
-}
-
-/* .repo-list-link {
-    color: var(--color-blue) !important;
-} */
-
-.repository.file.list #repo-files-table td a:hover {
-    color: var(--color-blue);
-}
-
-.repository #commits-table .author a {
-    color: var(--color-text);
-}
-
-.repository.view.issue .comment-list .comment>.content>div:last-child {
-    border-bottom-right-radius: var(--border-radius);
-    border-bottom-left-radius: var(--border-radius);
-}
-
-/* gpg commit label  */
-.repository #commits-table td.sha .sha.label.isSigned.isVerified,
-.repository #repo-files-table .sha.label.isSigned.isVerified,
-.repository #rev-list .sha.label.isSigned.isVerified,
-.repository .timeline-item.commits-list .singular-commit .sha.label.isSigned.isVerified {
-    border: 1px solid #3fb950 !important;
-}
-
-.header-wrapper .ui.tabular.menu .item:hover,
-.ui.secondary.menu .item:hover {
-    background: var(--color-hover) !important;
-}
-
-.ui.secondary.pointing.menu .active.item,
-.ui.secondary.pointing.menu .active.item:hover {
-    border-color: #f78166;
-}
-
-/* hover font color */
-.ui.secondary.pointing.menu .active.item,
-.ui.secondary.pointing.menu .active.item:hover,
-.ui.secondary.pointing.menu .dropdown.item:hover,
-.ui.secondary.pointing.menu .link.item:hover,
-.ui.secondary.pointing.menu a.item:hover {
-    color: var(--color-text);
-}
-
-.ui.cards>.card>.extra a:not(.ui):hover,
-.ui.card>.extra a:not(.ui):hover {
-    color: var(--color-blue);
-}
-
-/* default border radius */
-.ui.button,
-.ui.basic.buttons .button,
-.ui.basic.button,
-.ui.dropdown .menu,
-.ui.form input:not([type]),
-.ui.form input[type="date"],
-.ui.form input[type="datetime-local"],
-.ui.form input[type="email"],
-.ui.form input[type="number"],
-.ui.form input[type="password"],
-.ui.form input[type="search"],
-.ui.form input[type="tel"],
-.ui.form input[type="time"],
-.ui.form input[type="text"],
-.ui.form input[type="file"],
-.ui.form input[type="url"],
-.ui.form textarea,
-.ui.input textarea,
-.ui.label,
-.ui.menu,
-.ui.segment,
-.ui.segments,
-.ui.segments:not(.horizontal)>.segment:only-child,
-.ui.secondary.menu .dropdown.item>.menu,
-.ui.selection.dropdown,
-.ui.selection.dropdown .menu,
-.ui.table,
-.ui.text.menu .dropdown.item>.menu {
-    border-radius: var(--border-radius) !important;
-}
-
-.ui.floating.dropdown>.menu {
-    border-radius: var(--border-radius) !important;
-}
-
-/* default left border radius */
-.ui.action.input>.dropdown:first-child,
-.ui.action.input>.button:first-child,
-.ui.action.input>.buttons:first-child>.button,
-.ui.compact.menu:not(.secondary) .item:first-child,
-.ui.horizontal.segments>.segment:first-child {
-    border-radius: var(--border-radius) 0 0 var(--border-radius);
-}
-
-/* default right border radius */
-.ui.action.input>.dropdown:last-child,
-.ui.action.input>.button:last-child,
-.ui.action.input>.buttons:last-child>.button,
-.ui.compact.menu:not(.secondary) .item:last-child,
-.ui.horizontal.segments>.segment:last-child {
-    border-radius: 0 var(--border-radius) var(--border-radius) 0;
-}
-
-/* default top border radius */
-.ui.secondary.pointing.menu .active.item,
-.ui.secondary.pointing.menu .item:hover {
-    border-radius: var(--border-radius) var(--border-radius) 0 0;
-}
-
-.ui.tabular.menu .active.item,
-.repository.view.issue .comment-list .comment>.content>div:first-child {
-    border-top-left-radius: var(--border-radius) !important;
-    border-top-right-radius: var(--border-radius) !important;
-}
-
-/* default bottom border radius */
-.ui.segment[class*="bottom attached"] {
-    border-radius: 0 0 var(--border-radius) var(--border-radius);
-}
-
-.ui.table>thead>tr:first-child>th:first-child {
-    border-radius: var(--border-radius) 0 0;
-}
-
-.ui.table>thead>tr:first-child>th:last-child {
-    border-radius: 0 var(--border-radius) 0 0;
-}
-
-.ui.label.sha {
-    color: var(--color-text);
-}
-
-.ui.label:not(.basic, .sha) {
-    color: var(--color-blue);
-    background: #121d2f;
-}
-
-.ui.label>a {
-    opacity: 1;
-}
-
-.vch__day__square,
-.vch__legend__wrapper rect {
-    rx: 2px;
-    ry: 2px;
-    width: 9px;
-    height: 9px;
-    outline: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 0.5px;
-    outline-offset: -1px;
-}
-
-.vch__legend__wrapper rect {
-    rx: 3px;
-    ry: 3px;
-}
-
-.vch__day__square[style="fill: var(--color-secondary-alpha-60);"],
-.vch__legend__wrapper rect[style="fill: var(--color-secondary-alpha-60);"] {
-    outline: 1px solid rgba(27, 31, 35, 0.06);
-    background: var(--color-secondary-alpha-60);
-}
-
-.vch__day__square[style="fill: var(--color-primary-light-4);"],
-.vch__legend__wrapper rect[style="fill: var(--color-primary-light-4);"] {
-    background: var(--color-primary-light-4);
-}
-
-.vch__day__square[style="fill: var(--color-primary-light-2);"],
-.vch__legend__wrapper rect[style="fill: var(--color-primary-light-2);"] {
-    background: var(--color-primary-light-2);
-}
-
-.vch__day__square[style="fill: var(--color-primary);"],
-.vch__legend__wrapper rect[style="fill: var(--color-primary);"] {
-    background: var(--color-primary);
-}
-
-.vch__day__square[style="fill: var(--color-primary-dark-2);"],
-.vch__legend__wrapper rect[style="fill: var(--color-primary-dark-2);"] {
-    background: var(--color-primary-dark-2);
-}
-
-.vch__day__square[style="fill: var(--color-primary-dark-4);"],
-.vch__legend__wrapper rect[style="fill: var(--color-primary-dark-4);"] {
-    background: var(--color-primary-dark-4);
+.job-step-logs {
+    font-family: "VictorMono Nerd Font", "Maple Hand", "HYZhengYuan" !important;
+    font-weight: 500;
 }
 
 :root {
     --is-dark-theme: true;
     --border-radius: 6px;
-    --color-primary: #238636;
+    --color-primary: var(--color-blue);
     --color-primary-contrast: #fff;
-    --color-primary-dark-1: rgba(68, 255, 97, 0.7);
-    --color-primary-dark-2: rgba(57, 211, 83, 1);
-    --color-primary-dark-3: rgba(68, 255, 97, 0.9);
-    --color-primary-dark-4: rgba(68, 255, 97, 1);
+    --color-primary-dark-1: #739cb3;
+    --color-primary-dark-2: #40aaff;
+    --color-primary-dark-3: #92b4c4;
+    --color-primary-dark-4: #a1bbcd;
     --color-primary-dark-5: #cfddc1;
     --color-primary-dark-6: #e7eee0;
     --color-primary-dark-7: #f8faf6;
-    --color-primary-light-1: rgba(57, 211, 83, 0.5);
-    --color-primary-light-2: #006d32;
-    --color-primary-light-3: rgba(57, 211, 83, 0.3);
-    --color-primary-light-4: #0e4429;
+    --color-primary-light-1: var(--color-blue);
+    --color-primary-light-2: #437aad;
+    --color-primary-light-3: #415b8b;
+    --color-primary-light-4: #25425a;
     --color-primary-light-5: #223546;
     --color-primary-light-6: #131923;
     --color-primary-light-7: #06090b;
-    --color-primary-alpha-10: rgba(57, 211, 83, 0.1);
-    --color-primary-alpha-20: rgba(57, 211, 83, 0.2);
-    --color-primary-alpha-30: rgba(57, 211, 83, 0.3);
-    --color-primary-alpha-40: rgba(57, 211, 83, 0.4);
-    --color-primary-alpha-50: rgba(57, 211, 83, 0.5);
-    --color-primary-alpha-60: rgba(57, 211, 83, 0.6);
-    --color-primary-alpha-70: rgba(57, 211, 83, 0.7);
-    --color-primary-alpha-80: rgba(57, 211, 83, 0.8);
-    --color-primary-alpha-90: rgba(57, 211, 83, 0.9);
+    --color-primary-alpha-10: #3683c019;
+    --color-primary-alpha-20: #3683c033;
+    --color-primary-alpha-30: #3683c04b;
+    --color-primary-alpha-40: #3683c066;
+    --color-primary-alpha-50: #3683c080;
+    --color-primary-alpha-60: #3683c099;
+    --color-primary-alpha-70: #3683c0b3;
+    --color-primary-alpha-80: #3683c0cc;
+    --color-primary-alpha-90: #3683c0e1;
     --color-primary-hover: var(--color-primary-light-1);
     --color-primary-active: var(--color-primary-light-2);
     --color-secondary: #3d444d;
@@ -962,7 +586,7 @@ a.muted:hover,
     --color-light: #00000028;
     --color-light-mimic-enabled: rgba(0, 0, 0, calc(40 / 255 * 222 / 255 / var(--opacity-disabled)));
     --color-light-border: #3d444d;
-    --color-hover: #20252e;
+    --color-hover: #252c34;
     --color-active: #2a313c;
     --color-menu: #0d1117;
     --color-card: #0d1117;
@@ -1023,4 +647,478 @@ a.muted:hover,
 .repository.file.list #repo-files-table tbody .svg.octicon-file-directory-fill,
 .repository.file.list #repo-files-table tbody .svg.octicon-file-submodule {
     color: #7d8590;
+}
+
+
+/* 添加过渡 */
+input,
+textarea,
+tr,
+button,
+#navbar .item,
+.header-wrapper .ui.tabular.menu .item,
+.job-step-summary,
+.job-log-line,
+.job-brief-item,
+.menu .item,
+.ui.input>input,
+.ui.form input:not([type]),
+.ui.form select,
+.ui.form textarea,
+.ui.form input[type="date"],
+.ui.form input[type="datetime-local"],
+.ui.form input[type="email"],
+.ui.form input[type="file"],
+.ui.form input[type="number"],
+.ui.form input[type="password"],
+.ui.form input[type="search"],
+.ui.form input[type="tel"],
+.ui.form input[type="text"],
+.ui.form input[type="time"],
+.ui.form input[type="url"],
+.ui.label,
+.ui.selection.dropdown,
+.ui.checkbox label:before,
+.ui.checkbox input:checked~label:before,
+.ui.checkbox input:not([type="radio"]):indeterminate~label:before,
+.ui.selection.active.dropdown,
+.ui.selection.active.dropdown:hover,
+.ui.selection.active.dropdown .menu,
+.ui.selection.active.dropdown:hover .menu,
+.ui.button,
+.ui.button:hover,
+.ui.menu .item,
+.ui.vertical.menu .header.item,
+.ui.secondary.menu .item {
+    transition: 0.3s;
+}
+
+/* 输入框 */
+input,
+textarea,
+.ui.input input,
+.ui.form input:not([type]),
+.ui.form select,
+.ui.form textarea,
+.ui.form input[type=date],
+.ui.form input[type=datetime-local],
+.ui.form input[type=email],
+.ui.form input[type=file],
+.ui.form input[type=number],
+.ui.form input[type=password],
+.ui.form input[type=search],
+.ui.form input[type=tel],
+.ui.form input[type=text],
+.ui.form input[type=time],
+.ui.form input[type=url],
+.ui.selection.dropdown {
+    border-width: 2px;
+}
+
+/* 按钮 */
+.ui.primary.button {
+    background-color: #238636;
+}
+
+.ui.primary.button:hover {
+    background-color: #29903b;
+}
+
+.user-setting-content .ui.primary.button {
+    color: #39d353;
+    background-color: #212830;
+    border-color: var(--color-light-border);
+}
+
+.user-setting-content .ui.primary.button:hover {
+    color: #fff;
+    background-color: #29903b;
+    border-color: #ffffff1a;
+}
+
+.admin-setting-content .ui.primary.button {
+    color: #39d353;
+    background-color: #212830;
+    border-color: var(--color-light-border);
+}
+
+.admin-setting-content .ui.primary.button:hover {
+    color: #fff;
+    background-color: #29903b;
+    border-color: #ffffff1a;
+}
+
+.ui.red.button,
+.ui.basic.red.buttons .button,
+.ui.basic.red.button {
+    color: #fa5e55;
+    background-color: #212830;
+    border-color: var(--color-light-border);
+}
+
+.ui.red.button:hover,
+.ui.basic.red.buttons .button:hover,
+.ui.basic.red.button:hover {
+    color: #fff;
+    background-color: #b62324;
+    border-color: #ffffff1a;
+}
+
+/* 工单按钮补全 */
+.ui.fluid.ui.button:hover,
+.ui.button.branch-dropdown-button:hover,
+.ui.ui.icon.button:hover,
+.ui.two.wide.button:hover {
+    background: #252c34;
+}
+
+/* 关闭工单按钮 */
+.ui.red.basic.button#status-button {
+    color: #ab7df8;
+    border-color: var(--color-light-border);
+    background-color: #212830;
+}
+
+.ui.red.basic.button#status-button:hover {
+    color: #fff;
+    border-color: #ffffff1a;
+    background-color: var(--color-purple);
+
+}
+
+/* 标签 */
+.badge.tw-bg-green,
+.ui.green.label.issue-state-label {
+    background-color: #238636 !important;
+}
+
+.badge.tw-bg-red {
+    background-color: var(--color-purple) !important;
+}
+
+.ui.ui.ui.purple.label {
+    border-radius: 25px !important;
+}
+
+.ui.ui.ui.green.label.issue-state-label {
+    background: var(--color-primary);
+    border-radius: 25px !important;
+}
+
+.ui.ui.ui.red.label.issue-state-label {
+    background: var(--color-purple);
+    border-radius: 25px !important;
+}
+
+.ui.ui.ui.basic.primary.label {
+    color: var(--color-blue);
+    background-color: #388bfd33 !important;
+    border-color: #1f6feb !important;
+    border-radius: 25px !important;
+}
+
+a.ui.ui.ui.basic.primary.label:hover {
+    color: #79c0ff;
+    background-color: #3a83fd5c !important;
+}
+
+/* 发布&Runner 状态标签 */
+.ui.ui.ui.green.label:not(.issue-state-label) {
+    background: var(--color-body);
+    border-color: #3fb950;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 25px;
+    color: #3fb950;
+}
+
+.ui.ui.ui.orange.label:not(.issue-state-label) {
+    background: var(--color-body);
+    border-color: var(--color-orange);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 25px;
+    color: var(--color-orange);
+}
+
+/* Runner&软件包&提交 标签 */
+.ui.label.sha {
+    color: var(--color-text);
+}
+
+.ui.label:not(.basic, .sha) {
+    color: var(--color-blue);
+    background: #121d2f;
+}
+
+.ui.label>a {
+    opacity: 1;
+}
+
+/* Actions */
+.job-step-summary {
+    color: var(--color-console-fg-subtle);
+}
+
+.job-log-line {
+    color: var(--color-text);
+}
+
+.job-log-line:hover {
+    color: var(--color-console-fg);
+}
+
+.text.green {
+    color: #3fb950 !important;
+}
+
+/* 评论焦点 */
+.comment:target .header {
+    background-color: #121d2f;
+    border-color: #1e4273 !important;
+}
+
+.comment:target .header:before {
+    border-right-color: #1e4273 !important;
+    filter: drop-shadow(-2px 0 0 #1e4273) !important;
+}
+
+/* 下拉列表 */
+.ui.dropdown .menu,
+.branch-tag-item.active,
+.ui.pointing.dropdown>.menu:not(.hidden):after {
+    background: var(--color-box-header) !important;
+}
+
+.ui.dropdown .menu>.item.context:hover {
+    background: #1f6feb;
+}
+
+.user-setting-content .ui.dropdown .menu>.item:hover {
+    background: #1f6feb;
+}
+
+.user-setting-content .ui.dropdown .menu>.item:hover a {
+    color: var(--color-text);
+}
+
+.admin-setting-content .ui.dropdown .menu>.item:hover {
+    background: #1f6feb;
+}
+
+.admin-setting-content .ui.dropdown .menu>.item:hover a {
+    color: var(--color-text);
+}
+
+/* GPG 签名 */
+.repository #commits-table td.sha .sha.label.isSigned.isVerified,
+.repository #repo-files-table .sha.label.isSigned.isVerified,
+.repository #rev-list .sha.label.isSigned.isVerified,
+.repository .timeline-item.commits-list .singular-commit .sha.label.isSigned.isVerified {
+    border: 1px solid #3fb950 !important;
+}
+
+/* 用户仓库列表字体颜色 */
+/* .repo-list-link {
+    color: var(--color-blue) !important;
+} */
+
+/* 仓库导航栏 */
+.ui.secondary.pointing.menu .overflow-menu-items {
+    gap: 0.5rem;
+}
+
+.ui.secondary.pointing.menu .overflow-menu-items .item {
+    padding: 5px 8px !important;
+    margin-block-start: 1rem;
+    margin-block-end: 1rem;
+    margin-bottom: 0.5rem !important;
+}
+
+.header-wrapper .ui.tabular.menu .item:hover,
+.ui.secondary.pointing.menu .item:hover {
+    background: var(--color-hover) !important;
+}
+
+.ui.secondary.pointing.menu .active.item {
+    border-color: #ffffff00;
+}
+
+.ui.secondary.pointing.menu .active.item span::after {
+    background: #f78166;
+    border-radius: 0.375rem;
+    bottom: calc(50% - 1.8rem);
+    content: "";
+    height: 2px;
+    position: absolute;
+    right: 50%;
+    transform: translate(50%, -50%);
+    width: 100%;
+    z-index: 1;
+}
+
+/* 仓库文件列表 */
+.repository.file.list #repo-files-table tr:hover {
+    background-color: var(--color-box-header);
+}
+
+/* 字体颜色 */
+.lines-num span:after {
+    color: var(--color-text);
+}
+
+.ui.secondary.pointing.menu .active.item,
+.ui.secondary.pointing.menu .active.item:hover,
+.ui.secondary.pointing.menu .dropdown.item:hover,
+.ui.secondary.pointing.menu .link.item:hover,
+.ui.secondary.pointing.menu a.item:hover {
+    color: var(--color-text);
+}
+
+.ui.cards>.card>.extra a:not(.ui):hover,
+.ui.card>.extra a:not(.ui):hover {
+    color: var(--color-blue);
+}
+
+/* 边框圆角 */
+.ui.button,
+.ui.basic.buttons .button,
+.ui.basic.button,
+.ui.dropdown .menu,
+.ui.form input:not([type]),
+.ui.form input[type="date"],
+.ui.form input[type="datetime-local"],
+.ui.form input[type="email"],
+.ui.form input[type="number"],
+.ui.form input[type="password"],
+.ui.form input[type="search"],
+.ui.form input[type="tel"],
+.ui.form input[type="time"],
+.ui.form input[type="text"],
+.ui.form input[type="file"],
+.ui.form input[type="url"],
+.ui.form textarea,
+.ui.input textarea,
+.ui.label,
+.ui.menu,
+.ui.segment,
+.ui.segments,
+.ui.segments:not(.horizontal)>.segment:only-child,
+.ui.secondary.menu .dropdown.item>.menu,
+.ui.selection.dropdown,
+.ui.selection.dropdown .menu,
+.ui.table,
+.ui.text.menu .dropdown.item>.menu {
+    border-radius: var(--border-radius);
+}
+
+.ui.floating.dropdown>.menu {
+    border-radius: var(--border-radius) !important;
+}
+
+.repository.view.issue .comment-list .comment>.content>div:last-child {
+    border-bottom-right-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+}
+
+/* 左边框圆角 */
+.ui.action.input>.dropdown:first-child,
+.ui.action.input>.button:first-child,
+.ui.action.input>.buttons:first-child>.button,
+.ui.compact.menu:not(.secondary) .item:first-child,
+.ui.horizontal.segments>.segment:first-child {
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+}
+
+/* 右边框圆角 */
+.ui.action.input>.dropdown:last-child,
+.ui.action.input>.button:last-child,
+.ui.action.input>.buttons:last-child>.button,
+.ui.compact.menu:not(.secondary) .item:last-child,
+.ui.horizontal.segments>.segment:last-child {
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+/* 上边框圆角 */
+.ui.secondary.pointing.menu .active.item,
+.ui.secondary.pointing.menu .item:hover {
+    border-radius: var(--border-radius);
+}
+
+.ui.tabular.menu .active.item,
+.repository.view.issue .comment-list .comment>.content>div:first-child {
+    border-top-left-radius: var(--border-radius) !important;
+    border-top-right-radius: var(--border-radius) !important;
+}
+
+/* 按钮边框圆角 */
+.ui.active.selection.dropdown {
+    border-bottom-left-radius: var(--border-radius) !important;
+    border-bottom-right-radius: var(--border-radius) !important;
+}
+
+.ui.segment[class*="bottom attached"] {
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
+
+.ui.table>thead>tr:first-child>th:first-child {
+    border-radius: var(--border-radius) 0 0;
+}
+
+.ui.table>thead>tr:first-child>th:last-child {
+    border-radius: 0 var(--border-radius) 0 0;
+}
+
+/* 热力图 */
+.vch__day__square,
+.vch__legend__wrapper rect {
+    rx: 2px;
+    ry: 2px;
+    width: 9px;
+    height: 9px;
+    outline: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 0.5px;
+    outline-offset: -1px;
+}
+
+.vch__legend__wrapper rect {
+    rx: 3px;
+    ry: 3px;
+}
+
+.vch__day__square[style="fill: var(--color-secondary-alpha-60);"],
+.vch__legend__wrapper rect[style="fill: var(--color-secondary-alpha-60);"] {
+    outline: 1px solid rgba(27, 31, 35, 0.06);
+    background: #161b22;
+    fill: #161b22 !important;
+}
+
+.vch__day__square[style="fill: var(--color-primary-light-4);"],
+.vch__legend__wrapper rect[style="fill: var(--color-primary-light-4);"] {
+    background: #0e4429;
+    fill: #0e4429 !important;
+}
+
+.vch__day__square[style="fill: var(--color-primary-light-2);"],
+.vch__legend__wrapper rect[style="fill: var(--color-primary-light-2);"] {
+    background: #006d32;
+    fill: #006d32 !important;
+}
+
+.vch__day__square[style="fill: var(--color-primary);"],
+.vch__legend__wrapper rect[style="fill: var(--color-primary);"] {
+    background: #238636;
+    fill: #238636 !important;
+}
+
+.vch__day__square[style="fill: var(--color-primary-dark-2);"],
+.vch__legend__wrapper rect[style="fill: var(--color-primary-dark-2);"] {
+    background: #39D353;
+    fill: #39D353 !important;
+}
+
+.vch__day__square[style="fill: var(--color-primary-dark-4);"],
+.vch__legend__wrapper rect[style="fill: var(--color-primary-dark-4);"] {
+    background: #44FF61;
+    fill: #44FF61 !important;
 }
