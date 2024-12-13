@@ -454,7 +454,7 @@ button,
     border-color: #3fb950;
     border-width: 1px;
     border-style: solid;
-    border-radius: 25px;
+    border-radius: 25px !important;
     color: #3fb950;
 }
 
@@ -463,7 +463,7 @@ button,
     border-color: var(--color-orange);
     border-width: 1px;
     border-style: solid;
-    border-radius: 25px;
+    border-radius: 25px !important;
     color: var(--color-orange);
 }
 
