@@ -769,6 +769,7 @@ textarea,
 .ui.button.branch-dropdown-button:hover,
 .ui.ui.icon.button:hover,
 .ui.two.wide.button:hover {
+    color: #fff;
     background: #252c34;
 }
 
@@ -783,7 +784,13 @@ textarea,
     color: #fff;
     border-color: #ffffff1a;
     background-color: var(--color-purple);
+}
 
+/* 重新开启按钮 */
+.ui.basic.primary.button#status-button:hover {
+    color: #fff;
+    border-color: #ffffff1a;
+    background-color: var(--color-primary);
 }
 
 /* 标签 */
@@ -820,6 +827,10 @@ textarea,
 a.ui.ui.ui.basic.primary.label:hover {
     color: #79c0ff;
     background-color: #3a83fd5c !important;
+}
+
+.issue-list .text.red {
+    color: #ab7df8 !important;
 }
 
 /* 发布&Runner 状态标签 */
