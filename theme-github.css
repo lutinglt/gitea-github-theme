@@ -44,6 +44,8 @@ button,
 .ui.selection.active.dropdown:hover,
 .ui.selection.active.dropdown .menu,
 .ui.selection.active.dropdown:hover .menu,
+.ui.button,
+.ui.button:hover,
 .ui.menu .item,
 .ui.vertical.menu .header.item,
 .ui.secondary.menu .item {
@@ -491,6 +493,21 @@ a.ui.ui.ui.basic.primary.label:hover {
     background-color: #3a83fd5c !important;
 }
 
+.comment:target .comment-container {
+    border-color: #1e4273 !important;
+    box-shadow: 0 0 0 2px #1e4273 !important;
+}
+
+.comment:target .header {
+    background-color: #121d2f;
+    border-color: #1e4273 !important;
+}
+
+.comment:target .header:before {
+    border-right-color: #1e4273 !important;
+    filter: drop-shadow(-2px 0 0 #1e4273) !important;
+}
+
 .tw-bg-green {
     background-color: var(--color-primary) !important;
 }
@@ -499,11 +516,16 @@ a.ui.ui.ui.basic.primary.label:hover {
     background-color: var(--color-purple) !important;
 }
 
-.ui.dropdown .menu>.divider,
-.ui.dropdown .menu>.item {
-    background: var(--color-box-header);
+.ui.dropdown .menu,
+.branch-tag-item.active,
+.ui.pointing.dropdown>.menu:not(.hidden):after {
+    background: var(--color-box-header) !important;
 }
 
+.ui.fluid.ui.button:hover,
+.ui.button.branch-dropdown-button:hover,
+.ui.ui.icon.button:hover,
+.ui.two.wide.button:hover,
 .ui.dropdown .menu>.item:hover {
     background: #1f6feb;
 }
@@ -636,7 +658,7 @@ a.muted:hover,
 .ui.selection.dropdown .menu,
 .ui.table,
 .ui.text.menu .dropdown.item>.menu {
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius) !important;
 }
 
 .ui.floating.dropdown>.menu {
