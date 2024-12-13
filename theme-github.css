@@ -862,6 +862,11 @@ a.ui.ui.ui.basic.primary.label:hover {
     background: #121d2f;
 }
 
+.ui.label:not(.basic, .sha):hover {
+    color: #fff;
+    background: #1f6feb;
+}
+
 .ui.label>a {
     opacity: 1;
 }
@@ -1053,7 +1058,7 @@ a.ui.ui.ui.basic.primary.label:hover {
 /* 上边框圆角 */
 .ui.secondary.pointing.menu .active.item,
 .ui.secondary.pointing.menu .item:hover {
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius) !important;
 }
 
 .ui.tabular.menu .active.item,
