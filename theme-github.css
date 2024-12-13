@@ -447,7 +447,7 @@ button,
     color: #3fb950 !important;
 }
 
-.ui.ui.ui.green.label {
+.ui.ui.ui.green.label:not(.issue-state-label) {
     background: var(--color-body);
     border-color: #3fb950;
     border-width: 1px;
@@ -737,7 +737,7 @@ a.muted:hover,
 :root {
     --is-dark-theme: true;
     --border-radius: 6px;
-    --color-primary: rgba(57, 211, 83, 0.6);
+    --color-primary: #238636;
     --color-primary-contrast: #fff;
     --color-primary-dark-1: rgba(68, 255, 97, 0.7);
     --color-primary-dark-2: rgba(57, 211, 83, 1);
@@ -799,7 +799,7 @@ a.muted:hover,
     --color-teal: #69d4cf;
     --color-blue: #4493f8;
     --color-violet: #754ad3;
-    --color-purple: #b65dd4;
+    --color-purple: #8957e5;
     --color-pink: #e04b9f;
     --color-brown: #a86d45;
     --color-black: #141516;
@@ -907,7 +907,7 @@ a.muted:hover,
     --color-orange-badge-hover-bg: #f2711c4d;
     --color-git: #f05133;
     --color-body: #0d1117;
-    --color-box-header: #161b22;
+    --color-box-header: #151b23;
     --color-box-body: #0d1117;
     --color-box-body-highlight: #262b36;
     --color-text-dark: #dbe0ea;
