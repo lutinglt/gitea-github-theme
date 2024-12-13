@@ -479,6 +479,18 @@ button,
     border-radius: 25px !important;
 }
 
+.ui.ui.ui.basic.primary.label {
+    color: var(--color-blue);
+    background-color: #388bfd33 !important;
+    border-color: #1f6feb !important;
+    border-radius: 25px !important;
+}
+
+a.ui.ui.ui.basic.primary.label:hover {
+    color: #79c0ff;
+    background-color: #3a83fd5c !important;
+}
+
 .tw-bg-green {
     background-color: var(--color-primary) !important;
 }
