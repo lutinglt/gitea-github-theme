@@ -528,11 +528,11 @@
     --color-grey-light: #a1a6b7;
     --color-gold: #b1983b;
     --color-white: #fff;
-    --color-diff-removed-word-bg: #6f3333;
-    --color-diff-added-word-bg: #3c653c;
-    --color-diff-removed-row-bg: #3c2626;
+    --color-diff-removed-word-bg: #792e2d;
+    --color-diff-added-word-bg: #1d572d;
+    --color-diff-removed-row-bg: #25171c;
     --color-diff-moved-row-bg: #818044;
-    --color-diff-added-row-bg: #283e2d;
+    --color-diff-added-row-bg: #12261e;
     --color-diff-removed-row-border: #634343;
     --color-diff-moved-row-border: #bcca6f;
     --color-diff-added-row-border: #314a37;
@@ -693,7 +693,6 @@ button,
 }
 
 /* 弹窗 */
-
 .ui.modal {
     border: 1.5px solid var(--color-light-border);
 }
@@ -1354,4 +1353,13 @@ a.ui.ui.ui.basic.primary.label:hover {
 .vch__legend__wrapper rect[style="fill: var(--color-primary-dark-4);"] {
     background: #44ff61;
     fill: #44ff61 !important;
+}
+
+/* 提交对比 */
+.added-code,
+.removed-code,
+.added-code *,
+.removed-code * {
+    color: #fff !important;
+    border-radius: 0.1875rem;
 }
