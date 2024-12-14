@@ -757,6 +757,17 @@ textarea,
     border-color: #ffffff1a;
 }
 
+.ui.button.branch-dropdown-button {
+    padding: 6px 12px;
+    min-height: 28px;
+}
+
+.ui.menu button.item:hover {
+    color: var(--color-text);
+    background: var(--color-hover);
+    border-radius: 0;
+}
+
 /* 工单侧边栏按钮 */
 .ui.fluid.ui.button,
 .ui.button.branch-dropdown-button,
@@ -796,6 +807,13 @@ textarea,
 .ui.basic.primary.button#status-button:hover {
     color: #44ff61;
     background: var(--color-hover);
+}
+
+/* PR */
+#issue-list .flex-item-body .branches .branch {
+    color: var(--color-blue);
+    background-color: #121d2f;
+    font-size: 12px;
 }
 
 /* 下拉列表 */
