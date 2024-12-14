@@ -595,7 +595,7 @@
     --color-button: #1e252e;
     --color-code-bg: #0d1117;
     --color-code-sidebar-bg: #232834;
-    --color-shadow: #388bfd33;
+    --color-shadow: #00000060;
     --color-secondary-bg: #ffffff26;
     --color-text-focus: #fff;
     --color-expand-button: #3c404d;
@@ -692,26 +692,72 @@ button,
     transition: 0.3s;
 }
 
+/* 弹窗 */
+
+.ui.modal {
+    border: 1.5px solid var(--color-light-border);
+}
+
+.ui.modal>.header {
+    background-color: var(--color-box-header);
+    border-bottom: 1.5px solid var(--color-light-border);
+}
+
+.ui.modal>.content,
+.ui.modal form>.content {
+    background-color: var(--color-box-header);
+}
+
+.ui.modal>.actions,
+.ui.modal .content+.actions,
+.ui.modal .content+form>.actions {
+    background-color: var(--color-box-header);
+    border-top: 1.5px solid var(--color-light-border);
+}
+
 /* 输入框 */
-input,
-textarea,
-.ui.input input,
-.ui.form input:not([type]),
-.ui.form select,
-.ui.form textarea,
-.ui.form input[type="date"],
-.ui.form input[type="datetime-local"],
-.ui.form input[type="email"],
-.ui.form input[type="file"],
-.ui.form input[type="number"],
-.ui.form input[type="password"],
-.ui.form input[type="search"],
-.ui.form input[type="tel"],
-.ui.form input[type="text"],
-.ui.form input[type="time"],
-.ui.form input[type="url"],
-.ui.selection.dropdown {
-    border-width: 2px;
+input:focus,
+textarea:focus,
+.ui.input input:focus,
+.ui.form input:not([type]):focus,
+.ui.form select:focus,
+.ui.form textarea:focus,
+.ui.form input[type="date"]:focus,
+.ui.form input[type="datetime-local"]:focus,
+.ui.form input[type="email"]:focus,
+.ui.form input[type="file"]:focus,
+.ui.form input[type="number"]:focus,
+.ui.form input[type="password"]:focus,
+.ui.form input[type="search"]:focus,
+.ui.form input[type="tel"]:focus,
+.ui.form input[type="text"]:focus,
+.ui.form input[type="time"]:focus,
+.ui.form input[type="url"]:focus,
+.ui.selection.dropdown:focus {
+    border-color: #1f6feb;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+.ui.input input:focus-visible,
+.ui.form input:not([type]):focus-visible,
+.ui.form select:focus-visible,
+.ui.form textarea:focus-visible,
+.ui.form input[type="date"]:focus-visible,
+.ui.form input[type="datetime-local"]:focus-visible,
+.ui.form input[type="email"]:focus-visible,
+.ui.form input[type="file"]:focus-visible,
+.ui.form input[type="number"]:focus-visible,
+.ui.form input[type="password"]:focus-visible,
+.ui.form input[type="search"]:focus-visible,
+.ui.form input[type="tel"]:focus-visible,
+.ui.form input[type="text"]:focus-visible,
+.ui.form input[type="time"]:focus-visible,
+.ui.form input[type="url"]:focus-visible,
+.ui.selection.dropdown:focus {
+    border-color: #1f6feb;
+    outline: none;
+    box-shadow: inset 0 0 0 1px #1f6feb;
 }
 
 /* 按钮 */
@@ -890,7 +936,7 @@ textarea,
     background: #1f6feb;
     border-radius: 0.375rem;
     content: "";
-    height: 1.825rem;
+    height: 1.8rem;
     left: calc(0.5rem * -1);
     position: absolute;
     top: calc(50% - 13px);
