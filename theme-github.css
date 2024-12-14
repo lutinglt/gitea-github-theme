@@ -965,9 +965,16 @@ textarea,
 }
 
 .ui.ui.ui.primary.label {
+    color: var(--color-blue);
+    background: unset;
+    border: 1px solid var(--color-blue);
+    border-radius: 25px;
+}
+
+a.ui.ui.ui.primary.label:hover {
     color: #fff;
     background: #1f6feb;
-    border-radius: 25px;
+    border-color: #1f6feb;
 }
 
 .ui.ui.ui.basic.primary.label {
