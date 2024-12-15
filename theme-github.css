@@ -853,7 +853,6 @@ textarea:focus-visible,
 .admin-setting-content .ui.right .ui.primary.button.tiny {
     color: #fff;
     background-color: #238636;
-
 }
 
 .user-main-content .ui.right .ui.primary.button.tiny:hover,
@@ -1036,7 +1035,7 @@ textarea:focus-visible,
 
 /* 标签 */
 .repo-buttons .ui.basic.label {
-    color: #f0f6fc
+    color: #f0f6fc;
 }
 
 a.ui.basic.label:hover {
@@ -1146,10 +1145,6 @@ a.ui.label:not(.basic, .sha):hover {
 
 .ui.label>a {
     opacity: 1;
-}
-
-.repository #commits-table .text.right.aligned {
-    color: #919894;
 }
 
 /* Actions */
@@ -1298,7 +1293,7 @@ a.ui.label:not(.basic, .sha):hover {
     z-index: 1;
 }
 
-/* 仓库文件列表 */
+/* 仓库文件&提交列表 */
 .page-content.repository tr.commit-list {
     height: 3.725rem;
 }
@@ -1311,28 +1306,41 @@ a.ui.label:not(.basic, .sha):hover {
     border-radius: 25px;
     margin-top: -1px;
     margin-left: 1px;
-    margin-right: 8px !important;
+    margin-right: 12px !important;
 }
 
-.page-content.repository .commit-list .latest-commit a.muted.author-wrapper {
-    margin-right: 5px;
+.page-content.repository .commit-list .latest-commit .author-wrapper {
+    margin-right: 6px;
 }
 
 .page-content.repository .commit-list .latest-commit .ui.sha.label {
     display: none;
 }
 
-.page-content.repository .commit-list span.tw-align-middle {
+.page-content.repository .commit-list .tw-align-middle:not(img) {
     padding: 6px;
     border-radius: var(--border-radius);
+    margin-right: 6px;
 }
 
-.page-content.repository .commit-list span.tw-align-middle:hover {
+.page-content.repository .commit-list .tw-align-middle:not(img):hover {
     background-color: var(--color-hover);
 }
 
 .repository.file.list #repo-files-table tr:hover {
     background-color: var(--color-box-header);
+}
+
+.repository #commits-table .author a {
+    color: var(--color-text);
+}
+
+.repository #commits-table .author img {
+    border-radius: 25px;
+}
+
+.repository #commits-table .text.right.aligned {
+    color: #919894;
 }
 
 /* 字体颜色 */
