@@ -771,6 +771,7 @@ textarea:focus-visible,
 .user-main-content .ui.primary.button,
 .repo-setting-content .ui.primary.button,
 .user-setting-content .ui.primary.button,
+.org-setting-content .ui.primary.button,
 .admin-setting-content .ui.primary.button {
     color: #39d353;
     background-color: #212830;
@@ -780,6 +781,7 @@ textarea:focus-visible,
 .user-main-content .ui.primary.button:hover,
 .repo-setting-content .ui.primary.button:hover,
 .user-setting-content .ui.primary.button:hover,
+.org-setting-content .ui.primary.button:hover,
 .admin-setting-content .ui.primary.button:hover {
     color: #fff;
     background-color: #29903b;
@@ -872,6 +874,7 @@ textarea:focus-visible,
 .user-main-content .ui.dropdown .menu>.item:hover,
 .repo-setting-content .ui.dropdown .menu>.item:hover,
 .user-setting-content .ui.dropdown .menu>.item:hover,
+.org-setting-content .ui.dropdown .menu>.item:hover,
 .admin-setting-content .ui.dropdown .menu>.item:hover {
     background: #1f6feb;
 }
@@ -879,6 +882,7 @@ textarea:focus-visible,
 .user-main-content .ui.dropdown .menu>.item:hover a,
 .repo-setting-content .ui.dropdown .menu>.item:hover a,
 .user-setting-content .ui.dropdown .menu>.item:hover a,
+.org-setting-content .ui.dropdown .menu>.item:hover a,
 .admin-setting-content .ui.dropdown .menu>.item:hover a {
     color: var(--color-text);
 }
@@ -946,6 +950,7 @@ textarea:focus-visible,
 .user-main-content .ui.top.attached.header,
 .repo-setting-content .ui.top.attached.header,
 .user-setting-content .ui.top.attached.header,
+.org-setting-content .ui.top.attached.header,
 .admin-setting-content .ui.top.attached.header {
     border: 0;
     font-size: 1.5rem;
@@ -957,6 +962,7 @@ textarea:focus-visible,
 .user-main-content .ui.attached.segment,
 .repo-setting-content .ui.attached.segment,
 .user-setting-content .ui.attached.segment,
+.org-setting-content .ui.attached.segment,
 .admin-setting-content .ui.attached.segment {
     background-color: unset;
     border-radius: 0.5rem !important;
@@ -965,6 +971,7 @@ textarea:focus-visible,
 .user-main-content .ui.attached.segment:not(.error),
 .repo-setting-content .ui.attached.segment:not(.error),
 .user-setting-content .ui.attached.segment:not(.error),
+.org-setting-content .ui.attached.segment:not(.error),
 .admin-setting-content .ui.attached.segment:not(.error) {
     border: 1px solid var(--color-light-border) !important;
 }
@@ -972,6 +979,7 @@ textarea:focus-visible,
 .user-main-content .ui.attached.segment.error,
 .repo-setting-content .ui.attached.segment.error,
 .user-setting-content .ui.attached.segment.error,
+.org-setting-content .ui.attached.segment.error,
 .admin-setting-content .ui.attached.segment.error {
     border: 1px solid var(--color-error-border) !important;
 }
@@ -981,6 +989,7 @@ textarea:focus-visible,
 .ui.basic.label.role-label,
 .page-content.dashboard.feeds .ui.basic.label,
 .page-content.explore .ui.basic.label,
+.page-content.organization .ui.basic.label,
 .admin-setting-content .ui.basic.label {
     border-radius: 25px;
     background-color: var(--color-box-header);
@@ -1069,7 +1078,7 @@ a.ui.ui.ui.basic.primary.label:hover {
     border-radius: 25px;
 }
 
-.ui.label:not(.basic, .sha):hover {
+a.ui.label:not(.basic, .sha):hover {
     color: #fff;
     background: #1f6feb;
     border-radius: 25px;
