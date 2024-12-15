@@ -1108,8 +1108,8 @@ a.ui.ui.ui.basic.primary.label:hover {
 
 /* 发布&Runner 状态标签 */
 .ui.ui.ui.green.label:not(.issue-state-label) {
-    background: var(--color-body);
-    border-color: #3fb950;
+    background: unset;
+    border-color: #238636;
     border-width: 1px;
     border-style: solid;
     border-radius: 25px;
@@ -1117,12 +1117,12 @@ a.ui.ui.ui.basic.primary.label:hover {
 }
 
 .ui.ui.ui.orange.label:not(.issue-state-label) {
-    background: var(--color-body);
-    border-color: var(--color-orange);
+    background: unset;
+    border-color: #9e6a03;
     border-width: 1px;
     border-style: solid;
     border-radius: 25px;
-    color: var(--color-orange);
+    color: #d29922;
 }
 
 /* Runner&软件包&提交 标签 */
