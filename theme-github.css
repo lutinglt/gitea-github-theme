@@ -1313,6 +1313,10 @@ a.ui.label:not(.basic, .sha):hover {
     margin-right: 6px;
 }
 
+.page-content.repository .commit-list .latest-commit a.author-wrapper:hover {
+    color: var(--color-text);
+}
+
 .page-content.repository .commit-list .latest-commit .ui.sha.label {
     display: none;
 }
