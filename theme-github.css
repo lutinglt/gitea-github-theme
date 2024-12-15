@@ -567,7 +567,7 @@
     --color-body: #0d1117;
     --color-box-header: #151b23;
     --color-box-body: #0d1117;
-    --color-box-body-highlight: #262b36;
+    --color-box-body-highlight: #262c36;
     --color-text-dark: #dbe0ea;
     --color-text: #dce2e7;
     --color-text-light: #a6aab5;
@@ -689,7 +689,7 @@ button,
 .ui.menu .item,
 .ui.vertical.menu .header.item,
 .ui.secondary.menu .item {
-    transition: 0.3s;
+    transition: 0.1s;
 }
 
 /* 弹窗 */
@@ -768,26 +768,6 @@ textarea:focus-visible,
     background-color: #29903b;
 }
 
-.user-main-content .ui.primary.button,
-.repo-setting-content .ui.primary.button,
-.user-setting-content .ui.primary.button,
-.org-setting-content .ui.primary.button,
-.admin-setting-content .ui.primary.button {
-    color: #39d353;
-    background-color: #212830;
-    border-color: var(--color-light-border);
-}
-
-.user-main-content .ui.primary.button:hover,
-.repo-setting-content .ui.primary.button:hover,
-.user-setting-content .ui.primary.button:hover,
-.org-setting-content .ui.primary.button:hover,
-.admin-setting-content .ui.primary.button:hover {
-    color: #fff;
-    background-color: #29903b;
-    border-color: #ffffff1a;
-}
-
 .ui.red.button,
 .ui.basic.red.buttons .button,
 .ui.basic.red.button {
@@ -813,6 +793,62 @@ textarea:focus-visible,
     color: var(--color-text);
     background: var(--color-hover);
     border-radius: 0;
+}
+
+/* 设置界面按钮 */
+.user-main-content .ui.primary.button,
+.repo-setting-content .ui.primary.button,
+.user-setting-content .ui.primary.button,
+.org-setting-content .ui.primary.button {
+    color: #f0f6fc;
+    background-color: #212830;
+    border-color: var(--color-light-border);
+}
+
+.user-main-content .ui.primary.button:hover,
+.repo-setting-content .ui.primary.button:hover,
+.user-setting-content .ui.primary.button:hover,
+.org-setting-content .ui.primary.button:hover {
+    background-color: #262c36;
+}
+
+.user-main-content .ui.primary.button.tiny,
+.repo-setting-content .ui.primary.button.tiny,
+.user-setting-content .ui.primary.button.tiny,
+.org-setting-content .ui.primary.button.tiny,
+.admin-setting-content .ui.primary.button {
+    color: #39d353;
+    background-color: #212830;
+    border-color: var(--color-light-border);
+}
+
+.user-main-content .ui.primary.button.tiny:hover,
+.repo-setting-content .ui.primary.button.tiny:hover,
+.user-setting-content .ui.primary.button.tiny:hover,
+.org-setting-content .ui.primary.button.tiny:hover,
+.admin-setting-content .ui.primary.button:hover {
+    color: #fff;
+    background-color: #29903b;
+    border-color: #ffffff1a;
+}
+
+.user-main-content .ui.right .ui.primary.button.tiny,
+.repo-setting-content .ui.right .ui.primary.button.tiny,
+.user-setting-content .ui.right .ui.primary.button.tiny,
+.org-setting-content .ui.right .ui.primary.button.tiny,
+.admin-setting-content .ui.right .ui.primary.button.tiny {
+    color: #fff;
+    background-color: #238636;
+
+}
+
+.user-main-content .ui.right .ui.primary.button.tiny:hover,
+.repo-setting-content .ui.right .ui.primary.button.tiny:hover,
+.user-setting-content .ui.right .ui.primary.button.tiny:hover,
+.org-setting-content .ui.right .ui.primary.button.tiny:hover,
+.admin-setting-content .ui.right .ui.primary.button.tiny:hover {
+    background-color: #29903b;
+    border-color: var(--color-light-border);
 }
 
 /* 工单侧边栏按钮 */
@@ -1178,7 +1214,7 @@ a.ui.label:not(.basic, .sha):hover {
 
 .header-wrapper .ui.tabular.menu .item:hover,
 .ui.secondary.pointing.menu .item:hover {
-    background: var(--color-hover) !important;
+    background: #15191f !important;
 }
 
 .ui.secondary.pointing.menu .active.item {
