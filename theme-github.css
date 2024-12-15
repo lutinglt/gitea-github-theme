@@ -691,7 +691,7 @@ button,
 .ui.menu .item,
 .ui.vertical.menu .header.item,
 .ui.secondary.menu .item {
-    transition: color 0.2s ease, background-color 0.2s ease !important;
+    transition: 0.2s;
 }
 
 /* 弹窗 */
