@@ -592,7 +592,7 @@
     --color-card: #0d1117;
     --color-markup-table-row: #ffffff06;
     --color-markup-code-block: #ffffff16;
-    --color-button: #1e252e;
+    --color-button: #212830;
     --color-code-bg: #0d1117;
     --color-code-sidebar-bg: #232834;
     --color-shadow: #00000060;
@@ -653,6 +653,7 @@
 input,
 textarea,
 tr,
+td,
 button,
 #navbar .item,
 .header-wrapper .ui.tabular.menu .item,
@@ -660,6 +661,7 @@ button,
 .job-log-line,
 .job-brief-item,
 .menu .item,
+.page-content.repository .flex-item .flex-item-title a,
 .ui.input>input,
 .ui.form input:not([type]),
 .ui.form select,
@@ -689,7 +691,7 @@ button,
 .ui.menu .item,
 .ui.vertical.menu .header.item,
 .ui.secondary.menu .item {
-    transition: 0.1s;
+    transition: 0.2s;
 }
 
 /* 弹窗 */
@@ -766,6 +768,17 @@ textarea:focus-visible,
 
 .ui.primary.button:hover {
     background-color: #29903b;
+}
+
+.ui.basic.button {
+    color: #f0f6fc;
+}
+
+.ui.basic.button:hover,
+.ui.labeled.button>.label:hover {
+    color: #f0f6fc;
+    background: #262c36;
+    border-color: var(--color-light-border);
 }
 
 .ui.red.button,
@@ -856,7 +869,7 @@ textarea:focus-visible,
 .ui.button.branch-dropdown-button,
 .ui.ui.icon.button,
 .ui.two.wide.button {
-    background-color: var(--color-box-header);
+    background-color: #212830;
 }
 
 .ui.fluid.ui.button:hover,
@@ -864,7 +877,7 @@ textarea:focus-visible,
 .ui.ui.icon.button:hover,
 .ui.two.wide.button:hover {
     color: #fff;
-    background-color: var(--color-hover);
+    background-color: #262c36;
 }
 
 /* 关闭工单按钮 */
@@ -1021,6 +1034,16 @@ textarea:focus-visible,
 }
 
 /* 标签 */
+.repo-buttons .ui.basic.label {
+    color: #f0f6fc
+}
+
+a.ui.basic.label:hover {
+    color: #f0f6fc;
+    background-color: #262c36;
+    border-color: var(--color-light-border);
+}
+
 .ui.basic.label.not-mobile,
 .ui.basic.label.role-label,
 .page-content.dashboard.feeds .ui.basic.label,
@@ -1028,7 +1051,7 @@ textarea:focus-visible,
 .page-content.organization .ui.basic.label,
 .admin-setting-content .ui.basic.label {
     border-radius: 25px;
-    background-color: var(--color-box-header);
+    background-color: unset;
 }
 
 .badge.tw-bg-green,
@@ -1198,6 +1221,46 @@ a.ui.label:not(.basic, .sha):hover {
 .page-content> :first-child.secondary-nav {
     border-top: 0;
     background-color: var(--color-nav-bg) !important;
+}
+
+/* 仓库页面头部名称 */
+.page-content.repository img.ui.avatar {
+    height: 32px;
+    width: 32px;
+    margin-block-start: 0.5rem;
+    margin-block-end: 0.5rem;
+}
+
+.page-content.repository .flex-item .flex-item-title a {
+    display: flex;
+    align-items: center;
+    color: #f0f6fc;
+    font-size: 16px;
+    text-decoration: none !important;
+    min-width: 3ch;
+    padding: 6px 8px;
+    padding-inline: 0.5rem;
+    padding-block: 6px;
+    border-radius: 0.375rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.page-content.repository .flex-item .flex-item-title a:hover {
+    background: #15191f;
+}
+
+.page-content.repository .flex-item a:not(.label, .button):hover {
+    color: #f0f6fc !important;
+}
+
+.page-content.repository .flex-item .flex-item-title,
+.page-content.repository .flex-item .flex-item-title a.muted.tw-font-normal {
+    color: #9198a1;
+}
+
+.page-content.repository .flex-item .flex-item-title a.muted.tw-font-normal:hover {
+    color: #9198a1 !important;
 }
 
 /* 仓库导航栏 */
@@ -1407,4 +1470,31 @@ a.ui.label:not(.basic, .sha):hover {
 .removed-code * {
     color: #fff !important;
     border-radius: 0.1875rem;
+}
+
+.code-diff-unified .add-code .lines-num,
+.code-diff-unified .add-code .lines-escape {
+    background-color: #1c4428;
+}
+
+.code-diff-unified .del-code .lines-num,
+.code-diff-unified .del-code .lines-escape {
+    background-color: #542426;
+}
+
+.code-diff-unified .tag-code td,
+.diff-file-body tr.tag-code:last-child>td {
+    background-color: #121d2f;
+}
+
+.code-expander-button,
+.code-diff-unified .tag-code .lines-num,
+.code-diff-unified .tag-code .lines-escape,
+.diff-file-body tr.tag-code:last-child>td.lines-num,
+.diff-file-body tr.tag-code:last-child>td.lines-escape {
+    background-color: #0c2d6b;
+}
+
+.code-expander-button:hover {
+    background: #1f6feb;
 }
