@@ -662,6 +662,7 @@ button,
 .job-brief-item,
 .menu .item,
 .page-content.repository .flex-item .flex-item-title a,
+.page-content.repository .commit-list span,
 .ui.input>input,
 .ui.form input:not([type]),
 .ui.form select,
@@ -1304,6 +1305,30 @@ a.ui.label:not(.basic, .sha):hover {
 
 .page-content.repository .commit-list .latest-commit .commit-summary {
     color: #9198a1;
+}
+
+.page-content.repository .commit-list .latest-commit img.tw-align-middle {
+    border-radius: 25px;
+    margin-top: -1px;
+    margin-left: 1px;
+    margin-right: 8px !important;
+}
+
+.page-content.repository .commit-list .latest-commit a.muted.author-wrapper {
+    margin-right: 5px;
+}
+
+.page-content.repository .commit-list .latest-commit .ui.sha.label {
+    display: none;
+}
+
+.page-content.repository .commit-list span.tw-align-middle {
+    padding: 6px;
+    border-radius: var(--border-radius);
+}
+
+.page-content.repository .commit-list span.tw-align-middle:hover {
+    background-color: var(--color-hover);
 }
 
 .repository.file.list #repo-files-table tr:hover {
