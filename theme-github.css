@@ -1231,7 +1231,7 @@ a.ui.label:not(.basic, .sha):hover {
     margin-block-end: 0.5rem;
 }
 
-.page-content.repository .flex-item .flex-item-title a {
+.page-content.repository .repo-header .flex-item .flex-item-title a {
     display: flex;
     align-items: center;
     color: #f0f6fc;
@@ -1246,20 +1246,20 @@ a.ui.label:not(.basic, .sha):hover {
     margin-bottom: 0.5rem;
 }
 
-.page-content.repository .flex-item .flex-item-title a:hover {
+.page-content.repository .repo-header .flex-item .flex-item-title a:hover {
     background: #15191f;
 }
 
-.page-content.repository .flex-item a:not(.label, .button):hover {
+.page-content.repository .repo-header .flex-item a:not(.label, .button):hover {
     color: #f0f6fc !important;
 }
 
-.page-content.repository .flex-item .flex-item-title,
-.page-content.repository .flex-item .flex-item-title a.muted.tw-font-normal {
+.page-content.repository .repo-header .flex-item .flex-item-title,
+.page-content.repository .repo-header .flex-item .flex-item-title a.muted.tw-font-normal {
     color: #9198a1;
 }
 
-.page-content.repository .flex-item .flex-item-title a.muted.tw-font-normal:hover {
+.page-content.repository .repo-header .flex-item .flex-item-title a.muted.tw-font-normal:hover {
     color: #9198a1 !important;
 }
 
