@@ -1576,3 +1576,8 @@ a.ui.label:not(.basic, .sha):hover {
 .code-expander-button:hover {
     background: #1f6feb;
 }
+
+/* 隐藏主页仓库列表仓库名称前的图标 */
+.svg.repo-list-icon {
+    display: none;
+}
