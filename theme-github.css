@@ -1078,7 +1078,7 @@ a.ui.basic.label:hover {
 
 .ui.ui.ui.primary.label {
     color: var(--color-blue);
-    background: unset;
+    background-color: #388bfd33;
     border: 1px solid var(--color-blue);
     border-radius: 25px;
 }
@@ -1128,6 +1128,9 @@ a.ui.ui.ui.basic.primary.label:hover {
 .ui.label.sha {
     color: #919894;
     background-color: var(--color-box-header);
+}
+
+.sha .ui.label.sha {
     border: 0 !important;
 }
 
