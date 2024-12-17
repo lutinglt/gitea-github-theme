@@ -785,7 +785,7 @@ textarea:focus-visible,
 .ui.basic.red.buttons .button,
 .ui.basic.red.button {
     color: #fa5e55;
-    background-color: #212830;
+    background-color: var(--color-button);
     border-color: var(--color-light-border);
 }
 
@@ -814,7 +814,7 @@ textarea:focus-visible,
 .user-setting-content .ui.primary.button,
 .org-setting-content .ui.primary.button {
     color: #f0f6fc;
-    background-color: #212830;
+    background-color: var(--color-button);
     border-color: var(--color-light-border);
 }
 
@@ -831,7 +831,7 @@ textarea:focus-visible,
 .org-setting-content .ui.primary.button.tiny,
 .admin-setting-content .ui.primary.button {
     color: #39d353;
-    background-color: #212830;
+    background-color: var(--color-button);
     border-color: var(--color-light-border);
 }
 
@@ -868,7 +868,7 @@ textarea:focus-visible,
 .ui.button.branch-dropdown-button,
 .ui.ui.icon.button,
 .ui.two.wide.button {
-    background-color: #212830;
+    background-color: var(--color-button);
 }
 
 .ui.fluid.ui.button:hover,
@@ -883,7 +883,7 @@ textarea:focus-visible,
 .ui.red.basic.button#status-button {
     color: #ab7df8;
     border-color: var(--color-light-border);
-    background-color: #212830;
+    background-color: var(--color-button);
 }
 
 .ui.red.basic.button#status-button:hover {
@@ -895,7 +895,7 @@ textarea:focus-visible,
 /* 重新开启按钮 */
 .ui.basic.primary.button#status-button {
     color: #39d353;
-    background-color: #212830;
+    background-color: var(--color-button);
     border-color: var(--color-light-border);
 }
 
@@ -1122,6 +1122,35 @@ a.ui.ui.ui.basic.primary.label:hover {
     border-style: solid;
     border-radius: 25px;
     color: #d29922;
+}
+
+/* 发布页 */
+.page-content.repository.releases svg.tw-mr-1.svg.octicon-tag {
+    color: #3fb950;
+}
+
+.page-content.repository.tags .ui.small.menu .item,
+.page-content.repository.releases .ui.small.menu .item {
+    font-size: 14px;
+}
+
+.page-content.repository.tags .ui.small.menu .active.item,
+.page-content.repository.releases .ui.small.menu .active.item {
+    color: #fff;
+    background: #1f6feb !important;
+}
+
+.page-content.repository.releases .ui.small.primary.button {
+    background-color: var(--color-button);
+    font-size: 14px;
+}
+
+.page-content.repository.releases .ui.small.primary.button:hover {
+    background-color: #262c36;
+}
+
+.page-content.repository.tags .tag-list-row .download a.muted:hover {
+    text-decoration: none;
 }
 
 /* Runner&软件包&提交 标签 */
