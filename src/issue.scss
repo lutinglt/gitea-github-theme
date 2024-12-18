@@ -1,0 +1,20 @@
+// Made by Luting ^-^
+// PR
+#issue-list .flex-item-body .branches .branch {
+  color: var(--color-blue);
+  background-color: #121d2f;
+  font-size: 12px;
+}
+
+// 评论焦点
+.comment:target {
+  .comment-container {
+    border-color: #1f6feb !important;
+    box-shadow: 0 0 0 1px #4493f8 !important;
+  }
+
+  .header:before {
+    border-right-color: #1f6feb !important;
+    filter: drop-shadow(-1px 0 0 #4493f8) !important;
+  }
+}

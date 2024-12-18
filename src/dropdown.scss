@@ -1,0 +1,31 @@
+// Made by Luting ^-^
+.ui.dropdown .menu,
+.branch-tag-item.active,
+.ui.pointing.dropdown > .menu:not(.hidden):after {
+  background: var(--color-box-header) !important;
+}
+
+%item-style {
+  background: #1f6feb;
+}
+
+.ui.dropdown .menu > .item.context:hover {
+  @extend %item-style;
+}
+
+.user-main-content,
+.repo-setting-content,
+.user-setting-content,
+.org-setting-content,
+.admin-setting-content {
+  .ui.dropdown .menu > .item {
+    &:hover {
+      @extend %item-style;
+
+      a {
+        color: var(--color-text);
+      }
+    }
+  }
+}
+

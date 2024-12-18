@@ -1,0 +1,21 @@
+// Made by Luting ^-^
+.ui.modal {
+  border: 1.5px solid var(--color-light-border);
+
+  > .header {
+    background-color: var(--color-box-header);
+    border-bottom: 1.5px solid var(--color-light-border);
+  }
+
+  > .content,
+  form > .content {
+    background-color: var(--color-box-header);
+  }
+
+  > .actions,
+  .content + .actions,
+  .content + form > .actions {
+    background-color: var(--color-box-header);
+    border-top: 1.5px solid var(--color-light-border);
+  }
+}

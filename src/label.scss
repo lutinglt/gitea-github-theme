@@ -1,0 +1,148 @@
+// Made by Luting ^-^
+.repo-buttons .ui.basic.label {
+  color: #f0f6fc;
+}
+
+a.ui.basic.label:hover {
+  color: #f0f6fc;
+  background-color: #262c36;
+  border-color: var(--color-light-border);
+}
+
+.ui.basic.label.not-mobile,
+.ui.basic.label.role-label,
+.page-content.dashboard.feeds .ui.basic.label,
+.page-content.explore .ui.basic.label,
+.page-content.organization .ui.basic.label,
+.admin-setting-content .ui.basic.label {
+  border-radius: 25px;
+  background-color: unset;
+}
+
+.badge.tw-bg-green,
+.ui.green.label.issue-state-label {
+  background-color: #238636 !important;
+}
+
+.badge.tw-bg-red {
+  background-color: var(--color-purple) !important;
+}
+
+.ui.ui.ui {
+  &.purple.label {
+    border-radius: 25px !important;
+  }
+
+  &.green.label.issue-state-label {
+    background: var(--color-primary);
+    border-radius: 25px !important;
+  }
+
+  &.red.label.issue-state-label {
+    background: var(--color-purple);
+    border-radius: 25px !important;
+  }
+
+  &.primary.label {
+    color: var(--color-blue);
+    background-color: #388bfd33;
+    border: 1px solid var(--color-blue);
+    border-radius: 25px;
+  }
+
+  &.basic.primary.label {
+    color: var(--color-blue);
+    background-color: #388bfd33 !important;
+    border-color: #1f6feb !important;
+    border-radius: 25px !important;
+  }
+
+  // 发布&Runner 状态标签
+  &.green.label:not(.issue-state-label) {
+    background: unset;
+    border-color: #238636;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 25px;
+    color: #3fb950;
+  }
+
+  &.orange.label:not(.issue-state-label) {
+    background: unset;
+    border-color: #9e6a03;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 25px;
+    color: #d29922;
+  }
+}
+
+a.ui.ui.ui {
+  &.primary.label:hover {
+    color: #fff;
+    background: #1f6feb;
+    border-color: #1f6feb;
+  }
+
+  &.basic.primary.label:hover {
+    color: #79c0ff;
+    background-color: #3a83fd5c !important;
+  }
+}
+
+.issue-list .text.red {
+  color: #ab7df8 !important;
+}
+
+// Runner&软件包&提交 标签
+.ui.label {
+  &.sha {
+    color: #919894;
+    background-color: var(--color-box-header);
+
+    &:hover {
+      background-color: var(--color-hover);
+    }
+  }
+
+  &:not(.basic, .sha) {
+    color: var(--color-blue);
+    background: #121d2f;
+    border-radius: 25px;
+  }
+
+  > a {
+    opacity: 1;
+  }
+}
+a.ui.label:not(.basic, .sha):hover {
+  color: #fff;
+  background: #1f6feb;
+  border-radius: 25px;
+}
+.sha .ui.label.sha {
+  border: 0 !important;
+}
+
+.repository #commits-table .commit-list .ui.label.sha {
+  line-height: 18px;
+  margin-top: 0.375rem;
+  margin-bottom: 0.375rem;
+  margin-left: -2px;
+}
+
+.repository {
+  #commits-table td.sha,
+  #repo-files-table,
+  #repo-file-commit-box,
+  #rev-list,
+  .timeline-item.commits-list .singular-commit {
+    .sha.label {
+      .detail.icon,
+      &.isSigned.isVerified .detail.icon {
+        border: 0;
+        background: unset;
+      }
+    }
+  }
+}

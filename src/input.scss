@@ -1,0 +1,28 @@
+// Made by Luting ^-^
+input,
+textarea,
+.ui.input input,
+.ui.form input:not([type]),
+.ui.form select,
+.ui.form textarea,
+.ui.form input[type='date'],
+.ui.form input[type='datetime-local'],
+.ui.form input[type='email'],
+.ui.form input[type='file'],
+.ui.form input[type='number'],
+.ui.form input[type='password'],
+.ui.form input[type='search'],
+.ui.form input[type='tel'],
+.ui.form input[type='text'],
+.ui.form input[type='time'],
+.ui.form input[type='url'],
+.ui.selection.dropdown {
+  &:focus {
+    border-color: #1f6feb;
+  }
+  &:focus-visible {
+    border-color: #1f6feb;
+    outline: none;
+    box-shadow: inset 0 0 0 1px #1f6feb;
+  }
+}

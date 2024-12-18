@@ -1,0 +1,133 @@
+// Made by Luting ^-^
+.ui.primary.button {
+  background-color: #238636;
+  &:hover {
+    background-color: #29903b;
+  }
+}
+
+.ui.basic.button {
+  color: #f0f6fc;
+}
+
+.ui.basic.button:hover,
+.ui.labeled.button > .label:hover {
+  color: #f0f6fc;
+  background: #262c36;
+  border-color: var(--color-light-border);
+}
+
+.ui.red.button,
+.ui.basic.red.buttons .button,
+.ui.basic.red.button {
+  color: #fa5e55;
+  background-color: var(--color-button);
+  border-color: var(--color-light-border);
+  &:hover {
+    color: #fff;
+    background-color: #b62324;
+    border-color: #ffffff1a;
+  }
+}
+
+.ui.button.branch-dropdown-button {
+  padding: 6px 12px;
+  min-height: 28px;
+}
+
+.ui.menu button.item:hover {
+  color: var(--color-text);
+  background: var(--color-hover);
+  border-radius: 0;
+}
+
+// 设置界面
+.user-main-content,
+.repo-setting-content,
+.user-setting-content,
+.org-setting-content {
+  .ui.primary.button {
+    color: #f0f6fc;
+    background-color: var(--color-button);
+    border-color: var(--color-light-border);
+    &:hover {
+      background-color: #262c36;
+    }
+  }
+}
+
+%button-tiny-style {
+  color: #39d353;
+  background-color: var(--color-button);
+  border-color: var(--color-light-border);
+  &:hover {
+    color: #fff;
+    background-color: #29903b;
+    border-color: #ffffff1a;
+  }
+}
+
+.user-main-content,
+.repo-setting-content,
+.user-setting-content,
+.org-setting-content {
+  .ui.primary.button.tiny {
+    @extend %button-tiny-style;
+  }
+}
+
+.admin-setting-content .ui.primary.button {
+  @extend %button-tiny-style;
+}
+
+.user-main-content,
+.repo-setting-content,
+.user-setting-content,
+.org-setting-content,
+.admin-setting-content {
+  .ui.right {
+    .ui.primary.button.tiny {
+      color: #fff;
+      background-color: #238636;
+      &:hover {
+        background-color: #29903b;
+        border-color: var(--color-light-border);
+      }
+    }
+  }
+}
+
+// 工单侧边栏
+.ui.fluid.ui.button,
+.ui.button.branch-dropdown-button,
+.ui.ui.icon.button,
+.ui.two.wide.button {
+  background-color: var(--color-button);
+  &:hover {
+    color: #fff;
+    background-color: #262c36;
+  }
+}
+
+/* 关闭工单按钮 */
+.ui.red.basic.button#status-button {
+  color: #ab7df8;
+  border-color: var(--color-light-border);
+  background-color: var(--color-button);
+  &:hover {
+    color: #fff;
+    border-color: #ffffff1a;
+    background-color: var(--color-purple);
+  }
+}
+
+/* 重新开启按钮 */
+.ui.basic.primary.button#status-button {
+  color: #39d353;
+  background-color: var(--color-button);
+  border-color: var(--color-light-border);
+  &:hover {
+    color: #44ff61;
+    background: var(--color-hover);
+  }
+}

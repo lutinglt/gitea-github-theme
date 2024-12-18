@@ -1,0 +1,24 @@
+{
+  "name": "gitea-github-theme",
+  "version": "1.0.0",
+  "description": "尽量保持与 GitHub Dark 相同样式的 Gitea 主题",
+  "scripts": {
+    "build": "sass src/theme-github.scss:dist/theme-github.css --no-source-map",
+    "build:theme": "npm run build -- --style=compressed",
+    "watch": "npm run build -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lutinglt/gitea-github-theme.git"
+  },
+  "keywords": [],
+  "author": "",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/lutinglt/gitea-github-theme/issues"
+  },
+  "homepage": "https://github.com/lutinglt/gitea-github-theme#readme",
+  "devDependencies": {
+    "sass": "^1.83.0"
+  }
+}

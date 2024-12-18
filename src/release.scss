@@ -1,0 +1,35 @@
+// Made by Luting ^-^
+.page-content.repository.releases {
+  svg.tw-mr-1.svg.octicon-tag {
+    color: #3fb950;
+  }
+
+  .ui.small.primary.button {
+    background-color: var(--color-button);
+    font-size: 14px;
+
+    &:hover {
+      background-color: #262c36;
+    }
+  }
+}
+
+.page-content.repository.tags {
+  .tag-list-row .download a.muted:hover {
+    text-decoration: none;
+  }
+}
+
+.page-content.repository.tags,
+.page-content.repository.releases {
+  .ui.small.menu {
+    .item {
+      font-size: 14px;
+    }
+
+    .active.item {
+      color: #fff;
+      background: #1f6feb !important;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+// Made by Luting ^-^
+.lines-num span:after {
+  color: var(--color-text);
+}
+
+.ui.secondary.pointing.menu {
+  .active.item {
+    color: var(--color-text);
+  }
+
+  .active.item,
+  .dropdown.item,
+  .link.item,
+  a.item {
+    &:hover {
+      color: var(--color-text);
+    }
+  }
+}
+
+.ui.cards > .card,
+.ui.card {
+  > .extra a:not(.ui):hover {
+    color: var(--color-blue);
+  }
+}
