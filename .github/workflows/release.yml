@@ -1,0 +1,29 @@
+name: DockerHub Publish
+
+on:
+  workflow_dispatch:
+    inputs:
+      gitea_version:
+        required: true
+        type: string
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Build theme
+        run: |
+          npm install
+          npm run build:theme
+      - uses: actions/upload-artifact@v4
+        with:
+          name: theme-github
+          path: dist/theme-github.css
+      - name: Create release
+        run: |
+          TAG="v${{ inputs.gitea_version }}-$(date +%Y%m%d-%H%M)"
+          gh release create "$TAG" dist/theme-github.css --notes-file .github/release.md -t $TAG
