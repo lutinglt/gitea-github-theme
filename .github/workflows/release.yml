@@ -30,3 +30,5 @@ jobs:
         run: |
           TAG="v${{ inputs.gitea_version }}-$(date +%Y%m%d-%H%M)"
           gh release create "$TAG" dist/theme-github.css --notes-file .github/release.md -t $TAG
+        env:
+          GH_TOKEN: ${{ github.token }}
