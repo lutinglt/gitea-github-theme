@@ -111,6 +111,32 @@ a.ui.ui.ui {
     border-radius: 25px;
   }
 
+  &.task-status-success {
+    color: var(--color-success-text);
+    border: 1px solid var(--color-success-border);
+    background: var(--color-success-bg);
+  }
+
+  &.task-status-failure {
+    color: var(--color-error-text);
+    border: 1px solid var(--color-error-border);
+    background: var(--color-error-bg);
+  }
+
+  &.task-status-running,
+  &.task-status-skipped {
+    color: var(--color-info-text);
+    border: 1px solid var(--color-info-border);
+    background: var(--color-info-bg);
+  }
+
+  &.task-status-cancelled,
+  &.task-status-blocked {
+    color: var(--color-warning-text);
+    border: 1px solid var(--color-warning-border);
+    background: var(--color-warning-bg);
+  }
+
   > a {
     opacity: 1;
   }
@@ -138,10 +164,20 @@ a.ui.label:not(.basic, .sha):hover {
   #rev-list,
   .timeline-item.commits-list .singular-commit {
     .sha.label {
-      .detail.icon,
-      &.isSigned.isVerified .detail.icon {
+      .detail.icon {
         border: 0;
         background: unset;
+      }
+      &.isSigned {
+        &.isWarning,
+        &.isVerified,
+        &.isVerifiedUntrusted,
+        &.isVerifiedUnmatched {
+          .detail.icon {
+            border: 0;
+            background: unset;
+          }
+        }
       }
     }
   }
