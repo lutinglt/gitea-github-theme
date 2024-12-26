@@ -30,6 +30,6 @@ jobs:
         run: |
           export TZ=Asia/Shanghai
           TAG="v${{ inputs.gitea_version }}-$(date +%Y%m%d-%H%M)"
-          gh release create "$TAG" dist/theme-github.css --notes-file .github/release.md -t $TAG
+          gh release create "$TAG" dist/theme-github.css --notes-file .github/release.md --draft -t $TAG
         env:
           GH_TOKEN: ${{ github.token }}
