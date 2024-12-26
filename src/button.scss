@@ -109,7 +109,7 @@
   }
 }
 
-/* 关闭工单按钮 */
+// 关闭工单按钮
 .ui.red.basic.button#status-button {
   color: #ab7df8;
   border-color: var(--color-light-border);
@@ -121,7 +121,7 @@
   }
 }
 
-/* 重新开启按钮 */
+// 重新开启按钮
 .ui.basic.primary.button#status-button {
   color: #39d353;
   background-color: var(--color-button);

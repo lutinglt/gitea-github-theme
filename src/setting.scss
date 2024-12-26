@@ -1,7 +1,6 @@
 // Made by Luting ^-^
 // 设置左边栏(包含 Actions 的工作流栏)
 
-
 %active-item-after-style {
   background: #1f6feb;
   border-radius: 0.375rem;
@@ -48,10 +47,22 @@
 
   details {
     &:has(.active.item) {
-      background: #161a21;
+      > summary {
+        background: #161a21;
+
+        &:hover {
+          background: var(--color-hover);
+        }
+      }
 
       &[open] {
-        background: unset;
+        > summary {
+          background: unset;
+
+          &:hover {
+            background: var(--color-hover);
+          }
+        }
 
         &:after {
           display: none;
