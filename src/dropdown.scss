@@ -16,7 +16,7 @@
   margin-top: 3.75px !important;
   border-radius: 12px !important;
   overflow: hidden auto;
-  box-shadow: #30363d 0px 0px 0px 0.5px;
+  box-shadow: 0px 0px 0px 0.5px #30363d, 0px 6px 12px -3px #01040966, 0px 6px 18px 0px #01040966;
   animation: 200ms cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal none running overlay-appear;
 }
 
