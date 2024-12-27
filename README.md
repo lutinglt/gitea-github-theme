@@ -4,7 +4,7 @@
 
 字体说明:
 
-- UI 默认字体 [Maple Hand](https://github.com/subframe7536/maple-font/tree/other-resources/cn-resource/maple-hand) & [VictorMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/VictorMono.zip) & [汉仪正圆](https://www.hanyi.com.cn/productdetail.php?id=2913) (优先匹配左侧, 需要系统包含相应字体)
+- UI 默认字体 [Maple Hand](https://github.com/subframe7536/maple-font/tree/other-resources/cn-resource/maple-hand) & [VictorMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/VictorMono.zip)
 - Actions 日志默认字体 VictorMono 优先
 
 > Victor Mono 相比其他等宽字体更为紧凑, 可以减少换行
@@ -23,6 +23,31 @@ THEMES = gitea-dark, github
 ```
 
 详细请查看 Gitea 文档 [Gitea docs](https://docs.gitea.com/next/administration/customizing-gitea#customizing-the-look-of-gitea)
+
+### 集成字体
+
+如果不想手动在系统安装字体, 可以将字体放入 Gitea 中, 在访问时拉取字体文件
+
+>[!CAUTION]
+>
+> 不推荐此行为, 字体文件较大, 且一些字体粗细样式可能会有缺失
+>
+> 页面会在加载完字体后切换字体
+
+下载字体文件, 放入 `gitea/public/assets/fonts` 目录下, 包含以下6个文件:
+
+- `MapleHand-Regular.ttf`
+- `MapleHand-Bold.ttf`
+- `VictorMonoNerdFont-Regular.ttf`
+- `VictorMonoNerdFont-Bold.ttf`
+- `VictorMonoNerdFont-Italic.ttf`
+- `VictorMonoNerdFont-BoldItalic.ttf`
+
+清除浏览器缓存, 强制刷新浏览器查看效果
+
+文件位置如下:
+
+![安装](screenshots/themetree.png)
 
 ## 截图
 
