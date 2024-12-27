@@ -8,6 +8,11 @@
   font-weight: 500
 }
 
+.repository #commits-table .text.right.aligned {
+  font-family: "VictorMono NF", "VictorMono Nerd Font", "Maple Hand";
+  font-weight: bold
+}
+
 :root {
   --is-dark-theme: true;
   --border-radius: 6px;

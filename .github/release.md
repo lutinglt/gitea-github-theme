@@ -1,1 +1,1 @@
-Gitea 集成字体版本独立, 有需要下载 `theme-github-fonts.tar.gz`
+提交页面, 日期列 VictorMono 优先, 尽量保持等宽
