@@ -1,4 +1,25 @@
 // Made by Luting ^-^
+// 下拉菜单动画
+@keyframes overlay-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(-5%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ui.dropdown .menu {
+  margin-top: 3.75px !important;
+  border-radius: 12px !important;
+  overflow: hidden auto;
+  box-shadow: #30363d 0px 0px 0px 0.5px;
+  animation: 200ms cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal none running overlay-appear;
+}
+
 .ui.dropdown .menu,
 .branch-tag-item.active,
 .ui.pointing.dropdown > .menu:not(.hidden):after {
@@ -29,3 +50,18 @@
   }
 }
 
+// 按钮菜单选项(主要为仓库)
+.ui.button.dropdown .menu .item {
+  border-radius: var(--border-radius);
+  margin: 0 6px;
+
+  &:first-of-type {
+    border-radius: var(--border-radius);
+    margin-top: 6px;
+  }
+
+  &:last-of-type {
+    border-radius: var(--border-radius);
+    margin-bottom: 6px;
+  }
+}
