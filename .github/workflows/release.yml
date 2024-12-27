@@ -21,15 +21,18 @@ jobs:
       - name: Build theme
         run: |
           npm install
+          npm run build:theme-fonts
+          mv dist css
           npm run build:theme
+          tar -czf dist/theme-github-fonts.tar.gz css fonts
       - uses: actions/upload-artifact@v4
         with:
           name: theme-github
-          path: dist/theme-github.css
+          path: dist/*
       - name: Create release
         run: |
           export TZ=Asia/Shanghai
           TAG="v${{ inputs.gitea_version }}-$(date +%Y%m%d-%H%M)"
-          gh release create "$TAG" dist/theme-github.css --notes-file .github/release.md --draft -t $TAG
+          gh release create "$TAG" dist/* --notes-file .github/release.md --draft -t $TAG
         env:
           GH_TOKEN: ${{ github.token }}

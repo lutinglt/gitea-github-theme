@@ -34,16 +34,8 @@ THEMES = gitea-dark, github
 >
 > 页面会在加载完字体后切换字体
 
-下载字体文件, 放入 `gitea/public/assets/fonts` 目录下, 包含以下6个文件:
-
-- `MapleHand-Regular.ttf`
-- `MapleHand-Bold.ttf`
-- `VictorMonoNerdFont-Regular.ttf`
-- `VictorMonoNerdFont-Bold.ttf`
-- `VictorMonoNerdFont-Italic.ttf`
-- `VictorMonoNerdFont-BoldItalic.ttf`
-
-清除浏览器缓存, 强制刷新浏览器查看效果
+1. 在发布页下载最新的 `theme-github-fonts.tar.gz` 解压后放入 `gitea/public/assets` 目录下
+2. 清除浏览器缓存, 强制刷新浏览器查看效果
 
 文件位置如下:
 
