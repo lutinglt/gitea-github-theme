@@ -4,8 +4,8 @@
 
 字体说明:
 
-- UI 默认字体 [Maple Hand](https://github.com/subframe7536/maple-font/tree/other-resources/cn-resource/maple-hand) & [VictorMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/VictorMono.zip)
-- Actions 日志默认字体 VictorMono 优先
+- UI 默认字体 [Maple Hand](https://github.com/subframe7536/maple-font/tree/other-resources/cn-resource/maple-hand) & [VictorMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/VictorMono.zip) (优先匹配 `Maple Hand`, 需要系统包含相应字体)
+- Actions 日志默认字体 `VictorMono` 优先
 
 > Victor Mono 相比其他等宽字体更为紧凑, 可以减少换行
 
