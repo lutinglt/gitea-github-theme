@@ -51,17 +51,50 @@
 }
 
 // 按钮菜单选项(主要为仓库)
-.ui.button.dropdown .menu .item {
-  border-radius: var(--border-radius);
-  margin: 0 8px;
-
-  &:first-of-type {
+.ui.dropdown > .visible.menu .scrolling.menu,
+.ui.button.dropdown .menu {
+  .item {
     border-radius: var(--border-radius);
-    margin-top: 8px;
+    margin: 0 8px;
+
+    &:first-of-type {
+      border-radius: var(--border-radius);
+      margin-top: 8px;
+    }
+
+    &:last-of-type {
+      border-radius: var(--border-radius);
+      margin-bottom: 8px;
+    }
+  }
+}
+
+// 分支菜单下划线
+.ui.dropdown > .visible.menu .scrolling.menu .item {
+  &:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    border-width: 1px 0px 0px;
+    border-style: solid;
+    border-image: initial;
+    border-color: #3d444db3;
   }
 
-  &:last-of-type {
-    border-radius: var(--border-radius);
-    margin-bottom: 8px;
+  &:first-of-type:before {
+    border-color: transparent;
+  }
+
+  &:hover {
+    &:before {
+      border-color: transparent;
+    }
+
+    + :before {
+      border-color: transparent;
+    }
   }
 }

@@ -50,12 +50,8 @@
           background: #15191f;
         }
 
-        &.muted.tw-font-normal {
-          color: #9198a1;
-
-          &:hover {
-            color: #9198a1 !important;
-          }
+        &.muted:not(.tw-font-normal) {
+          font-weight: bold;
         }
       }
     }
