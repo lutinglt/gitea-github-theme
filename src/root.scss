@@ -1,16 +1,21 @@
 // Made by Luting ^-^
 :root :lang(zh-CN) {
-  --fonts-override: "Maple Hand", "VictorMono NF", "VictorMono Nerd Font"
+  --fonts-override: 'Maple Hand', 'VictorMono NF', 'VictorMono Nerd Font';
 }
 
 .job-step-logs {
-  font-family: "VictorMono NF", "VictorMono Nerd Font", "Maple Hand" !important;
-  font-weight: 500
+  font-family: 'VictorMono NF', 'VictorMono Nerd Font', 'Maple Hand' !important;
+  font-weight: 500;
 }
 
-.repository #commits-table .text.right.aligned {
-  font-family: "VictorMono NF", "VictorMono Nerd Font", "Maple Hand";
-  font-weight: bold
+.repository {
+  #commits-table,
+  #repo-files-table {
+    .text.right {
+      font-family: 'VictorMono NF', 'VictorMono Nerd Font', 'Maple Hand';
+      font-weight: bold !important;
+    }
+  }
 }
 
 :root {
