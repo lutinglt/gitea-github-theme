@@ -9,12 +9,11 @@
 }
 
 .repository {
-  #commits-table,
-  #repo-files-table {
-    .text.right {
-      font-family: 'VictorMono NF', 'VictorMono Nerd Font', 'Maple Hand';
-      font-weight: bold !important;
-    }
+  #commits-table .text.right,
+  #repo-files-table .repo-file-cell.age,
+  #repo-files-table relative-time {
+    font-family: 'VictorMono NF', 'VictorMono Nerd Font', 'Maple Hand';
+    font-weight: bold !important;
   }
 }
 

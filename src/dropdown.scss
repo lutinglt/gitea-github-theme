@@ -12,6 +12,62 @@
   }
 }
 
+// clone 下拉菜单
+.tippy-box {
+  margin-top: -6px;
+  background: var(--color-box-header);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 0px 0px 0.5px #30363d, 0px 6px 12px -3px rgba(1, 4, 9, 0.4), 0px 6px 18px 0px rgba(1, 4, 9, 0.4);
+  animation: 200ms cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal none running overlay-appear;
+
+  .clone-panel-field {
+    margin-top: 16px;
+  }
+
+  .flex-text-block.clone-panel-field {
+    color: #fff;
+    font-weight: bold;
+    margin-left: 16px;
+  }
+
+  .clone-panel-tab {
+    margin-left: 16px;
+
+    button {
+      padding: 15px 12px;
+    }
+
+    .active {
+      border-color: #f78166;
+    }
+  }
+
+  .flex-items-block {
+    margin: 0;
+
+    .item {
+      display: block;
+      padding: 11px 16px;
+      text-align: left;
+      text-transform: none;
+      line-height: 1em;
+      margin: 0;
+
+      svg {
+        margin-right: 0.5rem;
+      }
+    }
+
+    > .item:hover {
+      color: var(--color-text);
+      text-decoration: none;
+      background: var(--color-hover);
+    }
+  }
+}
+
+// 下拉菜单
 .ui.dropdown .menu {
   margin-top: 3.75px !important;
   border-radius: 12px !important;
@@ -51,6 +107,7 @@
 }
 
 // 按钮菜单选项(主要为仓库)
+.tippy-box .flex-items-block,
 .ui.dropdown > .visible.menu .scrolling.menu,
 .ui.button.dropdown .menu {
   .item {

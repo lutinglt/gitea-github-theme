@@ -6,7 +6,6 @@
 
   .ui.small.primary.button {
     background-color: var(--color-button);
-    font-size: 14px;
 
     &:hover {
       background-color: #262c36;
@@ -23,10 +22,6 @@
 .page-content.repository.tags,
 .page-content.repository.releases {
   .ui.small.menu {
-    .item {
-      font-size: 14px;
-    }
-
     .active.item {
       color: #fff;
       background: #1f6feb !important;

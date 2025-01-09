@@ -2,10 +2,13 @@
 
 尽量保持与 GitHub Dark 相同样式的 Gitea 主题
 
-字体说明:
+主题说明:
 
-- UI 默认字体 [Maple Hand](https://github.com/subframe7536/maple-font/tree/other-resources/cn-resource/maple-hand) & [VictorMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/VictorMono.zip) (优先匹配 `Maple Hand`, 需要系统包含相应字体)
-- Actions 日志默认字体 `VictorMono` 优先
+添加了短暂的过渡动画优化体验(与 Github clone 下拉列表动画一致)
+
+UI 默认字体 [Maple Hand](https://github.com/subframe7536/maple-font/tree/other-resources/cn-resource/maple-hand) & [VictorMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/VictorMono.zip) (优先匹配 `Maple Hand`, 需要系统包含相应字体, 否则使用默认字体)
+
+Actions 日志默认字体 `VictorMono Nerd Font` 优先
 
 > Victor Mono 相比其他等宽字体更为紧凑, 可以减少换行
 
@@ -51,9 +54,13 @@ THEMES = gitea-dark, github
 
 ![仓库提交](screenshots/commit.png)
 
-![Actions](screenshots/action.png)
+![Actions](screenshots/actions.png)
 
-![Actions Step](screenshots/step.png)
+![Action](screenshots/action.png)
+
+![Action Step](screenshots/step.png)
+
+![Dispatch](screenshots/dispatch.png)
 
 ## 构建
 

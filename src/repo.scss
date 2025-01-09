@@ -102,11 +102,22 @@
 
 // 仓库文件&提交列表
 .page-content.repository {
-  tr.commit-list {
+  // clone 按钮居中调整
+  .repo-button-row .repo-button-row-right .ui.primary.button span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      margin-right: 0.5rem;
+    }
+  }
+
+  .repo-file-line {
     height: 3.725rem;
   }
 
-  .commit-list .latest-commit {
+  #repo-files-table .latest-commit {
     .commit-summary {
       color: #9198a1;
     }
@@ -130,9 +141,9 @@
     }
   }
 
-  .tw-flex,
-  .commit-list {
-    .tw-align-middle:not(img) {
+  .commit-list,
+  #repo-files-table {
+    .flex-text-inline:not(img) {
       padding: 6px;
       border-radius: var(--border-radius);
       margin-right: 6px;
@@ -146,15 +157,11 @@
 
 .repository.file.list {
   #repo-files-table {
-    tbody {
+    .repo-file-item {
       .svg.octicon-file-directory-fill,
       .svg.octicon-file-submodule {
         color: #7d8590;
       }
-    }
-
-    tr:hover {
-      background-color: var(--color-box-header);
     }
   }
 }
