@@ -1,4 +1,16 @@
 // Made by Luting ^-^
+@keyframes overlay-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(-5%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 input,
 textarea,
 tr,
@@ -43,4 +55,5 @@ details summary,
 .ui.vertical.menu .header.item,
 .ui.secondary.menu .item {
   transition: 0.2s;
+  animation: 200ms cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal none running overlay-appear;
 }
