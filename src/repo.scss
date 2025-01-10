@@ -188,7 +188,24 @@
   }
 }
 
-// 编程语言仅语言文字颜色
-.language-stats-details .item .tw-font-semibold {
-  color: #f0f6fc;
+// 编程语言
+.language-stats {
+  height: 8px;
+  margin-bottom: 0px;
+}
+
+.language-stats-details .item {
+  font-size: 12px;
+  margin-right: 16px;
+
+  .color-icon {
+    height: 8px;
+    width: 8px;
+    margin-right: 8px;
+  }
+
+  .tw-font-semibold {
+    color: #f0f6fc;
+    margin-right: 2px;
+  }
 }
