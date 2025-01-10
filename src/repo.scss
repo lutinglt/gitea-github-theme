@@ -188,24 +188,90 @@
   }
 }
 
-// 编程语言
-.language-stats {
-  height: 8px;
-  margin-bottom: 0px;
-}
+// 仓库代码页面侧边栏
+.page-content.repository {
+  .repo-home-sidebar-top {
+    a.muted:hover {
+      text-decoration: none;
+    }
 
-.language-stats-details .item {
-  font-size: 12px;
-  margin-right: 16px;
+    .flex-item {
+      .flex-item-body {
+        padding: 8px 0;
 
-  .color-icon {
-    height: 8px;
-    width: 8px;
-    margin-right: 8px;
+        .repo-description {
+          color: #f0f6fc;
+        }
+
+        #repo-topics {
+          margin: 8px 0px !important;
+
+          .repo-topic.ui.label {
+            font-size: 12px;
+            padding: 5px 10px;
+            margin: 0px 1.5px 3.5px 0px;
+          }
+        }
+
+        .flex-text-block {
+          font-size: 14px;
+        }
+      }
+    }
   }
 
-  .tw-font-semibold {
-    color: #f0f6fc;
-    margin-right: 2px;
+  .repo-home-sidebar-bottom {
+    a.muted:hover {
+      text-decoration: none;
+    }
+
+    .flex-item {
+      padding: 16px 0;
+
+      .flex-item {
+        padding: 16px 0 0 0;
+
+        .flex-item-icon {
+          svg.svg.octicon-tag {
+            color: #3fb950;
+          }
+        }
+
+        .flex-item-header .flex-item-title {
+          font-size: 14px;
+        }
+      }
+
+      .flex-item-title .ui.small.label {
+        background: var(--color-label-bg);
+        color: var(--color-label-text);
+      }
+
+      .flex-item-body {
+        font-size: 12px;
+      }
+    }
+
+    // 编程语言
+    .language-stats {
+      height: 8px;
+      margin-bottom: 0px;
+    }
+
+    .language-stats-details .item {
+      font-size: 12px;
+      margin-right: 16px;
+
+      .color-icon {
+        height: 8px;
+        width: 8px;
+        margin-right: 8px;
+      }
+
+      .tw-font-semibold {
+        color: #f0f6fc;
+        margin-right: 2px;
+      }
+    }
   }
 }
