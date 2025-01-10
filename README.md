@@ -58,8 +58,6 @@ THEMES = gitea-dark, github
 
 ![Action](screenshots/action.png)
 
-![Action Step](screenshots/step.png)
-
 ![Dispatch](screenshots/dispatch.png)
 
 ## 构建
