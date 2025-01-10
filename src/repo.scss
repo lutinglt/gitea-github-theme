@@ -1,14 +1,4 @@
 // Made by Luting ^-^
-
-/* 用户仓库列表字体颜色 */
-/* .repo-list-link {
-    color: var(--color-blue) !important;
-} */
-
-/* 头部 */
-/* #navbar {
-    border-bottom: 0;
-} */
 .page-content > :first-child.secondary-nav {
   border-top: 0;
   background-color: var(--color-nav-bg) !important;
@@ -102,6 +92,22 @@
 
 // 仓库文件&提交列表
 .page-content.repository {
+  // 顶部提交, 标签, 分支
+  .repository-summary .segment.sub-menu {
+    &.ui.segment {
+      background-color: var(--color-box-header);
+    }
+
+    .item {
+      color: #9198a1;
+
+      b {
+        color: #f0f6fc;
+        margin: 0 2px;
+      }
+    }
+  }
+
   // clone 按钮居中调整
   .repo-button-row .repo-button-row-right .ui.primary.button span {
     display: flex;
