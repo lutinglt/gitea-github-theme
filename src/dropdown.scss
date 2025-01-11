@@ -139,7 +139,7 @@
   }
 
   .scrolling.menu .item {
-    padding: 6px 0px 6px 16px !important;
+    padding: 6px 16px !important;
 
     // 分支菜单下划线
     &:before {
@@ -172,6 +172,7 @@
     .ui.label {
       margin-top: 1px;
       margin-left: auto;
+      margin-right: 0;
     }
   }
 }
