@@ -215,6 +215,14 @@
 
         .flex-text-block {
           font-size: 14px;
+
+          svg.svg {
+            margin-right: 4px;
+
+            &.octicon-database{
+              margin-right: 6px;
+            }
+          }
         }
       }
     }
@@ -234,6 +242,7 @@
         .flex-item-icon {
           svg.svg.octicon-tag {
             color: #3fb950;
+            margin-top: 3px;
           }
         }
 
