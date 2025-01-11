@@ -1,24 +1,49 @@
 // Made by Luting ^-^
 .page-content.repository.releases {
-  #release-list .release-entry .meta {
-    gap: 2px;
-    padding-top: 24px;
-    padding-right: 40px;
-    text-align: left;
+  #release-list .release-entry {
+    .meta {
+      gap: 2px;
+      padding-top: 24px;
+      padding-right: 40px;
+      text-align: left;
+      overflow: hidden;
+      flex: 0.125;
 
-    a.muted {
-      color: #9198a1;
+      a.muted {
+        color: #9198a1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        word-break: break-all;
+      }
+
+      svg {
+        margin-right: 8px !important;
+      }
+
+      svg.tw-mr-1.svg.octicon-tag {
+        margin-top: 1px;
+      }
+
+      .js-branch-tag-selector {
+        margin-top: 8px;
+      }
     }
 
-    svg {
-      margin-right: 8px !important;
-    }
+    .segment.detail {
+      p.text.grey {
+        margin: 16px 0;
+      }
 
-    svg.tw-mr-1.svg.octicon-tag {
-      margin-top: 1px;
-    }
-    .js-branch-tag-selector {
-      margin-top: 8px;
+      .markup {
+        > *:first-child {
+          margin-top: 16px !important;
+        }
+
+        > *:last-child {
+          margin-bottom: 16px !important;
+        }
+      }
     }
   }
 
