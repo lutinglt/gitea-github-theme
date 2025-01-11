@@ -196,6 +196,9 @@
     }
 
     .flex-item {
+      .flex-item-title {
+        margin-top: 2px;
+      }
       .flex-item-body {
         padding: 8px 0;
 
@@ -204,7 +207,7 @@
         }
 
         #repo-topics {
-          margin: 8px 0px !important;
+          margin: 10px 0px !important;
 
           .repo-topic.ui.label {
             font-size: 12px;
@@ -215,6 +218,13 @@
 
         .flex-text-block {
           font-size: 14px;
+          font-weight: 600;
+          margin-top: 10px;
+
+          &.muted {
+            margin-top: 2px;
+            font-weight: normal;
+          }
 
           svg.svg {
             margin-right: 4px;
