@@ -1,10 +1,22 @@
 // Made by Luting ^-^
-// 禁用工作流标签
+// 工作流禁用标签
 .ui.vertical.menu .item > .ui.red.label {
   color: var(--color-error-text);
   border: 1px solid var(--color-error-border);
   background: var(--color-error-bg);
   margin-top: 0.5px;
+}
+
+// 手动工作流下拉列表
+#runWorkflowDispatchForm {
+  // 分支选择按钮
+  .ui.dropdown.button.branch-selector-dropdown {
+    padding: 8px 24px 8px 8px;
+
+    svg.octicon-git-branch {
+      margin-right: 6px;
+    }
+  }
 }
 
 .job-step-summary {

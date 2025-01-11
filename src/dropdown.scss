@@ -111,6 +111,8 @@
 .ui.dropdown > .visible.menu .scrolling.menu,
 .ui.button.dropdown .menu {
   .item {
+    display: flex;
+    align-items: center;
     border-radius: var(--border-radius);
     margin: 0 8px;
 
@@ -126,32 +128,50 @@
   }
 }
 
-// 分支菜单下划线
-.ui.dropdown > .visible.menu .scrolling.menu .item {
-  &:before {
-    content: ' ';
-    display: block;
-    position: absolute;
-    width: 100%;
-    top: 0px;
-    left: 0px;
-    border-width: 1px 0px 0px;
-    border-style: solid;
-    border-image: initial;
-    border-color: #3d444db3;
+.ui.dropdown.branch-selector-dropdown > .visible.menu {
+  // 仓库分支列表下查看操作按钮
+  > .item {
+    display: flex;
+    align-items: center;
+    border-radius: var(--border-radius);
+    margin: 8px;
+    padding: 6px 8px !important;
   }
 
-  &:first-of-type:before {
-    border-color: transparent;
-  }
+  .scrolling.menu .item {
+    padding: 6px 0px 6px 16px !important;
 
-  &:hover {
+    // 分支菜单下划线
     &:before {
+      content: ' ';
+      display: block;
+      position: absolute;
+      width: 100%;
+      top: 0px;
+      left: 0px;
+      border-width: 1px 0px 0px;
+      border-style: solid;
+      border-image: initial;
+      border-color: #3d444db3;
+    }
+
+    &:first-of-type:before {
       border-color: transparent;
     }
 
-    + :before {
-      border-color: transparent;
+    &:hover {
+      &:before {
+        border-color: transparent;
+      }
+
+      + :before {
+        border-color: transparent;
+      }
+    }
+
+    .ui.label {
+      margin-top: 1px;
+      margin-left: auto;
     }
   }
 }
