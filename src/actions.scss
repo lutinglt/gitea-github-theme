@@ -1,4 +1,12 @@
 // Made by Luting ^-^
+// 禁用工作流标签
+.ui.vertical.menu .item > .ui.red.label {
+  color: var(--color-error-text);
+  border: 1px solid var(--color-error-border);
+  background: var(--color-error-bg);
+  margin-top: 0.5px;
+}
+
 .job-step-summary {
   color: var(--color-console-fg-subtle);
 }
