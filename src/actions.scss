@@ -25,12 +25,12 @@
     border-radius: 0.5rem !important;
     margin-left: 0.5rem;
 
-    &:hover {
-      background-color: var(--color-hover) !important;
-    }
-
     &.selected {
-      background-color: #161a21 !important;
+      background-color: #161a21;
+
+      &:hover {
+        background-color: var(--color-hover);
+      }
 
       &:after {
         overflow: visible;
