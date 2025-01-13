@@ -2,15 +2,12 @@
 
 尽量保持与 GitHub Dark 相同样式的 Gitea 主题
 
-主题说明:
 
-添加了短暂的过渡动画优化体验(与 Github clone 下拉列表动画一致)
+### 主题说明
+
+添加了短暂的过渡动画优化体验(与 GitHub Code 克隆列表动画一致)
 
 UI 默认字体 [Maple Hand](https://github.com/subframe7536/maple-font/tree/other-resources/cn-resource/maple-hand) & [VictorMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/VictorMono.zip) (优先匹配 `Maple Hand`, 需要系统包含相应字体, 否则使用默认字体)
-
-Actions 日志默认字体 `VictorMono Nerd Font` 优先
-
-> Victor Mono 相比其他等宽字体更为紧凑, 可以减少换行
 
 ## 安装
 
