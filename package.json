@@ -6,6 +6,7 @@
     "build": "sass src/theme-github.scss:dist/theme-github.css --no-source-map",
     "build:theme": "npm run build -- --style=compressed",
     "build:theme-fonts": "sass src/theme-github-fonts.scss:dist/theme-github.css --no-source-map --style=compressed",
+    "build:theme-my": "sass src/theme-github-my.scss:dist/theme-github.css --no-source-map --style=compressed",
     "watch": "npm run build -- --watch"
   },
   "repository": {

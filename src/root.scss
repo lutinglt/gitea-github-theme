@@ -145,8 +145,8 @@
   --color-console-fg-subtle: #9198a1;
   --color-console-bg: #010409;
   --color-console-border: #2b3139;
-  --color-console-active-bg: var(--color-active);
-  --color-console-hover-bg: var(--color-hover);
+  --color-console-active-bg: #2a313c;
+  --color-console-hover-bg: #15191f;
   --color-console-menu-bg: var(--color-body);
   --color-console-menu-border: var(--color-light-border);
   --color-grey: #505665;
@@ -211,8 +211,8 @@
   --color-light: #00000028;
   --color-light-mimic-enabled: rgba(0, 0, 0, calc(40 / 255 * 222 / 255 / var(--opacity-disabled)));
   --color-light-border: #3d444d;
-  --color-hover: #252c34;
-  --color-active: #2a313c;
+  --color-hover: #1e242a;
+  --color-active: #161a21;
   --color-menu: #0d1117;
   --color-card: #0d1117;
   --color-markup-table-row: #ffffff06;
