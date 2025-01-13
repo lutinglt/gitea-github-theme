@@ -93,8 +93,8 @@
     .job-log-line {
       color: #f0f6fc;
 
-      &:hover {
-        color: #fff;
+      .log-msg:hover * {
+        color: #f0f6fc !important;
       }
     }
   }
