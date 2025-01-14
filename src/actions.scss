@@ -38,11 +38,11 @@
 }
 
 .action-view-left.action-view-left {
-  width: 15.25%;
+  width: 16.5%;
 }
 
 .action-view-right.action-view-right {
-  width: 84.75%
+  width: 83.5%;
 }
 
 @media (max-width: 767.98px) {
@@ -105,7 +105,7 @@
 
 .action-view-right {
   margin-top: 16px;
-  min-height: calc(100vh - 275px);
+  min-height: calc(100vh - 245px);
 
   .job-info-header {
     padding: 16px 12px 16px 24px;
