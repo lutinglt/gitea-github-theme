@@ -18,37 +18,86 @@
     }
   }
 }
+
 .ui.container.action-view-container {
   width: auto;
+  max-width: 100%;
+  padding: 0 24px 0 16px;
+
+  .action-view-header {
+    margin-top: 20px;
+
+    .action-info-summary {
+      margin-left: 14px;
+    }
+
+    .action-commit-summary {
+      margin-left: 28+14px;
+    }
+  }
 }
 
 .action-view-left.action-view-left {
+  width: 15.25%;
+}
+
+.action-view-right.action-view-right {
+  width: 84.75%
+}
+
+@media (max-width: 767.98px) {
+  .action-view-left.action-view-left,
+  .action-view-right.action-view-right {
+    width: 100%;
+  }
+}
+
+.action-view-left {
   margin-top: 16px;
-  margin-right: 24px;
+  margin-right: 28px;
+  border-top: 1px solid #2f353d;
 
-  .job-brief-item {
-    border-radius: 0.5rem !important;
-    padding: 8px;
+  &:before {
+    content: 'Jobs';
+    color: #9198a1;
+    font-size: 12px;
+    font-weight: 600;
     position: relative;
-    margin-left: 0.5rem;
+    display: inline-block;
+    margin-top: 22px;
+    top: -8px;
+    left: 15px;
+  }
 
-    &.selected {
-      background-color: #161a21;
+  .job-group-section {
+    padding-right: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #2f353d;
 
-      &:hover {
-        background-color: var(--color-hover);
-      }
+    .job-brief-item {
+      border-radius: 0.5rem !important;
+      padding: 8px;
+      position: relative;
+      margin-left: 0.5rem;
 
-      &:after {
-        overflow: visible;
-        background: #1f6feb;
-        border-radius: 0.375rem;
-        content: '';
-        height: 24px;
-        left: calc(0.5rem * -1);
-        position: absolute;
-        top: calc(50% - 12px);
-        width: 4px;
+      &.selected {
+        background-color: #161a21;
+
+        &:hover {
+          background-color: var(--color-hover);
+        }
+
+        &:after {
+          overflow: visible;
+          background: #1f6feb;
+          border-radius: 0.375rem;
+          content: '';
+          height: 24px;
+          left: calc(0.5rem * -1);
+          position: absolute;
+          top: calc(50% - 12px);
+          width: 4px;
+        }
       }
     }
   }
