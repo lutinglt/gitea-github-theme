@@ -41,7 +41,7 @@
         }
 
         &.muted:not(.tw-font-normal) {
-          font-weight: bold;
+          font-weight: 600;
         }
       }
     }
@@ -110,13 +110,7 @@
 
   // clone 按钮居中调整
   .repo-button-row .repo-button-row-right .ui.primary.button span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    svg {
-      margin-right: 0.5rem;
-    }
+    margin: 0px 3px;
   }
 
   .repo-file-line {

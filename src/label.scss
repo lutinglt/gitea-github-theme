@@ -9,14 +9,12 @@ a.ui.basic.label:hover {
   border-color: var(--color-light-border);
 }
 
-.ui.basic.label.not-mobile,
-.ui.basic.label.role-label,
-.page-content.dashboard.feeds .ui.basic.label,
-.page-content.explore .ui.basic.label,
-.page-content.organization .ui.basic.label,
-.admin-setting-content .ui.basic.label {
-  border-radius: 25px;
-  background-color: unset;
+span,
+.secondary-nav .org-visibility div {
+  &.ui.basic.label {
+    border-radius: 25px;
+    background-color: unset;
+  }
 }
 
 .badge.tw-bg-green,

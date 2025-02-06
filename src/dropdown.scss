@@ -14,7 +14,7 @@
 
 // clone 下拉菜单
 .tippy-box {
-  margin-top: -6px;
+  margin-top: -3px;
   background: var(--color-box-header);
   border-radius: 12px;
   overflow: hidden;
@@ -36,10 +36,11 @@
 
     button {
       padding: 15px 12px;
+      transition: none;
     }
 
-    .active {
-      border-color: #f78166;
+    .item.active {
+      border-bottom: 2px solid #f78166;
     }
   }
 
