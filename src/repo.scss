@@ -108,7 +108,7 @@
     }
   }
 
-  // clone 按钮居中调整
+  // clone 按钮调整
   .repo-button-row .repo-button-row-right .ui.primary.button span {
     margin: 0px 3px;
   }
@@ -180,6 +180,11 @@
   .text.right.aligned {
     color: #919894;
   }
+}
+
+// 仓库代码布局调整, 侧边栏宽度调整
+.repo-grid-filelist-sidebar {
+  grid-template-columns: auto 296px;
 }
 
 // 仓库代码页面侧边栏

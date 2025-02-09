@@ -45,7 +45,7 @@
       }
 
       &.active:after {
-        content: "";
+        content: '';
         display: block;
         position: absolute;
         bottom: -8px;
@@ -145,6 +145,16 @@
       margin-bottom: 8px;
     }
   }
+}
+
+// 下拉菜单分隔线
+.ui.dropdown .menu > .divider {
+  border: 0;
+  height: 1px;
+  background-color: #3d444db3;
+  margin-top: calc(7px);
+  margin-bottom: 8px;
+  list-style: none;
 }
 
 .ui.dropdown.branch-selector-dropdown > .visible.menu {
