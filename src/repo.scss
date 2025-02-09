@@ -182,9 +182,36 @@
   }
 }
 
+// 手机下隐藏提交信息
+@media (max-width: 767.98px) {
+  #repo-files-table {
+    grid-template-columns: 1fr auto;
+
+    .repo-file-line {
+      grid-column: 1 / span 2;
+    }
+
+    .repo-file-cell {
+      &.name {
+        max-width: none;
+      }
+
+      &.message {
+        display: none;
+      }
+    }
+  }
+}
+
 // 仓库代码布局调整, 侧边栏宽度调整
 .repo-grid-filelist-sidebar {
   grid-template-columns: auto 296px;
+}
+
+@media (max-width: 767.98px) {
+  .repo-grid-filelist-sidebar {
+    grid-template-columns: 100%;
+  }
 }
 
 // 仓库代码页面侧边栏
@@ -198,6 +225,7 @@
       .flex-item-title {
         margin-top: 2px;
       }
+
       .flex-item-body {
         padding: 8px 0;
 
