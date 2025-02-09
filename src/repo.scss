@@ -76,7 +76,7 @@
     color: var(--color-text);
 
     svg {
-      color: #9198A1;
+      color: #9198a1;
       margin-right: 8px;
     }
   }
@@ -184,6 +184,10 @@
       .svg.octicon-file-directory-fill,
       .svg.octicon-file-submodule {
         color: #7d8590;
+      }
+      // 整行背景颜色效果
+      &:hover .repo-file-cell {
+        background-color: var(--color-box-header) !important;
       }
     }
   }
