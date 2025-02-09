@@ -69,6 +69,18 @@
     }
   }
 
+  .active.item,
+  .dropdown.item,
+  .link.item,
+  a.item {
+    color: var(--color-text);
+
+    svg {
+      color: #9198A1;
+      margin-right: 8px;
+    }
+  }
+
   .active.item {
     border-color: #ffffff00;
 
