@@ -158,6 +158,13 @@
 .repository.file.list {
   #repo-files-table {
     .repo-file-item {
+      .repo-file-cell.name {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding-left: 1rem;
+      }
+
       .svg.octicon-file-directory-fill,
       .svg.octicon-file-submodule {
         color: #7d8590;
