@@ -21,10 +21,7 @@ jobs:
       - name: Build theme
         run: |
           npm install
-          npm run build:theme-fonts
-          mv dist css
-          npm run build:theme
-          tar -czf dist/theme-github-fonts.tar.gz css fonts
+          npm run build
       - uses: actions/upload-artifact@v4
         with:
           name: theme-github

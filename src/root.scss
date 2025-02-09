@@ -1,21 +1,4 @@
 // Made by Luting ^-^
-:root :lang(zh-CN) {
-  --fonts-override: 'Maple Hand', 'VictorMono NF', 'VictorMono Nerd Font';
-}
-
-.job-step-logs {
-  font-family: 'ui-monospace', 'SFMono-Regular', 'SF Mono', 'Menlo', 'Consolas', 'Liberation Mono', 'monospace', 'Maple Hand' !important;
-}
-
-.repository {
-  #commits-table .text.right,
-  #repo-files-table .repo-file-cell.age,
-  #repo-files-table relative-time {
-    font-family: 'VictorMono NF', 'VictorMono Nerd Font', 'Maple Hand';
-    font-weight: bold !important;
-  }
-}
-
 :root {
   --is-dark-theme: true;
   --border-radius: 6px;

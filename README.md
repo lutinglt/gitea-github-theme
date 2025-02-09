@@ -7,8 +7,6 @@
 
 添加了短暂的过渡动画优化体验(与 GitHub Code 克隆列表动画一致)
 
-UI 默认字体 [Maple Hand](https://github.com/subframe7536/maple-font/tree/other-resources/cn-resource/maple-hand) & [VictorMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/VictorMono.zip) (优先匹配 `Maple Hand`, 需要系统包含相应字体, 否则使用默认字体)
-
 ## 安装
 
 1. 在发布页下载最新的 `theme-github.css` 放入 `gitea/public/assets/css` 目录下
@@ -23,23 +21,6 @@ THEMES = gitea-dark, github
 ```
 
 详细请查看 Gitea 文档 [Gitea docs](https://docs.gitea.com/next/administration/customizing-gitea#customizing-the-look-of-gitea)
-
-### 集成字体
-
-如果不想手动在系统安装字体, 可以将字体放入 Gitea 中, 在访问时拉取字体文件
-
->[!CAUTION]
->
-> 不推荐此行为, 字体文件较大, 且一些字体粗细样式可能会有缺失
->
-> 页面会在加载完字体后切换字体
-
-1. 在发布页下载最新的 `theme-github-fonts.tar.gz` 解压后放入 `gitea/public/assets` 目录下
-2. 清除浏览器缓存, 强制刷新浏览器查看效果
-
-文件位置如下:
-
-![安装](screenshots/themetree.png)
 
 ## 截图
 
