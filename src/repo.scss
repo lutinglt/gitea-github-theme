@@ -15,6 +15,15 @@
 
 // 仓库页面头部名称
 .page-content.repository .repo-header {
+  .ui.compact.button {
+    padding: 3px 12px;
+
+    svg {
+      color: #9198a1;
+      margin-right: 6px;
+    }
+  }
+
   img.ui.avatar {
     height: 32px;
     width: 32px;
