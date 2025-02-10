@@ -17,8 +17,15 @@ textarea,
 .ui.form input[type='time'],
 .ui.form input[type='url'],
 .ui.selection.dropdown {
+  background: unset;
+
+  &:hover {
+    background: unset;
+  }
+
   &:focus,
   &:focus-visible {
+    background: unset !important;
     border-radius: var(--border-radius);
     border-color: #1f6feb;
     outline: none;

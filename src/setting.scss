@@ -118,4 +118,46 @@
   .ui.attached.segment.error {
     border: 1px solid var(--color-error-border) !important;
   }
+
+  input,
+  textarea,
+  .ui.input input,
+  .ui.form input:not([type]),
+  .ui.form select,
+  .ui.form textarea,
+  .ui.form input[type='date'],
+  .ui.form input[type='datetime-local'],
+  .ui.form input[type='email'],
+  .ui.form input[type='file'],
+  .ui.form input[type='number'],
+  .ui.form input[type='password'],
+  .ui.form input[type='search'],
+  .ui.form input[type='tel'],
+  .ui.form input[type='text'],
+  .ui.form input[type='time'],
+  .ui.form input[type='url'],
+  .ui.selection.dropdown {
+    background: var(--color-box-header);
+  }
+
+  .ui.form input:not([type]),
+  .ui.form select,
+  .ui.form textarea,
+  .ui.form input[type='date'],
+  .ui.form input[type='datetime-local'],
+  .ui.form input[type='email'],
+  .ui.form input[type='file'],
+  .ui.form input[type='number'],
+  .ui.form input[type='password'],
+  .ui.form input[type='search'],
+  .ui.form input[type='tel'],
+  .ui.form input[type='text'],
+  .ui.form input[type='time'],
+  .ui.form input[type='url'] {
+    padding: 7px 12px;
+  }
+
+  .ui.selection.dropdown {
+    padding: 7px 24px 7px 12px;
+  }
 }
