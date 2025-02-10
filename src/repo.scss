@@ -129,34 +129,7 @@
     margin: 0px 3px;
   }
 
-  .repo-file-line {
-    height: 3.725rem;
-  }
-
-  #repo-files-table .latest-commit {
-    .commit-summary {
-      color: #9198a1;
-    }
-
-    img.tw-align-middle {
-      margin-top: -1px;
-      margin-left: 1px;
-      margin-right: 8px !important;
-    }
-
-    .author-wrapper {
-      margin-right: 6px;
-
-      &:hover {
-        color: var(--color-text);
-      }
-    }
-
-    .ui.sha.label {
-      display: none;
-    }
-  }
-
+  // 提交的Action状态
   .commit-list,
   #repo-files-table {
     .flex-text-inline:not(img) {
@@ -171,20 +144,58 @@
   }
 }
 
+// 仓库文件列表
 .repository.file.list {
   #repo-files-table {
+    // 头部最后一次提交
+    .repo-file-line {
+      height: 3.725rem;
+      padding-right: 16px;
+
+      .latest-commit {
+        .commit-summary {
+          color: #9198a1;
+        }
+
+        img.tw-align-middle {
+          margin-top: -1px;
+          margin-left: 1px;
+          margin-right: 8px !important;
+        }
+
+        .author-wrapper {
+          margin-right: 6px;
+
+          &:hover {
+            color: var(--color-text);
+          }
+        }
+
+        .ui.sha.label {
+          display: none;
+        }
+      }
+    }
+    // 文件列表
     .repo-file-item {
-      .repo-file-cell.name {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding-left: 1rem;
+      .repo-file-cell {
+        &.name {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding-left: 16px;
+        }
+
+        &.age {
+          padding-right: 16px;
+        }
       }
 
       .svg.octicon-file-directory-fill,
       .svg.octicon-file-submodule {
         color: #7d8590;
       }
+
       // 整行背景颜色效果
       &:hover .repo-file-cell {
         background-color: var(--color-box-header) !important;
