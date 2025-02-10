@@ -13,6 +13,10 @@
   z-index: 0;
 }
 
+.secondary-nav > .divider {
+  border-top-width: 1.5px;
+}
+
 // 仓库页面头部名称
 .page-content.repository .repo-header {
   .ui.compact.button {
