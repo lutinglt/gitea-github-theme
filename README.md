@@ -46,7 +46,7 @@ THEMES = gitea-dark, github
 git clone https://github.com/lutinglt/gitea-github-theme.git
 cd gitea-github-theme
 npm install
-npm run build:theme
+npm run build
 ```
 
 查看用于 Gitea 的主题文件: `./dist/theme-github.css`
