@@ -1,5 +1,9 @@
 // Made by Luting ^-^
 .page-content.repository.releases {
+  h2 .item {
+    font-weight: 500;
+  }
+
   #release-list .release-entry {
     .meta {
       gap: 2px;
@@ -33,6 +37,10 @@
     .segment.detail {
       p.text.grey {
         margin: 16px 0;
+
+        .time {
+          color: #f0f6fc;
+        }
       }
 
       .markup {
