@@ -162,7 +162,6 @@
   #repo-files-table {
     // 头部最后一次提交
     .repo-file-line {
-      height: 3.725rem;
       padding-right: 16px;
 
       &.parent-link {
@@ -173,35 +172,40 @@
           margin-right: 2px;
         }
 
-        &:hover{
+        &:hover {
           background-color: var(--color-box-header);
         }
       }
 
-      .latest-commit {
-        .commit-summary {
-          color: #9198a1;
-        }
+      &.repo-file-last-commit {
+        height: 3.725rem;
 
-        img.tw-align-middle {
-          margin-top: -1px;
-          margin-left: 1px;
-          margin-right: 8px !important;
-        }
-
-        .author-wrapper {
-          margin-right: 6px;
-
-          &:hover {
-            color: var(--color-text);
+        .latest-commit {
+          .commit-summary {
+            color: #9198a1;
           }
-        }
 
-        .ui.sha.label {
-          display: none;
+          img.tw-align-middle {
+            margin-top: -1px;
+            margin-left: 1px;
+            margin-right: 8px !important;
+          }
+
+          .author-wrapper {
+            margin-right: 6px;
+
+            &:hover {
+              color: var(--color-text);
+            }
+          }
+
+          .ui.sha.label {
+            display: none;
+          }
         }
       }
     }
+
     // 文件列表
     .repo-file-item {
       .repo-file-cell {
