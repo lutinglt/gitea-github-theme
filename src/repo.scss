@@ -165,6 +165,15 @@
       height: 3.725rem;
       padding-right: 16px;
 
+      &.parent-link {
+        gap: 0.5rem;
+        padding-left: 16px;
+
+        svg {
+          margin-right: 2px;
+        }
+      }
+
       .latest-commit {
         .commit-summary {
           color: #9198a1;
