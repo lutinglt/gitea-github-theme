@@ -1,4 +1,99 @@
 // Made by Luting ^-^
+
+.page-content.repository.actions .ui.grid {
+  .four.wide {
+    border-right: 1px solid var(--color-light-border);
+    min-height: calc(-104px + 100vh);
+
+    &:before {
+      content: 'Actions';
+      display: block;
+      font-size: 20px;
+      font-weight: 600;
+      margin-top: 6px;
+      margin-bottom: 24px;
+    }
+
+    .item {
+      font-weight: 400;
+    }
+  }
+
+  .twelve.wide {
+    &:before {
+      content: 'Workflow Runs';
+      display: block;
+      font-size: 20px;
+      margin-top: 6px;
+      margin-bottom: 24px;
+      margin-left: 2px;
+    }
+
+    .ui.secondary.menu {
+      background-color: var(--color-box-header);
+      border: 1px solid var(--color-light-border);
+      border-bottom: 0;
+      border-top-left-radius: var(--border-radius);
+      border-top-right-radius: var(--border-radius);
+      padding: 16px;
+      margin-bottom: 0;
+
+      .item {
+        padding: 6px 12px;
+      }
+    }
+
+    .ui.info.message {
+      border-radius: 0;
+      border-left-color: var(--color-light-border);
+      border-right-color: var(--color-light-border);
+      margin: 0;
+
+      ~ .run-list {
+        border-top: 0;
+      }
+    }
+
+    .run-list {
+      border: 1px solid var(--color-light-border);
+      border-bottom-left-radius: var(--border-radius);
+      border-bottom-right-radius: var(--border-radius);
+
+      .flex-item {
+        padding: 16px;
+
+        .flex-item-leading {
+          align-self: flex-start;
+          margin-top: 2px;
+        }
+
+        .flex-item-main {
+          gap: 0.5rem;
+        }
+
+        .flex-item-trailing {
+          justify-content: space-between;
+
+          > .ui.label {
+            border-radius: var(--border-radius);
+            margin-left: 32px;
+          }
+
+          .run-list-item-right {
+            width: 80px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .page-content.repository.actions .ui.grid .four.wide {
+    min-height: auto;
+  }
+}
+
 // 工作流禁用标签
 .ui.vertical.menu .item > .ui.red.label {
   color: var(--color-error-text);
@@ -19,6 +114,7 @@
   }
 }
 
+// 日志
 .ui.container.action-view-container {
   width: auto;
   max-width: 100%;
