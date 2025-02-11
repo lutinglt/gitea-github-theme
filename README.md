@@ -7,6 +7,8 @@
 
 添加了短暂的过渡动画优化体验(与 GitHub Code 克隆列表动画一致)
 
+推荐搭配文件图标浏览器插件一起使用更佳 [github-file-explorer-icons](https://github.com/catppuccin/github-file-explorer-icons)
+
 ## 安装
 
 1. 在发布页下载最新的 `theme-github.css` 放入 `gitea/public/assets/css` 目录下
