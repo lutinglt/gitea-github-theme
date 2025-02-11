@@ -31,7 +31,6 @@
   .item,
   .item > summary {
     font-size: 1.1rem;
-    font-weight: 500;
     background: unset;
     padding: 6px 8px;
     color: var(--color-white) !important;
@@ -41,6 +40,11 @@
     background: unset;
   }
 
+  .active.item,
+  .active.item > summary {
+    font-weight: 600;
+  }
+
   .active.item:after {
     @extend %active-item-after-style;
   }
@@ -48,11 +52,16 @@
   details {
     &:has(.active.item) {
       > summary {
+        font-weight: 600;
         background: #161a21;
 
         &:hover {
           background: var(--color-hover);
         }
+      }
+
+      .active.item {
+        font-weight: 400;
       }
 
       &[open] {

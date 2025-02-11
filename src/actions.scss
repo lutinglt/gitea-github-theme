@@ -13,10 +13,6 @@
       margin-top: 6px;
       margin-bottom: 24px;
     }
-
-    .item {
-      font-weight: 400;
-    }
   }
 
   .twelve.wide {
@@ -80,7 +76,9 @@
           }
 
           .run-list-item-right {
-            width: 80px;
+            width: auto;
+            min-width: 80px;
+            max-width: 130px;
           }
         }
       }
