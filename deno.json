@@ -1,0 +1,11 @@
+{
+  "nodeModulesDir": "auto",
+  "tasks": {
+    "export": "sass src/theme-github.scss:dist/theme-github.css --no-source-map",
+    "build": "deno run export --style=compressed",
+    "watch": "deno run export --watch"
+  },
+  "imports": {
+    "sass": "npm:sass@^1.84.0"
+  }
+}

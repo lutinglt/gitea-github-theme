@@ -42,13 +42,13 @@ THEMES = gitea-dark, github
 
 ## 构建
 
-需要 nodejs 和 npm
+需要 deno
 
 ```bash
 git clone https://github.com/lutinglt/gitea-github-theme.git
 cd gitea-github-theme
-npm install
-npm run build
+deno install --allow-scripts
+deno run build
 ```
 
 查看用于 Gitea 的主题文件: `./dist/theme-github.css`
@@ -56,7 +56,7 @@ npm run build
 在开发过程中实时构建主题文件
 
 ```bash
-npm run watch
+deno run watch
 ```
 
 ## 贡献
