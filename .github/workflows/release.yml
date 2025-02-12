@@ -2,10 +2,6 @@ name: release
 
 on:
   workflow_dispatch:
-    inputs:
-      gitea_version:
-        required: true
-        type: string
 
 permissions:
   contents: write
@@ -18,18 +14,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Build theme
-        run: |
-          npm install
-          npm run build
-      - uses: actions/upload-artifact@v4
-        with:
-          name: theme-github
-          path: dist/*
+      - name: NPM install
+        run: npm install
       - name: Create release
         run: |
           export TZ=Asia/Shanghai
-          TAG="v${{ inputs.gitea_version }}-$(date +%Y%m%d-%H%M)"
+          TAG="v$(node .github/release.js)-$(date +%y%m%d%H%M)"
           gh release create "$TAG" dist/* --notes-file .github/release.md --draft -t $TAG
         env:
           GH_TOKEN: ${{ github.token }}

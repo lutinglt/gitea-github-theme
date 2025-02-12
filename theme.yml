@@ -1,0 +1,7 @@
+gitea:
+  version: 1.23.3
+  theme: github
+  description: GitHub dark theme for Gitea
+  assets:
+    - name: dark
+      css: dist/theme-github.css

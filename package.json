@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/lutinglt/gitea-github-theme#readme",
   "devDependencies": {
+    "js-yaml": "^4.1.0",
     "sass": "^1.83.0"
   }
 }
