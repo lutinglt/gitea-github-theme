@@ -17,7 +17,7 @@ jobs:
       - name: Create release
         run: |
           export TZ=Asia/Shanghai
-          TAG="v$(deno -A --allow-scripts version.ts).$(date +%y%m%d%H%M)"
+          TAG="v$(./build.ts).$(date +%y%m%d%H%M)"
           gh release create "$TAG" dist/* --notes-file .github/release.md --draft -t $TAG
         env:
           GH_TOKEN: ${{ github.token }}

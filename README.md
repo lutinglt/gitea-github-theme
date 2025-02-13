@@ -17,6 +17,7 @@
 4. 在设置中查看主题
 
 `gitea/conf/app.ini` 例:
+
 ```ini
 [ui]
 THEMES = gitea-dark, github
@@ -47,17 +48,10 @@ THEMES = gitea-dark, github
 ```bash
 git clone https://github.com/lutinglt/gitea-github-theme.git
 cd gitea-github-theme
-deno install --allow-scripts
 deno run build
 ```
 
 查看用于 Gitea 的主题文件: `./dist/theme-github.css`
-
-在开发过程中实时构建主题文件
-
-```bash
-deno run watch
-```
 
 ## 贡献
 
