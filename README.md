@@ -44,12 +44,24 @@ THEMES = gitea-dark, github
 
 ## 构建
 
-需要 deno
+### 克隆仓库
 
 ```bash
 git clone https://github.com/lutinglt/gitea-github-theme.git
 cd gitea-github-theme
+```
+
+### 使用 deno (推荐)
+
+```bash
 deno run build
+```
+
+### 使用 nodejs & npm
+
+```bash
+npm install
+npm run build
 ```
 
 查看用于 Gitea 的主题文件: `./dist/theme-github.css`
