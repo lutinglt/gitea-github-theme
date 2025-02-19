@@ -2,12 +2,12 @@
 
 尽量保持与 GitHub Dark 相同样式的 Gitea 主题
 
-
 ### 主题说明
 
 添加了短暂的过渡动画优化体验(与 GitHub Code 克隆列表动画一致)
 
-推荐搭配文件图标浏览器插件一起使用更佳 [github-file-explorer-icons](https://github.com/catppuccin/github-file-explorer-icons)
+推荐搭配文件图标浏览器插件一起使用更佳
+[github-file-explorer-icons](https://github.com/catppuccin/github-file-explorer-icons)
 
 ## 安装
 
@@ -23,7 +23,8 @@
 THEMES = gitea-dark, github
 ```
 
-详细请查看 Gitea 文档 [Gitea docs](https://docs.gitea.com/next/administration/customizing-gitea#customizing-the-look-of-gitea)
+详细请查看 Gitea 文档
+[Gitea docs](https://docs.gitea.com/next/administration/customizing-gitea#customizing-the-look-of-gitea)
 
 ## 截图
 
