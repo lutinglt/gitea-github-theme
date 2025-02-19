@@ -3,20 +3,12 @@
 import * as sass from "npm:sass";
 import * as yaml from "npm:js-yaml";
 
-interface Asset {
-  name: string;
-  css: string;
-}
-
-interface Theme {
-  version: string;
-  theme: string;
-  description: string;
-  assets: Asset[];
-}
-
 interface Gitea {
-  gitea: Theme;
+  version: string;
+}
+
+interface ThemeInfo {
+  gitea: Gitea;
 }
 
 async function buildTheme(themePath: string) {
@@ -29,7 +21,7 @@ async function buildTheme(themePath: string) {
     await Deno.writeTextFile(outputFile, result.css);
 
     const fileContent = await Deno.readTextFile(themePath);
-    const data: Gitea = yaml.load(fileContent);
+    const data: ThemeInfo = yaml.load(fileContent);
     console.log(data.gitea.version);
   } catch (error) {
     let e = error;
