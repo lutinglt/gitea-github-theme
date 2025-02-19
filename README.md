@@ -64,7 +64,7 @@ npm install
 npm run build
 ```
 
-查看用于 Gitea 的主题文件: `./dist/theme-github.css`
+查看用于 Gitea 的主题文件: `dist/theme-github.css`
 
 ## 贡献
 
