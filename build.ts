@@ -11,9 +11,9 @@ interface ThemeInfo {
   gitea: Gitea;
 }
 
-async function buildTheme(themePath: string) {
+async function generateTheme(themePath: string) {
   try {
-    const inputFile = "sass/theme-github.scss";
+    const inputFile = "src/theme-github.scss";
     const outputFile = "dist/theme-github.css";
 
     const result = await sass.compileAsync(inputFile, { sourceMap: false, style: "compressed" });
@@ -33,4 +33,4 @@ async function buildTheme(themePath: string) {
   }
 }
 
-buildTheme("theme.yml");
+generateTheme("theme.yml");
