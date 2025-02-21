@@ -5,6 +5,7 @@ import * as yaml from "npm:js-yaml";
 
 interface Gitea {
   version: string;
+  themes: [string];
 }
 
 interface ThemeInfo {
@@ -13,16 +14,17 @@ interface ThemeInfo {
 
 async function generateTheme(themePath: string) {
   try {
-    const inputFile = "src/theme-github.scss";
-    const outputFile = "dist/theme-github.css";
-
-    const result = await sass.compileAsync(inputFile, { sourceMap: false, style: "compressed" });
-    await Deno.mkdir("dist", { recursive: true });
-    await Deno.writeTextFile(outputFile, result.css);
-
     const fileContent = await Deno.readTextFile(themePath);
     const data: ThemeInfo = yaml.load(fileContent);
     console.log(data.gitea.version);
+
+    await Deno.mkdir("dist", { recursive: true });
+    for (const theme of data.gitea.themes) {
+      const inputFile = `src/themes/theme-github-${theme}.scss`;
+      const outputFile = `dist/theme-github-${theme}.css`;
+      const result = await sass.compileAsync(inputFile, { sourceMap: false, style: "compressed" });
+      await Deno.writeTextFile(outputFile, result.css);
+    }
   } catch (error) {
     let e = error;
     if (error instanceof Error) {

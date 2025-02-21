@@ -6,6 +6,6 @@
     }
   },
   "tasks": {
-    "build": "./build.ts"
+    "build": "deno -A --allow-scripts build.ts"
   }
 }
