@@ -11,7 +11,7 @@ async function generateTheme(themePath) {
 
     fs.mkdirSync("dist", { recursive: true });
     for (const theme of data.gitea.themes) {
-      const inputFile = `src/themes/theme-github-${theme}.scss`;
+      const inputFile = `src/themes/${theme}.scss`;
       const outputFile = `dist/theme-github-${theme}.css`;
       const result = await sass.compileAsync(inputFile, { sourceMap: false, style: "compressed" });
       fs.writeFileSync(outputFile, result.css);

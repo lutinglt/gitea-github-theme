@@ -20,7 +20,7 @@ async function generateTheme(themePath: string) {
 
     await Deno.mkdir("dist", { recursive: true });
     for (const theme of data.gitea.themes) {
-      const inputFile = `src/themes/theme-github-${theme}.scss`;
+      const inputFile = `src/themes/${theme}.scss`;
       const outputFile = `dist/theme-github-${theme}.css`;
       const result = await sass.compileAsync(inputFile, { sourceMap: false, style: "compressed" });
       await Deno.writeTextFile(outputFile, result.css);
