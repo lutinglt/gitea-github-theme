@@ -12,6 +12,10 @@ interface ThemeInfo {
   gitea: Gitea;
 }
 
+async function compile(inputFile: string) {
+  return (await sass.compileAsync(inputFile, { sourceMap: false, style: "compressed" })).css;
+}
+
 async function generateTheme(themePath: string) {
   try {
     const fileContent = await Deno.readTextFile(themePath);
@@ -19,11 +23,12 @@ async function generateTheme(themePath: string) {
     console.log(data.gitea.version);
 
     await Deno.mkdir("dist", { recursive: true });
+    const styles = await compile("src/styles/styles.scss");
     for (const theme of data.gitea.themes) {
       const inputFile = `src/themes/${theme}.scss`;
       const outputFile = `dist/theme-github-${theme}.css`;
-      const result = await sass.compileAsync(inputFile, { sourceMap: false, style: "compressed" });
-      await Deno.writeTextFile(outputFile, result.css);
+      const result = await compile(inputFile);
+      await Deno.writeTextFile(outputFile, `${styles}${result}`);
     }
   } catch (error) {
     let e = error;
