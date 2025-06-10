@@ -2,6 +2,7 @@
 :root {
   --is-dark-theme: true;
   --border-radius: 6px;
+
   --color-primary: var(--color-blue);
   --color-primary-contrast: #fff;
   --color-primary-dark-1: #739cb3;
@@ -29,6 +30,7 @@
   --color-primary-alpha-90: #3683c0e1;
   --color-primary-hover: var(--color-primary-light-1);
   --color-primary-active: var(--color-primary-light-2);
+
   --color-secondary: #3d444d;
   --color-secondary-dark-1: #505665;
   --color-secondary-dark-2: #5b6273;
@@ -56,6 +58,7 @@
   --color-secondary-alpha-70: #2c2f35b3;
   --color-secondary-alpha-80: #2c2f35cc;
   --color-secondary-alpha-90: #2c2f35e1;
+
   --color-red: #da3737;
   --color-orange: #f17a2b;
   --color-yellow: #f3c640;
@@ -71,6 +74,7 @@
   --color-grey: #797c85;
   --color-gold: #d4b74c;
   --color-white: #ffffff;
+
   --color-red-light: #d15a5a;
   --color-orange-light: #f6a066;
   --color-yellow-light: #eaaf03;
@@ -83,6 +87,7 @@
   --color-pink-light: #d74397;
   --color-brown-light: #b08061;
   --color-black-light: #3f4555;
+
   --color-red-dark-1: #c23636;
   --color-orange-dark-1: #f38236;
   --color-yellow-dark-1: #b88a03;
@@ -95,6 +100,7 @@
   --color-pink-dark-1: #be297d;
   --color-brown-dark-1: #94674a;
   --color-black-dark-1: #292d38;
+
   --color-red-dark-2: #ad3030;
   --color-orange-dark-2: #f16e17;
   --color-yellow-dark-2: #a37a02;
@@ -107,6 +113,7 @@
   --color-pink-dark-2: #a9246f;
   --color-brown-dark-2: #835b42;
   --color-black-dark-2: #252832;
+
   --color-ansi-black: var(--color-black);
   --color-ansi-red: var(--color-red);
   --color-ansi-green: var(--color-green);
@@ -123,6 +130,7 @@
   --color-ansi-bright-magenta: var(--color-pink-light);
   --color-ansi-bright-cyan: var(--color-teal-light);
   --color-ansi-bright-white: var(--color-console-fg);
+
   --color-console-fg: #f0f6fc;
   --color-console-fg-subtle: #9198a1;
   --color-console-bg: #010409;
@@ -131,10 +139,12 @@
   --color-console-hover-bg: #15191f;
   --color-console-menu-bg: var(--color-body);
   --color-console-menu-border: var(--color-light-border);
+
   --color-grey: #505665;
   --color-grey-light: #a1a6b7;
   --color-gold: #b1983b;
   --color-white: #fff;
+
   --color-diff-removed-word-bg: #792e2d;
   --color-diff-added-word-bg: #1d572d;
   --color-diff-removed-row-bg: #25171c;
@@ -144,52 +154,67 @@
   --color-diff-moved-row-border: #bcca6f;
   --color-diff-added-row-border: #314a37;
   --color-diff-inactive: #353846;
+
   --color-error-border: #792e2e;
   --color-error-bg: #26181d;
   --color-error-bg-active: #744;
   --color-error-bg-hover: #633;
   --color-error-text: #f85149;
+
   --color-success-border: #1d572d;
   --color-success-bg: #12261e;
   --color-success-text: #39d353;
+
   --color-warning-border: #624711;
   --color-warning-bg: #272115;
   --color-warning-text: #fbbd08;
+
   --color-info-border: #214a81;
   --color-info-bg: #121d2f;
   --color-info-text: #4493f8;
+
   --color-red-badge: #db2828;
   --color-red-badge-bg: #db28281a;
   --color-red-badge-hover-bg: #db28284d;
+
   --color-green-badge: #39d353;
   --color-green-badge-bg: #12261e;
   --color-green-badge-hover-bg: #153d22;
+
   --color-yellow-badge: #fbbd08;
   --color-yellow-badge-bg: #fbbd081a;
   --color-yellow-badge-hover-bg: #fbbd084d;
+
   --color-orange-badge: #f2711c;
   --color-orange-badge-bg: #f2711c1a;
   --color-orange-badge-hover-bg: #f2711c4d;
+
   --color-git: #f05133;
   --color-body: #0d1117;
+
   --color-box-header: #151b23;
   --color-box-body: #0d1117;
   --color-box-body-highlight: #262c36;
+
   --color-text-dark: #dbe0ea;
   --color-text: #dce2e7;
   --color-text-light: #a6aab5;
   --color-text-light-1: rgb(125, 133, 144);
   --color-text-light-2: #8a8e99;
   --color-text-light-3: #707687;
+
   --color-footer: #010409;
   --color-timeline: #4c525e;
+
   --color-input-text: #d5dbe6;
   --color-input-background: #2c2f35;
   --color-input-toggle-background: #454a57;
   --color-input-border: var(--color-light-border);
   --color-input-border-hover: var(--color-light-border);
+
   --color-header-wrapper: #0d1117;
   --color-header-wrapper-transparent: #20243000;
+
   --color-light: #00000028;
   --color-light-mimic-enabled: rgba(0, 0, 0, calc(40 / 255 * 222 / 255 / var(--opacity-disabled)));
   --color-light-border: #3d444d;

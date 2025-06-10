@@ -24,7 +24,6 @@
 
     svg {
       color: #9198a1;
-      margin-right: 6px;
     }
   }
 
@@ -101,7 +100,7 @@
       background: #f78166;
       border-radius: 0.375rem;
       bottom: calc(50% - 1.8rem);
-      content: '';
+      content: "";
       height: 2px;
       position: absolute;
       right: 50%;
@@ -199,7 +198,7 @@
             }
           }
 
-          .ui.sha.label {
+          .ui.label {
             display: none;
           }
         }
@@ -290,12 +289,14 @@
     }
 
     .flex-item {
+      padding: 10px 0 0 0;
+
       .flex-item-title {
         margin-top: 2px;
       }
 
       .flex-item-body {
-        padding: 8px 0;
+        padding: 8px 0 0 0;
 
         .repo-description {
           color: #f0f6fc;

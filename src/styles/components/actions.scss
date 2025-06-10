@@ -97,12 +97,8 @@
 // 手动工作流下拉列表
 #runWorkflowDispatchForm {
   // 分支选择按钮
-  .ui.dropdown.button.branch-selector-dropdown {
-    padding: 8px 24px 8px 8px;
-
-    svg.octicon-git-branch {
-      margin-right: 6px;
-    }
+  .ui.dropdown.button.branch-selector-dropdown .svg.octicon-git-branch {
+    margin-right: 6px;
   }
 }
 
