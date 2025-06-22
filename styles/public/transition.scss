@@ -24,7 +24,7 @@
 .ui.selection.dropdown,
 .ui.checkbox label:before,
 .ui.checkbox input:checked ~ label:before,
-.ui.checkbox input:not([type='radio']):indeterminate ~ label:before,
+.ui.checkbox input:not([type="radio"]):indeterminate ~ label:before,
 .ui.selection.active.dropdown,
 .ui.selection.active.dropdown:hover,
 .ui.selection.active.dropdown .menu,

@@ -22,7 +22,10 @@
   background: var(--color-box-header);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0px 0px 0px 0.5px #30363d, 0px 6px 12px -3px rgba(1, 4, 9, 0.4), 0px 6px 18px 0px rgba(1, 4, 9, 0.4);
+  box-shadow:
+    0px 0px 0px 0.5px #30363d,
+    0px 6px 12px -3px rgba(1, 4, 9, 0.4),
+    0px 6px 18px 0px rgba(1, 4, 9, 0.4);
   animation: 200ms cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal none running overlay-appear;
 
   .clone-panel-field {
@@ -50,7 +53,7 @@
       }
 
       &.active:after {
-        content: '';
+        content: "";
         display: block;
         position: absolute;
         bottom: -8px;
@@ -96,10 +99,13 @@
   margin-top: 3.75px !important;
   border-radius: 12px !important;
   overflow: hidden auto;
-  box-shadow: 0px 0px 0px 0.5px #30363d, 0px 6px 12px -3px #01040966, 0px 6px 18px 0px #01040966;
+  box-shadow:
+    0px 0px 0px 0.5px #30363d,
+    0px 6px 12px -3px #01040966,
+    0px 6px 18px 0px #01040966;
   animation: 200ms cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal none running overlay-appear;
 
-  >.item {
+  > .item {
     padding: 8px 10px !important;
   }
 }
@@ -181,7 +187,7 @@
 
     // 分支菜单下划线
     &:before {
-      content: ' ';
+      content: " ";
       display: block;
       position: absolute;
       width: 100%;

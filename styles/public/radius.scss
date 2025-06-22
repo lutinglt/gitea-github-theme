@@ -1,21 +1,20 @@
-// Made by Luting ^-^
 .ui {
   &.button,
   &.basic.buttons .button,
   &.basic.button,
   &.dropdown .menu,
   &.form input:not([type]),
-  &.form input[type='date'],
-  &.form input[type='datetime-local'],
-  &.form input[type='email'],
-  &.form input[type='number'],
-  &.form input[type='password'],
-  &.form input[type='search'],
-  &.form input[type='tel'],
-  &.form input[type='time'],
-  &.form input[type='text'],
-  &.form input[type='file'],
-  &.form input[type='url'],
+  &.form input[type="date"],
+  &.form input[type="datetime-local"],
+  &.form input[type="email"],
+  &.form input[type="number"],
+  &.form input[type="password"],
+  &.form input[type="search"],
+  &.form input[type="tel"],
+  &.form input[type="time"],
+  &.form input[type="text"],
+  &.form input[type="file"],
+  &.form input[type="url"],
   &.form textarea,
   &.input textarea,
   &.ui.input > input,
@@ -42,7 +41,7 @@
   }
 }
 
-// 左边框圆角
+/* 左边框圆角 */
 .ui {
   &.action.input > .dropdown:first-child,
   &.action.input > .button:first-child,
@@ -53,7 +52,7 @@
   }
 }
 
-// 右边框圆角
+/* 右边框圆角 */
 .ui {
   &.action.input > .dropdown:last-child,
   &.action.input > .button:last-child,
@@ -64,7 +63,7 @@
   }
 }
 
-// 上边框圆角
+/* 上边框圆角 */
 .ui.secondary.pointing.menu {
   .active.item,
   .item:hover {
@@ -78,13 +77,13 @@
   border-top-right-radius: var(--border-radius) !important;
 }
 
-// 按钮边框圆角
+/* 按钮边框圆角 */
 .ui.active.selection.dropdown {
   border-bottom-left-radius: var(--border-radius) !important;
   border-bottom-right-radius: var(--border-radius) !important;
 }
 
-.ui.segment[class*='bottom attached'] {
+.ui.segment[class*="bottom attached"] {
   border-radius: 0 0 var(--border-radius) var(--border-radius);
 }
 

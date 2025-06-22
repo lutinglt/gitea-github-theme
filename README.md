@@ -1,6 +1,6 @@
 # gitea-github-theme
 
-尽量保持与 GitHub Dark 相同样式的 Gitea 主题
+尽量保持与 GitHub 相同样式的 Gitea 主题
 
 ### 主题说明
 
@@ -41,30 +41,6 @@ THEMES = gitea-dark, github
 ![Action](screenshots/action.png)
 
 ![Dispatch](screenshots/dispatch.png)
-
-## 构建
-
-### 克隆仓库
-
-```bash
-git clone https://github.com/lutinglt/gitea-github-theme.git
-cd gitea-github-theme
-```
-
-### 使用 deno (推荐)
-
-```bash
-deno run build
-```
-
-### 使用 nodejs & npm
-
-```bash
-npm install
-npm run build
-```
-
-查看用于 Gitea 的主题文件: `dist/theme-github.css`
 
 ## 贡献
 
