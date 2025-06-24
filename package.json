@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "commit": "npm run lint && npm run format && npm run build"
+    "commit": "npm run lint && npm run format && npm run build",
+    "version": "node scripts/version.cjs"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.27.1",
