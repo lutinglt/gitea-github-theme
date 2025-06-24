@@ -6,7 +6,7 @@ import { createRequire } from "node:module";
 import path from "node:path";
 import * as sass from "sass-embedded";
 import { defineConfig } from "vite";
-import { themeInput, themePlugin } from "./src/vite";
+import { themeInput, themePlugin } from "./src/core/vite";
 
 const require = createRequire(import.meta.url);
 

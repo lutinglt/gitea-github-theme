@@ -1,4 +1,4 @@
-import { color } from "src";
+import type { Primary } from "src/types";
 import { defineTheme, themeVars } from "src";
 
 const dark = {
@@ -33,7 +33,7 @@ const alpha = {
   num90: "#3683c0e1",
 };
 
-const primary: color.Primary = {
+const primary: Primary = {
   self: themeVars.color.blue,
   contrast: "#fff",
   dark,

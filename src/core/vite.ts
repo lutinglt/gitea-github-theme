@@ -3,6 +3,14 @@ import fs from "node:fs";
 import path from "node:path";
 import type { Plugin } from "vite";
 
+/**
+ * 生成主题输入
+ * @param outDir 输出目录与 vite 配置中的 outDir 一致, 用于生成临时目录
+ * @param themeDir 颜色主题目录
+ * @param devTheme 开发模式下的主题, 仅打包该主题
+ * @param mode 模式, 开发模式为 dev `vite build --mode dev`
+ * @returns vite.rollupOptions.input 的配置
+ */
 export function themeInput(
   outDir: string,
   themeDir: string,
@@ -25,7 +33,7 @@ export function themeInput(
       if (mode === "dev" && fileName !== devTheme) continue;
       // 创建颜色主题的 css.ts 文件, vanilla-extract 需要这个文件后缀名并生成 css
       const tmpCssTs = path.join(tmpDir, `${fileName}.css.ts`);
-      const createImport = `import { createTheme } from "src/theme";`;
+      const createImport = `import { createTheme } from "src/core";`;
       const themeImport = `import theme from "themes/${fileName}";`;
       const createFn = `createTheme(theme);`;
       fs.writeFileSync(tmpCssTs, `${createImport}\n${themeImport}\n${createFn}`);
@@ -43,6 +51,10 @@ export function themeInput(
 
 const prefix = "theme-github-";
 
+/**
+ * 生成主题文件
+ * @important vite.rollupOptions.output 配置 `assetFileNames: "[name].[ext]"`
+ */
 export function themePlugin(): Plugin {
   return {
     name: "themePlugin",

@@ -1,4 +1,3 @@
-export * as color from "src/color";
-export { defineTheme, themeVars } from "src/theme";
-
 export { css } from "@linaria/core";
+export { defineTheme } from "./core/theme";
+export { themeVars } from "./types/vars";
