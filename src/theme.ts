@@ -11,12 +11,23 @@ function stringToBoolean(str: string, name: string): boolean {
   }
 }
 
+const otherVars = {
+  border: {
+    radius: null,
+  },
+};
+const otherThemeVars = createGlobalThemeContract(otherVars, varMapper);
 export const themeVars = createGlobalThemeContract(vars, varMapper);
 export type Theme = WithOptionalLayer<MapLeafNodes<typeof themeVars, string>>;
 export const defineTheme = (theme: Theme) => theme;
 
 export function createTheme(theme: Theme): void {
   createGlobalTheme(":root", themeVars, theme);
+  createGlobalTheme(":root", otherThemeVars, {
+    border: {
+      radius: "6px",
+    },
+  });
   globalStyle(":root", {
     accentColor: themeVars.color.blue,
     colorScheme: stringToBoolean(theme.isDarkTheme, "isDarkTheme") ? "dark" : "light",

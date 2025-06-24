@@ -2,7 +2,8 @@ import * as color from "src/vars/color";
 
 export function varMapper(value: string | null, path: string[]) {
   if (value === null) {
-    if (path.at(-1) === "self") return path.slice(0, -1).join("-");
+    path = path.filter((item) => item !== "self");
+    path = path.map((item) => item.replace(/^num/, ""))
     return path.join("-");
   }
   return value;

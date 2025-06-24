@@ -2,9 +2,13 @@ import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
 import react from "@vitejs/plugin-react";
 import linaria from "@wyw-in-js/vite";
 import { Features } from "lightningcss";
-import path from "path";
+import { createRequire } from "node:module";
+import path from "node:path";
+import * as sass from "sass-embedded";
 import { defineConfig } from "vite";
 import { themeInput, themePlugin } from "./src/vite";
+
+const require = createRequire(import.meta.url);
 
 const devTheme = "dark"; // 开发模式仅打包单个颜色主题
 const outDir = "dist"; // 输出目录
@@ -33,6 +37,10 @@ export default defineConfig(({ mode }) => {
         babelOptions: {
           presets: ["@babel/preset-typescript", "@babel/preset-react"],
         },
+        preprocessor: (_selector, cssText) => sass.compileString(cssText).css, // 默认为全局样式并使用 sass-embedded 预处理 css
+        tagResolver: (source, tag) =>
+          // 识别从 src 导出的 css 标签，使用 @linaria/core/processors/css 处理
+          source === "src" && tag === "css" ? require.resolve("@linaria/core/processors/css") : null,
       }),
       react(),
       vanillaExtractPlugin(),

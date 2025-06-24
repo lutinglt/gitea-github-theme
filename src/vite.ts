@@ -1,5 +1,6 @@
-import fs from "fs";
-import path from "path";
+import crypto from "node:crypto";
+import fs from "node:fs";
+import path from "node:path";
 import type { Plugin } from "vite";
 
 export function themeInput(
@@ -8,7 +9,9 @@ export function themeInput(
   devTheme: string,
   mode: string
 ): { [key: string]: string } {
-  const tmpDir = `${outDir}/tmp`; // 输出目录下的临时目录
+  const hash = crypto.randomBytes(6).toString("hex");
+  const tmpDir = `${outDir}/tmp-${hash}`; // 输出目录下的临时目录
+
   fs.mkdirSync(tmpDir, { recursive: true });
 
   const input: { [key: string]: string } = {};

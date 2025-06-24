@@ -1,23 +1,15 @@
-import { css } from "@linaria/core";
-import { themeVars } from "src/theme";
+import { mix } from "polished";
+import { css, themeVars } from "src";
 
 export const setting_global = css`
-  :global() {
-    .user-main-content,
-    .repo-setting-content,
-    .user-setting-content,
-    .org-setting-content,
-    .admin-setting-content {
-      .ui.right {
-        .ui.primary.button.tiny {
-          color: #fff;
-          background-color: #238636;
-          &:hover {
-            background-color: #29903b;
-            border-color: ${themeVars.color.primary.light[1]};
-          }
-        }
-      }
+  .lines-num span:after {
+    color: ${themeVars.color.primary.hover};
+  }
+  .ui.cards > .card,
+  .ui.card {
+    > .extra a:not(.ui):hover {
+      color: ${mix(0.1, "#fff", "#cc4848")};
+      background-color: scale-color(#cc4848, $lightness: 10%);
     }
   }
 `;

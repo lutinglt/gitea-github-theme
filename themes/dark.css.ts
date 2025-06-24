@@ -1,36 +1,36 @@
-import type { color } from "src";
+import { color } from "src";
 import { defineTheme, themeVars } from "src";
 
 const dark = {
-  1: "#739cb3",
-  2: "#40aaff",
-  3: "#92b4c4",
-  4: "#a1bbcd",
-  5: "#cfddc1",
-  6: "#e7eee0",
-  7: "#f8faf6",
+  num1: "#739cb3",
+  num2: "#40aaff",
+  num3: "#92b4c4",
+  num4: "#a1bbcd",
+  num5: "#cfddc1",
+  num6: "#e7eee0",
+  num7: "#f8faf6",
 };
 
 const light = {
-  1: themeVars.color.blue,
-  2: "#437aad",
-  3: "#415b8b",
-  4: "#25425a",
-  5: "#223546",
-  6: "#131923",
-  7: "#06090b",
+  num1: themeVars.color.primary.self,
+  num2: "#437aad",
+  num3: "#415b8b",
+  num4: "#25425a",
+  num5: "#223546",
+  num6: "#131923",
+  num7: "#06090b",
 };
 
 const alpha = {
-  10: "#3683c019",
-  20: "#3683c033",
-  30: "#3683c04b",
-  40: "#3683c066",
-  50: "#3683c080",
-  60: "#3683c099",
-  70: "#3683c0b3",
-  80: "#3683c0cc",
-  90: "#3683c0e1",
+  num10: "#3683c019",
+  num20: "#3683c033",
+  num30: "#3683c04b",
+  num40: "#3683c066",
+  num50: "#3683c080",
+  num60: "#3683c099",
+  num70: "#3683c0b3",
+  num80: "#3683c0cc",
+  num90: "#3683c0e1",
 };
 
 const primary: color.Primary = {
@@ -39,8 +39,8 @@ const primary: color.Primary = {
   dark,
   light,
   alpha,
-  hover: light[1],
-  active: light[2],
+  hover: light.num1,
+  active: light.num2,
 };
 
 export default defineTheme({
