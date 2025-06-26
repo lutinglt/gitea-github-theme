@@ -21,7 +21,7 @@ const commitColor = {
   },
 };
 
-export const self = {
+export const named = {
   /** 红色/提交警告签名颜色 */
   red: {
     ...commitColor,
@@ -35,13 +35,13 @@ export const self = {
   /** 黄色/提交未信任签名颜色 */
   yellow: {
     ...commitColor,
-    ...baseColor
+    ...baseColor,
   },
   olive: baseColor,
   /** 绿色/提交信任签名颜色 */
   green: {
     ...commitColor,
-    ...baseColor
+    ...baseColor,
   },
   teal: baseColor,
   blue: baseColor,

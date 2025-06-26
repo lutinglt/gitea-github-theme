@@ -48,4 +48,7 @@ export const secondary = {
     num4: null,
   },
   alpha: alpha,
+  button: null,
+  hover: null,
+  active: null,
 };

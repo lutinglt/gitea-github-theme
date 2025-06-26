@@ -212,43 +212,57 @@
   --color-input-border: var(--color-light-border);
   --color-input-border-hover: var(--color-light-border);
 
-  --color-header-wrapper: #0d1117;
-  --color-header-wrapper-transparent: #20243000;
-
   --color-light: #00000028;
   --color-light-mimic-enabled: rgba(0, 0, 0, calc(40 / 255 * 222 / 255 / var(--opacity-disabled)));
   --color-light-border: #3d444d;
+
   --color-hover: #656c7633;
+  --color-hover-opaque: ;
+
   --color-active: #161a21;
   --color-menu: #0d1117;
   --color-card: #0d1117;
   --color-markup-table-row: #ffffff06;
   --color-markup-code-block: #ffffff16;
+  --color-markup-code-inline: ;
+
   --color-button: #212830;
   --color-code-bg: #0d1117;
-  --color-code-sidebar-bg: #232834;
+
   --color-shadow: #00000060;
+  --color-shadow-opaque: ;
+
   --color-secondary-bg: #ffffff26;
-  --color-text-focus: #fff;
+
   --color-expand-button: #3c404d;
   --color-placeholder-text: #8a8e99;
   --color-editor-line-highlight: var(--color-primary-light-5);
-  --color-project-board-bg: var(--color-secondary-light-2);
+  --color-project-column-bg: var(--color-secondary-light-2);
+
   --color-caret: var(--color-text);
+
   --color-reaction-bg: #ffffff12;
   --color-reaction-hover-bg: var(--color-primary-light-4);
   --color-reaction-active-bg: var(--color-primary-light-5);
+
   --color-tooltip-text: #fff;
   --color-tooltip-bg: #000000f0;
+
   --color-nav-bg: #010409;
   --color-nav-hover-bg: var(--color-hover);
+  --color-nav-text: ;
+  --color-secondary-nav-bg: ;
+
   --color-label-text: #fff;
   --color-label-bg: #7c84974b;
   --color-label-hover-bg: #7c8497a0;
   --color-label-active-bg: #7c8497;
   --color-accent: var(--color-primary-light-1);
   --color-small-accent: var(--color-primary-light-5);
-  --color-active-line: #534d1b;
+
+  --color-highlight-bg: ;
+  --color-highlight-fg: ;
+  --color-overlay-backdrop: ;
   accent-color: var(--color-accent);
   color-scheme: dark;
 }

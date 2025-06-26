@@ -14,8 +14,19 @@ const vars = {
   /** 用于标识当前是否为暗色主题: `"true"` 暗色 `"false"` 亮色 */
   isDarkTheme: "is-dark-theme",
   color: {
-    blue: null,
     primary: color.primary,
+    secondary: color.secondary,
+    self: {
+      ...color.based,
+      ...color.named,
+    },
+    ansi: color.ansi,
+    console: color.console,
+    diff: color.diff,
+    error: color.error,
+    success: color.success,
+    warning: color.warning,
+    info: color.info,
   },
 };
 
