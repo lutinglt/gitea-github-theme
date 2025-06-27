@@ -28,13 +28,13 @@ export const based = {
   },
   /** 输入框 */
   input: {
+    text: null,
     background: null,
+    toggleBackgound: "color-input-toggle-background",
     border: {
       self: null,
       hover: null,
     },
-    text: null,
-    toggleBackgound: "color-input-toggle-background",
   },
   light: {
     self: null,
@@ -86,12 +86,8 @@ export const based = {
   label: {
     text: null,
     bg: null,
-    hover: {
-      bg: null,
-    },
-    active: {
-      bg: null,
-    },
+    hoverBg: "color-label-hover-bg",
+    activeBg: "color-label-active-bg",
   },
   accent: null,
   smallAccent: "color-small-accent",

@@ -4,7 +4,7 @@ const msg = {
   text: null,
 };
 
-export const error = {
+const error = {
   ...msg,
   bg: {
     self: null,
@@ -13,13 +13,20 @@ export const error = {
   },
 };
 
-export const success = {
+const success = {
   ...msg,
 };
 
-export const warning = {
+const warning = {
   ...msg,
 };
-export const info = {
+const info = {
   ...msg,
+};
+
+export const message = {
+  error,
+  success,
+  warning,
+  info,
 };
