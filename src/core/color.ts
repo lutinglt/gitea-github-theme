@@ -23,7 +23,7 @@ interface ColorTheme {
   olive: string;
   /** 绿色 */
   green: string;
-  /** 青色/蓝绿色 */
+  /** 蓝绿色/青色 */
   teal: string;
   /** 蓝色 */
   blue: string;
