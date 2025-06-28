@@ -17,16 +17,15 @@ const suffix = ".css.tsx";
 export function themeInput(
   outDir: string,
   themeDir: string,
-  devTheme: string,
   mode: string
 ): { [key: string]: string } {
   const hash = crypto.randomBytes(6).toString("hex");
   const tmpDir = `${outDir}/tmp-${hash}`; // 输出目录下的临时目录
-
   fs.mkdirSync(tmpDir, { recursive: true });
 
   const input: { [key: string]: string } = {};
   const themeEntries = fs.readdirSync(themeDir, { withFileTypes: true });
+  const devTheme = process.env.DEV_THEME || "dark"; // 开发模式仅打包单个颜色主题
 
   for (const entry of themeEntries) {
     // 目录下所有的 css.ts 文件都作为主题入口

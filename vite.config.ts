@@ -13,7 +13,6 @@ dotenv.config({ quiet: true });
 
 const require = createRequire(import.meta.url);
 
-const devTheme = process.env.DEV_THEME || "dark"; // 开发模式仅打包单个颜色主题
 const outDir = "dist"; // 输出目录
 const themesDir = "themes"; // 颜色主题目录
 
@@ -54,7 +53,7 @@ export default defineConfig(({ mode }) => {
       cssCodeSplit: true,
       outDir: outDir,
       rollupOptions: {
-        input: themeInput(outDir, themesDir, devTheme, mode),
+        input: themeInput(outDir, themesDir, mode),
         output: {
           assetFileNames: "[name].[ext]",
         },
