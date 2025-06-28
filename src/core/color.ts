@@ -1,6 +1,6 @@
 import { rgba } from "polished";
 import { scaleColorLight } from "src/functions";
-import type { Ansi, Other, Console, Diff, Message, Named, Primary, Secondary } from "src/types";
+import type { Ansi, Console, Diff, Message, Named, Other, Primary, Secondary } from "src/types";
 import { themeVars } from "src/types/vars";
 import type { Theme } from "./theme";
 
@@ -23,8 +23,10 @@ interface ColorTheme {
   olive: string;
   /** 绿色 */
   green: string;
-  /** 蓝绿色/青色 */
+  /** 蓝绿色/青色(偏绿) */
   teal: string;
+  /** 蓝绿色/青色(偏蓝) */
+  cyan: string;
   /** 蓝色 */
   blue: string;
   /** 蓝紫色/紫罗兰色 */
@@ -66,6 +68,7 @@ interface ColorTheme {
  *   ...
  * }
  * ...
+ * // 会经过 lightningcss 打包处理生成最终的 CSS
  * export default defineTheme({
  *   isDarkTheme: true,
  *   primary: "#0969da",
@@ -82,22 +85,22 @@ export function defineTheme(theme: ColorTheme): Theme {
     self: theme.primary,
     contrast: theme.primaryContrast,
     dark: {
-      num1: scaleColorLight(theme.primary, -3 * lighten),
-      num2: scaleColorLight(theme.primary, -6 * lighten),
-      num3: scaleColorLight(theme.primary, -9 * lighten),
-      num4: scaleColorLight(theme.primary, -12 * lighten),
-      num5: scaleColorLight(theme.primary, -15 * lighten),
-      num6: scaleColorLight(theme.primary, -18 * lighten),
-      num7: scaleColorLight(theme.primary, -21 * lighten),
+      num1: scaleColorLight(theme.primary, -12 * lighten),
+      num2: scaleColorLight(theme.primary, -24 * lighten),
+      num3: scaleColorLight(theme.primary, -36 * lighten),
+      num4: scaleColorLight(theme.primary, -48 * lighten),
+      num5: scaleColorLight(theme.primary, -60 * lighten),
+      num6: scaleColorLight(theme.primary, -72 * lighten),
+      num7: scaleColorLight(theme.primary, -84 * lighten),
     },
     light: {
-      num1: scaleColorLight(theme.primary, 3 * lighten),
-      num2: scaleColorLight(theme.primary, 6 * lighten),
-      num3: scaleColorLight(theme.primary, 9 * lighten),
-      num4: scaleColorLight(theme.primary, 12 * lighten),
-      num5: scaleColorLight(theme.primary, 15 * lighten),
-      num6: scaleColorLight(theme.primary, 18 * lighten),
-      num7: scaleColorLight(theme.primary, 21 * lighten),
+      num1: scaleColorLight(theme.primary, 12 * lighten),
+      num2: scaleColorLight(theme.primary, 24 * lighten),
+      num3: scaleColorLight(theme.primary, 36 * lighten),
+      num4: scaleColorLight(theme.primary, 48 * lighten),
+      num5: scaleColorLight(theme.primary, 60 * lighten),
+      num6: scaleColorLight(theme.primary, 72 * lighten),
+      num7: scaleColorLight(theme.primary, 84 * lighten),
     },
     alpha: {
       num10: rgba(theme.primary, 0.1),
@@ -117,25 +120,25 @@ export function defineTheme(theme: ColorTheme): Theme {
   const secondary: Secondary = {
     self: theme.secondary,
     dark: {
-      num1: scaleColorLight(theme.secondary, -3 * lighten),
-      num2: scaleColorLight(theme.secondary, -6 * lighten),
-      num3: scaleColorLight(theme.secondary, -9 * lighten),
-      num4: scaleColorLight(theme.secondary, -12 * lighten),
-      num5: scaleColorLight(theme.secondary, -15 * lighten),
-      num6: scaleColorLight(theme.secondary, -18 * lighten),
-      num7: scaleColorLight(theme.secondary, -21 * lighten),
-      num8: scaleColorLight(theme.secondary, -24 * lighten),
-      num9: scaleColorLight(theme.secondary, -27 * lighten),
-      num10: scaleColorLight(theme.secondary, -30 * lighten),
-      num11: scaleColorLight(theme.secondary, -33 * lighten),
-      num12: scaleColorLight(theme.secondary, -36 * lighten),
-      num13: scaleColorLight(theme.secondary, -39 * lighten),
+      num1: scaleColorLight(theme.secondary, -6 * lighten),
+      num2: scaleColorLight(theme.secondary, -12 * lighten),
+      num3: scaleColorLight(theme.secondary, -18 * lighten),
+      num4: scaleColorLight(theme.secondary, -24 * lighten),
+      num5: scaleColorLight(theme.secondary, -30 * lighten),
+      num6: scaleColorLight(theme.secondary, -36 * lighten),
+      num7: scaleColorLight(theme.secondary, -42 * lighten),
+      num8: scaleColorLight(theme.secondary, -48 * lighten),
+      num9: scaleColorLight(theme.secondary, -54 * lighten),
+      num10: scaleColorLight(theme.secondary, -60 * lighten),
+      num11: scaleColorLight(theme.secondary, -66 * lighten),
+      num12: scaleColorLight(theme.secondary, -72 * lighten),
+      num13: scaleColorLight(theme.secondary, -80 * lighten),
     },
     light: {
-      num1: scaleColorLight(theme.secondary, 3 * lighten),
-      num2: scaleColorLight(theme.secondary, 6 * lighten),
-      num3: scaleColorLight(theme.secondary, 9 * lighten),
-      num4: scaleColorLight(theme.secondary, 12 * lighten),
+      num1: scaleColorLight(theme.secondary, 18 * lighten),
+      num2: scaleColorLight(theme.secondary, 36 * lighten),
+      num3: scaleColorLight(theme.secondary, 54 * lighten),
+      num4: scaleColorLight(theme.secondary, 72 * lighten),
     },
     alpha: {
       num10: rgba(theme.secondary, 0.1),
@@ -293,22 +296,22 @@ export function defineTheme(theme: ColorTheme): Theme {
         active: rgba(theme.red, 0.5),
         hover: rgba(theme.red, 0.3),
       },
-      border: scaleColorLight(theme.red, 20 * lighten),
+      border: rgba(theme.red, 0.4),
       text: theme.red,
     },
     success: {
       bg: rgba(theme.green, 0.1),
-      border: scaleColorLight(theme.green, 20 * lighten),
+      border: rgba(theme.green, 0.4),
       text: theme.green,
     },
     warning: {
       bg: rgba(theme.yellow, 0.1),
-      border: scaleColorLight(theme.yellow, 20 * lighten),
+      border: rgba(theme.yellow, 0.4),
       text: theme.yellow,
     },
     info: {
       bg: rgba(theme.blue, 0.1),
-      border: scaleColorLight(theme.blue, 20 * lighten),
+      border: rgba(theme.blue, 0.4),
       text: theme.blue,
     },
   };
@@ -320,7 +323,7 @@ export function defineTheme(theme: ColorTheme): Theme {
     yellow: themeVars.color.yellow.self,
     blue: themeVars.color.blue.self,
     magenta: themeVars.color.pink.self,
-    cyan: themeVars.color.teal.self,
+    cyan: theme.cyan,
     white: themeVars.color.console.fg.subtle,
     bright: {
       black: themeVars.color.black.light,
@@ -329,7 +332,7 @@ export function defineTheme(theme: ColorTheme): Theme {
       yellow: themeVars.color.yellow.light,
       blue: themeVars.color.blue.light,
       magenta: themeVars.color.pink.light,
-      cyan: themeVars.color.teal.light,
+      cyan: theme.isDarkTheme ? scaleColorLight(theme.cyan, 10) : scaleColorLight(theme.cyan, 25),
       white: themeVars.color.console.fg.self,
     },
   };

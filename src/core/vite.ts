@@ -4,7 +4,7 @@ import fs from "node:fs";
 import path from "node:path";
 import type { Plugin } from "vite";
 
-const suffix = ".css.tsx"
+const suffix = ".css.tsx";
 
 /**
  * 生成主题输入
@@ -103,7 +103,7 @@ export function themePlugin(): Plugin {
         console.log("[themePlugin] exec:", cmd);
         try {
           execSync(cmd, { stdio: "inherit" });
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (_) {
           // continue regardless of error
         }

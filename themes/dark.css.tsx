@@ -1,12 +1,40 @@
-import type { Other, Console, Diff } from "src";
+import type { Console, Diff, Other } from "src";
 import { defineTheme, themeVars } from "src";
+
+const github = {
+  display: {
+    brown: { fgColor: "#b69a6d" },
+    cyan: { fgColor: "#07ace4" },
+    indigo: { fgColor: "#9899ec" },
+    lemon: { fgColor: "#ba9b12" },
+    olive: { fgColor: "#a2a626" },
+    teal: { fgColor: "#1cb0ab" },
+  },
+  fgColor: {
+    accent: "#4493f8",
+    attention: "#d29922",
+    danger: "#f85149",
+    default: "#f0f6fc",
+    disabled: "#656c7699",
+    done: "#ab7df8",
+    neutral: "#9198a1",
+    severe: "#db6d28",
+    sponsors: "#db61a2",
+    success: "#3fb950",
+    black: "#010409",
+    white: "#ffffff",
+  },
+  bgColor: {
+    black: "#010409",
+  },
+};
 
 const console: Console = {
   fg: {
     self: "#f0f6fc",
     subtle: "#9198a1",
   },
-  bg: "#010409",
+  bg: github.bgColor.black,
   border: "#2b3139",
   activeBg: "#2a313c",
   hoverBg: "#15191f",
@@ -70,7 +98,7 @@ const other: Other = {
       num3: "#707687",
     },
   },
-  footer: "#010409",
+  footer: github.bgColor.black,
   timeline: "#4c525e",
   input: {
     text: "#d5dbe6",
@@ -122,11 +150,11 @@ const other: Other = {
     bg: "#000000f0",
   },
   nav: {
-    bg: "#010409",
+    bg: github.bgColor.black,
     hoverBg: themeVars.color.hover.self,
     text: themeVars.color.text.self,
   },
-  secondaryNavBg: "#181c20",
+  secondaryNavBg: themeVars.color.nav.bg,
   label: {
     text: "#fff",
     bg: "#7c84974b",
@@ -144,24 +172,25 @@ const other: Other = {
 
 export default defineTheme({
   isDarkTheme: true,
-  primary: "#4493f8",
-  primaryContrast: "#fff",
+  primary: github.fgColor.accent,
+  primaryContrast: github.fgColor.default,
   secondary: "#3d444d",
-  red: "#da3737",
-  orange: "#f17a2b",
-  yellow: "#f3c640",
-  olive: "#c8df36",
-  green: "#39d353",
-  teal: "#69d4cf",
-  blue: "#4493f8",
-  violet: "#754ad3",
-  purple: "#8957e5",
-  pink: "#e04b9f",
-  brown: "#a86d45",
-  black: "#141516",
-  grey: "#505665",
-  gold: "#b1983b",
-  white: "#ffffff",
+  red: github.fgColor.danger,
+  orange: github.fgColor.severe,
+  yellow: github.fgColor.attention,
+  olive: github.display.olive.fgColor,
+  green: github.fgColor.success,
+  cyan: github.display.cyan.fgColor,
+  teal: github.display.teal.fgColor,
+  blue: github.fgColor.accent,
+  violet: github.display.indigo.fgColor,
+  purple: github.fgColor.done,
+  pink: github.fgColor.sponsors,
+  brown: github.display.brown.fgColor,
+  black: github.fgColor.black,
+  grey: github.fgColor.neutral,
+  gold: github.display.lemon.fgColor,
+  white: github.fgColor.white,
   console,
   diff,
   other,

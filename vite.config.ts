@@ -9,7 +9,7 @@ import * as sass from "sass-embedded";
 import { defineConfig } from "vite";
 import { themeInput, themePlugin } from "./src/core/vite";
 
-dotenv.config({quiet: true});
+dotenv.config({ quiet: true });
 
 const require = createRequire(import.meta.url);
 
