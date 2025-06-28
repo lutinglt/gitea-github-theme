@@ -1,0 +1,5 @@
+.github/* linguist-vendored
+.vscode/* linguist-vendored
+screenshots/* linguist-vendored
+scripts/* linguist-vendored
+eslint.config.js linguist-vendored
