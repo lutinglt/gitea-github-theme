@@ -1,1 +1,2 @@
+import "./public"
 import "./components"

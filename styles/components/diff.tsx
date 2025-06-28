@@ -2,14 +2,18 @@ import { css, themeVars } from "src";
 
 export const diff = css`
   /* 间隔行多余的颜色 */
-  .tag-code td {
+  .tag-code {
     background-color: unset;
+
+    .code-inner {
+      color: ${themeVars.github.fgColor.neutral};
+    }
   }
   /* 增加/删除行多余的颜色 */
   .code-diff-unified {
     .del-code,
     .add-code {
-      background-color: unset;
+      background: unset;
       border-color: unset;
     }
   }
@@ -17,10 +21,20 @@ export const diff = css`
   .added-code,
   .removed-code {
     border-radius: 0.1875rem;
+    color: ${themeVars.github.fgColor.default};
+    /* 覆盖掉 chroma 的颜色 */
+    * {
+      color: ${themeVars.github.fgColor.default} !important;
+    }
   }
-  /* 展开/收缩按钮悬停时颜色 */
-  .code-expander-button:hover {
-    background: ${themeVars.github.bgColor.accent.emphasis}
+  /* 展开/收缩按钮 */
+  .code-expander-button {
+    height: 24px !important;
+    line-height: 24px;
+
+    &:hover {
+      background: ${themeVars.github.bgColor.accent.emphasis};
+    }
   }
   /* 行号居中 */
   .lines-num {
