@@ -8,12 +8,8 @@ const console: Console = {
   },
   bg: "#010409",
   border: "#2b3139",
-  active: {
-    bg: "#2a313c",
-  },
-  hover: {
-    bg: "#15191f",
-  },
+  activeBg: "#2a313c",
+  hoverBg: "#15191f",
   menu: {
     bg: themeVars.color.body,
     border: themeVars.color.light.border,

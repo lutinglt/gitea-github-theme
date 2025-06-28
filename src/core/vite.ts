@@ -4,6 +4,8 @@ import fs from "node:fs";
 import path from "node:path";
 import type { Plugin } from "vite";
 
+const suffix = ".css.tsx"
+
 /**
  * 生成主题输入
  * @param outDir 输出目录与 vite 配置中的 outDir 一致, 用于生成临时目录
@@ -28,12 +30,12 @@ export function themeInput(
 
   for (const entry of themeEntries) {
     // 目录下所有的 css.ts 文件都作为主题入口
-    if (entry.isFile() && entry.name.endsWith(".css.ts")) {
-      const fileName = entry.name.replace(".css.ts", "");
+    if (entry.isFile() && entry.name.endsWith(suffix)) {
+      const fileName = entry.name.replace(suffix, "");
       // 开发模式只打包 devTheme 主题
       if (mode === "dev" && fileName !== devTheme) continue;
       // 创建颜色主题的 css.ts 文件, vanilla-extract 需要这个文件后缀名并生成 css
-      const tmpCssTs = path.join(tmpDir, `${fileName}.css.ts`);
+      const tmpCssTs = path.join(tmpDir, `${fileName}${suffix}`);
       const createImport = `import { createTheme } from "src/core";`;
       const themeImport = `import theme from "themes/${fileName}";`;
       const createFn = `createTheme(theme);`;
@@ -41,7 +43,7 @@ export function themeInput(
       // 生成主题入口的 .ts 文件, 合并样式和颜色主题
       const tmpInputTs = path.join(tmpDir, `${fileName}.ts`);
       const stylesImport = `import "styles";`;
-      const cssImport = `import "./${fileName}.css.ts";`;
+      const cssImport = `import "./${fileName}${suffix}";`;
       fs.writeFileSync(tmpInputTs, `${stylesImport}\n${cssImport}`);
 
       input[fileName] = tmpInputTs;

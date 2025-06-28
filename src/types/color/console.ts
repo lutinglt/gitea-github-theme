@@ -21,12 +21,8 @@ export const console = {
   },
   bg: null,
   border: null,
-  active: {
-    bg: null,
-  },
-  hover: {
-    bg: null,
-  },
+  activeBg: "color-console-active-bg",
+  hoverBg: "color-console-hover-bg",
   menu: {
     bg: null,
     border: null,

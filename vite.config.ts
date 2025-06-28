@@ -13,7 +13,7 @@ dotenv.config({quiet: true});
 
 const require = createRequire(import.meta.url);
 
-const devTheme = process.env.DEV_THEME || "dark"; // 开发模式下的主题, 仅打包该主题
+const devTheme = process.env.DEV_THEME || "dark"; // 开发模式仅打包单个颜色主题
 const outDir = "dist"; // 输出目录
 const themesDir = "themes"; // 颜色主题目录
 
@@ -25,7 +25,7 @@ export default defineConfig(({ mode }) => {
         styles: path.resolve(__dirname, "styles"),
         themes: path.resolve(__dirname, "themes"),
       },
-      extensions: [".js", ".jsx", ".ts", ".tsx", ".css.ts"],
+      extensions: [".js", ".jsx", ".ts", ".tsx", ".css.tsx"],
     },
     css: {
       transformer: "lightningcss",
