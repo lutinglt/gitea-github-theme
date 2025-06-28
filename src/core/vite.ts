@@ -1,3 +1,4 @@
+import { execSync } from "node:child_process";
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
@@ -46,6 +47,9 @@ export function themeInput(
       input[fileName] = tmpInputTs;
     }
   }
+  if (mode === "dev") {
+    console.log("[themeInput] devTheme:", devTheme);
+  }
   return input;
 }
 
@@ -86,6 +90,23 @@ export function themePlugin(): Plugin {
           this.emitFile({ name, fileName, source, type, originalFileName });
           delete bundle[key];
         }
+      }
+    },
+    closeBundle() {
+      const server = process.env.SSH_SERVER;
+      const user = process.env.SSH_USER || "root";
+      const path = process.env.GITEA_THEME_PATH;
+      if (server && path) {
+        const cmd = `scp dist/${prefix}*.css ${user}@${server}:${path}`;
+        console.log("[themePlugin] exec:", cmd);
+        try {
+          execSync(cmd, { stdio: "inherit" });
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        } catch (_) {
+          // continue regardless of error
+        }
+      } else {
+        console.log("[themePlugin] no SSH_SERVER or GITEA_THEME_PATH, skip upload");
       }
     },
   };

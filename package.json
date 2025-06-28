@@ -26,6 +26,7 @@
     "@vitejs/plugin-react-swc": "^3.10.2",
     "@wyw-in-js/babel-preset": "^0.7.0",
     "@wyw-in-js/vite": "^0.7.0",
+    "dotenv": "^17.0.0",
     "eslint": "^9.29.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",

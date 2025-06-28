@@ -1,6 +1,7 @@
 import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
 import react from "@vitejs/plugin-react";
 import linaria from "@wyw-in-js/vite";
+import * as dotenv from "dotenv";
 import { Features } from "lightningcss";
 import { createRequire } from "node:module";
 import path from "node:path";
@@ -8,9 +9,11 @@ import * as sass from "sass-embedded";
 import { defineConfig } from "vite";
 import { themeInput, themePlugin } from "./src/core/vite";
 
+dotenv.config({quiet: true});
+
 const require = createRequire(import.meta.url);
 
-const devTheme = "dark"; // 开发模式仅打包单个颜色主题
+const devTheme = process.env.DEV_THEME || "dark"; // 开发模式下的主题, 仅打包该主题
 const outDir = "dist"; // 输出目录
 const themesDir = "themes"; // 颜色主题目录
 
