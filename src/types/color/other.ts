@@ -1,4 +1,4 @@
-export const based = {
+export const other = {
   /** 未知 */
   git: null,
   /** 主要背景色 */

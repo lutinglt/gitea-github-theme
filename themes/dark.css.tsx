@@ -1,4 +1,4 @@
-import type { Based, Console, Diff } from "src";
+import type { Other, Console, Diff } from "src";
 import { defineTheme, themeVars } from "src";
 
 const console: Console = {
@@ -50,7 +50,7 @@ const diff: Diff = {
   inactive: "#353846",
 };
 
-const based: Based = {
+const other: Other = {
   git: "#f05133",
   body: "#0d1117",
   box: {
@@ -164,5 +164,5 @@ export default defineTheme({
   white: "#ffffff",
   console,
   diff,
-  based,
+  other,
 });

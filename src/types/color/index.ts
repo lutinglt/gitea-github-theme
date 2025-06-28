@@ -1,4 +1,4 @@
-export { based } from "./based";
+export { other } from "./other";
 export { ansi, console } from "./console";
 export { diff } from "./diff";
 export { primary, secondary } from "./main";

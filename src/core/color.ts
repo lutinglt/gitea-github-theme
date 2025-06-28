@@ -1,52 +1,78 @@
 import { rgba } from "polished";
 import { scaleColorLight } from "src/functions";
-import type { Ansi, Based, Console, Diff, Message, Named, Primary, Secondary } from "src/types";
+import type { Ansi, Other, Console, Diff, Message, Named, Primary, Secondary } from "src/types";
 import { themeVars } from "src/types/vars";
 import type { Theme } from "./theme";
 
 interface ColorTheme {
+  /** 用于标识当前是否为暗色主题: `true` 暗色 `false` 亮色 */
   isDarkTheme: boolean;
+  /** 主色调 */
   primary: string;
+  /** 主色调的对比色, 一般用于 `color` 属性, primary 用于 `background-color` */
   primaryContrast: string;
+  /** 副色调 */
   secondary: string;
+  /** 红色 */
   red: string;
+  /** 橙色 */
   orange: string;
+  /** 黄色 */
   yellow: string;
+  /** 黄绿色/橄榄色 */
   olive: string;
+  /** 绿色 */
   green: string;
+  /** 青色/蓝绿色 */
   teal: string;
+  /** 蓝色 */
   blue: string;
+  /** 蓝紫色/紫罗兰色 */
   violet: string;
+  /** 紫色 */
   purple: string;
+  /** 粉红色 */
   pink: string;
+  /** 棕色 */
   brown: string;
+  /** 黑色 */
   black: string;
+  /** 灰色 */
   grey: string;
+  /** 金色 */
   gold: string;
+  /** 白色 */
   white: string;
+  /** Action 日志 */
   console: Console;
+  /** 提交代码对比 */
   diff: Diff;
-  based: Based;
+  /** 其他 */
+  other: Other;
 }
 
 /** 定义颜色, 用于生成颜色主题
  * @example
- * 文件名: `color-dark.css.ts`
- * import type { Primary } from "src/types";
+ * 文件名: "dark.css.tsx"
+ * import type { Console, Diff, Other } from "src/types";
  * import { defineTheme, themeVars } from "src";
  *
- * const primary: Primary = {
- *   self: "#ffffff",
- *   contrast: themeVars.color.white,
+ * const console: Console = {
+ *   fg: {
+ *     self: "#f0f6fc", // self 表示本身等于 --color-console-fg: #f0f6fc, 所有键名为 self 的都将被忽略
+ *     subtle: themeVars.color.body, // 引用别的CSS变量等于 --color-console-fg-subtle: var(--color-body)
+ *     num1: "rgb(125, 133, 144)", // 由于纯数字无法在 TS 中使用点调用, 采用 num 前缀等于 --color-console-fg-1: rgb(125, 133, 144)
+ *   },
  *   ...
  * }
- *
+ * ...
  * export default defineTheme({
- *   isDarkTheme: "true",
- *   color: {
- *     primary,
- *     ...
- *   }
+ *   isDarkTheme: true,
+ *   primary: "#0969da",
+ *   ...
+ *   console,
+ *   diff,
+ *   other,
  * })
  */
 export function defineTheme(theme: ColorTheme): Theme {
@@ -267,22 +293,22 @@ export function defineTheme(theme: ColorTheme): Theme {
         active: rgba(theme.red, 0.5),
         hover: rgba(theme.red, 0.3),
       },
-      border: scaleColorLight(theme.red, 30 * lighten),
+      border: scaleColorLight(theme.red, 20 * lighten),
       text: theme.red,
     },
     success: {
       bg: rgba(theme.green, 0.1),
-      border: scaleColorLight(theme.green, 30 * lighten),
+      border: scaleColorLight(theme.green, 20 * lighten),
       text: theme.green,
     },
     warning: {
       bg: rgba(theme.yellow, 0.1),
-      border: scaleColorLight(theme.yellow, 30 * lighten),
+      border: scaleColorLight(theme.yellow, 20 * lighten),
       text: theme.yellow,
     },
     info: {
       bg: rgba(theme.blue, 0.1),
-      border: scaleColorLight(theme.blue, 30 * lighten),
+      border: scaleColorLight(theme.blue, 20 * lighten),
       text: theme.blue,
     },
   };
@@ -318,7 +344,7 @@ export function defineTheme(theme: ColorTheme): Theme {
       console: theme.console,
       diff: theme.diff,
       ...message,
-      ...theme.based,
+      ...theme.other,
     },
   };
 }

@@ -11,11 +11,10 @@ export function varMapper(value: string | null, path: string[]) {
 }
 
 const vars = {
-  /** 用于标识当前是否为暗色主题: `"true"` 暗色 `"false"` 亮色 */
   isDarkTheme: "is-dark-theme",
   color: {
+    ...color.other,
     ...color.message,
-    ...color.based,
     ...color.named,
     primary: color.primary,
     secondary: color.secondary,
