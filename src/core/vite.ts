@@ -93,7 +93,7 @@ export function themePlugin(): Plugin {
         }
       }
     },
-    closeBundle() {
+    writeBundle() {
       const server = process.env.SSH_SERVER;
       const user = process.env.SSH_USER || "root";
       const path = process.env.GITEA_THEME_PATH;
