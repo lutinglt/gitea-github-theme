@@ -9,3 +9,4 @@ export type Ansi = MapLeafNodes<typeof color.ansi, string>;
 export type Console = MapLeafNodes<typeof color.console, string>;
 export type Diff = MapLeafNodes<typeof color.diff, string>;
 export type Other = MapLeafNodes<typeof color.other, string>;
+export type Github = MapLeafNodes<typeof color.github, string>;

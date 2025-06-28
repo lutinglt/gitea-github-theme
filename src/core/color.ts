@@ -1,6 +1,6 @@
 import { rgba } from "polished";
 import { scaleColorLight } from "src/functions";
-import type { Ansi, Console, Diff, Message, Named, Other, Primary, Secondary } from "src/types";
+import type { Ansi, Console, Diff, Github, Message, Named, Other, Primary, Secondary } from "src/types";
 import { themeVars } from "src/types/vars";
 import type { Theme } from "./theme";
 
@@ -51,6 +51,8 @@ interface ColorTheme {
   diff: Diff;
   /** 其他 */
   other: Other;
+  /** 仅适用于本主题的全局变量, 取自 Github */
+  github: Github;
 }
 
 /** 定义颜色, 用于生成颜色主题
@@ -349,5 +351,6 @@ export function defineTheme(theme: ColorTheme): Theme {
       ...message,
       ...theme.other,
     },
+    github: theme.github,
   };
 }

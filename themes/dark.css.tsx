@@ -10,6 +10,24 @@ const github = {
     olive: { fgColor: "#a2a626" },
     teal: { fgColor: "#1cb0ab" },
   },
+  diffBlob: {
+    addtionNum: {
+      bgColor: "#3fb9504d",
+    },
+    addtionWord: {
+      bgColor: "#2ea04366",
+    },
+    deletionNum: {
+      bgColor: "#f851494d",
+    },
+    deletionWord: {
+      bgColor: "#f8514966",
+    },
+    hunkNum: {
+      /** diff 按钮色 */
+      bgColorRest: "#0c2d6b",
+    },
+  },
   fgColor: {
     accent: "#4493f8",
     attention: "#d29922",
@@ -25,7 +43,18 @@ const github = {
     white: "#ffffff",
   },
   bgColor: {
+    accent: {
+      emphasis: "#1f6feb",
+      muted: "#388bfd1a",
+    },
     black: "#010409",
+    success: {
+      muted: "#2ea04326",
+    },
+    danger: {
+      muted: "#f851491a",
+    },
+    muted: "#151b23",
   },
 };
 
@@ -47,26 +76,26 @@ const console: Console = {
 const diff: Diff = {
   added: {
     linenum: {
-      bg: "#1c4428",
+      bg: github.diffBlob.addtionNum.bgColor,
     },
     row: {
-      bg: "#12261e",
-      border: "#314a37",
+      bg: github.bgColor.success.muted,
+      border: github.bgColor.success.muted,
     },
     word: {
-      bg: "#1d572d",
+      bg: github.diffBlob.addtionWord.bgColor,
     },
   },
   removed: {
     linenum: {
-      bg: "#542426",
+      bg: github.diffBlob.deletionNum.bgColor,
     },
     row: {
-      bg: "#25171c",
-      border: "#634343",
+      bg: github.bgColor.danger.muted,
+      border: github.bgColor.danger.muted,
     },
     word: {
-      bg: "#792e2d",
+      bg: github.diffBlob.deletionWord.bgColor,
     },
   },
   moved: {
@@ -75,7 +104,7 @@ const diff: Diff = {
       border: "#bcca6f",
     },
   },
-  inactive: "#353846",
+  inactive: github.bgColor.muted,
 };
 
 const other: Other = {
@@ -85,11 +114,12 @@ const other: Other = {
     header: "#151b23",
     body: {
       self: "#0d1117",
-      highlight: "#262c36",
+      /** diff 按钮行行色 */
+      highlight: github.bgColor.accent.muted,
     },
   },
   text: {
-    self: "#dce2e7",
+    self: github.fgColor.default,
     dark: "#dbe0ea",
     light: {
       self: "#a6aab5",
@@ -135,7 +165,7 @@ const other: Other = {
     opaque: "#00000080",
   },
   secondaryBg: "#ffffff26",
-  expandButton: "#3c404d",
+  expandButton: github.diffBlob.hunkNum.bgColorRest,
   placeholderText: "#8a8e99",
   editorLineHighlight: themeVars.color.primary.light.num5,
   projectColumnBg: themeVars.color.secondary.light.num2,
@@ -194,4 +224,5 @@ export default defineTheme({
   console,
   diff,
   other,
+  github,
 });

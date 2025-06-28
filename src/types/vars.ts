@@ -22,6 +22,7 @@ const vars = {
     console: color.console,
     diff: color.diff,
   },
+  github: color.github,
 };
 
 const otherVars = {
