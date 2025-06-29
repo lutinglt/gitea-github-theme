@@ -12,6 +12,7 @@ export const other = {
     header: null,
     body: {
       self: null,
+      /** diff 按钮行行色 */
       highlight: null,
     },
   },

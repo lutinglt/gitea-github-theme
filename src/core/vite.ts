@@ -14,11 +14,7 @@ const suffix = ".css.tsx";
  * @param mode 模式, 开发模式为 dev `vite build --mode dev`
  * @returns vite.rollupOptions.input 的配置
  */
-export function themeInput(
-  outDir: string,
-  themeDir: string,
-  mode: string
-): { [key: string]: string } {
+export function themeInput(outDir: string, themeDir: string, mode: string): { [key: string]: string } {
   const hash = crypto.randomBytes(6).toString("hex");
   const tmpDir = `${outDir}/tmp-${hash}`; // 输出目录下的临时目录
   fs.mkdirSync(tmpDir, { recursive: true });

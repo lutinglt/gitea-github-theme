@@ -18,6 +18,7 @@ const vars = {
     ...color.named,
     primary: color.primary,
     secondary: color.secondary,
+    /** Actions 日志 ANSI 颜色 */
     ansi: color.ansi,
     console: color.console,
     diff: color.diff,

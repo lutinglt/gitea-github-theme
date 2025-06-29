@@ -1,12 +1,12 @@
 import { css, themeVars } from "src";
 
 export const diff = css`
-  /* 间隔行多余的颜色 */
+  /* 折叠行多余的颜色 */
   .tag-code {
     background-color: unset;
-
+    /* 折叠行文本 */
     .code-inner {
-      color: ${themeVars.github.fgColor.neutral};
+      color: ${themeVars.github.fgColor.muted};
     }
   }
   /* 增加/删除行多余的颜色 */

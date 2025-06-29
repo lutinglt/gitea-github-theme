@@ -11,22 +11,11 @@ const github = {
     teal: { fgColor: "#1cb0ab" },
   },
   diffBlob: {
-    addtionNum: {
-      bgColor: "#3fb9504d",
-    },
-    addtionWord: {
-      bgColor: "#2ea04366",
-    },
-    deletionNum: {
-      bgColor: "#f851494d",
-    },
-    deletionWord: {
-      bgColor: "#f8514966",
-    },
-    hunkNum: {
-      /** diff 按钮色 */
-      bgColorRest: "#0c2d6b",
-    },
+    addtionNum: { bgColor: "#3fb9504d" },
+    addtionWord: { bgColor: "#2ea04366" },
+    deletionNum: { bgColor: "#f851494d" },
+    deletionWord: { bgColor: "#f8514966" },
+    hunkNum: { bgColor: { rest: "#0c2d6b" } },
   },
   fgColor: {
     accent: "#4493f8",
@@ -41,11 +30,15 @@ const github = {
     success: "#3fb950",
     black: "#010409",
     white: "#ffffff",
+    muted: "#9198a1",
   },
   bgColor: {
     accent: {
       emphasis: "#1f6feb",
       muted: "#388bfd1a",
+    },
+    attention: {
+      muted: "#bb800926",
     },
     black: "#010409",
     success: {
@@ -54,22 +47,36 @@ const github = {
     danger: {
       muted: "#f851491a",
     },
+    inset: "#010409",
     muted: "#151b23",
+  },
+  borderColor: {
+    muted: "#3d444db3",
+  },
+  control: {
+    bgColor: {
+      active: "#2a313c",
+    },
+    transparent: {
+      bgColor: {
+        hover: "#656c7633",
+      },
+    },
   },
 };
 
 const console: Console = {
   fg: {
-    self: "#f0f6fc",
-    subtle: "#9198a1",
+    self: github.fgColor.default,
+    subtle: github.fgColor.muted,
   },
-  bg: github.bgColor.black,
-  border: "#2b3139",
-  activeBg: "#2a313c",
-  hoverBg: "#15191f",
+  bg: github.bgColor.inset,
+  border: github.borderColor.muted,
+  activeBg: github.control.bgColor.active,
+  hoverBg: github.control.transparent.bgColor.hover,
   menu: {
-    bg: themeVars.color.body,
-    border: themeVars.color.light.border,
+    bg: github.bgColor.inset,
+    border: github.borderColor.muted,
   },
 };
 
@@ -100,8 +107,8 @@ const diff: Diff = {
   },
   moved: {
     row: {
-      bg: "#818044",
-      border: "#bcca6f",
+      bg: github.bgColor.attention.muted,
+      border: github.bgColor.attention.muted,
     },
   },
   inactive: github.bgColor.muted,
@@ -114,7 +121,6 @@ const other: Other = {
     header: "#151b23",
     body: {
       self: "#0d1117",
-      /** diff 按钮行行色 */
       highlight: github.bgColor.accent.muted,
     },
   },
@@ -165,7 +171,7 @@ const other: Other = {
     opaque: "#00000080",
   },
   secondaryBg: "#ffffff26",
-  expandButton: github.diffBlob.hunkNum.bgColorRest,
+  expandButton: github.diffBlob.hunkNum.bgColor.rest,
   placeholderText: "#8a8e99",
   editorLineHighlight: themeVars.color.primary.light.num5,
   projectColumnBg: themeVars.color.secondary.light.num2,
@@ -224,5 +230,16 @@ export default defineTheme({
   console,
   diff,
   other,
-  github,
+  github: {
+    fgColor: {
+      accent: github.fgColor.accent,
+      default: github.fgColor.default,
+      muted: github.fgColor.muted,
+    },
+    bgColor: {
+      accent: {
+        emphasis: github.bgColor.accent.emphasis,
+      },
+    },
+  },
 });
