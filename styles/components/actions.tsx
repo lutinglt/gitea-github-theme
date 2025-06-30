@@ -1,6 +1,6 @@
-import { css, themeVars } from "src";
-import { otherThemeVars } from "src/types/vars";
+import { css, otherThemeVars, themeVars } from "src/types/vars";
 
+// 仓库 Actions 页面
 export const actions = css`
   .page-content.repository.actions .ui.grid {
     .four.wide {
@@ -143,7 +143,7 @@ export const actionViewLeft = css`
 
         &.selected {
           &:hover {
-            background-color: ${themeVars.color.hover.self};
+            background-color: ${themeVars.color.console.hoverBg};
           }
 
           &:after {

@@ -42,7 +42,7 @@ export default defineConfig(({ mode }) => {
         preprocessor: (_selector, cssText) => sass.compileString(cssText).css, // 默认为全局样式并使用 sass-embedded 预处理 css
         tagResolver: (source, tag) =>
           // 识别从 src 导出的 css 标签，使用 @linaria/core/processors/css 处理
-          source === "src" && tag === "css" ? require.resolve("@linaria/core/processors/css") : null,
+          source === "src/types/vars" && tag === "css" ? require.resolve("@linaria/core/processors/css") : null,
       }),
       react(),
       vanillaExtractPlugin(),

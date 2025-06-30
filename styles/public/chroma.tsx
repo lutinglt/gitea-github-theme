@@ -1,4 +1,4 @@
-import { css } from "src";
+import { css } from "src/types/vars";
 
 export const chroma = css`
   .chroma {

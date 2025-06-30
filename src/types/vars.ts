@@ -34,3 +34,5 @@ const otherVars = {
 
 export const themeVars = createGlobalThemeContract(vars, varMapper);
 export const otherThemeVars = createGlobalThemeContract(otherVars, varMapper);
+
+export { css } from "@linaria/core";

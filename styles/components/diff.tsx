@@ -1,4 +1,4 @@
-import { css, themeVars } from "src";
+import { css, themeVars } from "src/types/vars";
 
 export const diff = css`
   /* 折叠行多余的颜色 */

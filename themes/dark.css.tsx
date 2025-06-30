@@ -1,6 +1,8 @@
 import type { Console, Diff, Other } from "src";
 import { defineTheme, themeVars } from "src";
 
+const isDarkTheme = true;
+
 const github = {
   display: {
     brown: { fgColor: "#b69a6d" },
@@ -40,25 +42,28 @@ const github = {
     attention: {
       muted: "#bb800926",
     },
-    black: "#010409",
     success: {
       muted: "#2ea04326",
     },
     danger: {
       muted: "#f851491a",
     },
+    default: "#0d1117",
     inset: "#010409",
     muted: "#151b23",
   },
   borderColor: {
+    default: "#3d444d",
     muted: "#3d444db3",
   },
   control: {
     bgColor: {
       active: "#2a313c",
+      hover: "#262c36",
     },
     transparent: {
       bgColor: {
+        selected: "#656c761a",
         hover: "#656c7633",
       },
     },
@@ -116,47 +121,47 @@ const diff: Diff = {
 
 const other: Other = {
   git: "#f05133",
-  body: "#0d1117",
+  body: github.bgColor.default,
   box: {
-    header: "#151b23",
+    header: github.bgColor.muted,
     body: {
-      self: "#0d1117",
+      self: themeVars.color.body,
       highlight: github.bgColor.accent.muted,
     },
   },
   text: {
     self: github.fgColor.default,
-    dark: "#dbe0ea",
     light: {
-      self: "#a6aab5",
-      num1: "rgb(125, 133, 144)",
-      num2: "#8a8e99",
-      num3: "#707687",
+      self: github.fgColor.default,
+      num1: github.fgColor.muted,
+      num2: github.fgColor.muted,
+      num3: github.fgColor.muted,
     },
+    dark: github.fgColor.default,
   },
-  footer: github.bgColor.black,
-  timeline: "#4c525e",
+  footer: github.bgColor.inset,
+  timeline: github.borderColor.muted,
   input: {
-    text: "#d5dbe6",
-    background: "#2c2f35",
-    toggleBackgound: "#454a57",
+    text: themeVars.color.text.self,
+    background: themeVars.color.body,
+    toggleBackgound: themeVars.color.body,
     border: {
       self: themeVars.color.light.border,
       hover: themeVars.color.light.border,
     },
   },
   light: {
-    self: "#00000028",
+    self: themeVars.color.body,
     mimicEnabled: "rgba(0, 0, 0, calc(40 / 255 * 222 / 255 / var(--opacity-disabled)))",
-    border: "#3d444d",
+    border: github.borderColor.default,
   },
   hover: {
-    self: "#656c7633",
-    opaque: "#656c7666",
+    self: github.control.bgColor.hover,
+    opaque: themeVars.color.box.header,
   },
-  active: "#161a21",
-  menu: "#0d1117",
-  card: "#0d1117",
+  active: github.control.transparent.bgColor.selected,
+  menu: github.bgColor.inset,
+  card: github.bgColor.inset,
   markup: {
     tableRow: "#ffffff06",
     code: {
@@ -186,7 +191,7 @@ const other: Other = {
     bg: "#000000f0",
   },
   nav: {
-    bg: github.bgColor.black,
+    bg: github.bgColor.inset,
     hoverBg: themeVars.color.hover.self,
     text: themeVars.color.text.self,
   },
@@ -207,7 +212,7 @@ const other: Other = {
 };
 
 export default defineTheme({
-  isDarkTheme: true,
+  isDarkTheme,
   primary: github.fgColor.accent,
   primaryContrast: github.fgColor.default,
   secondary: "#3d444d",
