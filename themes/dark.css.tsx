@@ -160,8 +160,8 @@ const other: Other = {
     opaque: themeVars.color.box.header,
   },
   active: github.control.transparent.bgColor.selected,
-  menu: github.bgColor.inset,
-  card: github.bgColor.inset,
+  menu: themeVars.color.body, // 此菜单项涉及太多, 不仅仅是下拉菜单, 默认使用 body 颜色
+  card: themeVars.color.body,
   markup: {
     tableRow: "#ffffff06",
     code: {
