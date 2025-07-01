@@ -7,11 +7,11 @@ import type { Theme } from "./theme";
 interface ColorTheme {
   /** 用于标识当前是否为暗色主题: `true` 暗色 `false` 亮色 */
   isDarkTheme: boolean;
-  /** 主色调 */
+  /** 主色调(强调色) */
   primary: string;
   /** 主色调的对比色, 一般用于 `color` 属性, primary 用于 `background-color` */
   primaryContrast: string;
-  /** 副色调 */
+  /** 副色调(边框色) */
   secondary: string;
   /** 红色 */
   red: string;

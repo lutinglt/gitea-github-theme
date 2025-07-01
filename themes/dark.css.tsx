@@ -51,6 +51,9 @@ const github = {
     default: "#0d1117",
     inset: "#010409",
     muted: "#151b23",
+    neutral: {
+      muted: "#656c7633",
+    }
   },
   borderColor: {
     default: "#3d444d",
@@ -60,14 +63,19 @@ const github = {
     bgColor: {
       active: "#2a313c",
       hover: "#262c36",
+      rest: "#212830",
     },
     transparent: {
       bgColor: {
-        selected: "#656c761a",
+        active: "#656c7640",
         hover: "#656c7633",
+        selected: "#656c761a",
       },
     },
   },
+  shadow: {
+    floating: "#01040966"
+  }
 };
 
 const console: Console = {
@@ -160,62 +168,62 @@ const other: Other = {
     opaque: themeVars.color.box.header,
   },
   active: github.control.transparent.bgColor.selected,
-  menu: themeVars.color.body, // 此菜单项涉及太多, 不仅仅是下拉菜单, 默认使用 body 颜色
+  menu: github.bgColor.inset,
   card: themeVars.color.body,
   markup: {
-    tableRow: "#ffffff06",
+    tableRow: github.bgColor.muted,
     code: {
-      block: "#ffffff16",
-      inline: "#ffffff26",
+      block: github.bgColor.muted,
+      inline: github.bgColor.neutral.muted,
     },
   },
-  button: "#212830",
-  codeBg: "#0d1117",
+  button: github.control.bgColor.rest,
+  codeBg: "unset",
   shadow: {
-    self: "#00000060",
-    opaque: "#00000080",
+    self: github.shadow.floating,
+    opaque: themeVars.color.shadow.self,
   },
-  secondaryBg: "#ffffff26",
+  secondaryBg: "unset",
   expandButton: github.diffBlob.hunkNum.bgColor.rest,
-  placeholderText: "#8a8e99",
+  placeholderText: themeVars.color.text.light.num3,
   editorLineHighlight: themeVars.color.primary.light.num5,
-  projectColumnBg: themeVars.color.secondary.light.num2,
-  caret: themeVars.color.text.self,
+  projectColumnBg: github.bgColor.inset,
+  caret: themeVars.color.text.dark,
   reaction: {
-    bg: "#ffffff12",
-    hoverBg: themeVars.color.primary.light.num4,
-    activeBg: themeVars.color.primary.light.num5,
+    bg: "initial",
+    hoverBg: github.bgColor.accent.muted,
+    activeBg: github.bgColor.accent.muted,
   },
   tooltip: {
-    text: "#fff",
-    bg: "#000000f0",
+    text: github.fgColor.default,
+    bg: github.bgColor.default,
   },
   nav: {
     bg: github.bgColor.inset,
-    hoverBg: themeVars.color.hover.self,
+    hoverBg: github.control.transparent.bgColor.hover,
     text: themeVars.color.text.self,
   },
   secondaryNavBg: themeVars.color.nav.bg,
   label: {
-    text: "#fff",
-    bg: "#7c84974b",
-    hoverBg: "#7c8497a0",
-    activeBg: "#7c8497",
+    text: themeVars.color.text.self,
+    bg: github.bgColor.neutral.muted,
+    hoverBg: github.control.transparent.bgColor.active,
+    activeBg: themeVars.color.label.hoverBg,
   },
   accent: themeVars.color.primary.light.num1,
   smallAccent: themeVars.color.primary.light.num5,
   highlight: {
-    bg: "#87651e",
-    fg: "#352c1c",
+    fg: github.fgColor.attention,
+    bg: github.bgColor.attention.muted,
   },
-  overlayBackdrop: "#080808c0",
+  overlayBackdrop: themeVars.color.body,
 };
 
 export default defineTheme({
   isDarkTheme,
   primary: github.fgColor.accent,
   primaryContrast: github.fgColor.default,
-  secondary: "#3d444d",
+  secondary: github.borderColor.default,
   red: github.fgColor.danger,
   orange: github.fgColor.severe,
   yellow: github.fgColor.attention,

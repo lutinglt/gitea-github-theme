@@ -1,9 +1,9 @@
 import type { MapLeafNodes } from "src/core/types";
 import * as color from "./color";
 
-/** 主色调 */
+/** 主色调(强调色) */
 export type Primary = MapLeafNodes<typeof color.primary, string>;
-/** 副色调 */
+/** 副色调(边框色) */
 export type Secondary = MapLeafNodes<typeof color.secondary, string>;
 /** 基础颜色 */
 export type Named = MapLeafNodes<typeof color.named, string>;

@@ -67,52 +67,83 @@ export const other = {
   menu: null,
   /** 卡片背景色, 但是找不到元素, 可能是个人 README */
   card: null,
+  /** Markdown 颜色 */
   markup: {
+    /** 隔行背景色 */
     tableRow: "color-markup-table-row",
     code: {
+      /** 代码块背景色 */
       block: null,
+      /** 代码行背景色 */
       inline: null,
     },
   },
+  /** 普通按钮的背景色 (basic 非 primary) */
   button: null,
+  /** 代码页面背景色 */
   codeBg: "color-code-bg",
+  /** 弹窗阴影 */
   shadow: {
     self: null,
+    /** css 没有使用 */
     opaque: null,
   },
+  /** 弹窗按钮行的背景色 */
   secondaryBg: "color-secondary-bg",
+  /** 代码差异对比折叠行按钮背景色 */
   expandButton: "color-expand-button",
+  /** 不知道 */
   placeholderText: "color-placeholder-text",
+  /** 不知道, css 没有 */
   editorLineHighlight: "color-editor-line-highlight",
+  /** 仓库项目页面列的背景色 */
   projectColumnBg: "color-project-column-bg",
+  /** caret-color 属性 */
   caret: null,
+  /** Issue 表情按钮 */
   reaction: {
+    /** css 里没用 */
     bg: null,
+    /** 悬停时颜色 */
     hoverBg: "color-reaction-hover-bg",
+    /** 点击后颜色 */
     activeBg: "color-reaction-active-bg",
   },
+  /** 不知道是干啥的 */
   tooltip: {
     text: null,
     bg: null,
   },
+  /** 顶部导航栏(用户导航栏) */
   nav: {
+    /** 背景色 */
     bg: null,
+    /** 悬停时背景色 */
     hoverBg: "color-nav-hover-bg",
+    /** color 颜色 */
     text: null,
   },
+  /** 顶部二级导航栏背景色(仓库导航栏等) */
   secondaryNavBg: "color-secondary-nav-bg",
-  /** 标签 */
+  /** 普通标签 */
   label: {
     text: null,
     bg: null,
     hoverBg: "color-label-hover-bg",
+    /** css 没用 */
     activeBg: "color-label-active-bg",
   },
+  /** 不知道. 似乎和最后一次 review 相关的边框色 */
   accent: null,
+  /** 不知道. 似乎和最后一次 review 相关的背景色 */
   smallAccent: "color-small-accent",
+  /** 不知道啥玩意, 跟文件预览内容行颜色有关系 */
   highlight: {
-    bg: null,
+    /** 在行号前追加的伪元素颜色 */
     fg: null,
+    /** 背景色 */
+    bg: null,
   },
+  /** 不知道啥玩意 dimmer 的背景色 */
   overlayBackdrop: "color-overlay-backdrop",
 };
