@@ -30,6 +30,7 @@ const otherVars = {
   border: {
     radius: null,
   },
+  ...color.otherAuto,
 };
 
 export const themeVars = createGlobalThemeContract(vars, varMapper);

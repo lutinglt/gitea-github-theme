@@ -1,6 +1,13 @@
-export const other = {
+export const otherAuto= {
   /** 未知 */
   git: null,
+  light: {
+    /** 不知道什么用, gitea css 中没有使用这个属性的 */
+    mimicEnabled: "color-light-mimic-enabled",
+  },
+}
+
+export const other = {
   /** 主要背景色 */
   body: null,
   /** 页面底部状态栏背景色 */
@@ -50,8 +57,6 @@ export const other = {
   light: {
     /** 多行下交替行的强调色, 例提交历史 */
     self: null,
-    /** 不知道什么用, gitea css 中没有使用这个属性的 */
-    mimicEnabled: "color-light-mimic-enabled",
     /** 基础按钮/标签的边框色 */
     border: null,
   },

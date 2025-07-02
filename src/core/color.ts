@@ -4,7 +4,7 @@ import type { Ansi, Console, Diff, Github, Message, Named, Other, Primary, Secon
 import { themeVars } from "src/types/vars";
 import type { Theme } from "./theme";
 
-interface ColorTheme {
+type ThemeColor = {
   /** 用于标识当前是否为暗色主题: `true` 暗色 `false` 亮色 */
   isDarkTheme: boolean;
   /** 主色调(强调色) */
@@ -53,7 +53,7 @@ interface ColorTheme {
   other: Other;
   /** 仅适用于本主题的全局变量, 取自 Github */
   github: Github;
-}
+};
 
 /** 定义颜色, 用于生成颜色主题
  * @example
@@ -80,7 +80,7 @@ interface ColorTheme {
  *   other,
  * })
  */
-export function defineTheme(theme: ColorTheme): Theme {
+export function defineTheme(theme: ThemeColor): Theme {
   const lighten = theme.isDarkTheme ? -1 : 1;
 
   const primary: Primary = {

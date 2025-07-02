@@ -2,7 +2,7 @@ export const github = {
   /** 用于 color 属性的颜色 */
   fgColor: {
     /** 强调色
-     * @actions 右侧日志标题颜色
+     * @actions `actionViewRight` 右侧日志标题颜色
      */
     accent: null,
     /** 默认的文本颜色
@@ -19,7 +19,7 @@ export const github = {
     accent: {
       /** 强调色
        * @diff 折叠/展开按钮的悬停颜色
-       * @actions 左侧子作业激活伪元素颜色
+       * @actions `actionViewLeft` 左侧子作业激活伪元素颜色
        */
       emphasis: null,
     },

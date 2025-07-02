@@ -4,4 +4,4 @@ export { github } from "./github";
 export { primary, secondary } from "./main";
 export { message } from "./message";
 export { named } from "./named";
-export { other } from "./other";
+export { other, otherAuto } from "./other";

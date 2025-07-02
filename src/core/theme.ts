@@ -16,6 +16,12 @@ function stringToBoolean(str: string, name: string): boolean {
 export function createTheme(theme: Theme): void {
   createGlobalTheme(":root", themeVars, theme);
   createGlobalTheme(":root", otherThemeVars, {
+    git: "#f05133",
+    light: {
+      mimicEnabled: theme.isDarkTheme
+        ? "rgba(0, 0, 0, calc(40 / 255 * 222 / 255 / var(--opacity-disabled)))"
+        : "rgba(0, 0, 0, calc(6 / 255 * 222 / 255 / var(--opacity-disabled)))",
+    },
     border: {
       radius: "6px",
     },
