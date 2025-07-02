@@ -56,6 +56,28 @@ const github: GithubColor = {
   borderColor: {
     default: "#3d444d",
     muted: "#3d444db3",
+    translucent: "#ffffff26",
+  },
+  button: {
+    primary: {
+      fgColor: {
+        accent: "#39d353",
+        rest: "#ffffff",
+      },
+      bgColor: {
+        rest: "#238636",
+        hover: "#29903b",
+      },
+    },
+    danger: {
+      fgColor: {
+        rest: "#fa5e55",
+        hover: "#ffffff",
+      },
+      bgColor: {
+        hover: "#b62324",
+      },
+    },
   },
   control: {
     bgColor: {

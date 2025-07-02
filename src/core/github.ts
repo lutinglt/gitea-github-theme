@@ -1,4 +1,5 @@
 import type { Console, Diff, Other } from "src";
+import type { Github } from "src/types";
 import { themeVars } from "src/types/vars";
 import { defineTheme } from "./color";
 import type { Theme } from "./theme";
@@ -59,6 +60,28 @@ export type GithubColor = {
   borderColor: {
     default: string;
     muted: string;
+    translucent: string;
+  };
+  button: {
+    primary: {
+      fgColor: {
+        accent: string;
+        rest: string;
+      };
+      bgColor: {
+        rest: string;
+        hover: string;
+      };
+    };
+    danger: {
+      fgColor: {
+        rest: string;
+        hover: string;
+      };
+      bgColor: {
+        hover: string;
+      };
+    };
   };
   control: {
     bgColor: {
@@ -79,77 +102,77 @@ export type GithubColor = {
   };
 };
 
-export function defineGithubTheme(github: GithubColor): Theme {
+export function defineGithubTheme(githubColor: GithubColor): Theme {
   const console: Console = {
     fg: {
-      self: github.fgColor.default,
-      subtle: github.fgColor.muted,
+      self: githubColor.fgColor.default,
+      subtle: githubColor.fgColor.muted,
     },
-    bg: github.bgColor.inset,
-    border: github.borderColor.muted,
-    activeBg: github.control.bgColor.active,
-    hoverBg: github.control.transparent.bgColor.hover,
+    bg: githubColor.bgColor.inset,
+    border: githubColor.borderColor.muted,
+    activeBg: githubColor.control.bgColor.active,
+    hoverBg: githubColor.control.transparent.bgColor.hover,
     menu: {
-      bg: github.bgColor.inset,
-      border: github.borderColor.muted,
+      bg: githubColor.bgColor.inset,
+      border: githubColor.borderColor.muted,
     },
   };
 
   const diff: Diff = {
     added: {
       linenum: {
-        bg: github.diffBlob.addtionNum.bgColor,
+        bg: githubColor.diffBlob.addtionNum.bgColor,
       },
       row: {
-        bg: github.bgColor.success.muted,
-        border: github.bgColor.success.muted,
+        bg: githubColor.bgColor.success.muted,
+        border: githubColor.bgColor.success.muted,
       },
       word: {
-        bg: github.diffBlob.addtionWord.bgColor,
+        bg: githubColor.diffBlob.addtionWord.bgColor,
       },
     },
     removed: {
       linenum: {
-        bg: github.diffBlob.deletionNum.bgColor,
+        bg: githubColor.diffBlob.deletionNum.bgColor,
       },
       row: {
-        bg: github.bgColor.danger.muted,
-        border: github.bgColor.danger.muted,
+        bg: githubColor.bgColor.danger.muted,
+        border: githubColor.bgColor.danger.muted,
       },
       word: {
-        bg: github.diffBlob.deletionWord.bgColor,
+        bg: githubColor.diffBlob.deletionWord.bgColor,
       },
     },
     moved: {
       row: {
-        bg: github.bgColor.attention.muted,
-        border: github.bgColor.attention.muted,
+        bg: githubColor.bgColor.attention.muted,
+        border: githubColor.bgColor.attention.muted,
       },
     },
-    inactive: github.bgColor.muted,
+    inactive: githubColor.bgColor.muted,
   };
 
   const other: Other = {
-    body: github.bgColor.default,
+    body: githubColor.bgColor.default,
     box: {
-      header: github.bgColor.muted,
+      header: githubColor.bgColor.muted,
       body: {
         self: themeVars.color.body,
-        highlight: github.bgColor.accent.muted,
+        highlight: githubColor.bgColor.accent.muted,
       },
     },
     text: {
-      self: github.fgColor.default,
+      self: githubColor.fgColor.default,
       light: {
-        self: github.fgColor.default,
-        num1: github.fgColor.muted,
-        num2: github.fgColor.muted,
-        num3: github.fgColor.muted,
+        self: githubColor.fgColor.default,
+        num1: githubColor.fgColor.muted,
+        num2: githubColor.fgColor.muted,
+        num3: githubColor.fgColor.muted,
       },
-      dark: github.fgColor.default,
+      dark: githubColor.fgColor.default,
     },
-    footer: github.bgColor.inset,
-    timeline: github.borderColor.muted,
+    footer: githubColor.bgColor.inset,
+    timeline: githubColor.borderColor.muted,
     input: {
       text: themeVars.color.text.self,
       background: themeVars.color.body,
@@ -161,98 +184,136 @@ export function defineGithubTheme(github: GithubColor): Theme {
     },
     light: {
       self: themeVars.color.body,
-      border: github.borderColor.default,
+      border: githubColor.borderColor.default,
     },
     hover: {
-      self: github.control.bgColor.hover,
+      self: githubColor.control.bgColor.hover,
       opaque: themeVars.color.box.header,
     },
-    active: github.control.transparent.bgColor.selected,
-    menu: github.bgColor.inset,
+    active: githubColor.control.transparent.bgColor.selected,
+    menu: githubColor.bgColor.inset,
     card: themeVars.color.body,
     markup: {
-      tableRow: github.bgColor.muted,
+      tableRow: githubColor.bgColor.muted,
       code: {
-        block: github.bgColor.muted,
-        inline: github.bgColor.neutral.muted,
+        block: githubColor.bgColor.muted,
+        inline: githubColor.bgColor.neutral.muted,
       },
     },
-    button: github.control.bgColor.rest,
+    button: githubColor.control.bgColor.rest,
     codeBg: "unset",
     shadow: {
-      self: github.shadow.floating,
+      self: githubColor.shadow.floating,
       opaque: themeVars.color.shadow.self,
     },
     secondaryBg: "unset",
-    expandButton: github.diffBlob.hunkNum.bgColor.rest,
+    expandButton: githubColor.diffBlob.hunkNum.bgColor.rest,
     placeholderText: themeVars.color.text.light.num3,
     editorLineHighlight: themeVars.color.primary.light.num5,
-    projectColumnBg: github.bgColor.inset,
+    projectColumnBg: githubColor.bgColor.inset,
     caret: themeVars.color.text.dark,
     reaction: {
       bg: "initial",
-      hoverBg: github.bgColor.accent.muted,
-      activeBg: github.bgColor.accent.muted,
+      hoverBg: githubColor.bgColor.accent.muted,
+      activeBg: githubColor.bgColor.accent.muted,
     },
     tooltip: {
-      text: github.fgColor.default,
-      bg: github.bgColor.default,
+      text: githubColor.fgColor.default,
+      bg: githubColor.bgColor.default,
     },
     nav: {
-      bg: github.bgColor.inset,
-      hoverBg: github.control.transparent.bgColor.hover,
+      bg: githubColor.bgColor.inset,
+      hoverBg: githubColor.control.transparent.bgColor.hover,
       text: themeVars.color.text.self,
     },
     secondaryNavBg: themeVars.color.nav.bg,
     label: {
       text: themeVars.color.text.self,
-      bg: github.bgColor.neutral.muted,
-      hoverBg: github.control.transparent.bgColor.active,
+      bg: githubColor.bgColor.neutral.muted,
+      hoverBg: githubColor.control.transparent.bgColor.active,
       activeBg: themeVars.color.label.hoverBg,
     },
     accent: themeVars.color.primary.light.num1,
     smallAccent: themeVars.color.primary.light.num5,
     highlight: {
-      fg: github.fgColor.attention,
-      bg: github.bgColor.attention.muted,
+      fg: githubColor.fgColor.attention,
+      bg: githubColor.bgColor.attention.muted,
     },
     overlayBackdrop: themeVars.color.body,
   };
-  return defineTheme({
-    isDarkTheme: github.isDarkTheme,
-    primary: github.fgColor.accent,
-    primaryContrast: github.fgColor.default,
-    secondary: github.borderColor.default,
-    red: github.fgColor.danger,
-    orange: github.fgColor.severe,
-    yellow: github.fgColor.attention,
-    olive: github.display.olive.fgColor,
-    green: github.fgColor.success,
-    cyan: github.display.cyan.fgColor,
-    teal: github.display.teal.fgColor,
-    blue: github.fgColor.accent,
-    violet: github.display.indigo.fgColor,
-    purple: github.fgColor.done,
-    pink: github.fgColor.sponsors,
-    brown: github.display.brown.fgColor,
-    black: github.fgColor.black,
-    grey: github.fgColor.neutral,
-    gold: github.display.lemon.fgColor,
-    white: github.fgColor.white,
-    console,
-    diff,
-    other,
-    github: {
-      fgColor: {
-        accent: github.fgColor.accent,
-        default: github.fgColor.default,
-        muted: github.fgColor.muted,
+
+  const github: Github = {
+    fgColor: {
+      accent: githubColor.fgColor.accent,
+      default: githubColor.fgColor.default,
+      muted: githubColor.fgColor.muted,
+      success: githubColor.fgColor.success,
+      done: githubColor.fgColor.done,
+    },
+    bgColor: {
+      accent: {
+        emphasis: githubColor.bgColor.accent.emphasis,
       },
-      bgColor: {
-        accent: {
-          emphasis: github.bgColor.accent.emphasis,
+    },
+    button: {
+      default: {
+        bgColor: {
+          active: githubColor.control.bgColor.active,
+        },
+      },
+      primary: {
+        fgColor: {
+          accent: githubColor.button.primary.fgColor.accent,
+          rest: githubColor.button.primary.fgColor.rest,
+        },
+        bgColor: {
+          rest: githubColor.button.primary.bgColor.rest,
+          hover: githubColor.button.primary.bgColor.hover,
+        },
+        borderColor: {
+          rest: githubColor.borderColor.translucent,
+          hover: githubColor.borderColor.translucent,
+        },
+      },
+      danger: {
+        fgColor: {
+          rest: githubColor.button.danger.fgColor.rest,
+          hover: githubColor.button.danger.fgColor.hover,
+        },
+        bgColor: {
+          rest: githubColor.control.bgColor.rest,
+          hover: githubColor.button.danger.bgColor.hover,
+        },
+        borderColor: {
+          hover: githubColor.borderColor.translucent,
         },
       },
     },
+  };
+  return defineTheme({
+    isDarkTheme: githubColor.isDarkTheme,
+    primary: githubColor.fgColor.accent,
+    primaryContrast: githubColor.fgColor.default,
+    secondary: githubColor.borderColor.default,
+    red: githubColor.fgColor.danger,
+    orange: githubColor.fgColor.severe,
+    yellow: githubColor.fgColor.attention,
+    olive: githubColor.display.olive.fgColor,
+    green: githubColor.fgColor.success,
+    cyan: githubColor.display.cyan.fgColor,
+    teal: githubColor.display.teal.fgColor,
+    blue: githubColor.fgColor.accent,
+    violet: githubColor.display.indigo.fgColor,
+    purple: githubColor.fgColor.done,
+    pink: githubColor.fgColor.sponsors,
+    brown: githubColor.display.brown.fgColor,
+    black: githubColor.fgColor.black,
+    grey: githubColor.fgColor.neutral,
+    gold: githubColor.display.lemon.fgColor,
+    white: githubColor.fgColor.white,
+    console,
+    diff,
+    other,
+    github,
   });
 }
