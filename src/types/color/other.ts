@@ -1,11 +1,11 @@
-export const otherAuto= {
+export const otherAuto = {
   /** 未知 */
   git: null,
   light: {
     /** 不知道什么用, gitea css 中没有使用这个属性的 */
     mimicEnabled: "color-light-mimic-enabled",
   },
-}
+};
 
 export const other = {
   /** 主要背景色 */

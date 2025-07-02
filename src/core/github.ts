@@ -77,7 +77,7 @@ export type GithubColor = {
   shadow: {
     floating: string;
   };
-}
+};
 
 export function defineGithubTheme(github: GithubColor): Theme {
   const console: Console = {
