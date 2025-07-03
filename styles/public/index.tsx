@@ -1,5 +1,6 @@
 import "./button"; // 按钮
 import "./chroma"; // 代码高亮
+import "./codemirror"; // codemirror 样式
 import "./input"; // 输入框
 import "./modal"; // 弹窗
 import "./radius"; // 圆角
