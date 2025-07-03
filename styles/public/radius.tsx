@@ -58,8 +58,6 @@ export const radius = css`
   .ui.search.selection .prompt,
   .ui.pointing.dropdown > .menu,
   .ui.loading.form.segments:before,
-  .ui.secondary.menu .item,
-  .ui.secondary.menu .active.item,
   .ui.secondary.menu .dropdown.item > .menu,
   .ui.vertical.menu > .active.item:only-child,
   .ui.segments:not(.horizontal) > .segment:only-child,

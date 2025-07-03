@@ -1,13 +1,4 @@
 // Made by Luting ^-^
-.repo-buttons .ui.basic.label {
-  color: #f0f6fc;
-}
-
-a.ui.basic.label:hover {
-  color: #f0f6fc;
-  background-color: #262c36;
-  border-color: var(--color-light-border);
-}
 
 span,
 .org-visibility div {
@@ -17,30 +8,7 @@ span,
   }
 }
 
-.badge.tw-bg-green,
-.ui.green.label.issue-state-label {
-  background-color: #238636 !important;
-}
-
-.badge.tw-bg-red {
-  background-color: var(--color-purple) !important;
-}
-
 .ui.ui.ui {
-  &.purple.label {
-    border-radius: 25px !important;
-  }
-
-  &.green.label.issue-state-label {
-    background: var(--color-primary);
-    border-radius: 25px !important;
-  }
-
-  &.red.label.issue-state-label {
-    background: var(--color-purple);
-    border-radius: 25px !important;
-  }
-
   &.primary.label {
     color: var(--color-blue);
     background-color: #388bfd33;
@@ -84,10 +52,6 @@ a.ui.ui.ui {
     color: #79c0ff;
     background-color: #3a83fd5c !important;
   }
-}
-
-.issue-list .text.red {
-  color: #ab7df8 !important;
 }
 
 // Runner&软件包&提交 标签

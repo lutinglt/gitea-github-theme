@@ -41,14 +41,15 @@ const github: GithubColor = {
       muted: "#bb800926",
     },
     success: {
+      emphasis: "#238636",
       muted: "#2ea04326",
     },
     danger: {
       muted: "#f851491a",
     },
-    // done: {
-    //   emphasis: "#8957e5",
-    // },
+    done: {
+      emphasis: "#8957e5",
+    },
     default: "#0d1117",
     inset: "#010409",
     muted: "#151b23",

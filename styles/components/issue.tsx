@@ -23,3 +23,44 @@ export const button = css`
     }
   }
 `;
+
+export const babel = css`
+  .issue-content-left {
+    .badge {
+      // 时间线打开状态标签
+      &.tw-bg-green {
+        background-color: ${themeVars.github.bgColor.success.emphasis} !important;
+        border-color: ${themeVars.github.bgColor.success.emphasis} !important;
+      }
+      // 时间线关闭状态标签
+      &.tw-bg-red {
+        background-color: ${themeVars.github.bgColor.done.emphasis} !important;
+        border-color: ${themeVars.github.bgColor.done.emphasis} !important;
+      }
+      // 时间线合并状态标签
+      &.tw-bg-purple {
+        background-color: ${themeVars.github.bgColor.done.emphasis} !important;
+        border-color: ${themeVars.github.bgColor.done.emphasis} !important;
+      }
+    }
+  }
+  // 工单&PR状态标签
+  .ui.label.issue-state-label {
+    border-radius: 25px !important;
+
+    &.green {
+      background-color: ${themeVars.github.bgColor.success.emphasis} !important;
+      border-color: ${themeVars.github.bgColor.success.emphasis} !important;
+    }
+
+    &.red {
+      background-color: ${themeVars.github.bgColor.done.emphasis} !important;
+      border-color: ${themeVars.github.bgColor.done.emphasis} !important;
+    }
+
+    &.purple {
+      background-color: ${themeVars.github.bgColor.done.emphasis} !important;
+      border-color: ${themeVars.github.bgColor.done.emphasis} !important;
+    }
+  }
+`;

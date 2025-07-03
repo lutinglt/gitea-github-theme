@@ -45,10 +45,14 @@ export type GithubColor = {
       muted: string;
     };
     success: {
+      emphasis: string;
       muted: string;
     };
     danger: {
       muted: string;
+    };
+    done: {
+      emphasis: string;
     };
     default: string;
     inset: string;
@@ -261,6 +265,12 @@ export function defineGithubTheme(githubColor: GithubColor): Theme {
     bgColor: {
       accent: {
         emphasis: githubColor.bgColor.accent.emphasis,
+      },
+      success: {
+        emphasis: githubColor.bgColor.success.emphasis,
+      },
+      done: {
+        emphasis: githubColor.bgColor.done.emphasis,
       },
     },
     borderColor: {

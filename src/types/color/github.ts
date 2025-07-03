@@ -32,6 +32,18 @@ export const github = {
        */
       emphasis: null,
     },
+    success: {
+      /** 成功的背景颜色
+       * @issue `babel` 重新开启图标背景颜色
+       */
+      emphasis: null,
+    },
+    done: {
+      /** 完成的背景颜色
+       * @issue `babel` 工单已关闭图标背景颜色
+       */
+      emphasis: null
+    }
   },
   borderColor: {
     accent: {
