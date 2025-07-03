@@ -39,9 +39,7 @@ const dark_emoji = `
 export function createTheme(theme: Theme): void {
   const isDarkTheme = stringToBoolean(theme.isDarkTheme, "isDarkTheme");
   if (isDarkTheme) {
-    globalStyle(`${dark_emoji}`, {
-      filter: "invert(100%) hue-rotate(180deg)",
-    });
+    globalStyle(dark_emoji, { filter: "invert(100%) hue-rotate(180deg)" });
   }
   createGlobalTheme(":root", themeVars, theme);
   createGlobalTheme(":root", otherThemeVars, {
