@@ -19,6 +19,7 @@ export const github = {
     success: null,
     /** 完成的文本颜色
      * @issue `button` 关闭工单按钮文本颜色
+     * @svg `issueClosed` 工单已关闭图标颜色
      */
     done: null,
   },
@@ -28,6 +29,14 @@ export const github = {
       /** 强调色
        * @diff 折叠/展开按钮的悬停颜色
        * @actions `actionViewLeft` 左侧子作业激活伪元素颜色
+       */
+      emphasis: null,
+    },
+  },
+  borderColor: {
+    accent: {
+      /** 强调色
+       * @input `input` 输入框被选中时的边框颜色
        */
       emphasis: null,
     },

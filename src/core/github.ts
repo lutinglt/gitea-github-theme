@@ -58,6 +58,9 @@ export type GithubColor = {
     };
   };
   borderColor: {
+    accent: {
+      emphasis: string;
+    };
     default: string;
     muted: string;
     translucent: string;
@@ -99,6 +102,11 @@ export type GithubColor = {
   };
   shadow: {
     floating: string;
+  };
+  overlay: {
+    backdrop: {
+      bgColor: string;
+    };
   };
 };
 
@@ -175,7 +183,7 @@ export function defineGithubTheme(githubColor: GithubColor): Theme {
     timeline: githubColor.borderColor.muted,
     input: {
       text: themeVars.color.text.self,
-      background: themeVars.color.body,
+      background: githubColor.bgColor.muted,
       toggleBackgound: themeVars.color.body,
       border: {
         self: themeVars.color.light.border,
@@ -239,7 +247,7 @@ export function defineGithubTheme(githubColor: GithubColor): Theme {
       fg: githubColor.fgColor.attention,
       bg: githubColor.bgColor.attention.muted,
     },
-    overlayBackdrop: themeVars.color.body,
+    overlayBackdrop: githubColor.overlay.backdrop.bgColor,
   };
 
   const github: Github = {
@@ -253,6 +261,11 @@ export function defineGithubTheme(githubColor: GithubColor): Theme {
     bgColor: {
       accent: {
         emphasis: githubColor.bgColor.accent.emphasis,
+      },
+    },
+    borderColor: {
+      accent: {
+        emphasis: githubColor.borderColor.accent.emphasis,
       },
     },
     button: {

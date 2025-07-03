@@ -46,6 +46,9 @@ const github: GithubColor = {
     danger: {
       muted: "#f851491a",
     },
+    // done: {
+    //   emphasis: "#8957e5",
+    // },
     default: "#0d1117",
     inset: "#010409",
     muted: "#151b23",
@@ -54,6 +57,9 @@ const github: GithubColor = {
     },
   },
   borderColor: {
+    accent: {
+      emphasis: "#1f6feb",
+    },
     default: "#3d444d",
     muted: "#3d444db3",
     translucent: "#ffffff26",
@@ -96,6 +102,11 @@ const github: GithubColor = {
   shadow: {
     floating: "#01040966",
   },
+  overlay: {
+    backdrop: {
+      bgColor: "#21283066"
+    }
+  }
 };
 
 export default defineGithubTheme(github);

@@ -149,6 +149,6 @@ export const other = {
     /** 背景色 */
     bg: null,
   },
-  /** 不知道啥玩意 dimmer 的背景色 */
+  /** 叠加背景色, 比如弹窗时遮蔽页面其他部分的背景色 */
   overlayBackdrop: "color-overlay-backdrop",
 };
