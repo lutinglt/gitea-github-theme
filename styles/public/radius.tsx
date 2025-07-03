@@ -59,8 +59,6 @@ export const radius = css`
   .ui.pointing.dropdown > .menu,
   .ui.loading.form.segments:before,
   .ui.secondary.menu .dropdown.item > .menu,
-  .ui.vertical.menu > .active.item:only-child,
-  .ui.segments:not(.horizontal) > .segment:only-child,
   .ui.segments:not(.horizontal) > .segment:has(~ .tw-hidden) {
     border-radius: ${otherThemeVars.border.radius};
   }
@@ -100,8 +98,7 @@ export const radiusTop = css`
   .ui.modal > i.icon:first-child + *,
   .ui.modal > .dimmer:first-child + i.icon + *,
   .ui.modal > .dimmer:first-child + *:not(.icon),
-  .ui.modal > :first-child:not(.icon):not(.dimmer),
-  .ui.table > thead > tr:first-child > th:only-child {
+  .ui.modal > :first-child:not(.icon):not(.dimmer) {
     border-radius: ${otherThemeVars.border.radius} ${otherThemeVars.border.radius} 0 0;
   }
 `;
@@ -146,15 +143,6 @@ export const radiusBottom = css`
   .ui.menu .dropdown.item {
     .menu {
       border-radius: 0 0 ${otherThemeVars.border.radius} ${otherThemeVars.border.radius};
-    }
-  }
-
-  .ui.table > tfoot > tr:first-child {
-    > th,
-    > td {
-      &:only-child {
-        border-radius: 0 0 ${otherThemeVars.border.radius} ${otherThemeVars.border.radius};
-      }
     }
   }
 
@@ -255,5 +243,26 @@ export const radiusBottomRight = css`
 
   .ui.category.search > .results .category:last-child .result:last-child {
     border-bottom-right-radius: ${otherThemeVars.border.radius};
+  }
+`;
+
+// only-child 顺序最后生效
+export const onlyChild = css`
+  .ui.vertical.menu > .active.item:only-child,
+  .ui.segments:not(.horizontal) > .segment:only-child {
+    border-radius: ${otherThemeVars.border.radius};
+  }
+
+  .ui.table > thead > tr:first-child > th:only-child {
+    border-radius: ${otherThemeVars.border.radius} ${otherThemeVars.border.radius} 0 0;
+  }
+
+  .ui.table > tfoot > tr:first-child {
+    > th,
+    > td {
+      &:only-child {
+        border-radius: 0 0 ${otherThemeVars.border.radius} ${otherThemeVars.border.radius};
+      }
+    }
   }
 `;
