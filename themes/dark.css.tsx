@@ -62,6 +62,15 @@ const github: GithubColor = {
       emphasis: "#1f6feb",
     },
     default: "#3d444d",
+    attention: {
+      emphasis: "#9e6a03",
+    },
+    success: {
+      emphasis: "#238636",
+    },
+    done: {
+      emphasis: "#8957e5",
+    },
     muted: "#3d444db3",
     translucent: "#ffffff26",
   },
@@ -105,9 +114,9 @@ const github: GithubColor = {
   },
   overlay: {
     backdrop: {
-      bgColor: "#21283066"
-    }
-  }
+      bgColor: "#21283066",
+    },
+  },
 };
 
 export default defineGithubTheme(github);

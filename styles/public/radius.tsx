@@ -266,3 +266,17 @@ export const onlyChild = css`
     }
   }
 `;
+
+// 修复一些情况下圆角边框线被覆盖的问题
+export const fixRadius = css`
+  // 评论列表标题
+  .repository.view.issue .comment-list .comment > .content > div:first-child {
+    border-top-left-radius: ${otherThemeVars.border.radius};
+    border-top-right-radius: ${otherThemeVars.border.radius};
+  }
+  // 评论列表内容
+  .repository.view.issue .comment-list .comment > .content > div:last-child {
+    border-bottom-left-radius: ${otherThemeVars.border.radius};
+    border-bottom-right-radius: ${otherThemeVars.border.radius};
+  }
+`;

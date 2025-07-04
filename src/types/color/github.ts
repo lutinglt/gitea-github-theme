@@ -15,6 +15,7 @@ export const github = {
     muted: null,
     /** 成功的文本颜色
      * @issue `button` 重新开启按钮文本颜色
+     * @label `label` 绿色标签的文本颜色
      */
     success: null,
     /** 完成的文本颜色
@@ -42,13 +43,31 @@ export const github = {
       /** 完成的背景颜色
        * @issue `babel` 工单已关闭图标背景颜色
        */
-      emphasis: null
-    }
+      emphasis: null,
+    },
   },
   borderColor: {
     accent: {
       /** 强调色
        * @input `input` 输入框被选中时的边框颜色
+       */
+      emphasis: null,
+    },
+    attention: {
+      /** 注意的边框颜色
+       * @label `label` 黄色/橙色标签的边框色
+       */
+      emphasis: null,
+    },
+    success: {
+      /** 成功的边框颜色
+       * @label `label` 绿色标签的边框色
+       */
+      emphasis: null,
+    },
+    done: {
+      /** 完成的边框颜色
+       * @label `label` 红色/紫色标签的边框色
        */
       emphasis: null,
     },

@@ -49,16 +49,19 @@ export const babel = css`
     border-radius: 25px !important;
 
     &.green {
+      color: ${themeVars.color.text.self} !important;
       background-color: ${themeVars.github.bgColor.success.emphasis} !important;
       border-color: ${themeVars.github.bgColor.success.emphasis} !important;
     }
 
     &.red {
+      color: ${themeVars.color.text.self} !important;
       background-color: ${themeVars.github.bgColor.done.emphasis} !important;
       border-color: ${themeVars.github.bgColor.done.emphasis} !important;
     }
 
     &.purple {
+      color: ${themeVars.color.text.self} !important;
       background-color: ${themeVars.github.bgColor.done.emphasis} !important;
       border-color: ${themeVars.github.bgColor.done.emphasis} !important;
     }

@@ -66,3 +66,13 @@ export const button = css`
     }
   }
 `;
+
+export const label = css`
+  // Runner 标签
+  .runner-container {
+    // 普通标签, runner 状态: 离线, runner 标签
+    .ui.label {
+      border: 1px solid ${themeVars.color.light.border};
+    }
+  }
+`;
