@@ -55,6 +55,7 @@ export const github = {
     accent: {
       /** 强调色
        * @input `input` 输入框被选中时的边框颜色
+       * @clone `clone` 克隆地址框被选中时的边框颜色
        * @issue `comment` 评论框被选中时的边框颜色
        */
       emphasis: null,
@@ -153,4 +154,15 @@ export const github = {
       },
     },
   },
+  control: {
+    transparent: {
+      bgColor: {
+        /** 悬停色
+         * @clone `clone` 克隆按钮下按钮组和面板操作列表的悬停背景颜色
+         * @input `inputAction` 输入框动作按钮的悬停背景颜色
+         */
+        hover: null,
+      }
+    }
+  }
 };

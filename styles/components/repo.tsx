@@ -1,5 +1,6 @@
 import { css, themeVars } from "src/types/vars";
 
+// 提交列表
 export const commit = css`
   .page-content.repository {
     // 提交列表 (选择器保证同等优先级覆盖了 gitea 原生的样式)
@@ -19,6 +20,15 @@ export const commit = css`
           margin-top: 0.375rem;
           margin-bottom: 0.375rem;
           margin-left: -8px;
+        }
+      }
+      // 提交信息
+      .message {
+        // tag 标签
+        a.ui.basic.primary.label {
+          border-radius: 25px;
+          border-width: 1.5px;
+          padding: 5px 8px !important;
         }
       }
       // 提交信息右侧

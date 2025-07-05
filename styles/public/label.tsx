@@ -87,33 +87,21 @@ export const shaLabel = css`
     &.sign-trusted {
       border: 1.5px solid ${themeVars.color.green.badge.self} !important;
       color: ${themeVars.color.green.badge.self} !important;
-      &:hover {
-        background-color: ${themeVars.color.green.badge.hover.bg} !important;
-      }
     }
     // 验证未信任
     &.sign-untrusted {
       border: 1.5px solid ${themeVars.color.yellow.badge.self} !important;
       color: ${themeVars.color.yellow.badge.self} !important;
-      &:hover {
-        background-color: ${themeVars.color.yellow.badge.hover.bg} !important;
-      }
     }
     // 验证未匹配
     &.sign-unmatched {
       border: 1.5px solid ${themeVars.color.orange.badge.self} !important;
       color: ${themeVars.color.orange.badge.self} !important;
-      &:hover {
-        background-color: ${themeVars.color.orange.badge.hover.bg} !important;
-      }
     }
     // 验证警告
     &.sign-warning {
       border: 1.5px solid ${themeVars.color.red.badge.self} !important;
       color: ${themeVars.color.red.badge.self} !important;
-      &:hover {
-        background-color: ${themeVars.color.red.badge.hover.bg} !important;
-      }
     }
   }
 `;
@@ -155,6 +143,7 @@ export const repoLabel = css`
   .org-visibility div {
     &.ui.basic.label {
       background-color: unset;
+      color: ${themeVars.color.text.light.num1};
     }
   }
 `;
@@ -166,6 +155,7 @@ export const packagesLabel = css`
       > .ui.container > div > .flex-list {
         // 软件包类型的标签
         .ui.label {
+          background-color: unset;
           border: 1px solid ${themeVars.color.light.border};
           color: ${themeVars.color.primary.self};
         }

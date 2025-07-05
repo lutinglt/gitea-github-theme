@@ -1,4 +1,5 @@
 import "./actions";
+import "./clone";
 import "./dashboard";
 import "./diff";
 import "./issue";

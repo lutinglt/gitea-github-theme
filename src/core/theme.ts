@@ -1,4 +1,4 @@
-import { createGlobalTheme, globalStyle } from "@vanilla-extract/css";
+import { createGlobalTheme, globalKeyframes, globalStyle } from "@vanilla-extract/css";
 import { otherThemeVars, themeVars } from "src/types/vars";
 import type { MapLeafNodes, WithOptionalLayer } from "./types";
 
@@ -13,7 +13,9 @@ function stringToBoolean(str: string, name: string): boolean {
   }
 }
 
-const dark_emoji = `
+export const overlayAppear = "overlay-appear";
+
+const emoji = `
 .emoji[aria-label="check mark"],
 .emoji[aria-label="currency exchange"],
 .emoji[aria-label="TOP arrow"],
@@ -39,7 +41,7 @@ const dark_emoji = `
 export function createTheme(theme: Theme): void {
   const isDarkTheme = stringToBoolean(theme.isDarkTheme, "isDarkTheme");
   if (isDarkTheme) {
-    globalStyle(dark_emoji, { filter: "invert(100%) hue-rotate(180deg)" });
+    globalStyle(emoji, { filter: "invert(100%) hue-rotate(180deg)" });
   }
   createGlobalTheme(":root", themeVars, theme);
   createGlobalTheme(":root", otherThemeVars, {
@@ -56,5 +58,9 @@ export function createTheme(theme: Theme): void {
   globalStyle(":root", {
     accentColor: themeVars.color.accent,
     colorScheme: isDarkTheme ? "dark" : "light",
+  });
+  globalKeyframes(overlayAppear, {
+    "0%": { opacity: 0, transform: "translateY(-12px)" },
+    "100%": { opacity: 1, transform: "translateY(0)" },
   });
 }

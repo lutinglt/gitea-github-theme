@@ -1,6 +1,7 @@
 import "./button"; // 按钮
 import "./chroma"; // 代码高亮
 import "./codemirror"; // codemirror 样式
+import "./tippy";
 import "./input"; // 输入框
 import "./label"; // 标签
 import "./modal"; // 弹窗

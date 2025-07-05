@@ -331,6 +331,13 @@ export function defineGithubTheme(githubColor: GithubColor): Theme {
         },
       },
     },
+    control: {
+      transparent: {
+        bgColor: {
+          hover: githubColor.control.transparent.bgColor.hover,
+        },
+      },
+    },
   };
   return defineTheme({
     isDarkTheme: githubColor.isDarkTheme,
