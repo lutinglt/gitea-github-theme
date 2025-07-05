@@ -62,5 +62,8 @@
       "prettier-plugin-organize-imports"
     ],
     "organizeImportsSkipDestructiveCodeActions": false
+  },
+  "dependencies": {
+    "typescript-styled-plugin": "^0.18.3"
   }
 }
