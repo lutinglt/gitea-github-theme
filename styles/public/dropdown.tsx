@@ -67,6 +67,10 @@ export const dropdown = css`
   .ui.dropdown .menu .menu {
     border-radius: 12px !important;
   }
+  // 修复仪表板切换控制用户按钮阴影被覆盖缺少边框线的问题
+  .ui.dropdown .menu.context-user-switch .scrolling.menu {
+    box-shadow: ${themeVars.github.shadow.floating.small} !important;
+  }
 `;
 
 // 选择框的下拉菜单看起来像普通按钮
