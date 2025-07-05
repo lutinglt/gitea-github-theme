@@ -119,6 +119,21 @@ const github: GithubColor = {
       bgColor: "#21283066",
     },
   },
+  contribution: {
+    default: {
+      bgColor: {
+        num0: "#151b23",
+        num1: "#033a16",
+        num2: "#196c2e",
+        num3: "#2ea043",
+        num4: "#56d364",
+        num5: "#7ee787",
+      },
+      borderColor: {
+        num0: "#0104090d",
+      },
+    },
+  },
 };
 
 export default defineGithubTheme(github);

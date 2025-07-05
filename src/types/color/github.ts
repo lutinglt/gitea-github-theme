@@ -175,4 +175,31 @@ export const github = {
       small: null,
     },
   },
+  /** 热力图 */
+  contribution: {
+    default: {
+      bgColor: {
+        num0: null,
+        num1: null,
+        num2: null,
+        num3: null,
+        num4: null,
+        /** github 无此颜色需自行计算
+         * @example 可参考这个颜色 `--color-prettylights-syntax-string-regexp`
+         */
+        num5: null,
+      },
+      borderColor: {
+        num0: null,
+        num1: null,
+        num2: null,
+        num3: null,
+        num4: null,
+        /** github 无此颜色需自行计算
+         * @example 目前均取 num0 的值
+         */
+        num5: null,
+      },
+    },
+  },
 };

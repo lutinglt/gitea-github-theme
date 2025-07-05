@@ -121,6 +121,21 @@ export type GithubColor = {
       bgColor: string;
     };
   };
+  contribution: {
+    default: {
+      bgColor: {
+        num0: string;
+        num1: string;
+        num2: string;
+        num3: string;
+        num4: string;
+        num5: string;
+      };
+      borderColor: {
+        num0: string;
+      };
+    };
+  };
 };
 
 export function defineGithubTheme(githubColor: GithubColor): Theme {
@@ -341,6 +356,26 @@ export function defineGithubTheme(githubColor: GithubColor): Theme {
     shadow: {
       floating: {
         small: `0px 0px 0px 1px ${themeVars.color.light.border}, 0px 6px 12px -3px ${themeVars.color.shadow.self}, 0px 6px 18px 0px ${themeVars.color.shadow.self};`,
+      },
+    },
+    contribution: {
+      default: {
+        bgColor: {
+          num0: githubColor.contribution.default.bgColor.num0,
+          num1: githubColor.contribution.default.bgColor.num1,
+          num2: githubColor.contribution.default.bgColor.num2,
+          num3: githubColor.contribution.default.bgColor.num3,
+          num4: githubColor.contribution.default.bgColor.num4,
+          num5: githubColor.contribution.default.bgColor.num5,
+        },
+        borderColor: {
+          num0: githubColor.contribution.default.borderColor.num0,
+          num1: themeVars.github.contribution.default.borderColor.num0,
+          num2: themeVars.github.contribution.default.borderColor.num0,
+          num3: themeVars.github.contribution.default.borderColor.num0,
+          num4: themeVars.github.contribution.default.borderColor.num0,
+          num5: themeVars.github.contribution.default.borderColor.num0,
+        },
       },
     },
   };
