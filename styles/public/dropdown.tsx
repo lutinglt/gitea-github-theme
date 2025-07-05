@@ -12,26 +12,34 @@ export const dropdown = css`
       border: unset !important;
       border-radius: 12px !important;
       box-shadow: ${themeVars.github.shadow.floating.small} !important;
-
-      > .item {
+      // 忽略隐藏
+      > .item:not(.tw-hidden) {
+        display: flex !important;
+        align-items: center;
+        gap: 0.5rem;
         padding: 8px 10px !important;
         border-radius: ${otherThemeVars.border.radius} !important;
         margin: 0 0.5rem;
-        &:first-child {
+        &:first-of-type {
           margin-top: 0.5rem;
         }
-        &:last-child {
+        // 不知道为什么提交差异对比页面操作中的 cherrypick 按钮无法被选中
+        &.cherry-pick-button,
+        &:last-of-type {
           margin-bottom: 0.5rem;
         }
         &:hover {
           background-color: ${themeVars.github.control.transparent.bgColor.hover} !important;
         }
-        &.active,
         &.selected {
           background-color: ${themeVars.color.active} !important;
           &:hover {
             background-color: ${themeVars.github.control.transparent.bgColor.hover} !important;
           }
+        }
+        svg {
+          color: ${themeVars.color.text.light.num1};
+          margin-right: 0.5rem;
         }
       }
       > .divider {
@@ -53,5 +61,34 @@ export const dropdown = css`
   // 设置里的下拉菜单
   .ui.selection.dropdown .menu > .item {
     border: unset;
+  }
+  // 修复一些菜单下的菜单元素溢出问题
+  // 目前主要为分支菜单
+  .ui.dropdown .menu .menu {
+    border-radius: 12px !important;
+  }
+`;
+
+// 选择框的下拉菜单看起来像普通按钮
+export const selectionDropdown = css`
+  .ui.selection.dropdown,
+  .ui.selection.dropdown.active {
+    background-color: ${themeVars.color.button};
+    border-color: ${themeVars.color.light.border};
+    border-radius: ${otherThemeVars.border.radius};
+    padding: 9px 16px;
+    min-height: 33px;
+    &:focus {
+      background: ${themeVars.color.button};
+      border-color: ${themeVars.color.light.border};
+    }
+    &:hover {
+      background: ${themeVars.color.hover.self};
+      border-color: ${themeVars.color.light.border};
+    }
+  }
+  .ui.selection.dropdown.active {
+    border-bottom-left-radius: ${otherThemeVars.border.radius} !important;
+    border-bottom-right-radius: ${otherThemeVars.border.radius} !important;
   }
 `;

@@ -53,3 +53,19 @@ export const commit = css`
     }
   }
 `;
+
+// 文件列表页面下的分支按钮
+export const branchButton = css`
+  .page-content.repository.file.list {
+    .ui.dropdown.branch-selector-dropdown > .menu > .menu {
+      // 显示默认分支的标签
+      .ui.label {
+        background-color: ${themeVars.color.menu};
+        border: 1px solid ${themeVars.color.light.border};
+        margin-top: 1px;
+        margin-left: auto;
+        margin-right: 16px; // gitea 有 RSS 留出足够的空间
+      }
+    }
+  }
+`;

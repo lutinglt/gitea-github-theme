@@ -280,3 +280,11 @@ export const fixRadius = css`
     border-bottom-right-radius: ${otherThemeVars.border.radius};
   }
 `;
+
+// 修复一些根本无法理解的生效顺序
+export const fixWhyRadius = css`
+  // Issue 菜单第一个按钮
+  .ui.secondary.menu .item {
+    border-radius: ${otherThemeVars.border.radius};
+  }
+`;
