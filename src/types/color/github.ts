@@ -160,9 +160,19 @@ export const github = {
         /** 悬停色
          * @clone `clone` 克隆按钮下按钮组和面板操作列表的悬停背景颜色
          * @input `inputAction` 输入框动作按钮的悬停背景颜色
+         * @dropdown `dropdown` 下拉框子项的悬停背景颜色
          */
         hover: null,
-      }
-    }
-  }
+      },
+    },
+  },
+  shadow: {
+    floating: {
+      /** 悬浮阴影
+       * @tippy `tippyBox` 悬浮框阴影
+       * @dropdown `dropdown` 下拉框阴影
+       */
+      small: null,
+    },
+  },
 };

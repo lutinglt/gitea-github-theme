@@ -338,6 +338,11 @@ export function defineGithubTheme(githubColor: GithubColor): Theme {
         },
       },
     },
+    shadow: {
+      floating: {
+        small: `0px 0px 0px 1px ${themeVars.color.light.border}, 0px 6px 12px -3px ${themeVars.color.shadow.self}, 0px 6px 18px 0px ${themeVars.color.shadow.self};`,
+      },
+    },
   };
   return defineTheme({
     isDarkTheme: githubColor.isDarkTheme,

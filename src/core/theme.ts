@@ -14,6 +14,7 @@ function stringToBoolean(str: string, name: string): boolean {
 }
 
 export const overlayAppear = "overlay-appear";
+export const animation = `200ms cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal none running ${overlayAppear}`;
 
 const emoji = `
 .emoji[aria-label="check mark"],
