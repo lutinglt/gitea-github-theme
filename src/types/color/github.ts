@@ -3,6 +3,7 @@ export const github = {
   fgColor: {
     /** 强调色
      * @actions `actionViewRight` 右侧日志标题颜色
+     * @issue `prBranch` 分支名称文本颜色
      */
     accent: null,
     /** 默认的文本颜色
@@ -32,6 +33,10 @@ export const github = {
        * @actions `actionViewLeft` 左侧子作业激活伪元素颜色
        */
       emphasis: null,
+      /** 暗淡的背景颜色
+       * @issue `prBranch` 分支名称背景颜色
+       */
+      muted: null,
     },
     success: {
       /** 成功的背景颜色
@@ -50,6 +55,7 @@ export const github = {
     accent: {
       /** 强调色
        * @input `input` 输入框被选中时的边框颜色
+       * @issue `comment` 评论框被选中时的边框颜色
        */
       emphasis: null,
     },

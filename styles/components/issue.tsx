@@ -67,3 +67,35 @@ export const babel = css`
     }
   }
 `;
+
+// PR 分支标签
+export const prBranch = css`
+  .repository.view.issue .pull-desc code,
+  #issue-list .flex-item-body .branches .branch {
+    color: ${themeVars.github.fgColor.accent};
+    background-color: ${themeVars.github.bgColor.accent.muted};
+    font-size: 12px;
+    padding: 0 5px;
+  }
+`;
+
+// 评论
+export const comment = css`
+  .comment {
+    // 去除评论标题左侧指向头像的小箭头
+    .comment-header,
+    &:target .comment-header {
+      &:before,
+      &:after {
+        display: none;
+      }
+    }
+    // 评论焦点样式
+    &:target {
+      .comment-container {
+        border-color: ${themeVars.github.borderColor.accent.emphasis} !important;
+        box-shadow: 0 0 0 1px ${themeVars.color.primary.self} !important;
+      }
+    }
+  }
+`;

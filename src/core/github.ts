@@ -274,6 +274,7 @@ export function defineGithubTheme(githubColor: GithubColor): Theme {
     bgColor: {
       accent: {
         emphasis: githubColor.bgColor.accent.emphasis,
+        muted: githubColor.bgColor.accent.muted,
       },
       success: {
         emphasis: githubColor.bgColor.success.emphasis,
