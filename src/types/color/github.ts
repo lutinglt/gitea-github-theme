@@ -175,6 +175,14 @@ export const github = {
       small: null,
     },
   },
+  underlineNav: {
+    borderColor: {
+      /** 下划线导航栏的边框颜色
+       * @clone `clone` 按钮组的按钮下划线颜色
+       */
+      active: null,
+    },
+  },
   /** 热力图 */
   contribution: {
     default: {

@@ -119,6 +119,11 @@ const github: GithubColor = {
       bgColor: "#21283066",
     },
   },
+  underlineNav: {
+    borderColor: {
+      active: "#f78166",
+    },
+  },
   contribution: {
     default: {
       bgColor: {

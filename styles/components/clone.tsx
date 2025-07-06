@@ -33,7 +33,7 @@ export const clone = css`
             left: 0;
             width: 100%;
             height: 2px;
-            background: #f78166;
+            background: ${themeVars.github.underlineNav.borderColor.active};
           }
         }
         .item.active {
