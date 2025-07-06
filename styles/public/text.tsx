@@ -14,6 +14,6 @@ export const grey = css`
   // 默认颜色是 --color-text-light, 主题下此颜色是亮白色, 修改为灰色
   // release 页面下一些描述信息的文本颜色
   .text.grey {
-    color: ${themeVars.github.fgColor.muted} !important;
+    color: ${themeVars.color.text.light.num1} !important;
   }
 `;

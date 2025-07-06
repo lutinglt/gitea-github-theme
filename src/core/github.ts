@@ -286,8 +286,6 @@ export function defineGithubTheme(githubColor: GithubColor): Theme {
   const github: Github = {
     fgColor: {
       accent: githubColor.fgColor.accent,
-      default: githubColor.fgColor.default,
-      muted: githubColor.fgColor.muted,
       success: githubColor.fgColor.success,
       done: githubColor.fgColor.done,
     },

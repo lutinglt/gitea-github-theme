@@ -76,6 +76,13 @@ export const radiusImportant = css`
   .ui.secondary.vertical.menu > .item {
     border-radius: ${otherThemeVars.border.radius} !important;
   }
+  // 目前为仓库列表/探索的二级菜单, 改版需要替换为全圆角
+  .ui.tabular.menu .active.item {
+    border-radius: ${otherThemeVars.border.radius} !important;
+    &:hover {
+      border-radius: ${otherThemeVars.border.radius} !important;
+    }
+  }
 `;
 
 // 上半部分圆角替换
@@ -105,12 +112,6 @@ export const radiusTop = css`
 
 // 上半部分圆角替换(原CSS带!important)
 export const radiusTopImportant = css`
-  .ui.tabular.menu .active.item {
-    border-radius: ${otherThemeVars.border.radius} ${otherThemeVars.border.radius} 0 0 !important;
-    &:hover {
-      border-radius: ${otherThemeVars.border.radius} ${otherThemeVars.border.radius} 0 0 !important;
-    }
-  }
   .ui.simple.upward.dropdown {
     &.active {
       border-radius: ${otherThemeVars.border.radius} ${otherThemeVars.border.radius} 0 0 !important;

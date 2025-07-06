@@ -6,7 +6,7 @@ export const diff = css`
     background-color: unset;
     /* 折叠行文本 */
     .code-inner {
-      color: ${themeVars.github.fgColor.muted};
+      color: ${themeVars.color.text.light.num1};
     }
   }
   /* 增加/删除行多余的颜色 */
@@ -21,10 +21,10 @@ export const diff = css`
   .added-code,
   .removed-code {
     border-radius: 0.1875rem;
-    color: ${themeVars.github.fgColor.default};
+    color: ${themeVars.color.text.self};
     /* 覆盖掉 chroma 的颜色 */
     * {
-      color: ${themeVars.github.fgColor.default} !important;
+      color: ${themeVars.color.text.self} !important;
     }
   }
   /* 展开/收缩按钮 */

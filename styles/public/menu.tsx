@@ -112,6 +112,7 @@ export const verticalMenu = css`
 export const menu = css`
   // 菜单默认悬浮色更改
   .ui.menu a.item,
+  .ui.secondary.pointing.menu a.item,
   .ui.secondary.menu .dropdown.item {
     &:hover {
       background: ${themeVars.github.control.transparent.bgColor.hover};
@@ -122,6 +123,60 @@ export const menu = css`
     background-color: ${themeVars.color.body} !important;
     &:hover {
       background: ${themeVars.github.control.transparent.bgColor.hover} !important;
+    }
+  }
+  // 一些菜单的悬浮色更改
+  .ui.segment .ui.tabular.menu,
+  .header-wrapper .ui.tabular.menu,
+  .ui.secondary.pointing.menu {
+    .item,
+    .active.item {
+      &:hover {
+        background: ${themeVars.github.control.transparent.bgColor.hover};
+      }
+    }
+  }
+`;
+
+// 二级导航栏
+export const secondaryMenu = css`
+  .ui.secondary.pointing.menu {
+    .overflow-menu-items {
+      gap: 0.5rem;
+      .item {
+        padding: 5px 8px !important;
+        margin-block-start: 0.5rem;
+        margin-block-end: 0.5rem;
+        margin-bottom: 0.5rem !important;
+      }
+    }
+    .active.item,
+    .dropdown.item,
+    .link.item,
+    a.item {
+      border-radius: ${otherThemeVars.border.radius};
+      color: ${themeVars.color.text.self};
+      svg {
+        color: ${themeVars.color.text.light.num1};
+        margin-right: 8px;
+      }
+    }
+    .active.item {
+      // 取消激活时的下划线, 需要为透明, 保持间距
+      border-color: #ffffff00;
+      // 模仿 github 的下划线
+      span:after {
+        content: "";
+        background: ${themeVars.github.underlineNav.borderColor.active};
+        border-radius: ${otherThemeVars.border.radius};
+        bottom: calc(50% - 1.8rem);
+        height: 2px;
+        position: absolute;
+        right: 50%;
+        transform: translate(50%, -50%);
+        width: 100%;
+        z-index: 1;
+      }
     }
   }
 `;

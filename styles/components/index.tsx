@@ -1,7 +1,9 @@
 import "./actions";
 import "./clone";
+import "./commit";
 import "./dashboard";
 import "./diff";
+import "./filelist";
 import "./heatmap";
 import "./issue";
 import "./release";

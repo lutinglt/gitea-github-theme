@@ -4,17 +4,9 @@ export const github = {
     /** 强调色
      * @actions `actionViewRight` 右侧日志标题颜色
      * @issue `prBranch` 分支名称文本颜色
+     * @repo `repoTopic` 仓库主题标签文本颜色
      */
     accent: null,
-    /** 默认的文本颜色
-     * @diff 增加/删除代码块的文本颜色
-     */
-    default: null,
-    /** 暗淡的文本颜色
-     * @diff 折叠行的文本颜色
-     * @text 灰色文本颜色
-     */
-    muted: null,
     /** 成功的文本颜色
      * @issue `button` 重新开启按钮文本颜色
      * @label `label` 绿色标签的文本颜色
@@ -37,6 +29,7 @@ export const github = {
       emphasis: null,
       /** 暗淡的背景颜色
        * @issue `prBranch` 分支名称背景颜色
+       * @repo `repoTopic` 仓库主题标签背景颜色
        */
       muted: null,
     },
@@ -166,6 +159,8 @@ export const github = {
          * @dropdown `dropdown` 下拉框子项的悬停背景颜色
          * @menu `verticalMenu` 垂直菜单项的悬停背景颜色
          * @menu `menu` 菜单项的悬停背景颜色
+         * @repo `repoHeader` 仓库标题的悬停背景颜色
+         * @commit `commit` 提交信息的 Action 按钮的悬停背景颜色
          */
         hover: null,
       },
@@ -184,6 +179,7 @@ export const github = {
     borderColor: {
       /** 下划线导航栏的边框颜色
        * @clone `clone` 按钮组的按钮下划线颜色
+       * @menu `secondaryMenu` 二级菜单按钮的下划线颜色
        */
       active: null,
     },

@@ -95,3 +95,10 @@ export const fixButtonHeight = css`
     min-height: 20px;
   }
 `;
+
+export const fixButton = css`
+  // 修复关注&派生 hover 意外点亮右侧 label 左边框
+  .ui.ui.ui.ui.small.button {
+    z-index: 0;
+  }
+`;

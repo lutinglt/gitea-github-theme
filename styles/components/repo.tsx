@@ -1,70 +1,71 @@
-import { css, themeVars } from "src/types/vars";
+import { css, otherThemeVars, themeVars } from "src/types/vars";
 
-// 提交列表
-export const commit = css`
-  .page-content.repository {
-    // 提交列表 (选择器保证同等优先级覆盖了 gitea 原生的样式)
-    #commits-table.ui.basic.striped.table tbody.commit-list {
-      // 作者
-      .author {
-        // 作者名称
-        a.author-wrapper {
-          color: ${themeVars.color.text.light.num1};
+// 仓库头信息
+export const repoHeader = css`
+  .page-content.repository .repo-header {
+    // 点星/关注/克隆/RSS 按钮
+    .ui.compact.button {
+      padding: 3px 12px;
+      svg {
+        color: ${themeVars.color.text.light.num1};
+      }
+      // 文本跟图标间隔, 文本在手机下不显示
+      span {
+        margin-left: 0.5rem;
+      }
+    }
+    // 仓库图标
+    img.ui.avatar {
+      height: 32px;
+      width: 32px;
+      margin-block-start: 0.5rem;
+      margin-block-end: 0.5rem;
+    }
+
+    .flex-item {
+      .flex-item-title {
+        // 间隔线颜色
+        color: ${themeVars.color.text.light.num1};
+        // 仓库名称
+        a {
+          display: flex;
+          align-items: center;
+          color: ${themeVars.color.text.self};
+          font-size: 16px;
+          text-decoration: none !important;
+          min-width: 3ch;
+          padding: 4px 6px;
+          border-radius: ${otherThemeVars.border.radius};
+          margin-top: 0.5rem;
+          margin-bottom: 0.5rem;
+          &:hover {
+            background: ${themeVars.github.control.transparent.bgColor.hover};
+          }
+          &.muted:not(.tw-font-normal) {
+            font-weight: 600;
+          }
         }
       }
-      // SHA 标签
-      .sha {
-        a.ui.label.commit-id-short {
-          padding: 2px 8px;
-          height: 28px;
-          margin-top: 0.375rem;
-          margin-bottom: 0.375rem;
-          margin-left: -8px;
-        }
-      }
-      // 提交信息
-      .message {
-        // tag 标签
-        a.ui.basic.primary.label {
-          border-radius: 25px;
-          border-width: 1.5px;
-          padding: 5px 8px !important;
-        }
-      }
-      // 提交信息右侧
-      .tw-text-right {
-        // 时间标签
-        relative-time,
-        // 复制 SHA 按钮
-        .btn.copy-commit-id,
-        // 查看提交路径按钮
-        .btn.view-commit-path {
-          color: ${themeVars.color.text.light.num1};
-        }
-      }
-      // 整行悬停色
-      tr:hover {
-        background-color: ${themeVars.color.hover.opaque};
-      }
-      // 偶数行悬停色
-      tr:nth-child(2n):hover {
-        background-color: ${themeVars.color.hover.opaque} !important;
+      // 默认的 hover 为 primary 颜色, 修正
+      a:not(.label, .button):hover {
+        color: ${themeVars.color.text.self} !important;
       }
     }
   }
 `;
 
-// 文件列表页面下的分支按钮
-export const branchButton = css`
-  .page-content.repository.file.list {
-    .ui.dropdown.branch-selector-dropdown > .menu > .menu {
-      // 显示默认分支的标签
-      .ui.label {
-        background-color: ${themeVars.color.menu};
-        border: 1px solid ${themeVars.color.light.border};
-        margin-top: 1px;
-        margin-left: auto;
-        margin-right: 16px; // gitea 有 RSS 留出足够的空间
+export const repoTopic = css`
+  #repo-topics {
+    .ui.label.repo-topic {
+      border-radius: 25px;
+      font-size: 12px;
+      padding: 5px 10px;
+      margin: 0px 1.5px 3.5px 0px;
+      background-color: ${themeVars.github.bgColor.accent.muted};
+      color: ${themeVars.github.fgColor.accent};
+      &:hover {
+        background-color: ${themeVars.github.bgColor.accent.emphasis};
+        color: ${themeVars.color.text.self};
       }
     }
   }
