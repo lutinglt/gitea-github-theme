@@ -108,3 +108,20 @@ export const verticalMenu = css`
     }
   }
 `;
+
+export const menu = css`
+  // 菜单默认悬浮色更改
+  .ui.menu a.item,
+  .ui.secondary.menu .dropdown.item {
+    &:hover {
+      background: ${themeVars.github.control.transparent.bgColor.hover};
+    }
+  }
+  // 一些水平小型菜单的颜色更改
+  .small-menu-items .item {
+    background-color: ${themeVars.color.body} !important;
+    &:hover {
+      background: ${themeVars.github.control.transparent.bgColor.hover} !important;
+    }
+  }
+`;

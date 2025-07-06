@@ -165,6 +165,7 @@ export const github = {
          * @input `inputAction` 输入框动作按钮的悬停背景颜色
          * @dropdown `dropdown` 下拉框子项的悬停背景颜色
          * @menu `verticalMenu` 垂直菜单项的悬停背景颜色
+         * @menu `menu` 菜单项的悬停背景颜色
          */
         hover: null,
       },

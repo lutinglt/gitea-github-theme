@@ -93,6 +93,18 @@ export const comment = css`
         box-shadow: 0 0 0 1px ${themeVars.color.primary.self} !important;
       }
     }
+    .comment-header-right {
+      .context-dropdown {
+        // 评论菜单的删除按钮
+        .menu .item.delete-comment {
+          color: ${themeVars.color.red.self};
+          &:hover {
+            background-color: ${themeVars.color.red.badge.bg} !important;
+            color: ${themeVars.color.red.light};
+          }
+        }
+      }
+    }
   }
 `;
 
