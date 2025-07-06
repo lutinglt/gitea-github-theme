@@ -26,12 +26,27 @@ export const baseButton = css`
       ${primaryHoverStyle}
     }
   }
-  /* 普通按钮边框色不变 */
-  .ui.basic.button:hover,
-  /* 仓库点星等数字标签按钮边框色不变 */
-  .ui.labeled.button > .label:hover {
+  // 主色调基本按钮和普通按钮一样
+  // 作者的关注按钮
+  .ui.basic.primary.button {
+    background-color: ${themeVars.color.button};
+    color: ${themeVars.color.text.self};
     border-color: ${themeVars.color.light.border};
+    &:hover {
+      background-color: ${themeVars.color.hover.self};
+      color: ${themeVars.color.text.self};
+      border-color: ${themeVars.color.light.border};
+    }
   }
+  /* 普通按钮边框色不变 */
+  .ui.basic.button,
+  /* 仓库点星等数字标签按钮边框色不变 */
+  .ui.labeled.button > .label {
+    &:hover {
+      border-color: ${themeVars.color.light.border};
+    }
+  }
+
   /* 普通按钮激活时背景色 */
   .ui.basic.buttons .button:active,
   .ui.basic.button:active,
@@ -66,5 +81,17 @@ export const branchDropdownButton = css`
   .ui.button.branch-dropdown-button {
     padding: 3px 12px;
     min-height: 30px;
+  }
+`;
+
+// 修复按钮高度
+export const fixButtonHeight = css`
+  .ui.small.buttons .button,
+  .ui.ui.ui.ui.small.button {
+    min-height: 26px;
+  }
+  .ui.tiny.buttons .button,
+  .ui.ui.ui.ui.tiny.button {
+    min-height: 20px;
   }
 `;

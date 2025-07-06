@@ -16,11 +16,6 @@ export const button = css`
     // 重新开启按钮
     .ui.basic.primary.button#status-button {
       color: ${themeVars.github.fgColor.success};
-      background-color: ${themeVars.color.button};
-      border-color: ${themeVars.color.light.border};
-      &:hover {
-        background-color: ${themeVars.color.hover.self};
-      }
     }
   }
 `;
