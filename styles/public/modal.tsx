@@ -20,5 +20,8 @@ export const modal = css`
       background-color: ${themeVars.color.menu};
       border-top: 1.5px solid ${themeVars.color.light.border};
     }
+    .actions > .ui.button {
+      padding: 8px 12px;
+    }
   }
 `;

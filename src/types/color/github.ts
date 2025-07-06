@@ -12,6 +12,7 @@ export const github = {
     default: null,
     /** 暗淡的文本颜色
      * @diff 折叠行的文本颜色
+     * @text 灰色文本颜色
      */
     muted: null,
     /** 成功的文本颜色
@@ -31,6 +32,7 @@ export const github = {
       /** 强调色
        * @diff 折叠/展开按钮的悬停颜色
        * @actions `actionViewLeft` 左侧子作业激活伪元素颜色
+       * @release `releaseTagMenu` 顶部栏左侧按钮激活背景色
        */
       emphasis: null,
       /** 暗淡的背景颜色

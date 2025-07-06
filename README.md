@@ -11,7 +11,7 @@
 
 ## 安装
 
-1. 在发布页下载最新的 `theme-github.css` 放入 `gitea/public/assets/css` 目录下
+1. 在发布页下载最新的 `theme-github-dark.css` 放入 `gitea/public/assets/css` 目录下
 2. 修改 `gitea/conf/app.ini`，并将 `, github` 附加到 `[ui]` 下的 `THEMES` 末尾
 3. 重启 Gitea
 4. 在设置中查看主题
@@ -20,7 +20,7 @@
 
 ```ini
 [ui]
-THEMES = gitea-dark, github
+THEMES = gitea-dark, github-dark
 ```
 
 详细请查看 Gitea 文档

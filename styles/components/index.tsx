@@ -4,5 +4,6 @@ import "./dashboard";
 import "./diff";
 import "./heatmap";
 import "./issue";
+import "./release";
 import "./repo";
 import "./setting";

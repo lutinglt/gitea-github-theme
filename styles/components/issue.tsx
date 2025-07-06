@@ -107,15 +107,9 @@ export const dropdown = css`
     &.issue-list .ui.dropdown .menu, .ui.menu .ui.dropdown .menu,
     // Issue/PR 详情下的右侧的上半部分选项菜单
     &.issue.view .issue-content-right .ui.dropdown .scrolling.menu {
-      .item {
-        &.active,
-        &.selected,
-        &:hover {
-          &:after {
-            content: "";
-            ${activeItemAfterStyle}
-          }
-        }
+      .item:hover:after {
+        content: "";
+        ${activeItemAfterStyle}
       }
     }
   }
