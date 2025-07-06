@@ -1,5 +1,6 @@
 import { animation } from "src/core/theme";
 import { css, otherThemeVars, themeVars } from "src/types/vars";
+import { activeItemAfterStyle } from "styles/public/menu";
 
 export const dropdown = css`
   .ui.dropdown,
@@ -40,6 +41,13 @@ export const dropdown = css`
         svg {
           color: ${themeVars.color.text.light.num1};
           margin-right: 0.5rem;
+        }
+        &.active,
+        &.selected {
+          &:after {
+            content: "";
+            ${activeItemAfterStyle};
+          }
         }
       }
       > .divider {
@@ -90,8 +98,14 @@ export const selectionDropdown = css`
       background: ${themeVars.color.hover.self};
       border-color: ${themeVars.color.light.border};
     }
+    // 悬停提供伪元素
+    .item:hover:after {
+      content: "";
+      ${activeItemAfterStyle};
+    }
   }
-  .ui.selection.dropdown.active {
+  // 排除一些小按钮, 例如软件包类型, 通常相邻有元素
+  .ui.selection.dropdown.active:not(.small) {
     border-bottom-left-radius: ${otherThemeVars.border.radius} !important;
     border-bottom-right-radius: ${otherThemeVars.border.radius} !important;
   }

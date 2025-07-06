@@ -1,4 +1,5 @@
 import { css, themeVars } from "src/types/vars";
+import { activeItemAfterStyle } from "styles/public/menu";
 
 export const button = css`
   .issue-content-left .field.footer {
@@ -95,6 +96,26 @@ export const comment = css`
       .comment-container {
         border-color: ${themeVars.github.borderColor.accent.emphasis} !important;
         box-shadow: 0 0 0 1px ${themeVars.color.primary.self} !important;
+      }
+    }
+  }
+`;
+
+export const dropdown = css`
+  .repository {
+    // Issue/PR 列表下的所有筛选菜单
+    &.issue-list .ui.dropdown .menu, .ui.menu .ui.dropdown .menu,
+    // Issue/PR 详情下的右侧的上半部分选项菜单
+    &.issue.view .issue-content-right .ui.dropdown .scrolling.menu {
+      .item {
+        &.active,
+        &.selected,
+        &:hover {
+          &:after {
+            content: "";
+            ${activeItemAfterStyle}
+          }
+        }
       }
     }
   }
