@@ -149,7 +149,7 @@ export const actionViewLeft = css`
           &:after {
             overflow: visible;
             background: ${themeVars.github.bgColor.accent.emphasis};
-            border-radius: 0.375rem;
+            border-radius: ${otherThemeVars.border.radius};
             content: "";
             height: 24px;
             left: calc(0.5rem * -1);

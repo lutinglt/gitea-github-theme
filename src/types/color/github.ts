@@ -57,6 +57,7 @@ export const github = {
        * @input `input` 输入框被选中时的边框颜色
        * @clone `clone` 克隆地址框被选中时的边框颜色
        * @issue `comment` 评论框被选中时的边框颜色
+       * @menu `verticalMenu` 垂直菜单项激活时左侧的伪元素颜色
        */
       emphasis: null,
     },
@@ -161,6 +162,7 @@ export const github = {
          * @clone `clone` 克隆按钮下按钮组和面板操作列表的悬停背景颜色
          * @input `inputAction` 输入框动作按钮的悬停背景颜色
          * @dropdown `dropdown` 下拉框子项的悬停背景颜色
+         * @menu `verticalMenu` 垂直菜单项的悬停背景颜色
          */
         hover: null,
       },

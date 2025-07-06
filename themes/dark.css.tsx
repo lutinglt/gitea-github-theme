@@ -105,9 +105,7 @@ const github: GithubColor = {
       bgColor: {
         active: "#656c7640",
         hover: "#656c7633",
-        // 非官方颜色, 实在是太淡了
-        // selected: "#656c761a",
-        selected: "#656c762a",
+        selected: "#656c761a",
       },
     },
   },

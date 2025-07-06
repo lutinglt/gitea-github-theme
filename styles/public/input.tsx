@@ -18,6 +18,7 @@ export const input = css`
   .ui.form input[type="text"],
   .ui.form input[type="time"],
   .ui.form input[type="url"] {
+    padding: 8px 12px;
     &:focus,
     &:focus-visible {
       background: ${themeVars.color.body} !important;

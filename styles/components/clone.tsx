@@ -34,6 +34,7 @@ export const clone = css`
             width: 100%;
             height: 2px;
             background: ${themeVars.github.underlineNav.borderColor.active};
+            border-radius: ${otherThemeVars.border.radius};
           }
         }
         .item.active {

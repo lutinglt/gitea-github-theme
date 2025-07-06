@@ -80,8 +80,8 @@ export const selectionDropdown = css`
     background-color: ${themeVars.color.button};
     border-color: ${themeVars.color.light.border};
     border-radius: ${otherThemeVars.border.radius};
-    padding: 9px 16px;
-    min-height: 33px;
+    padding: 8px 16px;
+    min-height: 32px;
     &:focus {
       background: ${themeVars.color.button};
       border-color: ${themeVars.color.light.border};
