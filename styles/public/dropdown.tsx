@@ -118,8 +118,9 @@ export const selectionDropdown = css`
       border-color: ${themeVars.color.light.border};
     }
   }
-  // 选择输入框效果和输入框效果一样, 但不修改背景色
+  // 选择输入框效果和输入框 focus 效果一样
   .ui.selection.dropdown.active.search {
+    background: ${themeVars.color.body};
     // 向内部添加一个 1px 的边框
     box-shadow: inset 0 0 0 1px ${themeVars.github.borderColor.accent.emphasis};
     outline: none;
