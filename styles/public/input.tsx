@@ -34,4 +34,8 @@ export const input = css`
   .ui.input {
     height: 32px;
   }
+  // 由于输入框高度, 需要输入框在表单中垂直居中
+  .ui.form {
+    align-items: center;
+  }
 `;

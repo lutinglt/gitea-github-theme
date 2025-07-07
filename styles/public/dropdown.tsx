@@ -125,6 +125,10 @@ export const selectionDropdown = css`
     box-shadow: inset 0 0 0 1px ${themeVars.github.borderColor.accent.emphasis};
     outline: none;
   }
+  // 由于之前的排除导致样式优先级变高, 小按钮去除圆角
+  .ui.action.input>.dropdown.small:not(:first-child) {
+    border-radius: 0;
+  }
   // 排除一些小按钮, 例如软件包类型, 通常相邻有元素
   .ui.selection.dropdown.active:not(.small) {
     border-bottom-left-radius: ${otherThemeVars.border.radius} !important;
