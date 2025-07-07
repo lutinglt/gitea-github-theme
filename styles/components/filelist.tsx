@@ -16,7 +16,6 @@ export const branchButton = css`
   }
 `;
 
-
 // 仓库按钮
 export const repoButton = css`
   .page-content.repository.file.list {

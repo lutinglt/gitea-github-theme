@@ -158,6 +158,9 @@ export const secondaryMenu = css`
         margin-bottom: 0.5rem !important;
       }
     }
+    .item {
+      font-weight: 400; // 二级导航栏不需要加粗
+    }
     .active.item,
     .dropdown.item,
     .link.item,

@@ -5,6 +5,8 @@ export const github = {
      * @actions `actionViewRight` 右侧日志标题颜色
      * @issue `prBranch` 分支名称文本颜色
      * @repo `repoTopic` 仓库主题标签文本颜色
+     * @actions `actions` 分支标签按钮文本颜色
+     * @actions `actionViewHeader` 分支标签按钮文本颜色
      */
     accent: null,
     /** 成功的文本颜色
@@ -31,6 +33,8 @@ export const github = {
       /** 暗淡的背景颜色
        * @issue `prBranch` 分支名称背景颜色
        * @repo `repoTopic` 仓库主题标签背景颜色
+       * @actions `actions` 分支标签按钮背景颜色
+       * @actions `actionViewHeader` 分支标签按钮背景颜色
        */
       muted: null,
     },

@@ -53,6 +53,22 @@ export const actions = css`
         border-bottom-left-radius: ${otherThemeVars.border.radius};
         border-bottom-right-radius: ${otherThemeVars.border.radius};
 
+        // 分支标签按钮
+        .run-list-ref {
+          background-color: ${themeVars.github.bgColor.accent.muted};
+          color: ${themeVars.github.fgColor.accent};
+          font-weight: 400;
+          &:hover {
+            background-color: ${themeVars.github.bgColor.accent.muted};
+            color: ${themeVars.github.fgColor.accent};
+            text-decoration-line: underline !important;
+          }
+        }
+        // 标签右侧任务信息
+        .run-list-item-right {
+          color: ${themeVars.color.text.light.num1};
+        }
+
         .flex-item {
           padding: 16px;
 
@@ -104,6 +120,23 @@ export const runWorkflow = css`
     // 分支选择按钮
     .ui.dropdown.button.branch-selector-dropdown .svg.octicon-git-branch {
       margin-right: 6px;
+    }
+  }
+`;
+
+// 工作流详情页标题
+export const actionViewHeader = css`
+  .action-view-header {
+    .action-commit-summary {
+      // 分支标签按钮
+      .ui.label {
+        background-color: ${themeVars.github.bgColor.accent.muted};
+        color: ${themeVars.github.fgColor.accent};
+        font-weight: 400;
+        > a {
+          opacity: 1;
+        }
+      }
     }
   }
 `;

@@ -8,6 +8,20 @@ export const label = css`
     &.ui.ui.ui {
       &.label {
         border-radius: 25px;
+        // 多个标签的组合标签的圆角修复
+        &.scope-parent {
+          .scope-left {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+          .scope-middle {
+            border-radius: 0;
+          }
+          .scope-right {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+          }
+        }
         /* 主色调标签 */
         &.primary {
           background-color: unset;
