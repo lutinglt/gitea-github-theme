@@ -87,14 +87,22 @@ export const releases = css`
         }
       }
     }
-    // 顶部右侧按钮组
-    .ui.small.button {
-      background-color: ${themeVars.color.button};
-      padding: 5px 16px;
-      min-height: auto;
-      line-height: 20px;
-      &:hover {
-        background-color: ${themeVars.color.hover.self};
+  }
+`;
+
+// 顶部右侧按钮组
+export const rightButton = css`
+  .page-content.repository {
+    &.releases,
+    &.tags {
+      .ui.small.button {
+        background-color: ${themeVars.color.button};
+        padding: 5px 16px;
+        min-height: auto;
+        line-height: 20px;
+        &:hover {
+          background-color: ${themeVars.color.hover.self};
+        }
       }
     }
   }

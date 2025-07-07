@@ -35,10 +35,6 @@ export const actions = css`
         border-top-right-radius: ${otherThemeVars.border.radius};
         padding: 16px;
         margin-bottom: 0;
-
-        .item {
-          padding: 6px 12px;
-        }
       }
 
       .ui.info.message {

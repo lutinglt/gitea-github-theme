@@ -29,4 +29,8 @@ export const input = css`
       outline: none;
     }
   }
+
+  .ui.input {
+    height: 32px;
+  }
 `;

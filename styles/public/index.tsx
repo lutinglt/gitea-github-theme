@@ -11,3 +11,4 @@ import "./label"; // 标签
 import "./menu"; // 菜单
 import "./modal"; // 弹窗
 import "./tippy"; // 提示框
+import "./navbar"; // 导航栏

@@ -25,6 +25,7 @@ export const github = {
        * @diff 折叠/展开按钮的悬停颜色
        * @actions `actionViewLeft` 左侧子作业激活伪元素颜色
        * @release `releaseTagMenu` 顶部栏左侧按钮激活背景色
+       * @navbar `navbarRight` 头像管理员标识背景颜色
        */
       emphasis: null,
       /** 暗淡的背景颜色

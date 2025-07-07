@@ -108,7 +108,7 @@ export const shaLabel = css`
 
 // 任务状态标签, 目前仅在管理员页面 Runner 状态中看到
 export const taskStatusLabel = css`
-  .ui.label.task-status- {
+  .runner-container .ui.label.task-status- {
     &success {
       color: ${themeVars.color.success.text};
       border: 1px solid ${themeVars.color.success.border};

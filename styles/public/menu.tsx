@@ -138,8 +138,16 @@ export const menu = css`
   }
 `;
 
-// 二级导航栏
 export const secondaryMenu = css`
+  // 二级菜单, 比如 Issue/PR/Actions 的筛选菜单
+  .ui.secondary.menu {
+    .item {
+      padding: 0px 12px;
+      height: 32px;
+      font-weight: 500;
+    }
+  }
+  // 二级导航栏, 比如仓库的导航栏, 仓库列表的导航栏, 探索的类型导航栏
   .ui.secondary.pointing.menu {
     .overflow-menu-items {
       gap: 0.5rem;

@@ -16,21 +16,6 @@ export const branchButton = css`
   }
 `;
 
-// 顶部提交, 标签, 分支
-export const repoMenu = css`
-  .page-content.repository.file.list {
-    .repository-summary .repository-menu {
-      background-color: ${themeVars.color.box.header};
-      .item {
-        color: ${themeVars.color.text.light.num1};
-        b {
-          color: ${themeVars.color.text.self};
-          margin: 0 2px;
-        }
-      }
-    }
-  }
-`;
 
 // 仓库按钮
 export const repoButton = css`
