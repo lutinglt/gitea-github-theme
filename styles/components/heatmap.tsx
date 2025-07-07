@@ -11,8 +11,8 @@ export const heatmap = css`
       // hover 时的圆角
       border-radius: 0.75px;
       // 宽度和高度可以用来控制间隔
-      width: 9.5px;
-      height: 9.5px;
+      width: 9px;
+      height: 9px;
       // 边框
       outline: 0.5px solid ${themeVars.github.contribution.default.borderColor.num0};
       // 边框向内偏移
