@@ -6,6 +6,7 @@ import "./diff";
 import "./filelist";
 import "./heatmap";
 import "./issue";
+import "./newrepo";
 import "./release";
 import "./repo";
 import "./setting";
