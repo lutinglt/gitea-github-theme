@@ -83,8 +83,9 @@ export const dropdown = css`
 
 // 选择框的下拉菜单看起来像普通按钮
 export const selectionDropdown = css`
-  .ui.selection.dropdown,
-  .ui.selection.dropdown.active {
+  // 排除可以选择的输入搜索框和创建仓库的拥有者
+  .ui.selection.dropdown:not(.search):not(.ellipsis-text-items),
+  .ui.selection.dropdown.active:not(.search):not(.ellipsis-text-items) {
     background-color: ${themeVars.color.button};
     border-color: ${themeVars.color.light.border};
     border-radius: ${otherThemeVars.border.radius};
@@ -103,6 +104,25 @@ export const selectionDropdown = css`
       content: "";
       ${activeItemAfterStyle};
     }
+  }
+  // 这个按钮项目前只在创建仓库的拥有者
+  // 不实现伪元素, 因为 .item 设置溢出的元素会被截断
+  .ui.selection.dropdown.ellipsis-text-items,
+  .ui.selection.dropdown.activeellipsis-text-items {
+    &:focus {
+      background: ${themeVars.color.button};
+      border-color: ${themeVars.color.light.border};
+    }
+    &:hover {
+      background: ${themeVars.color.hover.self};
+      border-color: ${themeVars.color.light.border};
+    }
+  }
+  // 选择输入框效果和输入框效果一样, 但不修改背景色
+  .ui.selection.dropdown.active.search {
+    // 向内部添加一个 1px 的边框
+    box-shadow: inset 0 0 0 1px ${themeVars.github.borderColor.accent.emphasis};
+    outline: none;
   }
   // 排除一些小按钮, 例如软件包类型, 通常相邻有元素
   .ui.selection.dropdown.active:not(.small) {

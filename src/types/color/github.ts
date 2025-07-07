@@ -58,6 +58,7 @@ export const github = {
        * @clone `clone` 克隆地址框被选中时的边框颜色
        * @issue `comment` 评论框被选中时的边框颜色
        * @menu `verticalMenu` 垂直菜单项激活时左侧的伪元素颜色
+       * @dropdown `selectionDropdown` 选择输入框的内部边框颜色
        */
       emphasis: null,
     },

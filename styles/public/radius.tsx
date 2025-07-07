@@ -38,7 +38,8 @@ export const radius = css`
     &.table,
     &.segment,
     &.segments,
-    &.grid.segment &.selection.dropdown,
+    &.grid.segment,
+    &.selection.dropdown,
     &.horizontal.segments,
     &.active.empty.selection.dropdown {
       border-radius: ${otherThemeVars.border.radius};

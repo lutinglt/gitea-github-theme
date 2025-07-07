@@ -4,7 +4,8 @@ export const input = css`
   input,
   textarea,
   .ui.input input,
-  .ui.form input:not([type]),
+  // 排除可以选择的输入搜索框
+  .ui.form input:not([type]):not(.search),
   .ui.form select,
   .ui.form textarea,
   .ui.form input[type="date"],
