@@ -40,6 +40,9 @@ export const navbarRight = css`
               height: 16px;
             }
           }
+          &:hover {
+            background-color: ${themeVars.color.nav.hoverBg};
+          }
         }
       }
       .item.ui.dropdown {
