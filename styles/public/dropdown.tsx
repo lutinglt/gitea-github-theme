@@ -142,7 +142,7 @@ export const selectionDropdown = css`
     outline: none;
   }
   // 覆盖选择输入框向上弹出时的 hover 效果, 原阴影会覆盖加厚的边框线
-  .ui.upward.active.selection.dropdown:hover {
+  .ui.selection.dropdown.active.search.upward:hover {
     box-shadow: inset 0 0 0 1px ${themeVars.github.borderColor.accent.emphasis};
   }
   // 由于之前的排除导致样式优先级变高, 小按钮去除圆角
