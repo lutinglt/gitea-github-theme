@@ -4,17 +4,21 @@ import { css, otherThemeVars, themeVars } from "src/types/vars";
 export const clone = css`
   .tippy-box {
     .clone-panel-popup {
-      //标题
-      .clone-panel-field:first-of-type {
-        font-weight: bold;
-        margin-top: 16px;
+      //标题和克隆地址
+      > .clone-panel-field {
         margin-left: 16px;
+        margin-right: 16px;
+        //标题
+        &:first-of-type {
+          font-weight: 600;
+          margin-top: 16px;
+        }
       }
       // 按钮组
       .clone-panel-tab {
         display: flex;
         gap: 8px;
-        margin-left: 12px;
+        margin-left: 16px;
         // 按钮
         .item {
           color: ${themeVars.color.text.self};
@@ -44,24 +48,35 @@ export const clone = css`
       }
       // 克隆地址
       .ui.input.action {
-        > input,
-        > input:hover {
+        > input {
           border: 1px solid ${themeVars.color.light.border};
           border-radius: ${otherThemeVars.border.radius};
-        }
-        > input:focus,
-        > input:focus-visible {
-          border-color: ${themeVars.github.borderColor.accent.emphasis};
+          font-family: var(--fontStack-monospace, ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, monospace);
+          width: 332px;
+          &:hover {
+            border: 1px solid ${themeVars.color.light.border};
+            border-radius: ${otherThemeVars.border.radius};
+          }
+          &:focus,
+          &:focus-visible {
+            border-color: ${themeVars.github.borderColor.accent.emphasis};
+          }
         }
         .ui.ui.ui.button {
           background-color: unset;
           border: unset;
           border-radius: ${otherThemeVars.border.radius};
           color: ${themeVars.color.text.light.num1};
-          padding: 5px 10px;
+          padding: 0;
+          width: 32px;
+          height: 32px;
           margin-left: 5px;
           &:hover {
             background-color: ${themeVars.github.control.transparent.bgColor.hover};
+          }
+          svg {
+            width: 16px;
+            height: 16px;
           }
         }
       }
