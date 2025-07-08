@@ -13,8 +13,10 @@ function stringToBoolean(str: string, name: string): boolean {
   }
 }
 
-export const overlayAppear = "overlay-appear";
-export const animation = `200ms cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal none running ${overlayAppear}`;
+export const overlayAppearDown = "overlay-appear-down";
+export const animationDown = `200ms cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal none running ${overlayAppearDown}`;
+export const overlayAppearUp = "overlay-appear-up";
+export const animationUp = `200ms cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal none running ${overlayAppearUp}`;
 
 const emoji = `
 .emoji[aria-label="check mark"],
@@ -60,8 +62,12 @@ export function createTheme(theme: Theme): void {
     accentColor: themeVars.color.accent,
     colorScheme: isDarkTheme ? "dark" : "light",
   });
-  globalKeyframes(overlayAppear, {
+  globalKeyframes(overlayAppearDown, {
     "0%": { opacity: 0, transform: "translateY(-12px)" },
+    "100%": { opacity: 1, transform: "translateY(0)" },
+  });
+  globalKeyframes(overlayAppearUp, {
+    "0%": { opacity: 0, transform: "translateY(12px)" },
     "100%": { opacity: 1, transform: "translateY(0)" },
   });
 }

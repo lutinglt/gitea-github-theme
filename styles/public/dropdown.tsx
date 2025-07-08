@@ -1,4 +1,4 @@
-import { animation } from "src/core/theme";
+import { animationDown, animationUp } from "src/core/theme";
 import { css, otherThemeVars, themeVars } from "src/types/vars";
 import { activeItemAfterStyle } from "styles/public/menu";
 
@@ -6,7 +6,7 @@ export const dropdown = css`
   .ui.dropdown,
   .ui.menu .ui.dropdown {
     .menu {
-      animation: ${animation};
+      animation: ${animationDown};
       // 统一所有下拉菜单的样式
       background-color: ${themeVars.color.menu} !important;
       border: unset !important;
@@ -67,6 +67,7 @@ export const dropdown = css`
   .ui.dropdown.upward,
   .ui.menu .ui.dropdown.upward {
     .menu {
+      animation: ${animationUp};
       margin-bottom: 0.35em !important;
     }
   }

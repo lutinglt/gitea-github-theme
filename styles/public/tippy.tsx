@@ -1,4 +1,4 @@
-import { animation } from "src/core/theme";
+import { animationDown } from "src/core/theme";
 import { css, otherThemeVars, themeVars } from "src/types/vars";
 
 // 一些界面内的提示框, 比如克隆按钮, PR信息, Runner信息 等
@@ -7,7 +7,7 @@ export const tippyBox = css`
     margin-top: -3px;
     border-radius: 12px;
     overflow: hidden;
-    animation: ${animation};
+    animation: ${animationDown};
     // 边框线同步 github 样式
     &[data-theme="default"],
     &[data-theme="box-with-header"] {
