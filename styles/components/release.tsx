@@ -62,8 +62,12 @@ export const releases = css`
             margin-top: 1px;
           }
         }
-        .js-branch-tag-selector {
-          margin-top: 8px;
+        // 分支选择按钮
+        .ui.button.branch-dropdown-button {
+          min-height: 20px;
+          line-height: 20px;
+          padding: 3px 12px;
+          font-size: 12px;
         }
       }
       // 右侧发布详细信息

@@ -110,6 +110,9 @@ export const verticalMenu = css`
 `;
 
 export const menu = css`
+  .ui.menu .item svg {
+    color: ${themeVars.color.text.light.num1};
+  }
   // 菜单默认悬浮色更改
   .ui.menu a.item,
   .ui.secondary.pointing.menu a.item,
@@ -168,7 +171,6 @@ export const secondaryMenu = css`
       border-radius: ${otherThemeVars.border.radius};
       color: ${themeVars.color.text.self};
       svg {
-        color: ${themeVars.color.text.light.num1};
         margin-right: 8px;
       }
     }

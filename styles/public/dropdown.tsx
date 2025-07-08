@@ -38,7 +38,6 @@ export const dropdown = css`
           }
         }
         svg {
-          color: ${themeVars.color.text.light.num1};
           margin-right: 0.5rem;
         }
         &.active,

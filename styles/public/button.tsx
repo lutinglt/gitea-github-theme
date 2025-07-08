@@ -18,12 +18,18 @@ export const baseButton = css`
     min-height: 30px;
     font-weight: 500;
     padding: 9px 16px;
+    svg {
+      color: ${themeVars.color.text.light.num1};
+    }
   }
 
   .ui.primary.button {
     ${primaryStyle}
     &:hover {
       ${primaryHoverStyle}
+    }
+    svg {
+      color: ${themeVars.color.text.self};
     }
   }
   // 主色调基本按钮和普通按钮一样
@@ -73,14 +79,6 @@ export const redButton = css`
       background-color: ${themeVars.github.button.danger.bgColor.hover};
       border-color: ${themeVars.github.button.danger.borderColor.hover};
     }
-  }
-`;
-
-// 分支菜单按钮
-export const branchDropdownButton = css`
-  .ui.button.branch-dropdown-button {
-    padding: 3px 12px;
-    min-height: 30px;
   }
 `;
 
