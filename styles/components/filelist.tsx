@@ -45,13 +45,13 @@ export const repoFiles = css`
         &.repo-file-last-commit {
           min-height: 3.725rem;
           .latest-commit {
+            gap: 8px;
             .commit-summary {
               color: ${themeVars.color.text.light.num1};
             }
             img.tw-align-middle {
               margin-top: -1px;
               margin-left: 1px;
-              margin-right: 8px !important;
             }
             // 作者
             .author-wrapper {

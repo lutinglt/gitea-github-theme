@@ -57,6 +57,7 @@ export const commit = css`
 export const commitStatus = css`
   .flex-text-inline[data-global-init="initCommitStatuses"] {
     padding: 6px;
+    margin-top: 2px;
     border-radius: ${otherThemeVars.border.radius};
     &:hover {
       background-color: ${themeVars.github.control.transparent.bgColor.hover};
