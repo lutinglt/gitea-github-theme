@@ -18,18 +18,14 @@ export const baseButton = css`
     min-height: 30px;
     font-weight: 500;
     padding: 9px 16px;
-    svg {
-      color: ${themeVars.color.text.light.num1};
-    }
   }
-
+  .ui.button:not(.primary):not(.red) svg {
+    color: ${themeVars.color.text.light.num1};
+  }
   .ui.primary.button {
     ${primaryStyle}
     &:hover {
       ${primaryHoverStyle}
-    }
-    svg {
-      color: ${themeVars.color.text.self};
     }
   }
   // 主色调基本按钮和普通按钮一样

@@ -110,7 +110,7 @@ export const verticalMenu = css`
 `;
 
 export const menu = css`
-  .ui.menu .item svg {
+  .menu .item svg {
     color: ${themeVars.color.text.light.num1};
   }
   // 菜单默认悬浮色更改
