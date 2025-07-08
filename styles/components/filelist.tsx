@@ -55,7 +55,6 @@ export const repoFiles = css`
             }
             // 作者
             .author-wrapper {
-              margin-right: 6px;
               &:hover {
                 color: ${themeVars.color.text.self};
               }
