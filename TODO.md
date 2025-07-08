@@ -3,7 +3,6 @@
 - hover 动画迁移
 - 列表部分 item 展开动画迁移
 
-
 ### 重大
 
 - gitea issue 默认标签颜色匹配使用 github 样式

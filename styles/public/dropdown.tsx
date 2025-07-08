@@ -8,7 +8,6 @@ export const dropdown = css`
     .menu {
       animation: ${animation};
       // 统一所有下拉菜单的样式
-      margin-top: 0.35em !important;
       background-color: ${themeVars.color.menu} !important;
       border: unset !important;
       border-radius: 12px !important;
@@ -56,6 +55,20 @@ export const dropdown = css`
       &:after {
         display: none !important;
       }
+    }
+  }
+  // 向下弹出的下拉菜单向下偏移
+  .ui.dropdown:not(.upward),
+  .ui.menu .ui.dropdown:not(.upward) {
+    .menu {
+      margin-top: 0.35em !important;
+    }
+  }
+  // 向上弹出的下拉菜单向上偏移
+  .ui.dropdown.upward,
+  .ui.menu .ui.dropdown.upward {
+    .menu {
+      margin-bottom: 0.35em !important;
     }
   }
   // 修复下拉菜单元素溢出问题
@@ -125,13 +138,23 @@ export const selectionDropdown = css`
     box-shadow: inset 0 0 0 1px ${themeVars.github.borderColor.accent.emphasis};
     outline: none;
   }
+  // 覆盖选择输入框向上弹出时的 hover 效果, 原阴影会覆盖加厚的边框线
+  .ui.upward.active.selection.dropdown:hover {
+    box-shadow: inset 0 0 0 1px ${themeVars.github.borderColor.accent.emphasis};
+  }
   // 由于之前的排除导致样式优先级变高, 小按钮去除圆角
-  .ui.action.input>.dropdown.small:not(:first-child) {
+  .ui.action.input > .dropdown.small:not(:first-child) {
     border-radius: 0;
   }
   // 排除一些小按钮, 例如软件包类型, 通常相邻有元素
   .ui.selection.dropdown.active:not(.small) {
     border-bottom-left-radius: ${otherThemeVars.border.radius} !important;
     border-bottom-right-radius: ${otherThemeVars.border.radius} !important;
+  }
+  // 修复选择框的下拉菜单向上显示时的样式问题
+  .ui.upward.selection.dropdown.visible:not(.small),
+  .ui.active.upward.selection.dropdown:not(.small) {
+    border-top-left-radius: ${otherThemeVars.border.radius}!important;
+    border-top-right-radius: ${otherThemeVars.border.radius}!important;
   }
 `;
