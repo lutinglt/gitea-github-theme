@@ -88,7 +88,10 @@ export const dropdown = css`
   .ui.dropdown .menu .menu {
     border-radius: 12px !important;
   }
-  // 修复仪表板切换控制用户按钮阴影被覆盖缺少边框线的问题
+  // 修复按钮阴影被覆盖缺少边框线的问题
+  // 仓库动态页面的右侧按钮, 比如时间周期
+  .ui.floating.dropdown .menu,
+  // 仪表板切换控制用户按钮
   .ui.dropdown .menu.context-user-switch .scrolling.menu {
     box-shadow: ${themeVars.github.shadow.floating.small} !important;
   }
