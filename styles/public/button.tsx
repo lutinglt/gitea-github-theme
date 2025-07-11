@@ -22,10 +22,18 @@ export const baseButton = css`
   .ui.button:not(.primary):not(.red) svg {
     color: ${themeVars.color.text.light.num1};
   }
-  .ui.primary.button {
-    ${primaryStyle}
-    &:hover {
-      ${primaryHoverStyle}
+  // 主色调按钮保持白色
+  .ui.primary.buttons .button svg {
+    color: ${themeVars.color.text.self};
+  }
+  .ui.primary {
+    &.button,
+    // 按钮组, PR 里的压缩合并按钮
+    &.buttons .button {
+      ${primaryStyle}
+      &:hover {
+        ${primaryHoverStyle}
+      }
     }
   }
   // 主色调基本按钮和普通按钮一样
