@@ -18,6 +18,9 @@ export const baseButton = css`
     min-height: 30px;
     font-weight: 500;
     padding: 9px 16px;
+    &.ui {
+      gap: 8px;
+    }
   }
   .ui.button:not(.primary):not(.red) svg {
     color: ${themeVars.color.text.light.num1};

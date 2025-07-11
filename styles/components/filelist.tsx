@@ -16,16 +16,6 @@ export const branchButton = css`
   }
 `;
 
-// 仓库按钮
-export const repoButton = css`
-  .page-content.repository.file.list {
-    // clone 按钮调整
-    .repo-button-row .repo-button-row-right .ui.primary.button span {
-      margin: 0px 3px;
-    }
-  }
-`;
-
 // 仓库文件列表
 export const repoFiles = css`
   .repository.file.list {
@@ -198,7 +188,7 @@ export const repoSidebarBottom = css`
         .color-icon {
           height: 8px;
           width: 8px;
-          margin-right: 6px;
+          margin-right: 8px;
         }
         .tw-font-semibold {
           color: ${themeVars.color.text.self};
