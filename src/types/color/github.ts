@@ -158,6 +158,12 @@ export const github = {
     },
   },
   control: {
+    bgColor: {
+      /** 背景色
+       * @issue `timeline` 时间线标签背景色
+       */
+      rest: null,
+    },
     transparent: {
       bgColor: {
         /** 悬停色

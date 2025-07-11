@@ -26,17 +26,14 @@ export const babel = css`
       // 时间线打开状态标签
       &.tw-bg-green {
         background-color: ${themeVars.github.bgColor.success.emphasis} !important;
-        border-color: ${themeVars.github.bgColor.success.emphasis} !important;
       }
       // 时间线关闭状态标签
       &.tw-bg-red {
         background-color: ${themeVars.github.bgColor.done.emphasis} !important;
-        border-color: ${themeVars.github.bgColor.done.emphasis} !important;
       }
       // 时间线合并状态标签
       &.tw-bg-purple {
         background-color: ${themeVars.github.bgColor.done.emphasis} !important;
-        border-color: ${themeVars.github.bgColor.done.emphasis} !important;
       }
     }
   }
@@ -137,6 +134,40 @@ export const prMerge = css`
       svg {
         width: 24px;
         height: 24px;
+      }
+    }
+  }
+`;
+
+// 时间线
+export const timeline = css`
+  .repository.view.issue {
+    .comment-list .timeline-item {
+      // 事件
+      &.event {
+        .badge {
+          border: 2px solid ${themeVars.color.body};
+        }
+        // 仅匹配只有 badge
+        .badge:not([class*=" "]) {
+          background-color: ${themeVars.github.control.bgColor.rest};
+          svg {
+            color: ${themeVars.color.text.light.num1};
+          }
+        }
+      }
+      // 提交
+      &.commits-list {
+        .badge svg {
+          color: ${themeVars.color.text.light.num1};
+        }
+        // 仅覆盖左侧 commit 不覆盖右侧 SHA
+        a.muted {
+          color: ${themeVars.color.text.light.num1};
+          &:hover {
+            color: ${themeVars.color.primary.self};
+          }
+        }
       }
     }
   }
