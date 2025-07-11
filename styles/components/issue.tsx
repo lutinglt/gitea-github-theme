@@ -1,4 +1,4 @@
-import { css, themeVars } from "src/types/vars";
+import { css, otherThemeVars, themeVars } from "src/types/vars";
 import { activeItemAfterStyle } from "styles/public/menu";
 
 export const button = css`
@@ -117,6 +117,26 @@ export const dropdown = css`
       .item:hover:after {
         content: "";
         ${activeItemAfterStyle}
+      }
+    }
+  }
+`;
+
+// PR 界面的 PR 操作评论头像
+export const prMerge = css`
+  .repository.view.issue .comment-list .timeline-item.pull-merge-box {
+    .timeline-avatar {
+      background-color: ${themeVars.github.bgColor.success.emphasis};
+      color: ${themeVars.color.text.self} !important;
+      border-radius: ${otherThemeVars.border.radius};
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      svg {
+        width: 24px;
+        height: 24px;
       }
     }
   }

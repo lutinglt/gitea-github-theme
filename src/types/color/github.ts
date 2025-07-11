@@ -41,6 +41,7 @@ export const github = {
     success: {
       /** 成功的背景颜色
        * @issue `babel` 重新开启图标背景颜色
+       * @issue `prMerge` 合并提交的图标背景色
        */
       emphasis: null,
     },
