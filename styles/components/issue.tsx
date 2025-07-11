@@ -142,30 +142,46 @@ export const prMerge = css`
 // 时间线
 export const timeline = css`
   .repository.view.issue {
-    .comment-list .timeline-item {
-      // 事件
-      &.event {
-        .badge {
-          border: 2px solid ${themeVars.color.body};
-        }
-        // 仅匹配只有 badge
-        .badge:not([class*=" "]) {
-          background-color: ${themeVars.github.control.bgColor.rest};
-          svg {
-            color: ${themeVars.color.text.light.num1};
+    .comment-list {
+      .timeline-item,
+      .timeline-item-group {
+        padding: 16px 0;
+        // 事件
+        &.event {
+          // 修复覆盖后的位置问题
+          padding-left: 15px;
+          .avatar {
+            width: 20px;
+            height: 20px;
+          }
+          .badge {
+            border: 2px solid ${themeVars.color.body};
+          }
+          // 仅匹配只有 badge
+          .badge:not([class*=" "]) {
+            background-color: ${themeVars.github.control.bgColor.rest};
+            svg {
+              color: ${themeVars.color.text.light.num1};
+            }
           }
         }
-      }
-      // 提交
-      &.commits-list {
-        .badge svg {
-          color: ${themeVars.color.text.light.num1};
-        }
-        // 仅覆盖左侧 commit 不覆盖右侧 SHA
-        a.muted {
-          color: ${themeVars.color.text.light.num1};
-          &:hover {
-            color: ${themeVars.color.primary.self};
+        // 提交
+        &.commits-list {
+          // 每个提交之间的间隔
+          .flex-text-block {
+            padding-top: 4px;
+          }
+          .badge svg {
+            color: ${themeVars.color.text.light.num1};
+          }
+          // 仅覆盖左侧 commit 不覆盖右侧 SHA
+          a.muted {
+            font-size: 12px;
+            color: ${themeVars.color.text.light.num1};
+            text-decoration-line: underline;
+            &:hover {
+              color: ${themeVars.color.primary.self};
+            }
           }
         }
       }
