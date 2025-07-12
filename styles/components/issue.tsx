@@ -123,7 +123,7 @@ export const dropdown = css`
 export const prMerge = css`
   .repository.view.issue .comment-list .timeline-item.pull-merge-box {
     // 头像
-    .timeline-avatar {
+    .timeline-avatar.green {
       background-color: ${themeVars.github.bgColor.success.emphasis};
       color: ${themeVars.color.text.self} !important;
       border-radius: ${otherThemeVars.border.radius};
