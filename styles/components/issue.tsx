@@ -119,9 +119,10 @@ export const dropdown = css`
   }
 `;
 
-// PR 界面的 PR 操作评论头像
+// PR 界面的 PR 操作评论
 export const prMerge = css`
   .repository.view.issue .comment-list .timeline-item.pull-merge-box {
+    // 头像
     .timeline-avatar {
       background-color: ${themeVars.github.bgColor.success.emphasis};
       color: ${themeVars.color.text.self} !important;
@@ -135,6 +136,44 @@ export const prMerge = css`
         width: 24px;
         height: 24px;
       }
+    }
+    // 检查状态
+    .commit-status-panel {
+      .commit-status-header {
+        background: ${themeVars.color.body};
+        padding: 16px;
+        font-size: 16px;
+        font-weight: 600;
+        .ui.right {
+          color: ${themeVars.color.text.light.num1};
+          font-size: 14px;
+          font-weight: 400;
+        }
+      }
+      // 检查状态列表
+      .commit-status-list {
+        background: ${themeVars.color.menu};
+        .commit-status-item {
+          border-radius: ${otherThemeVars.border.radius};
+          padding: 2px 8px;
+          margin: 0px 8px;
+          height: 37px;
+          &:first-child {
+            margin-top: 8px;
+          }
+          &:last-child {
+            margin-bottom: 8px;
+          }
+          &:hover {
+            background-color: ${themeVars.color.hover.opaque};
+          }
+        }
+      }
+    }
+    // 合并信息和操作
+    .merge-section {
+      color: ${themeVars.color.text.light.num1};
+      padding: 16px;
     }
   }
 `;
