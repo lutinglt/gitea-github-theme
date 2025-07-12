@@ -174,6 +174,8 @@ export const prMerge = css`
     .merge-section {
       color: ${themeVars.color.text.light.num1};
       padding: 16px;
+      display: grid;
+      gap: 8px;
     }
   }
 `;
