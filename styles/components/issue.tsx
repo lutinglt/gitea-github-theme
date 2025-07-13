@@ -136,6 +136,16 @@ export const prMerge = css`
         width: 24px;
         height: 24px;
       }
+      + .content > .ui.attached.segment {
+        border-left-color: ${themeVars.github.bgColor.success.emphasis};
+        border-right-color: ${themeVars.github.bgColor.success.emphasis};
+        &:first-child {
+          border-top-color: ${themeVars.github.bgColor.success.emphasis};
+        }
+        &:last-child {
+          border-bottom-color: ${themeVars.github.bgColor.success.emphasis};
+        }
+      }
     }
     // 检查状态
     .commit-status-panel {
