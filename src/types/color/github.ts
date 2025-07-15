@@ -41,6 +41,7 @@ export const github = {
     success: {
       /** 成功的背景颜色
        * @issue `babel` 重新开启图标背景颜色
+       * @issue `prMerge` 合并提交的图标背景色
        */
       emphasis: null,
     },
@@ -157,6 +158,12 @@ export const github = {
     },
   },
   control: {
+    bgColor: {
+      /** 背景色
+       * @issue `timeline` 时间线标签背景色
+       */
+      rest: null,
+    },
     transparent: {
       bgColor: {
         /** 悬停色
