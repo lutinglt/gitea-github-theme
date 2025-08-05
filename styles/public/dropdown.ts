@@ -19,13 +19,15 @@ export const dropdown = css`
         gap: 0.5rem;
         padding: 8px 10px !important;
         border-radius: ${otherThemeVars.border.radius} !important;
-        margin: 0 0.5rem;
-        &:first-of-type {
+        &:not(.emoji) {
+          margin: 0 0.5rem;
+        }
+        &:not(.emoji):first-of-type {
           margin-top: 0.5rem;
         }
         // 不知道为什么提交差异对比页面操作中的 cherrypick 按钮无法被选中
         &.cherry-pick-button,
-        &:last-of-type {
+        &:not(.emoji):last-of-type {
           margin-bottom: 0.5rem;
         }
         &:hover {
@@ -178,5 +180,25 @@ export const fixSelectionDropdown = css`
 export const branchDropdown = css`
   .ui.dropdown.branch-selector-dropdown .menu > .item {
     animation: ${animationDown};
+  }
+`;
+
+// 包含表情的下拉菜单
+export const emojiDropdown = css`
+  .ui.dropdown.action.select-reaction.active .menu:has(.emoji) {
+    display: flex !important;
+    flex-direction: row;
+    gap: 4px;
+    padding: 4px;
+    min-width: auto;
+    > .item.emoji {
+      font-size: 14px;
+      min-height: 32px;
+      height: 32px;
+      margin: 0px;
+      &:hover {
+        background-color: ${themeVars.github.bgColor.accent.emphasis} !important;
+      }
+    }
   }
 `;

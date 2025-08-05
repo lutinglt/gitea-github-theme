@@ -28,6 +28,7 @@ export const github = {
        * @actions `actionViewLeft` 左侧子作业激活伪元素颜色
        * @release `releaseTagMenu` 顶部栏左侧按钮激活背景色
        * @navbar `navbarRight` 头像管理员标识背景颜色
+       * @dropdown `dropdown` emoji 的悬停背景色
        */
       emphasis: null,
       /** 暗淡的背景颜色

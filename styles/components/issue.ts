@@ -85,7 +85,7 @@ export const prBranch = css`
 
 // 评论
 export const comment = css`
-  .comment {
+  .comment .comment-container {
     // 去除评论标题左侧指向头像的小箭头
     .comment-header,
     &:target .comment-header {
@@ -101,12 +101,29 @@ export const comment = css`
         box-shadow: 0 0 0 1px ${themeVars.color.primary.self} !important;
       }
     }
+    .comment-header {
+      padding: 4px 4px 4px 16px;
+    }
     .comment-header-right {
       > .item,
       > .label {
         color: ${themeVars.color.text.light.num1};
       }
+      > .ui.label {
+        background-color: initial;
+        font-size: 12px;
+        height: 20px;
+        padding: 0 6px;
+      }
+      // 隐藏顶部菜单的表情按钮
+      .ui.dropdown.action.select-reaction {
+        display: none;
+      }
       .context-dropdown {
+        a.context-menu {
+          display: flex;
+          align-items: center;
+        }
         // 评论菜单的删除按钮
         .menu .item.delete-comment {
           color: ${themeVars.color.red.self};
@@ -115,6 +132,44 @@ export const comment = css`
             color: ${themeVars.color.red.light};
           }
         }
+      }
+    }
+    // 表情菜单按钮头部+底部
+    .ui.dropdown.action.select-reaction > a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: ${themeVars.color.button};
+      border-radius: 25px;
+      border: 1px solid ${themeVars.color.light.border};
+      color: ${themeVars.color.text.light.num1};
+      padding: 0px 8px !important;
+      height: 28px;
+      width: 28px;
+    }
+    // 底部表情栏
+    .bottom-reactions {
+      .ui.ui.ui.label {
+        background-color: unset !important;
+        border-radius: 25px;
+        border-color: ${themeVars.color.light.border};
+        &:hover {
+          background-color: ${themeVars.color.reaction.hoverBg} !important;
+          border-color: ${themeVars.color.light.border};
+        }
+        .reaction {
+          font-size: 12px;
+        }
+        .reaction-count {
+          color: ${themeVars.color.text.light.self};
+          font-weight: 500;
+          margin-left: 0;
+        }
+      }
+      // 显示表情菜单按钮
+      .select-reaction {
+        padding: 0;
+        visibility: visible;
       }
     }
   }
