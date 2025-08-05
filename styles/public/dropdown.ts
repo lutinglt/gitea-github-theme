@@ -14,7 +14,6 @@ export const dropdown = css`
       box-shadow: ${themeVars.github.shadow.floating.small} !important;
       // 忽略隐藏
       > .item:not(.tw-hidden) {
-        animation: ${animationDown};
         display: flex !important;
         align-items: center;
         gap: 0.5rem;
@@ -172,5 +171,12 @@ export const fixSelectionDropdown = css`
   #new-dependency-drop-list.ui.selection.dropdown {
     // 高度对齐问题, 应该与 input 框高度一致
     min-height: 32px;
+  }
+`;
+
+// 分支菜单
+export const branchDropdown = css`
+  .ui.dropdown.branch-selector-dropdown .menu > .item {
+    animation: ${animationDown};
   }
 `;
