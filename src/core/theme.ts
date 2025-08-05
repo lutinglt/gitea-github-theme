@@ -48,14 +48,16 @@ export function createTheme(theme: Theme): void {
   }
   createGlobalTheme(":root", themeVars, theme);
   createGlobalTheme(":root", otherThemeVars, {
-    git: "#f05133",
-    light: {
-      mimicEnabled: isDarkTheme
-        ? "rgba(0, 0, 0, calc(40 / 255 * 222 / 255 / var(--opacity-disabled)))"
-        : "rgba(0, 0, 0, calc(6 / 255 * 222 / 255 / var(--opacity-disabled)))",
-    },
     border: {
       radius: "6px",
+    },
+    color: {
+      git: "#f05133",
+      light: {
+        mimicEnabled: isDarkTheme
+          ? "rgba(0, 0, 0, calc(40 / 255 * 222 / 255 / var(--opacity-disabled)))"
+          : "rgba(0, 0, 0, calc(6 / 255 * 222 / 255 / var(--opacity-disabled)))",
+      },
     },
   });
   globalStyle(":root", {
@@ -63,11 +65,11 @@ export function createTheme(theme: Theme): void {
     colorScheme: isDarkTheme ? "dark" : "light",
   });
   globalKeyframes(overlayAppearDown, {
-    "0%": { opacity: 0, transform: "translateY(-12px)" },
+    "0%": { opacity: 0, transform: "translateY(-8px)" },
     "100%": { opacity: 1, transform: "translateY(0)" },
   });
   globalKeyframes(overlayAppearUp, {
-    "0%": { opacity: 0, transform: "translateY(12px)" },
+    "0%": { opacity: 0, transform: "translateY(8px)" },
     "100%": { opacity: 1, transform: "translateY(0)" },
   });
 }

@@ -16,6 +16,19 @@ export const branchButton = css`
   }
 `;
 
+// 仓库同步派生
+export const syncFork = css`
+  .page-content.repository.file.list {
+    .repo-home-filelist > .ui.message {
+      background: ${themeVars.color.box.header};
+      padding: 8px 8px 8px 16px;
+      .ui.button {
+        min-width: 96px;
+      }
+    }
+  }
+`;
+
 // 仓库文件列表
 export const repoFiles = css`
   .repository.file.list {

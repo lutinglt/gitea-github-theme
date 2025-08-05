@@ -37,9 +37,6 @@ export const dropdown = css`
             background-color: ${themeVars.github.control.transparent.bgColor.hover} !important;
           }
         }
-        svg {
-          margin-right: 0.5rem;
-        }
         &.active,
         &.selected {
           &:after {

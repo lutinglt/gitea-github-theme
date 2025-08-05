@@ -1,4 +1,4 @@
-import { css, themeVars } from "src/types/vars";
+import { css, otherThemeVars, themeVars } from "src/types/vars";
 
 export const navbarRight = css`
   #navbar {
@@ -13,6 +13,7 @@ export const navbarRight = css`
         align-content: center;
         justify-content: center;
         border: 1px solid ${themeVars.color.light.border};
+        border-radius: ${otherThemeVars.border.radius};
         padding: unset;
         height: 32px;
         min-width: 32px;
