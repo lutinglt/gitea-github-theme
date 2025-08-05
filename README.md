@@ -36,7 +36,7 @@ THEMES = gitea-dark, github-dark
 
 ```css
 :root {
-  --custom-clone-menu-width: 150px;.
+  --custom-clone-menu-width: 150px;
   ...
 }
 ```
