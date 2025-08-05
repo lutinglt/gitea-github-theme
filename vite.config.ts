@@ -1,5 +1,4 @@
 import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
-import react from "@vitejs/plugin-react";
 import linaria from "@wyw-in-js/vite";
 import * as dotenv from "dotenv";
 import { Features } from "lightningcss";
@@ -24,7 +23,7 @@ export default defineConfig(({ mode }) => {
         styles: path.resolve(__dirname, "styles"),
         themes: path.resolve(__dirname, "themes"),
       },
-      extensions: [".js", ".jsx", ".ts", ".tsx", ".css.tsx"],
+      extensions: [".js", ".ts", ".css.ts"],
     },
     css: {
       transformer: "lightningcss",
@@ -37,14 +36,13 @@ export default defineConfig(({ mode }) => {
       linaria({
         include: ["**/*.{ts,tsx}"],
         babelOptions: {
-          presets: ["@babel/preset-typescript", "@babel/preset-react"],
+          presets: ["@babel/preset-typescript"],
         },
         preprocessor: (_selector, cssText) => sass.compileString(cssText).css, // 默认为全局样式并使用 sass-embedded 预处理 css
         tagResolver: (source, tag) =>
           // 识别从 src 导出的 css 标签，使用 @linaria/core/processors/css 处理
           source === "src/types/vars" && tag === "css" ? require.resolve("@linaria/core/processors/css") : null,
       }),
-      react(),
       vanillaExtractPlugin(),
       themePlugin(),
     ],

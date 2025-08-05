@@ -162,8 +162,8 @@ export const selectionDropdown = css`
   // 修复选择框的下拉菜单向上显示时的样式问题
   .ui.upward.selection.dropdown.visible:not(.small),
   .ui.active.upward.selection.dropdown:not(.small) {
-    border-top-left-radius: ${otherThemeVars.border.radius}!important;
-    border-top-right-radius: ${otherThemeVars.border.radius}!important;
+    border-top-left-radius: ${otherThemeVars.border.radius} !important;
+    border-top-right-radius: ${otherThemeVars.border.radius} !important;
   }
 `;
 

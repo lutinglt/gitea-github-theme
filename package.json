@@ -1,6 +1,6 @@
 {
   "name": "gitea-github-theme",
-  "version": "1.24.2",
+  "version": "1.24.4",
   "description": "A theme to make Gitea look and feel like GitHub",
   "type": "module",
   "scripts": {
@@ -12,35 +12,26 @@
     "version": "node scripts/version.cjs"
   },
   "devDependencies": {
-    "@babel/preset-react": "^7.27.1",
     "@babel/preset-typescript": "^7.27.1",
     "@eslint/js": "^9.29.0",
     "@linaria/core": "^6.3.0",
-    "@linaria/react": "^6.3.0",
     "@types/node": "^24.0.3",
-    "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6",
     "@vanilla-extract/css": "^1.17.4",
     "@vanilla-extract/vite-plugin": "^5.0.6",
-    "@vitejs/plugin-react": "^4.5.2",
-    "@vitejs/plugin-react-swc": "^3.10.2",
     "@wyw-in-js/babel-preset": "^0.7.0",
     "@wyw-in-js/vite": "^0.7.0",
     "dotenv": "^17.0.0",
     "eslint": "^9.29.0",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.2.0",
     "lightningcss": "^1.30.1",
     "polished": "^4.3.1",
     "prettier": "3.5.3",
     "prettier-plugin-organize-imports": "^4.1.0",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
     "sass-embedded": "^1.89.2",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.34.1",
     "typescript-plugin-css-modules": "^5.1.0",
+    "typescript-styled-plugin": "^0.18.3",
     "vite": "^6.3.5"
   },
   "prettier": {
@@ -62,8 +53,5 @@
       "prettier-plugin-organize-imports"
     ],
     "organizeImportsSkipDestructiveCodeActions": false
-  },
-  "dependencies": {
-    "typescript-styled-plugin": "^0.18.3"
   }
 }

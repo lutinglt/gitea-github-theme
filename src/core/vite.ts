@@ -4,7 +4,7 @@ import fs from "node:fs";
 import path from "node:path";
 import type { Plugin } from "vite";
 
-const suffix = ".css.tsx";
+const suffix = ".css.ts";
 
 /**
  * 生成主题输入
