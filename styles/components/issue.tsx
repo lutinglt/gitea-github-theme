@@ -67,8 +67,19 @@ export const prBranch = css`
   #issue-list .flex-item-body .branches .branch {
     color: ${themeVars.github.fgColor.accent};
     background-color: ${themeVars.github.bgColor.accent.muted};
+    border-radius: ${otherThemeVars.border.radius};
+    font-family: var(--fontStack-monospace, ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, monospace);
     font-size: 12px;
     padding: 0 5px;
+    line-height: 20px;
+  }
+
+  .repository.view.issue .pull-desc code {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    a:hover {
+      text-decoration-line: none;
+    }
   }
 `;
 
@@ -91,6 +102,10 @@ export const comment = css`
       }
     }
     .comment-header-right {
+      > .item,
+      > .label {
+        color: ${themeVars.color.text.light.num1};
+      }
       .context-dropdown {
         // 评论菜单的删除按钮
         .menu .item.delete-comment {

@@ -58,6 +58,7 @@ export const actions = css`
         .run-list-ref {
           background-color: ${themeVars.github.bgColor.accent.muted};
           color: ${themeVars.github.fgColor.accent};
+          font-family: var(--fontStack-monospace, ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, monospace);
           font-weight: 400;
           &:hover {
             background-color: ${themeVars.github.bgColor.accent.muted};
@@ -133,6 +134,7 @@ export const actionViewHeader = css`
       .ui.label {
         background-color: ${themeVars.github.bgColor.accent.muted};
         color: ${themeVars.github.fgColor.accent};
+        font-family: var(--fontStack-monospace, ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, monospace);
         font-weight: 400;
         > a {
           opacity: 1;

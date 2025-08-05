@@ -110,6 +110,29 @@ export const repoFilesMobile = css`
   }
 `;
 
+// 仓库打开文件时的视图
+export const repoFileView = css`
+  .page-content.repository.file.list {
+    .repo-view-container {
+      // 右侧文件视图内容
+      .repo-view-content {
+        // 头部提交信息
+        #repo-file-commit-box {
+          padding: 8px 12px;
+          > .latest-commit {
+            gap: 8px;
+          }
+          // 右侧提交时间
+          > .age {
+            display: flex;
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
+`;
+
 // 仓库代码布局调整, 侧边栏宽度调整
 export const repoGrid = css`
   .repo-grid-filelist-sidebar {

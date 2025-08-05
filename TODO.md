@@ -1,8 +1,3 @@
-### 轻量
-
-- hover 动画迁移
-- 列表部分 item 展开动画迁移
-
 ### 重大
 
 - gitea issue 默认标签颜色匹配使用 github 样式
@@ -12,6 +7,7 @@
 - defineTheme 颜色生成代码重构
 - 亮色主题适配/测试
 - 自动颜色主题生成
+- github primer 官方库集成
 
 ### 其他
 
