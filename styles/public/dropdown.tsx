@@ -14,6 +14,7 @@ export const dropdown = css`
       box-shadow: ${themeVars.github.shadow.floating.small} !important;
       // 忽略隐藏
       > .item:not(.tw-hidden) {
+        animation: ${animationDown};
         display: flex !important;
         align-items: center;
         gap: 0.5rem;
@@ -36,9 +37,6 @@ export const dropdown = css`
           &:hover {
             background-color: ${themeVars.github.control.transparent.bgColor.hover} !important;
           }
-        }
-        svg {
-          margin-right: 0.5rem;
         }
         &.active,
         &.selected {
@@ -154,10 +152,25 @@ export const selectionDropdown = css`
     border-bottom-left-radius: ${otherThemeVars.border.radius} !important;
     border-bottom-right-radius: ${otherThemeVars.border.radius} !important;
   }
+  // 修复因为上面的排除导致的圆角问题
+  // 具体工单页面下依赖菜单选择框
+  #new-dependency-drop-list.ui.selection.dropdown.active,
+  // 提交图分支选择框
+  #git-graph-container #flow-select-refs-dropdown {
+    border-bottom-right-radius: 0 !important;
+  }
   // 修复选择框的下拉菜单向上显示时的样式问题
   .ui.upward.selection.dropdown.visible:not(.small),
   .ui.active.upward.selection.dropdown:not(.small) {
     border-top-left-radius: ${otherThemeVars.border.radius}!important;
     border-top-right-radius: ${otherThemeVars.border.radius}!important;
+  }
+`;
+
+export const fixSelectionDropdown = css`
+  // 具体工单页面下依赖菜单选择框
+  #new-dependency-drop-list.ui.selection.dropdown {
+    // 高度对齐问题, 应该与 input 框高度一致
+    min-height: 32px;
   }
 `;

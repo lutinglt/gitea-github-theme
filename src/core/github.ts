@@ -350,6 +350,9 @@ export function defineGithubTheme(githubColor: GithubColor): Theme {
       },
     },
     control: {
+      bgColor: {
+        rest: githubColor.control.bgColor.rest,
+      },
       transparent: {
         bgColor: {
           hover: githubColor.control.transparent.bgColor.hover,

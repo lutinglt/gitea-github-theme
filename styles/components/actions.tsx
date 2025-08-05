@@ -1,3 +1,4 @@
+import { animationDown } from "src/core/theme";
 import { css, otherThemeVars, themeVars } from "src/types/vars";
 
 // 仓库 Actions 页面
@@ -57,6 +58,7 @@ export const actions = css`
         .run-list-ref {
           background-color: ${themeVars.github.bgColor.accent.muted};
           color: ${themeVars.github.fgColor.accent};
+          font-family: var(--fontStack-monospace, ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, monospace);
           font-weight: 400;
           &:hover {
             background-color: ${themeVars.github.bgColor.accent.muted};
@@ -132,6 +134,7 @@ export const actionViewHeader = css`
       .ui.label {
         background-color: ${themeVars.github.bgColor.accent.muted};
         color: ${themeVars.github.fgColor.accent};
+        font-family: var(--fontStack-monospace, ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, monospace);
         font-weight: 400;
         > a {
           opacity: 1;
@@ -212,6 +215,7 @@ export const actionViewRight = css`
     }
 
     .job-step-container {
+      // 步骤标题
       .job-step-summary {
         color: ${themeVars.color.console.fg.subtle};
         padding: 8px 10px;
@@ -238,12 +242,16 @@ export const actionViewRight = css`
           }
         }
       }
-      /* 日志字体颜色白色 */
-      .job-log-line {
-        color: ${themeVars.color.console.fg.self};
-        /* 被 hover 时覆盖 ANSI 颜色 */
-        .log-msg:hover * {
-          color: ${themeVars.color.console.fg.self} !important;
+      // 步骤日志
+      .job-step-logs {
+        animation: ${animationDown};
+        /* 日志字体颜色白色 */
+        .job-log-line {
+          color: ${themeVars.color.console.fg.self};
+          /* 被 hover 时覆盖 ANSI 颜色 */
+          .log-msg:hover * {
+            color: ${themeVars.color.console.fg.self} !important;
+          }
         }
       }
     }

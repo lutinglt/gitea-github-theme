@@ -1,4 +1,4 @@
-import { css, themeVars } from "src/types/vars";
+import { css, otherThemeVars, themeVars } from "src/types/vars";
 import { activeItemAfterStyle } from "styles/public/menu";
 
 export const button = css`
@@ -26,17 +26,14 @@ export const babel = css`
       // 时间线打开状态标签
       &.tw-bg-green {
         background-color: ${themeVars.github.bgColor.success.emphasis} !important;
-        border-color: ${themeVars.github.bgColor.success.emphasis} !important;
       }
       // 时间线关闭状态标签
       &.tw-bg-red {
         background-color: ${themeVars.github.bgColor.done.emphasis} !important;
-        border-color: ${themeVars.github.bgColor.done.emphasis} !important;
       }
       // 时间线合并状态标签
       &.tw-bg-purple {
         background-color: ${themeVars.github.bgColor.done.emphasis} !important;
-        border-color: ${themeVars.github.bgColor.done.emphasis} !important;
       }
     }
   }
@@ -70,8 +67,19 @@ export const prBranch = css`
   #issue-list .flex-item-body .branches .branch {
     color: ${themeVars.github.fgColor.accent};
     background-color: ${themeVars.github.bgColor.accent.muted};
+    border-radius: ${otherThemeVars.border.radius};
+    font-family: var(--fontStack-monospace, ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, monospace);
     font-size: 12px;
     padding: 0 5px;
+    line-height: 20px;
+  }
+
+  .repository.view.issue .pull-desc code {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    a:hover {
+      text-decoration-line: none;
+    }
   }
 `;
 
@@ -94,6 +102,10 @@ export const comment = css`
       }
     }
     .comment-header-right {
+      > .item,
+      > .label {
+        color: ${themeVars.color.text.light.num1};
+      }
       .context-dropdown {
         // 评论菜单的删除按钮
         .menu .item.delete-comment {
@@ -117,6 +129,145 @@ export const dropdown = css`
       .item:hover:after {
         content: "";
         ${activeItemAfterStyle}
+      }
+    }
+  }
+`;
+
+// PR 界面的 PR 操作评论
+export const prMerge = css`
+  .repository.view.issue .comment-list .timeline-item.pull-merge-box {
+    // 头像
+    .timeline-avatar {
+      color: ${themeVars.color.text.self} !important;
+      border-radius: ${otherThemeVars.border.radius};
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+      // 可以合并
+      &.green {
+        background-color: ${themeVars.github.bgColor.success.emphasis};
+        // 操作评论边框色
+        + .content > .ui.attached.segment {
+          border-left-color: ${themeVars.github.bgColor.success.emphasis};
+          border-right-color: ${themeVars.github.bgColor.success.emphasis};
+          &:first-child {
+            border-top-color: ${themeVars.github.bgColor.success.emphasis};
+          }
+          &:last-child {
+            border-bottom-color: ${themeVars.github.bgColor.success.emphasis};
+          }
+        }
+      }
+      // 已合并
+      &.purple {
+        background-color: ${themeVars.github.bgColor.done.emphasis};
+        + .content > .ui.attached.segment {
+          border-left-color: ${themeVars.github.bgColor.done.emphasis};
+          border-right-color: ${themeVars.github.bgColor.done.emphasis};
+          &:first-child {
+            border-top-color: ${themeVars.github.bgColor.done.emphasis};
+          }
+          &:last-child {
+            border-bottom-color: ${themeVars.github.bgColor.done.emphasis};
+          }
+        }
+      }
+    }
+    // 检查状态
+    .commit-status-panel {
+      .commit-status-header {
+        background: ${themeVars.color.body};
+        padding: 16px;
+        font-size: 16px;
+        font-weight: 600;
+        .ui.right {
+          color: ${themeVars.color.text.light.num1};
+          font-size: 14px;
+          font-weight: 400;
+        }
+      }
+      // 检查状态列表
+      .commit-status-list {
+        background: ${themeVars.color.menu};
+        .commit-status-item {
+          border-radius: ${otherThemeVars.border.radius};
+          padding: 2px 8px;
+          margin: 0px 8px;
+          height: 37px;
+          &:first-child {
+            margin-top: 8px;
+          }
+          &:last-child {
+            margin-bottom: 8px;
+          }
+          &:hover {
+            background-color: ${themeVars.color.hover.opaque};
+          }
+        }
+      }
+    }
+    // 合并信息和操作
+    .merge-section {
+      color: ${themeVars.color.text.light.num1};
+      padding: 16px;
+      display: grid;
+      gap: 8px;
+    }
+  }
+`;
+
+// 时间线
+export const timeline = css`
+  .repository.view.issue {
+    .comment-list {
+      .timeline-item,
+      .timeline-item-group {
+        padding: 16px 0;
+        // 事件
+        &.event {
+          // 修复覆盖后的位置问题
+          padding-left: 15px;
+          .avatar {
+            width: 20px;
+            height: 20px;
+          }
+          .badge {
+            border: 2px solid ${themeVars.color.body};
+          }
+          // 仅匹配只有 badge
+          .badge:not([class*=" "]) {
+            background-color: ${themeVars.github.control.bgColor.rest};
+            svg {
+              color: ${themeVars.color.text.light.num1};
+            }
+          }
+        }
+        // 提交
+        &.commits-list {
+          // 每个提交之间的间隔
+          .flex-text-block {
+            padding-top: 4px;
+          }
+          .badge svg {
+            color: ${themeVars.color.text.light.num1};
+          }
+          // 仅覆盖左侧 commit 不覆盖右侧 SHA
+          a.muted {
+            font-size: 12px;
+            color: ${themeVars.color.text.light.num1};
+            text-decoration-line: underline;
+            &:hover {
+              color: ${themeVars.color.primary.self};
+            }
+          }
+        }
       }
     }
   }

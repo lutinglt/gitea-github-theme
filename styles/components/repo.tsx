@@ -6,10 +6,6 @@ export const repoHeader = css`
     // 点星/关注/克隆/RSS 按钮
     .ui.compact.button {
       padding: 3px 12px;
-      // 文本跟图标间隔, 文本在手机下不显示
-      span {
-        margin-left: 0.5rem;
-      }
     }
     // 仓库图标
     img.ui.avatar {

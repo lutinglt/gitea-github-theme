@@ -16,12 +16,15 @@ export const branchButton = css`
   }
 `;
 
-// 仓库按钮
-export const repoButton = css`
+// 仓库同步派生
+export const syncFork = css`
   .page-content.repository.file.list {
-    // clone 按钮调整
-    .repo-button-row .repo-button-row-right .ui.primary.button span {
-      margin: 0px 3px;
+    .repo-home-filelist > .ui.message {
+      background: ${themeVars.color.box.header};
+      padding: 8px 8px 8px 16px;
+      .ui.button {
+        min-width: 96px;
+      }
     }
   }
 `;
@@ -101,6 +104,29 @@ export const repoFilesMobile = css`
         }
         &.message {
           display: none;
+        }
+      }
+    }
+  }
+`;
+
+// 仓库打开文件时的视图
+export const repoFileView = css`
+  .page-content.repository.file.list {
+    .repo-view-container {
+      // 右侧文件视图内容
+      .repo-view-content {
+        // 头部提交信息
+        #repo-file-commit-box {
+          padding: 8px 12px;
+          > .latest-commit {
+            gap: 8px;
+          }
+          // 右侧提交时间
+          > .age {
+            display: flex;
+            align-items: center;
+          }
         }
       }
     }
@@ -198,7 +224,7 @@ export const repoSidebarBottom = css`
         .color-icon {
           height: 8px;
           width: 8px;
-          margin-right: 6px;
+          margin-right: 8px;
         }
         .tw-font-semibold {
           color: ${themeVars.color.text.self};
