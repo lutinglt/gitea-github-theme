@@ -1,4 +1,4 @@
-import { css, otherThemeVars, themeVars } from "src/types/vars";
+import { css, otherThemeVars, themeVars, customThemeVars } from "src/types/vars";
 
 // 克隆按钮的弹窗
 export const clone = css`
@@ -52,7 +52,9 @@ export const clone = css`
           border: 1px solid ${themeVars.color.light.border};
           border-radius: ${otherThemeVars.border.radius};
           font-family: var(--fontStack-monospace, ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, monospace);
-          width: 332px;
+          min-width: 150px;
+          max-width: 400px;
+          width: ${customThemeVars.custom.cloneMenuWidth};
           &:hover {
             border: 1px solid ${themeVars.color.light.border};
             border-radius: ${otherThemeVars.border.radius};

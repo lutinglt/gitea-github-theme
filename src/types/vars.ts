@@ -35,7 +35,14 @@ const otherVars = {
   },
 };
 
+const customVars = {
+  custom: {
+    cloneMenuWidth: "custom-clone-menu-width",
+  },
+};
+
 export const themeVars = createGlobalThemeContract(vars, varMapper);
 export const otherThemeVars = createGlobalThemeContract(otherVars, varMapper);
+export const customThemeVars = createGlobalThemeContract(customVars, varMapper);
 
 export { css } from "@linaria/core";
