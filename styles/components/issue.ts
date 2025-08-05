@@ -116,9 +116,11 @@ export const comment = css`
         padding: 0 6px;
       }
       // 隐藏顶部菜单的表情按钮
-      .ui.dropdown.action.select-reaction {
-        display: none;
-      }
+      // 无法使用此样式, 评论无表情时底部的表情按钮元素不会渲染, 这是一个先有鸡还是先有蛋的问题
+      // 很蛋疼, 希望 Gitea 早日使用 Github 的样式, 因为 Github 的更合理, 无论是操作的方便程度还是按钮的冗余度
+      // .ui.dropdown.action.select-reaction {
+      //   display: none;
+      // }
       .context-dropdown {
         a.context-menu {
           display: flex;
