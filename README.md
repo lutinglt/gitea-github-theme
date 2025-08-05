@@ -32,7 +32,7 @@ THEMES = gitea-dark, github-dark
 
 ### 使用方法
 
-在主题的 CSS 文件中头部或尾部添加以下代码
+在主题的 CSS 文件的头部或尾部添加以下代码
 
 ```css
 :root {
