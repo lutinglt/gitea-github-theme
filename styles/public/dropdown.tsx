@@ -14,6 +14,7 @@ export const dropdown = css`
       box-shadow: ${themeVars.github.shadow.floating.small} !important;
       // 忽略隐藏
       > .item:not(.tw-hidden) {
+        animation: ${animationDown};
         display: flex !important;
         align-items: center;
         gap: 0.5rem;
@@ -150,6 +151,10 @@ export const selectionDropdown = css`
   .ui.selection.dropdown.active:not(.small) {
     border-bottom-left-radius: ${otherThemeVars.border.radius} !important;
     border-bottom-right-radius: ${otherThemeVars.border.radius} !important;
+  }
+  // 修复因为上面的排除导致的提交图分支选择框的圆角问题
+  #git-graph-container #flow-select-refs-dropdown {
+    border-bottom-right-radius: 0 !important;
   }
   // 修复选择框的下拉菜单向上显示时的样式问题
   .ui.upward.selection.dropdown.visible:not(.small),

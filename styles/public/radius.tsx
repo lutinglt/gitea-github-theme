@@ -78,8 +78,10 @@ export const radiusImportant = css`
     border-radius: ${otherThemeVars.border.radius} !important;
   }
   // 目前为仓库列表/探索的二级菜单, 改版需要替换为全圆角
-  .ui.tabular.menu .active.item {
+  .ui.secondary.tabular.menu .item {
     border-radius: ${otherThemeVars.border.radius} !important;
+    &.active,
+    &.active:hover,
     &:hover {
       border-radius: ${otherThemeVars.border.radius} !important;
     }
@@ -113,10 +115,10 @@ export const radiusTop = css`
 
 // 上半部分圆角替换(原CSS带!important)
 export const radiusTopImportant = css`
+  .ui.tabular.menu .item,
   .ui.simple.upward.dropdown {
-    &.active {
-      border-radius: ${otherThemeVars.border.radius} ${otherThemeVars.border.radius} 0 0 !important;
-    }
+    &.active,
+    &.active:hover,
     &:hover {
       border-radius: ${otherThemeVars.border.radius} ${otherThemeVars.border.radius} 0 0 !important;
     }
