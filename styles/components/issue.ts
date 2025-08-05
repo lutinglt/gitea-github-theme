@@ -171,7 +171,8 @@ export const comment = css`
       // 显示表情菜单按钮
       .select-reaction {
         padding: 0;
-        visibility: visible;
+        // 两个表情按钮看着怪怪的, 很难受
+        // visibility: visible;
       }
     }
   }
