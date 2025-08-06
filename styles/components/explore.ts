@@ -2,6 +2,7 @@ import { css, otherThemeVars, themeVars } from "src/types/vars";
 
 // 仓库列表
 export const repositoriesExplore = css`
+  // [TODO] 组织和用户使用 Github 的列表样式, 探索页面手机端样式待完善
   // 组织
   /* .page-content.organization.profile > .ui.container > .ui.stackable > .ui.eleven, */
   // 用户
