@@ -56,9 +56,9 @@ THEMES = gitea-dark, github-dark
 | --custom-clone-menu-width         | 克隆菜单宽度                | Gitea  | 332px  | 200px | 150px  | 400px  |
 | --custom-explore-repolist-columns | 探索页面的仓库列表列数      | 2      | 2      | 2     |        |        |
 | --custom-explore-userlist-columns | 探索页面的用户/组织列表列数 | 3      | 1      | 2/3   |        |        |
-| --custom-user-repolist-columns    | 用户页面的仓库列表列数      | 2      | 2      | 2     |        |        |
-| --custom-org-repolist-columns     | 组织页面的仓库列表列数      | 1      | 1      | 1     |        |        |
-| --custom-org-userlist-columns     | 组织页面的用户列表列数      | 2      | 1      | 2     |        |        |
+| --custom-user-repolist-columns    | 用户页面的仓库列表列数      | 2      | 2      | 1/2   |        |        |
+| --custom-org-repolist-columns     | 组织页面的仓库列表列数      | 1      | 1      | 1/2   |        |        |
+| --custom-org-userlist-columns     | 组织页面的用户列表列数      | 2      | 1      | 1/2   |        |        |
 
 ## 截图
 
