@@ -1,19 +1,20 @@
-import { css, otherThemeVars, themeVars } from "src/types/vars";
+import { fallbackVar } from "src/functions";
+import { css, customThemeVars, otherThemeVars, themeVars } from "src/types/vars";
+
+const userRepoVar = fallbackVar(customThemeVars.custom.userRepolistColumns, "2");
+const exploreRepoVar = fallbackVar(customThemeVars.custom.explore.repolistColumns, "2");
+const orgRepoVar = fallbackVar(customThemeVars.custom.org.repolistColumns, "1");
 
 // 仓库列表
-export const repositoriesExplore = css`
-  // [TODO] 组织和用户使用 Github 的列表样式, 探索页面手机端样式待完善
+export const repoList = css`
   // 组织
-  /* .page-content.organization.profile > .ui.container > .ui.stackable > .ui.eleven, */
+  .page-content.organization.profile > .ui.container > .ui.stackable > .ui.eleven,
   // 用户
-  /* .page-content.user.profile > .ui.container > .ui.stackable > .ui.twelve, */
+  .page-content.user.profile > .ui.container > .ui.stackable > .ui.twelve,
   // 探索
   .page-content.explore.repositories > .ui.container {
     > .flex-list {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-
       > .flex-item {
         border: 1px solid ${themeVars.color.light.border};
         border-radius: ${otherThemeVars.border.radius};
@@ -46,7 +47,9 @@ export const repositoriesExplore = css`
               color: ${themeVars.color.text.light.num1};
               gap: 16px;
               font-size: 12px;
-              > .flex-text-inline .tw-mr-2 {
+              > .flex-text-inline .color-icon {
+                width: 12px;
+                height: 12px;
                 margin-right: 0 !important;
               }
             }
@@ -64,6 +67,94 @@ export const repositoriesExplore = css`
             margin-top: 8px;
           }
         }
+      }
+    }
+  }
+  // 仓库列表列数
+  // 组织
+  .page-content.organization.profile > .ui.container > .ui.stackable > .ui.eleven > .flex-list {
+    grid-template-columns: repeat(${orgRepoVar}, 1fr);
+    gap: min(${orgRepoVar} * 8px, 16px);
+  }
+  // 用户
+  .page-content.user.profile > .ui.container > .ui.stackable > .ui.twelve > .flex-list {
+    grid-template-columns: repeat(${userRepoVar}, 1fr);
+    gap: min(${userRepoVar} * 8px, 16px);
+  }
+  // 探索
+  .page-content.explore.repositories > .ui.container > .flex-list {
+    grid-template-columns: repeat(${exploreRepoVar}, 1fr);
+    gap: min(${exploreRepoVar} * 8px, 16px);
+  }
+`;
+
+const exploreUserVar = fallbackVar(customThemeVars.custom.explore.userlistColumns, "3");
+const orgUserVar = fallbackVar(customThemeVars.custom.org.userlistColumns, "2");
+
+// 用户列表
+export const userList = css`
+  // 组织
+  .page-content.organization.members > .ui.container,
+  // 探索的用户和组织
+  .page-content.explore.users > .ui.container {
+    > .flex-list {
+      display: grid;
+      > .flex-item {
+        border: 1px solid ${themeVars.color.light.border};
+        border-radius: ${otherThemeVars.border.radius};
+        padding: 16px;
+        > .flex-item-main {
+          // 用户名称
+          > .flex-item-title {
+            gap: 8px;
+            margin-bottom: 8px;
+            // 用户标签
+            > .label {
+              font-size: 12px;
+              padding: 3px 6px;
+            }
+          }
+          // 用户描述
+          > .flex-item-body {
+            font-size: 12px;
+            svg {
+              width: 12px;
+              min-width: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+  // 用户列表列数
+  // 组织
+  .page-content.organization.members > .ui.container > .flex-list {
+    grid-template-columns: repeat(${orgUserVar}, 1fr);
+    gap: min(${orgUserVar} * 8px, 16px);
+  }
+  // 探索的用户和组织
+  .page-content.explore.users > .ui.container > .flex-list {
+    grid-template-columns: repeat(${exploreUserVar}, 1fr);
+    gap: min(${exploreUserVar} * 8px, 16px);
+  }
+`;
+
+// 手机下的仓库和用户列表
+export const mobileList = css`
+  @media (max-width: 767.98px) {
+    // 组织的仓库列表
+    .page-content.organization.profile > .ui.container > .ui.stackable > .ui.eleven,
+    // 用户的仓库列表
+    .page-content.user.profile > .ui.container > .ui.stackable > .ui.twelve,
+    // 探索的仓库列表
+    .page-content.explore.repositories > .ui.container,
+    // 组织的成员列表
+    .page-content.organization.members >.ui.container,
+    // 探索的用户和组织列表
+    .page-content.explore.users >.ui.container {
+      > .flex-list {
+        grid-template-columns: 1fr;
+        gap: 8px;
       }
     }
   }

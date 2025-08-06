@@ -1,8 +1,8 @@
 type Primitive = string | boolean | number | null | undefined;
 type Tokens = { [key: string]: string | Tokens };
 
+export type CSSVarFunction = `var(--${string})`;
 export type WithOptionalLayer<T extends Tokens> = T & { "@layer"?: string };
-
 export type MapLeafNodes<Obj, LeafType> = {
   [Prop in keyof Obj]: Obj[Prop] extends Primitive
     ? LeafType
