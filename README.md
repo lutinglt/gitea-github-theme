@@ -41,13 +41,13 @@ THEMES = gitea-dark, github-dark
 }
 ```
 
->[!IMPORTANT]
+> [!IMPORTANT]
 >
->请确保在 `:root` 选择器中添加自定义变量，否则无法生效
+> 请确保在 `:root` 选择器中添加自定义变量，否则无法生效
 >
->变量之间用 `;` 分隔
+> 变量之间用 `;` 分隔
 >
->建议自定义变量放在单独的文件中, 通过 shell 命令等方式追加到主题文件中
+> 建议自定义变量放在单独的文件中, 通过 shell 命令等方式追加到主题文件中
 
 ### CSS 变量
 
@@ -74,7 +74,3 @@ THEMES = gitea-dark, github-dark
 ## 贡献
 
 欢迎提交 Issue 或 Pull Request
-
-```
-
-```

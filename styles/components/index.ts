@@ -3,6 +3,7 @@ import "./clone";
 import "./commit";
 import "./dashboard";
 import "./diff";
+import "./explore";
 import "./filelist";
 import "./heatmap";
 import "./issue";

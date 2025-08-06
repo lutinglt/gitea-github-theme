@@ -74,13 +74,13 @@ export const repoMenu = css`
 
 export const repoTopic = css`
   // 理应只能覆盖探索/组织/用户下仓库的 topic 标签
-  .label-list .ui.label,
+  // 避免渲染到仓库的类型标签
+  .flex-item-main > .label-list .ui.label,
   // 仓库文件列表下的 topic 标签
   #repo-topics .ui.label.repo-topic {
     border-radius: 25px;
     font-size: 12px;
     padding: 5px 10px;
-    margin: 0px 1.5px 3.5px 0px;
     background-color: ${themeVars.github.bgColor.accent.muted};
     color: ${themeVars.github.fgColor.accent};
     &:hover {
