@@ -38,6 +38,15 @@ const otherVars = {
 const customVars = {
   custom: {
     cloneMenuWidth: "custom-clone-menu-width",
+    explore: {
+      repolistColumns: "custom-explore-repolist-columns",
+      userlistColumns: "custom-explore-userlist-columns",
+    },
+    userRepolistColumns: "custom-user-repolist-columns",
+    org: {
+      repolistColumns: "custom-org-repolist-columns",
+      userlistColumns: "custom-org-userlist-columns",
+    },
   },
 };
 

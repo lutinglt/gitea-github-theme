@@ -1,4 +1,4 @@
-## ✨ Feat
+## ✨ Feature
 
 #### CSS 变量
 

@@ -1,4 +1,4 @@
-import { css, otherThemeVars, themeVars, customThemeVars } from "src/types/vars";
+import { css, customThemeVars, otherThemeVars, themeVars } from "src/types/vars";
 
 // 克隆按钮的弹窗
 export const clone = css`
