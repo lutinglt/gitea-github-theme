@@ -34,7 +34,7 @@ export default defineConfig(({ mode }) => {
     },
     plugins: [
       linaria({
-        include: ["**/*.{ts,tsx}"],
+        include: ["**/*.ts"],
         babelOptions: {
           presets: ["@babel/preset-typescript"],
         },

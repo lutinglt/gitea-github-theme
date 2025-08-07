@@ -1,4 +1,6 @@
+import { saturate } from "polished";
 import type { Console, Diff, Other } from "src";
+import { scaleColorLight } from "src/functions";
 import type { Github } from "src/types";
 import { themeVars } from "src/types/vars";
 import { defineTheme } from "./color";
@@ -81,11 +83,9 @@ export type GithubColor = {
   button: {
     primary: {
       fgColor: {
-        accent: string;
         rest: string;
       };
       bgColor: {
-        rest: string;
         hover: string;
       };
     };
@@ -114,7 +114,9 @@ export type GithubColor = {
     };
   };
   shadow: {
-    floating: string;
+    floating: {
+      small: string;
+    };
   };
   overlay: {
     backdrop: {
@@ -134,7 +136,6 @@ export type GithubColor = {
         num2: string;
         num3: string;
         num4: string;
-        num5: string;
       };
       borderColor: {
         num0: string;
@@ -244,7 +245,7 @@ export function defineGithubTheme(githubColor: GithubColor): Theme {
     button: githubColor.control.bgColor.rest,
     codeBg: "unset",
     shadow: {
-      self: githubColor.shadow.floating,
+      self: githubColor.shadow.floating.small,
       opaque: themeVars.color.shadow.self,
     },
     secondaryBg: "unset",
@@ -323,11 +324,11 @@ export function defineGithubTheme(githubColor: GithubColor): Theme {
       },
       primary: {
         fgColor: {
-          accent: githubColor.button.primary.fgColor.accent,
+          accent: saturate(0.1, scaleColorLight(githubColor.fgColor.success, githubColor.isDarkTheme ? 5 : -5)),
           rest: githubColor.button.primary.fgColor.rest,
         },
         bgColor: {
-          rest: githubColor.button.primary.bgColor.rest,
+          rest: themeVars.github.bgColor.success.emphasis,
           hover: githubColor.button.primary.bgColor.hover,
         },
         borderColor: {
@@ -377,7 +378,10 @@ export function defineGithubTheme(githubColor: GithubColor): Theme {
           num2: githubColor.contribution.default.bgColor.num2,
           num3: githubColor.contribution.default.bgColor.num3,
           num4: githubColor.contribution.default.bgColor.num4,
-          num5: githubColor.contribution.default.bgColor.num5,
+          num5: saturate(
+            0.1,
+            scaleColorLight(githubColor.contribution.default.bgColor.num4, githubColor.isDarkTheme ? 30 : -30)
+          ),
         },
         borderColor: {
           num0: githubColor.contribution.default.borderColor.num0,

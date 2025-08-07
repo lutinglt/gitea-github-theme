@@ -6,7 +6,6 @@
 - defineTheme 颜色生成代码重构
 - 亮色主题适配/测试
 - 自动颜色主题生成
-- github primer 官方库集成
 
 ### 其他
 

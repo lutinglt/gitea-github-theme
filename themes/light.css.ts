@@ -1,0 +1,77 @@
+import { defineGithubTheme } from "src/core/github";
+
+// [TODO] 亮色主题下 PR/Issue 的标签文字颜色
+// 亮色主题下仓库主题标签 hover 时的文字颜色
+// 头像的管理员标识文字颜色
+// 差异对比的展开按钮 hover 时的文字颜色
+// chroma 语法高亮的颜色
+export default defineGithubTheme({
+  isDarkTheme: false,
+  display: {
+    brown: { fgColor: "#755f43" },
+    cyan: { fgColor: "#006a80" },
+    indigo: { fgColor: "#494edf" },
+    lemon: { fgColor: "#786002" },
+    olive: { fgColor: "#56682c" },
+    teal: { fgColor: "#106e75" },
+  },
+  diffBlob: {
+    addtionNum: { bgColor: "#aceebb" },
+    addtionWord: { bgColor: "#aceebb" },
+    deletionNum: { bgColor: "#ffcecb" },
+    deletionWord: { bgColor: "#ffcecb" },
+    hunkNum: { bgColor: { rest: "#b6e3ff" } },
+  },
+  fgColor: {
+    accent: "#0969da",
+    attention: "#9a6700",
+    danger: "#d1242f",
+    default: "#1f2328",
+    disabled: "#818b98",
+    done: "#8250df",
+    neutral: "#59636e",
+    severe: "#bc4c00",
+    sponsors: "#bf3989",
+    success: "#1a7f37",
+    black: "#1f2328",
+    white: "#ffffff",
+    muted: "#59636e",
+  },
+  bgColor: {
+    accent: { emphasis: "#0969da", muted: "#ddf4ff" },
+    attention: { muted: "#fff8c5" },
+    success: { emphasis: "#1f883d", muted: "#dafbe1" },
+    danger: { muted: "#ffebe9" },
+    done: { emphasis: "#8250df" },
+    default: "#ffffff",
+    inset: "#f6f8fa",
+    muted: "#f6f8fa",
+    neutral: { muted: "#818b981f" },
+  },
+  borderColor: {
+    accent: { emphasis: "#0969da" },
+    default: "#d1d9e0",
+    attention: { emphasis: "#9a6700" },
+    success: { emphasis: "#1a7f37" },
+    done: { emphasis: "#8250df" },
+    muted: "#d1d9e0b3",
+    translucent: "#1f232826",
+  },
+  button: {
+    primary: { fgColor: { rest: "#ffffff" }, bgColor: { hover: "#1c8139" } },
+    danger: { fgColor: { rest: "#d1242f", hover: "#ffffff" }, bgColor: { hover: "#cf222e" } },
+  },
+  control: {
+    bgColor: { active: "#e6eaef", hover: "#eff2f5", rest: "#f6f8fa" },
+    transparent: { bgColor: { active: "#818b9826", hover: "#818b981a", selected: "#818b9826" } },
+  },
+  shadow: { floating: { small: "#25292e0a" } },
+  overlay: { backdrop: { bgColor: "#c8d1da66" } },
+  underlineNav: { borderColor: { active: "#fd8c73" } },
+  contribution: {
+    default: {
+      bgColor: { num0: "#eff2f5", num1: "#aceebb", num2: "#4ac26b", num3: "#2da44e", num4: "#116329" },
+      borderColor: { num0: "#1f23280d" },
+    },
+  },
+});

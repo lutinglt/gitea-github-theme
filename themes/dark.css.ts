@@ -1,6 +1,6 @@
-import { defineGithubTheme, type GithubColor } from "src/core/github";
+import { defineGithubTheme } from "src/core/github";
 
-const github: GithubColor = {
+export default defineGithubTheme({
   isDarkTheme: true,
   display: {
     brown: { fgColor: "#b69a6d" },
@@ -53,22 +53,20 @@ const github: GithubColor = {
     translucent: "#ffffff26",
   },
   button: {
-    primary: { fgColor: { accent: "#39d353", rest: "#ffffff" }, bgColor: { rest: "#238636", hover: "#29903b" } },
+    primary: { fgColor: { rest: "#ffffff" }, bgColor: { hover: "#29903b" } },
     danger: { fgColor: { rest: "#fa5e55", hover: "#ffffff" }, bgColor: { hover: "#b62324" } },
   },
   control: {
     bgColor: { active: "#2a313c", hover: "#262c36", rest: "#212830" },
     transparent: { bgColor: { active: "#656c7640", hover: "#656c7633", selected: "#656c761a" } },
   },
-  shadow: { floating: "#01040966" },
+  shadow: { floating: { small: "#01040966" } },
   overlay: { backdrop: { bgColor: "#21283066" } },
   underlineNav: { borderColor: { active: "#f78166" } },
   contribution: {
     default: {
-      bgColor: { num0: "#151b23", num1: "#033a16", num2: "#196c2e", num3: "#2ea043", num4: "#56d364", num5: "#7ee787" },
+      bgColor: { num0: "#151b23", num1: "#033a16", num2: "#196c2e", num3: "#2ea043", num4: "#56d364" },
       borderColor: { num0: "#0104090d" },
     },
   },
-};
-
-export default defineGithubTheme(github);
+});
