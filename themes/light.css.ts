@@ -1,7 +1,5 @@
 import { defineGithubTheme } from "src/core/github";
 
-// [TODO] chroma 语法高亮的颜色
-
 export default defineGithubTheme({
   isDarkTheme: false,
   display: {

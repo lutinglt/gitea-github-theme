@@ -1,5 +1,7 @@
 import { css } from "src/types/vars";
 
+// [TODO] 先重构为 Gitea 变量, 或者本主题的变量, 再建立 GitHub 的颜色映射
+
 export const chroma = css`
   .chroma {
     background-color: var(--color-code-bg);
