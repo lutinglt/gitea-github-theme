@@ -57,7 +57,7 @@ type ThemeColor = {
 
 /** 定义颜色, 用于生成颜色主题
  * @example
- * 文件名: "dark.css.tsx"
+ * 文件名: "dark.css.ts"
  * import type { Console, Diff, Other } from "src/types";
  * import { defineTheme, themeVars } from "src";
  *
@@ -70,7 +70,6 @@ type ThemeColor = {
  *   ...
  * }
  * ...
- * // 会经过 lightningcss 打包处理生成最终的 CSS
  * export default defineTheme({
  *   isDarkTheme: true,
  *   primary: "#0969da",
