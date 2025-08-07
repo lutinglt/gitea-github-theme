@@ -11,6 +11,7 @@ export const releaseTagMenu = css`
           font-weight: 500;
           &.active {
             background: ${themeVars.github.bgColor.accent.emphasis} !important;
+            color: ${themeVars.color.white};
           }
         }
       }
@@ -101,6 +102,8 @@ export const rightButton = css`
     &.tags {
       .ui.small.button {
         background-color: ${themeVars.color.button};
+        border-color: ${themeVars.color.light.border};
+        color: ${themeVars.color.text.light.self};
         padding: 5px 16px;
         min-height: auto;
         line-height: 20px;
