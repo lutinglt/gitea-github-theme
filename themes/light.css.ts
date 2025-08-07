@@ -1,10 +1,7 @@
 import { defineGithubTheme } from "src/core/github";
 
-// [TODO] 亮色主题下 PR/Issue 的标签文字颜色
-// 亮色主题下仓库主题标签 hover 时的文字颜色
-// 头像的管理员标识文字颜色
-// 差异对比的展开按钮 hover 时的文字颜色
-// chroma 语法高亮的颜色
+// [TODO] chroma 语法高亮的颜色
+
 export default defineGithubTheme({
   isDarkTheme: false,
   display: {

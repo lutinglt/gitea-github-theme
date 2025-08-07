@@ -9,6 +9,8 @@ export const transition = css`
   .job-step-logs,
   .job-brief-item,
   .repo-file-cell,
+  // 差异对比的代码折叠按钮
+  .code-expander-button,
   .tippy-box .flex-items-block .item,
   .clone-panel-tab .item,
   .ui.form select,

@@ -324,7 +324,7 @@ export function defineGithubTheme(githubColor: GithubColor): Theme {
       },
       primary: {
         fgColor: {
-          accent: saturate(0.1, scaleColorLight(githubColor.fgColor.success, githubColor.isDarkTheme ? 5 : -5)),
+          accent: saturate(0.1, scaleColorLight(githubColor.fgColor.success, githubColor.isDarkTheme ? 10 : -10)),
           rest: githubColor.button.primary.fgColor.rest,
         },
         bgColor: {
@@ -379,8 +379,8 @@ export function defineGithubTheme(githubColor: GithubColor): Theme {
           num3: githubColor.contribution.default.bgColor.num3,
           num4: githubColor.contribution.default.bgColor.num4,
           num5: saturate(
-            0.1,
-            scaleColorLight(githubColor.contribution.default.bgColor.num4, githubColor.isDarkTheme ? 30 : -30)
+            0.2,
+            scaleColorLight(githubColor.contribution.default.bgColor.num4, githubColor.isDarkTheme ? 58 : -58)
           ),
         },
         borderColor: {

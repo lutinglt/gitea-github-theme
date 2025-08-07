@@ -80,12 +80,13 @@ export const repoTopic = css`
   #repo-topics .ui.label.repo-topic {
     border-radius: 25px;
     font-size: 12px;
+    font-weight: 500;
     padding: 5px 10px;
     background-color: ${themeVars.github.bgColor.accent.muted};
     color: ${themeVars.github.fgColor.accent};
     &:hover {
       background-color: ${themeVars.github.bgColor.accent.emphasis};
-      color: ${themeVars.color.text.self};
+      color: ${themeVars.color.white};
     }
   }
 `;

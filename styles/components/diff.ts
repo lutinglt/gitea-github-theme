@@ -29,11 +29,11 @@ export const diff = css`
   }
   /* 展开/收缩按钮 */
   .code-expander-button {
-    height: 24px !important;
-    line-height: 24px;
+    height: 28px !important;
 
     &:hover {
       background: ${themeVars.github.bgColor.accent.emphasis};
+      color: ${themeVars.color.white}
     }
   }
   /* 行号居中 */

@@ -68,7 +68,7 @@ export const navbarRight = css`
         .navbar-profile-admin {
           background-color: ${themeVars.github.bgColor.accent.emphasis};
           border-radius: 25px;
-          color: ${themeVars.color.text.self};
+          color: ${themeVars.color.white};
           font-size: 8px;
           font-weight: 600;
           padding: 2px 5px;
