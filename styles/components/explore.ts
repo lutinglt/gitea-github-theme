@@ -1,9 +1,9 @@
 import { fallbackVar } from "src/functions";
 import { css, customThemeVars, otherThemeVars, themeVars } from "src/types/vars";
 
-const userRepoVar = fallbackVar(customThemeVars.custom.userRepolistColumns, "2");
-const exploreRepoVar = fallbackVar(customThemeVars.custom.explore.repolistColumns, "2");
-const orgRepoVar = fallbackVar(customThemeVars.custom.org.repolistColumns, "1");
+const userRepoVar = fallbackVar(customThemeVars.userRepolistColumns, "2");
+const exploreRepoVar = fallbackVar(customThemeVars.explore.repolistColumns, "2");
+const orgRepoVar = fallbackVar(customThemeVars.org.repolistColumns, "1");
 
 // 仓库列表
 export const repoList = css`
@@ -88,8 +88,8 @@ export const repoList = css`
   }
 `;
 
-const exploreUserVar = fallbackVar(customThemeVars.custom.explore.userlistColumns, "3");
-const orgUserVar = fallbackVar(customThemeVars.custom.org.userlistColumns, "2");
+const exploreUserVar = fallbackVar(customThemeVars.explore.userlistColumns, "3");
+const orgUserVar = fallbackVar(customThemeVars.org.userlistColumns, "2");
 
 // 用户列表
 export const userList = css`
