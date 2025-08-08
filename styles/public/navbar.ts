@@ -2,7 +2,8 @@ import { css, otherThemeVars, themeVars } from "src/types/vars";
 
 export const navbarRight = css`
   #navbar {
-    .navbar-right {
+    // 进入用户页面后, 避免注册, 登录和首页等意外覆盖
+    .navbar-right:has(.user-menu) {
       gap: 8px;
       // 右侧按钮, 但不包括头像
       > .item:not(:last-child) {
