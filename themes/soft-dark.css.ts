@@ -1,0 +1,129 @@
+import { defineGithubTheme } from "src/core/github";
+import { prettylights2Chroma } from "src/core/prettylights";
+
+export default defineGithubTheme(
+  {
+    isDarkTheme: true,
+    display: {
+      brown: { fgColor: "#b69a6d" },
+      cyan: { fgColor: "#07ace4" },
+      indigo: { fgColor: "#9899ec" },
+      lemon: { fgColor: "#ba9b12" },
+      olive: { fgColor: "#a2a626" },
+      teal: { fgColor: "#1cb0ab" },
+    },
+    diffBlob: {
+      addtionNum: { bgColor: "#57ab5a4d" },
+      addtionWord: { bgColor: "#46954a66" },
+      deletionNum: { bgColor: "#e5534b4d" },
+      deletionWord: { bgColor: "#e5534b66" },
+      hunkNum: { bgColor: { rest: "#143d79" } },
+    },
+    fgColor: {
+      accent: "#478be6",
+      attention: "#c69026",
+      danger: "#e5534b",
+      default: "#d1d7e0",
+      disabled: "#656c76",
+      done: "#986ee2",
+      muted: "#9198a1",
+      neutral: "#9198a1",
+      severe: "#cc6b2c",
+      sponsors: "#c96198",
+      success: "#57ab5a",
+      black: "#010409",
+      white: "#cdd9e5",
+    },
+    bgColor: {
+      accent: { emphasis: "#316dca", muted: "#4184e41a" },
+      attention: { muted: "#ae7c1426" },
+      success: { emphasis: "#347d39", muted: "#46954a26" },
+      danger: { muted: "#e5534b1a" },
+      done: { emphasis: "#8256d0" },
+      default: "#212830",
+      inset: "#151b23",
+      muted: "#262c36",
+      neutral: { muted: "#656c7633" },
+    },
+    borderColor: {
+      accent: { emphasis: "#316dca" },
+      default: "#3d444d",
+      attention: { emphasis: "#966600" },
+      success: { emphasis: "#347d39" },
+      done: { emphasis: "#8256d0" },
+      muted: "#3d444db3",
+      translucent: "#cdd9e526",
+    },
+    button: {
+      primary: { fgColor: { rest: "#ffffff" }, bgColor: { hover: "#3b8640" } },
+      danger: { fgColor: { rest: "#ea5c53", hover: "#ffffff" }, bgColor: { hover: "#ad2e2c" } },
+    },
+    control: {
+      bgColor: { active: "#3d444d", hover: "#2f3742", rest: "#2a313c" },
+      transparent: { bgColor: { active: "#656c7633", hover: "#656c7626", selected: "#656c761a" } },
+    },
+    shadow: { floating: { small: "#01040966" } },
+    overlay: { backdrop: { bgColor: "#262c3666" } },
+    underlineNav: { borderColor: { active: "#ec775c" } },
+    contribution: {
+      default: {
+        bgColor: { num0: "#2a313c", num1: "#1b4721", num2: "#2b6a30", num3: "#46954a", num4: "#6bc46d" },
+        borderColor: { num0: "#0104090d" },
+      },
+    },
+  },
+  prettylights2Chroma({
+    syntax: {
+      brackethighlighter: {
+        angle: "#9198a1",
+        unmatched: "#e5534b",
+      },
+      carriage: {
+        return: {
+          bg: "#ad2e2c",
+          text: "#f0f6fc",
+        },
+      },
+      comment: "#9198a1",
+      constant: "#6cb6ff",
+      constantOtherReferenceLink: "#96d0ff",
+      entity: "#dcbdfb",
+      entityTag: "#8ddb8c",
+      invalid: {
+        illegal: {
+          bg: "#922323",
+          text: "#f0f6fc",
+        },
+      },
+      keyword: "#f47067",
+      markup: {
+        bold: "#f0f6fc",
+        changed: {
+          bg: "#682d0f",
+          text: "#ffddb0",
+        },
+        deleted: {
+          bg: "#78191b",
+          text: "#ffd8d3",
+        },
+        heading: "#316dca",
+        ignored: {
+          bg: "#255ab2",
+          text: "#f0f6fc",
+        },
+        inserted: {
+          bg: "#1b4721",
+          text: "#b4f1b4",
+        },
+        italic: "#f0f6fc",
+        list: "#eac55f",
+      },
+      metaDiffRange: "#dcbdfb",
+      storageModifierImport: "#f0f6fc",
+      string: "#96d0ff",
+      stringRegexp: "#8ddb8c",
+      sublimelinterGutterMark: "#3d444d",
+      variable: "#f69d50",
+    },
+  })
+);

@@ -1,7 +1,7 @@
 import { saturate } from "polished";
 import type { Console, Diff, Other } from "src";
 import { scaleColorLight } from "src/functions";
-import type { Github } from "src/types";
+import type { Chroma, Github } from "src/types";
 import { themeVars } from "src/types/vars";
 import { defineTheme } from "./color";
 import type { Theme } from "./theme";
@@ -144,7 +144,7 @@ export type GithubColor = {
   };
 };
 
-export function defineGithubTheme(githubColor: GithubColor): Theme {
+export function defineGithubTheme(githubColor: GithubColor, chroma: Chroma | null = null): Theme {
   const console: Console = {
     fg: {
       self: githubColor.fgColor.default,
@@ -394,30 +394,33 @@ export function defineGithubTheme(githubColor: GithubColor): Theme {
       },
     },
   };
-  return defineTheme({
-    isDarkTheme: githubColor.isDarkTheme,
-    primary: githubColor.fgColor.accent,
-    primaryContrast: githubColor.fgColor.default,
-    secondary: githubColor.borderColor.default,
-    red: githubColor.fgColor.danger,
-    orange: githubColor.fgColor.severe,
-    yellow: githubColor.fgColor.attention,
-    olive: githubColor.display.olive.fgColor,
-    green: githubColor.fgColor.success,
-    cyan: githubColor.display.cyan.fgColor,
-    teal: githubColor.display.teal.fgColor,
-    blue: githubColor.fgColor.accent,
-    violet: githubColor.display.indigo.fgColor,
-    purple: githubColor.fgColor.done,
-    pink: githubColor.fgColor.sponsors,
-    brown: githubColor.display.brown.fgColor,
-    black: githubColor.fgColor.black,
-    grey: githubColor.fgColor.neutral,
-    gold: githubColor.display.lemon.fgColor,
-    white: githubColor.fgColor.white,
-    console,
-    diff,
-    other,
-    github,
-  });
+  return defineTheme(
+    {
+      isDarkTheme: githubColor.isDarkTheme,
+      primary: githubColor.fgColor.accent,
+      primaryContrast: githubColor.fgColor.default,
+      secondary: githubColor.borderColor.default,
+      red: githubColor.fgColor.danger,
+      orange: githubColor.fgColor.severe,
+      yellow: githubColor.fgColor.attention,
+      olive: githubColor.display.olive.fgColor,
+      green: githubColor.fgColor.success,
+      cyan: githubColor.display.cyan.fgColor,
+      teal: githubColor.display.teal.fgColor,
+      blue: githubColor.fgColor.accent,
+      violet: githubColor.display.indigo.fgColor,
+      purple: githubColor.fgColor.done,
+      pink: githubColor.fgColor.sponsors,
+      brown: githubColor.display.brown.fgColor,
+      black: githubColor.fgColor.black,
+      grey: githubColor.fgColor.neutral,
+      gold: githubColor.display.lemon.fgColor,
+      white: githubColor.fgColor.white,
+      console,
+      diff,
+      other,
+      github,
+    },
+    chroma
+  );
 }

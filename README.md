@@ -23,7 +23,7 @@
 
 ```ini
 [ui]
-THEMES = gitea-auto, gitea-light, gitea-dark, github-auto, github-light, github-dark
+THEMES = gitea-auto, gitea-light, gitea-dark, github-auto, github-light, github-dark, github-soft-dark
 ```
 
 详细请查看 Gitea 文档
