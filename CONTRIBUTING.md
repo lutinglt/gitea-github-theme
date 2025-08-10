@@ -148,7 +148,7 @@ export default theme: Theme = {
 
 推荐需要使用复杂处理时, 提取逻辑到 `src/functions` 目录下的函数中, 然后在 `src/styles` 目录下的样式文件中使用.
 
-主题样式中使用到的所有颜色请使用颜色变量, 颜色变量导入 `import { themeVars } from "src/types"`
+主题样式中使用到的所有颜色必须使用颜色变量, 颜色变量导入 `import { themeVars } from "src/types"`
 
 涉及到本主题的颜色变量 `${themeVars.github.xxx}`, 在使用时请将使用的文件和变量添加到对应变量的注释中
 `src/types/color/github`
