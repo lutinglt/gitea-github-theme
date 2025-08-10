@@ -21,7 +21,7 @@
 
 如果确定理解了 Gitea 的样式布局和我的思路, 请先提交 Issue 确认工作量和预期效果, 然后再开发提交 PR.
 
-如果认为有更好的思路, 欢迎提交 PR.
+如果认为有更好的思路, 欢迎提交 Issue.
 
 > [!IMPORTANT]
 >
@@ -82,13 +82,13 @@ npm run commit
 
 `src`, `styles`, `themes` 为项目的主目录, 主目录下的第一个目录为模块.
 
-主目录或主目录模块互相引用时, 请使用绝对路径, 例如 `import { defineTheme } from "src"`
+主目录或主目录下模块互相引用时, 请使用绝对路径, 例如 `import { defineTheme } from "src"`
 
 模块下的文件互相引用时, 请使用相对路径, 例如 `import { defineTheme } from "./theme"`
 
 ## 颜色主题贡献
 
-颜色主题名称格式 `主题名称-dark.css.ts` 或 `主题名称-light.css.ts`, 分别表示深色和亮色主题.
+颜色主题名称格式: `主题名称-dark.css.ts` 或 `主题名称-light.css.ts`, 分别表示深色和亮色主题.
 
 如果主题有深色和亮色模式, 会自动生成自动颜色主题, 不需要手动添加.
 
@@ -135,6 +135,10 @@ export default theme: Theme = {
 };
 ```
 
+完成主题颜色开发后, 请在某个仓库的代码文件列表页, 打开 Code 菜单选择 Tea Cli 进行截图, 并放入 `screenshots` 目录下, 截图名与主题名相同. (推荐克隆 Github 的 actions/checkout 仓库, 该仓库信息较全, 避免泄露个人隐私)
+
+然后将截图信息添加到 `README.md` 文件中, 可以在折叠部分中添加自己的说明.
+
 ## 主题样式贡献
 
 主题样式使用 TypeScript 的 css 模板字符串开发, 该模板字符串会经过过 sass 预处理器处理, 支持 SCSS 语法并且本主题只接受 SCSS 嵌套语法, 请不要使用 CSS 语法, 如果一定要用请说明原因.
@@ -145,6 +149,9 @@ export default theme: Theme = {
 推荐需要使用复杂处理时, 提取逻辑到 `src/functions` 目录下的函数中, 然后在 `src/styles` 目录下的样式文件中使用.
 
 主题样式中使用到的所有颜色请使用颜色变量, 颜色变量导入 `import { themeVars } from "src/types"`
+
+涉及到本主题的颜色变量 `${themeVars.github.xxx}`, 在使用时请将使用的文件和变量添加到对应变量的注释中
+`src/types/color/github`
 
 小型圆角(6px)请使用全局圆角变量, 圆角变量导入 `import { otherThemeVars } from "src/types/vars"`
 `${otherThemeVars.border.radius}`

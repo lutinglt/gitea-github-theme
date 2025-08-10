@@ -2,10 +2,3 @@
 
 - gitea issue 默认标签颜色匹配使用 github 样式
 - issue/PR 列表样式 github 布局
-- styles/themes 库组件导出整理
-- defineTheme 颜色生成代码重构
-
-### 其他
-
-- README 更新/截图更新
-- CONTRIBUTING 更新
