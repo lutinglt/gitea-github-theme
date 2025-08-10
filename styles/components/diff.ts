@@ -34,7 +34,7 @@ export const diff = css`
 
     &:hover {
       background: ${themeVars.github.bgColor.accent.emphasis};
-      color: ${themeVars.color.white}
+      color: ${themeVars.color.white};
     }
   }
   /* 行号居中 */

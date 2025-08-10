@@ -2,7 +2,7 @@ import { rgba, saturate } from "polished";
 import { scaleColorLight } from "src/functions";
 import type { Ansi, Chroma, Console, Diff, Github, Message, Named, Other, Primary, Secondary } from "src/types";
 import { themeVars } from "src/types/vars";
-import { prettylightsDark, prettylightsLight } from "./prettylights";
+import { defaultDarkChroma, defaultLightChroma } from "./chroma";
 import type { Theme } from "./theme";
 
 type ThemeColor = {
@@ -341,7 +341,7 @@ export function defineTheme(themeColor: ThemeColor, chroma: Chroma | null = null
 
   return {
     isDarkTheme: themeColor.isDarkTheme.toString(),
-    chroma: chroma || (themeColor.isDarkTheme ? prettylightsDark : prettylightsLight),
+    chroma: chroma || (themeColor.isDarkTheme ? defaultDarkChroma : defaultLightChroma),
     color: {
       primary,
       secondary,

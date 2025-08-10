@@ -74,47 +74,22 @@ export default defineGithubTheme(
   },
   prettylights2Chroma({
     syntax: {
-      brackethighlighter: {
-        angle: "#9198a1",
-        unmatched: "#e5534b",
-      },
-      carriage: {
-        return: {
-          bg: "#ad2e2c",
-          text: "#f0f6fc",
-        },
-      },
+      brackethighlighter: { angle: "#9198a1", unmatched: "#e5534b" },
+      carriage: { return: { bg: "#ad2e2c", text: "#f0f6fc" } },
       comment: "#9198a1",
       constant: "#6cb6ff",
       constantOtherReferenceLink: "#96d0ff",
       entity: "#dcbdfb",
       entityTag: "#8ddb8c",
-      invalid: {
-        illegal: {
-          bg: "#922323",
-          text: "#f0f6fc",
-        },
-      },
+      invalid: { illegal: { bg: "#922323", text: "#f0f6fc" } },
       keyword: "#f47067",
       markup: {
         bold: "#f0f6fc",
-        changed: {
-          bg: "#682d0f",
-          text: "#ffddb0",
-        },
-        deleted: {
-          bg: "#78191b",
-          text: "#ffd8d3",
-        },
+        changed: { bg: "#682d0f", text: "#ffddb0" },
+        deleted: { bg: "#78191b", text: "#ffd8d3" },
         heading: "#316dca",
-        ignored: {
-          bg: "#255ab2",
-          text: "#f0f6fc",
-        },
-        inserted: {
-          bg: "#1b4721",
-          text: "#b4f1b4",
-        },
+        ignored: { bg: "#255ab2", text: "#f0f6fc" },
+        inserted: { bg: "#1b4721", text: "#b4f1b4" },
         italic: "#f0f6fc",
         list: "#eac55f",
       },
