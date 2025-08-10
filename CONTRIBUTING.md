@@ -34,7 +34,7 @@
 请使用 VSCode 开发, 并安装仓库中推荐的插件.
 
 如果不喜欢多余的插件, 请务必安装 `vscode-styled-components`
-插件, 此插件用于渲染和检查 TypeScript 中的 CSS 中的模板字符串.
+插件, 此插件用于渲染和检查 TypeScript 中的 CSS 模板字符串.
 
 推荐使用 VSCode 1.102.0 版本以上开发, 此版本以上提供 TypeScript 代码中 16 进制颜色的支持.
 
