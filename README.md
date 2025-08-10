@@ -80,14 +80,13 @@ THEMES = gitea-auto, gitea-light, gitea-dark, github-auto, github-light, github-
 
 <details open>
 <summary>GitHub</summary>
-<h4>亮色:</h4>
+<h4>theme-github-light.css</h4>
 <img src="screenshots/light.png"/>
-<h4>暗色:</h4>
+<h4>theme-github-dark.css</h4>
 <img src="screenshots/dark.png"/>
-<h4>柔和暗色:</h4>
+<h4>theme-github-soft-dark.css</h4>
 <img src="screenshots/soft-dark.png"/>
 </details>
-
 
 <details>
 <summary>其他主题</summary>
@@ -107,8 +106,8 @@ npm install
 npm run build
 ```
 
-编译完成后, 会在 `dist` 目录下生成主题文件, 你可以将主题文件放入 `gitea/public/assets/css` 目录下, 然后在 `gitea/conf/app.ini` 中添加主题名称到 `THEMES` 末尾
-
+编译完成后, 会在 `dist` 目录下生成主题文件, 你可以将主题文件放入 `gitea/public/assets/css` 目录下, 然后在
+`gitea/conf/app.ini` 中添加主题名称到 `THEMES` 末尾
 
 ## 贡献
 

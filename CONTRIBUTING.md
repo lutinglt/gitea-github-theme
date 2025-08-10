@@ -33,8 +33,7 @@
 
 请使用 VSCode 开发, 并安装仓库中推荐的插件.
 
-如果不喜欢多余的插件, 请务必安装 `vscode-styled-components`
-插件, 此插件用于渲染和检查 TypeScript 中的 CSS 模板字符串.
+如果不喜欢多余的插件, 请务必安装 `vscode-styled-components` 插件, 此插件用于渲染和检查 TypeScript 中的 CSS 模板字符串.
 
 推荐使用 VSCode 1.102.0 版本以上开发, 此版本以上提供 TypeScript 代码中 16 进制颜色的支持.
 
@@ -135,7 +134,8 @@ export default theme: Theme = {
 };
 ```
 
-完成主题颜色开发后, 请在某个仓库的代码文件列表页, 打开 Code 菜单选择 Tea Cli 进行截图, 并放入 `screenshots` 目录下, 截图名与主题名相同. (推荐克隆 Github 的 actions/checkout 仓库, 该仓库信息较全, 避免泄露个人隐私)
+完成主题颜色开发后, 请在某个仓库的代码文件列表页, 打开 Code 菜单选择 Tea Cli 进行截图, 并放入 `screenshots`
+目录下, 截图名与主题名相同. (推荐克隆 Github 的 actions/checkout 仓库, 该仓库信息较全, 避免泄露个人隐私)
 
 然后将截图信息添加到 `README.md` 文件中, 可以在折叠部分中添加自己的说明.
 
