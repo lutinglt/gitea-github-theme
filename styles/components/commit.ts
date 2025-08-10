@@ -8,7 +8,7 @@ export const commit = css`
       // 作者
       .author {
         // 作者名称
-        a.author-wrapper {
+        .author-wrapper {
           color: ${themeVars.color.text.light.num1};
         }
       }

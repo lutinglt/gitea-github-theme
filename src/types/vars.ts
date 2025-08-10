@@ -17,6 +17,7 @@ function varMapper(prefix: string | null = null) {
 
 const vars = {
   isDarkTheme: "is-dark-theme",
+  chroma: color.chroma,
   color: {
     ...color.other,
     ...color.message,
@@ -53,11 +54,8 @@ const customVars = {
   },
 };
 
-const chromaVars = {};
-
 export const themeVars = createGlobalThemeContract(vars, varMapper());
 export const otherThemeVars = createGlobalThemeContract(otherVars, varMapper());
 export const customThemeVars = createGlobalThemeContract(customVars, varMapper("custom"));
-export const chromaThemeVars = createGlobalThemeContract(chromaVars, varMapper("chroma"));
 
 export { css } from "@linaria/core";

@@ -29,6 +29,7 @@ export const diff = css`
   }
   /* 展开/收缩按钮 */
   .code-expander-button {
+    color: ${themeVars.color.text.light.num1};
     height: 28px !important;
 
     &:hover {

@@ -4,7 +4,6 @@
 - issue/PR 列表样式 github 布局
 - styles/themes 库组件导出整理
 - defineTheme 颜色生成代码重构
-- 亮色主题适配/测试
 - 自动颜色主题生成
 
 ### 其他
