@@ -4,15 +4,6 @@ import type { MapLeafNodes, WithOptionalLayer } from "./types";
 
 export type Theme = WithOptionalLayer<MapLeafNodes<typeof themeVars, string>>;
 
-function stringToBoolean(str: string, name: string): boolean {
-  try {
-    return JSON.parse(str);
-  } catch (error) {
-    console.error(error);
-    throw new Error(`Invalid boolean value(${name}): ${str}`);
-  }
-}
-
 export const overlayAppearDown = "overlay-appear-down";
 export const animationDown = `200ms cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal none running ${overlayAppearDown}`;
 export const overlayAppearUp = "overlay-appear-up";
@@ -42,7 +33,7 @@ const emoji = `
 `;
 
 export function createTheme(theme: Theme): void {
-  const isDarkTheme = stringToBoolean(theme.isDarkTheme, "isDarkTheme");
+  const isDarkTheme: boolean = JSON.parse(theme.isDarkTheme);
   if (isDarkTheme) {
     globalStyle(emoji, { filter: "invert(100%) hue-rotate(180deg)" });
   }

@@ -1,7 +1,8 @@
 import { rgba, saturate } from "polished";
 import { scaleColorLight } from "src/functions";
-import type { Ansi, Console, Diff, Github, Message, Named, Other, Primary, Secondary } from "src/types";
+import type { Ansi, Chroma, Console, Diff, Github, Message, Named, Other, Primary, Secondary } from "src/types";
 import { themeVars } from "src/types/vars";
+import { prettylightsDark, prettylightsLight } from "./prettylights";
 import type { Theme } from "./theme";
 
 type ThemeColor = {
@@ -57,7 +58,7 @@ type ThemeColor = {
 
 /** 定义颜色, 用于生成颜色主题
  * @example
- * 文件名: "dark.css.tsx"
+ * 文件名: "dark.css.ts"
  * import type { Console, Diff, Other } from "src/types";
  * import { defineTheme, themeVars } from "src";
  *
@@ -70,7 +71,6 @@ type ThemeColor = {
  *   ...
  * }
  * ...
- * // 会经过 lightningcss 打包处理生成最终的 CSS
  * export default defineTheme({
  *   isDarkTheme: true,
  *   primary: "#0969da",
@@ -80,7 +80,7 @@ type ThemeColor = {
  *   other,
  * })
  */
-export function defineTheme(themeColor: ThemeColor): Theme {
+export function defineTheme(themeColor: ThemeColor, chroma: Chroma | null = null): Theme {
   const brightDir = themeColor.isDarkTheme ? -1 : 1;
 
   const primary: Primary = {
@@ -341,6 +341,7 @@ export function defineTheme(themeColor: ThemeColor): Theme {
 
   return {
     isDarkTheme: themeColor.isDarkTheme.toString(),
+    chroma: chroma || (themeColor.isDarkTheme ? prettylightsDark : prettylightsLight),
     color: {
       primary,
       secondary,

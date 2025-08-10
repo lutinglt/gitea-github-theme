@@ -1,6 +1,8 @@
 import type { MapLeafNodes } from "src/core/types";
 import * as color from "./color";
 
+/** 代码高亮色 */
+export type Chroma = MapLeafNodes<typeof color.chroma, string>;
 /** 主色调(强调色) */
 export type Primary = MapLeafNodes<typeof color.primary, string>;
 /** 副色调(边框色) */

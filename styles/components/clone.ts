@@ -54,7 +54,7 @@ export const clone = css`
           font-family: var(--fontStack-monospace, ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, monospace);
           min-width: 150px;
           max-width: 400px;
-          width: ${customThemeVars.custom.cloneMenuWidth};
+          width: ${customThemeVars.cloneMenuWidth};
           &:hover {
             border: 1px solid ${themeVars.color.light.border};
             border-radius: ${otherThemeVars.border.radius};

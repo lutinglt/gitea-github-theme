@@ -120,6 +120,11 @@ export const selectionDropdown = css`
       ${activeItemAfterStyle};
     }
   }
+  // 发布版本页面的分支按钮, 覆盖 Gitea 的样式, 避免按钮元素高度不一致
+  .repository.new.release .target .selection.dropdown {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
   // 这个按钮项目前只在创建仓库的拥有者
   // 不实现伪元素, 因为 .item 设置溢出的元素会被截断
   .ui.selection.dropdown.ellipsis-text-items,

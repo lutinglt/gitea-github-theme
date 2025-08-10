@@ -1,277 +1,286 @@
-import { css } from "src/types/vars";
+import { css, themeVars } from "src/types/vars";
 
-export const chroma = css`
+// https://github.com/go-gitea/gitea/blob/main/web_src/css/chroma/base.css
+export const chromaBase = css`
   .chroma {
-    background-color: var(--color-code-bg);
-
+    // LineTableTD
     .lntd {
       vertical-align: top;
-      border: 0;
-      margin: 0;
       padding: 0;
+      margin: 0;
+      border: 0;
     }
-
+    // LineTable
     .lntable {
       border-spacing: 0;
+      padding: 0;
+      margin: 0;
       border: 0;
       width: auto;
-      margin: 0;
-      padding: 0;
-      display: block;
       overflow: auto;
-    }
-
-    .hl {
-      width: 100%;
       display: block;
     }
-
+    // LineHighlight
+    .hl {
+      display: block;
+      width: 100%;
+    }
+    // LineNumbersTable
     .lnt,
+    // LineNumbers
     .ln {
       margin-right: 0.4em;
       padding: 0 0.4em;
     }
-
+    // GenericStrong
     .gs {
       font-weight: var(--font-weight-semibold);
     }
-
+    // GenericUnderline
     .gl {
       text-decoration: underline;
     }
+  }
+`;
 
-    .bp {
-      color: #fabd2f;
-    }
-
-    .c,
-    .c1,
-    .ch,
-    .cm {
-      color: #777e94;
-    }
-
-    .cp {
-      color: #8ec07c;
-    }
-
-    .cpf {
-      color: #79c0ff;
-    }
-
-    .cs {
-      color: #9075cd;
-    }
-
-    .dl {
-      color: #79c0ff;
-    }
-
-    .gd {
-      color: #fff;
-      background-color: #5f3737;
-    }
-
-    .ge {
-      color: #ddee30;
-    }
-
-    .gh {
-      color: #ffaa10;
-    }
-
-    .gi {
-      color: #fff;
-      background-color: #3a523a;
-    }
-
-    .go {
-      color: #777e94;
-    }
-
-    .gp {
-      color: #ebdbb2;
-    }
-
-    .gr {
-      color: #f43;
-    }
-
-    .gs {
-      color: #ebdbb2;
-    }
-
-    .gt {
-      color: #7ee787;
-    }
-
-    .gu {
-      color: #a5d6ff;
-    }
-
-    .il {
-      color: #79c0ff;
-    }
-
-    .k {
-      color: #ff7b72;
-    }
-
-    .kc {
-      color: #79c0ff;
-    }
-
-    .kd {
-      color: #ff7b72;
-    }
-
-    .kn {
-      color: #ff7b72;
-    }
-
-    .kp {
-      color: #5f8700;
-    }
-
-    .kr {
-      color: #7ee787;
-    }
-
-    .kt {
-      color: #ff7b72;
-    }
-
-    .m,
-    .mb,
-    .mf,
-    .mh,
-    .mi,
-    .mo {
-      color: #79c0ff;
-    }
-
-    .n {
-      color: #c9d1d9;
-    }
-
-    .na {
-      color: #d2a8ff;
-    }
-
-    .nb {
-      color: #a5d6ff;
-    }
-
-    .nc {
-      color: #e6edf3;
-    }
-
-    .nd {
-      color: #79c0ff;
-    }
-
-    .ne {
-      color: #7ee787;
-    }
-
-    .nf,
-    .ni {
-      color: #d2a8ff;
-    }
-
-    .nl {
-      color: #7ee787;
-    }
-
-    .nn {
-      color: #e6edf3;
-    }
-
-    .no {
-      color: #79c0ff;
-    }
-
-    .nt {
-      color: #7ee787;
-    }
-
-    .nv {
-      color: #ebdbb2;
-    }
-
-    .nx {
-      color: #b6bac5;
-    }
-
-    .o {
-      color: #7ee787;
-    }
-
-    .ow {
-      color: #5f8700;
-    }
-
-    .p {
-      color: #d2d4db;
-    }
-
-    .s,
-    .s1,
-    .s2 {
-      color: #a5d6ff;
-    }
-
-    .sa {
-      color: #79c0ff;
-    }
-
-    .sb {
-      color: #a5d6ff;
-    }
-
-    .sc {
-      color: #79c0ff;
-    }
-
-    .sd {
-      color: #777e94;
-    }
-
-    .se {
-      color: #7ee787;
-    }
-
-    .sh {
-      color: #79c0ff;
-    }
-
-    .si {
-      color: #ffaa10;
-    }
-
-    .sr {
-      color: #9075cd;
-    }
-
-    .ss {
-      color: #7ee787;
-    }
-
-    .sx {
-      color: #ffaa10;
-    }
-
-    .vc {
-      color: #7ee787;
-    }
-
-    .vg,
-    .vi {
-      color: #ffaa10;
-    }
-
+// https://github.com/alecthomas/chroma/blob/6428fb4e65f3c1493491571c8a6a8f1add1da822/types.go#L208
+export const chromaCode = css`
+  .chroma {
+    // TextWhiteSpace
     .w {
-      color: #7f8699;
+      color: ${themeVars.chroma.textWhiteSpace};
+    }
+    // Error
+    .err {
+      color: ${themeVars.chroma.err};
+    }
+    // Keyword
+    .k {
+      color: ${themeVars.chroma.keyword.self};
+    }
+    .kc {
+      color: ${themeVars.chroma.keyword.constant};
+    }
+    .kd {
+      color: ${themeVars.chroma.keyword.declaration};
+    }
+    .kn {
+      color: ${themeVars.chroma.keyword.namespace};
+    }
+    .kp {
+      color: ${themeVars.chroma.keyword.pseudo};
+    }
+    .kr {
+      color: ${themeVars.chroma.keyword.reserved};
+    }
+    .kt {
+      color: ${themeVars.chroma.keyword.type};
+    }
+    // Name
+    .n {
+      color: ${themeVars.chroma.name.self};
+    }
+    .na {
+      color: ${themeVars.chroma.name.attribute};
+    }
+    .nb {
+      color: ${themeVars.chroma.name.builtin};
+    }
+    .bp {
+      color: ${themeVars.chroma.name.builtinPseudo};
+    }
+    .nc {
+      color: ${themeVars.chroma.name.class};
+    }
+    .no {
+      color: ${themeVars.chroma.name.constant};
+    }
+    .nd {
+      color: ${themeVars.chroma.name.decorator};
+    }
+    .ni {
+      color: ${themeVars.chroma.name.entity};
+    }
+    .ne {
+      color: ${themeVars.chroma.name.exception};
+    }
+    .nf {
+      color: ${themeVars.chroma.name.function};
+    }
+    .fm {
+      color: ${themeVars.chroma.name.functionMagic};
+    }
+    .py {
+      color: ${themeVars.chroma.name.property};
+    }
+    .nl {
+      color: ${themeVars.chroma.name.label};
+    }
+    .nn {
+      color: ${themeVars.chroma.name.namespace};
+    }
+    .nx {
+      color: ${themeVars.chroma.name.other};
+    }
+    .nt {
+      color: ${themeVars.chroma.name.tag};
+    }
+    .nv {
+      color: ${themeVars.chroma.name.variable};
+    }
+    .vc {
+      color: ${themeVars.chroma.name.variableClass};
+    }
+    .vg {
+      color: ${themeVars.chroma.name.variableGlobal};
+    }
+    .vi {
+      color: ${themeVars.chroma.name.variableInstance};
+    }
+    .vm {
+      color: ${themeVars.chroma.name.variableMagic};
+    }
+    // Literal
+    .l {
+      color: ${themeVars.chroma.literal.self};
+    }
+    .ld {
+      color: ${themeVars.chroma.literal.date};
+    }
+    // String
+    .s {
+      color: ${themeVars.chroma.string.self};
+    }
+    .sa {
+      color: ${themeVars.chroma.string.affix};
+    }
+    .sb {
+      color: ${themeVars.chroma.string.backtick};
+    }
+    .sc {
+      color: ${themeVars.chroma.string.char};
+    }
+    .dl {
+      color: ${themeVars.chroma.string.delimiter};
+    }
+    .sd {
+      color: ${themeVars.chroma.string.doc};
+    }
+    .s2 {
+      color: ${themeVars.chroma.string.double};
+    }
+    .se {
+      color: ${themeVars.chroma.string.escape};
+    }
+    .sh {
+      color: ${themeVars.chroma.string.heredoc};
+    }
+    .si {
+      color: ${themeVars.chroma.string.interpol};
+    }
+    .sx {
+      color: ${themeVars.chroma.string.other};
+    }
+    .sr {
+      color: ${themeVars.chroma.string.regex};
+    }
+    .s1 {
+      color: ${themeVars.chroma.string.single};
+    }
+    .ss {
+      color: ${themeVars.chroma.string.symbol};
+    }
+    // Number
+    .m {
+      color: ${themeVars.chroma.number.self};
+    }
+    .mb {
+      color: ${themeVars.chroma.number.bin};
+    }
+    .mf {
+      color: ${themeVars.chroma.number.float};
+    }
+    .mh {
+      color: ${themeVars.chroma.number.hex};
+    }
+    .mi {
+      color: ${themeVars.chroma.number.integer};
+    }
+    .il {
+      color: ${themeVars.chroma.number.integerLong};
+    }
+    .mo {
+      color: ${themeVars.chroma.number.oct};
+    }
+    // Operator
+    .o {
+      color: ${themeVars.chroma.operator.self};
+    }
+    .ow {
+      color: ${themeVars.chroma.operator.word};
+    }
+    // Punctuation
+    .p {
+      color: ${themeVars.chroma.punctuation};
+    }
+    // Comment
+    .c {
+      color: ${themeVars.chroma.comment.self};
+    }
+    .ch {
+      color: ${themeVars.chroma.comment.hashbang};
+    }
+    .cm {
+      color: ${themeVars.chroma.comment.multiline};
+    }
+    .cp {
+      color: ${themeVars.chroma.comment.preproc};
+    }
+    .cpf {
+      color: ${themeVars.chroma.comment.preprocFile};
+    }
+    .c1 {
+      color: ${themeVars.chroma.comment.single};
+    }
+    .cs {
+      color: ${themeVars.chroma.comment.special};
+    }
+    // Generic
+    .g {
+      color: ${themeVars.chroma.generic.self};
+    }
+    .gd {
+      color: ${themeVars.chroma.generic.deleted};
+    }
+    .ge {
+      color: ${themeVars.chroma.generic.emph};
+    }
+    .gr {
+      color: ${themeVars.chroma.generic.error};
+    }
+    .gh {
+      color: ${themeVars.chroma.generic.heading};
+    }
+    .gi {
+      color: ${themeVars.chroma.generic.inserted};
+    }
+    .go {
+      color: ${themeVars.chroma.generic.output};
+    }
+    .gp {
+      color: ${themeVars.chroma.generic.prompt};
+    }
+    .gs {
+      color: ${themeVars.chroma.generic.strong};
+    }
+    .gu {
+      color: ${themeVars.chroma.generic.subheading};
+    }
+    .gt {
+      color: ${themeVars.chroma.generic.traceback};
+    }
+    .gu {
+      color: ${themeVars.chroma.generic.underline};
     }
   }
 `;

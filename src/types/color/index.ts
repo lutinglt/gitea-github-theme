@@ -1,3 +1,4 @@
+export { chroma } from "./chroma";
 export { ansi, console } from "./console";
 export { diff } from "./diff";
 export { github } from "./github";

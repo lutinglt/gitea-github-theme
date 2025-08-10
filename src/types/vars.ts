@@ -1,17 +1,23 @@
 import { createGlobalThemeContract } from "@vanilla-extract/css";
 import * as color from "./color";
 
-export function varMapper(value: string | null, path: string[]) {
-  if (value === null) {
-    path = path.filter(item => item !== "self");
-    path = path.map(item => item.replace(/^num/, ""));
-    return path.join("-");
-  }
-  return value;
+function varMapper(prefix: string | null = null) {
+  return (value: string | null, path: string[]) => {
+    if (value === null) {
+      path = path.filter(item => item !== "self");
+      path = path.map(item => item.replace(/^num/, ""));
+      value = path.join("-");
+    }
+    if (prefix) {
+      value = `${prefix}-${value}`;
+    }
+    return value;
+  };
 }
 
 const vars = {
   isDarkTheme: "is-dark-theme",
+  chroma: color.chroma,
   color: {
     ...color.other,
     ...color.message,
@@ -36,22 +42,20 @@ const otherVars = {
 };
 
 const customVars = {
-  custom: {
-    cloneMenuWidth: "custom-clone-menu-width",
-    explore: {
-      repolistColumns: "custom-explore-repolist-columns",
-      userlistColumns: "custom-explore-userlist-columns",
-    },
-    userRepolistColumns: "custom-user-repolist-columns",
-    org: {
-      repolistColumns: "custom-org-repolist-columns",
-      userlistColumns: "custom-org-userlist-columns",
-    },
+  cloneMenuWidth: "clone-menu-width",
+  explore: {
+    repolistColumns: "explore-repolist-columns",
+    userlistColumns: "explore-userlist-columns",
+  },
+  userRepolistColumns: "user-repolist-columns",
+  org: {
+    repolistColumns: "org-repolist-columns",
+    userlistColumns: "org-userlist-columns",
   },
 };
 
-export const themeVars = createGlobalThemeContract(vars, varMapper);
-export const otherThemeVars = createGlobalThemeContract(otherVars, varMapper);
-export const customThemeVars = createGlobalThemeContract(customVars, varMapper);
+export const themeVars = createGlobalThemeContract(vars, varMapper());
+export const otherThemeVars = createGlobalThemeContract(otherVars, varMapper());
+export const customThemeVars = createGlobalThemeContract(customVars, varMapper("custom"));
 
 export { css } from "@linaria/core";
