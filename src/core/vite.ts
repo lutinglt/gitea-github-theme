@@ -78,23 +78,41 @@ export function themePlugin(): Plugin {
       for (const [key, value] of Object.entries(bundle)) {
         // 仅为了类型检查, 逻辑上输出中全是 asset 类型
         if (value.type === "asset") {
-          const name = `${prefix}${value.names[0]}`;
+          const name = `${prefix}${key}`;
           const fileName = `${prefix}${value.fileName}`;
           const originalFileName = value.originalFileNames.pop();
           const type = value.type;
           const source = `${styles}${value.source.toString()}`;
           // 添加主题到输出
           this.emitFile({ name, fileName, source, type, originalFileName });
+          // 自动颜色主题
+          const isDark = key.endsWith("dark.css");
+          const darkName = key.replace("light.css", "dark.css");
+          const lightName = key.replace("dark.css", "light.css");
+          const autoName = `${prefix}${key.replace("dark.css", "auto.css").replace("light.css", "auto.css")}`;
+          const findTheme = isDark ? lightName : darkName;
+          if (findTheme in bundle) {
+            const lightContent = `@import "./${prefix}${lightName}" (prefers-color-scheme: light);`;
+            const darkContent = `@import "./${prefix}${darkName}" (prefers-color-scheme: dark);`;
+            this.emitFile({
+              name: autoName,
+              fileName: autoName,
+              type: "asset",
+              source: `${lightContent}\n${darkContent}`,
+            });
+          }
+          // 删除原始的样式文件, 自动颜色主题因为删除, 永远不会生成两次
           delete bundle[key];
         }
       }
     },
     writeBundle() {
+      // 上传到服务器
       const server = process.env.SSH_SERVER;
       const user = process.env.SSH_USER || "root";
-      const path = process.env.GITEA_THEME_PATH;
-      if (server && path) {
-        const cmd = `scp dist/${prefix}*.css ${user}@${server}:${path}`;
+      const theme_path = process.env.GITEA_THEME_PATH;
+      if (server && theme_path) {
+        const cmd = `scp dist/${prefix}*.css ${user}@${server}:${theme_path}`;
         console.log("[themePlugin] exec:", cmd);
         try {
           execSync(cmd, { stdio: "inherit" });
@@ -105,6 +123,7 @@ export function themePlugin(): Plugin {
       } else {
         console.log("[themePlugin] no SSH_SERVER or GITEA_THEME_PATH, skip upload");
       }
+      console.log("[themePlugin] exec end.");
     },
   };
 }
