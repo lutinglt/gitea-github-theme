@@ -42,6 +42,23 @@ THEMES = gitea-auto, gitea-light, gitea-dark, github-auto, github-light, github-
 详细请查看 Gitea 文档
 [Gitea docs](https://docs.gitea.com/next/administration/customizing-gitea#customizing-the-look-of-gitea)
 
+## 截图
+
+<details open>
+<summary>GitHub</summary>
+<h4>theme-github-light.css</h4>
+<img src="screenshots/light.png"/>
+<h4>theme-github-dark.css</h4>
+<img src="screenshots/dark.png"/>
+<h4>theme-github-soft-dark.css</h4>
+<img src="screenshots/soft-dark.png"/>
+</details>
+
+<details>
+<summary>其他主题</summary>
+等待贡献者ing...
+</details>
+
 ## 自定义 CSS 变量
 
 可以根据自己的偏好自定义主题的一部分样式
@@ -75,23 +92,6 @@ THEMES = gitea-auto, gitea-light, gitea-dark, github-auto, github-light, github-
 | --custom-user-repolist-columns    | 用户页面的仓库列表列数      | 2     | 2      | 1/2   |       |       |
 | --custom-org-repolist-columns     | 组织页面的仓库列表列数      | 1     | 1      | 1/2   |       |       |
 | --custom-org-userlist-columns     | 组织页面的用户列表列数      | 2     | 1      | 1/2   |       |       |
-
-## 截图
-
-<details open>
-<summary>GitHub</summary>
-<h4>theme-github-light.css</h4>
-<img src="screenshots/light.png"/>
-<h4>theme-github-dark.css</h4>
-<img src="screenshots/dark.png"/>
-<h4>theme-github-soft-dark.css</h4>
-<img src="screenshots/soft-dark.png"/>
-</details>
-
-<details>
-<summary>其他主题</summary>
-等待贡献者ing...
-</details>
 
 ## 使用开发中的主题
 
