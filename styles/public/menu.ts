@@ -222,12 +222,15 @@ export const paginationMenu = css`
         }
       }
       &.navigation {
-        height: 16px;
         &:not(.disabled) {
           span,
           svg {
             color: ${themeVars.color.primary.self};
           }
+        }
+        // 对齐文字
+        svg {
+          margin-top: 2px;
         }
       }
     }
