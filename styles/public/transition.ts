@@ -11,6 +11,9 @@ export const transition = css`
   .repo-file-cell,
   // 差异对比的代码折叠按钮
   .code-expander-button,
+  // 仓库 README 头部的按钮
+  .file-header-left,
+  .file-header-right,
   .tippy-box .flex-items-block .item,
   .clone-panel-tab .item,
   .ui.form select,

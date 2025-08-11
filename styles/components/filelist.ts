@@ -1,4 +1,4 @@
-import { css, themeVars } from "src/types/vars";
+import { css, otherThemeVars, themeVars } from "src/types/vars";
 
 // 文件列表页面下的分支按钮
 export const branchButton = css`
@@ -85,6 +85,39 @@ export const repoFiles = css`
           &.age {
             padding-right: 16px;
           }
+        }
+      }
+    }
+    #readme {
+      .file-header {
+        background: ${themeVars.color.body};
+        svg {
+          color: ${themeVars.color.text.light.num1};
+        }
+        .file-header-left {
+          padding: 6px 8px !important;
+          &:hover {
+            background: ${themeVars.github.control.transparent.bgColor.hover};
+            border-radius: ${otherThemeVars.border.radius};
+          }
+          &:after {
+            content: "";
+            background: ${themeVars.github.underlineNav.borderColor.active};
+            border-radius: ${otherThemeVars.border.radius};
+            bottom: 0;
+            height: 2px;
+            position: absolute;
+            left: 12px;
+            width: 113px;
+          }
+          a.muted:hover {
+            color: inherit;
+            text-decoration-line: none;
+          }
+        }
+        .file-header-right:hover {
+          background: ${themeVars.github.control.transparent.bgColor.hover};
+          border-radius: ${otherThemeVars.border.radius};
         }
       }
     }
