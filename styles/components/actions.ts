@@ -203,7 +203,7 @@ export const actionViewRight = css`
 
     .job-info-header {
       padding: 16px 12px 16px 24px;
-      height: auto;
+      height: 80px;
 
       .job-info-header-title {
         color: ${themeVars.github.fgColor.accent};
@@ -219,6 +219,10 @@ export const actionViewRight = css`
       .job-step-summary {
         color: ${themeVars.color.console.fg.subtle};
         padding: 8px 10px;
+
+        &.selected {
+          top: 80px;
+        }
 
         &.step-expandable:hover {
           color: ${themeVars.color.console.fg.subtle};
