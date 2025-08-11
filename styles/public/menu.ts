@@ -210,6 +210,7 @@ export const paginationMenu = css`
       padding: 5px 10px !important;
       &.active {
         background: ${themeVars.github.bgColor.accent.emphasis};
+        color: ${themeVars.color.white};
       }
       // 设置透明边框线避免 hover 时元素大小变化
       &:not(.active) {
