@@ -1,11 +1,4 @@
-const baseColor = {
-  self: null,
-  light: null,
-  dark: {
-    num1: null,
-    num2: null,
-  },
-};
+const baseColor = { self: null, light: null, dark: { num1: null, num2: null } };
 
 const commitColor = {
   /** 提交哈希值颜色 */
@@ -23,26 +16,14 @@ const commitColor = {
 
 export const named = {
   /** 红色/提交警告签名颜色 */
-  red: {
-    ...commitColor,
-    ...baseColor,
-  },
+  red: { ...commitColor, ...baseColor },
   /** 橙色/提交未匹配签名颜色 */
-  orange: {
-    ...commitColor,
-    ...baseColor,
-  },
+  orange: { ...commitColor, ...baseColor },
   /** 黄色/提交未信任签名颜色 */
-  yellow: {
-    ...commitColor,
-    ...baseColor,
-  },
+  yellow: { ...commitColor, ...baseColor },
   olive: baseColor,
   /** 绿色/提交信任签名颜色 */
-  green: {
-    ...commitColor,
-    ...baseColor,
-  },
+  green: { ...commitColor, ...baseColor },
   teal: baseColor,
   blue: baseColor,
   violet: baseColor,
@@ -50,10 +31,7 @@ export const named = {
   pink: baseColor,
   brown: baseColor,
   black: baseColor,
-  grey: {
-    self: null,
-    light: null,
-  },
+  grey: { self: null, light: null },
   gold: null,
   white: null,
 };

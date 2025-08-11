@@ -221,6 +221,7 @@ export const actionViewRight = css`
         padding: 8px 10px;
 
         &.selected {
+          // 滚动时固定在顶部的高度与 job-info-header 高度相同
           top: 80px;
         }
 

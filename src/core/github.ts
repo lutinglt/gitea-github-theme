@@ -39,107 +39,40 @@ export type GithubColor = {
     muted: string;
   };
   bgColor: {
-    accent: {
-      emphasis: string;
-      muted: string;
-    };
-    attention: {
-      muted: string;
-    };
-    success: {
-      emphasis: string;
-      muted: string;
-    };
-    danger: {
-      muted: string;
-    };
-    done: {
-      emphasis: string;
-    };
+    accent: { emphasis: string; muted: string };
+    attention: { muted: string };
+    success: { emphasis: string; muted: string };
+    danger: { muted: string };
+    done: { emphasis: string };
     default: string;
     inset: string;
     muted: string;
-    neutral: {
-      muted: string;
-    };
+    neutral: { muted: string };
   };
   borderColor: {
-    accent: {
-      emphasis: string;
-    };
-    attention: {
-      emphasis: string;
-    };
+    accent: { emphasis: string };
+    attention: { emphasis: string };
     default: string;
-    success: {
-      emphasis: string;
-    };
-    done: {
-      emphasis: string;
-    };
+    success: { emphasis: string };
+    done: { emphasis: string };
     muted: string;
     translucent: string;
   };
   button: {
-    primary: {
-      fgColor: {
-        rest: string;
-      };
-      bgColor: {
-        hover: string;
-      };
-    };
-    danger: {
-      fgColor: {
-        rest: string;
-        hover: string;
-      };
-      bgColor: {
-        hover: string;
-      };
-    };
+    primary: { fgColor: { rest: string }; bgColor: { hover: string } };
+    danger: { fgColor: { rest: string; hover: string }; bgColor: { hover: string } };
   };
   control: {
-    bgColor: {
-      active: string;
-      hover: string;
-      rest: string;
-    };
-    transparent: {
-      bgColor: {
-        active: string;
-        hover: string;
-        selected: string;
-      };
-    };
+    bgColor: { active: string; hover: string; rest: string };
+    transparent: { bgColor: { active: string; hover: string; selected: string } };
   };
-  shadow: {
-    floating: {
-      small: string;
-    };
-  };
-  overlay: {
-    backdrop: {
-      bgColor: string;
-    };
-  };
-  underlineNav: {
-    borderColor: {
-      active: string;
-    };
-  };
+  shadow: { floating: { small: string } };
+  overlay: { backdrop: { bgColor: string } };
+  underlineNav: { borderColor: { active: string } };
   contribution: {
     default: {
-      bgColor: {
-        num0: string;
-        num1: string;
-        num2: string;
-        num3: string;
-        num4: string;
-      };
-      borderColor: {
-        num0: string;
-      };
+      bgColor: { num0: string; num1: string; num2: string; num3: string; num4: string };
+      borderColor: { num0: string };
     };
   };
 };

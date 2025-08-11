@@ -8,9 +8,7 @@ function varMapper(prefix: string | null = null) {
       path = path.map(item => item.replace(/^num/, ""));
       value = path.join("-");
     }
-    if (prefix) {
-      value = `${prefix}-${value}`;
-    }
+    if (prefix) value = `${prefix}-${value}`;
     return value;
   };
 }
@@ -32,26 +30,13 @@ const vars = {
   github: color.github,
 };
 
-const otherVars = {
-  border: {
-    radius: null,
-  },
-  color: {
-    ...color.otherAuto,
-  },
-};
+const otherVars = { border: { radius: null }, color: { ...color.otherAuto } };
 
 const customVars = {
   cloneMenuWidth: "clone-menu-width",
-  explore: {
-    repolistColumns: "explore-repolist-columns",
-    userlistColumns: "explore-userlist-columns",
-  },
+  explore: { repolistColumns: "explore-repolist-columns", userlistColumns: "explore-userlist-columns" },
   userRepolistColumns: "user-repolist-columns",
-  org: {
-    repolistColumns: "org-repolist-columns",
-    userlistColumns: "org-userlist-columns",
-  },
+  org: { repolistColumns: "org-repolist-columns", userlistColumns: "org-userlist-columns" },
 };
 
 export const themeVars = createGlobalThemeContract(vars, varMapper());

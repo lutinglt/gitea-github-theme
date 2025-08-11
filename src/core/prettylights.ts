@@ -2,47 +2,22 @@ import type { Chroma } from "src/types";
 
 export type prettylightsColor = {
   syntax: {
-    brackethighlighter: {
-      angle: string;
-      unmatched: string;
-    };
-    carriage: {
-      return: {
-        bg: string;
-        text: string;
-      };
-    };
+    brackethighlighter: { angle: string; unmatched: string };
+    carriage: { return: { bg: string; text: string } };
     comment: string;
     constant: string;
     constantOtherReferenceLink: string;
     entity: string;
     entityTag: string;
-    invalid: {
-      illegal: {
-        bg: string;
-        text: string;
-      };
-    };
+    invalid: { illegal: { bg: string; text: string } };
     keyword: string;
     markup: {
       bold: string;
-      changed: {
-        bg: string;
-        text: string;
-      };
-      deleted: {
-        bg: string;
-        text: string;
-      };
+      changed: { bg: string; text: string };
+      deleted: { bg: string; text: string };
       heading: string;
-      ignored: {
-        bg: string;
-        text: string;
-      };
-      inserted: {
-        bg: string;
-        text: string;
-      };
+      ignored: { bg: string; text: string };
+      inserted: { bg: string; text: string };
       italic: string;
       list: string;
     };

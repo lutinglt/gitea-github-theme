@@ -39,9 +39,7 @@ export function createTheme(theme: Theme): void {
   }
   createGlobalTheme(":root", themeVars, theme);
   createGlobalTheme(":root", otherThemeVars, {
-    border: {
-      radius: "6px",
-    },
+    border: { radius: "6px" },
     color: {
       git: "#f05133",
       light: {
