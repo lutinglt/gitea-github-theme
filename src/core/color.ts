@@ -59,7 +59,7 @@ type ThemeColor = {
 /** 定义颜色, 用于生成颜色主题
  * @example
  * 文件名: "dark.css.ts"
- * import type { Console, Diff, Other } from "src/types";
+ * import type { Console, Diff, Other, Github } from "src/types";
  * import { defineTheme, themeVars } from "src";
  *
  * const console: Console = {
@@ -78,6 +78,7 @@ type ThemeColor = {
  *   console,
  *   diff,
  *   other,
+ *   github,
  * })
  */
 export function defineTheme(themeColor: ThemeColor, chroma: Chroma | null = null): Theme {

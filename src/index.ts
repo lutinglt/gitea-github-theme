@@ -1,3 +1,4 @@
 export { defineTheme } from "./core/color";
-export type { Chroma, Console, Diff, Other } from "./types";
-export { themeVars } from "./types/vars";
+export type { Theme } from "./core/theme";
+export type { Chroma, Console, Diff, Github, Other } from "./types";
+export { otherThemeVars, themeVars } from "./types/vars";

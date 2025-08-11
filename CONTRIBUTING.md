@@ -98,6 +98,8 @@ npm run commit
 推荐使用 `import { defineTheme } from "src"` 导入主题生成框架, 然后使用 `defineTheme` 函数生成主题,
 defineTheme 中设置了一些经过计算得到的 Gitea 变量可以减少工作量, 具体请查看函数说明.
 
+颜色计算函数可以从 `src/functions` 导入, 例如 `import { scaleColorLight } from "src/functions"`, 或者使用 `polished` 库.
+
 例: `themes/主题名称-dark.css.ts`
 
 ```ts
@@ -119,7 +121,7 @@ export default defineTheme({
 
 如果不需要自定义代码高亮色, 则不传递 chroma 参数, 框架会自动根据主题的暗色或亮色生成代码高亮色.
 
-如果需要完全自定义每个 Gitea 变量, 请导入 `import { Theme } from "src/theme"`
+如果需要完全自定义每个 Gitea 变量, 请导入 `import type { Theme } from "src"`
 
 例: `themes/主题名称-dark.css.ts`
 
@@ -128,7 +130,7 @@ export default defineTheme({
  * @author 你的名字
  * @description 主题描述
  */
-import { Theme } from "src";
+import type { Theme } from "src";
 export default theme: Theme = {
  ...
 };
@@ -141,14 +143,14 @@ export default theme: Theme = {
 
 ## 主题样式贡献
 
-主题样式使用 TypeScript 的 css 模板字符串开发, 该模板字符串会经过过 sass 预处理器处理, 支持 SCSS 语法并且本主题只接受 SCSS 嵌套语法, 请不要使用 CSS 语法, 如果一定要用请说明原因.
+主题样式使用 TypeScript 的 css 模板字符串开发, 该模板字符串会经过 sass 预处理器处理, 支持 SCSS 语法并且本主题只接受 SCSS 嵌套语法, 请不要使用 CSS 语法, 如果一定要用请说明原因.
 
 请尽量不要使用 SCSS 的函数, `vscode-styled-components` 插件会报错, 请使用 TypeScript 相关库处理, 比如本主题自带的
 `polished` 库.
 
 推荐需要使用复杂处理时, 提取逻辑到 `src/functions` 目录下的函数中, 然后在 `src/styles` 目录下的样式文件中使用.
 
-主题样式中使用到的所有颜色必须使用颜色变量, 颜色变量导入 `import { themeVars } from "src/types"`
+主题样式中使用到的所有颜色必须使用颜色变量, 颜色变量导入 `import { themeVars } from "src/types/vars"`
 
 涉及到本主题的颜色变量 `${themeVars.github.xxx}`, 在使用时请将使用的文件和变量添加到对应变量的注释中
 `src/types/color/github`
