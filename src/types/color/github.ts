@@ -29,6 +29,7 @@ export const github = {
        * @release `releaseTagMenu` 顶部栏左侧按钮激活背景色
        * @navbar `navbarRight` 头像管理员标识背景颜色
        * @dropdown `dropdown` emoji 的悬停背景色
+       * @menu `paginationMenu` 分页菜单的激活背景色
        */
       emphasis: null,
       /** 暗淡的背景颜色
@@ -175,6 +176,7 @@ export const github = {
          * @menu `menu` 菜单项的悬停背景颜色
          * @repo `repoHeader` 仓库标题的悬停背景颜色
          * @commit `commit` 提交信息的 Action 按钮的悬停背景颜色
+         * @filelist `repoFiles` README 栏的按钮的悬停背景颜色
          */
         hover: null,
       },
@@ -194,6 +196,7 @@ export const github = {
       /** 下划线导航栏的边框颜色
        * @clone `clone` 按钮组的按钮下划线颜色
        * @menu `secondaryMenu` 二级菜单按钮的下划线颜色
+       * @filelist `repoFiles` README 栏的左边按钮下划线颜色
        */
       active: null,
     },

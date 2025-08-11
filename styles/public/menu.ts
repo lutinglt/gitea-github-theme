@@ -193,3 +193,42 @@ export const secondaryMenu = css`
     }
   }
 `;
+
+// 分页菜单
+export const paginationMenu = css`
+  .ui.borderless.pagination.menu {
+    background-color: unset;
+    border: 0;
+    gap: 4px;
+    .item {
+      border-radius: ${otherThemeVars.border.radius};
+      min-width: 32px;
+      min-height: 32px;
+      height: 32px;
+      justify-content: center;
+      // 避免一些 hover 效果调整内容
+      padding: 5px 10px !important;
+      &.active {
+        background: ${themeVars.github.bgColor.accent.emphasis};
+      }
+      // 设置透明边框线避免 hover 时元素大小变化
+      &:not(.active) {
+        border: 1px solid #ffffff00;
+        &:hover {
+          background: unset;
+          border-color: ${themeVars.color.secondary.self};
+          transition-duration: 0.1s;
+        }
+      }
+      &.navigation {
+        height: 16px;
+        &:not(.disabled) {
+          span,
+          svg {
+            color: ${themeVars.color.primary.self};
+          }
+        }
+      }
+    }
+  }
+`;
