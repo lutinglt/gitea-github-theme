@@ -120,6 +120,10 @@ export const selectionDropdown = css`
       ${activeItemAfterStyle};
     }
   }
+  // 修复顶部导航栏工单管理/请求合并页面搜索框旁的选择下拉框按钮内容过窄
+  .list-header-search .ui.action.input > .dropdown.small {
+    padding: 8px 40px 8px 16px;
+  }
   // 发布版本页面的分支按钮, 覆盖 Gitea 的样式, 避免按钮元素高度不一致
   .repository.new.release .target .selection.dropdown {
     padding-top: 8px;
