@@ -15,7 +15,7 @@
 
 ## 贡献说明
 
-本主题不推荐样式贡献, 因为 Gitea 主题最终是由单个 CSS 文件提供, 所以会有先后顺序覆盖, 样式影响广泛等问题.
+不推荐主题样式贡献, 因为 Gitea 主题最终是由单个 CSS 文件提供, 所以会有先后顺序覆盖, 样式影响广泛等问题.
 
 开发者每个人的思路不一样, 审核很难看出这些问题, 会极大增加维护难度.
 
@@ -29,7 +29,7 @@
 
 ## 开发环境
 
-本主题仅依赖于 Node.js 环境, 请确保你的环境中已经安装了 Node.js, 推荐使用 Node.js 20 或以上版本.
+主题仅依赖于 Node.js 环境, 请确保你的环境中已经安装了 Node.js, 推荐使用 Node.js 20 或以上版本.
 
 请使用 VSCode 开发, 并安装仓库中推荐的插件.
 
@@ -143,16 +143,16 @@ export default theme: Theme = {
 
 ## 主题样式贡献
 
-主题样式使用 TypeScript 的 css 模板字符串开发, 该模板字符串会经过 sass 预处理器处理, 支持 SCSS 语法并且本主题只接受 SCSS 嵌套语法, 请不要使用 CSS 语法, 如果一定要用请说明原因.
+主题样式使用 TypeScript 的 css 模板字符串开发, 该模板字符串会经过 sass 预处理器处理, 支持 SCSS 语法并且主题只接受 SCSS 嵌套语法, 请不要使用 CSS 语法, 如果一定要用请说明原因.
 
-请尽量不要使用 SCSS 的函数, `vscode-styled-components` 插件会报错, 请使用 TypeScript 相关库处理, 比如本主题自带的
+请尽量不要使用 SCSS 的函数, `vscode-styled-components` 插件会报错, 请使用 TypeScript 相关库处理, 比如主题自带的
 `polished` 库.
 
 推荐需要使用复杂处理时, 提取逻辑到 `src/functions` 目录下的函数中, 然后在 `src/styles` 目录下的样式文件中使用.
 
 主题样式中使用到的所有颜色必须使用颜色变量, 颜色变量导入 `import { themeVars } from "src/types/vars"`
 
-涉及到本主题的颜色变量 `${themeVars.github.xxx}`, 在使用时请将使用的文件和变量添加到对应变量的注释中
+涉及到主题的自己的颜色变量 `${themeVars.github.xxx}`, 在使用时请将使用的文件和变量添加到对应变量的注释中
 `src/types/color/github`
 
 小型圆角(6px)请使用全局圆角变量, 圆角变量导入 `import { otherThemeVars } from "src/types/vars"`
