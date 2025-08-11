@@ -13,7 +13,8 @@ export const repoList = css`
   .page-content.user.profile > .ui.container > .ui.stackable > .ui.twelve,
   // 探索
   .page-content.explore.repositories > .ui.container {
-    > .flex-list {
+    // 排除用户的公开活动页
+    > .flex-list:not(#activity-feed) {
       display: grid;
       > .flex-item {
         border: 1px solid ${themeVars.color.light.border};
@@ -77,7 +78,8 @@ export const repoList = css`
     gap: min(${orgRepoVar} * 8px, 16px);
   }
   // 用户
-  .page-content.user.profile > .ui.container > .ui.stackable > .ui.twelve > .flex-list {
+  // 排除用户的公开活动页
+  .page-content.user.profile > .ui.container > .ui.stackable > .ui.twelve > .flex-list:not(#activity-feed) {
     grid-template-columns: repeat(${userRepoVar}, 1fr);
     gap: min(${userRepoVar} * 8px, 16px);
   }
@@ -152,7 +154,8 @@ export const mobileList = css`
     .page-content.organization.members >.ui.container,
     // 探索的用户和组织列表
     .page-content.explore.users >.ui.container {
-      > .flex-list {
+      // 排除用户的公开活动页
+      > .flex-list:not(#activity-feed) {
         grid-template-columns: 1fr;
         gap: 8px;
       }
