@@ -75,6 +75,7 @@ export const repoFiles = css`
       // 文件列表
       .repo-file-item {
         .repo-file-cell {
+          height: 40px;
           &.name {
             display: flex;
             align-items: center;
