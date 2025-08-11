@@ -152,7 +152,7 @@ export default theme: Theme = {
 
 主题样式中使用到的所有颜色必须使用颜色变量, 颜色变量导入 `import { themeVars } from "src/types/vars"`
 
-涉及到主题的自己的颜色变量 `${themeVars.github.xxx}`, 在使用时请将使用的文件和变量添加到对应变量的注释中
+涉及到主题自己的颜色变量 `${themeVars.github.xxx}`, 在使用时请将使用的文件和变量添加到对应变量的注释中
 `src/types/color/github`
 
 小型圆角(6px)请使用全局圆角变量, 圆角变量导入 `import { otherThemeVars } from "src/types/vars"`
