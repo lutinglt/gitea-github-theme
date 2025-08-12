@@ -166,11 +166,18 @@ export const taskStatusLabel = css`
 // 仓库标签 (私有/公开/内部)
 export const repoLabel = css`
   span,
+  // 用户切换面板的标签
   .org-visibility div {
     &.ui.basic.label {
       background-color: unset;
       color: ${themeVars.color.text.light.num1};
+      font-size: 12px;
+      font-weight: 500;
+      padding: 3px 6px;
     }
+  }
+  .org-visibility span.ui.basic.label {
+    font-size: 14px;
   }
 `;
 

@@ -38,10 +38,6 @@ export const repoList = css`
               &:not(a) {
                 color: ${themeVars.color.text.light.num1};
               }
-              // 仓库类型和状态标签
-              > .label-list .label {
-                padding: 3px 6px;
-              }
             }
             // 仓库语言, 星标
             > .flex-item-trailing {
@@ -113,7 +109,6 @@ export const userList = css`
             // 用户标签
             > .label {
               font-size: 12px;
-              padding: 3px 6px;
             }
           }
           // 用户描述
