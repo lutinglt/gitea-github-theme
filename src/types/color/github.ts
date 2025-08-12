@@ -177,6 +177,7 @@ export const github = {
          * @repo `repoHeader` 仓库标题的悬停背景颜色
          * @commit `commit` 提交信息的 Action 按钮的悬停背景颜色
          * @filelist `repoFiles` README 栏的按钮的悬停背景颜色
+         * @issue `issueSidebar` 操作按钮的悬停背景颜色
          */
         hover: null,
       },
