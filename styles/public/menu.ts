@@ -197,6 +197,7 @@ export const secondaryMenu = css`
 // 分页菜单
 export const paginationMenu = css`
   .ui.borderless.pagination.menu {
+    align-items: center;
     background-color: unset;
     border: 0;
     gap: 4px;
