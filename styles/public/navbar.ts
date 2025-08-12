@@ -81,10 +81,10 @@ export const navbarRight = css`
   }
   // 手机下的创建菜单按钮
   @media (max-width: 767.98px) {
-    #navbar .navbar-right > .item:not(:last-child) {
+    #navbar .navbar-right:has(.user-menu) > .item:not(:last-child) {
       display: none;
     }
-    #navbar.navbar-menu-open .navbar-right > .item:not(:last-child) {
+    #navbar.navbar-menu-open .navbar-right:has(.user-menu) > .item:not(:last-child) {
       display: grid;
     }
   }

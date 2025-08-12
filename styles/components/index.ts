@@ -7,6 +7,7 @@ import "./explore";
 import "./filelist";
 import "./heatmap";
 import "./issue";
+import "./signin";
 import "./newrepo";
 import "./release";
 import "./repo";

@@ -1,6 +1,6 @@
-import { css, themeVars } from "src/types/vars";
+import { css, themeVars, otherThemeVars } from "src/types/vars";
 
-export const content = css`
+export const attached = css`
   // 设置右面板的内容
   .user-main-content,
   .repo-setting-content,
@@ -13,7 +13,7 @@ export const content = css`
   .page-content.organization.new.org {
     .ui.top.attached.header {
       border: 0;
-      font-size: 1.5rem;
+      font-size: 20px;
       font-weight: 400;
       background-color: unset !important;
       margin-bottom: 0.25rem;
@@ -21,7 +21,7 @@ export const content = css`
 
     .ui.attached.segment {
       background-color: unset;
-      border-radius: 0.5rem !important;
+      border-radius: ${otherThemeVars.border.radius} !important;
     }
 
     .ui.attached.segment:not(.error) {
