@@ -77,6 +77,19 @@ export const navbarRight = css`
           left: 22px;
         }
       }
+      // 通知和计时器的圆点
+      a.item {
+        .notification_count,
+        .header-stopwatch-dot {
+          background-color: ${themeVars.github.bgColor.accent.emphasis};
+          border-radius: 25px;
+          color: ${themeVars.color.white};
+          font-size: 8px;
+          font-weight: 600;
+          top: -14px;
+          left: 12px;
+        }
+      }
     }
   }
   // 手机下的创建菜单按钮

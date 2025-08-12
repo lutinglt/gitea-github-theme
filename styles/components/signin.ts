@@ -15,7 +15,7 @@ export const signIn = css`
       font-size: 20px;
       font-weight: 600;
       background-color: unset !important;
-      margin-bottom: 0.25rem;
+      padding: 16px;
     }
 
     .ui.attached.segment {
