@@ -13,3 +13,4 @@ import "./release";
 import "./repo";
 import "./setting";
 import "./signin";
+import "./user";

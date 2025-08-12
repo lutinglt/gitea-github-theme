@@ -10,6 +10,7 @@ export const attached = css`
   // 新建页面内容
   .page-content.repository.new-repo,
   .page-content.repository.new.migrate,
+  .page-content.repository.new.fork,
   .page-content.organization.new.org {
     .ui.top.attached.header {
       border: 0;
