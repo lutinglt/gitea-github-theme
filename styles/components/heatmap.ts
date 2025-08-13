@@ -74,6 +74,10 @@ export const activity = css`
       }
       > .flex-item-main {
         gap: 8px !important;
+
+        relative-time {
+          color: ${themeVars.color.text.light.num1};
+        }
       }
       // 动态的右侧 svg 图标
       .flex-item-trailing svg {
