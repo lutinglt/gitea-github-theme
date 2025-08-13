@@ -219,7 +219,6 @@ export const paginationMenu = css`
         &:hover {
           background: unset;
           border-color: ${themeVars.color.secondary.self};
-          transition-duration: 0.1s;
         }
       }
       &.navigation {

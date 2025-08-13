@@ -1,6 +1,115 @@
 import { css, otherThemeVars, themeVars } from "src/types/vars";
 import { activeItemAfterStyle } from "styles/public/menu";
 
+// 工单&PR 列表
+export const issueList = css`
+  .page-content.repository.issue-list {
+    // 头部筛选菜单栏
+    .issue-list-toolbar {
+      align-items: center;
+      align-content: center;
+      background-color: ${themeVars.color.box.header};
+      border: 1px solid ${themeVars.color.light.border};
+      border-bottom: 0;
+      border-top-left-radius: ${otherThemeVars.border.radius};
+      border-top-right-radius: ${otherThemeVars.border.radius};
+      height: 48px;
+      padding: 8px;
+      .issue-list-toolbar-left {
+        // 复选框
+        input {
+          margin: 0 8px !important;
+        }
+        > .ui.compact.menu {
+          align-items: center;
+          border: 0;
+          > .item {
+            background: unset !important;
+            border-radius: ${otherThemeVars.border.radius};
+            color: ${themeVars.color.text.light.num1};
+            padding: 0px 8px;
+            height: 30px;
+            &:before {
+              display: none;
+            }
+            &:hover {
+              background: ${themeVars.github.control.transparent.bgColor.hover} !important;
+            }
+            &.active {
+              color: ${themeVars.color.text.self};
+              font-weight: 700;
+            }
+          }
+        }
+      }
+      .issue-list-toolbar-right > .ui.menu {
+        align-items: center;
+        > .item {
+          color: ${themeVars.color.text.light.num1};
+        }
+        > .ui.button {
+          padding: 0 12px;
+          height: 32px;
+        }
+      }
+    }
+    // Issue 列表
+    .flex-list#issue-list {
+      border: 1px solid ${themeVars.color.light.border};
+      border-bottom-left-radius: ${otherThemeVars.border.radius};
+      border-bottom-right-radius: ${otherThemeVars.border.radius};
+      > .flex-item {
+        align-items: center;
+        padding: 0;
+        &:last-child {
+          border-bottom-left-radius: ${otherThemeVars.border.radius};
+          border-bottom-right-radius: ${otherThemeVars.border.radius};
+        }
+        &:hover {
+          background-color: ${themeVars.color.hover.opaque};
+        }
+        > .flex-item-icon {
+          display: flex;
+          gap: 4px;
+          margin-left: 8px;
+          // 复选框
+          input {
+            background: unset;
+            margin-top: 14px;
+            margin-left: 8px;
+            margin-right: 8px !important;
+          }
+          svg {
+            margin-top: 14px;
+          }
+        }
+        > .flex-item-main {
+          gap: 4px;
+          .flex-item-header {
+            padding-top: 8px;
+          }
+          .flex-item-body {
+            font-size: 12px;
+            padding-bottom: 8px;
+          }
+        }
+        > .flex-item-trailing {
+          margin-right: 32px;
+        }
+      }
+    }
+  }
+`;
+
+// 避免手机/平板下菜单错位
+export const issueListMobile = css`
+  @media (max-width: 1023.98px) {
+    .page-content.repository.issue-list .issue-list-toolbar {
+      height: auto;
+    }
+  }
+`;
+
 export const button = css`
   .issue-content-left .field.footer {
     // 关闭工单按钮

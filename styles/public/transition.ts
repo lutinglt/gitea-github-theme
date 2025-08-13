@@ -2,13 +2,6 @@ import { css } from "src/types/vars";
 
 // 简单的渐变过渡
 export const transition = css`
-  // 迁移的元素
-  #navbar .item,
-  .header-wrapper .ui.tabular.menu .item,
-  .job-step-summary,
-  .job-step-logs,
-  .job-brief-item,
-  .repo-file-cell,
   // 差异对比的代码折叠按钮
   .code-expander-button,
   // 仓库 README 头部的按钮
@@ -16,6 +9,18 @@ export const transition = css`
   .file-header-right,
   // 仪表板仓库列表
   .ui.attached.segment.table ul li,
+  // Issue 列表
+  .issue-list-toolbar .item,
+  .flex-list#issue-list > .flex-item,
+  // 分页菜单
+  .ui.borderless.pagination.menu .item,
+  // 迁移的元素
+  #navbar .item,
+  .header-wrapper .ui.tabular.menu .item,
+  .job-step-summary,
+  .job-step-logs,
+  .job-brief-item,
+  .repo-file-cell,
   .tippy-box .flex-items-block .item,
   .clone-panel-tab .item,
   .ui.form select,

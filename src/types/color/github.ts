@@ -178,6 +178,7 @@ export const github = {
          * @commit `commit` 提交信息的 Action 按钮的悬停背景颜色
          * @filelist `repoFiles` README 栏的按钮的悬停背景颜色
          * @issue `issueSidebar` 操作按钮的悬停背景颜色
+         * @issue `issueList` 头部菜单左侧开启关闭菜单的悬停背景颜色
          * @dashboard `dashboard` 仓库列表项目的悬停背景颜色
          */
         hover: null,
