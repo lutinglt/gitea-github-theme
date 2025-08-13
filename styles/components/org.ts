@@ -1,7 +1,7 @@
 import { css, themeVars } from "src/types/vars";
 
 export const org = css`
-  .page-content.organization.profile {
+  .page-content.organization {
     #org-info {
       .ui.header {
         // 组织页面的 RSS 订阅按钮
