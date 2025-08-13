@@ -197,8 +197,7 @@ export const repoFileView = css`
           border: 1px solid ${themeVars.color.secondary.self};
           border-radius: ${otherThemeVars.border.radius};
           height: 46px;
-          // 重叠边框线, 避免过粗
-          min-height: 45px;
+          min-height: 46px;
           padding: 8px;
           position: sticky;
           top: 0;
@@ -210,7 +209,8 @@ export const repoFileView = css`
           z-index: 0;
           h4.file-header {
             position: sticky;
-            top: 46px;
+            // 重叠边框线, 避免过粗
+            top: 45px;
             z-index: 1;
           }
         }
