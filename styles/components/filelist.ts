@@ -182,7 +182,7 @@ export const repoFileView = css`
       // 右侧文件视图内容
       .repo-view-content {
         .repo-button-row {
-          align-items: center;
+          align-content: center;
           background: ${themeVars.color.box.header};
           border: 1px solid ${themeVars.color.secondary.self};
           border-radius: ${otherThemeVars.border.radius};
