@@ -151,6 +151,8 @@ export const repoFileView = css`
       max-width: calc(100% - calc(2 * 16px));
     }
     .repo-view-container {
+      position: sticky;
+      top: 0;
       // 左侧文件树
       .repo-view-file-tree-container {
         height: 100vh;
@@ -166,17 +168,25 @@ export const repoFileView = css`
           background: ${themeVars.color.secondary.self};
         }
         > .repo-button-row {
-          height: 32px;
-          margin: 16px 0;
+          align-content: center;
+          background: ${themeVars.color.body};
+          height: 64px;
+          margin: 0;
+          position: sticky;
+          top: 0;
           &:after {
             content: "";
             position: absolute;
-            top: 32px + 32px;
+            top: 64px;
             left: -16px;
             width: calc(100% + 16px);
             height: 1px;
             background: ${themeVars.color.secondary.self};
           }
+        }
+        .view-file-tree-items {
+          margin-right: 0;
+          padding: 16px 16px 16px 0;
         }
       }
       // 右侧文件视图内容
