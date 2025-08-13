@@ -147,12 +147,65 @@ export const repoFilesMobile = css`
 // 仓库打开文件时的视图
 export const repoFileView = css`
   .page-content.repository.file.list {
+    > .ui.container.fluid {
+      max-width: calc(100% - calc(2 * 16px));
+    }
     .repo-view-container {
+      // 左侧文件树
+      .repo-view-file-tree-container {
+        position: sticky;
+        top: 0;
+        &:after {
+          content: "";
+          position: absolute;
+          top: -14px;
+          right: 0;
+          width: 1px;
+          height: calc(100% + 14px);
+          background: ${themeVars.color.secondary.self};
+        }
+        > .repo-button-row {
+          height: 32px;
+          margin: 16px 0;
+          &:after {
+            content: "";
+            position: absolute;
+            top: 32px + 32px;
+            left: -16px;
+            width: calc(100% + 16px);
+            height: 1px;
+            background: ${themeVars.color.secondary.self};
+          }
+        }
+      }
       // 右侧文件视图内容
       .repo-view-content {
+        .repo-button-row {
+          align-items: center;
+          background: ${themeVars.color.box.header};
+          border: 1px solid ${themeVars.color.secondary.self};
+          border-radius: ${otherThemeVars.border.radius};
+          height: 46px;
+          min-height: 46px;
+          padding: 8px;
+          position: sticky;
+          top: 0;
+          z-index: 1;
+        }
+        .non-diff-file-content {
+          // 避免分支菜单遮挡
+          position: relative;
+          z-index: 0;
+          h4.file-header {
+            position: sticky;
+            top: 46px;
+            z-index: 1;
+          }
+        }
         // 头部提交信息
-        #repo-file-commit-box {
+        .ui.segment#repo-file-commit-box {
           padding: 8px 12px;
+          margin-bottom: 8px !important;
           > .latest-commit {
             gap: 8px;
           }
@@ -161,6 +214,24 @@ export const repoFileView = css`
             display: flex;
             align-items: center;
           }
+        }
+      }
+    }
+  }
+`;
+
+// 避免手机/平板下路径容器过长导致换行, 取消固定
+export const repoFileViewMobile = css`
+  @media (max-width: 1023.98px) {
+    .page-content.repository.file.list .repo-view-container .repo-view-content {
+      .repo-button-row {
+        height: auto;
+        position: static;
+        z-index: 0;
+      }
+      .non-diff-file-content {
+        h4.file-header {
+          top: 0;
         }
       }
     }
