@@ -4,7 +4,18 @@ export const dashboard = css`
   .page-content.dashboard {
     // 仓库列表的仓库/组织切换按钮
     .ui.two.item.menu {
-      background-color: unset;
+      box-shadow: ${themeVars.github.shadow.floating.small};
+      border: unset;
+      border-radius: 12px;
+      margin-bottom: 8px;
+      > .item {
+        &:first-child {
+          border-radius: 12px 0 0 12px;
+        }
+        &:last-child {
+          border-radius: 0 12px 12px 0;
+        }
+      }
     }
     // 仓库/组织列表标题
     .ui.top.attached.header {

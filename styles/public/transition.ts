@@ -14,6 +14,8 @@ export const transition = css`
   // 仓库 README 头部的按钮
   .file-header-left,
   .file-header-right,
+  // 仪表板仓库列表
+  .ui.attached.segment.table ul li,
   .tippy-box .flex-items-block .item,
   .clone-panel-tab .item,
   .ui.form select,

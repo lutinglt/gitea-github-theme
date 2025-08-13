@@ -5,7 +5,6 @@ import "./radius"; // 圆角, 此样式为基础样式, 确保在其他样式之
 import "./transition"; // 过渡效果
 import "./text"; // 文本或 SVG 的基本颜色
 import "./button"; // 按钮
-import "./chroma"; // 代码高亮
 import "./dropdown"; // 下拉框
 import "./input"; // 输入框
 import "./label"; // 标签

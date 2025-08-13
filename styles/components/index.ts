@@ -14,3 +14,5 @@ import "./repo";
 import "./setting";
 import "./signin";
 import "./user";
+import "./chroma";
+import "./editor"
