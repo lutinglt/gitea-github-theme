@@ -153,6 +153,7 @@ export const repoFileView = css`
     .repo-view-container {
       // 左侧文件树
       .repo-view-file-tree-container {
+        height: 100vh;
         position: sticky;
         top: 0;
         &:after {
