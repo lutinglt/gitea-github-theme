@@ -461,7 +461,6 @@ export const issueSidebar = css`
       .ui.button {
         font-size: 12px;
       }
-      > .flex-text-block,
       .ui.form,
       a.fixed-text.muted,
       span.text,
@@ -495,6 +494,16 @@ export const issueSidebar = css`
         .ui.list {
           margin-top: 0 !important;
           margin-bottom: 0 !important;
+        }
+      }
+      // 时间追踪
+      > div:not([class]):not([id]) > .ui.dropdown.jump > a.fixed-text.muted {
+        align-items: center;
+        border-radius: ${otherThemeVars.border.radius};
+        text-decoration-line: none;
+        height: 28px;
+        &:hover {
+          background: ${themeVars.github.control.transparent.bgColor.hover};
         }
       }
       // 选中日期颜色
