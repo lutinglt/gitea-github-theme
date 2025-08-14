@@ -95,8 +95,8 @@ npm run commit
 
 请在颜色主题文件头部附加自己的作者信息, 方便 Issue 提问者找到你 `@`.
 
-推荐使用 `import { defineTheme, type ThemeColor } from "src"` 导入主题生成框架, 声明主题颜色, 然后使用 `defineTheme` 函数生成主题所有 CSS 变量,
-defineTheme 中设置了一些经过计算得到的 Gitea 变量可以减少工作量, 具体请查看函数说明和定义.
+推荐使用 `import { defineTheme, type ThemeColor } from "src"` 导入主题生成框架, 声明主题颜色, 然后使用 `defineTheme`
+函数生成主题所有 CSS 变量, defineTheme 中设置了一些经过计算得到的 Gitea 变量可以减少工作量, 具体请查看函数说明和定义.
 
 颜色计算函数可以从 `src/functions` 导入, 例如 `import { scaleColorLight } from "src/functions"`, 或者使用 `polished` 库.
 

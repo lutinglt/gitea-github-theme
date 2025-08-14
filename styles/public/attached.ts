@@ -1,4 +1,4 @@
-import { css, themeVars, otherThemeVars } from "src/types/vars";
+import { css, otherThemeVars, themeVars } from "src/types/vars";
 
 export const attached = css`
   // 设置右面板的内容

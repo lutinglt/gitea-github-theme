@@ -51,6 +51,7 @@ THEMES = gitea-auto, gitea-light, gitea-dark, github-auto, github-light, github-
 ```ini
 THEMES = github-auto, github-light, github-dark, github-soft-dark
 ```
+
 <details open>
 <summary>Base</summary>
 <h4>theme-github-light.css</h4>
@@ -103,7 +104,7 @@ THEMES = github-tritanopia-auto, github-tritanopia-light, github-tritanopia-dark
 
 | 变量名                            | 描述                        | 默认  | Github | 推荐  | 最小  | 最大  |
 | :-------------------------------- | :-------------------------- | :---- | :----- | :---- | :---- | :---- |
-| --custom-clone-menu-width         | 克隆菜单宽度                | Gitea | 332px  | 200px | 150px | 400px |
+| --custom-clone-menu-width         | 克隆按钮的菜单宽度          | Gitea | 332px  | 200px | 150px | 400px |
 | --custom-explore-repolist-columns | 探索页面的仓库列表列数      | 2     | 2      | 2     |       |       |
 | --custom-explore-userlist-columns | 探索页面的用户/组织列表列数 | 3     | 1      | 2/3   |       |       |
 | --custom-user-repolist-columns    | 用户页面的仓库列表列数      | 2     | 2      | 1/2   |       |       |

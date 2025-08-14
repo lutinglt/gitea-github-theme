@@ -1,8 +1,10 @@
 import "./actions";
+import "./chroma";
 import "./clone";
 import "./commit";
 import "./dashboard";
 import "./diff";
+import "./editor";
 import "./explore";
 import "./filelist";
 import "./heatmap";
@@ -14,5 +16,3 @@ import "./repo";
 import "./setting";
 import "./signin";
 import "./user";
-import "./chroma";
-import "./editor"

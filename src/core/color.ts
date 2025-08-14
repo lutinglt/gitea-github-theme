@@ -165,7 +165,9 @@ export function defineTheme(themeColor: ThemeColor, chroma: Chroma | null = null
   const named: Named = {
     red: {
       self: themeColor.base.red,
-      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.base.red, 15) : scaleColorLight(themeColor.base.red, 25),
+      light: themeColor.isDarkTheme
+        ? scaleColorLight(themeColor.base.red, 15)
+        : scaleColorLight(themeColor.base.red, 25),
       dark: {
         num1: scaleColorLight(themeColor.base.red, -10),
         num2: scaleColorLight(themeColor.base.red, -20),
@@ -180,7 +182,9 @@ export function defineTheme(themeColor: ThemeColor, chroma: Chroma | null = null
     },
     orange: {
       self: themeColor.base.orange,
-      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.base.orange, 15) : scaleColorLight(themeColor.base.orange, 25),
+      light: themeColor.isDarkTheme
+        ? scaleColorLight(themeColor.base.orange, 15)
+        : scaleColorLight(themeColor.base.orange, 25),
       dark: {
         num1: scaleColorLight(themeColor.base.orange, -10),
         num2: scaleColorLight(themeColor.base.orange, -20),
@@ -195,7 +199,9 @@ export function defineTheme(themeColor: ThemeColor, chroma: Chroma | null = null
     },
     yellow: {
       self: themeColor.base.yellow,
-      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.base.yellow, 15) : scaleColorLight(themeColor.base.yellow, 25),
+      light: themeColor.isDarkTheme
+        ? scaleColorLight(themeColor.base.yellow, 15)
+        : scaleColorLight(themeColor.base.yellow, 25),
       dark: {
         num1: scaleColorLight(themeColor.base.yellow, -10),
         num2: scaleColorLight(themeColor.base.yellow, -20),
@@ -210,7 +216,9 @@ export function defineTheme(themeColor: ThemeColor, chroma: Chroma | null = null
     },
     olive: {
       self: themeColor.base.olive,
-      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.base.olive, 15) : scaleColorLight(themeColor.base.olive, 25),
+      light: themeColor.isDarkTheme
+        ? scaleColorLight(themeColor.base.olive, 15)
+        : scaleColorLight(themeColor.base.olive, 25),
       dark: {
         num1: scaleColorLight(themeColor.base.olive, -10),
         num2: scaleColorLight(themeColor.base.olive, -20),
@@ -218,7 +226,9 @@ export function defineTheme(themeColor: ThemeColor, chroma: Chroma | null = null
     },
     green: {
       self: themeColor.base.green,
-      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.base.green, 15) : scaleColorLight(themeColor.base.green, 25),
+      light: themeColor.isDarkTheme
+        ? scaleColorLight(themeColor.base.green, 15)
+        : scaleColorLight(themeColor.base.green, 25),
       dark: {
         num1: scaleColorLight(themeColor.base.green, -10),
         num2: scaleColorLight(themeColor.base.green, -20),
@@ -233,7 +243,9 @@ export function defineTheme(themeColor: ThemeColor, chroma: Chroma | null = null
     },
     teal: {
       self: themeColor.base.teal,
-      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.base.teal, 15) : scaleColorLight(themeColor.base.teal, 25),
+      light: themeColor.isDarkTheme
+        ? scaleColorLight(themeColor.base.teal, 15)
+        : scaleColorLight(themeColor.base.teal, 25),
       dark: {
         num1: scaleColorLight(themeColor.base.teal, -10),
         num2: scaleColorLight(themeColor.base.teal, -20),
@@ -241,7 +253,9 @@ export function defineTheme(themeColor: ThemeColor, chroma: Chroma | null = null
     },
     blue: {
       self: themeColor.base.blue,
-      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.base.blue, 15) : scaleColorLight(themeColor.base.blue, 25),
+      light: themeColor.isDarkTheme
+        ? scaleColorLight(themeColor.base.blue, 15)
+        : scaleColorLight(themeColor.base.blue, 25),
       dark: {
         num1: scaleColorLight(themeColor.base.blue, -10),
         num2: scaleColorLight(themeColor.base.blue, -20),
@@ -249,7 +263,9 @@ export function defineTheme(themeColor: ThemeColor, chroma: Chroma | null = null
     },
     violet: {
       self: themeColor.base.violet,
-      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.base.violet, 15) : scaleColorLight(themeColor.base.violet, 25),
+      light: themeColor.isDarkTheme
+        ? scaleColorLight(themeColor.base.violet, 15)
+        : scaleColorLight(themeColor.base.violet, 25),
       dark: {
         num1: scaleColorLight(themeColor.base.violet, -10),
         num2: scaleColorLight(themeColor.base.violet, -20),
@@ -257,7 +273,9 @@ export function defineTheme(themeColor: ThemeColor, chroma: Chroma | null = null
     },
     purple: {
       self: themeColor.base.purple,
-      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.base.purple, 15) : scaleColorLight(themeColor.base.purple, 25),
+      light: themeColor.isDarkTheme
+        ? scaleColorLight(themeColor.base.purple, 15)
+        : scaleColorLight(themeColor.base.purple, 25),
       dark: {
         num1: scaleColorLight(themeColor.base.purple, -10),
         num2: scaleColorLight(themeColor.base.purple, -20),
@@ -265,7 +283,9 @@ export function defineTheme(themeColor: ThemeColor, chroma: Chroma | null = null
     },
     pink: {
       self: themeColor.base.pink,
-      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.base.pink, 15) : scaleColorLight(themeColor.base.pink, 25),
+      light: themeColor.isDarkTheme
+        ? scaleColorLight(themeColor.base.pink, 15)
+        : scaleColorLight(themeColor.base.pink, 25),
       dark: {
         num1: scaleColorLight(themeColor.base.pink, -10),
         num2: scaleColorLight(themeColor.base.pink, -20),
@@ -273,7 +293,9 @@ export function defineTheme(themeColor: ThemeColor, chroma: Chroma | null = null
     },
     brown: {
       self: themeColor.base.brown,
-      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.base.brown, 15) : scaleColorLight(themeColor.base.brown, 25),
+      light: themeColor.isDarkTheme
+        ? scaleColorLight(themeColor.base.brown, 15)
+        : scaleColorLight(themeColor.base.brown, 25),
       dark: {
         num1: scaleColorLight(themeColor.base.brown, -10),
         num2: scaleColorLight(themeColor.base.brown, -20),
@@ -281,7 +303,9 @@ export function defineTheme(themeColor: ThemeColor, chroma: Chroma | null = null
     },
     black: {
       self: themeColor.base.black,
-      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.base.black, 15) : scaleColorLight(themeColor.base.black, 25),
+      light: themeColor.isDarkTheme
+        ? scaleColorLight(themeColor.base.black, 15)
+        : scaleColorLight(themeColor.base.black, 25),
       dark: {
         num1: scaleColorLight(themeColor.base.black, -10),
         num2: scaleColorLight(themeColor.base.black, -20),
@@ -289,7 +313,9 @@ export function defineTheme(themeColor: ThemeColor, chroma: Chroma | null = null
     },
     grey: {
       self: themeColor.base.grey,
-      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.base.grey, 15) : scaleColorLight(themeColor.base.grey, 25),
+      light: themeColor.isDarkTheme
+        ? scaleColorLight(themeColor.base.grey, 15)
+        : scaleColorLight(themeColor.base.grey, 25),
     },
     gold: themeColor.base.gold,
     white: themeColor.base.white,
@@ -338,7 +364,9 @@ export function defineTheme(themeColor: ThemeColor, chroma: Chroma | null = null
       yellow: themeVars.color.yellow.light,
       blue: themeVars.color.blue.light,
       magenta: themeVars.color.pink.light,
-      cyan: themeColor.isDarkTheme ? scaleColorLight(themeColor.base.cyan, 10) : scaleColorLight(themeColor.base.cyan, 25),
+      cyan: themeColor.isDarkTheme
+        ? scaleColorLight(themeColor.base.cyan, 10)
+        : scaleColorLight(themeColor.base.cyan, 25),
       white: themeVars.color.console.fg.self,
     },
   };
