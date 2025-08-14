@@ -37,6 +37,7 @@ export const colorblindLightGithubColors: GithubColor = {
   underlineNav: lightGithubColors.underlineNav,
   contribution: lightGithubColors.contribution,
 };
+
 export const colorblindLightPrettylights: prettylightsColor = {
   syntax: {
     brackethighlighter: { angle: "#59636e", unmatched: "#762c00" },
