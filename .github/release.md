@@ -1,6 +1,6 @@
 ## ✨ Feature
 
-- 支持色盲主题 ( 红绿色盲和蓝色盲 ) ( Colorblind & Tritanopia )
+- 支持色盲主题(Beta) ( 红绿色盲和蓝色盲 ) ( Colorblind & Tritanopia )
 
 ## 🐞 Fix
 

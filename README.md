@@ -61,7 +61,7 @@ THEMES = github-auto, github-light, github-dark, github-soft-dark
 <img src="screenshots/soft-dark.png"/>
 </details>
 
-### 色盲主题
+### 色盲主题 ( Beta )
 
 ```ini
 THEMES = github-colorblind-auto, github-colorblind-light, github-colorblind-dark
