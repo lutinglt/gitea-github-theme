@@ -52,7 +52,7 @@ THEMES = gitea-auto, gitea-light, gitea-dark, github-auto, github-light, github-
 THEMES = github-auto, github-light, github-dark, github-soft-dark
 ```
 <details open>
-<summary>GitHub</summary>
+<summary>Base</summary>
 <h4>theme-github-light.css</h4>
 <img src="screenshots/light.png"/>
 <h4>theme-github-dark.css</h4>
