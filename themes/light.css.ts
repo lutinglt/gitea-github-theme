@@ -1,6 +1,7 @@
-import { defineGithubTheme } from "src/core/github";
+import { defineTheme, type ThemeColor } from "src";
+import { github2ThemeColor, type GithubColor } from "src/core/github";
 
-export default defineGithubTheme({
+export const lightGithubColors: GithubColor = {
   isDarkTheme: false,
   display: {
     brown: { fgColor: "#755f43" },
@@ -35,20 +36,20 @@ export default defineGithubTheme({
   bgColor: {
     accent: { emphasis: "#0969da", muted: "#ddf4ff" },
     attention: { muted: "#fff8c5" },
-    success: { emphasis: "#1f883d", muted: "#dafbe1" },
     danger: { muted: "#ffebe9" },
-    done: { emphasis: "#8250df" },
     default: "#ffffff",
-    inset: "#f6f8fa",
+    done: { emphasis: "#8250df" },
     muted: "#f6f8fa",
     neutral: { muted: "#818b981f" },
+    success: { emphasis: "#1f883d", muted: "#dafbe1" },
+    inset: "#f6f8fa",
   },
   borderColor: {
     accent: { emphasis: "#0969da" },
-    default: "#d1d9e0",
     attention: { emphasis: "#9a6700" },
-    success: { emphasis: "#1a7f37" },
+    default: "#d1d9e0",
     done: { emphasis: "#8250df" },
+    success: { emphasis: "#1a7f37" },
     muted: "#d1d9e0b3",
     translucent: "#1f232826",
   },
@@ -69,4 +70,8 @@ export default defineGithubTheme({
       borderColor: { num0: "#1f23280d" },
     },
   },
-});
+};
+
+export const lightColors: ThemeColor = github2ThemeColor(lightGithubColors);
+
+export default defineTheme(lightColors);

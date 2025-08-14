@@ -1,10 +1,9 @@
 import { saturate } from "polished";
 import type { Console, Diff, Other } from "src";
 import { scaleColorLight } from "src/functions";
-import type { Chroma, Github } from "src/types";
+import type { Github } from "src/types";
 import { themeVars } from "src/types/vars";
-import { defineTheme } from "./color";
-import type { Theme } from "./theme";
+import { type ThemeColor } from "./color";
 
 export type GithubColor = {
   isDarkTheme: boolean;
@@ -77,7 +76,7 @@ export type GithubColor = {
   };
 };
 
-export function defineGithubTheme(githubColor: GithubColor, chroma: Chroma | null = null): Theme {
+export function github2ThemeColor(githubColor: GithubColor): ThemeColor {
   const console: Console = {
     fg: {
       self: githubColor.fgColor.default,
@@ -327,12 +326,12 @@ export function defineGithubTheme(githubColor: GithubColor, chroma: Chroma | nul
       },
     },
   };
-  return defineTheme(
-    {
-      isDarkTheme: githubColor.isDarkTheme,
-      primary: githubColor.fgColor.accent,
-      primaryContrast: githubColor.fgColor.default,
-      secondary: githubColor.borderColor.default,
+  return {
+    isDarkTheme: githubColor.isDarkTheme,
+    primary: githubColor.fgColor.accent,
+    primaryContrast: githubColor.fgColor.default,
+    secondary: githubColor.borderColor.default,
+    base: {
       red: githubColor.fgColor.danger,
       orange: githubColor.fgColor.severe,
       yellow: githubColor.fgColor.attention,
@@ -349,11 +348,10 @@ export function defineGithubTheme(githubColor: GithubColor, chroma: Chroma | nul
       grey: githubColor.fgColor.neutral,
       gold: githubColor.display.lemon.fgColor,
       white: githubColor.fgColor.white,
-      console,
-      diff,
-      other,
-      github,
     },
-    chroma
-  );
+    console,
+    diff,
+    other,
+    github,
+  };
 }

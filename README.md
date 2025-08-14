@@ -46,6 +46,11 @@ THEMES = gitea-auto, gitea-light, gitea-dark, github-auto, github-light, github-
 
 ## 截图
 
+### 基本主题
+
+```ini
+THEMES = github-auto, github-light, github-dark
+```
 <details open>
 <summary>GitHub</summary>
 <h4>theme-github-light.css</h4>
@@ -56,9 +61,19 @@ THEMES = gitea-auto, gitea-light, gitea-dark, github-auto, github-light, github-
 <img src="screenshots/soft-dark.png"/>
 </details>
 
+### 色盲主题
+
+```ini
+THEMES = github-colorblind-auto, github-colorblind-light, github-colorblind-dark
+THEMES = github-tritanopia-auto, github-tritanopia-light, github-tritanopia-dark
+```
+
 <details>
-<summary>其他主题</summary>
-等待贡献者ing...
+<summary>红绿色盲 & 蓝色盲 ( Colorblind & Tritanopia )</summary>
+<h4>theme-github-colorblind-light.css & theme-github-tritanopia-light.css</h4>
+<img src="screenshots/colorblind-light.png"/>
+<h4>theme-github-colorblind-dark.css & theme-github-tritanopia-dark.css</h4>
+<img src="screenshots/colorblind-dark.png"/>
 </details>
 
 ## 自定义 CSS 变量

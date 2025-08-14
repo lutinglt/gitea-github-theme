@@ -1,4 +1,5 @@
-export { defineTheme } from "./core/color";
+export { defaultDarkChroma, defaultLightChroma } from "./core/chroma";
+export { defineTheme, type ThemeColor } from "./core/color";
 export type { Theme } from "./core/theme";
-export type { Chroma, Console, Diff, Github, Other } from "./types";
+export type { Ansi, Chroma, Console, Diff, Github, Message, Named, Other, Primary, Secondary } from "./types";
 export { otherThemeVars, themeVars } from "./types/vars";

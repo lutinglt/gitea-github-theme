@@ -95,8 +95,8 @@ npm run commit
 
 请在颜色主题文件头部附加自己的作者信息, 方便 Issue 提问者找到你 `@`.
 
-推荐使用 `import { defineTheme } from "src"` 导入主题生成框架, 然后使用 `defineTheme` 函数生成主题,
-defineTheme 中设置了一些经过计算得到的 Gitea 变量可以减少工作量, 具体请查看函数说明.
+推荐使用 `import { defineTheme, type ThemeColor } from "src"` 导入主题生成框架, 声明主题颜色, 然后使用 `defineTheme` 函数生成主题所有 CSS 变量,
+defineTheme 中设置了一些经过计算得到的 Gitea 变量可以减少工作量, 具体请查看函数说明和定义.
 
 颜色计算函数可以从 `src/functions` 导入, 例如 `import { scaleColorLight } from "src/functions"`, 或者使用 `polished` 库.
 
@@ -107,12 +107,15 @@ defineTheme 中设置了一些经过计算得到的 Gitea 变量可以减少工�
  * @author 你的名字
  * @description 主题描述
  */
-import { defineTheme } from "src";
-export default defineTheme({
+import { defineTheme, type ThemeColor } from "src";
+export const 主题名称DarkColors: ThemeColor = {
   ...
-});
+}
+export default defineTheme(主题名称DarkColors);
 // 使用其他主题颜色作为基础
 import dark from "themes/dark";
+import { darkColors } from "themes/dark";
+export const 主题名称DarkColors: ThemeColor = darkColors;
 export default defineTheme({
   ...dark,
   ...
@@ -130,16 +133,25 @@ export default defineTheme({
  * @author 你的名字
  * @description 主题描述
  */
-import type { Theme } from "src";
+import type { Theme, Chroma, Primary, Secondary, ... } from "src";
+export const primary: Primary = ...;
+export const secondary: Secondary =...;
+export const chroma: Chroma =...;
+...
 export default theme: Theme = {
- ...
+  primary,
+  secondary,
+  chroma,
+  ...
 };
 ```
 
 完成主题颜色开发后, 请在某个仓库的代码文件列表页, 打开 Code 菜单选择 Tea Cli 进行截图, 并放入 `screenshots`
-目录下, 截图名与主题名相同. (推荐克隆 Github 的 actions/checkout 仓库, 该仓库信息较全, 避免泄露个人隐私)
+目录下, 截图名与主题名相同. (推荐克隆本仓库, 避免泄露个人隐私)
 
 然后将截图信息添加到 `README.md` 文件中, 可以在折叠部分中添加自己的说明.
+
+主题颜色复用案例可以参考本主题的色盲主题.
 
 ## 主题样式贡献
 

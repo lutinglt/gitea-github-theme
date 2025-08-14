@@ -5,7 +5,7 @@ import { themeVars } from "src/types/vars";
 import { defaultDarkChroma, defaultLightChroma } from "./chroma";
 import type { Theme } from "./theme";
 
-type ThemeColor = {
+export type ThemeColor = {
   /** 用于标识当前是否为暗色主题: `true` 暗色 `false` 亮色 */
   isDarkTheme: boolean;
   /** 主色调(强调色) */
@@ -14,38 +14,41 @@ type ThemeColor = {
   primaryContrast: string;
   /** 副色调(边框色) */
   secondary: string;
-  /** 红色 */
-  red: string;
-  /** 橙色 */
-  orange: string;
-  /** 黄色 */
-  yellow: string;
-  /** 黄绿色/橄榄色 */
-  olive: string;
-  /** 绿色 */
-  green: string;
-  /** 蓝绿色/青色(偏绿) */
-  teal: string;
-  /** 蓝绿色/青色(偏蓝) */
-  cyan: string;
-  /** 蓝色 */
-  blue: string;
-  /** 蓝紫色/紫罗兰色 */
-  violet: string;
-  /** 紫色 */
-  purple: string;
-  /** 粉红色 */
-  pink: string;
-  /** 棕色 */
-  brown: string;
-  /** 黑色 */
-  black: string;
-  /** 灰色 */
-  grey: string;
-  /** 金色 */
-  gold: string;
-  /** 白色 */
-  white: string;
+  /** 基础颜色 */
+  base: {
+    /** 红色 */
+    red: string;
+    /** 橙色 */
+    orange: string;
+    /** 黄色 */
+    yellow: string;
+    /** 黄绿色/橄榄色 */
+    olive: string;
+    /** 绿色 */
+    green: string;
+    /** 蓝绿色/青色(偏绿) */
+    teal: string;
+    /** 蓝绿色/青色(偏蓝) */
+    cyan: string;
+    /** 蓝色 */
+    blue: string;
+    /** 蓝紫色/紫罗兰色 */
+    violet: string;
+    /** 紫色 */
+    purple: string;
+    /** 粉红色 */
+    pink: string;
+    /** 棕色 */
+    brown: string;
+    /** 黑色 */
+    black: string;
+    /** 灰色 */
+    grey: string;
+    /** 金色 */
+    gold: string;
+    /** 白色 */
+    white: string;
+  };
   /** Action 日志 */
   console: Console;
   /** 提交代码对比 */
@@ -161,161 +164,161 @@ export function defineTheme(themeColor: ThemeColor, chroma: Chroma | null = null
 
   const named: Named = {
     red: {
-      self: themeColor.red,
-      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.red, 15) : scaleColorLight(themeColor.red, 25),
+      self: themeColor.base.red,
+      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.base.red, 15) : scaleColorLight(themeColor.base.red, 25),
       dark: {
-        num1: scaleColorLight(themeColor.red, -10),
-        num2: scaleColorLight(themeColor.red, -20),
+        num1: scaleColorLight(themeColor.base.red, -10),
+        num2: scaleColorLight(themeColor.base.red, -20),
       },
       badge: {
-        self: themeColor.red,
-        bg: rgba(themeColor.red, 0.1),
+        self: themeColor.base.red,
+        bg: rgba(themeColor.base.red, 0.1),
         hover: {
-          bg: rgba(themeColor.red, 0.3),
+          bg: rgba(themeColor.base.red, 0.3),
         },
       },
     },
     orange: {
-      self: themeColor.orange,
-      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.orange, 15) : scaleColorLight(themeColor.orange, 25),
+      self: themeColor.base.orange,
+      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.base.orange, 15) : scaleColorLight(themeColor.base.orange, 25),
       dark: {
-        num1: scaleColorLight(themeColor.orange, -10),
-        num2: scaleColorLight(themeColor.orange, -20),
+        num1: scaleColorLight(themeColor.base.orange, -10),
+        num2: scaleColorLight(themeColor.base.orange, -20),
       },
       badge: {
-        self: themeColor.orange,
-        bg: rgba(themeColor.orange, 0.1),
+        self: themeColor.base.orange,
+        bg: rgba(themeColor.base.orange, 0.1),
         hover: {
-          bg: rgba(themeColor.orange, 0.3),
+          bg: rgba(themeColor.base.orange, 0.3),
         },
       },
     },
     yellow: {
-      self: themeColor.yellow,
-      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.yellow, 15) : scaleColorLight(themeColor.yellow, 25),
+      self: themeColor.base.yellow,
+      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.base.yellow, 15) : scaleColorLight(themeColor.base.yellow, 25),
       dark: {
-        num1: scaleColorLight(themeColor.yellow, -10),
-        num2: scaleColorLight(themeColor.yellow, -20),
+        num1: scaleColorLight(themeColor.base.yellow, -10),
+        num2: scaleColorLight(themeColor.base.yellow, -20),
       },
       badge: {
-        self: themeColor.yellow,
-        bg: rgba(themeColor.yellow, 0.1),
+        self: themeColor.base.yellow,
+        bg: rgba(themeColor.base.yellow, 0.1),
         hover: {
-          bg: rgba(themeColor.yellow, 0.3),
+          bg: rgba(themeColor.base.yellow, 0.3),
         },
       },
     },
     olive: {
-      self: themeColor.olive,
-      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.olive, 15) : scaleColorLight(themeColor.olive, 25),
+      self: themeColor.base.olive,
+      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.base.olive, 15) : scaleColorLight(themeColor.base.olive, 25),
       dark: {
-        num1: scaleColorLight(themeColor.olive, -10),
-        num2: scaleColorLight(themeColor.olive, -20),
+        num1: scaleColorLight(themeColor.base.olive, -10),
+        num2: scaleColorLight(themeColor.base.olive, -20),
       },
     },
     green: {
-      self: themeColor.green,
-      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.green, 15) : scaleColorLight(themeColor.green, 25),
+      self: themeColor.base.green,
+      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.base.green, 15) : scaleColorLight(themeColor.base.green, 25),
       dark: {
-        num1: scaleColorLight(themeColor.green, -10),
-        num2: scaleColorLight(themeColor.green, -20),
+        num1: scaleColorLight(themeColor.base.green, -10),
+        num2: scaleColorLight(themeColor.base.green, -20),
       },
       badge: {
-        self: themeColor.green,
-        bg: rgba(themeColor.green, 0.1),
+        self: themeColor.base.green,
+        bg: rgba(themeColor.base.green, 0.1),
         hover: {
-          bg: rgba(themeColor.green, 0.3),
+          bg: rgba(themeColor.base.green, 0.3),
         },
       },
     },
     teal: {
-      self: themeColor.teal,
-      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.teal, 15) : scaleColorLight(themeColor.teal, 25),
+      self: themeColor.base.teal,
+      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.base.teal, 15) : scaleColorLight(themeColor.base.teal, 25),
       dark: {
-        num1: scaleColorLight(themeColor.teal, -10),
-        num2: scaleColorLight(themeColor.teal, -20),
+        num1: scaleColorLight(themeColor.base.teal, -10),
+        num2: scaleColorLight(themeColor.base.teal, -20),
       },
     },
     blue: {
-      self: themeColor.blue,
-      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.blue, 15) : scaleColorLight(themeColor.blue, 25),
+      self: themeColor.base.blue,
+      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.base.blue, 15) : scaleColorLight(themeColor.base.blue, 25),
       dark: {
-        num1: scaleColorLight(themeColor.blue, -10),
-        num2: scaleColorLight(themeColor.blue, -20),
+        num1: scaleColorLight(themeColor.base.blue, -10),
+        num2: scaleColorLight(themeColor.base.blue, -20),
       },
     },
     violet: {
-      self: themeColor.violet,
-      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.violet, 15) : scaleColorLight(themeColor.violet, 25),
+      self: themeColor.base.violet,
+      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.base.violet, 15) : scaleColorLight(themeColor.base.violet, 25),
       dark: {
-        num1: scaleColorLight(themeColor.violet, -10),
-        num2: scaleColorLight(themeColor.violet, -20),
+        num1: scaleColorLight(themeColor.base.violet, -10),
+        num2: scaleColorLight(themeColor.base.violet, -20),
       },
     },
     purple: {
-      self: themeColor.purple,
-      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.purple, 15) : scaleColorLight(themeColor.purple, 25),
+      self: themeColor.base.purple,
+      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.base.purple, 15) : scaleColorLight(themeColor.base.purple, 25),
       dark: {
-        num1: scaleColorLight(themeColor.purple, -10),
-        num2: scaleColorLight(themeColor.purple, -20),
+        num1: scaleColorLight(themeColor.base.purple, -10),
+        num2: scaleColorLight(themeColor.base.purple, -20),
       },
     },
     pink: {
-      self: themeColor.pink,
-      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.pink, 15) : scaleColorLight(themeColor.pink, 25),
+      self: themeColor.base.pink,
+      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.base.pink, 15) : scaleColorLight(themeColor.base.pink, 25),
       dark: {
-        num1: scaleColorLight(themeColor.pink, -10),
-        num2: scaleColorLight(themeColor.pink, -20),
+        num1: scaleColorLight(themeColor.base.pink, -10),
+        num2: scaleColorLight(themeColor.base.pink, -20),
       },
     },
     brown: {
-      self: themeColor.brown,
-      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.brown, 15) : scaleColorLight(themeColor.brown, 25),
+      self: themeColor.base.brown,
+      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.base.brown, 15) : scaleColorLight(themeColor.base.brown, 25),
       dark: {
-        num1: scaleColorLight(themeColor.brown, -10),
-        num2: scaleColorLight(themeColor.brown, -20),
+        num1: scaleColorLight(themeColor.base.brown, -10),
+        num2: scaleColorLight(themeColor.base.brown, -20),
       },
     },
     black: {
-      self: themeColor.black,
-      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.black, 15) : scaleColorLight(themeColor.black, 25),
+      self: themeColor.base.black,
+      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.base.black, 15) : scaleColorLight(themeColor.base.black, 25),
       dark: {
-        num1: scaleColorLight(themeColor.black, -10),
-        num2: scaleColorLight(themeColor.black, -20),
+        num1: scaleColorLight(themeColor.base.black, -10),
+        num2: scaleColorLight(themeColor.base.black, -20),
       },
     },
     grey: {
-      self: themeColor.grey,
-      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.grey, 15) : scaleColorLight(themeColor.grey, 25),
+      self: themeColor.base.grey,
+      light: themeColor.isDarkTheme ? scaleColorLight(themeColor.base.grey, 15) : scaleColorLight(themeColor.base.grey, 25),
     },
-    gold: themeColor.gold,
-    white: themeColor.white,
+    gold: themeColor.base.gold,
+    white: themeColor.base.white,
   };
 
   const message: Message = {
     error: {
       bg: {
-        self: rgba(themeColor.red, 0.1),
-        active: rgba(themeColor.red, 0.5),
-        hover: rgba(themeColor.red, 0.3),
+        self: rgba(themeColor.base.red, 0.1),
+        active: rgba(themeColor.base.red, 0.5),
+        hover: rgba(themeColor.base.red, 0.3),
       },
-      border: rgba(themeColor.red, 0.4),
-      text: saturate(0.2, themeColor.red), // 饱和度提高
+      border: rgba(themeColor.base.red, 0.4),
+      text: saturate(0.2, themeColor.base.red), // 饱和度提高
     },
     success: {
-      bg: rgba(themeColor.green, 0.1),
-      border: rgba(themeColor.green, 0.4),
-      text: saturate(0.2, themeColor.green),
+      bg: rgba(themeColor.base.green, 0.1),
+      border: rgba(themeColor.base.green, 0.4),
+      text: saturate(0.2, themeColor.base.green),
     },
     warning: {
-      bg: rgba(themeColor.yellow, 0.1),
-      border: rgba(themeColor.yellow, 0.4),
-      text: saturate(0.2, themeColor.yellow),
+      bg: rgba(themeColor.base.yellow, 0.1),
+      border: rgba(themeColor.base.yellow, 0.4),
+      text: saturate(0.2, themeColor.base.yellow),
     },
     info: {
-      bg: rgba(themeColor.blue, 0.1),
-      border: rgba(themeColor.blue, 0.4),
-      text: saturate(0.2, themeColor.blue),
+      bg: rgba(themeColor.base.blue, 0.1),
+      border: rgba(themeColor.base.blue, 0.4),
+      text: saturate(0.2, themeColor.base.blue),
     },
   };
 
@@ -326,7 +329,7 @@ export function defineTheme(themeColor: ThemeColor, chroma: Chroma | null = null
     yellow: themeVars.color.yellow.self,
     blue: themeVars.color.blue.self,
     magenta: themeVars.color.pink.self,
-    cyan: themeColor.cyan,
+    cyan: themeColor.base.cyan,
     white: themeVars.color.console.fg.subtle,
     bright: {
       black: themeVars.color.black.light,
@@ -335,7 +338,7 @@ export function defineTheme(themeColor: ThemeColor, chroma: Chroma | null = null
       yellow: themeVars.color.yellow.light,
       blue: themeVars.color.blue.light,
       magenta: themeVars.color.pink.light,
-      cyan: themeColor.isDarkTheme ? scaleColorLight(themeColor.cyan, 10) : scaleColorLight(themeColor.cyan, 25),
+      cyan: themeColor.isDarkTheme ? scaleColorLight(themeColor.base.cyan, 10) : scaleColorLight(themeColor.base.cyan, 25),
       white: themeVars.color.console.fg.self,
     },
   };
