@@ -49,7 +49,7 @@ THEMES = gitea-auto, gitea-light, gitea-dark, github-auto, github-light, github-
 ### 基本主题
 
 ```ini
-THEMES = github-auto, github-light, github-dark
+THEMES = github-auto, github-light, github-dark, github-soft-dark
 ```
 <details open>
 <summary>GitHub</summary>
