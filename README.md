@@ -70,7 +70,7 @@ THEMES = github-tritanopia-auto, github-tritanopia-light, github-tritanopia-dark
 ```
 
 <details>
-<summary>红绿色盲 & 蓝色盲 ( Colorblind & Tritanopia )</summary>
+<summary>Colorblind (红绿色盲) & Tritanopia (蓝色盲)</summary>
 <h4>theme-github-colorblind-light.css & theme-github-tritanopia-light.css</h4>
 <img src="screenshots/colorblind-light.png"/>
 <h4>theme-github-colorblind-dark.css & theme-github-tritanopia-dark.css</h4>
