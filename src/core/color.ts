@@ -84,7 +84,7 @@ export type ThemeColor = {
  *   github,
  * })
  */
-export function defineTheme(themeColor: ThemeColor, chroma: Chroma | null = null): Theme {
+export function defineTheme(themeColor: ThemeColor, chroma?: Chroma): Theme {
   const brightDir = themeColor.isDarkTheme ? -1 : 1;
 
   const primary: Primary = {

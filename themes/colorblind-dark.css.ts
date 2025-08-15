@@ -71,4 +71,4 @@ export const colorblindDarkPrettylights: prettylightsColor = {
 export const colorblindDarkColors: ThemeColor = github2ThemeColor(colorblindDarkGithubColors);
 export const colorblindDarkChroma: Chroma = prettylights2Chroma(colorblindDarkPrettylights);
 
-export default defineTheme(colorblindDarkColors);
+export default defineTheme(colorblindDarkColors, colorblindDarkChroma);
