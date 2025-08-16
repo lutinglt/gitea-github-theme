@@ -1,52 +1,57 @@
+<p align="center">
+  English |
+  <a href="./README_ZH.md">中文</a>
+</p>
+
 # gitea-github-theme
 
-一个精致模仿 Github 风格的 Gitea 主题
+A meticulously crafted Gitea theme that mimics the GitHub style
 
 > [!TIP]
 >
-> 推荐搭配文件图标浏览器插件一起使用更佳
+> For the best experience, it is recommended to use this theme with the file explorer icon plugin
 > [web-file-explorer-icons](https://github.com/catppuccin/web-file-explorer-icons)
 
-## 版本号说明
+## Version Number Explanation
 
-主题版本号与 Gitea 版本号保持一致
+The theme version number is kept consistent with the Gitea version number
 
-Gitea 版本号格式: `1.大版本号.小版本号`
+Gitea version number format: `1.major.minor`
 
-Gitea 理论上小版本号变更不会修改前端布局, 所以主题的小版本号适用于所有 Gitea 大版本号相同的 Gitea 版本.
+Theoretically, minor version changes in Gitea do not modify the frontend layout, so the minor version of the theme is applicable to all Gitea versions with the same major version number.
 
-比如: 主题版本 `1.24.5` 适用于 Gitea 版本 `>=1.24.0` `<1.25.0`
+For example: Theme version `1.24.5` is applicable to Gitea versions `>=1.24.0` `<1.25.0`
 
-仅维护项目发布中的最新的 Gitea 版本, 其他旧版本主题不接受 Issue 和 PR.
+Only the latest released Gitea version is maintained. Issues and PRs for other older theme versions will not be accepted.
 
-> 开发阶段的主题版本号格式: `1.大版本号.小版本号.时间戳`
+> Development stage theme version number format: `1.major.minor.timestamp`
 
-## 安装
+## Installation
 
-1. 在发布页下载最新的 CSS 主题文件放入 `gitea/public/assets/css` 目录下
-2. 修改 `gitea/conf/app.ini`，并将 CSS 文件名去掉 `theme-` 的名称附加到 `[ui]` 下的 `THEMES` 末尾
-3. 重启 Gitea
-4. 在设置中查看主题
+1. Download the latest CSS theme file from the release page and place it in the `gitea/public/assets/css` directory
+2. Modify `gitea/conf/app.ini` and append the CSS filename without the `theme-` prefix to the end of `THEMES` under the `[ui]` section
+3. Restart Gitea
+4. Check the theme in the settings
 
 > [!IMPORTANT]
 >
-> 自动颜色主题需要亮色和暗色的主题文件
+> Automatic color theme requires both light and dark theme files
 
-例: 主题文件名为 `theme-github-dark.css`，则添加 `github-dark` 到 `THEMES` 末尾
+Example: If the theme filename is `theme-github-dark.css`, add `github-dark` to the end of `THEMES`
 
-`gitea/conf/app.ini` 例:
+Example `gitea/conf/app.ini`:
 
 ```ini
 [ui]
 THEMES = gitea-auto, gitea-light, gitea-dark, github-auto, github-light, github-dark, github-soft-dark
 ```
 
-详细请查看 Gitea 文档
+For details, please refer to the Gitea documentation
 [Gitea docs](https://docs.gitea.com/next/administration/customizing-gitea#customizing-the-look-of-gitea)
 
-## 截图
+## Screenshots
 
-### 基本主题
+### Basic Themes
 
 ```ini
 THEMES = github-auto, github-light, github-dark, github-soft-dark
@@ -62,7 +67,7 @@ THEMES = github-auto, github-light, github-dark, github-soft-dark
 <img src="screenshots/soft-dark.png"/>
 </details>
 
-### 色盲主题 ( Beta )
+### Colorblind Themes (Beta)
 
 ```ini
 THEMES = github-colorblind-auto, github-colorblind-light, github-colorblind-dark
@@ -70,20 +75,20 @@ THEMES = github-tritanopia-auto, github-tritanopia-light, github-tritanopia-dark
 ```
 
 <details>
-<summary>Colorblind & Tritanopia (红绿色盲 & 蓝色盲)</summary>
+<summary>Colorblind & Tritanopia</summary>
 <h4>theme-github-colorblind-light.css & theme-github-tritanopia-light.css</h4>
 <img src="screenshots/colorblind-light.png"/>
 <h4>theme-github-colorblind-dark.css & theme-github-tritanopia-dark.css</h4>
 <img src="screenshots/colorblind-dark.png"/>
 </details>
 
-## 自定义 CSS 变量
+## Custom CSS Variables
 
-可以根据自己的偏好自定义主题的一部分样式
+You can customize parts of the theme style according to your preferences
 
-### 使用方法
+### Usage Method
 
-在主题的 CSS 文件的头部或尾部添加以下代码
+Add the following code at the beginning or end of the theme's CSS file
 
 ```css
 :root {
@@ -94,28 +99,28 @@ THEMES = github-tritanopia-auto, github-tritanopia-light, github-tritanopia-dark
 
 > [!IMPORTANT]
 >
-> 请确保在 `:root` 选择器中添加自定义变量，否则无法生效
+> Please ensure to add custom variables in the `:root` selector, otherwise they will not take effect
 >
-> 变量之间用 `;` 分隔
+> Variables are separated by `;`
 >
-> 建议自定义变量放在单独的文件中, 通过 shell 命令等方式追加到主题文件中
+> It is recommended to place custom variables in a separate file and append them to the theme file using shell commands or other methods
 
-### CSS 变量
+### CSS Variables
 
-| 变量名                            | 描述                        | 默认  | Github | 推荐  | 最小  | 最大  |
-| :-------------------------------- | :-------------------------- | :---- | :----- | :---- | :---- | :---- |
-| --custom-clone-menu-width         | 克隆按钮的菜单宽度          | Gitea | 332px  | 200px | 150px | 400px |
-| --custom-explore-repolist-columns | 探索页面的仓库列表列数      | 2     | 2      | 2     |       |       |
-| --custom-explore-userlist-columns | 探索页面的用户/组织列表列数 | 3     | 1      | 2/3   |       |       |
-| --custom-user-repolist-columns    | 用户页面的仓库列表列数      | 2     | 2      | 1/2   |       |       |
-| --custom-org-repolist-columns     | 组织页面的仓库列表列数      | 1     | 1      | 1/2   |       |       |
-| --custom-org-userlist-columns     | 组织页面的用户列表列数      | 2     | 1      | 1/2   |       |       |
+| Variable Name                     | Description                                   | Default | Github | Recommend | Min   | Max   |
+| :-------------------------------- | :-------------------------------------------- | :------ | :----- | :-------- | :---- | :---- |
+| --custom-clone-menu-width         | Clone button menu width                       | Gitea   | 332px  | 200px     | 150px | 400px |
+| --custom-explore-repolist-columns | Number of repository list columns on explore page | 2       | 2      | 2         |       |       |
+| --custom-explore-userlist-columns | Number of user/organization list columns on explore page | 3 | 1 | 2/3 | | |
+| --custom-user-repolist-columns    | Number of repository list columns on user page | 2       | 2      | 1/2       |       |       |
+| --custom-org-repolist-columns     | Number of repository list columns on organization page | 1 | 1 | 1/2 | | |
+| --custom-org-userlist-columns     | Number of user list columns on organization page | 2 | 1 | 1/2 | | |
 
-## 使用开发中的主题
+## Using Development Version of the Theme
 
-也许你会想使用开发中的主题, 而不是发布的主题
+You might want to use the development version of the theme instead of the released version
 
-请确保你已经安装了 Node.js 环境, 推荐使用 Node.js 20 或以上版本
+Please ensure you have Node.js environment installed, Node.js 20 or above is recommended
 
 ```bash
 git clone https://github.com/lutinglt/gitea-github-theme.git
@@ -124,9 +129,8 @@ npm install
 npm run build
 ```
 
-编译完成后, 会在 `dist` 目录下生成主题文件, 你可以将主题文件放入 `gitea/public/assets/css` 目录下, 然后在
-`gitea/conf/app.ini` 中添加主题名称到 `THEMES` 末尾
+After compilation, theme files will be generated in the `dist` directory. You can place the theme files into the `gitea/public/assets/css` directory, then add the theme name to the end of `THEMES` in `gitea/conf/app.ini`
 
-## 贡献
+## Contribution
 
-请查看 [CONTRIBUTING](CONTRIBUTING.md)
+Please refer to [CONTRIBUTING](CONTRIBUTING.md)
