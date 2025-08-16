@@ -73,7 +73,7 @@ export function prettylights2Chroma(prettylights: prettylightsColor): Chroma {
     string: {
       self: prettylights.syntax.string,
       affix: prettylights.syntax.string,
-      backtick: prettylights.syntax.string,
+      backtick: prettylights.syntax.constant,
       char: prettylights.syntax.string,
       delimiter: prettylights.syntax.string,
       doc: prettylights.syntax.comment,

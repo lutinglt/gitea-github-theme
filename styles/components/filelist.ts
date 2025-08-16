@@ -148,6 +148,13 @@ export const repoFilesMobile = css`
 
 // 仓库打开文件时的视图
 export const repoFileView = css`
+  // 隐藏主内容的下内容和页脚, 避免滚动文件树时滚动条遮挡
+  body > .full.height:has(.repo-view-file-tree-container) {
+    padding-bottom: 0;
+    + .page-footer {
+      display: none;
+    }
+  }
   .page-content.repository.file.list {
     > .ui.container.fluid {
       max-width: calc(100% - calc(2 * 16px));
@@ -157,16 +164,17 @@ export const repoFileView = css`
       top: 0;
       // 左侧文件树
       .repo-view-file-tree-container {
-        height: 100vh;
+        height: calc(100vh - 64px); // 减去头部高度
+        // 固定头部
         position: sticky;
         top: 0;
         &:after {
           content: "";
           position: absolute;
-          top: -14px;
+          top: -14px; // 导航栏元素的偏移高度补齐
           right: 0;
-          width: 1px;
-          height: calc(100% + 14px);
+          width: 1.5;
+          height: calc(100% + 14px + 64px); // 导航栏偏移高度 + 头部高度
           background: ${themeVars.color.secondary.self};
         }
         > .repo-button-row {
@@ -174,6 +182,7 @@ export const repoFileView = css`
           background: ${themeVars.color.body};
           height: 64px;
           margin: 0;
+          // 固定头部, 早期父元素有多余的页脚和内容高度导致滚动时无法固定, 修复后也可保留此属性无需删除
           position: sticky;
           top: 0;
           &:after {
@@ -193,6 +202,7 @@ export const repoFileView = css`
       }
       // 右侧文件视图内容
       .repo-view-content {
+        padding-bottom: 40px;
         .repo-button-row {
           align-content: center;
           background: ${themeVars.color.box.header};
