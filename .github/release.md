@@ -1,5 +1,7 @@
 ### 🌈 Style
 
+##### 更符合 GitHub 风格
+
 - 优化查看代码文件内容时的体验 (滚动到底部时不会导致文件树部分内容遮挡)
 
 ### 🐞 Fix
@@ -10,6 +12,8 @@
 ## 📃 English (From AI)
 
 ### 🌈 Style
+
+##### More GitHub-like style
 
 - Improved code file viewing experience (scrolling to bottom no longer causes file tree content overlap)
 

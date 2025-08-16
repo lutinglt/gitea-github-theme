@@ -11,3 +11,7 @@
 ### 🐞 Fix
 
 ## 📃 English
+
+#### CSS Variable
+
+##### More GitHub-like style

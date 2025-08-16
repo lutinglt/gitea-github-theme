@@ -197,7 +197,7 @@ export const repoFileView = css`
         }
         .view-file-tree-items {
           margin-right: 0;
-          padding: 16px 16px 16px 0;
+          padding: 12px 16px 8px 0;
         }
       }
       // 右侧文件视图内容
