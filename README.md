@@ -5,7 +5,7 @@
 
 # gitea-github-theme
 
-一个精致模仿 Github 风格的 Gitea 主题
+一个精致模仿 Github 风格的 Gitea 主题, 优化了非常多的细节, 简单的介绍很难说全, 欢迎上手体验
 
 > [!TIP]
 >

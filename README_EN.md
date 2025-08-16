@@ -5,7 +5,7 @@
 
 # gitea-github-theme
 
-A meticulously crafted Gitea theme that mimics the GitHub style
+A meticulously crafted Gitea theme that mimics the GitHub style, with numerous detailed optimizations that are difficult to fully describe in a brief introduction - welcome to experience it firsthand.
 
 > [!TIP]
 >
