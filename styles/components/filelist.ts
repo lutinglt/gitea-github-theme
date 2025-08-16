@@ -156,6 +156,15 @@ export const repoFileView = css`
     }
   }
   .page-content.repository.file.list {
+    &:has(.repo-view-file-tree-container) {
+      // 取消下间隔优化观看体验
+      .secondary-nav {
+        margin-bottom: 0 !important;
+        .ui.tabs.divider {
+          margin-bottom: 0;
+        }
+      }
+    }
     > .ui.container.fluid {
       max-width: calc(100% - calc(2 * 16px));
     }
@@ -171,15 +180,16 @@ export const repoFileView = css`
         &:after {
           content: "";
           position: absolute;
-          top: -14px; // 导航栏元素的偏移高度补齐
+          top: 0;
           right: 0;
           width: 1.5;
-          height: calc(100% + 14px + 64px); // 导航栏偏移高度 + 头部高度
+          height: calc(100% + 64px); // 头部高度
           background: ${themeVars.color.secondary.self};
         }
         > .repo-button-row {
           align-content: center;
           background: ${themeVars.color.body};
+          font-size: 16px;
           height: 64px;
           margin: 0;
           // 固定头部, 早期父元素有多余的页脚和内容高度导致滚动时无法固定, 修复后也可保留此属性无需删除
@@ -193,6 +203,9 @@ export const repoFileView = css`
             width: calc(100% + 16px);
             height: 1px;
             background: ${themeVars.color.secondary.self};
+          }
+          .ui.compact.icon.button {
+            border: 0;
           }
         }
         .view-file-tree-items {
@@ -208,30 +221,106 @@ export const repoFileView = css`
           background: ${themeVars.color.box.header};
           border: 1px solid ${themeVars.color.secondary.self};
           border-radius: ${otherThemeVars.border.radius};
+          margin: 16px 0;
           height: 46px;
           min-height: 46px;
           padding: 8px;
           position: sticky;
           top: 0;
           z-index: 1;
+          .ui.button {
+            min-height: 32px;
+          }
+          // 打开文件树按钮
+          .repo-view-file-tree-toggle-show {
+            background: initial;
+            border-color: #0000;
+            padding: 0;
+            min-width: 32px;
+          }
+          // 分支选择按钮
+          .branch-dropdown-button {
+            padding: 0 12px;
+          }
+          // 路径
+          .repo-path {
+            gap: 4px;
+            .section {
+              &:first-child,
+              &.active {
+                font-weight: 600;
+              }
+            }
+            .btn {
+              svg {
+                margin-left: 4px;
+                color: ${themeVars.color.text.light.num1};
+              }
+            }
+          }
         }
         .non-diff-file-content {
           // 避免分支菜单遮挡
           position: relative;
           z-index: 0;
           h4.file-header {
+            padding: 8px 12px !important;
             position: sticky;
             // 重叠边框线, 避免过粗
             top: 45px;
             z-index: 1;
+            .file-header-left {
+              color: ${themeVars.color.text.light.num1};
+              font-size: 12px;
+            }
+            .file-header-right {
+              // 按钮组
+              > .ui.buttons {
+                margin: 0 8px 0 0 !important; // 完全不知道为什么浏览器最终效果没生效, 只能 !important 了
+                .ui.mini.button {
+                  min-height: 28px;
+                  height: 28px;
+                  font-size: 12px;
+                  padding: 0 8px;
+                }
+              }
+              // 右侧操作按钮
+              > .btn-octicon {
+                display: flex;
+                align-items: center;
+                background: ${themeVars.color.button};
+                border: 1px solid ${themeVars.color.light.border};
+                height: 28px;
+                padding: 0 8px;
+                svg {
+                  color: ${themeVars.color.text.light.num1};
+                }
+                &:first-of-type {
+                  border-top-left-radius: ${otherThemeVars.border.radius};
+                  border-bottom-left-radius: ${otherThemeVars.border.radius};
+                }
+                &:last-of-type {
+                  border-top-right-radius: ${otherThemeVars.border.radius};
+                  border-bottom-right-radius: ${otherThemeVars.border.radius};
+                }
+                &:hover {
+                  background: ${themeVars.color.hover.self};
+                  color: ${themeVars.color.text.light.num1};
+                }
+              }
+            }
           }
         }
         // 头部提交信息
         .ui.segment#repo-file-commit-box {
           padding: 8px 12px;
-          margin-bottom: 8px !important;
+          margin-bottom: 16px !important;
+          min-height: 46px;
           > .latest-commit {
             gap: 8px;
+            .commit-summary {
+              color: ${themeVars.color.text.light.num1};
+            }
           }
           // 右侧提交时间
           > .age {
