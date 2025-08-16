@@ -96,6 +96,8 @@ export const repoFiles = css`
         }
         .file-header-left {
           padding: 6px 8px !important;
+          // 伪元素宽度等于按钮宽度而不是父元素宽度
+          position: relative;
           &:hover {
             background: ${themeVars.github.control.transparent.bgColor.hover};
             border-radius: ${otherThemeVars.border.radius};
@@ -104,11 +106,11 @@ export const repoFiles = css`
             content: "";
             background: ${themeVars.github.underlineNav.borderColor.active};
             border-radius: ${otherThemeVars.border.radius};
-            bottom: 0;
+            bottom: -8px;
+            left: 0;
             height: 2px;
             position: absolute;
-            left: 12px;
-            width: 113px;
+            width: 100%;
           }
           a.muted:hover {
             color: inherit;
