@@ -60,11 +60,11 @@ THEMES = github-auto, github-light, github-dark, github-soft-dark
 <details open>
 <summary>Base</summary>
 <h4>theme-github-light.css</h4>
-<img src="screenshots/light.png"/>
+<img src="screenshots/en/light.png"/>
 <h4>theme-github-dark.css</h4>
-<img src="screenshots/dark.png"/>
+<img src="screenshots/en/dark.png"/>
 <h4>theme-github-soft-dark.css</h4>
-<img src="screenshots/soft-dark.png"/>
+<img src="screenshots/en/soft-dark.png"/>
 </details>
 
 ### Colorblind Themes (Beta)
@@ -77,9 +77,9 @@ THEMES = github-tritanopia-auto, github-tritanopia-light, github-tritanopia-dark
 <details>
 <summary>Colorblind & Tritanopia</summary>
 <h4>theme-github-colorblind-light.css & theme-github-tritanopia-light.css</h4>
-<img src="screenshots/colorblind-light.png"/>
+<img src="screenshots/en/colorblind-light.png"/>
 <h4>theme-github-colorblind-dark.css & theme-github-tritanopia-dark.css</h4>
-<img src="screenshots/colorblind-dark.png"/>
+<img src="screenshots/en/colorblind-dark.png"/>
 </details>
 
 ## Custom CSS Variables
