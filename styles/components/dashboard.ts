@@ -1,7 +1,8 @@
 import { css, otherThemeVars, themeVars } from "src/types/vars";
 
 export const dashboard = css`
-  .page-content.dashboard {
+  // 首页仪表板, 避免选中管理员后台的维护管理面板
+  .page-content.dashboard.feeds {
     // 仓库列表的仓库/组织切换按钮
     .ui.two.item.menu {
       box-shadow: ${themeVars.github.shadow.floating.small};
