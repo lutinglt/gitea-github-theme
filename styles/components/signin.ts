@@ -3,14 +3,14 @@ import { css } from "src/types/vars";
 // 注册/登录界面
 export const signIn = css`
   .page-content.user.signin {
-    .ui.grid > .column {
-      width: 384px;
-      padding: 16px;
-      > .ui.container {
-        max-width: unset;
-      }
-      &:only-child {
-        width: 100%;
+    .ui.grid {
+      justify-content: center;
+      > .column {
+        width: 384px;
+        padding: 16px;
+        > .ui.container {
+          max-width: unset;
+        }
       }
     }
     .ui.top.attached.header {
@@ -18,6 +18,7 @@ export const signIn = css`
       font-size: 20px;
       font-weight: 600;
       background-color: unset !important;
+      text-align: center;
       padding: 16px;
     }
 
