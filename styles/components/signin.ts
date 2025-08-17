@@ -9,6 +9,9 @@ export const signIn = css`
       > .ui.container {
         max-width: unset;
       }
+      &:only-child {
+        width: 100%;
+      }
     }
     .ui.top.attached.header {
       border: 0;
