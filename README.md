@@ -3,7 +3,7 @@
   <a href="./README_EN.md">English</a>
 </p>
 
-# gitea-github-theme
+# Gitea GitHub Theme
 
 ## 版本号说明
 

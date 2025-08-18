@@ -3,7 +3,7 @@
   English
 </p>
 
-# gitea-github-theme
+# Gitea GitHub Theme
 
 ## Version Number Explanation
 
