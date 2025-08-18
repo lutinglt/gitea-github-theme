@@ -5,13 +5,6 @@
 
 # gitea-github-theme
 
-一个精致模仿 Github 风格的 Gitea 主题, 优化了非常多的细节, 简单的介绍很难说全, 欢迎上手体验
-
-> [!TIP]
->
-> 推荐搭配文件图标浏览器插件一起使用更佳
-> [web-file-explorer-icons](https://github.com/catppuccin/web-file-explorer-icons)
-
 ## 版本号说明
 
 主题版本号与 Gitea 版本号保持一致

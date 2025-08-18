@@ -5,13 +5,6 @@
 
 # gitea-github-theme
 
-A meticulously crafted Gitea theme that mimics the GitHub style, with numerous detailed optimizations that are difficult to fully describe in a brief introduction - welcome to experience it firsthand.
-
-> [!TIP]
->
-> For the best experience, it is recommended to use this theme with the file explorer icon plugin
-> [web-file-explorer-icons](https://github.com/catppuccin/web-file-explorer-icons)
-
 ## Version Number Explanation
 
 The theme version number is kept consistent with the Gitea version number
