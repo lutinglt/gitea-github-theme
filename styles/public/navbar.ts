@@ -35,7 +35,7 @@ export const navbarRight = css`
             grid-auto-flow: column;
             align-items: center;
             > svg {
-              margin-right: 8px;
+              margin-right: 4px;
             }
             // 三角号纠正高度保持居中
             .not-mobile {
