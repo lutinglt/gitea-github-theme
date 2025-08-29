@@ -67,6 +67,12 @@ export const label = css`
       }
     }
   }
+  .ui.small.label {
+    font-size: 12px;
+  }
+  .ui.mini.label {
+    font-size: 10px;
+  }
 `;
 
 // 提交中的 SHA 标签
