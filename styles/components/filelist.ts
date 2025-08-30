@@ -182,7 +182,7 @@ export const repoFileView = css`
           position: absolute;
           top: 0;
           right: 0;
-          width: 1.5;
+          width: 1px;
           height: calc(100% + 64px); // 头部高度
           background: ${themeVars.color.secondary.self};
         }
