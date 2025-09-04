@@ -73,21 +73,72 @@ export const releases = css`
       }
       // 右侧发布详细信息
       .segment.detail {
+        padding: 16px;
         .svg {
           color: ${themeVars.color.text.light.num1};
         }
+        // 标题
+        .release-list-title {
+          font-size: 32px;
+          gap: 16px;
+        }
+        // 提交信息
         p.text.grey {
-          margin: 16px 0;
+          display: flex;
+          gap: 6px;
+          flex-wrap: wrap;
+          margin: 32px 0 0 0;
+          span {
+            word-break: break-word;
+          }
           .time {
             color: ${themeVars.color.text.self};
           }
         }
+        // 发布内容
         .markup {
           > *:first-child {
-            margin-top: 16px !important;
+            margin-top: 32px !important;
           }
-          > *:last-child {
-            margin-bottom: 16px !important;
+        }
+        // 分割线
+        .divider {
+          position: relative;
+          left: -16px;
+          width: calc(100% + 32px);
+          border-top-width: 1.5px;
+          margin: 32px 0 16px 0;
+        }
+        // 下载列表
+        .download {
+          summary {
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 16px;
+            &::marker {
+              font-size: 14px;
+            }
+          }
+          .attachment-list {
+            margin-top: 16px;
+            .item {
+              align-items: center;
+              line-height: 17px;
+              padding: 8px 16px;
+              .flex-text-inline {
+                gap: 8px;
+              }
+              // 只选中左侧文件名称
+              strong.flex-text-inline:hover {
+                text-decoration: underline !important;
+              }
+              .attachment-right-info {
+                color: ${themeVars.color.text.light.num1};
+                .svg {
+                  height: 28px;
+                }
+              }
+            }
           }
         }
       }
