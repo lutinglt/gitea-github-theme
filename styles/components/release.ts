@@ -87,7 +87,7 @@ export const releases = css`
           display: flex;
           gap: 6px;
           flex-wrap: wrap;
-          margin: 32px 0 0 0;
+          margin: 24px 0 0 0;
           span {
             word-break: break-word;
           }
@@ -98,7 +98,7 @@ export const releases = css`
         // 发布内容
         .markup {
           > *:first-child {
-            margin-top: 32px !important;
+            margin-top: 24px !important;
           }
         }
         // 分割线
@@ -107,7 +107,7 @@ export const releases = css`
           left: -16px;
           width: calc(100% + 32px);
           border-top-width: 1.5px;
-          margin: 32px 0 16px 0;
+          margin: 24px 0 16px 0;
         }
         // 下载列表
         .download {
