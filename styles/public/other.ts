@@ -4,5 +4,6 @@ import { css } from "src/types/vars";
 export const listHeader = css`
   .list-header {
     align-items: center;
+    align-content: center;
   }
 `;

@@ -65,3 +65,58 @@ export const dashboard = css`
     }
   }
 `;
+
+export const dashboardIssues = css`
+  .page-content.dashboard.issues {
+    .list-header {
+      background-color: ${themeVars.color.box.header};
+      border: 1px solid ${themeVars.color.light.border};
+      border-bottom: 0;
+      border-top-left-radius: ${otherThemeVars.border.radius};
+      border-top-right-radius: ${otherThemeVars.border.radius};
+      height: 54px;
+      padding: 16px 8px;
+      .list-header-toggle {
+        align-items: center;
+        border: 0;
+        > .item {
+          background: unset !important;
+          border-radius: ${otherThemeVars.border.radius};
+          color: ${themeVars.color.text.light.num1};
+          padding: 0px 8px;
+          height: 30px;
+          &:before {
+            display: none;
+          }
+          &:hover {
+            background: ${themeVars.github.control.transparent.bgColor.hover} !important;
+          }
+          &.active {
+            color: ${themeVars.color.text.self};
+            font-weight: 700;
+          }
+        }
+      }
+      .list-header-filters {
+        > .item {
+          border-radius: ${otherThemeVars.border.radius};
+          color: ${themeVars.color.text.light.num1};
+          padding: 0px 12px;
+          height: 32px;
+          &:hover {
+            background: ${themeVars.github.control.transparent.bgColor.hover};
+          }
+        }
+      }
+    }
+  }
+`;
+
+// 避免手机/平板下菜单错位
+export const issueListMobile = css`
+  @media (max-width: 767.98px) {
+    .page-content.dashboard.issues .list-header {
+      height: auto;
+    }
+  }
+`;
