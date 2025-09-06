@@ -57,9 +57,13 @@ export const issueList = css`
       }
     }
   }
-  // Issue 列表
+  // 里程碑详细页面的 Issue 列表
   .page-content.repository.milestone-issue-list,
+  // 顶部仪表板的 Issue 列表
   .page-content.dashboard.issues,
+  // 用户订阅的 Issue 列表
+  .page-content.user.notification,
+  // 仓库 Issue 列表
   .page-content.repository.issue-list {
     .flex-list#issue-list {
       border: 1px solid ${themeVars.color.light.border};

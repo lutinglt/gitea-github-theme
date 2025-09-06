@@ -11,6 +11,7 @@ import "./heatmap";
 import "./issue";
 import "./milestones";
 import "./newrepo";
+import "./notification";
 import "./org";
 import "./release";
 import "./repo";
