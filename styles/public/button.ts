@@ -91,10 +91,17 @@ export const redButton = css`
 
 // 修复按钮高度
 export const fixButtonHeight = css`
+  // 修复一些主色调或者其他小按钮的高度避免过高
   .ui.small.buttons .button,
   .ui.ui.ui.ui.small.button {
     min-height: 26px;
     height: 32px;
+  }
+  // 修复因上面小按钮高度导致仓库星标克隆等按钮高度过高
+  .ui.labeled.button > .label,
+  .ui.ui.ui.ui.small.button.compact {
+    height: 28px;
+    min-height: 28px;
   }
   .ui.tiny.buttons .button,
   .ui.ui.ui.ui.tiny.button {
