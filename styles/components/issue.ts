@@ -3,6 +3,8 @@ import { activeItemAfterStyle } from "styles/public/menu";
 
 // 工单&PR 列表
 export const issueList = css`
+  // 仓库页面的里程碑列表菜单栏
+  .page-content.repository.milestones,
   .page-content.repository.issue-list {
     // 头部筛选菜单栏
     .issue-list-toolbar {
@@ -53,49 +55,74 @@ export const issueList = css`
         }
       }
     }
-    // Issue 列表
-    .flex-list#issue-list {
-      border: 1px solid ${themeVars.color.light.border};
-      border-bottom-left-radius: ${otherThemeVars.border.radius};
-      border-bottom-right-radius: ${otherThemeVars.border.radius};
-      > .flex-item {
-        align-items: center;
-        padding: 0;
-        &:last-child {
-          border-bottom-left-radius: ${otherThemeVars.border.radius};
-          border-bottom-right-radius: ${otherThemeVars.border.radius};
-        }
-        &:hover {
-          background-color: ${themeVars.color.hover.opaque};
-        }
-        > .flex-item-icon {
-          display: flex;
-          gap: 4px;
+  }
+  // Issue 列表
+  .page-content.repository.issue-list .flex-list#issue-list {
+    border: 1px solid ${themeVars.color.light.border};
+    border-bottom-left-radius: ${otherThemeVars.border.radius};
+    border-bottom-right-radius: ${otherThemeVars.border.radius};
+    > .flex-item {
+      align-items: center;
+      padding: 0;
+      &:last-child {
+        border-bottom-left-radius: ${otherThemeVars.border.radius};
+        border-bottom-right-radius: ${otherThemeVars.border.radius};
+      }
+      &:hover {
+        background-color: ${themeVars.color.hover.opaque};
+      }
+      > .flex-item-icon {
+        display: flex;
+        gap: 4px;
+        margin-left: 8px;
+        // 复选框
+        input {
+          background: unset;
+          margin-top: 14px;
           margin-left: 8px;
-          // 复选框
-          input {
-            background: unset;
-            margin-top: 14px;
-            margin-left: 8px;
-            margin-right: 8px !important;
-          }
-          svg {
-            margin-top: 14px;
-          }
+          margin-right: 8px !important;
         }
-        > .flex-item-main {
-          gap: 4px;
-          .flex-item-header {
-            padding-top: 8px;
-          }
-          .flex-item-body {
-            font-size: 12px;
-            padding-bottom: 8px;
-          }
+        svg {
+          margin-top: 14px;
         }
-        > .flex-item-trailing {
-          margin-right: 32px;
+      }
+      > .flex-item-main {
+        gap: 4px;
+        .flex-item-header {
+          padding-top: 8px;
         }
+        .flex-item-body {
+          font-size: 12px;
+          padding-bottom: 8px;
+        }
+      }
+      > .flex-item-trailing {
+        margin-right: 32px;
+      }
+    }
+  }
+  // 里程碑列表
+  .page-content.repository.milestones .milestone-list {
+    border: 1px solid ${themeVars.color.light.border};
+    border-bottom-left-radius: ${otherThemeVars.border.radius};
+    border-bottom-right-radius: ${otherThemeVars.border.radius};
+    .milestone-card {
+      padding: 8px 16px 10px 16px;
+      .milestone-header {
+        h3 {
+          font-size: 16px;
+          font-weight: 500;
+        }
+        div span {
+          font-size: 14px;
+          font-weight: 600;
+        }
+      }
+    }
+    .milestone-toolbar {
+      font-size: 12px;
+      .group > a {
+        font-size: 13px;
       }
     }
   }

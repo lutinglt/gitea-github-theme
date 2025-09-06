@@ -9,6 +9,7 @@ import "./explore";
 import "./filelist";
 import "./heatmap";
 import "./issue";
+import "./milestones";
 import "./newrepo";
 import "./org";
 import "./release";

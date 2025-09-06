@@ -13,3 +13,4 @@ import "./modal"; // 弹窗
 import "./tippy"; // 提示框
 import "./navbar"; // 导航栏
 import "./attached"; // 附加样式
+import "./other"; // 其他样式

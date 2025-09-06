@@ -94,6 +94,7 @@ export const fixButtonHeight = css`
   .ui.small.buttons .button,
   .ui.ui.ui.ui.small.button {
     min-height: 26px;
+    height: 32px;
   }
   .ui.tiny.buttons .button,
   .ui.ui.ui.ui.tiny.button {
