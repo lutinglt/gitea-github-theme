@@ -42,13 +42,24 @@ export const commit = css`
           color: ${themeVars.color.text.light.num1};
         }
       }
-      // 整行悬停色
-      tr:hover {
-        background-color: ${themeVars.color.hover.opaque};
-      }
-      // 偶数行悬停色
-      tr:nth-child(2n):hover {
-        background-color: ${themeVars.color.hover.opaque} !important;
+      tr {
+        // 整行悬停色
+        &:hover {
+          background-color: ${themeVars.color.hover.opaque};
+        }
+        // 偶数行悬停色
+        &:nth-child(2n):hover {
+          background-color: ${themeVars.color.hover.opaque} !important;
+        }
+        // 尾行圆角
+        &:last-child {
+          td:first-child {
+            border-bottom-left-radius: ${otherThemeVars.border.radius};
+          }
+          td:last-child {
+            border-bottom-right-radius: ${otherThemeVars.border.radius};
+          }
+        }
       }
     }
   }
