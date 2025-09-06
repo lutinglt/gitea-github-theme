@@ -146,6 +146,35 @@ export const issueListMobile = css`
   }
 `;
 
+// 置顶 Issue
+export const issuePins = css`
+  #issue-pins {
+    gap: 12px;
+    margin-bottom: 14px;
+    .issue-card {
+      padding: 16px 12px;
+      .content {
+        .issue-card-title {
+          font-size: 16px;
+          font-weight: 600;
+        }
+        svg {
+          color: ${themeVars.color.text.light.num1};
+          height: 100%;
+          margin-right: 3px;
+        }
+        .meta {
+          font-size: 12px;
+          padding-top: 4px;
+        }
+      }
+      .issue-card-bottom {
+        display: none;
+      }
+    }
+  }
+`;
+
 export const button = css`
   .issue-content-left .field.footer {
     // 关闭工单按钮
