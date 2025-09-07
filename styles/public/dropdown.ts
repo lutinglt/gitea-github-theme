@@ -1,5 +1,6 @@
 import { animationDown, animationUp } from "src/core/theme";
-import { css, otherThemeVars, themeVars } from "src/types/vars";
+import { fallbackVar } from "src/functions";
+import { css, customThemeVars, otherThemeVars, themeVars } from "src/types/vars";
 import { activeItemAfterStyle } from "styles/public/menu";
 
 export const dropdown = css`
@@ -194,8 +195,12 @@ export const fixSelectionDropdown = css`
 
 // 分支菜单
 export const branchDropdown = css`
-  .ui.dropdown.branch-selector-dropdown .menu > .item {
-    animation: ${animationDown};
+  .ui.dropdown.branch-selector-dropdown > .menu {
+    width: ${fallbackVar(customThemeVars.branchMenuWidth, "320px")};
+    max-width: 640px;
+    > .item {
+      animation: ${animationDown};
+    }
   }
 `;
 

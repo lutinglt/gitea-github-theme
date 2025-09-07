@@ -10,7 +10,7 @@ export const branchButton = css`
         border: 1px solid ${themeVars.color.light.border};
         margin-top: 1px;
         margin-left: auto;
-        margin-right: 16px; // gitea 有 RSS 留出足够的空间
+        margin-right: 20px; // gitea 有 RSS 留出足够的空间
       }
     }
   }
@@ -374,7 +374,7 @@ export const repoSidebarTop = css`
       .flex-item {
         padding: 10px 0 0 0;
         .flex-item-title {
-          margin-top: 2px;
+          margin-top: 4px;
         }
         .flex-item-body {
           padding: 8px 0 0 0;

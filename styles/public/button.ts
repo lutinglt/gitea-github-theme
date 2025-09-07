@@ -97,13 +97,19 @@ export const fixButtonHeight = css`
     min-height: 26px;
     height: 32px;
   }
-  // 修复因上面小按钮高度导致仓库星标克隆等按钮高度过高
-  .ui.labeled.button > .label,
-  .ui.ui.ui.ui.small.button.compact {
-    height: 28px;
-    min-height: 28px;
+  // 修复仓库页仓库操作按钮高度对齐和修正
+  .repo-button-row .ui.button {
+    min-height: 32px;
   }
-  .ui.tiny.buttons .button,
+  // 修复因上面小按钮高度导致仓库星标克隆等按钮高度过高
+  .repo-header {
+    .ui.ui.ui.ui.small.compact.button,
+    .ui.labeled.button > .label {
+      height: 28px;
+      min-height: 28px;
+    }
+  }
+  .ui.ui.ui.ui.small.button.compact .ui.tiny.buttons .button,
   .ui.ui.ui.ui.tiny.button {
     min-height: 20px;
   }
