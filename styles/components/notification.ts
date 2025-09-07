@@ -4,48 +4,6 @@ import { css, otherThemeVars, themeVars } from "src/types/vars";
 export const notification = css`
   .page-content.user.notification {
     > .ui.container {
-      // 应只选中订阅/关注页面, 不能选中通知页面
-      &:has(.flex-list) {
-        // 订阅/关注切换菜单
-        .ui.compact.small.menu.small-menu-items {
-          background: ${themeVars.color.hover.self} !important;
-          border: 0;
-          font-size: 14px;
-          gap: 8px;
-          > .item {
-            background: unset !important;
-            border: 1px solid ${themeVars.color.hover.self};
-            border-radius: ${otherThemeVars.border.radius};
-            padding: 6px 12px !important;
-            &.active {
-              background: ${themeVars.color.menu} !important;
-              border-color: ${themeVars.color.light.border};
-              font-weight: 600;
-            }
-            &::before {
-              display: none;
-            }
-            &:not(.active) {
-              // padding 纵向数值 + top 数值 = 8px 就居中
-              // 不明白啥原理, 反正 height 设为 100% 就可以了
-              top: 4px;
-              padding: 4px 12px !important;
-              height: 100%;
-              // 该方案只适用于 2 个 item 的情况
-              // left / right 数值为 gap 数值的一半
-              &:first-child {
-                left: 4px;
-              }
-              &:last-child {
-                right: 4px;
-              }
-              &:hover {
-                background: ${themeVars.github.control.transparent.bgColor.hover} !important;
-              }
-            }
-          }
-        }
-      }
       > .ui.attached.segment {
         border: 0;
         padding: 0;

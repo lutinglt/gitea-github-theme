@@ -236,3 +236,53 @@ export const paginationMenu = css`
     }
   }
 `;
+
+// 单行双选项菜单
+export const smallCompactMenu = css`
+  // 订阅/关注切换菜单(应只选中订阅/关注页面, 不能选中通知页面)
+  .page-content.user.notification > .ui.container:has(.flex-list),
+  // 里程碑/标签切换菜单(里程碑页)
+  .page-content.repository.milestones .list-header,
+  // 里程碑/标签切换菜单(标签页)
+  .page-content.repository.labels .issue-navbar {
+    .ui.compact.small.menu.small-menu-items {
+      background: ${themeVars.color.hover.self} !important;
+      border: 0;
+      font-size: 14px;
+      gap: 8px;
+      height: 32px;
+      min-height: 32px !important;
+      > .item {
+        background: unset !important;
+        border: 1px solid ${themeVars.color.hover.self};
+        border-radius: ${otherThemeVars.border.radius};
+        padding: 6px 12px !important;
+        &.active {
+          background: ${themeVars.color.menu} !important;
+          border-color: ${themeVars.color.light.border};
+          font-weight: 600;
+        }
+        &::before {
+          display: none;
+        }
+        &:not(.active) {
+          top: 4px;
+          padding: 4px 12px !important;
+          height: calc(100% - 8px);
+          position: relative;
+          // 该方案只适用于 2 个 item 的情况
+          // left / right 数值为 gap 数值的一半
+          &:first-child {
+            left: 4px;
+          }
+          &:last-child {
+            right: 4px;
+          }
+          &:hover {
+            background: ${themeVars.github.control.transparent.bgColor.hover} !important;
+          }
+        }
+      }
+    }
+  }
+`;

@@ -22,8 +22,9 @@ export const dashboard = css`
           display: none;
         }
         &:not(.active) {
-          margin: 4px !important;
-          width: calc(50% - 8px);
+          border-radius: ${otherThemeVars.border.radius};
+          margin: 6px !important;
+          width: calc(50% - 12px);
           &:hover {
             background: ${themeVars.github.control.transparent.bgColor.hover};
           }

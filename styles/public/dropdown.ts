@@ -78,6 +78,14 @@ export const dropdown = css`
       margin-bottom: 4px !important;
     }
   }
+  // 修复 wiki 的页面下拉菜单圆角
+  .ui.floating.dropdown > .menu {
+    border-radius: 12px !important;
+  }
+  // 修复嵌套菜单的圆角问题, wiki 页面和组织页面的用户下拉菜单
+  .ui.dropdown .menu .scrolling.menu {
+    border-radius: 0 0 12px 12px !important;
+  }
   // 修复下拉菜单元素溢出问题
   // 用户菜单
   .user-menu>.item,
