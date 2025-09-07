@@ -74,7 +74,11 @@ export const activity = css`
       }
       > .flex-item-main {
         gap: 8px !important;
-
+        > div:not([class]) {
+          display: flex;
+          gap: 8px;
+          flex-wrap: wrap;
+        }
         relative-time {
           color: ${themeVars.color.text.light.num1};
         }
