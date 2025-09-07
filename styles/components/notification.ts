@@ -164,9 +164,11 @@ export const notification = css`
           > .notifications-buttons {
             .interact-bg {
               background: ${themeVars.github.bgColor.accent.muted} !important;
+              color: ${themeVars.color.text.light.num1};
               padding: 8px !important;
               &:hover {
                 background: ${themeVars.github.control.transparent.bgColor.hover} !important;
+                color: ${themeVars.color.text.self};
               }
             }
           }
