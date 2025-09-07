@@ -60,6 +60,7 @@ export type GithubColor = {
   button: {
     primary: { fgColor: { rest: string }; bgColor: { hover: string } };
     danger: { fgColor: { rest: string; hover: string }; bgColor: { hover: string } };
+    star: { iconColor: string };
   };
   control: {
     bgColor: { active: string; hover: string; rest: string };
@@ -280,6 +281,9 @@ export function github2ThemeColor(githubColor: GithubColor): ThemeColor {
         borderColor: {
           hover: githubColor.borderColor.translucent,
         },
+      },
+      star: {
+        iconColor: githubColor.button.star.iconColor,
       },
     },
     control: {

@@ -56,6 +56,7 @@ export const lightGithubColors: GithubColor = {
   button: {
     primary: { fgColor: { rest: "#ffffff" }, bgColor: { hover: "#1c8139" } },
     danger: { fgColor: { rest: "#d1242f", hover: "#ffffff" }, bgColor: { hover: "#cf222e" } },
+    star: { iconColor: "#eac54f" },
   },
   control: {
     bgColor: { active: "#e6eaef", hover: "#eff2f5", rest: "#f6f8fa" },

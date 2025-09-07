@@ -160,6 +160,10 @@ export const github = {
         hover: null,
       },
     },
+    star: {
+      /** 已标星的星星颜色 */
+      iconColor: null,
+    },
   },
   control: {
     bgColor: {

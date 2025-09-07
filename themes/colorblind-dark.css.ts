@@ -30,6 +30,7 @@ export const colorblindDarkGithubColors: GithubColor = {
   button: {
     primary: { fgColor: { rest: "#ffffff" }, bgColor: { hover: "#2a7aef" } },
     danger: { fgColor: { rest: "#f0883e", hover: "#ffffff" }, bgColor: { hover: "#9b4215" } },
+    star: darkGithubColors.button.star,
   },
   control: darkGithubColors.control,
   shadow: darkGithubColors.shadow,
