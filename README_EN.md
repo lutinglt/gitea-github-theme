@@ -104,14 +104,15 @@ Add the following code at the beginning or end of the theme's CSS file
 
 ### CSS Variables
 
-| Variable Name                     | Description                                              | Default | Github | Recommend | Min   | Max   |
-| :-------------------------------- | :------------------------------------------------------- | :------ | :----- | :-------- | :---- | :---- |
-| --custom-clone-menu-width         | Clone button menu width                                  | Gitea   | 332px  | 200px     | 150px | 400px |
-| --custom-explore-repolist-columns | Number of repository list columns on explore page        | 2       | 2      | 2         |       |       |
-| --custom-explore-userlist-columns | Number of user/organization list columns on explore page | 3       | 1      | 2/3       |       |       |
-| --custom-user-repolist-columns    | Number of repository list columns on user page           | 2       | 2      | 1/2       |       |       |
-| --custom-org-repolist-columns     | Number of repository list columns on organization page   | 1       | 1      | 1/2       |       |       |
-| --custom-org-userlist-columns     | Number of user list columns on organization page         | 2       | 1      | 1/2       |       |       |
+| Variable Name                     | Description                                              | Default | Github | Recommend | Min           | Max   |
+| :-------------------------------- | :------------------------------------------------------- | :------ | :----- | :-------- | :------------ | :---- |
+| --custom-clone-menu-width         | Clone button menu width                                  | Gitea   | 332px  | 200px     | 150px         | 400px |
+| --custom-user-menu-width          | User menu width                                          | 192px   | 200px  |           | Content Width | 320px |
+| --custom-explore-repolist-columns | Number of repository list columns on explore page        | 2       | 2      | 2         |               |       |
+| --custom-explore-userlist-columns | Number of user/organization list columns on explore page | 3       | 1      | 2/3       |               |       |
+| --custom-user-repolist-columns    | Number of repository list columns on user page           | 2       | 2      | 1/2       |               |       |
+| --custom-org-repolist-columns     | Number of repository list columns on organization page   | 1       | 1      | 1/2       |               |       |
+| --custom-org-userlist-columns     | Number of user list columns on organization page         | 2       | 1      | 1/2       |               |       |
 
 ## Using Development Version of the Theme
 

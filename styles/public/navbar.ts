@@ -1,4 +1,5 @@
-import { css, otherThemeVars, themeVars } from "src/types/vars";
+import { fallbackVar } from "src/functions";
+import { css, customThemeVars, otherThemeVars, themeVars } from "src/types/vars";
 
 export const navbarRight = css`
   #navbar {
@@ -89,6 +90,24 @@ export const navbarRight = css`
           top: -14px;
           left: 12px;
         }
+      }
+    }
+    // 用户菜单
+    .navbar-right .user-menu {
+      width: ${fallbackVar(customThemeVars.userMenuWidth, "192px")};
+      max-width: 320px;
+      > .header {
+        font-size: 14px;
+        font-weight: 400;
+        margin: 0;
+        padding: 16px 16px 8px 16px;
+        strong {
+          font-weight: 600;
+        }
+      }
+      > .divider {
+        margin: 8px;
+        width: calc(100% - 16px);
       }
     }
   }

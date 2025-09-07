@@ -16,19 +16,18 @@ export const dropdown = css`
       > .item:not(.tw-hidden) {
         display: flex !important;
         align-items: center;
-        gap: 0.5rem;
-        padding: 8px 10px !important;
+        padding: 6px 8px !important;
         border-radius: ${otherThemeVars.border.radius} !important;
         &:not(.emoji) {
-          margin: 0 0.5rem;
+          margin: 0 8px;
         }
         &:not(.emoji):first-of-type {
-          margin-top: 0.5rem;
+          margin-top: 8px;
         }
         // 不知道为什么提交差异对比页面操作中的 cherrypick 按钮无法被选中
         &.cherry-pick-button,
         &:not(.emoji):last-of-type {
-          margin-bottom: 0.5rem;
+          margin-bottom: 8px;
         }
         &:hover {
           background-color: ${themeVars.github.control.transparent.bgColor.hover} !important;
@@ -46,9 +45,17 @@ export const dropdown = css`
             ${activeItemAfterStyle};
           }
         }
+        svg {
+          margin-top: 2px;
+          margin-right: 8px;
+        }
+        // 复选框对齐
+        .ui.checkbox input[type="checkbox"] {
+          height: 100%;
+        }
       }
       > .divider {
-        margin: 0.5rem 0;
+        margin: 8px 0;
       }
       &:after {
         display: none !important;
@@ -59,7 +66,7 @@ export const dropdown = css`
   .ui.dropdown:not(.upward),
   .ui.menu .ui.dropdown:not(.upward) {
     .menu {
-      margin-top: 0.35em !important;
+      margin-top: 4px !important;
     }
   }
   // 向上弹出的下拉菜单向上偏移
@@ -67,7 +74,7 @@ export const dropdown = css`
   .ui.menu .ui.dropdown.upward {
     .menu {
       animation: ${animationUp};
-      margin-bottom: 0.35em !important;
+      margin-bottom: 4px !important;
     }
   }
   // 修复下拉菜单元素溢出问题

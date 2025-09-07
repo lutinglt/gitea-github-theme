@@ -34,6 +34,7 @@ const otherVars = { border: { radius: null }, color: { ...color.otherAuto } };
 
 const customVars = {
   cloneMenuWidth: "clone-menu-width",
+  userMenuWidth: "user-menu-width",
   explore: { repolistColumns: "explore-repolist-columns", userlistColumns: "explore-userlist-columns" },
   userRepolistColumns: "user-repolist-columns",
   org: { repolistColumns: "org-repolist-columns", userlistColumns: "org-userlist-columns" },
