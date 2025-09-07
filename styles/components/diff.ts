@@ -31,7 +31,6 @@ export const diff = css`
   .code-expander-button {
     color: ${themeVars.color.text.light.num1};
     height: 28px !important;
-
     &:hover {
       background: ${themeVars.github.bgColor.accent.emphasis};
       color: ${themeVars.color.white};
@@ -40,5 +39,34 @@ export const diff = css`
   /* 行号居中 */
   .lines-num {
     text-align: center !important;
+  }
+  // 差异对比文件盒子
+  .diff-file-box {
+    // 差异对比文件头
+    .diff-file-header {
+      // 文件名
+      .diff-file-name {
+        font-weight: 400;
+        .fold-file.btn svg {
+          min-width: 16px;
+          min-height: 16px;
+          height: 16px;
+          width: 16px;
+        }
+        .diff-stats-bar {
+          height: 8px;
+        }
+        > div,
+        .file-link {
+          font-size: 12px;
+        }
+      }
+      // 操作按钮
+      .diff-file-header-actions {
+        color: ${themeVars.color.text.light.num1};
+        font-size: 12px;
+        font-weight: 400;
+      }
+    }
   }
 `;
