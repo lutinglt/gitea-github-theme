@@ -57,6 +57,36 @@ export const notification = css`
             }
           }
         }
+        // 关注列表
+        > .flex-list:not([id]) {
+          border: 1px solid ${themeVars.color.light.border};
+          border-radius: ${otherThemeVars.border.radius};
+          > .flex-item {
+            padding: 16px;
+            > .flex-item-main {
+              gap: 4px;
+              > .flex-item-header {
+                > .flex-item-title {
+                  gap: 12px;
+                }
+                > .flex-item-trailing {
+                  color: ${themeVars.color.text.light.num1};
+                  font-size: 12px;
+                  font-weight: 400;
+                  gap: 16px;
+                  .color-icon {
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 0 !important;
+                  }
+                }
+              }
+              > .flex-item-body:last-child {
+                font-size: 12px;
+              }
+            }
+          }
+        }
       }
     }
   }
