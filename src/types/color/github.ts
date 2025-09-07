@@ -37,6 +37,7 @@ export const github = {
        * @repo `repoTopic` 仓库主题标签背景颜色
        * @actions `actions` 分支标签按钮背景颜色
        * @actions `actionViewHeader` 分支标签按钮背景颜色
+       * @notification `notification` 通知列表悬停时的背景颜色
        */
       muted: null,
     },
@@ -62,6 +63,7 @@ export const github = {
        * @issue `comment` 评论框被选中时的边框颜色
        * @menu `verticalMenu` 垂直菜单项激活时左侧的伪元素颜色
        * @dropdown `selectionDropdown` 选择输入框的内部边框颜色
+       * @notification `notification` 通知列表悬停时的左边框颜色
        */
       emphasis: null,
     },
@@ -180,6 +182,7 @@ export const github = {
          * @issue `issueSidebar` 操作按钮的悬停背景颜色
          * @issue `issueList` 头部菜单左侧开启关闭菜单的悬停背景颜色
          * @dashboard `dashboard` 仓库列表项目的悬停背景颜色
+         * @notification `notification` 通知列表的按钮悬停背景颜色
          */
         hover: null,
       },

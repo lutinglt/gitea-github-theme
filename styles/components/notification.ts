@@ -88,6 +88,90 @@ export const notification = css`
           }
         }
       }
+      // 通知列表
+      &:has(#notification_table) {
+        > .tw-flex:first-child {
+          background-color: ${themeVars.color.box.header};
+          border: 1px solid ${themeVars.color.light.border};
+          border-bottom: 0;
+          border-top-left-radius: ${otherThemeVars.border.radius};
+          border-top-right-radius: ${otherThemeVars.border.radius};
+          height: 52px;
+          padding: 8px;
+          margin-bottom: 0 !important;
+          // 左侧菜单
+          > .ui.compact.menu {
+            align-items: center;
+            border: 0;
+            > .item {
+              background: unset !important;
+              border-radius: ${otherThemeVars.border.radius};
+              color: ${themeVars.color.text.light.num1};
+              padding: 0px 8px;
+              height: 30px;
+              &:before {
+                display: none;
+              }
+              &:hover {
+                background: ${themeVars.github.control.transparent.bgColor.hover} !important;
+              }
+              &.active {
+                color: ${themeVars.color.text.self};
+                font-weight: 700;
+              }
+              .notifications-unread-count {
+                margin-left: 4px;
+              }
+            }
+          }
+        }
+        // 通知全部确认按钮
+        .ui.ui.ui.ui.mini.button {
+          height: 32px;
+        }
+      }
+      // 通知列表
+      #notification_table {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        color: ${themeVars.color.text.light.num1};
+        > .notifications-item {
+          border-top: 1px solid ${themeVars.color.light.border};
+          padding: 8px !important;
+          &:first-child {
+            border-top: 0;
+          }
+          &:last-child {
+            border-bottom-left-radius: ${otherThemeVars.border.radius};
+            border-bottom-right-radius: ${otherThemeVars.border.radius};
+          }
+          &:hover {
+            background: ${themeVars.github.bgColor.accent.muted};
+            box-shadow: 2px 0 0 ${themeVars.github.borderColor.accent.emphasis} inset;
+            color: ${themeVars.color.text.self};
+          }
+          > .notifications-link {
+            > .notifications-top-row {
+              font-size: 12px !important;
+            }
+            > .notifications-bottom-row {
+              font-size: 14px !important;
+            }
+          }
+          > .notifications-updated {
+            font-size: 12px;
+          }
+          > .notifications-buttons {
+            .interact-bg {
+              background: ${themeVars.github.bgColor.accent.muted} !important;
+              padding: 8px !important;
+              &:hover {
+                background: ${themeVars.github.control.transparent.bgColor.hover} !important;
+              }
+            }
+          }
+        }
+      }
     }
   }
 `;
