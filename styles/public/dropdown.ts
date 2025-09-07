@@ -66,14 +66,14 @@ export const dropdown = css`
   // 向下弹出的下拉菜单向下偏移
   .ui.dropdown:not(.upward),
   .ui.menu .ui.dropdown:not(.upward) {
-    .menu {
+    > .menu {
       margin-top: 4px !important;
     }
   }
   // 向上弹出的下拉菜单向上偏移
   .ui.dropdown.upward,
   .ui.menu .ui.dropdown.upward {
-    .menu {
+    > .menu {
       animation: ${animationUp};
       margin-bottom: 4px !important;
     }
@@ -198,7 +198,7 @@ export const branchDropdown = css`
   .ui.dropdown.branch-selector-dropdown > .menu {
     width: ${fallbackVar(customThemeVars.branchMenuWidth, "320px")};
     max-width: 640px;
-    > .item {
+    > .menu > .item {
       animation: ${animationDown};
     }
   }
