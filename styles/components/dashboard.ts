@@ -5,16 +5,28 @@ export const dashboard = css`
   .page-content.dashboard.feeds {
     // 仓库列表的仓库/组织切换按钮
     .ui.two.item.menu {
-      box-shadow: ${themeVars.github.shadow.floating.small};
-      border: unset;
+      background: ${themeVars.color.hover.self};
+      border: 0;
       border-radius: 12px;
       margin-bottom: 8px;
       > .item {
-        &:first-child {
-          border-radius: 12px 0 0 12px;
+        background: unset;
+        border-radius: 12px;
+        padding: 6px 12px !important;
+        &.active {
+          background: ${themeVars.color.menu};
+          box-shadow: ${themeVars.github.shadow.floating.small};
+          font-weight: 600;
         }
-        &:last-child {
-          border-radius: 0 12px 12px 0;
+        &::before {
+          display: none;
+        }
+        &:not(.active) {
+          margin: 4px !important;
+          width: calc(50% - 8px);
+          &:hover {
+            background: ${themeVars.github.control.transparent.bgColor.hover};
+          }
         }
       }
     }
@@ -66,6 +78,7 @@ export const dashboard = css`
   }
 `;
 
+// 导航栏的工单/PR/里程碑仪表板
 export const dashboardIssues = css`
   .page-content.dashboard.issues {
     .list-header {
