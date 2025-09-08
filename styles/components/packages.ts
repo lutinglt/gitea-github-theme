@@ -97,6 +97,25 @@ export const packagesDetail = css`
             svg {
               color: ${themeVars.color.text.self};
             }
+            // 应该只选中版本中的 a 标签
+            &.tw-flex {
+              justify-content: space-between;
+              > a {
+                border: 1px solid ${themeVars.color.light.border};
+                border-radius: 25px;
+                font-size: 12px;
+                padding: 0px 6px;
+                min-height: 20px;
+                flex: none !important;
+                &:hover {
+                  text-decoration: none;
+                }
+              }
+              // 不知道什么东西
+              &::after {
+                display: none;
+              }
+            }
           }
         }
       }
