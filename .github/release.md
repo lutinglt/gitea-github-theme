@@ -1,3 +1,14 @@
+### 🎉 已完成大部分页面的 GitHub 风格 ( GitHub Style Completed for Most Pages )
+
+如果你正在使用旧版本, 强烈推荐更新为该版本, 因为该版本已经完成了大部分常用页面的 GitHub 风格, 并且修复了一些已知的问题.
+
+If you are using an older version, it is strongly recommended to update to this version, as it has implemented the
+GitHub style for most commonly used pages and fixed some known issues.
+
+项目和 Wiki 页面因为布局原因, 暂时没有想好如何同步 GitHub 风格.
+
+The Project and Wiki pages, due to layout reasons, have not yet been adapted to the GitHub style.
+
 ### ✨ Feature
 
 #### CSS 变量
