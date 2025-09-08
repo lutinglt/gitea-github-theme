@@ -201,6 +201,7 @@ export const paginationMenu = css`
     background-color: unset;
     border: 0;
     gap: 4px;
+    min-height: fit-content;
     .item {
       border-radius: ${otherThemeVars.border.radius};
       min-width: 32px;
