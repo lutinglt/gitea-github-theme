@@ -1,7 +1,10 @@
-import { css, otherThemeVars, themeVars } from "src/types/vars";
+import { css, themeVars } from "src/types/vars";
 
 export const heatmap = css`
   #user-heatmap {
+    + .divider:not(.divider-text) {
+      margin: 16px 0;
+    }
     .total-contributions {
       left: 25px + 20px;
       bottom: 0 + 12px;
@@ -12,8 +15,8 @@ export const heatmap = css`
     }
     .vch__container {
       padding: 12px 20px;
-      border: 1px solid ${themeVars.color.secondary.self};
-      border-radius: ${otherThemeVars.border.radius};
+      box-shadow: ${themeVars.github.shadow.floating.small};
+      border-radius: 12px;
       // 覆盖热力图和图例的背景色
       .vch__day__square,
       .vch__legend__wrapper rect {
@@ -65,13 +68,12 @@ export const heatmap = css`
 
 // 动态
 export const activity = css`
-  #activity-feed {
-    .flex-item {
+  .flex-list#activity-feed {
+    border-radius: 12px;
+    box-shadow: ${themeVars.github.shadow.floating.small};
+    > .flex-item {
       gap: 12px;
-      padding: 16px 0;
-      &:first-child {
-        padding-top: 6px;
-      }
+      padding: 12px 8px 16px 12px;
       > .flex-item-main {
         gap: 8px !important;
         > div:not([class]) {
@@ -88,6 +90,10 @@ export const activity = css`
         height: 20px;
         width: 20px;
       }
+    }
+    > .page.buttons {
+      border-top: 1px solid ${themeVars.color.light.border};
+      padding: 16px;
     }
   }
 `;

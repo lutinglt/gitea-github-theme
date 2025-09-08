@@ -197,6 +197,9 @@ export const github = {
       /** 悬浮阴影
        * @tippy `tippyBox` 悬浮框阴影
        * @dropdown `dropdown` 下拉框阴影
+       * @dashboard `dashboard` 仓库/组织切换按钮和列表边框和阴影
+       * @heatmap `heatmap` 热力图阴影
+       * @heatmap `activity` 动态活动阴影
        */
       small: null,
     },
