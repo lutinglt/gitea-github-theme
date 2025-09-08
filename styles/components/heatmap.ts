@@ -73,7 +73,7 @@ export const activity = css`
     box-shadow: ${themeVars.github.shadow.floating.small};
     > .flex-item {
       gap: 12px;
-      padding: 12px 8px 16px 12px;
+      padding: 12px 8px 16px 14px;
       > .flex-item-main {
         gap: 8px !important;
         > div:not([class]) {
@@ -93,7 +93,7 @@ export const activity = css`
     }
     > .page.buttons {
       border-top: 1px solid ${themeVars.color.light.border};
-      padding: 16px;
+      padding: 12px 0px;
     }
   }
 `;
