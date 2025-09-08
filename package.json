@@ -1,7 +1,6 @@
 {
   "name": "gitea-github-theme",
   "version": "1.24.6",
-  "description": "A sophisticated theme to make Gitea look and feel like GitHub",
   "type": "module",
   "scripts": {
     "dev": "vite build --mode dev",

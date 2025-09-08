@@ -522,37 +522,53 @@ const sidebarPadding = {
 
 // 侧边栏
 export const issueSidebar = css`
-  .issue-content {
-    gap: 24px;
-    .issue-content-right {
-      border: 0;
-      font-size: 12px;
-      padding: 0;
-      .ui.button {
+  .repository.view.issue {
+    .issue-content {
+      gap: 24px;
+      .issue-content-right {
+        border: 0;
         font-size: 12px;
-      }
-      .ui.form,
-      a.fixed-text.muted,
-      span.text,
-      // 列表项为空时的文字
-      span.item.empty-list,
-      p {
-        color: ${themeVars.color.text.light.num1};
-        font-size: 12px;
-      }
-      .ui.dropdown.select-branch,
-      .ui.form,
-      a.fixed-text.muted,
-      span.text,
-      .ui.watching > div,
-      .ui.depending > div,
-      .flex-text-block,
-      .ui.list,
-      p {
-        ${sidebarPadding};
-      }
-      .issue-sidebar-combo {
-        .ui.dropdown > a.fixed-text.muted {
+        padding: 0;
+        .ui.button {
+          font-size: 12px;
+        }
+        .ui.form,
+        a.fixed-text.muted,
+        span.text,
+        // 列表项为空时的文字
+        span.item.empty-list,
+        p {
+          color: ${themeVars.color.text.light.num1};
+          font-size: 12px;
+        }
+        .ui.dropdown.select-branch,
+        .ui.form,
+        a.fixed-text.muted,
+        span.text,
+        .ui.watching > div,
+        .ui.depending > div,
+        .flex-text-block,
+        .ui.list,
+        p {
+          ${sidebarPadding};
+        }
+        .issue-sidebar-combo {
+          .ui.dropdown > a.fixed-text.muted {
+            align-items: center;
+            border-radius: ${otherThemeVars.border.radius};
+            text-decoration-line: none;
+            height: 28px;
+            &:hover {
+              background: ${themeVars.github.control.transparent.bgColor.hover};
+            }
+          }
+          .ui.list {
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+          }
+        }
+        // 时间追踪
+        > div:not([class]):not([id]) > .ui.dropdown.jump > a.fixed-text.muted {
           align-items: center;
           border-radius: ${otherThemeVars.border.radius};
           text-decoration-line: none;
@@ -561,62 +577,48 @@ export const issueSidebar = css`
             background: ${themeVars.github.control.transparent.bgColor.hover};
           }
         }
-        .ui.list {
-          margin-top: 0 !important;
-          margin-bottom: 0 !important;
+        // 选中日期颜色
+        .ui.form .due-date {
+          color: ${themeVars.color.text.self};
         }
-      }
-      // 时间追踪
-      > div:not([class]):not([id]) > .ui.dropdown.jump > a.fixed-text.muted {
-        align-items: center;
-        border-radius: ${otherThemeVars.border.radius};
-        text-decoration-line: none;
-        height: 28px;
-        &:hover {
-          background: ${themeVars.github.control.transparent.bgColor.hover};
+        .divider {
+          margin: 12px 0 12px 8px;
+          width: calc(100% - 16px);
         }
-      }
-      // 选中日期颜色
-      .ui.form .due-date {
-        color: ${themeVars.color.text.self};
-      }
-      .divider {
-        margin: 12px 0 12px 8px;
-        width: calc(100% - 16px);
-      }
-      // 订阅按钮
-      .ui.watching .ui.button {
-        padding: 0px 8px;
-        height: 28px;
-        svg {
-          margin: 0 !important;
-        }
-      }
-      // PIN 按钮
-      .form-fetch-action.single-button-form .ui.button,
-      // 底部操作按钮
-      .ui.show-modal.button {
-        border: 0;
-        background: unset;
-        font-weight: 400;
-        ${sidebarPadding};
-        // 好像是浏览器 BUG, 最后不生效, 必须 !important
-        margin: 0 !important;
-        justify-content: left;
-        &:hover {
-          background: ${themeVars.github.control.transparent.bgColor.hover};
-        }
-      }
-      .ui.show-modal.button[data-modal="#sidebar-delete-issue"] {
-        color: ${themeVars.color.red.self};
-        svg {
-          color: ${themeVars.color.red.self};
-        }
-        &:hover {
-          background-color: ${themeVars.color.red.badge.bg};
-          color: ${themeVars.color.red.light};
+        // 订阅按钮
+        .ui.watching .ui.button {
+          padding: 0px 8px;
+          height: 28px;
           svg {
+            margin: 0 !important;
+          }
+        }
+        // PIN 按钮
+        .form-fetch-action.single-button-form .ui.button,
+        // 底部操作按钮
+        .ui.show-modal.button {
+          border: 0;
+          background: unset;
+          font-weight: 400;
+          ${sidebarPadding};
+          // 好像是浏览器 BUG, 最后不生效, 必须 !important
+          margin: 0 !important;
+          justify-content: left;
+          &:hover {
+            background: ${themeVars.github.control.transparent.bgColor.hover};
+          }
+        }
+        .ui.show-modal.button[data-modal="#sidebar-delete-issue"] {
+          color: ${themeVars.color.red.self};
+          svg {
+            color: ${themeVars.color.red.self};
+          }
+          &:hover {
+            background-color: ${themeVars.color.red.badge.bg};
             color: ${themeVars.color.red.light};
+            svg {
+              color: ${themeVars.color.red.light};
+            }
           }
         }
       }

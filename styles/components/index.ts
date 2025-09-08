@@ -13,6 +13,7 @@ import "./milestones";
 import "./newrepo";
 import "./notification";
 import "./org";
+import "./packages";
 import "./release";
 import "./repo";
 import "./setting";

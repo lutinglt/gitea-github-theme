@@ -120,4 +120,9 @@ export const fixButton = css`
   .ui.ui.ui.ui.small.button {
     z-index: 0;
   }
+  // 代码复制按钮
+  .ui.button.code-copy {
+    padding: 4px 6px;
+    min-height: 28px;
+  }
 `;

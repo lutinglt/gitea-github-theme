@@ -186,19 +186,3 @@ export const repoLabel = css`
     font-size: 14px;
   }
 `;
-
-// 软件包列表
-export const packagesLabel = css`
-  .page-content {
-    &.packages {
-      > .ui.container > div > .flex-list {
-        // 软件包类型的标签
-        .ui.label {
-          background-color: unset;
-          border: 1px solid ${themeVars.color.light.border};
-          color: ${themeVars.color.primary.self};
-        }
-      }
-    }
-  }
-`;
