@@ -31,8 +31,13 @@ export const syncFork = css`
 
 // 仓库文件列表
 export const repoFiles = css`
+  // 文件列表和提交列表的按钮组
+  .repo-button-row {
+    margin: 16px 0;
+  }
   .repository.file.list {
     #repo-files-table {
+      margin: 16px 0;
       // 头部最后一次提交
       .repo-file-line {
         padding-right: 16px;
@@ -91,11 +96,13 @@ export const repoFiles = css`
     #readme {
       .file-header {
         background: ${themeVars.color.body};
+        min-height: 48px;
+        padding: 0px 8px !important;
         svg {
           color: ${themeVars.color.text.light.num1};
         }
         .file-header-left {
-          padding: 6px 8px !important;
+          padding: 8px !important;
           // 伪元素宽度等于按钮宽度而不是父元素宽度
           position: relative;
           &:hover {
@@ -106,7 +113,7 @@ export const repoFiles = css`
             content: "";
             background: ${themeVars.github.underlineNav.borderColor.active};
             border-radius: ${otherThemeVars.border.radius};
-            bottom: -8px;
+            bottom: -7px;
             left: 0;
             height: 2px;
             position: absolute;
@@ -354,7 +361,8 @@ export const repoFileViewMobile = css`
 // 仓库代码布局调整, 侧边栏宽度调整
 export const repoGrid = css`
   .repo-grid-filelist-sidebar {
-    grid-template-columns: auto 296px;
+    grid-template-columns: auto 312px;
+    gap: 24px;
   }
 
   @media (max-width: 767.98px) {
@@ -373,11 +381,15 @@ export const repoSidebarTop = css`
       }
       .flex-item {
         padding: 10px 0 0 0;
+        // 仓库描述本身
         .flex-item-title {
-          margin-top: 4px;
+          margin-top: 12px;
         }
+        // 仓库描述内容
         .flex-item-body {
-          padding: 8px 0 0 0;
+          > .tw-flex:first-child {
+            margin-top: 21px !important;
+          }
           .repo-description {
             color: ${themeVars.color.text.self};
           }

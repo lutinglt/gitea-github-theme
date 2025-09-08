@@ -42,7 +42,7 @@ export const tags = css`
 export const releases = css`
   .page-content.repository.releases {
     > .ui.container > .divider {
-      margin: 14px 0;
+      margin: 16px 0;
     }
     ul#release-list {
       gap: 32px;

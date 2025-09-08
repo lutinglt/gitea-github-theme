@@ -18,6 +18,7 @@ export const issueList = css`
       border-top-right-radius: ${otherThemeVars.border.radius};
       height: 48px;
       padding: 8px;
+      margin-top: 16px;
       .issue-list-toolbar-left {
         // 复选框
         input {
@@ -154,7 +155,7 @@ export const issueListMobile = css`
 export const issuePins = css`
   #issue-pins {
     gap: 12px;
-    margin-bottom: 14px;
+    margin-bottom: 16px;
     .issue-card {
       padding: 16px 12px;
       .content {

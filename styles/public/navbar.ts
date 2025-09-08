@@ -121,3 +121,10 @@ export const navbarRight = css`
     }
   }
 `;
+
+// 二级导航栏
+export const secondaryNav = css`
+  .page-content > :first-child.secondary-nav {
+    margin-bottom: 16px;
+  }
+`;
