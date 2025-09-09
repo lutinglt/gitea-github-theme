@@ -244,6 +244,8 @@ export const smallCompactMenu = css`
   .page-content.user.notification > .ui.container:has(.flex-list),
   // 里程碑/标签切换菜单(里程碑页)
   .page-content.repository.milestones .list-header,
+  // 里程碑/标签切换菜单(新建里程碑页)
+  .page-content.repository.new.milestone .issue-navbar,
   // 里程碑/标签切换菜单(标签页)
   .page-content.repository.labels .issue-navbar {
     .ui.compact.small.menu.small-menu-items {
