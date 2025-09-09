@@ -3,7 +3,8 @@ import { css, themeVars } from "src/types/vars";
 export const heatmap = css`
   #user-heatmap {
     + .divider:not(.divider-text) {
-      margin: 16px 0;
+      border-color: #0000;
+      margin: 8px 0px;
     }
     .total-contributions {
       left: 25px + 20px;
