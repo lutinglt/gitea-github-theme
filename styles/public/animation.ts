@@ -2,6 +2,7 @@ import { overlayAppearDown, overlayAppearUp } from "src/core/theme";
 import { css } from "src/types/vars";
 
 export const keyframe = css`
+  // 向下出现动画
   @keyframes ${overlayAppearDown} {
     0% {
       opacity: 0;
@@ -12,6 +13,7 @@ export const keyframe = css`
       transform: translateY(0);
     }
   }
+  // 向上出现动画
   @keyframes ${overlayAppearUp} {
     0% {
       opacity: 0;

@@ -469,7 +469,7 @@ export const prMerge = css`
       padding: 16px;
       display: grid;
       gap: 8px;
-      .no-header {
+      &.no-header {
         &::before,
         &::after {
           display: none;
@@ -574,8 +574,10 @@ export const issueSidebar = css`
         }
         // 允许维护者编辑
         > .ui.checkbox {
-          font-weight: 400;
           margin: 4px 8px;
+          strong {
+            font-weight: 400;
+          }
         }
         .issue-sidebar-combo {
           .ui.dropdown > a.fixed-text.muted {
