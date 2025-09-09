@@ -8,13 +8,16 @@ export const tippyBox = css`
     border-radius: ${otherThemeVars.border.radius};
     overflow: hidden;
     animation: ${animationDown};
-    // 边框线同步 github 样式
+    // 克隆菜单和PR提示框为 default
     &[data-theme="default"],
+    // 带标题的提示框 (Runner信息)
     &[data-theme="box-with-header"] {
       border: unset;
       box-shadow: ${themeVars.github.shadow.floating.small};
     }
-    // 带标题的提示框 (Runner信息)
+    &[data-theme="default"] {
+      border-radius: 12px;
+    }
     &[data-theme="box-with-header"] {
       .tippy-content {
         background-color: ${themeVars.color.menu};

@@ -93,7 +93,7 @@ export const activity = css`
       }
     }
     > .page.buttons {
-      border-top: 1px solid ${themeVars.color.light.border};
+      border-top: 1px solid ${themeVars.color.secondary.self};
       padding: 12px 0px;
     }
   }

@@ -467,6 +467,11 @@ export const prMerge = css`
 export const timeline = css`
   .repository.view.issue {
     .comment-list {
+      // 时间线本线
+      .timeline::before {
+        // 不遮挡归档信息框, 归档信息框背景色有透明度时会漏出线
+        height: calc(100% - 62px);
+      }
       .timeline-item,
       .timeline-item-group {
         padding: 16px 0;
