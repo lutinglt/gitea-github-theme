@@ -41,8 +41,13 @@ const customVars = {
   org: { repolistColumns: "org-repolist-columns", userlistColumns: "org-userlist-columns" },
 };
 
+const themeInfo = {
+  version: null,
+};
+
 export const themeVars = createGlobalThemeContract(vars, varMapper());
 export const otherThemeVars = createGlobalThemeContract(otherVars, varMapper());
 export const customThemeVars = createGlobalThemeContract(customVars, varMapper("custom"));
+export const themeInfoVars = createGlobalThemeContract(themeInfo, varMapper("theme"));
 
 export { css } from "@linaria/core";

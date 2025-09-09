@@ -1,5 +1,5 @@
-import { createGlobalTheme, globalKeyframes, globalStyle } from "@vanilla-extract/css";
-import { otherThemeVars, themeVars } from "src/types/vars";
+import { createGlobalTheme, globalStyle } from "@vanilla-extract/css";
+import {  otherThemeVars, themeInfoVars, themeVars } from "src/types/vars";
 import type { MapLeafNodes, WithOptionalLayer } from "./types";
 
 export type Theme = WithOptionalLayer<MapLeafNodes<typeof themeVars, string>>;
@@ -34,9 +34,7 @@ const emoji = `
 
 export function createTheme(theme: Theme): void {
   const isDarkTheme: boolean = JSON.parse(theme.isDarkTheme);
-  if (isDarkTheme) {
-    globalStyle(emoji, { filter: "invert(100%) hue-rotate(180deg)" });
-  }
+  createGlobalTheme(":root", themeInfoVars, { version: "1.24.6.250909" });
   createGlobalTheme(":root", themeVars, theme);
   createGlobalTheme(":root", otherThemeVars, {
     border: { radius: "6px" },
@@ -53,12 +51,5 @@ export function createTheme(theme: Theme): void {
     accentColor: themeVars.color.accent,
     colorScheme: isDarkTheme ? "dark" : "light",
   });
-  globalKeyframes(overlayAppearDown, {
-    "0%": { opacity: 0, transform: "translateY(-8px)" },
-    "100%": { opacity: 1, transform: "translateY(0)" },
-  });
-  globalKeyframes(overlayAppearUp, {
-    "0%": { opacity: 0, transform: "translateY(8px)" },
-    "100%": { opacity: 1, transform: "translateY(0)" },
-  });
+  if (isDarkTheme) globalStyle(emoji, { filter: "invert(100%) hue-rotate(180deg)" });
 }

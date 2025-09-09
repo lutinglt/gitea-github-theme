@@ -360,6 +360,16 @@ export const comment = css`
   }
 `;
 
+// 评论书写框
+export const commentForm = css`
+  .repository .comment.form .content .segment {
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+`;
+
 export const dropdown = css`
   .repository {
     // Issue/PR 列表下的所有筛选菜单
@@ -379,7 +389,7 @@ export const prMerge = css`
   .repository.view.issue .comment-list .timeline-item.pull-merge-box {
     // 头像
     .timeline-avatar {
-      color: ${themeVars.color.text.self} !important;
+      color: ${themeVars.color.white} !important;
       border-radius: ${otherThemeVars.border.radius};
       width: 40px;
       height: 40px;
@@ -459,6 +469,12 @@ export const prMerge = css`
       padding: 16px;
       display: grid;
       gap: 8px;
+      .no-header {
+        &::before,
+        &::after {
+          display: none;
+        }
+      }
     }
   }
 `;
@@ -552,8 +568,14 @@ export const issueSidebar = css`
         .ui.depending > div,
         .flex-text-block,
         .ui.list,
+        .toggle-wip,
         p {
           ${sidebarPadding};
+        }
+        // 允许维护者编辑
+        > .ui.checkbox {
+          font-weight: 400;
+          margin: 4px 8px;
         }
         .issue-sidebar-combo {
           .ui.dropdown > a.fixed-text.muted {

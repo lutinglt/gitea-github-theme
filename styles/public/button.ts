@@ -28,7 +28,7 @@ export const baseButton = css`
   }
   // 主色调按钮保持白色
   .ui.primary.buttons .button svg {
-    color: ${themeVars.color.text.self};
+    color: ${themeVars.color.white};
   }
   .ui.primary {
     &.button,

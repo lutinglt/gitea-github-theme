@@ -50,6 +50,11 @@ export function themeInput(outDir: string, themeDir: string, mode: string): { [k
   return input;
 }
 
+function getAutoThemeInfo(nameGroup: string[]): string {
+  const displayName = nameGroup.map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(" ");
+  return `gitea-theme-meta-info { --theme-display-name: GitHub ${displayName};}`; // 不要省略分号, 也不要追加任何变量, 否则 Gitea 不识别
+}
+
 const prefix = "theme-github-";
 
 /**
@@ -82,23 +87,29 @@ export function themePlugin(): Plugin {
           const fileName = `${prefix}${value.fileName}`;
           const originalFileName = value.originalFileNames.pop();
           const type = value.type;
-          const source = `${styles}${value.source.toString()}`;
+          // 合并样式文件和主题信息
+          const meta = getAutoThemeInfo(key.split(".")[0].split("-"));
+          const source = `${meta}\n${value.source.toString()}${styles}`;
           // 添加主题到输出
           this.emitFile({ name, fileName, source, type, originalFileName });
           // 自动颜色主题
-          const isDark = key.endsWith("dark.css");
-          const darkName = key.replace("light.css", "dark.css");
-          const lightName = key.replace("dark.css", "light.css");
-          const autoName = `${prefix}${key.replace("dark.css", "auto.css").replace("light.css", "auto.css")}`;
+          const nameGroup = key.split(".")[0].split("-");
+          const isDark = nameGroup.at(-1) === "dark";
+          const darkName = key.replace("light", "dark");
+          const lightName = darkName.replace("dark", "light");
+          const autoName = `${prefix}${darkName.replace("dark", "auto")}`;
           const findTheme = isDark ? lightName : darkName;
           if (findTheme in bundle) {
             const lightContent = `@import "./${prefix}${lightName}" (prefers-color-scheme: light);`;
             const darkContent = `@import "./${prefix}${darkName}" (prefers-color-scheme: dark);`;
+            const autoNameGroup = nameGroup.slice(0, -1);
+            autoNameGroup.push("auto");
+            const metaInfo = getAutoThemeInfo(autoNameGroup);
             this.emitFile({
               name: autoName,
               fileName: autoName,
               type: "asset",
-              source: `${lightContent}\n${darkContent}`,
+              source: `${lightContent}\n${darkContent}\n${metaInfo}`,
             });
           }
           // 删除原始的样式文件, 自动颜色主题因为删除, 永远不会生成两次

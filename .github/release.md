@@ -12,6 +12,8 @@ determined.
 
 ### ✨ Feature
 
+- 修改外观设置中显示的主题名称
+
 #### CSS 变量
 
 - 新增 `--custom-branch-menu-width` 变量, 用于设置分支菜单的宽度
@@ -59,6 +61,7 @@ determined.
 - 修复 Wiki 页面和二级导航栏组织页面的团队菜单的圆角问题
 - 修复创建工单页面样式
 - 修复归档仓库 Issue 时间线过长插入归档信息框
+- 修复亮色主题下的 PR 合并操作评论的头像和按钮图标颜色
 
 ## 📃 English (From AI)
 

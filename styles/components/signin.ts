@@ -40,6 +40,15 @@ export const signIn = css`
       .button {
         height: 40px;
       }
+      .divider.divider-text {
+        margin: 20px 0px;
+      }
+      #oauth2-login-navigator-inner {
+        gap: 8px;
+        .ui.button svg {
+          width: 18px;
+        }
+      }
     }
     .ui.top.attached.header.segment {
       font-size: 14px;
