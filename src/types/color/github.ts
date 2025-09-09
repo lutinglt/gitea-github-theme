@@ -210,7 +210,7 @@ export const github = {
        * @setting `button` 红色按钮阴影
        */
       small: null,
-    }
+    },
   },
   underlineNav: {
     borderColor: {

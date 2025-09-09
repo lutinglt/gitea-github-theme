@@ -1,5 +1,5 @@
 import { createGlobalTheme, globalStyle } from "@vanilla-extract/css";
-import {  otherThemeVars, themeInfoVars, themeVars } from "src/types/vars";
+import { otherThemeVars, themeInfoVars, themeVars } from "src/types/vars";
 import type { MapLeafNodes, WithOptionalLayer } from "./types";
 
 export type Theme = WithOptionalLayer<MapLeafNodes<typeof themeVars, string>>;
