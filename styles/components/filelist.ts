@@ -22,6 +22,7 @@ export const syncFork = css`
     .repo-home-filelist > .ui.message {
       background: ${themeVars.color.box.header};
       padding: 8px 8px 8px 16px;
+      margin: 16px 0px;
       .ui.button {
         min-width: 96px;
       }
