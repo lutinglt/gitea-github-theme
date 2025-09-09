@@ -57,6 +57,7 @@ export const dashboard = css`
           padding: 8px;
           li {
             border-radius: ${otherThemeVars.border.radius};
+            padding: 6px 8px !important;
             &:not(:last-child) {
               border-bottom: 0;
             }

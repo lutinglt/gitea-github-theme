@@ -36,10 +36,12 @@ export type GithubColor = {
     black: string;
     white: string;
     muted: string;
+    onEmphasis: string;
   };
   bgColor: {
     accent: { emphasis: string; muted: string };
     attention: { muted: string };
+    emphasis: string;
     success: { emphasis: string; muted: string };
     danger: { muted: string };
     done: { emphasis: string };
@@ -193,8 +195,8 @@ export function github2ThemeColor(githubColor: GithubColor): ThemeColor {
       activeBg: githubColor.bgColor.accent.muted,
     },
     tooltip: {
-      text: githubColor.fgColor.default,
-      bg: githubColor.bgColor.default,
+      text: githubColor.fgColor.onEmphasis,
+      bg: githubColor.bgColor.emphasis,
     },
     nav: {
       bg: githubColor.bgColor.inset,

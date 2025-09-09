@@ -114,7 +114,7 @@ export const other = {
     /** 点击后颜色 */
     activeBg: "color-reaction-active-bg",
   },
-  /** 不知道是干啥的 */
+  /** 鼠标悬浮时的提示文本, 比如提交的具体时间, 任务状态等 */
   tooltip: {
     text: null,
     bg: null,

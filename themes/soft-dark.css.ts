@@ -27,6 +27,7 @@ export const softDarkGithubColors: GithubColor = {
     success: "#57ab5a",
     black: "#010409",
     white: "#cdd9e5",
+    onEmphasis: "#ffffff",
   },
   bgColor: {
     accent: { emphasis: "#316dca", muted: "#4184e41a" },
@@ -34,6 +35,7 @@ export const softDarkGithubColors: GithubColor = {
     danger: { muted: "#e5534b1a" },
     default: "#212830",
     done: { emphasis: "#8256d0" },
+    emphasis: "#3d444d",
     muted: "#262c36",
     neutral: { muted: "#656c7633" },
     success: { emphasis: "#347d39", muted: "#46954a26" },
