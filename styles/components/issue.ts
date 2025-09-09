@@ -48,9 +48,6 @@ export const issueList = css`
       }
       .issue-list-toolbar-right > .ui.menu {
         align-items: center;
-        > .item {
-          color: ${themeVars.color.text.light.num1};
-        }
         > .ui.button {
           padding: 0 12px;
           height: 32px;

@@ -5,7 +5,7 @@ import { css, otherThemeVars, themeVars } from "src/types/vars";
 export const tippyBox = css`
   .tippy-box {
     margin-top: -3px;
-    border-radius: 12px;
+    border-radius: ${otherThemeVars.border.radius};
     overflow: hidden;
     animation: ${animationDown};
     // 边框线同步 github 样式
@@ -37,7 +37,6 @@ export const tippyBox = css`
     }
     // 专门用于提示信息的提示框, 比如提交的具体时间, 任务状态等
     &[data-theme="tooltip"] {
-      border-radius: ${otherThemeVars.border.radius};
       .tippy-content {
         font-size: 12px;
         font-weight: 400;
