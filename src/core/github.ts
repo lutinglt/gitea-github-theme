@@ -68,7 +68,7 @@ export type GithubColor = {
     bgColor: { active: string; hover: string; rest: string };
     transparent: { bgColor: { active: string; hover: string; selected: string } };
   };
-  shadow: { floating: { small: string } };
+  shadow: { floating: { small: string }; resting: { small: string } };
   overlay: { backdrop: { bgColor: string } };
   underlineNav: { borderColor: { active: string } };
   contribution: {
@@ -301,6 +301,9 @@ export function github2ThemeColor(githubColor: GithubColor): ThemeColor {
     shadow: {
       floating: {
         small: `0px 0px 0px 1px ${themeVars.color.light.border}, 0px 6px 12px -3px ${themeVars.color.shadow.self}, 0px 6px 18px 0px ${themeVars.color.shadow.self};`,
+      },
+      resting: {
+        small: `0px 1px 1px 0px ${githubColor.shadow.resting.small}, 0px 1px 3px 0px ${githubColor.shadow.resting.small};`,
       },
     },
     underlineNav: {

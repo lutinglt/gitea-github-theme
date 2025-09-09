@@ -25,7 +25,7 @@ export const button = css`
       color: ${themeVars.color.text.light.self};
       background-color: ${themeVars.color.button};
       border-color: ${themeVars.color.light.border};
-
+      box-shadow: none;
       &:hover {
         background-color: ${themeVars.color.hover.self};
       }
@@ -57,12 +57,19 @@ export const button = css`
     }
   }
   // 管理员设置界面下的自定义主色调按钮
-  .admin-setting-content .ui.primary.button {
-    ${tinyStyle}
-    padding: 5px 16px;
-    line-height: 22px;
-    &:hover {
-      ${tinyHoverStyle}
+  .admin-setting-content {
+    .ui.primary.button {
+      ${tinyStyle}
+      padding: 5px 16px;
+      line-height: 22px;
+      &:hover {
+        ${tinyHoverStyle}
+      }
+    }
+    .ui.red.button {
+      box-shadow: ${themeVars.github.shadow.resting.small};
+      padding: 5px 16px;
+      line-height: 22px;
     }
   }
 `;

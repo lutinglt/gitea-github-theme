@@ -203,6 +203,14 @@ export const github = {
        */
       small: null,
     },
+    resting: {
+      /** 静止阴影
+       * @button `primaryStyle` 主色调按钮阴影
+       * @button `redButton` 红色按钮悬浮阴影
+       * @setting `button` 红色按钮阴影
+       */
+      small: null,
+    }
   },
   underlineNav: {
     borderColor: {

@@ -4,6 +4,7 @@ export const primaryStyle = {
   color: themeVars.github.button.primary.fgColor.rest,
   backgroundColor: themeVars.github.button.primary.bgColor.rest,
   borderColor: themeVars.github.button.primary.borderColor.rest,
+  boxShadow: themeVars.github.shadow.resting.small,
 };
 
 export const primaryHoverStyle = {
@@ -45,6 +46,7 @@ export const baseButton = css`
     background-color: ${themeVars.color.button};
     color: ${themeVars.color.text.self};
     border-color: ${themeVars.color.light.border};
+    box-shadow: none;
     &:hover {
       background-color: ${themeVars.color.hover.self};
       color: ${themeVars.color.text.self};
@@ -85,6 +87,7 @@ export const redButton = css`
       color: ${themeVars.github.button.danger.fgColor.hover};
       background-color: ${themeVars.github.button.danger.bgColor.hover};
       border-color: ${themeVars.github.button.danger.borderColor.hover};
+      box-shadow: ${themeVars.github.shadow.resting.small};
     }
   }
 `;
