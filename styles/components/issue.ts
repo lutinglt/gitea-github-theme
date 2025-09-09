@@ -522,7 +522,8 @@ const sidebarPadding = {
 
 // 侧边栏
 export const issueSidebar = css`
-  .repository.view.issue {
+  // 工单&创建工单&PR页面侧边栏
+  .page-content.repository.issue {
     .issue-content {
       gap: 24px;
       .issue-content-right {

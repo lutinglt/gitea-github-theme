@@ -35,7 +35,8 @@ export const input = css`
     height: 32px;
   }
   // 由于输入框高度, 需要输入框在表单中垂直居中
-  .ui.form {
+  // 管理员页面仓库搜索表单
+  .ui.form#repo-search-form {
     align-items: center;
   }
 `;
