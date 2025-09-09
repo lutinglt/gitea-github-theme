@@ -84,6 +84,8 @@ export const shaLabel = css`
     color: ${themeVars.color.text.light.num1};
     font-size: 12px;
     font-weight: 500;
+    // 仪表盘页的提交 SHA 标签居中对齐
+    margin-top: 2px;
     &:hover {
       background-color: ${themeVars.color.label.hoverBg};
     }
