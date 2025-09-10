@@ -30,7 +30,7 @@ jobs:
           dist/theme-github-tritanopia-auto.css dist/theme-github-tritanopia-light.css dist/theme-github-tritanopia-dark.css
 
           tar -zcf dist/theme-github-extra-pink.tar.gz --remove-files \
-          dist/theme-github-extra-pink-auto.css dist/theme-github-extra-pink-light.css dist/theme-github-extra-pink-dark.css dist/theme-github-extra-pink-soft-dark.css
+          dist/theme-github-pink-auto.css dist/theme-github-pink-light.css dist/theme-github-pink-dark.css dist/theme-github-pink-soft-dark.css
 
           gh release create "$TAG" dist/* --notes-file .github/release.md --draft -t $TAG
         env:
