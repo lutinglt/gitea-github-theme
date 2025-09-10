@@ -50,9 +50,9 @@ export function themeInput(outDir: string, themeDir: string, mode: string): { [k
   return input;
 }
 
-function getAutoThemeInfo(nameGroup: string[]): string {
+function giteaThemeMetaInfo(nameGroup: string[]): string {
   const displayName = nameGroup.map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(" ");
-  return `gitea-theme-meta-info { --theme-display-name: GitHub ${displayName};}`; // 不要省略分号, 也不要追加任何变量, 否则 Gitea 不识别
+  return `gitea-theme-meta-info{--theme-display-name:"GitHub ${displayName}";}`; // 不要省略分号, 也不要追加任何变量, 否则 Gitea 不识别
 }
 
 const prefix = "theme-github-";
@@ -88,23 +88,22 @@ export function themePlugin(): Plugin {
           const originalFileName = value.originalFileNames.pop();
           const type = value.type;
           // 合并样式文件和主题信息
-          const meta = getAutoThemeInfo(key.split(".")[0].split("-"));
-          const source = `${meta}\n${value.source.toString()}${styles}`;
+          const meta = giteaThemeMetaInfo(key.split(".")[0].split("-"));
+          const source = `${meta}${value.source.toString()}${styles}`;
           // 添加主题到输出
           this.emitFile({ name, fileName, source, type, originalFileName });
           // 自动颜色主题
-          const nameGroup = key.split(".")[0].split("-");
-          const isDark = nameGroup.at(-1) === "dark";
+          const isDark = key.endsWith("dark.css");
           const darkName = key.replace("light", "dark");
           const lightName = darkName.replace("dark", "light");
-          const autoName = `${prefix}${darkName.replace("dark", "auto")}`;
           const findTheme = isDark ? lightName : darkName;
           if (findTheme in bundle) {
+            const autoName = `${prefix}${darkName.replace("dark", "auto")}`;
             const lightContent = `@import "./${prefix}${lightName}" (prefers-color-scheme: light);`;
             const darkContent = `@import "./${prefix}${darkName}" (prefers-color-scheme: dark);`;
-            const autoNameGroup = nameGroup.slice(0, -1);
-            autoNameGroup.push("auto");
-            const metaInfo = getAutoThemeInfo(autoNameGroup);
+            const nameGroup = key.split(".")[0].split("-").slice(0, -1);
+            nameGroup.push("auto");
+            const metaInfo = giteaThemeMetaInfo(nameGroup);
             this.emitFile({
               name: autoName,
               fileName: autoName,

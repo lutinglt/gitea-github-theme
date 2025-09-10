@@ -1,4 +1,6 @@
 import { createGlobalTheme, globalStyle } from "@vanilla-extract/css";
+import fs from "node:fs";
+import path from "node:path";
 import { otherThemeVars, themeInfoVars, themeVars } from "src/types/vars";
 import type { MapLeafNodes, WithOptionalLayer } from "./types";
 
@@ -32,9 +34,19 @@ const emoji = `
 .emoji[aria-label="musical notes"]
 `;
 
+// 版本号: 版本号.YYMMDD
+const now = new Date();
+const year = now.getFullYear().toString().slice(-2);
+const month = (now.getMonth() + 1).toString().padStart(2, "0");
+const day = now.getDate().toString().padStart(2, "0");
+
+const pkgPath = path.join(__dirname, "../..", "package.json");
+const pkg = JSON.parse(fs.readFileSync(pkgPath, "utf-8"));
+const version = `"${pkg.version}.${year}${month}${day}"`;
+
 export function createTheme(theme: Theme): void {
   const isDarkTheme: boolean = JSON.parse(theme.isDarkTheme);
-  createGlobalTheme(":root", themeInfoVars, { version: "1.24.6.250909" });
+  createGlobalTheme(":root", themeInfoVars, { version });
   createGlobalTheme(":root", themeVars, theme);
   createGlobalTheme(":root", otherThemeVars, {
     border: { radius: "6px" },
