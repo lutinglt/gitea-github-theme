@@ -17,9 +17,6 @@ jobs:
           npm run build
       - name: Create release
         run: |
-          export TZ=Asia/Shanghai
-          TAG="v$(npm run -s version)"
-
           tar -zcf dist/theme-github-base.tar.gz --remove-files \
           dist/theme-github-auto.css dist/theme-github-light.css dist/theme-github-dark.css dist/theme-github-soft-dark.css
 
@@ -32,6 +29,7 @@ jobs:
           tar -zcf dist/theme-github-extra-pink.tar.gz --remove-files \
           dist/theme-github-pink-auto.css dist/theme-github-pink-light.css dist/theme-github-pink-dark.css dist/theme-github-pink-soft-dark.css
 
+          TAG="v$(npm run -s version)"
           gh release create "$TAG" dist/* --notes-file .github/release.md --draft -t $TAG
         env:
           GH_TOKEN: ${{ github.token }}
