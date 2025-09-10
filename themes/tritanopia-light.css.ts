@@ -1,4 +1,4 @@
-import { defineTheme, type Chroma, type ThemeColor } from "src";
+import { defineTheme, type Chroma } from "src";
 import { lightPrettylights } from "src/core/chroma";
 import { github2ThemeColor, type GithubColor } from "src/core/github";
 import { prettylights2Chroma, type prettylightsColor } from "src/core/prettylights";
@@ -39,7 +39,7 @@ export const tritanopiaLightPrettylights: prettylightsColor = {
   },
 };
 
-export const tritanopiaLightColors: ThemeColor = github2ThemeColor(tritanopiaLightGithubColors);
+export const tritanopiaLightColors = github2ThemeColor(tritanopiaLightGithubColors);
 export const tritanopiaLightChroma: Chroma = prettylights2Chroma(tritanopiaLightPrettylights);
 
 export default defineTheme(tritanopiaLightColors, tritanopiaLightChroma);

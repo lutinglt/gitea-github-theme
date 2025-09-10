@@ -8,6 +8,7 @@ import { type ThemeColor } from "./color";
 export type GithubColor = {
   isDarkTheme: boolean;
   display: {
+    blue: { fgColor: string };
     brown: { fgColor: string };
     cyan: { fgColor: string };
     indigo: { fgColor: string };
@@ -60,7 +61,7 @@ export type GithubColor = {
     translucent: string;
   };
   button: {
-    primary: { fgColor: { rest: string }; bgColor: { hover: string } };
+    primary: { fgColor: { accent: string; rest: string }; bgColor: { rest: string; hover: string } };
     danger: { fgColor: { rest: string; hover: string }; bgColor: { hover: string } };
     star: { iconColor: string };
   };
@@ -259,11 +260,14 @@ export function github2ThemeColor(githubColor: GithubColor): ThemeColor {
       },
       primary: {
         fgColor: {
-          accent: saturate(0.1, scaleColorLight(githubColor.fgColor.success, githubColor.isDarkTheme ? 10 : -10)),
+          accent: saturate(
+            0.1,
+            scaleColorLight(githubColor.button.primary.fgColor.accent, githubColor.isDarkTheme ? 10 : -10)
+          ),
           rest: githubColor.button.primary.fgColor.rest,
         },
         bgColor: {
-          rest: themeVars.github.bgColor.success.emphasis,
+          rest: githubColor.button.primary.bgColor.rest,
           hover: githubColor.button.primary.bgColor.hover,
         },
         borderColor: {
@@ -348,7 +352,7 @@ export function github2ThemeColor(githubColor: GithubColor): ThemeColor {
       green: githubColor.fgColor.success,
       cyan: githubColor.display.cyan.fgColor,
       teal: githubColor.display.teal.fgColor,
-      blue: githubColor.fgColor.accent,
+      blue: githubColor.display.blue.fgColor,
       violet: githubColor.display.indigo.fgColor,
       purple: githubColor.fgColor.done,
       pink: githubColor.fgColor.sponsors,

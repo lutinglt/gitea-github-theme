@@ -180,7 +180,7 @@ export const actionViewLeft = css`
 
           &:after {
             overflow: visible;
-            background: ${themeVars.github.bgColor.accent.emphasis};
+            background: ${themeVars.github.borderColor.accent.emphasis};
             border-radius: ${otherThemeVars.border.radius};
             content: "";
             height: 24px;

@@ -1,4 +1,4 @@
-import { defineTheme, type Chroma, type ThemeColor } from "src";
+import { defineTheme, themeVars, type Chroma } from "src";
 import { github2ThemeColor, type GithubColor } from "src/core/github";
 import { prettylights2Chroma, type prettylightsColor } from "src/core/prettylights";
 import { lightGithubColors } from "themes/light";
@@ -28,7 +28,10 @@ export const colorblindLightGithubColors: GithubColor = {
     success: { emphasis: "#0969da" },
   },
   button: {
-    primary: { fgColor: { rest: "#ffffff" }, bgColor: { hover: "#0864d1" } },
+    primary: {
+      fgColor: { accent: "#0969da", rest: "#ffffff" },
+      bgColor: { rest: themeVars.github.bgColor.success.emphasis, hover: "#0864d1" },
+    },
     danger: { fgColor: { rest: "#bc4c00", hover: "#ffffff" }, bgColor: { hover: "#bc4c00" } },
     star: lightGithubColors.button.star,
   },
@@ -69,7 +72,7 @@ export const colorblindLightPrettylights: prettylightsColor = {
   },
 };
 
-export const colorblindLightColors: ThemeColor = github2ThemeColor(colorblindLightGithubColors);
+export const colorblindLightColors = github2ThemeColor(colorblindLightGithubColors);
 export const colorblindLightChroma: Chroma = prettylights2Chroma(colorblindLightPrettylights);
 
 export default defineTheme(colorblindLightColors, colorblindLightChroma);

@@ -1,9 +1,10 @@
-import { defineTheme, type ThemeColor } from "src";
+import { defineTheme, themeVars } from "src";
 import { github2ThemeColor, type GithubColor } from "src/core/github";
 
 export const darkGithubColors: GithubColor = {
   isDarkTheme: true,
   display: {
+    blue: { fgColor: "#4493f8" },
     brown: { fgColor: "#b69a6d" },
     cyan: { fgColor: "#07ace4" },
     indigo: { fgColor: "#9899ec" },
@@ -56,7 +57,10 @@ export const darkGithubColors: GithubColor = {
     translucent: "#ffffff26",
   },
   button: {
-    primary: { fgColor: { rest: "#ffffff" }, bgColor: { hover: "#29903b" } },
+    primary: {
+      fgColor: { accent: "#3fb950", rest: "#ffffff" },
+      bgColor: { rest: themeVars.github.bgColor.success.emphasis, hover: "#29903b" },
+    },
     danger: { fgColor: { rest: "#fa5e55", hover: "#ffffff" }, bgColor: { hover: "#b62324" } },
     star: { iconColor: "#e3b341" },
   },
@@ -75,6 +79,6 @@ export const darkGithubColors: GithubColor = {
   },
 };
 
-export const darkColors: ThemeColor = github2ThemeColor(darkGithubColors);
+export const darkColors = github2ThemeColor(darkGithubColors);
 
 export default defineTheme(darkColors);

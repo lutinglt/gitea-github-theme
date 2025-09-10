@@ -25,7 +25,6 @@ export const github = {
     accent: {
       /** 强调色
        * @diff 折叠/展开按钮的悬停颜色
-       * @actions `actionViewLeft` 左侧子作业激活伪元素颜色
        * @release `releaseTagMenu` 顶部栏左侧按钮激活背景色
        * @navbar `navbarRight` 头像管理员标识背景颜色
        * @dropdown `dropdown` emoji 的悬停背景色
@@ -61,6 +60,7 @@ export const github = {
        * @input `input` 输入框被选中时的边框颜色
        * @clone `clone` 克隆地址框被选中时的边框颜色
        * @issue `comment` 评论框被选中时的边框颜色
+       * @actions `actionViewLeft` 左侧子作业激活伪元素颜色
        * @menu `verticalMenu` 垂直菜单项激活时左侧的伪元素颜色
        * @dropdown `selectionDropdown` 选择输入框的内部边框颜色
        * @notification `notification` 通知列表悬停时的左边框颜色

@@ -1,4 +1,4 @@
-import { defineTheme, type Chroma, type ThemeColor } from "src";
+import { defineTheme, themeVars, type Chroma } from "src";
 import { github2ThemeColor, type GithubColor } from "src/core/github";
 import { prettylights2Chroma, type prettylightsColor } from "src/core/prettylights";
 import { darkGithubColors } from "themes/dark";
@@ -51,7 +51,10 @@ export const softDarkGithubColors: GithubColor = {
     translucent: "#cdd9e526",
   },
   button: {
-    primary: { fgColor: { rest: "#ffffff" }, bgColor: { hover: "#3b8640" } },
+    primary: {
+      fgColor: { accent: "#57ab5a", rest: "#ffffff" },
+      bgColor: { rest: themeVars.github.bgColor.success.emphasis, hover: "#3b8640" },
+    },
     danger: { fgColor: { rest: "#ea5c53", hover: "#ffffff" }, bgColor: { hover: "#ad2e2c" } },
     star: { iconColor: "#daaa3f" },
   },
@@ -100,7 +103,7 @@ export const softDarkPrettylights: prettylightsColor = {
   },
 };
 
-export const softDarkColors: ThemeColor = github2ThemeColor(softDarkGithubColors);
+export const softDarkColors = github2ThemeColor(softDarkGithubColors);
 export const softDarkChroma: Chroma = prettylights2Chroma(softDarkPrettylights);
 
 export default defineTheme(softDarkColors, softDarkChroma);
