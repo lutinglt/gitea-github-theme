@@ -19,6 +19,27 @@ export const releaseTagMenu = css`
   }
 `;
 
+// 顶部右侧按钮组
+export const rightButton = css`
+  .page-content.repository {
+    &.releases,
+    &.tags {
+      .ui.small.button {
+        background-color: ${themeVars.color.button};
+        border-color: ${themeVars.color.light.border};
+        box-shadow: none;
+        color: ${themeVars.color.text.light.self};
+        padding: 5px 16px;
+        min-height: auto;
+        line-height: 20px;
+        &:hover {
+          background-color: ${themeVars.color.hover.self};
+        }
+      }
+    }
+  }
+`;
+
 // 标签页样式
 export const tags = css`
   .page-content.repository.tags {
@@ -147,26 +168,6 @@ export const releases = css`
               }
             }
           }
-        }
-      }
-    }
-  }
-`;
-
-// 顶部右侧按钮组
-export const rightButton = css`
-  .page-content.repository {
-    &.releases,
-    &.tags {
-      .ui.small.button {
-        background-color: ${themeVars.color.button};
-        border-color: ${themeVars.color.light.border};
-        color: ${themeVars.color.text.light.self};
-        padding: 5px 16px;
-        min-height: auto;
-        line-height: 20px;
-        &:hover {
-          background-color: ${themeVars.color.hover.self};
         }
       }
     }
