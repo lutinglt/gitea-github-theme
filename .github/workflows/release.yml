@@ -20,13 +20,13 @@ jobs:
           export TZ=Asia/Shanghai
           TAG="v$(npm run -s version)"
 
-          tar -zcf dist/theme-github-base.tar.gz --remove-files \
+          tar -zcf dist/theme-github(base).tar.gz --remove-files \
           dist/theme-github-auto.css dist/theme-github-light.css dist/theme-github-dark.css dist/theme-github-soft-dark.css
 
           tar -zcf dist/theme-github-colorblind.tar.gz --remove-files \
           dist/theme-github-colorblind-auto.css dist/theme-github-colorblind-light.css dist/theme-github-colorblind-dark.css
 
-          tar -zcf dist/theme-github-colorblind-tritanopia.tar.gz --remove-files \
+          tar -zcf dist/theme-github-colorblind(tritanopia).tar.gz --remove-files \
           dist/theme-github-tritanopia-auto.css dist/theme-github-tritanopia-light.css dist/theme-github-tritanopia-dark.css
 
           tar -zcf dist/theme-github-extra-pink.tar.gz --remove-files \
