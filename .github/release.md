@@ -49,13 +49,39 @@ determined.
 
 ## 📃 English (From AI)
 
+### ✨ Feature
+
+- Added pink color theme
+- Modified theme names displayed in appearance settings
+
+#### CSS Variables
+
+- Added `--custom-branch-menu-width` variable for setting branch menu width
+- Added `--custom-user-menu-width` variable for setting user menu width
+
 ### 🌈 Style
+
+- Optimized dashboard style on user homepage
 
 ##### More GitHub-like style
 
-- Improved code file viewing experience (scrolling to bottom no longer causes file tree content overlap)
+- Synced styles when viewing code file content (removed some bottom elements, optimized scrolling experience)
+- Adjusted spacing, styles, and font sizes of page elements overall
+- Synced dashboard styles under top issues/pull requests/milestones
+- Synced styles of milestones/pinned Issues
+- Synced page styles of notifications/subscriptions/follows/packages/tooltips/user avatar menus
+- Synced branch menu width
+- Synced star color for starred repositories
 
 ### 🐞 Fix
 
 - Fixed code highlight colors for red-green color blindness theme
 - Fixed button underline length for Chinese README in repositories
+- Fixed content position on login two-factor authentication page
+- Fixed style of operation and maintenance management panel in admin backend
+- Reverted editor font size changes to avoid cursor misalignment
+- Fixed rounded corners of last row in commit list
+- Fixed rounded corners issue in Wiki pages and team menus under secondary navigation bar organization
+- Fixed style of issue creation page
+- Fixed issue where archive information box is inserted when issue timeline is too long in archived repositories
+- Fixed avatar and button icon colors in PR merge operation comments under light theme

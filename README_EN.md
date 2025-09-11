@@ -31,7 +31,12 @@ accepted.
 
 > [!IMPORTANT]
 >
-> Automatic color theme requires both light and dark theme files
+> Automatic color theme requires both light and dark theme files.
+
+> [!TIP]
+>
+> Recommend using Catppuccin file icon browser plugin together for better performance.
+> [github-file-explorer-icons](https://github.com/catppuccin/github-file-explorer-icons)
 
 Example: If the theme filename is `theme-github-dark.css`, add `github-dark` to the end of `THEMES`
 
@@ -47,13 +52,15 @@ For details, please refer to the Gitea documentation
 
 ## Screenshots
 
+![Dashboard](screenshots/en/dashboard-en.png)
+
 ### Basic Themes
 
 ```ini
 THEMES = github-auto, github-light, github-dark, github-soft-dark
 ```
 
-<details open>
+<details>
 <summary>Base</summary>
 <h4>theme-github-light.css</h4>
 <img src="screenshots/en/light.png"/>
@@ -76,6 +83,22 @@ THEMES = github-tritanopia-auto, github-tritanopia-light, github-tritanopia-dark
 <img src="screenshots/en/colorblind-light.png"/>
 <h4>theme-github-colorblind-dark.css & theme-github-tritanopia-dark.css</h4>
 <img src="screenshots/en/colorblind-dark.png"/>
+</details>
+
+### Pink Themes
+
+```ini
+THEMES = github-pink-auto, github-pink-light, github-pink-dark, github-pink-soft-dark
+```
+
+<details>
+<summary>Pink</summary>
+<h4>theme-github-pink-light.css</h4>
+<img src="screenshots/pink/en/pink-light-en.png"/>
+<h4>theme-github-pink-dark.css</h4>
+<img src="screenshots/pink/en/pink-dark-en.png"/>
+<h4>theme-github-pink-soft-dark.css</h4>
+<img src="screenshots/pink/en/pink-soft-dark-en.png"/>
 </details>
 
 ## Custom CSS Variables

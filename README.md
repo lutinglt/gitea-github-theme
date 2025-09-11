@@ -30,6 +30,11 @@ Gitea 理论上小版本号变更不会修改前端布局, 所以主题的小版
 >
 > 自动颜色主题需要亮色和暗色的主题文件
 
+> [!TIP]
+>
+> 推荐搭配 Catppuccin 文件图标浏览器插件一起使用更佳
+> [github-file-explorer-icons](https://github.com/catppuccin/github-file-explorer-icons)
+
 例: 主题文件名为 `theme-github-dark.css`，则添加 `github-dark` 到 `THEMES` 末尾
 
 `gitea/conf/app.ini` 例:
@@ -44,13 +49,15 @@ THEMES = gitea-auto, gitea-light, gitea-dark, github-auto, github-light, github-
 
 ## 截图
 
+![Dashboard](screenshots/dashboard.png)
+
 ### 基本主题
 
 ```ini
 THEMES = github-auto, github-light, github-dark, github-soft-dark
 ```
 
-<details open>
+<details>
 <summary>Base</summary>
 <h4>theme-github-light.css</h4>
 <img src="screenshots/light.png"/>
@@ -73,6 +80,22 @@ THEMES = github-tritanopia-auto, github-tritanopia-light, github-tritanopia-dark
 <img src="screenshots/colorblind-light.png"/>
 <h4>theme-github-colorblind-dark.css & theme-github-tritanopia-dark.css</h4>
 <img src="screenshots/colorblind-dark.png"/>
+</details>
+
+### 粉色主题
+
+```ini
+THEMES = github-pink-auto, github-pink-light, github-pink-dark, github-pink-soft-dark
+```
+
+<details>
+<summary>Pink</summary>
+<h4>theme-github-pink-light.css</h4>
+<img src="screenshots/pink/pink-light.png"/>
+<h4>theme-github-pink-dark.css</h4>
+<img src="screenshots/pink/pink-dark.png"/>
+<h4>theme-github-pink-soft-dark.css</h4>
+<img src="screenshots/pink/pink-soft-dark.png"/>
 </details>
 
 ## 自定义 CSS 变量
