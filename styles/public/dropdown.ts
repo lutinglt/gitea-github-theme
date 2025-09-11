@@ -19,6 +19,7 @@ export const dropdown = css`
         align-items: center;
         padding: 6px 8px !important;
         border-radius: ${otherThemeVars.border.radius} !important;
+        gap: 4px;
         &:not(.emoji) {
           margin: 0 8px;
         }
@@ -48,7 +49,7 @@ export const dropdown = css`
         }
         svg {
           margin-top: 2px;
-          margin-right: 8px;
+          margin-right: 4px;
         }
         // 复选框对齐
         .ui.checkbox input[type="checkbox"] {
@@ -91,7 +92,7 @@ export const dropdown = css`
   .user-menu>.item,
   // Issue/PR 菜单
   .ui.menu .ui.dropdown.item .menu .item {
-    width: auto;
+    width: calc(100% - 16px); // 减去上方 item 的 margin 左右边距
   }
   // 去掉下拉菜单的边框线
   // 设置里的下拉菜单
@@ -190,6 +191,13 @@ export const selectionDropdown = css`
   .ui.active.upward.selection.dropdown:not(.small) {
     border-top-left-radius: ${otherThemeVars.border.radius} !important;
     border-top-right-radius: ${otherThemeVars.border.radius} !important;
+  }
+  // 针对创建仓库的工单标签菜单中的标签换行和颜色
+  .ui.search.selection.dropdown > .menu > .item {
+    flex-wrap: wrap;
+    > i {
+      color: ${themeVars.color.text.light.num1};
+    }
   }
 `;
 
