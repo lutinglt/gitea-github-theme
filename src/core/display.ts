@@ -1,3 +1,5 @@
+import { saturate } from "polished";
+import { scaleColorLight } from "src/functions";
 import { type GithubColor } from "./github";
 
 export type DisplayColor = {
@@ -27,7 +29,7 @@ export function display2GithubColor(
     bgColor: {
       ...baseGithubColor.bgColor,
       accent: {
-        emphasis: displayColor.num5,
+        emphasis: soft ? saturate(-0.1, scaleColorLight(displayColor.num5, -2)) : displayColor.num5,
         muted: soft ? displayColor.num1 : displayColor.num0,
       },
     },
@@ -43,21 +45,23 @@ export function display2GithubColor(
         ...baseGithubColor.button.primary,
         fgColor: {
           ...baseGithubColor.button.primary.fgColor,
-          accent: soft ? displayColor.num6 : displayColor.num5,
+          accent: soft ? displayColor.num7 : displayColor.num6,
         },
         bgColor: {
           ...baseGithubColor.button.primary.bgColor,
-          rest: displayColor.num5,
-          hover: displayColor.num4,
+          rest: soft ? saturate(-0.1, scaleColorLight(displayColor.num5, -2)) : displayColor.num5,
+          hover: soft ? saturate(-0.1, scaleColorLight(displayColor.num5, -7)) : scaleColorLight(displayColor.num5, 5),
         },
       },
       star: {
-        iconColor: soft ? displayColor.num6 : displayColor.num5,
+        iconColor: soft
+          ? scaleColorLight(displayColor.num6, -2)
+          : saturate(0.1, scaleColorLight(displayColor.num6, -2)),
       },
     },
     underlineNav: {
       borderColor: {
-        active: soft ? displayColor.num6 : displayColor.num5,
+        active: soft ? scaleColorLight(saturate(0.1, displayColor.num6), -5) : saturate(0.2, displayColor.num6),
       },
     },
     contribution: {
