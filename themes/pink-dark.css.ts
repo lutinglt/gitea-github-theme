@@ -1,3 +1,7 @@
+/**
+ * @author lutinglt
+ */
+
 import { defineTheme } from "src";
 import { display2GithubColor, type DisplayColor } from "src/core/display";
 import { github2ThemeColor } from "src/core/github";

@@ -1,3 +1,7 @@
+/**
+ * @author lutinglt
+ */
+
 import { defineTheme, type Chroma } from "src";
 import { lightPrettylights } from "src/core/chroma";
 import { github2ThemeColor, type GithubColor } from "src/core/github";

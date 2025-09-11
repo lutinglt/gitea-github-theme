@@ -1,3 +1,7 @@
+/**
+ * @author lutinglt
+ */
+
 import { defineTheme, themeVars } from "src";
 import { github2ThemeColor, type GithubColor } from "src/core/github";
 
