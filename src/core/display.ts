@@ -22,6 +22,10 @@ export function display2GithubColor(
 ): GithubColor {
   return {
     ...baseGithubColor,
+    diffBlob: {
+      ...baseGithubColor.diffBlob,
+      hunkNum: { bgColor: { rest: soft ? displayColor.num2 : displayColor.num1 } },
+    },
     fgColor: {
       ...baseGithubColor.fgColor,
       accent: soft ? displayColor.num7 : displayColor.num6,
