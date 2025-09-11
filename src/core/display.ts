@@ -54,7 +54,7 @@ export function display2GithubColor(
         bgColor: {
           ...baseGithubColor.button.primary.bgColor,
           rest: soft ? saturate(-0.1, scaleColorLight(displayColor.num5, -2)) : displayColor.num5,
-          hover: soft ? saturate(-0.1, scaleColorLight(displayColor.num5, -7)) : scaleColorLight(displayColor.num5, 5),
+          hover: soft ? saturate(-0.1, scaleColorLight(displayColor.num5, 3)) : scaleColorLight(displayColor.num5, 5),
         },
       },
       star: {
