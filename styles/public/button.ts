@@ -35,8 +35,6 @@ export const baseButton = css`
     // 按钮组, PR 里的压缩合并按钮
     &.buttons .button {
       ${primaryStyle}
-      // 按钮组里的按钮无阴影
-      box-shadow: none;
       &:hover {
         ${primaryHoverStyle}
       }
@@ -44,6 +42,10 @@ export const baseButton = css`
     // 按钮组整体有阴影
     &.buttons {
       box-shadow: ${themeVars.github.shadow.resting.small};
+      .button {
+        // 按钮组里的按钮无阴影
+        box-shadow: none;
+      }
     }
   }
   // 主色调基本按钮和普通按钮一样
