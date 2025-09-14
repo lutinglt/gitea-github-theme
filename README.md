@@ -5,6 +5,11 @@
 
 # Gitea GitHub Theme
 
+> [!TIP]
+>
+> 推荐搭配 Catppuccin 文件图标浏览器插件一起使用更佳
+> [web-file-explorer-icons](https://github.com/catppuccin/web-file-explorer-icons)
+
 ## 版本号说明
 
 主题版本号与 Gitea 版本号保持一致
@@ -29,11 +34,6 @@ Gitea 理论上小版本号变更不会修改前端布局, 所以主题的小版
 > [!IMPORTANT]
 >
 > 自动颜色主题需要亮色和暗色的主题文件
-
-> [!TIP]
->
-> 推荐搭配 Catppuccin 文件图标浏览器插件一起使用更佳
-> [github-file-explorer-icons](https://github.com/catppuccin/github-file-explorer-icons)
 
 例: 主题文件名为 `theme-github-dark.css`，则添加 `github-dark` 到 `THEMES` 末尾
 

@@ -5,6 +5,15 @@
 
 # Gitea GitHub Theme
 
+> [!IMPORTANT]
+>
+> Automatic color theme requires both light and dark theme files.
+
+> [!TIP]
+>
+> Recommend using Catppuccin file icon browser plugin together for better performance.
+> [web-file-explorer-icons](https://github.com/catppuccin/web-file-explorer-icons)
+
 ## Version Number Explanation
 
 The theme version number is kept consistent with the Gitea version number
@@ -28,15 +37,6 @@ accepted.
    `[ui]` section
 3. Restart Gitea
 4. Check the theme in the settings
-
-> [!IMPORTANT]
->
-> Automatic color theme requires both light and dark theme files.
-
-> [!TIP]
->
-> Recommend using Catppuccin file icon browser plugin together for better performance.
-> [github-file-explorer-icons](https://github.com/catppuccin/github-file-explorer-icons)
 
 Example: If the theme filename is `theme-github-dark.css`, add `github-dark` to the end of `THEMES`
 
