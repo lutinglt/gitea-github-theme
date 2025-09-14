@@ -5,10 +5,6 @@
 
 # Gitea GitHub Theme
 
-> [!IMPORTANT]
->
-> Automatic color theme requires both light and dark theme files.
-
 > [!TIP]
 >
 > Recommend using Catppuccin file icon browser plugin together for better performance.
@@ -37,6 +33,10 @@ accepted.
    `[ui]` section
 3. Restart Gitea
 4. Check the theme in the settings
+
+> [!IMPORTANT]
+>
+> Automatic color theme requires both light and dark theme files.
 
 Example: If the theme filename is `theme-github-dark.css`, add `github-dark` to the end of `THEMES`
 
