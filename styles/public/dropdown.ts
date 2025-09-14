@@ -192,11 +192,16 @@ export const selectionDropdown = css`
     border-top-left-radius: ${otherThemeVars.border.radius} !important;
     border-top-right-radius: ${otherThemeVars.border.radius} !important;
   }
-  // 针对创建仓库的工单标签菜单中的标签换行和颜色
-  .ui.search.selection.dropdown > .menu > .item {
-    flex-wrap: wrap;
-    > i {
-      color: ${themeVars.color.text.light.num1};
+  // 工单标签菜单中的标签换行和颜色
+  // 标签页面的标签选择框
+  .page-content.repository.labels .ui.selection.dropdown.active,
+  // 创建仓库页面的标签选择框
+  .ui.search.selection.dropdown {
+    > .menu > .item {
+      flex-wrap: wrap;
+      > i {
+        color: ${themeVars.color.text.light.num1};
+      }
     }
   }
 `;
