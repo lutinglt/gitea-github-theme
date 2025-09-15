@@ -55,6 +55,23 @@ export const dropdown = css`
         .ui.checkbox input[type="checkbox"] {
           height: 100%;
         }
+        // 修复 Wiki 页面下搜索框中搜索时, 显示隐藏的项目
+        &.filtered {
+          display: none !important;
+        }
+      }
+      // 当筛选后, 让菜单提供边距, 因为无法确定保留的是菜单中哪个 item
+      // 不是所有菜单都提供边距方式, 原因为比如会导致分支菜单中的查看所有分支上间隔缺失, 这种方式单独为 Wiki 菜单做处理
+      &:has(> .item.filtered):has(> .item.selected) {
+        padding: 8px 0px;
+        > .item {
+          &:first-of-type {
+            margin-top: 0;
+          }
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+        }
       }
       > .divider {
         margin: 8px 0;
