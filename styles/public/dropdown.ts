@@ -62,6 +62,7 @@ export const dropdown = css`
       }
       // 当筛选后, 让菜单提供边距, 因为无法确定保留的是菜单中哪个 item
       // 不是所有菜单都提供边距方式, 原因为比如会导致分支菜单中的查看所有分支上间隔缺失, 这种方式单独为 Wiki 菜单做处理
+      // 有筛选(.filtered)且有筛选结果(.selected)时提供菜单边距, 没结果时提供会导致多余的菜单边框线
       &:has(> .item.filtered):has(> .item.selected) {
         padding: 8px 0px;
         > .item {
