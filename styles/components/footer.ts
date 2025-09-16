@@ -11,6 +11,15 @@ export const footer = css`
     padding: 16px 0 40px 0;
     > .left-links {
       gap: 4px;
+      > a {
+        color: ${themeVars.color.text.light.num1};
+        &:hover {
+          color: ${themeVars.color.primary.self};
+        }
+      }
+      > strong {
+        font-weight: 400;
+      }
     }
     > .right-links {
       gap: 16px;
