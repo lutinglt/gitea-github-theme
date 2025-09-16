@@ -193,6 +193,10 @@ export const secondaryMenu = css`
       }
     }
   }
+  // 修复仓库页面下的二级导航栏的下划线因浏览器 BUG 导致显示的异常问题(导致下划线和分割线重叠变粗)
+  .page-content.repository .ui.secondary.pointing.menu {
+    border-bottom: none !important;
+  }
 `;
 
 // 分页菜单
