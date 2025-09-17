@@ -45,13 +45,20 @@ body:
     validations:
       required: true
   - type: textarea
+    id: theme-screenshot
+    attributes:
+      label: 应用主题后的截图 ( Screenshot of the theme applied )
+      description: 请上传应用主题后的截图 ( Please upload a screenshot of the theme applied )
+    validations:
+      required: true
+  - type: textarea
     id: steps-to-reproduce
     attributes:
       label: 复现步骤 ( Steps to reproduce )
       description: 请描述如何复现错误 ( Please describe how to reproduce the error )
       placeholder: 1. 安装主题 2. 刷新页面 3. 查看错误 ( 1. Install the theme 2. Refresh the page 3. View the error )
     validations:
-      required: true
+      required: false
   - type: textarea
     id: bug-description
     attributes:
@@ -59,18 +66,11 @@ body:
       description: 请描述错误的具体表现 ( Please describe the specific presentation of the error )
       placeholder: 页面底部的颜色错误 ( The color of the bottom of the page is incorrect )
     validations:
-      required: true
+      required: false
   - type: textarea
     id: gitea-screenshot
     attributes:
       label: Gitea 默认主题下的截图 ( Screenshot of the default Gitea theme )
       description: 请上传 Gitea 默认主题下的截图 ( Please upload a screenshot of the default Gitea theme )
     validations:
-      required: true
-  - type: textarea
-    id: theme-screenshot
-    attributes:
-      label: 应用主题后的截图 ( Screenshot of the theme applied )
-      description: 请上传应用主题后的截图 ( Please upload a screenshot of the theme applied )
-    validations:
-      required: true
+      required: false
