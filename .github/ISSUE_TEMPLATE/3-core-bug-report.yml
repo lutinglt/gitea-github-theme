@@ -1,0 +1,43 @@
+name: 框架错误报告 ( Core bug report )
+description: 报告框架的错误 ( Report errors in the theme framework )
+labels: ["core bug"]
+body:
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: 实际表现 ( Actual Behavior )
+      description: 请描述实际的错误表现 ( Please describe the actual error presentation )
+      placeholder: 未生成自动颜色主题 ( No automatic color theme generated )
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: 期望表现 ( Expected Behavior )
+      description: 请描述期望的正确表现 ( Please describe the expected correct presentation )
+      placeholder: 生成自动颜色主题 ( Generate automatic color theme )
+    validations:
+      required: true
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: 复现步骤 ( Steps to reproduce )
+      description: 请描述如何复现错误 ( Please describe how to reproduce the error )
+      placeholder: 1. 新建颜色主题 2. 编译主题 3. 查看错误 ( 1. Create a color theme 2. Compile the theme 3. View the error )
+    validations:
+      required: true
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: 错误描述 ( Bug Description )
+      description: 请描述错误的具体表现 ( Please describe the specific presentation of the error )
+      placeholder: 未生成自动颜色主题 ( No automatic color theme generated )
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: 截图 ( Screenshot )
+      description: 请上传错误的截图 ( Please upload the screenshot of the error )
+    validations:
+      required: true

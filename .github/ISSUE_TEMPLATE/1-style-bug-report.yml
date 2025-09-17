@@ -28,6 +28,30 @@ body:
     validations:
       required: true
   - type: textarea
+    id: actual-behavior
+    attributes:
+      label: 实际表现 ( Actual Behavior )
+      description: 请描述实际的错误表现 ( Please describe the actual error presentation )
+      placeholder: 页面底部的颜色错误 ( The color of the bottom of the page is incorrect )
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: 期望表现 ( Expected Behavior )
+      description: 请描述期望的正确表现 ( Please describe the expected correct presentation )
+      placeholder: 页面底部的颜色应该是白色 ( The color of the bottom of the page should be white )
+    validations:
+      required: true
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: 复现步骤 ( Steps to reproduce )
+      description: 请描述如何复现错误 ( Please describe how to reproduce the error )
+      placeholder: 1. 安装主题 2. 刷新页面 3. 查看错误 ( 1. Install the theme 2. Refresh the page 3. View the error )
+    validations:
+      required: true
+  - type: textarea
     id: bug-description
     attributes:
       label: 错误描述 ( Bug Description )
@@ -41,4 +65,4 @@ body:
       label: 截图 ( Screenshot )
       description: 请上传错误的截图 ( Please upload the screenshot of the error )
     validations:
-      required: false
+      required: true
