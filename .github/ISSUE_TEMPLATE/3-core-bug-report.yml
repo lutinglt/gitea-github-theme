@@ -23,7 +23,8 @@ body:
     attributes:
       label: 复现步骤 ( Steps to reproduce )
       description: 请描述如何复现错误 ( Please describe how to reproduce the error )
-      placeholder: 1. 新建颜色主题 2. 编译主题 3. 查看错误 ( 1. Create a color theme 2. Compile the theme 3. View the error )
+      placeholder:
+        1. 新建颜色主题 2. 编译主题 3. 查看错误 ( 1. Create a color theme 2. Compile the theme 3. View the error )
     validations:
       required: true
   - type: textarea
