@@ -8,6 +8,7 @@ body:
         1. 请使用最新的主题, 并使用 Ctrl+F5 刷新页面查看 Bug 是否消失 ( Please use the latest theme and refresh the page with Ctrl+F5 to see if the Bug has disappeared )
         2. 请查看项目根目录下的 CHANGELOG.md 文件, 查看是否有修复该 Bug 的相关描述 ( Please check the CHANGELOG.md file in the project root directory for descriptions of fixes related to this Bug )
         3. 如果有相关描述, 可以查看 README.md 自己编译开发版本是否修复了该 Bug ( If there are related descriptions, you can check if the Bug has been fixed by compiling the development version yourself in the README.md )
+        4. 请查看 Gitea 默认主题下是否有同样的错误, 确认非主题问题 ( Please check if there is the same error in the default Gitea theme, confirming that it is not a theme problem )
   - type: input
     id: theme-version
     attributes:
