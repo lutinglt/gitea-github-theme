@@ -1,0 +1,12 @@
+name: 文档报告 ( Document report )
+description: 改进或补充文档 ( Improve or supplement the document )
+labels: ["documentation"]
+body:
+  - type: textarea
+    id: doc-description
+    attributes:
+      label: 文档描述 ( Document Description )
+      description: 请描述文档的具体内容 ( Please describe the specific content of the document )
+      placeholder: 文档内容有误 ( The document content is incorrect )
+    validations:
+      required: true

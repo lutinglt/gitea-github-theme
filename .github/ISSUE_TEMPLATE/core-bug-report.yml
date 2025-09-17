@@ -1,0 +1,12 @@
+name: 框架错误报告 ( Core bug report )
+description: 报告框架的错误 ( Report errors in the theme framework )
+labels: ["core bug"]
+body:
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: 错误描述 ( Bug Description )
+      description: 请描述错误的具体表现 ( Please describe the specific presentation of the error )
+      placeholder: 编译主题出错 ( Error compiling the theme )
+    validations:
+      required: true
