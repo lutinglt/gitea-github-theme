@@ -60,9 +60,16 @@ body:
     validations:
       required: true
   - type: textarea
-    id: screenshot
+    id: gitea-screenshot
     attributes:
-      label: 截图 ( Screenshot )
-      description: 请上传错误的截图 ( Please upload the screenshot of the error )
+      label: Gitea 默认主题下的截图 ( Screenshot of the default Gitea theme )
+      description: 请上传 Gitea 默认主题下的截图 ( Please upload a screenshot of the default Gitea theme )
+    validations:
+      required: true
+  - type: textarea
+    id: theme-screenshot
+    attributes:
+      label: 应用主题后的截图 ( Screenshot of the theme applied )
+      description: 请上传应用主题后的截图 ( Please upload a screenshot of the theme applied )
     validations:
       required: true
