@@ -1,0 +1,40 @@
+name: 样式错误报告 ( Style bug report )
+description: 安装主题后出现颜色/位置错误等 ( Color/position errors occur after installing the theme )
+labels: ["style bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        1. 请使用最新的主题, 并使用 Ctrl+F5 刷新页面查看 Bug 是否消失 ( Please use the latest theme and refresh the page with Ctrl+F5 to see if the Bug has disappeared )
+        2. 请查看项目根目录下的 CHANGELOG.md 文件, 查看是否有修复该 Bug 的相关描述 ( Please check the CHANGELOG.md file in the project root directory for descriptions of fixes related to this Bug )
+  - type: input
+    id: theme-version
+    attributes:
+      label: 主题版本 ( Theme Version )
+      description: 主题的版本 ( What version of the theme are you using? )
+      placeholder: ex. 1.24.5
+    validations:
+      required: true
+  - type: input
+    id: gitea-version
+    attributes:
+      label: Gitea 版本 ( Gitea Version )
+      description: 应用主题的 Gitea 版本 ( What version of Gitea are you using? )
+      placeholder: ex. 1.24.5
+    validations:
+      required: true
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: 错误描述 ( Bug Description )
+      description: 请描述错误的具体表现 ( Please describe the specific presentation of the error )
+      placeholder: 页面底部的颜色错误 ( The color of the bottom of the page is incorrect )
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: 截图 ( Screenshot )
+      description: 请上传错误的截图 ( Please upload the screenshot of the error )
+    validations:
+      required: false
