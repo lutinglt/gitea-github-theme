@@ -3,6 +3,13 @@ import { css, customThemeVars, otherThemeVars, themeVars } from "src/types/vars"
 
 export const navbarRight = css`
   #navbar {
+    min-height: 64px;
+    .navbar-left {
+      #navbar-logo img {
+        height: 32px;
+        width: 32px;
+      }
+    }
     // 进入用户页面后, 避免注册, 登录和首页等意外覆盖
     .navbar-right:has(.user-menu) {
       gap: 8px;

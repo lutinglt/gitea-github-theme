@@ -7,14 +7,7 @@ export const repoHeader = css`
     .ui.compact.button {
       padding: 3px 12px;
     }
-    // 仓库图标
-    img.ui.avatar {
-      height: 32px;
-      width: 32px;
-      margin-block-start: 0.5rem;
-      margin-block-end: 0.5rem;
-    }
-
+    // 仓库名称
     .flex-item {
       .flex-item-title {
         // 间隔线颜色
