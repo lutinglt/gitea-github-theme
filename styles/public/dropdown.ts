@@ -102,8 +102,16 @@ export const dropdown = css`
     border-radius: 12px !important;
   }
   // 修复嵌套菜单的圆角问题, wiki 页面和组织页面的用户下拉菜单
-  .ui.dropdown .menu .scrolling.menu {
-    border-radius: 0 0 12px 12px !important;
+  .ui.dropdown .menu {
+    .scrolling.menu {
+      border-radius: 0 0 12px 12px !important;
+    }
+    // 修复仪表板切换用户按钮菜单下无创建组织按钮时的菜单圆角
+    &.context-user-switch {
+      .scrolling.menu:last-child {
+        border-radius: 0 0 12px 12px !important;
+      }
+    }
   }
   // 修复下拉菜单元素溢出问题
   // 用户菜单
