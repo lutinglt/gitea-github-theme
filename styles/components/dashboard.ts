@@ -135,3 +135,10 @@ export const issueListMobile = css`
     }
   }
 `;
+
+// 修复仪表板下二级面板选择菜单组织的标签间隔
+export const fixOrgLabel = css`
+  .dashboard .secondary-nav .org-visibility .label {
+    margin-right: 0;
+  }
+`;

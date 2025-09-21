@@ -180,6 +180,7 @@ export const github = {
          * @dropdown `dropdown` 下拉框子项的悬停背景颜色
          * @menu `verticalMenu` 垂直菜单项的悬停背景颜色
          * @menu `menu` 菜单项的悬停背景颜色
+         * @menu `secondaryMenu` 二级菜单按钮的悬停背景颜色
          * @repo `repoHeader` 仓库标题的悬停背景颜色
          * @commit `commit` 提交信息的 Action 按钮的悬停背景颜色
          * @filelist `repoFiles` README 栏的按钮的悬停背景颜色

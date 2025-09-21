@@ -27,7 +27,7 @@ export const actions = css`
         margin-bottom: 24px;
         margin-left: 2px;
       }
-
+      // 工作流列表标题栏菜单
       .ui.secondary.menu {
         background-color: ${themeVars.color.box.header};
         border: 1px solid ${themeVars.color.light.border};
@@ -36,6 +36,9 @@ export const actions = css`
         border-top-right-radius: ${otherThemeVars.border.radius};
         padding: 16px;
         margin-bottom: 0;
+        > .item {
+          color: ${themeVars.color.text.light.num1};
+        }
       }
 
       .ui.info.message {

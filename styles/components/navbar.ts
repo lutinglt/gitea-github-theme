@@ -7,9 +7,9 @@ export const navbarRight = css`
     padding: 0px 16px;
     min-height: 64px;
     .navbar-left {
-      gap: 4px;
+      gap: 8px;
       > .item {
-        padding: 6px 10px;
+        padding: 4px 8px;
         min-height: 20px;
         &.active {
           font-weight: 600;
@@ -150,5 +150,23 @@ export const navbarRight = css`
 export const secondaryNav = css`
   .page-content > :first-child.secondary-nav {
     margin-bottom: 16px;
+    // 仪表板界面的二级导航栏用户菜单
+    > .ui.secondary.stackable.menu {
+      gap: 0px;
+      min-height: 48px;
+      > .item {
+        > .ui.dropdown > .text {
+          display: inline-flex;
+          align-items: center;
+          gap: 4px;
+          svg {
+            margin-right: 4px;
+          }
+        }
+      }
+      > .right.menu {
+        gap: 4px;
+      }
+    }
   }
 `;
