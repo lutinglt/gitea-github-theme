@@ -200,11 +200,11 @@ export function github2ThemeColor(githubColor: GithubColor): ThemeColor {
       bg: githubColor.bgColor.emphasis,
     },
     nav: {
-      bg: githubColor.bgColor.inset,
+      bg: githubColor.bgColor.muted,
       hoverBg: githubColor.control.transparent.bgColor.hover,
       text: themeVars.color.text.self,
     },
-    secondaryNavBg: themeVars.color.nav.bg,
+    secondaryNavBg: themeVars.color.body,
     label: {
       text: themeVars.color.text.self,
       bg: githubColor.bgColor.neutral.muted,

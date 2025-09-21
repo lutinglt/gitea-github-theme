@@ -3,11 +3,28 @@ import { css, customThemeVars, otherThemeVars, themeVars } from "src/types/vars"
 
 export const navbarRight = css`
   #navbar {
+    border-bottom: 0;
+    padding: 0px 16px;
     min-height: 64px;
     .navbar-left {
-      #navbar-logo img {
-        height: 32px;
-        width: 32px;
+      gap: 4px;
+      > .item {
+        padding: 6px 10px;
+        min-height: 20px;
+        &.active {
+          font-weight: 600;
+        }
+        &#navbar-logo {
+          // 与下方的用户切换头像对齐
+          padding-left: 6px;
+          &:hover {
+            background: unset;
+          }
+          img {
+            height: 32px;
+            width: 32px;
+          }
+        }
       }
     }
     // 进入用户页面后, 避免注册, 登录和首页等意外覆盖

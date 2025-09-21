@@ -144,6 +144,9 @@ export const notification = css`
           &:last-child {
             border-bottom-left-radius: ${otherThemeVars.border.radius};
             border-bottom-right-radius: ${otherThemeVars.border.radius};
+            &:hover {
+              border-bottom-left-radius: 0;
+            }
           }
           &:hover {
             background: ${themeVars.github.bgColor.accent.muted};
