@@ -94,12 +94,13 @@ export const navbarRight = css`
         .navbar-profile-admin {
           background-color: ${themeVars.github.bgColor.accent.emphasis};
           border-radius: 25px;
+          border: 2px solid ${themeVars.color.nav.bg};
           color: ${themeVars.color.white};
-          font-size: 8px;
+          font-size: 9px;
           font-weight: 600;
           padding: 2px 5px;
-          top: -3px;
-          left: 22px;
+          top: -7px;
+          left: 21px;
         }
       }
       // 通知和计时器的圆点
@@ -109,10 +110,10 @@ export const navbarRight = css`
           background-color: ${themeVars.github.bgColor.accent.emphasis};
           border-radius: 25px;
           color: ${themeVars.color.white};
-          font-size: 8px;
+          font-size: 9px;
           font-weight: 600;
-          top: -14px;
-          left: 12px;
+          top: -15px;
+          left: 11px;
         }
       }
     }
