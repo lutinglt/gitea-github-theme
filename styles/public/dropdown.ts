@@ -17,6 +17,7 @@ export const dropdown = css`
       > .item:not(.tw-hidden) {
         display: flex !important;
         align-items: center;
+        align-content: center;
         padding: 6px 8px !important;
         border-radius: ${otherThemeVars.border.radius} !important;
         gap: 4px;
@@ -25,6 +26,10 @@ export const dropdown = css`
         }
         &:not(.emoji):first-of-type {
           margin-top: 8px;
+          // 工单详细页面的标签菜单中的清除选中标签按钮
+          &.clear-selection {
+            margin-top: 0px;
+          }
         }
         // 不知道为什么提交差异对比页面操作中的 cherrypick 按钮无法被选中
         &.cherry-pick-button,
@@ -224,7 +229,8 @@ export const selectionDropdown = css`
   // 创建仓库页面的标签选择框
   .ui.search.selection.dropdown {
     > .menu > .item {
-      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: flex-start;
       > i {
         color: ${themeVars.color.text.light.num1};
       }

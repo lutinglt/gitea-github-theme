@@ -547,6 +547,7 @@ export const issueSidebar = css`
   .page-content.repository.issue {
     .issue-content {
       gap: 24px;
+      // 侧边栏
       .issue-content-right {
         border: 0;
         font-size: 12px;
@@ -595,6 +596,49 @@ export const issueSidebar = css`
           .ui.list {
             margin-top: 0 !important;
             margin-bottom: 0 !important;
+          }
+          // 标签菜单项
+          .ui.dropdown > .menu > .scrolling.menu > .item:has(.item-secondary-info) {
+            // 修复标签菜单中描述文本过长没有换行挤掉标签的问题
+            display: grid !important;
+            grid-template-columns: auto auto 1fr;
+            row-gap: 0px; // 去除行间距, 仅当有描述信息时才有间距(.tw-pl-\\\[20px\\\])
+            // 如果是归档标签则隐藏
+            &.tw-hidden {
+              display: none !important;
+            }
+            // 默认隐藏多余信息避免标签对齐问题
+            .item-secondary-info {
+              display: none;
+              grid-column: 2 / -1; // 从第2列对齐
+              color: ${themeVars.color.text.light.num1};
+              > .tw-pl-\\\[20px\\\] {
+                // 已经与第二列对齐, 不需要额外的 padding
+                padding-left: 0px !important;
+                padding-top: 4px;
+                // 显示全部描述信息与 Github 保持一致
+                white-space: normal;
+                small {
+                  font-size: 12px;
+                }
+              }
+              > .archived-label-hint {
+                // 与父元素 item 的 padding 对齐 (dropdown.ts .ui.dropdown .menu > .item)
+                top: 6px;
+                right: 8px;
+              }
+              // 如果有描述信息则显示
+              &:has(.tw-pl-\\\[20px\\\]) {
+                display: block;
+                > .archived-label-hint {
+                  top: 4px; // 有描述信息的归档标签与标签对齐需要更高点
+                }
+              }
+              // 如果有归档标签则显示
+              &:has(.archived-label-hint > .ui.label) {
+                display: block;
+              }
+            }
           }
         }
         // 时间追踪
