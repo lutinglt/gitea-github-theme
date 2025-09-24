@@ -28,6 +28,14 @@ body:
       placeholder: ex. 1.24.5
     validations:
       required: true
+  - type: input
+    id: page
+    attributes:
+      label: 页面 ( Page )
+      description: 错误出现的页面 ( The page where the error occurred )
+      placeholder: 工单列表页 ( Issue list page )
+    validations:
+      required: true
   - type: textarea
     id: actual-behavior
     attributes:
