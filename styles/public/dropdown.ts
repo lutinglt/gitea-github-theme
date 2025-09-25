@@ -33,6 +33,8 @@ export const dropdown = css`
         }
         // 不知道为什么提交差异对比页面操作中的 cherrypick 按钮无法被选中
         &.cherry-pick-button,
+        // 下一个 item 是最后一个并且被隐藏时, 目前仅在顶部导航栏工单和 PR 仪表板的菜单中出现
+        &:has(+ .tw-hidden:last-of-type),
         &:not(.emoji):last-of-type {
           margin-bottom: 8px;
         }
