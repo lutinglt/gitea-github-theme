@@ -30,3 +30,10 @@ body:
       description: 预期的主题效果 ( Expected theme effect )
     validations:
       required: false
+  - type: textarea
+    id: github-screenshot
+    attributes:
+      label: 可供参考的 GitHub 主题下的截图 ( Screenshot under reference from the GitHub theme )
+      description: 请上传 GitHub 主题下的截图 ( Please upload a screenshot of the GitHub theme )
+    validations:
+      required: false
