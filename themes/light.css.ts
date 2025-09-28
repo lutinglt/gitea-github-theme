@@ -73,7 +73,7 @@ export const lightGithubColors: GithubColor = {
     transparent: { bgColor: { active: "#818b9826", hover: "#818b981a", selected: "#818b9826" } },
   },
   shadow: { floating: { small: "#25292e0a" }, resting: { small: "#1f23280f" } },
-  overlay: { backdrop: { bgColor: "#c8d1da66" } },
+  overlay: { backdrop: { bgColor: "#c8d1da66" }, bgColor: "#ffffff" },
   underlineNav: { borderColor: { active: "#fd8c73" } },
   contribution: {
     default: {

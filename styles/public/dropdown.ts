@@ -19,6 +19,7 @@ export const dropdown = css`
         align-items: center;
         align-content: center;
         padding: 6px 8px !important;
+        min-height: 32px;
         border-radius: ${otherThemeVars.border.radius} !important;
         gap: 4px;
         &:not(.emoji) {
@@ -255,6 +256,32 @@ export const branchDropdown = css`
     max-width: 640px;
     > .menu > .item {
       animation: ${animationDown};
+      height: 32px;
+    }
+    // 分支/标签切换
+    > .branch-tag-tab {
+      > .branch-tag-item {
+        font-weight: 500;
+        padding: 8px 12px;
+        height: 32px;
+        line-height: 1.15;
+        svg {
+          display: none;
+        }
+        &.active {
+          background: ${themeVars.color.body};
+        }
+        &:hover {
+          color: inherit;
+          &:not(.active) {
+            background: ${themeVars.color.hover.self};
+            border: 1px solid ${themeVars.color.secondary.self};
+            border-bottom: 0;
+            border-top-left-radius: ${otherThemeVars.border.radius};
+            border-top-right-radius: ${otherThemeVars.border.radius};
+          }
+        }
+      }
     }
   }
 `;

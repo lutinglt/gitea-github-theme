@@ -655,7 +655,8 @@ export const issueSidebar = css`
         .ui.form .due-date {
           color: ${themeVars.color.text.self};
         }
-        .divider {
+        // 分割线
+        > .divider {
           margin: 12px 0 12px 8px;
           width: calc(100% - 16px);
         }

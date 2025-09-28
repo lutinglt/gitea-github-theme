@@ -70,7 +70,7 @@ export type GithubColor = {
     transparent: { bgColor: { active: string; hover: string; selected: string } };
   };
   shadow: { floating: { small: string }; resting: { small: string } };
-  overlay: { backdrop: { bgColor: string } };
+  overlay: { backdrop: { bgColor: string }; bgColor: string };
   underlineNav: { borderColor: { active: string } };
   contribution: {
     default: {
@@ -91,7 +91,7 @@ export function github2ThemeColor(githubColor: GithubColor): ThemeColor {
     activeBg: githubColor.control.bgColor.active,
     hoverBg: githubColor.control.transparent.bgColor.hover,
     menu: {
-      bg: githubColor.bgColor.inset,
+      bg: githubColor.overlay.bgColor,
       border: githubColor.borderColor.muted,
     },
   };
@@ -169,7 +169,7 @@ export function github2ThemeColor(githubColor: GithubColor): ThemeColor {
       opaque: themeVars.color.box.header,
     },
     active: githubColor.control.transparent.bgColor.selected,
-    menu: githubColor.bgColor.inset,
+    menu: githubColor.overlay.bgColor,
     card: themeVars.color.body,
     markup: {
       tableRow: githubColor.bgColor.muted,

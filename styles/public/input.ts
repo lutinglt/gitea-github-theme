@@ -39,4 +39,8 @@ export const input = css`
   .ui.form#repo-search-form {
     align-items: center;
   }
+  // 下拉菜单的输入框
+  .ui.dropdown.dropdown .menu>.input {
+    margin: 12px 10px;
+  }
 `;

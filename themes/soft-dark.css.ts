@@ -67,7 +67,7 @@ export const softDarkGithubColors: GithubColor = {
     transparent: { bgColor: { active: "#656c7633", hover: "#656c7626", selected: "#656c761a" } },
   },
   shadow: { floating: { small: "#01040966" }, resting: { small: "#01040999" } },
-  overlay: { backdrop: { bgColor: "#262c3666" } },
+  overlay: { backdrop: { bgColor: "#262c3666" }, bgColor: "#2a313c" },
   underlineNav: { borderColor: { active: "#ec775c" } },
   contribution: {
     default: {
