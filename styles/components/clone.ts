@@ -92,7 +92,7 @@ export const clone = css`
         .item {
           border-radius: ${otherThemeVars.border.radius};
           padding: 6px 8px;
-          min-height: 32px;
+          height: 32px;
           margin: 0;
           svg {
             color: ${themeVars.color.text.light.num1};

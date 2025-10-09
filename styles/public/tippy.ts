@@ -15,7 +15,8 @@ export const tippyBox = css`
       border: unset;
       box-shadow: ${themeVars.github.shadow.floating.small};
     }
-    &[data-theme="default"] {
+    &[data-theme="default"],
+    &[data-theme="menu"] {
       border-radius: 12px;
     }
     &[data-theme="box-with-header"] {
@@ -32,6 +33,8 @@ export const tippyBox = css`
         padding: 8px;
         .item {
           border-radius: ${otherThemeVars.border.radius};
+          padding: 6px 8px;
+          height: 32px;
           &:hover {
             background-color: ${themeVars.github.control.transparent.bgColor.hover};
           }
