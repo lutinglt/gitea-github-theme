@@ -1,5 +1,10 @@
 <h1 align="center">Gitea GitHub Theme</h1>
-<p align="center">中文 | <a href="./README_EN.md">English</a></p>
+
+<div align="center">
+
+中文 • [English](README_EN.md)
+
+</div>
 
 不仅仅是在颜色上, 在样式细节上也追求 GitHub 风格的 Gitea 主题.
 
