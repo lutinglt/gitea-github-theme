@@ -61,7 +61,7 @@ export const actions = css`
         .run-list-ref {
           background-color: ${themeVars.github.bgColor.accent.muted};
           color: ${themeVars.github.fgColor.accent};
-          font-family: var(--fontStack-monospace, ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, monospace);
+          font-family: var(--fonts-monospace);
           font-weight: 400;
           &:hover {
             background-color: ${themeVars.github.bgColor.accent.muted};
@@ -193,6 +193,26 @@ export const actionViewLeft = css`
             width: 4px;
           }
         }
+        .job-brief-item-right {
+          svg.job-brief-rerun {
+            display: none;
+            color: ${themeVars.color.console.fg.subtle};
+            &:hover {
+              color: ${themeVars.color.text.self};
+            }
+          }
+          .step-summary-duration {
+            color: ${themeVars.color.console.fg.subtle};
+            font-family: var(--fonts-monospace);
+          }
+        }
+        &:hover {
+          .job-brief-item-right {
+            svg.job-brief-rerun {
+              display: inline-block;
+            }
+          }
+        }
       }
     }
   }
@@ -248,6 +268,11 @@ export const actionViewRight = css`
           svg.svg.text.green {
             color: ${themeVars.color.console.fg.self} !important;
           }
+        }
+        // 步骤耗时
+        .step-summary-duration {
+          font-size: 12px;
+          font-family: var(--fonts-monospace);
         }
       }
       // 步骤日志

@@ -1,9 +1,7 @@
-<p align="center">
-  <a href="./README.md">中文</a> |
-  English
-</p>
+<h1 align="center">Gitea GitHub Theme</h1>
+<p align="center"><a href="./README.md">中文</a> | English</p>
 
-# Gitea GitHub Theme
+A Gitea theme that pursues GitHub style not only in colors but also in styling details.
 
 > [!TIP]
 >
@@ -153,7 +151,3 @@ npm run build
 
 After compilation, theme files will be generated in the `dist` directory. You can place the theme files into the
 `gitea/public/assets/css` directory, then add the theme name to the end of `THEMES` in `gitea/conf/app.ini`
-
-## Contribution
-
-Please refer to [CONTRIBUTING](CONTRIBUTING.md)
