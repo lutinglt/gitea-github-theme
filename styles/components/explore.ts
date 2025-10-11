@@ -7,12 +7,6 @@ const orgRepoVar = fallbackVar(customThemeVars.org.repolistColumns, "1");
 
 // 仓库列表
 export const repoList = css`
-  // 修复仓库探索无搜索结果时的样式, 该样式与 .flex-item 的样式保持一致
-  .page-content.explore.repositories > .ui.container > .flex-list:not(#activity-feed) > div:only-child {
-    border: 1px solid ${themeVars.color.light.border};
-    border-radius: ${otherThemeVars.border.radius};
-    padding: 16px;
-  }
   // 组织
   .page-content.organization.profile > .ui.container > .ui.stackable > .ui.eleven,
   // 用户
@@ -159,6 +153,36 @@ export const mobileList = css`
       > .flex-list:not(#activity-feed) {
         grid-template-columns: 1fr;
         gap: 8px;
+      }
+    }
+  }
+`;
+
+// 统一无搜索结果时的样式
+export const notMatch = css`
+  // 组织的仓库列表
+  .page-content.organization.profile > .ui.container > .ui.stackable > .ui.eleven,
+  // 用户的仓库列表
+  .page-content.user.profile > .ui.container > .ui.stackable > .ui.twelve,
+  // 探索的仓库列表
+  .page-content.explore.repositories > .ui.container,
+  // 组织的成员列表
+  .page-content.organization.members >.ui.container,
+  // 探索的用户和组织列表
+  .page-content.explore.users >.ui.container {
+    // 排除用户的公开活动页
+    > .flex-list:not(#activity-feed) {
+      &:has(> div:only-child):not(:has(.flex-item-main)) {
+        grid-template-columns: 1fr;
+        > div {
+          border: 1px solid ${themeVars.color.light.border};
+          border-radius: ${otherThemeVars.border.radius};
+          font-size: 16px;
+          font-weight: 500;
+          padding: 32px;
+          display: flex;
+          justify-content: center;
+        }
       }
     }
   }
