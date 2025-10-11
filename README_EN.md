@@ -29,6 +29,12 @@ accepted.
 
 > Development stage theme version number format: `1.major.minor.timestamp`
 
+### Theme Version Release Rules
+
+- When Gitea releases a minor version, if there are changes in the theme, a new theme version with the same minor version as Gitea will be released
+- When Gitea releases a major version, if there are changes in the theme, a theme version `1.old_major_version.latest` will be released and the old version will no longer be maintained
+- The pre-release version for major version adaptation is `1.major_version.rc`, and when there are no obvious bugs, a theme version with the same major version as Gitea will be released
+
 ## Installation
 
 1. Download the latest CSS theme file from the release page and place it in the `gitea/public/assets/css` directory
