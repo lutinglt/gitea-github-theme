@@ -7,6 +7,12 @@ const orgRepoVar = fallbackVar(customThemeVars.org.repolistColumns, "1");
 
 // 仓库列表
 export const repoList = css`
+  // 修复仓库探索无搜索结果时的样式, 该样式与 .flex-item 的样式保持一致
+  .page-content.explore.repositories > .ui.container > .flex-list:not(#activity-feed) > div:only-child {
+    border: 1px solid ${themeVars.color.light.border};
+    border-radius: ${otherThemeVars.border.radius};
+    padding: 16px;
+  }
   // 组织
   .page-content.organization.profile > .ui.container > .ui.stackable > .ui.eleven,
   // 用户
