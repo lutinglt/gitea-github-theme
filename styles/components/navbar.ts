@@ -156,6 +156,9 @@ export const secondaryNav = css`
       gap: 0px;
       min-height: 48px;
       > .item {
+        // 修复手机下的菜单按钮没有居中的问题
+        margin-top: auto;
+        margin-bottom: auto;
         > .ui.dropdown > .text {
           display: inline-flex;
           align-items: center;
