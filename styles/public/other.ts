@@ -8,9 +8,17 @@ export const listHeader = css`
   }
 `;
 
-// 已标星的图标
-export const star = css`
+export const svg = css`
+  // 已标星的图标
   .octicon-star-fill {
     color: ${themeVars.github.button.star.iconColor} !important;
+  }
+  // VSCode 图标
+  .gitea-vscode {
+    color: #007acc !important;
+  }
+  // VSCodium 图标
+  .gitea-vscodium {
+    color: #429cf0 !important;
   }
 `;
