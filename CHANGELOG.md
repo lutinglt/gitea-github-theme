@@ -1,6 +1,6 @@
 ### 🌈 Style
 
-- 优化顶部和二级导航栏的样式和颜色
+- 优化顶部和二级导航栏的样式和颜色 #18
 
 ##### 更符合 GitHub 风格
 
@@ -22,3 +22,30 @@
 - 修复仪表板切换用户按钮菜单下无创建组织按钮时的菜单圆角问题
 - 修复导航栏工单/PR等仪表板下筛选等菜单的子项的间距问题
 - 修复手机下仪表板二级导航栏用户菜单按钮没有居中的问题
+
+## 📃 English
+
+### 🌈 Style
+
+- Optimized styles and colors for top and secondary navigation bars #18
+
+##### More aligned with GitHub style
+
+- Fixed and synchronized label menu styles under issue or PR detail pages #19
+- Unified styles for repository/user/organization lists when no search results are found #20
+- Synchronized footer styles
+- Optimized dropdown menu styles
+- Optimized menu item styles for creating label menus
+- Synchronized menu colors in light and soft dark themes
+- Synchronized font styles for run time and rerun button styles on workflow run pages
+- Added colors to VSCode and VSCodium icons
+
+### 🐞 Fix
+
+- Fixed issue where Wiki page search items were not properly hidden #15
+- Fixed width issue for sorting menu items in admin account management
+- Fixed shadow issue for primary color button groups in merge commits
+- Fixed issue where underlines in secondary navigation bars on repository pages were too thick
+- Fixed menu corner radius issue when no create organization button exists under dashboard user switching button menu
+- Fixed spacing issue for sub-items in filter menus under navigation bar issues/PRs dashboards
+- Fixed issue where user menu buttons in secondary navigation bars on mobile dashboards were not centered
