@@ -14,9 +14,7 @@
 
 </div>
 
-<p align="center">
-  <img src="screenshots/dashboard.png" style="border-radius: 12px;box-shadow: 0px 0px 0px 1px #3d444d66, 0px 6px 12px -3px #01040966, 0px 6px 18px 0px #01040966"></img>
-</p>
+![Dashboard](screenshots/dashboard.png)
 
 > [!TIP]
 >

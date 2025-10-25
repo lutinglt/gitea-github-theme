@@ -14,9 +14,7 @@ A Gitea theme that pursues GitHub style not only in colors but also in styling d
 
 </div>
 
-<p align="center">
-  <img src="screenshots/en/dashboard-en.png" style="border-radius: 12px;box-shadow: 0px 0px 0px 1px #3d444d66, 0px 6px 12px -3px #01040966, 0px 6px 18px 0px #01040966"></img>
-</p>
+![Dashboard](screenshots/en/dashboard-en.png)
 
 > [!TIP]
 >
@@ -41,9 +39,12 @@ accepted.
 
 ### Theme Version Release Rules
 
-- When Gitea releases a minor version, if there are changes in the theme, a new theme version with the same minor version as Gitea will be released
-- When Gitea releases a major version, if there are changes in the theme, a theme version `1.old_major_version.latest` will be released and the old version will no longer be maintained
-- The pre-release version for major version adaptation is `1.major_version.rc`, and when there are no obvious bugs, a theme version with the same major version as Gitea will be released
+- When Gitea releases a minor version, if there are changes in the theme, a new theme version with the same minor
+  version as Gitea will be released
+- When Gitea releases a major version, if there are changes in the theme, a theme version `1.old_major_version.latest`
+  will be released and the old version will no longer be maintained
+- The pre-release version for major version adaptation is `1.major_version.rc`, and when there are no obvious bugs, a
+  theme version with the same major version as Gitea will be released
 
 ## Installation
 
