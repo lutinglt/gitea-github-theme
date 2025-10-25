@@ -1,12 +1,22 @@
-<h1 align="center">Gitea GitHub Theme</h1>
+<h1 align="center">
+  <p>Gitea GitHub Theme</p>
+  <img src="https://img.shields.io/github/issues-raw/lutinglt/gitea-github-theme?style=for-the-badge&labelColor=25292e&color=1a7f37">
+  <img src="https://img.shields.io/github/issues-closed-raw/lutinglt/gitea-github-theme?style=for-the-badge&labelColor=25292e&color=8250df">
+  <img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/total?style=for-the-badge&labelColor=25292e&color=1f6feb">
+  <img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/latest/total?style=for-the-badge&labelColor=25292e&color=238636">
+</h1>
 
 <div align="center">
 
 English • [中文](README.md)
 
+A Gitea theme that pursues GitHub style not only in colors but also in styling details.
+
 </div>
 
-A Gitea theme that pursues GitHub style not only in colors but also in styling details.
+<p align="center">
+  <img src="screenshots/en/dashboard-en.png" style="border-radius: 12px;box-shadow: 0px 0px 0px 1px #3d444d66, 0px 6px 12px -3px #01040966, 0px 6px 18px 0px #01040966"></img>
+</p>
 
 > [!TIP]
 >
@@ -60,8 +70,6 @@ For details, please refer to the Gitea documentation
 [Gitea docs](https://docs.gitea.com/next/administration/customizing-gitea#customizing-the-look-of-gitea)
 
 ## Screenshots
-
-![Dashboard](screenshots/en/dashboard-en.png)
 
 ### Basic Themes
 

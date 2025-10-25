@@ -1,12 +1,22 @@
-<h1 align="center">Gitea GitHub Theme</h1>
+<h1 align="center">
+  <p>Gitea GitHub Theme</p>
+  <img src="https://img.shields.io/github/issues-raw/lutinglt/gitea-github-theme?style=for-the-badge&labelColor=25292e&color=1a7f37">
+  <img src="https://img.shields.io/github/issues-closed-raw/lutinglt/gitea-github-theme?style=for-the-badge&labelColor=25292e&color=8250df">
+  <img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/total?style=for-the-badge&labelColor=25292e&color=1f6feb">
+  <img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/latest/total?style=for-the-badge&labelColor=25292e&color=238636">
+</h1>
 
 <div align="center">
 
 中文 • [English](README_EN.md)
 
+不仅仅是在颜色上, 在样式细节上也追求 GitHub 风格的 Gitea 主题.
+
 </div>
 
-不仅仅是在颜色上, 在样式细节上也追求 GitHub 风格的 Gitea 主题.
+<p align="center">
+  <img src="screenshots/dashboard.png" style="border-radius: 12px;box-shadow: 0px 0px 0px 1px #3d444d66, 0px 6px 12px -3px #01040966, 0px 6px 18px 0px #01040966"></img>
+</p>
 
 > [!TIP]
 >
@@ -57,8 +67,6 @@ THEMES = gitea-auto, gitea-light, gitea-dark, github-auto, github-light, github-
 [Gitea docs](https://docs.gitea.com/next/administration/customizing-gitea#customizing-the-look-of-gitea)
 
 ## 截图
-
-![Dashboard](screenshots/dashboard.png)
 
 ### 基本主题
 
