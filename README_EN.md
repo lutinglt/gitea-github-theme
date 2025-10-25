@@ -54,10 +54,6 @@ accepted.
 3. Restart Gitea
 4. Check the theme in the settings
 
-> [!IMPORTANT]
->
-> Automatic color theme requires both light and dark theme files.
-
 Example: If the theme filename is `theme-github-dark.css`, add `github-dark` to the end of `THEMES`
 
 Example `gitea/conf/app.ini`:
@@ -69,6 +65,10 @@ THEMES = gitea-auto, gitea-light, gitea-dark, github-auto, github-light, github-
 
 For details, please refer to the Gitea documentation
 [Gitea docs](https://docs.gitea.com/next/administration/customizing-gitea#customizing-the-look-of-gitea)
+
+> [!IMPORTANT]
+>
+> Automatic color theme requires both light and dark theme files.
 
 ## Screenshots
 

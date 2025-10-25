@@ -48,10 +48,6 @@ Gitea 理论上小版本号变更不会修改前端布局, 所以主题的小版
 3. 重启 Gitea
 4. 在设置中查看主题
 
-> [!IMPORTANT]
->
-> 自动颜色主题需要亮色和暗色的主题文件
-
 例: 主题文件名为 `theme-github-dark.css`，则添加 `github-dark` 到 `THEMES` 末尾
 
 `gitea/conf/app.ini` 例:
@@ -63,6 +59,10 @@ THEMES = gitea-auto, gitea-light, gitea-dark, github-auto, github-light, github-
 
 详细请查看 Gitea 文档
 [Gitea docs](https://docs.gitea.com/next/administration/customizing-gitea#customizing-the-look-of-gitea)
+
+> [!IMPORTANT]
+>
+> 自动颜色主题需要亮色和暗色的主题文件
 
 ## 截图
 
