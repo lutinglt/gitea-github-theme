@@ -48,10 +48,14 @@ export const tags = css`
       .tag-list-row-title {
         line-height: 1.5;
       }
-      .download {
+      .muted-links {
         color: ${themeVars.color.text.light.num1};
         font-size: 12px;
-        a.muted:hover {
+        svg {
+          min-width: 12px;
+          width: 12px;
+        }
+        a:hover {
           text-decoration: none;
         }
       }

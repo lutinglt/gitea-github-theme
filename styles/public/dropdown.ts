@@ -57,7 +57,7 @@ export const dropdown = css`
         }
         svg {
           margin-top: 2px;
-          margin-right: 4px;
+          margin-right: 2px;
         }
         // 复选框对齐
         .ui.checkbox input[type="checkbox"] {

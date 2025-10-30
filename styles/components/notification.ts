@@ -90,7 +90,7 @@ export const notification = css`
       }
       // 通知列表
       &:has(#notification_table) {
-        > .tw-flex:first-child {
+        > .flex-text-block:first-child {
           background-color: ${themeVars.color.box.header};
           border: 1px solid ${themeVars.color.light.border};
           border-bottom: 0;
@@ -137,7 +137,7 @@ export const notification = css`
         color: ${themeVars.color.text.light.num1};
         > .notifications-item {
           border-top: 1px solid ${themeVars.color.light.border};
-          padding: 8px !important;
+          padding: 12px !important;
           &:first-child {
             border-top: 0;
           }
@@ -153,11 +153,11 @@ export const notification = css`
             box-shadow: 2px 0 0 ${themeVars.github.borderColor.accent.emphasis} inset;
             color: ${themeVars.color.text.self};
           }
-          > .notifications-link {
-            > .notifications-top-row {
+          > .notifications-link > div{
+            &:first-child {
               font-size: 12px !important;
             }
-            > .notifications-bottom-row {
+            &:last-child {
               font-size: 14px !important;
             }
           }

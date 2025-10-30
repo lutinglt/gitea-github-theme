@@ -75,8 +75,7 @@ export const navbarRight = css`
       .item.ui.dropdown {
         // 头像菜单
         &:last-child {
-          padding-left: 2px; // 调整此选项需同步增减相同的标识的 left
-          padding-right: 16px;
+          padding: 0;
           .text {
             // 不显示小箭头标识
             > .not-mobile {
@@ -87,20 +86,12 @@ export const navbarRight = css`
               border-radius: 25px;
               height: 32px;
               max-height: 32px;
+              margin: 0 !important;
             }
           }
-        }
-        // 用户头像的管理员标识
-        .navbar-profile-admin {
-          background-color: ${themeVars.github.bgColor.accent.emphasis};
-          border-radius: 25px;
-          border: 2px solid ${themeVars.color.nav.bg};
-          color: ${themeVars.color.white};
-          font-size: 9px;
-          font-weight: 600;
-          padding: 2px 5px;
-          top: -7px;
-          left: 21px;
+          &.active {
+            background: unset;
+          }
         }
       }
       // 通知和计时器的圆点

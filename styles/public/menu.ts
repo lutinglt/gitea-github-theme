@@ -139,6 +139,10 @@ export const menu = css`
       }
     }
   }
+  // 菜单标签样式
+  .ui.menu .item>.label:not(.floating) {
+    padding: 1.5px 6px;
+  }
 `;
 
 export const secondaryMenu = css`

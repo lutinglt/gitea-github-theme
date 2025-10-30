@@ -181,17 +181,18 @@ export const repoFileView = css`
       top: 0;
       // 左侧文件树
       .repo-view-file-tree-container {
-        height: calc(100vh - 64px); // 减去头部高度
+        height: 100vh;
         // 固定头部
         position: sticky;
         top: 0;
+        overflow-y: unset;
         &:after {
           content: "";
           position: absolute;
           top: 0;
           right: 0;
           width: 1px;
-          height: calc(100% + 64px); // 头部高度
+          height: 100%;
           background: ${themeVars.color.secondary.self};
         }
         > .repo-button-row {
@@ -282,6 +283,7 @@ export const repoFileView = css`
               font-size: 12px;
             }
             .file-header-right {
+              gap: 0px;
               // 按钮组
               > .ui.buttons {
                 margin: 0 8px 0 0 !important; // 完全不知道为什么浏览器最终效果没生效, 只能 !important 了
@@ -298,12 +300,14 @@ export const repoFileView = css`
                 align-items: center;
                 background: ${themeVars.color.button};
                 border: 1px solid ${themeVars.color.light.border};
+                border-left-width: 0;
                 height: 28px;
                 padding: 0 8px;
                 svg {
                   color: ${themeVars.color.text.light.num1};
                 }
                 &:first-of-type {
+                  border-left-width: 1px;
                   border-top-left-radius: ${otherThemeVars.border.radius};
                   border-bottom-left-radius: ${otherThemeVars.border.radius};
                 }

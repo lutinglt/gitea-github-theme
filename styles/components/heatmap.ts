@@ -74,7 +74,13 @@ export const activity = css`
     box-shadow: ${themeVars.github.shadow.floating.small};
     > .flex-item {
       gap: 12px;
-      padding: 12px 8px 16px 14px;
+      padding: 16px;
+      > .flex-item-leading {
+        img {
+          width: 20px;
+          height: 20px;
+        }
+      }
       > .flex-item-main {
         gap: 8px !important;
         > div:not([class]) {
@@ -82,14 +88,37 @@ export const activity = css`
           gap: 8px;
           flex-wrap: wrap;
         }
-        relative-time {
+        > .tw-flex-col {
+          gap: 0px !important;
+          > .flex-text-block {
+            gap: 4px;
+            font-size: 12px;
+            color: ${themeVars.color.text.light.num1};
+            img {
+              width: 14px;
+              height: 14px;
+            }
+            .ui.sha.label {
+              margin-top: 0;
+            }
+          }
+        }
+        > .flex-item-body {
+          gap: 4px;
+          font-size: 12px;
           color: ${themeVars.color.text.light.num1};
+        }
+        > a {
+          font-size: 12px;
         }
       }
       // 动态的右侧 svg 图标
-      .flex-item-trailing svg {
-        height: 20px;
-        width: 20px;
+      .flex-item-trailing {
+        align-self: center;
+        svg {
+          height: 18px;
+          width: 18px;
+        }
       }
     }
     > .page.buttons {

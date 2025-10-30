@@ -28,7 +28,7 @@ export const commit = css`
         a.ui.basic.primary.label {
           border-radius: 25px;
           border-width: 1.5px;
-          padding: 5px 8px !important;
+          padding: 3px 8px !important;
         }
       }
       // 提交信息右侧
@@ -67,11 +67,38 @@ export const commit = css`
 
 export const commitStatus = css`
   .flex-text-inline[data-global-init="initCommitStatuses"] {
-    padding: 6px;
+    padding: 3px;
     margin-top: 2px;
     border-radius: ${otherThemeVars.border.radius};
     &:hover {
       background-color: ${themeVars.github.control.transparent.bgColor.hover};
+    }
+    svg {
+      width: 16px;
+      height: 16px;
+      min-width: 16px;
+      min-height: 16px;
+    }
+  }
+`;
+
+// 提交图
+export const commitGraph = css`
+  .page-content.repository #git-graph-container {
+    // 提交图的 SHA 标签
+    li .ui.label.commit-id-short {
+      height: 25px;
+      // 验证提交 SHA 标签
+      &.commit-is-signed {
+        span.ui.label.commit-is-signed {
+          height: 25px;
+        }
+      }
+    }
+    // 提交图的分支选择菜单框
+    .ui.search.selection.dropdown > .menu > .item {
+      flex-direction: row;
+      align-items: center;
     }
   }
 `;

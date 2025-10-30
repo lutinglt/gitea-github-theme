@@ -36,7 +36,7 @@ export const actions = css`
         border-top-right-radius: ${otherThemeVars.border.radius};
         padding: 16px;
         margin-bottom: 0;
-        > .item {
+        > .ui.dropdown {
           color: ${themeVars.color.text.light.num1};
         }
       }
@@ -76,22 +76,25 @@ export const actions = css`
 
         .flex-item {
           padding: 16px;
-
           .flex-item-leading {
             align-self: flex-start;
             margin-top: 2px;
           }
-
           .flex-item-main {
             gap: 0.5rem;
           }
-
           .flex-item-trailing {
-            justify-content: space-between;
-
             > .ui.label {
               border-radius: ${otherThemeVars.border.radius};
-              margin-left: 32px;
+            }
+            > .ui.dropdown.jump {
+              color: ${themeVars.color.text.light.num1};
+              &:hover {
+                color: ${themeVars.color.primary.self};
+              }
+              .menu > .item:hover {
+                color: ${themeVars.color.text.self} !important;
+              }
             }
           }
         }
@@ -223,17 +226,28 @@ export const actionViewRight = css`
   .action-view-right {
     /* 提前加载高度和滚动条 */
     min-height: calc(100vh - 245px);
-
+    // 作业详情页标题
     .job-info-header {
-      padding: 16px 12px 16px 24px;
-      height: 80px;
-
-      .job-info-header-title {
-        color: ${themeVars.github.fgColor.accent};
+      padding: 16px 12px 16px 24px !important;
+      height: 80px !important;
+      .job-info-header-left {
+        .job-info-header-title {
+          color: ${themeVars.github.fgColor.accent} !important;
+        }
+        .job-info-header-detail {
+          margin-top: 8px;
+        }
       }
-
-      .job-info-header-detail {
-        margin-top: 8px;
+      .job-info-header-right {
+        .ui.dropdown {
+          > .button {
+            border: unset;
+            padding: 7px !important;
+          }
+          .menu > .item > i.icon {
+            margin-right: 2px;
+          }
+        }
       }
     }
 
@@ -241,7 +255,7 @@ export const actionViewRight = css`
       // 步骤标题
       .job-step-summary {
         color: ${themeVars.color.console.fg.subtle};
-        padding: 8px 10px;
+        padding: 8px 10px !important;
 
         &.selected {
           // 滚动时固定在顶部的高度与 job-info-header 高度相同

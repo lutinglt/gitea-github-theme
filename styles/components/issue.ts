@@ -73,6 +73,7 @@ export const issueList = css`
       > .flex-item {
         align-items: center;
         padding: 0;
+        min-height: 64px;
         &:last-child {
           border-bottom-left-radius: ${otherThemeVars.border.radius};
           border-bottom-right-radius: ${otherThemeVars.border.radius};
@@ -80,18 +81,16 @@ export const issueList = css`
         &:hover {
           background-color: ${themeVars.color.hover.opaque};
         }
-        > .flex-item-icon {
-          display: flex;
-          gap: 4px;
+        > .flex-item-leading {
+          align-self: flex-start;
+          margin-top: 14px;
           margin-left: 16px;
-          // 复选框
-          input {
-            background: unset;
-            margin-top: 14px;
-            margin-right: 8px !important;
-          }
-          svg {
-            margin-top: 14px;
+          > .flex-text-inline {
+            margin-top: 0px !important;
+            // 复选框
+            input {
+              margin-right: 8px !important;
+            }
           }
         }
         > .flex-item-main {

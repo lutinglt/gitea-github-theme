@@ -8,6 +8,7 @@ export const label = css`
     &.ui.ui.ui {
       &.label {
         border-radius: 25px;
+        padding: 1.5px 6px;
         // 多个标签的组合标签的圆角修复
         &.scope-parent {
           .scope-left {
@@ -99,10 +100,14 @@ export const shaLabel = css`
       span.ui.label.commit-is-signed {
         padding: 3px 5px;
         margin-left: 5px;
+        height: 25px;
       }
     }
   }
-
+  // 修复带验证的提交 SHA 标签的高度
+  .ui.label.commit-id-short {
+    height: 25px;
+  }
   // 验证提交附带的图标
   span.ui.label.commit-is-signed {
     // 验证信任
@@ -181,7 +186,7 @@ export const repoLabel = css`
       color: ${themeVars.color.text.light.num1};
       font-size: 12px;
       font-weight: 500;
-      padding: 3px 6px;
+      padding: 1.5px 6px;
     }
   }
   .org-visibility span.ui.basic.label {

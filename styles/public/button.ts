@@ -118,6 +118,7 @@ export const fixButtonHeight = css`
     .ui.labeled.button > .label {
       height: 28px;
       min-height: 28px;
+      line-height: 1.5;
     }
   }
   .ui.ui.ui.ui.small.button.compact .ui.tiny.buttons .button,
