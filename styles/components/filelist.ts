@@ -60,8 +60,9 @@ export const repoFiles = css`
             }
             img.ui.avatar {
               border-radius: 9999px;
-              margin-top: -1px;
-              margin-left: 1px;
+              margin-left: 2px;
+              width: 20px;
+              height: 20px;
             }
             // 作者
             .author-wrapper {
@@ -334,8 +335,10 @@ export const repoFileView = css`
             .commit-summary {
               color: ${themeVars.color.text.light.num1};
             }
-            img.ui.avatar {
+            > img.ui.avatar {
               border-radius: 9999px;
+              width: 20px;
+              height: 20px;
             }
           }
           // 右侧提交时间
