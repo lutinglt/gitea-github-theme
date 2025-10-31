@@ -12,13 +12,7 @@
 
 不仅仅是在颜色上, 在样式细节上也追求 GitHub 风格的 Gitea 主题.
 
-</div>
-
-<div style="border-radius: 12px; box-shadow: 0px 0px 0px 1px #3d444d, 0px 6px 12px -3px #01040966, 0px 6px 18px 0px #01040966; overflow: hidden;">
-
 ![Dashboard](screenshots/dashboard.png)
-
-</div>
 
 > [!TIP]
 >
