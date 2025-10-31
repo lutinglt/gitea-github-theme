@@ -83,7 +83,7 @@ export const navbarRight = css`
             }
             // 头像
             img {
-              border-radius: 25px;
+              border-radius: 9999px;
               height: 32px;
               max-height: 32px;
               margin: 0 !important;
@@ -99,7 +99,7 @@ export const navbarRight = css`
         .notification_count,
         .header-stopwatch-dot {
           background-color: ${themeVars.github.bgColor.accent.emphasis};
-          border-radius: 25px;
+          border-radius: 9999px;
           color: ${themeVars.color.white};
           font-size: 9px;
           font-weight: 600;

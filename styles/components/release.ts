@@ -105,6 +105,9 @@ export const releases = css`
         // 右侧发布详细信息
         .segment.detail {
           padding: 16px;
+          img.ui.avatar {
+            border-radius: 9999px;
+          }
           .svg {
             color: ${themeVars.color.text.light.num1};
           }

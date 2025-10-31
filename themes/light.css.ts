@@ -7,6 +7,10 @@ import { github2ThemeColor, type GithubColor } from "src/core/github";
 
 export const lightGithubColors: GithubColor = {
   isDarkTheme: false,
+  avatar: {
+    bgColor: "#ffffff",
+    borderColor: "#1f232826",
+  },
   display: {
     blue: { fgColor: "#0969da" },
     brown: { fgColor: "#755f43" },

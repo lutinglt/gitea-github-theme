@@ -2,18 +2,17 @@
 
 ##### 更符合 GitHub 风格
 
-- 优化用户动态
-- 优化顶部导航栏头像
-- 优化设置页面
-- 优化仓库活动页面
+- 优化用户头像样式
+- 优化 Issue/PR 的评论菜单按钮样式
+- 优化用户动态样式
+
+### 🐞 Fix
+
+- 修复 Issue/PR 侧边栏的时间追踪样式
+- 修复 Issue/PR 详细页面中的部分文字颜色
 
 ## 📃 English
 
 ### 🌈 Style
 
 ##### More aligned with GitHub style
-
-- Optimized user activity feed
-- Optimized top navigation bar avatars
-- Optimized settings page
-- Optimized repository activity page

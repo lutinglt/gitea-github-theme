@@ -60,3 +60,16 @@ export const stars = css`
     }
   }
 `;
+
+// 用户信息卡片
+export const profileCard = css`
+  .page-content.user.profile {
+    #profile-avatar-card {
+      #profile-avatar {
+        img.ui.avatar {
+          border-radius: 9999px;
+        }
+      }
+    }
+  }
+`;

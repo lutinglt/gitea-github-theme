@@ -71,7 +71,7 @@ export const repoTopic = css`
   .flex-item-main > .label-list .ui.label,
   // 仓库文件列表下的 topic 标签
   #repo-topics .ui.label.repo-topic {
-    border-radius: 25px;
+    border-radius: 9999px;
     font-size: 12px;
     font-weight: 500;
     padding: 2.5px 10px;

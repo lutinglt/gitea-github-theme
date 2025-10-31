@@ -7,6 +7,9 @@ export const commit = css`
     #commits-table.ui.basic.striped.table tbody.commit-list {
       // 作者
       .author {
+        img.ui.avatar {
+          border-radius: 9999px;
+        }
         // 作者名称
         .author-wrapper {
           color: ${themeVars.color.text.light.num1};
@@ -26,7 +29,7 @@ export const commit = css`
       .message {
         // tag 标签
         a.ui.basic.primary.label {
-          border-radius: 25px;
+          border-radius: 9999px;
           border-width: 1.5px;
           padding: 3px 8px !important;
         }
@@ -85,6 +88,9 @@ export const commitStatus = css`
 // 提交图
 export const commitGraph = css`
   .page-content.repository #git-graph-container {
+    img.ui.avatar {
+      border-radius: 9999px;
+    }
     // 提交图的 SHA 标签
     li .ui.label.commit-id-short {
       height: 25px;

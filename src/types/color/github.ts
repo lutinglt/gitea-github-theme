@@ -1,4 +1,10 @@
 export const github = {
+  avatar: {
+    /** 头像的背景颜色 */
+    bgColor: null,
+    /** 头像的边框颜色 */
+    borderColor: null,
+  },
   /** 用于 color 属性的颜色 */
   fgColor: {
     /** 强调色

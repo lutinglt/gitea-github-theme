@@ -22,3 +22,12 @@ export const svg = css`
     color: #429cf0 !important;
   }
 `;
+
+export const avatar = css`
+  img.ui.avatar,
+  .ui.avatar img,
+  .ui.avatar svg {
+    background-color: ${themeVars.github.avatar.bgColor};
+    box-shadow: 0 0 0 1px ${themeVars.github.avatar.borderColor};
+  }
+`;

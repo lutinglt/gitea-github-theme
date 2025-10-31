@@ -58,7 +58,8 @@ export const repoFiles = css`
             .commit-summary {
               color: ${themeVars.color.text.light.num1};
             }
-            img.tw-align-middle {
+            img.ui.avatar {
+              border-radius: 9999px;
               margin-top: -1px;
               margin-left: 1px;
             }
@@ -332,6 +333,9 @@ export const repoFileView = css`
             gap: 8px;
             .commit-summary {
               color: ${themeVars.color.text.light.num1};
+            }
+            img.ui.avatar {
+              border-radius: 9999px;
             }
           }
           // 右侧提交时间

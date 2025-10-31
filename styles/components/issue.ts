@@ -56,6 +56,9 @@ export const issueList = css`
           height: 32px;
         }
       }
+      img.ui.avatar {
+        border-radius: 9999px;
+      }
     }
   }
   // 里程碑详细页面的 Issue 列表
@@ -70,6 +73,9 @@ export const issueList = css`
       border: 1px solid ${themeVars.color.light.border};
       border-bottom-left-radius: ${otherThemeVars.border.radius};
       border-bottom-right-radius: ${otherThemeVars.border.radius};
+      img.ui.avatar {
+        border-radius: 9999px;
+      }
       > .flex-item {
         align-items: center;
         padding: 0;
@@ -176,6 +182,9 @@ export const issuePins = css`
         display: none;
       }
     }
+    img.ui.avatar {
+      border-radius: 9999px;
+    }
   }
 `;
 
@@ -269,6 +278,9 @@ export const prBranch = css`
 // 评论
 export const comment = css`
   .comment .comment-container {
+    img.ui.avatar {
+      border-radius: 9999px;
+    }
     // 去除评论标题左侧指向头像的小箭头
     .comment-header,
     &:target .comment-header {
@@ -306,9 +318,18 @@ export const comment = css`
       //   display: none;
       // }
       .context-dropdown {
+        height: 28px;
+        padding: 0 6px;
+        border-radius: ${otherThemeVars.border.radius};
+        &:hover {
+          background-color: ${themeVars.github.control.transparent.bgColor.hover};
+        }
         a.context-menu {
           display: flex;
           align-items: center;
+          &:hover {
+            color: inherit;
+          }
         }
         // 评论菜单的删除按钮
         .menu .item.delete-comment {
@@ -326,7 +347,7 @@ export const comment = css`
       align-items: center;
       justify-content: center;
       background: ${themeVars.color.button};
-      border-radius: 25px;
+      border-radius: 9999px;
       border: 1px solid ${themeVars.color.light.border};
       color: ${themeVars.color.text.light.num1};
       padding: 0px 8px !important;
@@ -337,7 +358,7 @@ export const comment = css`
     .bottom-reactions {
       .ui.ui.ui.label {
         background-color: unset !important;
-        border-radius: 25px;
+        border-radius: 9999px;
         border-color: ${themeVars.color.light.border};
         &:hover {
           background-color: ${themeVars.color.reaction.hoverBg} !important;
@@ -392,7 +413,7 @@ export const prMerge = css`
     // 头像
     .timeline-avatar {
       color: ${themeVars.color.white} !important;
-      border-radius: ${otherThemeVars.border.radius};
+      border-radius: 9999px;
       width: 40px;
       height: 40px;
       display: flex;
@@ -405,6 +426,7 @@ export const prMerge = css`
       // 可以合并
       &.green {
         background-color: ${themeVars.github.bgColor.success.emphasis};
+        border-radius: ${otherThemeVars.border.radius};
         // 操作评论边框色
         + .content > .ui.attached.segment {
           border-left-color: ${themeVars.github.bgColor.success.emphasis};
@@ -420,6 +442,7 @@ export const prMerge = css`
       // 已合并
       &.purple {
         background-color: ${themeVars.github.bgColor.done.emphasis};
+        border-radius: ${otherThemeVars.border.radius};
         + .content > .ui.attached.segment {
           border-left-color: ${themeVars.github.bgColor.done.emphasis};
           border-right-color: ${themeVars.github.bgColor.done.emphasis};
@@ -493,6 +516,9 @@ export const timeline = css`
       .timeline-item,
       .timeline-item-group {
         padding: 16px 0;
+        .comment-text-line {
+          color: ${themeVars.color.text.light.num1};
+        }
         // 事件
         &.event {
           // 修复覆盖后的位置问题
@@ -545,6 +571,9 @@ export const issueSidebar = css`
   // 工单&创建工单&PR页面侧边栏
   .page-content.repository.issue {
     .issue-content {
+      img.ui.avatar {
+        border-radius: 9999px;
+      }
       gap: 24px;
       // 侧边栏
       .issue-content-right {
@@ -641,13 +670,22 @@ export const issueSidebar = css`
           }
         }
         // 时间追踪
-        > div:not([class]):not([id]) > .ui.dropdown.jump > a.fixed-text.muted {
-          align-items: center;
-          border-radius: ${otherThemeVars.border.radius};
-          text-decoration-line: none;
-          height: 28px;
-          &:hover {
-            background: ${themeVars.github.control.transparent.bgColor.hover};
+        > div:not([class]):not([id]) {
+          > .flex-text-block {
+            color: ${themeVars.color.text.light.num1};
+          }
+          > .ui.buttons {
+            ${sidebarPadding};
+            .button {
+              height: 30px;
+              min-height: 30px;
+              &:hover {
+                border-color: ${themeVars.color.light.border};
+                + .button {
+                  border-left-color: ${themeVars.color.light.border};
+                }
+              }
+            }
           }
         }
         // 选中日期颜色
@@ -662,7 +700,8 @@ export const issueSidebar = css`
         // 订阅按钮
         .ui.watching .ui.button {
           padding: 0px 8px;
-          height: 28px;
+          height: 30px;
+          min-height: 30px;
           svg {
             margin: 0 !important;
           }
@@ -670,7 +709,7 @@ export const issueSidebar = css`
         // PIN 按钮
         .form-fetch-action.single-button-form .ui.button,
         // 底部操作按钮
-        .ui.show-modal.button {
+        > .ui.show-modal.button {
           border: 0;
           background: unset;
           font-weight: 400;
@@ -694,6 +733,22 @@ export const issueSidebar = css`
               color: ${themeVars.color.red.light};
             }
           }
+        }
+      }
+    }
+  }
+`;
+
+// 工单标题
+export const issueTitle = css`
+  .page-content.repository.issue {
+    .issue-title-header {
+      .issue-title-meta {
+        .issue-state-label {
+          padding: 6px 9px !important;
+        }
+        .time-desc {
+          color: ${themeVars.color.text.light.num1};
         }
       }
     }

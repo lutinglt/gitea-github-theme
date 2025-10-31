@@ -7,6 +7,7 @@ import { type ThemeColor } from "./color";
 
 export type GithubColor = {
   isDarkTheme: boolean;
+  avatar: { bgColor: string; borderColor: string };
   display: {
     blue: { fgColor: string };
     brown: { fgColor: string };
@@ -221,6 +222,10 @@ export function github2ThemeColor(githubColor: GithubColor): ThemeColor {
   };
 
   const github: Github = {
+    avatar: {
+      bgColor: githubColor.avatar.bgColor,
+      borderColor: githubColor.avatar.borderColor,
+    },
     fgColor: {
       accent: githubColor.fgColor.accent,
       success: githubColor.fgColor.success,

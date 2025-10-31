@@ -102,7 +102,7 @@ export const packagesDetail = css`
               justify-content: space-between;
               > a {
                 border: 1px solid ${themeVars.color.light.border};
-                border-radius: 25px;
+                border-radius: 9999px;
                 font-size: 12px;
                 padding: 0px 6px;
                 min-height: 20px;

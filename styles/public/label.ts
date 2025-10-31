@@ -7,7 +7,7 @@ export const label = css`
   span {
     &.ui.ui.ui {
       &.label {
-        border-radius: 25px;
+        border-radius: 9999px;
         padding: 1.5px 6px;
         // 多个标签的组合标签的圆角修复
         &.scope-parent {
@@ -101,6 +101,9 @@ export const shaLabel = css`
         padding: 3px 5px;
         margin-left: 5px;
         height: 25px;
+      }
+      img.ui.avatar {
+        border-radius: 9999px;
       }
     }
   }

@@ -9,6 +9,7 @@ import { darkGithubColors } from "themes/dark";
 
 export const colorblindDarkGithubColors: GithubColor = {
   isDarkTheme: true,
+  avatar: darkGithubColors.avatar,
   display: darkGithubColors.display,
   diffBlob: {
     addtionNum: { bgColor: "#58a6ff4d" },

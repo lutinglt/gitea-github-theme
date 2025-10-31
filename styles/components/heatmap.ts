@@ -77,17 +77,39 @@ export const activity = css`
       padding: 16px;
       > .flex-item-leading {
         img {
-          width: 20px;
-          height: 20px;
+          width: 24px;
+          height: 24px;
+          border-radius: 9999px;
         }
       }
+      // 动态的主要内容
       > .flex-item-main {
         gap: 8px !important;
+        // 动态的标题
         > div:not([class]) {
           display: flex;
-          gap: 8px;
+          align-items: baseline;
+          gap: 6px;
           flex-wrap: wrap;
+          > a {
+            color: ${themeVars.color.text.self};
+            text-decoration: none;
+            text-underline-offset: 0.2rem;
+            // 不匹配作者
+            &:not([title]) {
+              text-decoration: underline;
+              // 尽量只选中仓库名, 不匹配标签和分支
+              &:not([href*="tag"]):not([href*="branch"]) {
+                color: ${themeVars.color.primary.self};
+              }
+            }
+          }
+          relative-time {
+            color: ${themeVars.color.text.light.num1};
+            font-size: 12px;
+          }
         }
+        // 动态的描述
         > .tw-flex-col {
           gap: 0px !important;
           > .flex-text-block {
@@ -95,8 +117,9 @@ export const activity = css`
             font-size: 12px;
             color: ${themeVars.color.text.light.num1};
             img {
-              width: 14px;
-              height: 14px;
+              width: 16px;
+              height: 16px;
+              border-radius: 9999px;
             }
             .ui.sha.label {
               margin-top: 0;
