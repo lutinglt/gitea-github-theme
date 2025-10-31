@@ -97,10 +97,10 @@ export const activity = css`
             text-underline-offset: 0.2rem;
             // 不匹配作者
             &:not([title]) {
-              text-decoration: underline;
               // 尽量只选中仓库名, 不匹配标签和分支
               &:not([href*="tag"]):not([href*="branch"]) {
                 color: ${themeVars.color.primary.self};
+                text-decoration: underline;
               }
             }
           }
