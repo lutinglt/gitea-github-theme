@@ -12,6 +12,8 @@
 
 不仅仅是在颜色上, 在样式细节上也追求 GitHub 风格的 Gitea 主题.
 
+</div>
+
 ![Dashboard](screenshots/dashboard.png)
 
 > [!TIP]
