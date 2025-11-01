@@ -93,7 +93,6 @@ export const activity = css`
           flex-wrap: wrap;
           > a {
             color: ${themeVars.color.text.self};
-            text-decoration: none;
             text-underline-offset: 0.2rem;
             // 不匹配作者
             &:not([title]) {
