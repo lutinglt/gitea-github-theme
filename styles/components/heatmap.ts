@@ -85,6 +85,7 @@ export const activity = css`
       // 动态的主要内容
       > .flex-item-main {
         gap: 8px !important;
+        text-underline-offset: 0.2rem;
         // 动态的标题
         > div:not([class]) {
           display: flex;
@@ -93,7 +94,6 @@ export const activity = css`
           flex-wrap: wrap;
           > a {
             color: ${themeVars.color.text.self};
-            text-underline-offset: 0.2rem;
             // 不匹配作者
             &:not([title]) {
               // 尽量只选中仓库名, 不匹配标签和分支
