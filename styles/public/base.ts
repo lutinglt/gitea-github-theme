@@ -4,4 +4,7 @@ export const body = css`
   body {
     line-height: 18px;
   }
+  a {
+    text-underline-offset: 0.2rem;
+  }
 `;

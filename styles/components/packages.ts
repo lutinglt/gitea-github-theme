@@ -35,7 +35,6 @@ export const packagesList = css`
               font-size: 12px;
               a {
                 text-decoration: underline;
-                text-underline-offset: 3px;
               }
             }
           }

@@ -85,7 +85,6 @@ export const activity = css`
       // 动态的主要内容
       > .flex-item-main {
         gap: 8px !important;
-        text-underline-offset: 0.2rem;
         // 动态的标题
         > div:not([class]) {
           display: flex;
