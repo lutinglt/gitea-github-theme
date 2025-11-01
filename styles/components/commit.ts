@@ -101,10 +101,5 @@ export const commitGraph = css`
         }
       }
     }
-    // 提交图的分支选择菜单框
-    .ui.search.selection.dropdown > .menu > .item {
-      flex-direction: row;
-      align-items: center;
-    }
   }
 `;

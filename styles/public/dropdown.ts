@@ -230,7 +230,7 @@ export const selectionDropdown = css`
   // 标签页面的标签选择框
   .page-content.repository.labels .ui.selection.dropdown.active,
   // 创建仓库页面的标签选择框
-  .ui.search.selection.dropdown {
+  .page-content.repository.new-repo .ui.search.selection.dropdown {
     > .menu > .item {
       flex-direction: column;
       align-items: flex-start;
