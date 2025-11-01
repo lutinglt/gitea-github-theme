@@ -194,6 +194,7 @@ export const github = {
          * @issue `issueList` 头部菜单左侧开启关闭菜单的悬停背景颜色
          * @dashboard `dashboard` 仓库列表项目的悬停背景颜色
          * @notification `notification` 通知列表的按钮悬停背景颜色
+         * @actions `actions` 列表页运行信息的三点操作按钮悬停背景颜色
          */
         hover: null,
       },

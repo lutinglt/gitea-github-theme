@@ -114,7 +114,7 @@ export const releases = css`
           // 标题
           .release-list-title {
             font-size: 32px;
-            gap: 16px;
+            gap: 8px;
           }
           // 提交信息
           p.text.grey {
@@ -140,13 +140,13 @@ export const releases = css`
             position: relative;
             left: -16px;
             width: calc(100% + 32px);
-            border-top-width: 1.5px;
+            border-top-width: 1px;
             margin: 24px 0 16px 0;
           }
           // 下载列表
           .download {
             summary {
-              font-size: 18px;
+              font-size: 16px;
               font-weight: 600;
               margin-top: 16px;
               &::marker {

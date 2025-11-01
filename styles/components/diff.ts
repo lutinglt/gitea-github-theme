@@ -1,4 +1,4 @@
-import { css, themeVars } from "src/types/vars";
+import { css, otherThemeVars, themeVars } from "src/types/vars";
 
 export const diff = css`
   /* 折叠行多余的颜色 */
@@ -63,9 +63,16 @@ export const diff = css`
       }
       // 操作按钮
       .diff-file-header-actions {
+        border-radius: ${otherThemeVars.border.radius};
         color: ${themeVars.color.text.light.num1};
         font-size: 12px;
         font-weight: 400;
+        &:hover {
+          background-color: ${themeVars.github.control.transparent.bgColor.hover};
+        }
+        .diff-header-popup-btn {
+          padding: 5px !important;
+        }
       }
     }
   }

@@ -88,9 +88,10 @@ export const actions = css`
               border-radius: ${otherThemeVars.border.radius};
             }
             > .ui.dropdown.jump {
+              border-radius: ${otherThemeVars.border.radius};
               color: ${themeVars.color.text.light.num1};
               &:hover {
-                color: ${themeVars.color.primary.self};
+                background-color: ${themeVars.github.control.transparent.bgColor.hover};
               }
               .menu > .item:hover {
                 color: ${themeVars.color.text.self} !important;
