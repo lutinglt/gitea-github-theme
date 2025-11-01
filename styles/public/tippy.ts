@@ -1,4 +1,4 @@
-import { animationDown } from "src/core/theme";
+import { animation, animationDown } from "src/core/theme";
 import { css, otherThemeVars, themeVars } from "src/types/vars";
 
 // 一些界面内的提示框, 比如克隆按钮, PR信息, Runner信息 等
@@ -43,6 +43,7 @@ export const tippyBox = css`
     }
     // 专门用于提示信息的提示框, 比如提交的具体时间, 任务状态等
     &[data-theme="tooltip"] {
+      animation: ${animation};
       .tippy-content {
         font-size: 12px;
         font-weight: 400;
