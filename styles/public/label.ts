@@ -3,68 +3,73 @@ import { css, themeVars } from "src/types/vars";
 export const label = css`
   /* 所有标签, 但不包括 a 标签 */
   /* a 标签比如仓库点星等按钮旁边的数字标签按钮,提交图中的 tag 标签 */
+  div.label,
+  span.label,
+  // 包含多个标签的元素, 比如 Issue/PR 详情页中的时间线上的标签
+  span.labels-list a.label {
+    &.ui.ui.ui {
+      border-radius: 9999px;
+      padding: 1.5px 6px;
+      // 多个标签的组合标签的圆角修复
+      &.scope-parent {
+        .scope-left {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+        .scope-middle {
+          border-radius: 0;
+        }
+        .scope-right {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+      }
+    }
+  }
   div,
   span {
-    &.ui.ui.ui {
-      &.label {
-        border-radius: 9999px;
-        padding: 1.5px 6px;
-        // 多个标签的组合标签的圆角修复
-        &.scope-parent {
-          .scope-left {
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-          }
-          .scope-middle {
-            border-radius: 0;
-          }
-          .scope-right {
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-          }
-        }
-        /* 主色调标签 */
-        &.primary {
-          background-color: unset;
-          border: 1px solid ${themeVars.color.primary.self};
-          color: ${themeVars.color.primary.self};
-        }
-        /* 红色标签 */
-        &.red {
-          background-color: unset;
-          border: 1px solid ${themeVars.github.borderColor.done.emphasis};
-          color: ${themeVars.color.purple.self};
-        }
-        /* 橙色标签 */
-        &.orange {
-          background-color: unset;
-          border: 1px solid ${themeVars.github.borderColor.attention.emphasis};
-          color: ${themeVars.color.yellow.self};
-        }
-        /* 黄色标签 */
-        &.yellow {
-          background-color: unset;
-          border: 1px solid ${themeVars.github.borderColor.attention.emphasis};
-          color: ${themeVars.color.orange.self};
-        }
-        /* 黄绿色标签 */
-        &.olive {
-          background-color: unset;
-          border: 1px solid ${themeVars.color.olive.self};
-          color: ${themeVars.color.olive.self};
-        }
-        /* 绿色标签 */
-        &.green {
-          background-color: unset;
-          border: 1px solid ${themeVars.github.borderColor.success.emphasis};
-          color: ${themeVars.color.green.self};
-        }
-        /* 紫色标签 */
-        &.purple {
-          background-color: unset;
-          border: 1px solid ${themeVars.github.borderColor.done.emphasis};
-          color: ${themeVars.color.purple.self};
-        }
+    &.ui.ui.ui.label {
+      /* 主色调标签 */
+      &.primary {
+        background-color: unset;
+        border: 1px solid ${themeVars.color.primary.self};
+        color: ${themeVars.color.primary.self};
+      }
+      /* 红色标签 */
+      &.red {
+        background-color: unset;
+        border: 1px solid ${themeVars.github.borderColor.done.emphasis};
+        color: ${themeVars.color.purple.self};
+      }
+      /* 橙色标签 */
+      &.orange {
+        background-color: unset;
+        border: 1px solid ${themeVars.github.borderColor.attention.emphasis};
+        color: ${themeVars.color.yellow.self};
+      }
+      /* 黄色标签 */
+      &.yellow {
+        background-color: unset;
+        border: 1px solid ${themeVars.github.borderColor.attention.emphasis};
+        color: ${themeVars.color.orange.self};
+      }
+      /* 黄绿色标签 */
+      &.olive {
+        background-color: unset;
+        border: 1px solid ${themeVars.color.olive.self};
+        color: ${themeVars.color.olive.self};
+      }
+      /* 绿色标签 */
+      &.green {
+        background-color: unset;
+        border: 1px solid ${themeVars.github.borderColor.success.emphasis};
+        color: ${themeVars.color.green.self};
+      }
+      /* 紫色标签 */
+      &.purple {
+        background-color: unset;
+        border: 1px solid ${themeVars.github.borderColor.done.emphasis};
+        color: ${themeVars.color.purple.self};
       }
     }
   }
