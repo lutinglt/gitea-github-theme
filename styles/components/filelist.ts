@@ -441,7 +441,7 @@ export const repoSidebarBottom = css`
         padding: 16px 0;
         .flex-item {
           padding: 16px 0 0 0;
-          .flex-item-icon {
+          .flex-item-leading {
             svg.svg.octicon-tag {
               color: ${themeVars.color.green.self};
               margin-top: 2px;
