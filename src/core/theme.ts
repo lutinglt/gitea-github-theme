@@ -7,7 +7,12 @@ import type { MapLeafNodes, WithOptionalLayer } from "./types";
 export type Theme = WithOptionalLayer<MapLeafNodes<typeof themeVars, string>>;
 
 export const overlayAppear = "overlay-appear";
-export const animation = `200ms cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal none running ${overlayAppear}`;
+export const animation = {
+  animation: overlayAppear,
+  animationDuration: "80ms",
+  animationFillMode: "forwards",
+  animationTimingFunction: "ease-in",
+};
 export const overlayAppearDown = "overlay-appear-down";
 export const animationDown = `200ms cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal none running ${overlayAppearDown}`;
 export const overlayAppearUp = "overlay-appear-up";
