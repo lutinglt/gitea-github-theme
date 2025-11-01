@@ -5,6 +5,6 @@ export const body = css`
     line-height: 18px;
   }
   a {
-    text-underline-offset: 0.2rem;
+    text-underline-offset: 3.2px;
   }
 `;
