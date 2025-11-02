@@ -1,19 +1,27 @@
 import { css, otherThemeVars, themeVars } from "src/types/vars";
 
 export const diff = css`
-  /* 折叠行多余的颜色 */
+  // 这里的折叠行和代码行高度与 GitHub 的 release 和 review 的差异对比时的高度一致, 不需要像 commit 中的差异对比那样行高过高
+  // release 和 review 行高为 20px, commit 行高为 24px
+  // 折叠行
   .tag-code {
+    // 多余的颜色
     background-color: unset;
-    height: 24px;
-    // 展开/收缩按钮高度与.tag-code一致
-    .code-expander-buttons,
-    // 双向展开的按钮
-    .code-expander-buttons[data-expand-direction="3"] {
+    height: 28px;
+    // 展开按钮高度与折叠行一致
+    .code-expander-buttons {
       .code-expander-button {
-        height: 24px;
+        height: 28px;
       }
     }
-    /* 展开/收缩按钮 */
+    // 双向展开的按钮
+    &:has(.code-expander-buttons[data-expand-direction="3"]) {
+      height: 40px;
+      .code-expander-button {
+        height: 20px;
+      }
+    }
+    // 展开按钮
     .code-expander-button {
       color: ${themeVars.color.text.light.num1};
       &:hover {
@@ -21,12 +29,21 @@ export const diff = css`
         color: ${themeVars.color.white};
       }
     }
-    /* 折叠行文本 */
+    // 折叠行文本
     .code-inner {
       color: ${themeVars.color.text.light.num1};
     }
   }
-  /* 增加/删除行多余的颜色 */
+  // 代码行
+  .lines-num,
+  .lines-code {
+    line-height: 20px;
+  }
+  // 行号居中
+  .lines-num {
+    text-align: center !important;
+  }
+  // 增加/删除行多余的颜色
   .code-diff-unified {
     .del-code,
     .add-code {
@@ -34,24 +51,15 @@ export const diff = css`
       border-color: unset;
     }
   }
-  /* 增加/删除相关代码背景色圆角 */
+  // 增加/删除相关代码背景色圆角
   .added-code,
   .removed-code {
     border-radius: 3px;
     color: ${themeVars.color.text.self};
-    /* 覆盖掉 chroma 的颜色 */
+    // 覆盖掉 chroma 的颜色
     * {
       color: ${themeVars.color.text.self} !important;
     }
-  }
-  // 代码行
-  .lines-num,
-  .lines-code {
-    line-height: 24px;
-  }
-  // 行号居中
-  .lines-num {
-    text-align: center !important;
   }
   // 差异对比文件盒子
   .diff-file-box {
@@ -112,9 +120,14 @@ export const diff = css`
     // 拆分视图的第一列和第五列
     &.code-diff-split colgroup col:nth-child(1),
     &.code-diff-split colgroup col:nth-child(5) {
-      width: 40;
+      // 40px: 代码超过 9999 行时换行
+      // 45px: 代码超过 99999 行时换行
+      // 50px: 代码超过 999999 行时换行
+      // GitHub 在 commit 中的行宽最小为 40px, 但会动态调整, 在 release 和 review 的差异对比中为 50px
+      // 这里折中为 45px, 单文件超过十万行代码的视为垃圾代码, 换行体验不佳为活该
+      width: 45;
     }
-    // 修复 table 100% 宽度时的行号换行问题
+    // 修复 table 100% 宽度时的行号换行问题, GitHub 会自动换行, 这里与 GitHub 保持一致
     .lines-num {
       text-wrap-mode: wrap; // 2024年10月浏览器开始支持
     }
