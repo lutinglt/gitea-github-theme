@@ -109,27 +109,18 @@ export const diff = css`
       width: 0; // 不要使用 display: none; 否则会影响布局
       visibility: hidden;
     }
-    // 固定表格中每列的宽度
-    table {
-      width: 100%;
+    // 不明白 Gitea 分列视图下默认 100% 宽度的目的, 这里设置为 auto 使行号列宽自适应
+    &.code-diff-split table {
+      width: auto;
     }
     // 行号宽度
-    // 合并视图的第一列和第二列
-    &.code-diff-unified colgroup col:nth-child(1),
-    &.code-diff-unified colgroup col:nth-child(2),
-    // 拆分视图的第一列和第五列
-    &.code-diff-split colgroup col:nth-child(1),
-    &.code-diff-split colgroup col:nth-child(5) {
-      // 40px: 代码超过 9999 行时换行
-      // 45px: 代码超过 99999 行时换行
-      // 50px: 代码超过 999999 行时换行
-      // GitHub 在 commit 中的行宽最小为 40px, 但会动态调整, 在 release 和 review 的差异对比中为 50px
-      // 这里折中为 45px, 单文件超过十万行代码的视为垃圾代码, 换行体验不佳为活该
-      width: 45;
-    }
-    // 修复 table 100% 宽度时的行号换行问题, GitHub 会自动换行, 这里与 GitHub 保持一致
+    // 40px: 长度 = 9999 行
+    // 45px: 长度 = 99999 行
+    // 50px: 长度 = 999999 行
+    // GitHub 在 commit 中的行宽最小为 40px, 但会动态调整, 在 release 和 review 的差异对比中为 50px
+    // 这里折中为 45px 会根据代码行数动态调整, 45px 既不会在行数少时显得太宽, 也可以在大多数情况下保持宽度一致
     .lines-num {
-      text-wrap-mode: wrap; // 2024年10月浏览器开始支持
+      min-width: 45px;
     }
     // 合并视图的第四列
     &.code-diff-unified colgroup col:nth-child(4),
