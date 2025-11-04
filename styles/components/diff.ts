@@ -98,36 +98,44 @@ export const diff = css`
     }
   }
   // 差异对比文件盒子
-  .repository .diff-file-box .code-diff {
-    // 隐藏多余的空白
-    // 合并视图的第三列
-    &.code-diff-unified colgroup col:nth-child(3),
-    // 拆分视图的第二列和第六列
-    &.code-diff-split colgroup col:nth-child(2),
-    &.code-diff-split colgroup col:nth-child(6),
-    td.lines-escape {
-      width: 0; // 不要使用 display: none; 否则会影响布局
-      visibility: hidden;
+  .repository .diff-file-box {
+    .code-diff {
+      // 隐藏多余的空白
+      // 合并视图的第三列
+      &.code-diff-unified colgroup col:nth-child(3),
+      // 拆分视图的第二列和第六列
+      &.code-diff-split colgroup col:nth-child(2),
+      &.code-diff-split colgroup col:nth-child(6),
+      td.lines-escape {
+        width: 0; // 不要使用 display: none; 否则会影响布局
+        visibility: hidden;
+      }
+      // Gitea 分列视图下默认 100% 宽度的目的是如果单文件只增加或只删除的情况下, 保持无内容的列的宽度一致, 始终保持左右两边的列宽度一致
+      // 保持 Gitea 的默认设置, 不对行号宽度做处理
+      /* &.code-diff-split table {
+        width: auto;
+      } */
+      // 行号宽度
+      // 40px: 长度 = 9999 行
+      // 45px: 长度 = 99999 行
+      // 50px: 长度 = 999999 行
+      // GitHub 在 commit 中的行宽最小为 40px, 但会动态调整, 在 release 和 review 的差异对比中为 50px
+      // 这里折中为 45px 会根据代码行数动态调整, 45px 既不会在行数少时显得太宽, 也可以在大多数情况下保持宽度一致
+      .lines-num {
+        min-width: 45px;
+      }
+      // 合并视图的第四列
+      &.code-diff-unified colgroup col:nth-child(4),
+      // 拆分视图的第三列和第七列, -/+ 保持居中的宽度
+      &.code-diff-split colgroup col:nth-child(3),
+      &.code-diff-split colgroup col:nth-child(7) {
+        width: 20;
+      }
     }
-    // 不明白 Gitea 分列视图下默认 100% 宽度的目的, 这里设置为 auto 使行号列宽自适应
-    &.code-diff-split table {
-      width: auto;
-    }
-    // 行号宽度
-    // 40px: 长度 = 9999 行
-    // 45px: 长度 = 99999 行
-    // 50px: 长度 = 999999 行
-    // GitHub 在 commit 中的行宽最小为 40px, 但会动态调整, 在 release 和 review 的差异对比中为 50px
-    // 这里折中为 45px 会根据代码行数动态调整, 45px 既不会在行数少时显得太宽, 也可以在大多数情况下保持宽度一致
-    .lines-num {
-      min-width: 45px;
-    }
-    // 合并视图的第四列
-    &.code-diff-unified colgroup col:nth-child(4),
-    // 拆分视图的第三列和第七列, -/+ 保持居中的宽度
-    &.code-diff-split colgroup col:nth-child(3),
-    &.code-diff-split colgroup col:nth-child(7) {
-      width: 20;
+    // 修复对比视图内容中的圆角和背景溢出
+    .file-body.file-code {
+      border-radius: 0 0 ${otherThemeVars.border.radius} ${otherThemeVars.border.radius};
+      overflow: hidden;
     }
   }
 `;
