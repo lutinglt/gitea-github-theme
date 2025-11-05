@@ -107,8 +107,17 @@ export const diff = css`
       &.code-diff-split colgroup col:nth-child(2),
       &.code-diff-split colgroup col:nth-child(6),
       td.lines-escape {
-        width: 0; // 不要使用 display: none; 否则会影响布局
-        visibility: hidden;
+        width: 0; // 不要使用 display: none; 否则会影响布局, 无内容时为 0, 有内容时为 20(猜测可能是根据内容宽度自动调整)
+        /* visibility: hidden; */ // 不要使用 visibility: hidden; 当 escape 有内容时会导致背景颜色丢失, escape 目前用于显示检测 unicode 编码错误的内容
+      }
+      // 修复当 escape 有内容时, 宽度不够的问题
+      table:has(td.lines-escape:not(:empty)) {
+        colgroup col:nth-child(3),
+        colgroup col:nth-child(2),
+        colgroup col:nth-child(6),
+        td.lines-escape {
+          width: 20;
+        }
       }
       // Gitea 分列视图下默认 100% 宽度的目的是如果单文件只增加或只删除的情况下, 保持无内容的列的宽度一致, 始终保持左右两边的列宽度一致
       // 保持 Gitea 的默认设置, 不对行号宽度做处理
