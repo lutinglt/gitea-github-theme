@@ -19,3 +19,15 @@
 ### 🌈 Style
 
 ##### More aligned with GitHub style
+
+- Optimized diff comparison code block styles
+- Optimized user avatar styles
+- Optimized three-dot menu button styles for Issue/PR/Diff/Actions
+- Optimized user activity feed styles
+- Optimized repository release page styles
+- Optimized tooltip animation for character hints
+
+### 🐞 Fix
+
+- Fixed text color issues in Issue/PR detail pages, timeline label styles, and sidebar time tracking styles
+- Fixed alignment issues with some select input fields
