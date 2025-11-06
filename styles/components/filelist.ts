@@ -316,6 +316,10 @@ export const repoFileView = css`
                 &:last-of-type {
                   border-top-right-radius: ${otherThemeVars.border.radius};
                   border-bottom-right-radius: ${otherThemeVars.border.radius};
+                  // 与无权限按钮之间的间距
+                  + .btn-octicon.disabled {
+                    margin-left: 8px;
+                  }
                 }
                 &:hover {
                   background: ${themeVars.color.hover.self};
