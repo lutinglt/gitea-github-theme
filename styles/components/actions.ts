@@ -258,7 +258,8 @@ export const actionViewRight = css`
         color: ${themeVars.color.console.fg.subtle};
         padding: 8px 10px !important;
 
-        &.selected {
+        &.selected.selected {
+          // 双重确保 selected 覆盖原始样式
           // 滚动时固定在顶部的高度与 job-info-header 高度相同
           top: 80px;
         }
