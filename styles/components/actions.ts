@@ -253,53 +253,57 @@ export const actionViewRight = css`
     }
 
     .job-step-container {
-      // 步骤标题
-      .job-step-summary {
-        color: ${themeVars.color.console.fg.subtle};
-        padding: 8px 10px !important;
-
-        &.selected.selected {
-          // 双重确保 selected 覆盖原始样式
-          // 滚动时固定在顶部的高度与 job-info-header 高度相同
-          top: 80px;
-        }
-
-        &.step-expandable:hover {
+      padding: 8px;
+      .job-step-section {
+        margin: 0 4px 4px;
+        // 步骤标题, 双重确保覆盖原始样式
+        .job-step-summary.job-step-summary {
           color: ${themeVars.color.console.fg.subtle};
-        }
+          padding: 8px !important;
+          height: 36px;
 
-        .tw-mr-2:not(.svg) svg.svg {
-          margin: 1.5px 6px 0px 2px;
-        }
-        /* 绿色步骤状态改为白色 */
-        svg.svg.text.green {
-          color: ${themeVars.color.console.fg.subtle} !important;
-        }
+          &.selected {
+            // 滚动时固定在顶部的高度与 job-info-header 高度相同
+            top: 80px;
+          }
 
-        &.selected {
-          /* 不被 hover 效果影响 */
-          color: ${themeVars.color.console.fg.self} !important;
-          background-color: ${themeVars.color.console.activeBg} !important;
+          &.step-expandable:hover {
+            color: ${themeVars.color.console.fg.subtle};
+          }
 
+          .tw-mr-2:not(.svg) svg.svg {
+            margin: 1.5px 6px 0px 2px;
+          }
+          /* 绿色步骤状态改为白色 */
           svg.svg.text.green {
+            color: ${themeVars.color.console.fg.subtle} !important;
+          }
+
+          &.selected {
+            /* 不被 hover 效果影响 */
             color: ${themeVars.color.console.fg.self} !important;
+            background-color: ${themeVars.color.console.activeBg} !important;
+
+            svg.svg.text.green {
+              color: ${themeVars.color.console.fg.self} !important;
+            }
+          }
+          // 步骤耗时
+          .step-summary-duration {
+            font-size: 12px;
+            font-family: var(--fonts-monospace);
           }
         }
-        // 步骤耗时
-        .step-summary-duration {
-          font-size: 12px;
-          font-family: var(--fonts-monospace);
-        }
-      }
-      // 步骤日志
-      .job-step-logs {
-        animation: ${animationDown};
-        /* 日志字体颜色白色 */
-        .job-log-line {
-          color: ${themeVars.color.console.fg.self};
-          /* 被 hover 时覆盖 ANSI 颜色 */
-          .log-msg:hover * {
-            color: ${themeVars.color.console.fg.self} !important;
+        // 步骤日志
+        .job-step-logs {
+          animation: ${animationDown};
+          /* 日志字体颜色白色 */
+          .job-log-line {
+            color: ${themeVars.color.console.fg.self};
+            /* 被 hover 时覆盖 ANSI 颜色 */
+            .log-msg:hover * {
+              color: ${themeVars.color.console.fg.self} !important;
+            }
           }
         }
       }
