@@ -111,10 +111,12 @@ export const diff = css`
         /* visibility: hidden; */ // 不要使用 visibility: hidden; 当 escape 有内容时会导致背景颜色丢失, escape 目前用于显示检测 unicode 编码错误的内容
       }
       // 修复当 escape 有内容时, 宽度不够的问题
-      table:has(td.lines-escape:not(:empty)) {
-        colgroup col:nth-child(3),
-        colgroup col:nth-child(2),
-        colgroup col:nth-child(6),
+      &:has(td.lines-escape:not(:empty)) {
+        // 合并视图的第三列
+        &.code-diff-unified colgroup col:nth-child(3),
+        // 拆分视图的第二列和第六列
+        &.code-diff-split colgroup col:nth-child(2),
+        &.code-diff-split colgroup col:nth-child(6),
         td.lines-escape {
           width: 20;
         }
