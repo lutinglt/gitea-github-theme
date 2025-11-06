@@ -6,13 +6,11 @@
   <img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/latest/total?style=for-the-badge&labelColor=25292e&color=238636">
 </h1>
 
-<div align="center">
-
-English • [中文](README_CN.md)
+<h3 align="center">
 
 A Gitea theme that pursues GitHub style not only in colors but also in styling details.
 
-</div>
+</h3>
 
 ![Dashboard](screenshots/en/dashboard-en.png)
 
