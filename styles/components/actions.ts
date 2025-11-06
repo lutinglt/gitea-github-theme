@@ -156,7 +156,6 @@ export const actionViewLeft = css`
   .action-view-left {
     margin-right: 28px;
     border-top: 1px solid ${themeVars.color.console.border};
-
     &:before {
       content: "Jobs";
       color: ${themeVars.color.console.fg.subtle};
@@ -168,52 +167,53 @@ export const actionViewLeft = css`
       top: -8px;
       left: 15px;
     }
-
     .job-group-section {
       padding-right: 8px;
       padding-bottom: 8px;
       border-bottom: 1px solid ${themeVars.color.console.border};
-
-      .job-brief-item {
-        border-radius: ${otherThemeVars.border.radius} !important;
-        padding: 8px;
-        position: relative;
-        margin-left: 0.5rem;
-
-        &.selected {
+      .job-brief-list {
+        gap: 4px;
+        // 双重确保覆盖原始样式
+        .job-brief-item.job-brief-item {
+          border-radius: ${otherThemeVars.border.radius} !important;
+          padding: 8px;
+          position: relative;
+          margin-left: 0.5rem;
           &:hover {
             background-color: ${themeVars.color.console.hoverBg};
           }
-
-          &:after {
-            overflow: visible;
-            background: ${themeVars.github.borderColor.accent.emphasis};
-            border-radius: ${otherThemeVars.border.radius};
-            content: "";
-            height: 24px;
-            left: calc(0.5rem * -1);
-            position: absolute;
-            top: calc(50% - 12px);
-            width: 4px;
-          }
-        }
-        .job-brief-item-right {
-          svg.job-brief-rerun {
-            display: none;
-            color: ${themeVars.color.console.fg.subtle};
-            &:hover {
-              color: ${themeVars.color.text.self};
+          &.selected {
+            &:after {
+              overflow: visible;
+              background: ${themeVars.github.borderColor.accent.emphasis};
+              border-radius: ${otherThemeVars.border.radius};
+              content: "";
+              height: 24px;
+              left: calc(0.5rem * -1);
+              position: absolute;
+              top: calc(50% - 12px);
+              width: 4px;
             }
           }
-          .step-summary-duration {
-            color: ${themeVars.color.console.fg.subtle};
-            font-family: var(--fonts-monospace);
-          }
-        }
-        &:hover {
           .job-brief-item-right {
             svg.job-brief-rerun {
-              display: inline-block;
+              display: none;
+              color: ${themeVars.color.console.fg.subtle};
+              &:hover {
+                color: ${themeVars.color.text.self};
+              }
+            }
+            .step-summary-duration {
+              color: ${themeVars.color.console.fg.subtle};
+              font-family: var(--fonts-monospace);
+              font-size: 12px;
+            }
+          }
+          &:hover {
+            .job-brief-item-right {
+              svg.job-brief-rerun {
+                display: inline-block;
+              }
             }
           }
         }

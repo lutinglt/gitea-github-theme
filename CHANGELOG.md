@@ -2,6 +2,8 @@
 
 ##### More aligned with GitHub style
 
+- Optimize the workflow log page style
+
 ### 🐞 Fix
 
 - Fix the problem of missing background color and width when there is a unicode character in the diff
