@@ -1,39 +1,39 @@
-name: 功能请求 ( Feature request )
-description: 提出新的功能建议 ( Suggest new features )
+name: Feature request
+description: Suggest new features.
 labels: ["enhancement"]
 body:
   - type: markdown
     attributes:
       value: |
-        1. 不接受非 Gitea 和 GitHub 的样式需求 ( We do not accept style requests that are not Gitea or GitHub )
-        2. 颜色需求最好自己实现 ( Color requests are best implemented by yourself )
+        1. We do not accept style requests that are not Gitea or GitHub.
+        2. Color requests are best implemented by yourself.
   - type: input
     id: page
     attributes:
-      label: 页面 ( Page )
-      description: 功能涉及的页面 ( The page the feature involves )
-      placeholder: 首页 ( Home page )
+      label: Page
+      description: The page the feature involves.
+      placeholder: Home page
     validations:
       required: false
   - type: textarea
     id: feature-description
     attributes:
-      label: 功能描述 ( Feature Description )
-      description: 请描述你想要的功能 ( Please describe the feature you want )
-      placeholder: 菜单样式修改 ( Menu style modification )
+      label: Feature Description
+      description: Please describe the feature you want.
+      placeholder: Menu style modification
     validations:
       required: true
   - type: textarea
     id: screenshot
     attributes:
-      label: 截图 ( Screenshot )
-      description: 预期的主题效果 ( Expected theme effect )
+      label: Screenshot
+      description: Expected theme effect.
     validations:
       required: false
   - type: textarea
     id: github-screenshot
     attributes:
-      label: 可供参考的 GitHub 页面对应的截图 ( Screenshot of the corresponding GitHub page )
-      description: 请上传 GitHub 页面对应的截图 ( Please upload a screenshot of the corresponding GitHub page )
+      label: Screenshot of the corresponding GitHub page
+      description: Please upload a screenshot of the corresponding GitHub page.
     validations:
       required: false

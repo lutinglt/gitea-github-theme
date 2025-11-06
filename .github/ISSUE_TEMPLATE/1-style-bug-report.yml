@@ -1,91 +1,90 @@
-name: 样式错误报告 ( Style bug report )
-description: 安装主题后出现颜色/位置错误等 ( Color/position errors occur after installing the theme )
+name: Style bug report
+description: Color/position errors occur after installing the theme.
 labels: ["style bug"]
 body:
   - type: markdown
     attributes:
       value: |
-        1. 请使用最新的主题, 并使用 Ctrl+F5 刷新页面查看 Bug 是否消失 ( Please use the latest theme and refresh the page with Ctrl+F5 to see if the Bug has disappeared )
-        2. 请查看项目根目录下的 CHANGELOG.md 文件, 查看是否有修复该 Bug 的相关描述 ( Please check the CHANGELOG.md file in the project root directory for descriptions of fixes related to this Bug )
-        3. 如果有相关描述, 可以查看 README.md 自己编译开发版本是否修复了该 Bug ( If there are related descriptions, you can check if the Bug has been fixed by compiling the development version yourself in the README.md )
-        4. 请查看 Gitea 默认主题下是否有同样的错误, 确认非主题问题 ( Please check if there is the same error in the default Gitea theme, confirming that it is not a theme problem )
+        1. Please use the latest theme and refresh the page with Ctrl+F5 to see if the Bug has disappeared.
+        2. Please check the CHANGELOG.md file in the project root directory for descriptions of fixes related to this Bug.
+        3. If there are related descriptions, you can check if the Bug has been fixed by compiling the development version yourself in the README.md.
+        4. Please check if there is the same error in the default Gitea theme, confirming that it is not a theme problem.
   - type: input
     id: theme-version
     attributes:
-      label: 主题版本 ( Theme Version )
+      label: Theme Version
       description:
-        主题的版本, 如果是开发版本可以查看 CSS 文件中 `--theme-version` 的值, 或者查看项目根目录下的 `package.json` 文件
-        ( The version of the theme, if it is a development version, you can check the value of `--theme-version` in the
-        CSS file, or check the `package.json` file in the project root directory )
+        The version of the theme, if it is a development version, you can check the value of `--theme-version` in the
+        CSS file, or check the `package.json` file in the project root directory.
       placeholder: ex. 1.24.5
     validations:
       required: true
   - type: input
     id: gitea-version
     attributes:
-      label: Gitea 版本 ( Gitea Version )
-      description: 应用主题的 Gitea 版本 ( What version of Gitea are you using? )
+      label: Gitea Version
+      description: What version of Gitea are you using?
       placeholder: ex. 1.24.5
     validations:
       required: true
   - type: input
     id: page
     attributes:
-      label: 页面 ( Page )
-      description: 错误出现的页面 ( The page where the error occurred )
-      placeholder: 工单列表页 ( Issue list page )
+      label: Page
+      description: The page where the error occurred.
+      placeholder: Issue list page
     validations:
       required: true
   - type: textarea
     id: actual-behavior
     attributes:
-      label: 实际表现 ( Actual Behavior )
-      description: 请描述实际的错误表现 ( Please describe the actual error presentation )
-      placeholder: 页面底部的颜色错误 ( The color of the bottom of the page is incorrect )
+      label: Actual Behavior
+      description: Please describe the actual error presentation.
+      placeholder: The color of the bottom of the page is incorrect
     validations:
       required: true
   - type: textarea
     id: expected-behavior
     attributes:
-      label: 期望表现 ( Expected Behavior )
-      description: 请描述期望的正确表现 ( Please describe the expected correct presentation )
-      placeholder: 页面底部的颜色应该是白色 ( The color of the bottom of the page should be white )
+      label: Expected Behavior
+      description: Please describe the expected correct presentation.
+      placeholder: The color of the bottom of the page should be white
     validations:
       required: true
   - type: textarea
     id: theme-screenshot
     attributes:
-      label: 应用主题后的截图 ( Screenshot of the theme applied )
-      description: 请上传应用主题后的截图 ( Please upload a screenshot of the theme applied )
+      label: Screenshot of the theme applied
+      description: Please upload a screenshot of the theme applied.
     validations:
       required: true
   - type: textarea
     id: steps-to-reproduce
     attributes:
-      label: 复现步骤 ( Steps to reproduce )
-      description: 请描述如何复现错误 ( Please describe how to reproduce the error )
-      placeholder: 1. 安装主题 2. 刷新页面 3. 查看错误 ( 1. Install the theme 2. Refresh the page 3. View the error )
+      label: Steps to reproduce
+      description: Please describe how to reproduce the error.
+      placeholder: 1. Install the theme 2. Refresh the page 3. View the error
     validations:
       required: false
   - type: textarea
     id: bug-description
     attributes:
-      label: 错误描述 ( Bug Description )
-      description: 请描述错误的具体表现 ( Please describe the specific presentation of the error )
-      placeholder: 页面底部的颜色错误 ( The color of the bottom of the page is incorrect )
+      label: Bug Description
+      description: Please describe the specific presentation of the error.
+      placeholder: The color of the bottom of the page is incorrect
     validations:
       required: false
   - type: textarea
     id: gitea-screenshot
     attributes:
-      label: Gitea 默认主题下的截图 ( Screenshot of the default Gitea theme )
-      description: 请上传 Gitea 默认主题下的截图 ( Please upload a screenshot of the default Gitea theme )
+      label: Screenshot of the default Gitea theme
+      description: Please upload a screenshot of the default Gitea theme.
     validations:
       required: false
   - type: textarea
     id: github-screenshot
     attributes:
-      label: 可供参考的 GitHub 页面对应的截图 ( Screenshot of the corresponding GitHub page )
-      description: 请上传 GitHub 页面对应的截图 ( Please upload a screenshot of the corresponding GitHub page )
+      label: Screenshot of the corresponding GitHub page
+      description: Please upload a screenshot of the corresponding GitHub page.
     validations:
       required: false
