@@ -5,6 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
+        !!! Please read the readme and ensure that the theme is used correctly before submitting !!!
         1. Please use the latest theme and refresh the page with Ctrl+F5 to see if the Bug has disappeared.
         2. Please check the CHANGELOG.md file in the project root directory for descriptions of fixes related to this Bug.
         3. If there are related descriptions, you can check if the Bug has been fixed by compiling the development version yourself in the README.md.
