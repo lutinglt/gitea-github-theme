@@ -2,6 +2,7 @@
 
 ##### More aligned with GitHub style
 
+- Optimize global line height
 - Optimize the workflow log page style
 
 ### 🐞 Fix

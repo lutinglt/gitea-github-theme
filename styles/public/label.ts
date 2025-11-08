@@ -1,6 +1,13 @@
 import { css, themeVars } from "src/types/vars";
 
+export const labelStyle = {
+  padding: "0px 6px",
+};
+
 export const label = css`
+  .ui.label {
+    border: 1px solid #00000000;
+  }
   /* 所有标签, 但不包括 a 标签 */
   /* a 标签比如仓库点星等按钮旁边的数字标签按钮,提交图中的 tag 标签 */
   div.label,
@@ -9,7 +16,11 @@ export const label = css`
   span.labels-list a.label {
     &.ui.ui.ui {
       border-radius: 9999px;
-      padding: 1.5px 6px;
+      ${labelStyle}
+      line-height: 18px;
+      &.large {
+        line-height: 22px;
+      }
       // 多个标签的组合标签的圆角修复
       &.scope-parent {
         .scope-left {
@@ -103,7 +114,6 @@ export const shaLabel = css`
         background-color: ${themeVars.color.label.hoverBg} !important;
       }
       span.ui.label.commit-is-signed {
-        padding: 3px 5px;
         margin-left: 5px;
         height: 25px;
       }
@@ -118,6 +128,7 @@ export const shaLabel = css`
   }
   // 验证提交附带的图标
   span.ui.label.commit-is-signed {
+    height: 25px;
     // 验证信任
     &.sign-trusted {
       border: 1.5px solid ${themeVars.color.green.badge.self} !important;
@@ -150,6 +161,11 @@ export const shaLabel = css`
         background-color: ${themeVars.color.red.badge.hover.bg} !important;
       }
     }
+  }
+  span.ui.label.commit-is-signed,
+  .ui.label.commit-id-short,
+  .ui.label.commit-sign-badge {
+    font-size: 12px;
   }
 `;
 
@@ -194,7 +210,6 @@ export const repoLabel = css`
       color: ${themeVars.color.text.light.num1};
       font-size: 12px;
       font-weight: 500;
-      padding: 1.5px 6px;
     }
   }
   .org-visibility span.ui.basic.label {

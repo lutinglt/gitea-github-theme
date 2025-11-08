@@ -1,4 +1,5 @@
 import { css, otherThemeVars, themeVars } from "src/types/vars";
+import { labelStyle } from "./label";
 
 export const activeItemAfterStyle = {
   backgroundColor: themeVars.github.borderColor.accent.emphasis,
@@ -140,8 +141,8 @@ export const menu = css`
     }
   }
   // 菜单标签样式
-  .ui.menu .item>.label:not(.floating) {
-    padding: 1.5px 6px;
+  .ui.menu .item > .label:not(.floating) {
+    ${labelStyle}
   }
 `;
 

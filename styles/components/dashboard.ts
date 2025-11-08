@@ -1,4 +1,5 @@
 import { css, otherThemeVars, themeVars } from "src/types/vars";
+import { labelStyle } from "styles/public/label";
 
 export const dashboard = css`
   // 首页仪表板, 避免选中管理员后台的维护管理面板
@@ -38,6 +39,10 @@ export const dashboard = css`
       font-weight: 400;
       background-color: unset !important;
       margin-bottom: 0.25rem;
+      .ui.label {
+        border-color: #00000000;
+        line-height: 22px;
+      }
     }
     // 仓库/组织列表
     .ui.attached.segment {
@@ -47,6 +52,12 @@ export const dashboard = css`
       &.repos-search {
         border-top-left-radius: 12px;
         border-top-right-radius: 12px;
+        > .menu.repos-filter {
+          .ui.circular.label {
+            border-color: #00000000;
+            padding: ${labelStyle.padding} !important;
+          }
+        }
       }
       &.table {
         &:last-child {
@@ -58,6 +69,7 @@ export const dashboard = css`
           li {
             border-radius: ${otherThemeVars.border.radius};
             padding: 6px 8px !important;
+            height: 32px;
             &:not(:last-child) {
               border-bottom: 0;
             }

@@ -74,7 +74,8 @@ export const repoTopic = css`
     border-radius: 9999px;
     font-size: 12px;
     font-weight: 500;
-    padding: 2.5px 10px;
+    padding: 0px 10px;
+    line-height: 22px;
     background-color: ${themeVars.github.bgColor.accent.muted};
     color: ${themeVars.github.fgColor.accent};
     &:hover {

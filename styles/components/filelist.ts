@@ -399,18 +399,19 @@ export const repoSidebarTop = css`
         padding: 10px 0 0 0;
         // 仓库描述本身
         .flex-item-title {
-          margin-top: 12px;
+          margin-top: 10px;
         }
         // 仓库描述内容
         .flex-item-body {
           > .tw-flex:first-child {
-            margin-top: 21px !important;
+            margin-top: 16px !important;
+            gap: 8px !important;
           }
           .repo-description {
             color: ${themeVars.color.text.self};
           }
           #repo-topics {
-            margin: 10px 0px !important;
+            margin: 8px 0px !important;
           }
           .flex-text-block {
             font-size: 14px;
@@ -448,7 +449,6 @@ export const repoSidebarBottom = css`
           .flex-item-leading {
             svg.svg.octicon-tag {
               color: ${themeVars.color.green.self};
-              margin-top: 2px;
             }
           }
           .flex-item-header .flex-item-title {
