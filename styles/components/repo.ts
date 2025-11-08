@@ -17,10 +17,11 @@ export const repoHeader = css`
           display: flex;
           align-items: center;
           color: ${themeVars.color.text.self};
-          font-size: 16px;
+          font-size: 20px;
+          line-height: 1.3;
           text-decoration: none !important;
           min-width: 3ch;
-          padding: 4px 6px;
+          padding: 0px 6px;
           border-radius: ${otherThemeVars.border.radius};
           margin-top: 0.5rem;
           margin-bottom: 0.5rem;
