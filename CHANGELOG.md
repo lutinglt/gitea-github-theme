@@ -4,7 +4,7 @@
 
 - Optimize global line height
 - Optimize the workflow log page style
-- Optimize repository header style
+- Optimize repository header name style
 
 ### 🐞 Fix
 
