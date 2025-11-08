@@ -41,7 +41,6 @@ export const dashboard = css`
       margin-bottom: 0.25rem;
       .ui.label {
         border-color: #00000000;
-        line-height: 22px;
       }
     }
     // 仓库/组织列表
@@ -55,6 +54,7 @@ export const dashboard = css`
         > .menu.repos-filter {
           .ui.circular.label {
             border-color: #00000000;
+            min-height: fit-content;
             padding: ${labelStyle.padding} !important;
           }
         }

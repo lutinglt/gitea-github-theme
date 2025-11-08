@@ -18,8 +18,8 @@ export const label = css`
       border-radius: 9999px;
       ${labelStyle}
       line-height: 18px;
-      &.large {
-        line-height: 22px;
+      &.mini {
+        line-height: 16px;
       }
       // 多个标签的组合标签的圆角修复
       &.scope-parent {
