@@ -212,7 +212,4 @@ export const repoLabel = css`
       font-weight: 500;
     }
   }
-  .org-visibility span.ui.basic.label {
-    font-size: 14px;
-  }
 `;
