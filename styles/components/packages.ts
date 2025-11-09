@@ -50,8 +50,9 @@ export const packagesDetail = css`
     .issue-title-header > div {
       color: ${themeVars.color.text.light.num1};
     }
-    .issue-content {
-      .issue-content-left {
+    .packages-content {
+      .packages-content-left {
+        width: calc(100% - 304px - 16px);
         .ui.top.attached.header {
           font-size: 14px;
           padding: 16px;
@@ -79,9 +80,10 @@ export const packagesDetail = css`
           }
         }
       }
-      .issue-content-right {
+      .packages-content-right {
         border: 0;
         padding: 0px 16px;
+        width: 304px;
         > strong {
           font-size: 16px;
         }
