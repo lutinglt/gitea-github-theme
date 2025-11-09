@@ -172,94 +172,29 @@ After compilation, theme files will be generated in the `dist` directory. You ca
 
 ## History downloads
 
-### v1.25
+#### v1.25
 
 <img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.25.1/total?style=for-the-badge&labelColor=25292e&color=238636">
 <img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.25.0/total?style=for-the-badge&labelColor=25292e&color=238636">
 
-### v1.24
+#### v1.24
 
 <img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.24.7/total?style=for-the-badge&labelColor=25292e&color=238636">
 <img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.24.6/total?style=for-the-badge&labelColor=25292e&color=238636">
 <img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.24.5/total?style=for-the-badge&labelColor=25292e&color=238636">
-
-##### v1.24.4 (Dev)
-
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.24.4.2508132235/total?style=for-the-badge&labelColor=25292e&color=238636">
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.24.4.2508101716/total?style=for-the-badge&labelColor=25292e&color=238636">
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.24.4.2508061513/total?style=for-the-badge&labelColor=25292e&color=238636">
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.24.4.2508051557/total?style=for-the-badge&labelColor=25292e&color=238636">
-
-##### v1.24.2 (Dev)
-
 <img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.24.2.2507091544/total?style=for-the-badge&labelColor=25292e&color=238636">
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.24.2.2507081632/total?style=for-the-badge&labelColor=25292e&color=238636">
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.24.2.2507071433/total?style=for-the-badge&labelColor=25292e&color=238636">
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.24.2.2507062335/total?style=for-the-badge&labelColor=25292e&color=238636">
-
-##### v1.24.0 (Dev)
-
 <img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.24.0.2506101804/total?style=for-the-badge&labelColor=25292e&color=238636">
 
-### v1.23 (Dev)
-
-##### v1.23.3 (Dev)
+#### v1.23
 
 <img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.23.3-20250211-1920/total?style=for-the-badge&labelColor=25292e&color=238636">
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.23.3-20250211-1108/total?style=for-the-badge&labelColor=25292e&color=238636">
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.23.3-20250210-2206/total?style=for-the-badge&labelColor=25292e&color=238636">
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.23.3-20250210-1746/total?style=for-the-badge&labelColor=25292e&color=238636">
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.23.3-20250206-1815/total?style=for-the-badge&labelColor=25292e&color=238636">
-
-##### v1.23.2 (Dev)
-
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.23.2-20250206-1049/total?style=for-the-badge&labelColor=25292e&color=238636">
-
-##### v1.23.1 (Dev)
-
 <img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.23.1-20250114-1113/total?style=for-the-badge&labelColor=25292e&color=238636">
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.23.1-20250112-1819/total?style=for-the-badge&labelColor=25292e&color=238636">
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.23.1-20250110-2355/total?style=for-the-badge&labelColor=25292e&color=238636">
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.23.1-20250110-1748/total?style=for-the-badge&labelColor=25292e&color=238636">
 
-##### v1.23.0 (Dev)
+#### v1.22
 
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.23.0-20250109-1719/total?style=for-the-badge&labelColor=25292e&color=238636">
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.23.0-20250109-1558/total?style=for-the-badge&labelColor=25292e&color=238636">
-
-### v1.22 (Dev)
-
-##### v1.22.6 (Dev)
-
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.22.6-20250109-1121/total?style=for-the-badge&labelColor=25292e&color=238636">
 <img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.22.6-20241228-0008/total?style=for-the-badge&labelColor=25292e&color=238636">
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.22.6-20241227-2305/total?style=for-the-badge&labelColor=25292e&color=238636">
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.22.6-20241227-1421/total?style=for-the-badge&labelColor=25292e&color=238636">
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.22.6-20241227-1231/total?style=for-the-badge&labelColor=25292e&color=238636">
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.22.6-20241226-1714/total?style=for-the-badge&labelColor=25292e&color=238636">
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.22.6-20241224-2225/total?style=for-the-badge&labelColor=25292e&color=238636">
 <img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.22.6-20241219-1422/total?style=for-the-badge&labelColor=25292e&color=238636">
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/1.22.6-20241215-2142/total?style=for-the-badge&labelColor=25292e&color=238636">
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/1.22.6-20241215-0038/total?style=for-the-badge&labelColor=25292e&color=238636">
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/1.22.6-20241214-2208/total?style=for-the-badge&labelColor=25292e&color=238636">
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/1.22.6-20241214-0058/total?style=for-the-badge&labelColor=25292e&color=238636">
 
-##### v1.22.5 (Dev)
-
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/1.22.5-20241213-1520/total?style=for-the-badge&labelColor=25292e&color=238636">
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/1.22.5-20241213-1321/total?style=for-the-badge&labelColor=25292e&color=238636">
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/1.22.5-20241213-1250/total?style=for-the-badge&labelColor=25292e&color=238636">
-
-##### v1.22.4 (Dev)
-
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/1.22.4-20241212-01/total?style=for-the-badge&labelColor=25292e&color=238636">
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/1.22.4-20241212/total?style=for-the-badge&labelColor=25292e&color=238636">
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/1.22.4-20241209/total?style=for-the-badge&labelColor=25292e&color=238636">
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/1.22.4-20241208-02/total?style=for-the-badge&labelColor=25292e&color=238636">
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/1.22.4-20241208-01/total?style=for-the-badge&labelColor=25292e&color=238636">
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/1.22.4-20241208/total?style=for-the-badge&labelColor=25292e&color=238636">
-<img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/1.22.4-20241207/total?style=for-the-badge&labelColor=25292e&color=238636">
-
-### 1.21
+#### 1.21
 
 <img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/1.21.0/total?style=for-the-badge&labelColor=25292e&color=238636">
