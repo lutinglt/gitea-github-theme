@@ -170,7 +170,17 @@ npm run build
 After compilation, theme files will be generated in the `dist` directory. You can place the theme files into the
 `gitea/public/assets/css` directory, then add the theme name to the end of `THEMES` in `gitea/conf/app.ini`
 
-## History downloads
+## Star History
+
+<a href="https://www.star-history.com/#lutinglt/gitea-github-theme&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=lutinglt/gitea-github-theme&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=lutinglt/gitea-github-theme&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=lutinglt/gitea-github-theme&type=date&legend=top-left" />
+ </picture>
+</a>
+
+## Downloads History
 
 <img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.25.1/total?style=for-the-badge&labelColor=25292e&color=238636">
 <img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.25.0/total?style=for-the-badge&labelColor=25292e&color=238636">
