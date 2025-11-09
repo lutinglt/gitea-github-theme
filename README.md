@@ -172,29 +172,15 @@ After compilation, theme files will be generated in the `dist` directory. You ca
 
 ## History downloads
 
-#### v1.25
-
 <img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.25.1/total?style=for-the-badge&labelColor=25292e&color=238636">
 <img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.25.0/total?style=for-the-badge&labelColor=25292e&color=238636">
-
-#### v1.24
-
 <img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.24.7/total?style=for-the-badge&labelColor=25292e&color=238636">
 <img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.24.6/total?style=for-the-badge&labelColor=25292e&color=238636">
 <img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.24.5/total?style=for-the-badge&labelColor=25292e&color=238636">
 <img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.24.2.2507091544/total?style=for-the-badge&labelColor=25292e&color=238636">
 <img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.24.0.2506101804/total?style=for-the-badge&labelColor=25292e&color=238636">
-
-#### v1.23
-
 <img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.23.3-20250211-1920/total?style=for-the-badge&labelColor=25292e&color=238636">
 <img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.23.1-20250114-1113/total?style=for-the-badge&labelColor=25292e&color=238636">
-
-#### v1.22
-
 <img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.22.6-20241228-0008/total?style=for-the-badge&labelColor=25292e&color=238636">
 <img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/v1.22.6-20241219-1422/total?style=for-the-badge&labelColor=25292e&color=238636">
-
-#### 1.21
-
 <img src="https://img.shields.io/github/downloads/lutinglt/gitea-github-theme/1.21.0/total?style=for-the-badge&labelColor=25292e&color=238636">
