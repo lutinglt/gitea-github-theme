@@ -17,8 +17,7 @@ export const repoHeader = css`
           display: flex;
           align-items: center;
           color: ${themeVars.color.text.self};
-          font-size: 20px;
-          line-height: 1.3;
+          font-size: 18px;
           text-decoration: none !important;
           min-width: 3ch;
           padding: 0px 6px;

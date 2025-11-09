@@ -83,3 +83,12 @@ export const label = css`
     }
   }
 `;
+
+// 修复组织设置界面的组织设置中多余的边框
+export const fixOrgSetting = css`
+  .page-content.organization.settings {
+    .org-setting-content {
+      border: 0;
+    }
+  }
+`;
