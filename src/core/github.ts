@@ -132,6 +132,7 @@ export function github2ThemeColor(githubColor: GithubColor): ThemeColor {
   };
 
   const other: Other = {
+    logo: themeVars.color.primary.self,
     body: githubColor.bgColor.default,
     box: {
       header: githubColor.bgColor.muted,

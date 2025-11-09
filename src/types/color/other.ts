@@ -8,6 +8,8 @@ export const otherAuto = {
 };
 
 export const other = {
+  /** 未登录时的介绍首页的 SVG 和链接文字颜色 */
+  logo: null,
   /** 主要背景色 */
   body: null,
   /** 页面底部状态栏背景色 */
