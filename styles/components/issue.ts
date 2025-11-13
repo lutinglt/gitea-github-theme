@@ -263,7 +263,7 @@ export const prBranch = css`
     font-family: var(--fontStack-monospace, ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, monospace);
     font-size: 12px;
     padding: 0 5px;
-    line-height: 20px;
+    line-height: 18px;
   }
 
   .repository.view.issue .pull-desc code {
