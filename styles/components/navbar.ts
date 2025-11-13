@@ -4,8 +4,12 @@ import { css, customThemeVars, otherThemeVars, themeVars } from "src/types/vars"
 export const navbarRight = css`
   #navbar {
     border-bottom: 0;
-    padding: 0px 16px;
+    padding: 8px 16px; // 上下内边距 + .navbar-left & .navbar-right 的 min-height = 64px
     min-height: 64px;
+    .navbar-left,
+    .navbar-right {
+      min-height: 48px;
+    }
     .navbar-left {
       gap: 8px;
       > .item {
@@ -32,15 +36,12 @@ export const navbarRight = css`
       gap: 8px;
       // 右侧按钮, 但不包括头像
       > .item:not(:last-child) {
-        display: grid;
-        gap: 4px;
-        grid-auto-columns: max-content;
         align-items: center;
-        align-content: center;
         justify-content: center;
+        gap: 4px;
         border: 1px solid ${themeVars.color.light.border};
         border-radius: ${otherThemeVars.border.radius};
-        padding: unset;
+        padding: 0;
         height: 32px;
         min-width: 32px;
         min-height: 32px;
@@ -127,13 +128,33 @@ export const navbarRight = css`
       }
     }
   }
-  // 手机下的创建菜单按钮
+  // 手机下的导航栏
   @media (max-width: 767.98px) {
-    #navbar .navbar-right:has(.user-menu) > .item:not(:last-child) {
-      display: none;
-    }
-    #navbar.navbar-menu-open .navbar-right:has(.user-menu) > .item:not(:last-child) {
-      display: grid;
+    #navbar {
+      &.navbar-menu-open {
+        gap: 8px;
+      }
+      .navbar-mobile-right {
+        gap: 8px;
+        > .item {
+          align-items: center;
+          justify-content: center;
+          border: 1px solid ${themeVars.color.light.border};
+          border-radius: ${otherThemeVars.border.radius};
+          padding: 0;
+          height: 32px;
+          min-width: 32px;
+          min-height: 32px;
+          // 纠正内容保证居中
+          .tw-relative {
+            height: 16px;
+            width: 16px;
+          }
+          .svg {
+            margin: 0;
+          }
+        }
+      }
     }
   }
 `;

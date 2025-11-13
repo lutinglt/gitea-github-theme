@@ -6,6 +6,7 @@
 - Optimize the workflow log page style.
 - Optimize repository header name style.
 - Optimize organization detail page style.
+- Optimize top navbar style on mobile.
 
 ### 🐞 Fix
 
