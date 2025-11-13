@@ -63,6 +63,7 @@ export const actions = css`
           color: ${themeVars.github.fgColor.accent};
           font-family: var(--fonts-monospace);
           font-weight: 400;
+          padding: 0px 6px;
           &:hover {
             background-color: ${themeVars.github.bgColor.accent.muted};
             color: ${themeVars.github.fgColor.accent};
@@ -76,6 +77,7 @@ export const actions = css`
 
         .flex-item {
           padding: 16px;
+          line-height: 18px;
           .flex-item-leading {
             align-self: flex-start;
             margin-top: 2px;
