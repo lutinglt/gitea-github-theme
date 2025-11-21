@@ -121,17 +121,28 @@ export function themePlugin(): Plugin {
       const server = process.env.SSH_SERVER;
       const user = process.env.SSH_USER || "root";
       const theme_path = process.env.GITEA_THEME_PATH;
-      if (server && theme_path) {
-        const cmd = `scp dist/${prefix}*.css ${user}@${server}:${theme_path}`;
-        console.log("[themePlugin] exec:", cmd);
+      const gitea_path = process.env.GITEA_PATH;
+      if (server) {
         try {
-          execSync(cmd, { stdio: "inherit" });
-          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          if (theme_path) {
+            const cmd = `scp dist/${prefix}*.css ${user}@${server}:${theme_path}`;
+            console.log("[themePlugin] exec:", cmd);
+            execSync(cmd, { stdio: "inherit" });
+          } else {
+            console.log("[themePlugin] no GITEA_THEME_PATH, skip upload");
+          }
+          if (gitea_path) {
+            const cmd = `scp -r templates ${user}@${server}:${gitea_path}`;
+            console.log("[themePlugin] exec:", cmd);
+            execSync(cmd, { stdio: "inherit" });
+          } else {
+            console.log("[themePlugin] no GITEA_TMPL_PATH, skip upload");
+          }
         } catch (_) {
           // continue regardless of error
         }
       } else {
-        console.log("[themePlugin] no SSH_SERVER or GITEA_THEME_PATH, skip upload");
+        console.log("[themePlugin] no SSH_SERVER, skip upload");
       }
       console.log("[themePlugin] exec end.");
     },

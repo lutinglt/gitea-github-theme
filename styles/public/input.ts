@@ -40,7 +40,7 @@ export const input = css`
     align-items: center;
   }
   // 下拉菜单的输入框
-  .ui.dropdown.dropdown .menu>.input {
+  .ui.dropdown.dropdown .menu > .input {
     margin: 12px 10px;
   }
 `;

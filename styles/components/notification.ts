@@ -153,7 +153,7 @@ export const notification = css`
             box-shadow: 2px 0 0 ${themeVars.github.borderColor.accent.emphasis} inset;
             color: ${themeVars.color.text.self};
           }
-          > .notifications-link > div{
+          > .notifications-link > div {
             &:first-child {
               font-size: 12px !important;
             }

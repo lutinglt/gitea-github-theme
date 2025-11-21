@@ -1,0 +1,35 @@
+{{- $itemExtraClass := .ItemExtraClass -}}
+{{- $data := .PageGlobalData -}}
+{{if and $data $data.IsSigned}}{{/* data may not exist, for example: rendering 503 page before the PageGlobalData middleware */}}
+	{{- $activeStopwatch := call $data.GetActiveStopwatch -}}
+	{{- $notificationUnreadCount := call $data.GetNotificationUnreadCount -}}
+	{{if $activeStopwatch}}
+	<a class="item active-stopwatch {{$itemExtraClass}}" href="{{$activeStopwatch.IssueLink}}" title="{{ctx.Locale.Tr "active_stopwatch"}}" data-seconds="{{$activeStopwatch.Seconds}}">
+		<div class="tw-relative">
+			{{svg "octicon-stopwatch"}}
+			<span class="header-stopwatch-dot"></span>
+		</div>
+	</a>
+	{{end}}
+	{{if not ctx.Consts.RepoUnitTypeIssues.UnitGlobalDisabled}}
+	<a class="item {{$itemExtraClass}}" href="{{AppSubUrl}}/issues" data-tooltip-content="{{ctx.Locale.Tr "issues"}}">
+		{{svg "octicon-issue-opened"}}
+	</a>
+	{{end}}
+	{{if not ctx.Consts.RepoUnitTypePullRequests.UnitGlobalDisabled}}
+	<a class="item {{$itemExtraClass}}" href="{{AppSubUrl}}/pulls" data-tooltip-content="{{ctx.Locale.Tr "pull_requests"}}">
+		{{svg "octicon-git-pull-request"}}
+	</a>
+	{{end}}
+	<a class="item {{$itemExtraClass}}" href="{{AppSubUrl}}/notifications" data-tooltip-content="{{ctx.Locale.Tr "notifications"}}">
+		<div class="tw-relative tw-h-[16px]">
+			{{svg "octicon-inbox"}}
+			<span class="notification_count{{if not $notificationUnreadCount}} tw-hidden{{end}}">{{$notificationUnreadCount}}</span>
+		</div>
+	</a>
+	{{if $data.IsSiteAdmin}}
+	<a class="item {{$itemExtraClass}}" href="{{AppSubUrl}}/-/admin" data-tooltip-content="{{ctx.Locale.Tr "admin_panel"}}">
+		{{svg "octicon-server"}}
+	</a>
+	{{end}}
+{{end}}
