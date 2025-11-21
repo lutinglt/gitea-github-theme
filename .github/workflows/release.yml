@@ -29,6 +29,7 @@ jobs:
           tar -zcf dist/theme-github-extra-pink.tar.gz --remove-files \
           dist/theme-github-pink-auto.css dist/theme-github-pink-light.css dist/theme-github-pink-dark.css dist/theme-github-pink-soft-dark.css
 
+          tar -zcf dist/theme-github-templates.tar.gz templates
           TAG="v$(npm run -s version)"
           gh release create "$TAG" dist/* --notes-file CHANGELOG.md --draft -t $TAG
         env:
