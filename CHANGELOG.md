@@ -24,3 +24,4 @@
 - Fix fixed height when scrolling through step titles on workflow detail pages.
 - Fix packages details page style.
 - Fix the color of missing icons and text on the homepage when not logged in.
+- Fix the spacing of Issue WIP prompts.

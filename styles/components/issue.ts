@@ -592,6 +592,8 @@ export const issueSidebar = css`
           color: ${themeVars.color.text.light.num1};
           font-size: 12px;
         }
+        // WIP 前缀提示
+        > a,
         .ui.dropdown.select-branch,
         .ui.form,
         a.fixed-text.muted,
