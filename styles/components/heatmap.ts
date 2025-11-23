@@ -69,6 +69,9 @@ export const heatmap = css`
 
 // 动态
 export const activity = css`
+  .activity-heatmap-container + .divider:not(.divider-text) {
+    border-color: #0000;
+  }
   .flex-list#activity-feed {
     border-radius: 12px;
     box-shadow: ${themeVars.github.shadow.floating.small};

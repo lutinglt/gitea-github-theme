@@ -5,3 +5,5 @@
 ##### Template File
 
 ### 🐞 Fix
+
+- Fixed extra lines under heatmap.
