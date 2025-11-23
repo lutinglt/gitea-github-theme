@@ -1,6 +1,6 @@
 {
   "name": "gitea-github-theme",
-  "version": "1.25.2",
+  "version": "1.25.3",
   "type": "module",
   "scripts": {
     "dev": "vite build --mode dev",
