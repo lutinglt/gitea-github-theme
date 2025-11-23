@@ -68,6 +68,16 @@ For details, please refer to the Gitea documentation
 >
 > Automatic color theme requires both light and dark theme files.
 
+### Template File Installation (Optional)
+
+1. Download the latest template files from the release page and place them in the `gitea/templates` directory
+2. Restart Gitea
+
+> [!IMPORTANT]
+>
+> The template modifies Gitea's layout to make it closer to GitHub's layout. Do not use template files across versions,
+> as this may lead to missing functionality and other issues.
+
 ## Screenshots
 
 ### Basic Themes

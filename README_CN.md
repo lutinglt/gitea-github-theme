@@ -62,6 +62,15 @@ THEMES = gitea-auto, gitea-light, gitea-dark, github-auto, github-light, github-
 >
 > 自动颜色主题需要亮色和暗色的主题文件
 
+### 模板文件安装 (可选)
+
+1. 在发布页下载最新的模板文件放入 `gitea/templates` 目录下
+2. 重启 Gitea
+
+> [!IMPORTANT]
+>
+> 模板修改了 Gitea 的布局, 使其更接近 GitHub 的布局, 请勿跨版本使用模板文件, 可能会导致功能缺失等问题
+
 ## 截图
 
 ### 基本主题
