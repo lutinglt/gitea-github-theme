@@ -5,9 +5,6 @@ export const repoButtonRow = css`
     // 仓库按钮行
     &.repo-button-row {
       margin: 0 0 16px 0;
-      .ui.button.compact.basic:not(.dropdown):not(.jump) {
-        padding: 0px 10px;
-      }
       .repo-button-row-left .repository-summary {
         > .item {
           display: inline-flex;
