@@ -8,15 +8,16 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "commit": "npm run lint && npm run format && npm run build",
-    "version": "node scripts/version.cjs"
+    "version": "node scripts/version.cjs",
+    "install:clean": "npm cache clean --force && rm -rf node_modules package-lock.json && npm install"
   },
   "devDependencies": {
-    "@babel/preset-typescript": "^7.27.1",
+    "@babel/preset-typescript": "^7.28.4",
     "@eslint/js": "^9.29.0",
     "@linaria/core": "^6.3.0",
     "@types/node": "^24.0.3",
-    "@vanilla-extract/css": "^1.17.4",
-    "@vanilla-extract/vite-plugin": "^5.0.6",
+    "@vanilla-extract/css": "^1.17.5",
+    "@vanilla-extract/vite-plugin": "^5.1.3",
     "@wyw-in-js/babel-preset": "^0.7.0",
     "@wyw-in-js/vite": "^0.7.0",
     "dotenv": "^17.0.0",
@@ -30,8 +31,7 @@
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.34.1",
     "typescript-plugin-css-modules": "^5.1.0",
-    "typescript-styled-plugin": "^0.18.3",
-    "vite": "^7.1.9"
+    "vite": "^7.2.4"
   },
   "prettier": {
     "printWidth": 120,

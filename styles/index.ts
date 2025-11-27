@@ -6,3 +6,5 @@
 import "./public";
 // 组件样式
 import "./components";
+// 模板专属样式
+import "./templates";

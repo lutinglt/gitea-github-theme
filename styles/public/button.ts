@@ -111,6 +111,7 @@ export const fixButtonHeight = css`
   // 修复仓库页仓库操作按钮高度对齐和修正
   .repo-button-row .ui.button {
     min-height: 32px;
+    height: 32px;
   }
   // 修复因上面小按钮高度导致仓库星标克隆等按钮高度过高
   .repo-header {
