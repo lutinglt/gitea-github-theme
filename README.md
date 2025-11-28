@@ -47,6 +47,7 @@ accepted.
 ## Installation
 
 1. Download the latest CSS theme file from the release page and place it in the `gitea/public/assets/css` directory
+   (This directory may not be available by default and needs to be manually created)
 2. Modify `gitea/conf/app.ini` and append the CSS filename without the `theme-` prefix to the end of `THEMES` under the
    `[ui]` section
 3. Restart Gitea
@@ -70,7 +71,8 @@ For details, please refer to the Gitea documentation
 
 ### Template File Installation (Optional)
 
-1. Download the latest template files from the release page and place them in the `gitea/templates` directory
+1. Download the latest template files from the release page and place them in the `gitea/templates` directory (This
+   directory may not be available by default and needs to be manually created)
 2. Restart Gitea
 
 > [!IMPORTANT]

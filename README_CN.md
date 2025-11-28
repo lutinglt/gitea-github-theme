@@ -41,7 +41,7 @@ Gitea 理论上小版本号变更不会修改前端布局, 所以主题的小版
 
 ## 安装
 
-1. 在发布页下载最新的 CSS 主题文件放入 `gitea/public/assets/css` 目录下
+1. 在发布页下载最新的 CSS 主题文件放入 `gitea/public/assets/css` 目录下 (默认可能没有此目录需手动创建)
 2. 修改 `gitea/conf/app.ini`，并将 CSS 文件名去掉 `theme-` 的名称附加到 `[ui]` 下的 `THEMES` 末尾
 3. 重启 Gitea
 4. 在设置中查看主题
@@ -64,7 +64,7 @@ THEMES = gitea-auto, gitea-light, gitea-dark, github-auto, github-light, github-
 
 ### 模板文件安装 (可选)
 
-1. 在发布页下载最新的模板文件放入 `gitea/templates` 目录下
+1. 在发布页下载最新的模板文件放入 `gitea/templates` 目录下 (默认可能没有此目录需手动创建)
 2. 重启 Gitea
 
 > [!IMPORTANT]
