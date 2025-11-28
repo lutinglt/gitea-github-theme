@@ -36,12 +36,8 @@ export const commit = css`
       }
       // 提交信息右侧
       .tw-text-right {
-        // 时间标签
         relative-time,
-        // 复制 SHA 按钮
-        .btn.copy-commit-id,
-        // 查看提交路径按钮
-        .btn.view-commit-path {
+        svg {
           color: ${themeVars.color.text.light.num1};
         }
       }

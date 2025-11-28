@@ -89,11 +89,6 @@
 		{{if $isTreePathRoot}}
 			{{template "repo/clone_panel" .}}
 		{{end}}
-		{{if and (not $isTreePathRoot) (not .IsViewFile) (not .IsBlame)}}{{/* IsViewDirectory (not home), TODO: split the templates, avoid using "if" tricks */}}
-			<a class="ui button" href="{{.RepoLink}}/commits/{{.RefTypeNameSubURL}}/{{.TreePath | PathEscapeSegments}}">
-				{{svg "octicon-history" 16}}{{ctx.Locale.Tr "repo.file_history"}}
-			</a>
-		{{end}}
 	</div>
 </div>
 {{if .IsViewFile}}
