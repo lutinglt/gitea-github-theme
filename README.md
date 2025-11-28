@@ -46,16 +46,16 @@ accepted.
 
 ## Installation
 
-1. Download the latest CSS theme file from the release page and place it in the `gitea/public/assets/css` directory
+1. Download the latest CSS theme file from the release page and place it in the `data/gitea/public/assets/css` directory
    (This directory may not be available by default and needs to be manually created)
-2. Modify `gitea/conf/app.ini` and append the CSS filename without the `theme-` prefix to the end of `THEMES` under the
+2. Modify `data/gitea/conf/app.ini` and append the CSS filename without the `theme-` prefix to the end of `THEMES` under the
    `[ui]` section
 3. Restart Gitea
 4. Check the theme in the settings
 
 Example: If the theme filename is `theme-github-dark.css`, add `github-dark` to the end of `THEMES`
 
-Example `gitea/conf/app.ini`:
+Example `data/gitea/conf/app.ini`:
 
 ```ini
 [ui]
@@ -71,7 +71,7 @@ For details, please refer to the Gitea documentation
 
 ### Template File Installation (Optional)
 
-1. Download the latest template files from the release page and place them in the `gitea/templates` directory (This
+1. Download the latest template files from the release page and place them in the `data/gitea/templates` directory (This
    directory may not be available by default and needs to be manually created)
 2. Restart Gitea
 
