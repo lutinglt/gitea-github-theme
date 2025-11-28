@@ -5,7 +5,7 @@ export const activeItemAfterStyle = {
   backgroundColor: themeVars.github.borderColor.accent.emphasis,
   borderRadius: otherThemeVars.border.radius,
   height: "24px",
-  left: "calc(0.5rem * -1)",
+  left: "-8px",
   position: "absolute",
   top: "calc(50% - 12px)",
   width: "4px",
