@@ -1,4 +1,4 @@
-import { css, themeVars } from "src/types/vars";
+import { css, themeVars, otherThemeVars } from "src/types/vars";
 
 const primary = "primary" as const;
 const secondary = "secondary" as const;
@@ -19,6 +19,8 @@ export const commitsList = css`
       grid-template-columns: minmax(30%, 1fr) minmax(0, max-content) min-content;
       &:last-child {
         border-bottom: none;
+        border-bottom-left-radius: ${otherThemeVars.border.radius};
+        border-bottom-right-radius: ${otherThemeVars.border.radius};
       }
       &:hover {
         background-color: ${themeVars.color.hover.opaque};
