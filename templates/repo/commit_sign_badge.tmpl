@@ -56,7 +56,7 @@ so this template should be kept as small as possible, DO NOT put large component
 {{- end -}}
 
 {{- if $commit -}}
-<a {{if $commitBaseLink}}href="{{$commitBaseLink}}/{{$commit.ID}}"{{end}} class="ui label commit-id-short {{$extraClass}}" rel="nofollow">
+<a {{if $commitBaseLink}}href="{{$commitBaseLink}}/{{$commit.ID}}"{{end}} class="ui label commit-id-short {{$extraClass}} github-theme-commit-sha" rel="nofollow">
 {{- end -}}
 {{- if or (not $commit) $extraClass}}{{/* only show the lock icon if there is no commit info (icon only) or the commit is really signed */}}
 	<span class="ui label commit-sign-badge {{$extraClass}}">

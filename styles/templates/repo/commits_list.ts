@@ -1,4 +1,4 @@
-import { css, themeVars, otherThemeVars } from "src/types/vars";
+import { css, otherThemeVars, themeVars } from "src/types/vars";
 
 const primary = "primary" as const;
 const secondary = "secondary" as const;
@@ -80,21 +80,6 @@ export const commitsList = css`
           border-width: 1.5px;
           border-radius: 9999px;
           height: 25px;
-        }
-        .commit-id-short {
-          gap: 8px;
-          padding: unset;
-          margin: unset;
-          height: 28px;
-          margin: 0 4px;
-          &.commit-is-signed {
-            &:hover {
-              background-color: unset !important;
-            }
-            span.ui.label.commit-sign-badge.commit-is-signed {
-              margin: unset;
-            }
-          }
         }
       }
       .actions {
