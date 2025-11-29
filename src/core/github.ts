@@ -42,10 +42,10 @@ export type GithubColor = {
   };
   bgColor: {
     accent: { emphasis: string; muted: string };
-    attention: { muted: string };
+    attention: { emphasis: string; muted: string };
     emphasis: string;
     success: { emphasis: string; muted: string };
-    danger: { muted: string };
+    danger: { emphasis: string; muted: string };
     done: { emphasis: string };
     default: string;
     inset: string;
@@ -239,6 +239,12 @@ export function github2ThemeColor(githubColor: GithubColor): ThemeColor {
       },
       success: {
         emphasis: githubColor.bgColor.success.emphasis,
+      },
+      attention: {
+        emphasis: githubColor.bgColor.attention.emphasis,
+      },
+      danger: {
+        emphasis: githubColor.bgColor.danger.emphasis,
       },
       done: {
         emphasis: githubColor.bgColor.done.emphasis,

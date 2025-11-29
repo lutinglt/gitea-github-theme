@@ -25,7 +25,7 @@ export const colorblindLightGithubColors: GithubColor = {
   },
   bgColor: {
     ...lightGithubColors.bgColor,
-    danger: { muted: "#fff1e5" },
+    danger: { emphasis: "#bc4c00", muted: "#fff1e5" },
     success: { emphasis: "#0969da", muted: "#ddf4ff" },
   },
   borderColor: {

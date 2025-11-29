@@ -53,9 +53,22 @@ export const github = {
        */
       emphasis: null,
     },
+    attention: {
+      /** 注意的背景颜色
+       * @issue `prMerge` 头像颜色
+       */
+      emphasis: null,
+    },
+    danger: {
+      /** 危险的背景颜色
+       * @issue `prMerge` 头像颜色
+       */
+      emphasis: null,
+    },
     done: {
       /** 完成的背景颜色
        * @issue `babel` 工单已关闭图标背景颜色
+       * @issue `prMerge` 头像颜色
        */
       emphasis: null,
     },

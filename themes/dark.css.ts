@@ -45,8 +45,8 @@ export const darkGithubColors: GithubColor = {
   },
   bgColor: {
     accent: { emphasis: "#1f6feb", muted: "#388bfd1a" },
-    attention: { muted: "#bb800926" },
-    danger: { muted: "#f851491a" },
+    attention: { emphasis: "#9e6a03", muted: "#bb800926" },
+    danger: { emphasis: "#da3633", muted: "#f851491a" },
     default: "#0d1117",
     done: { emphasis: "#8957e5" },
     emphasis: "#3d444d",

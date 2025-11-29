@@ -45,8 +45,8 @@ export const lightGithubColors: GithubColor = {
   },
   bgColor: {
     accent: { emphasis: "#0969da", muted: "#ddf4ff" },
-    attention: { muted: "#fff8c5" },
-    danger: { muted: "#ffebe9" },
+    attention: { emphasis: "#9a6700", muted: "#fff8c5" },
+    danger: { emphasis: "#cf222e", muted: "#ffebe9" },
     default: "#ffffff",
     done: { emphasis: "#8250df" },
     emphasis: "#25292e",

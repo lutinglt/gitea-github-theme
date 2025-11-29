@@ -412,7 +412,6 @@ export const prMerge = css`
   .repository.view.issue .comment-list .timeline-item.pull-merge-box {
     // 头像
     .timeline-avatar {
-      color: ${themeVars.color.white} !important;
       border-radius: 9999px;
       width: 40px;
       height: 40px;
@@ -423,34 +422,67 @@ export const prMerge = css`
         width: 24px;
         height: 24px;
       }
-      // 可以合并
-      &.green {
-        background-color: ${themeVars.github.bgColor.success.emphasis};
+      // PR 界面的 PR 操作评论
+      &.text {
+        color: ${themeVars.color.white} !important;
         border-radius: ${otherThemeVars.border.radius};
-        // 操作评论边框色
+        // 操作评论边框
         + .content > .ui.attached.segment {
-          border-left-color: ${themeVars.github.bgColor.success.emphasis};
-          border-right-color: ${themeVars.github.bgColor.success.emphasis};
-          &:first-child {
-            border-top-color: ${themeVars.github.bgColor.success.emphasis};
-          }
-          &:last-child {
-            border-bottom-color: ${themeVars.github.bgColor.success.emphasis};
+          border-width: 1.5px;
+        }
+        &.grey {
+          background-color: ${themeVars.color.text.light.num1};
+        }
+        &.green {
+          background-color: ${themeVars.github.bgColor.success.emphasis};
+          + .content > .ui.attached.segment {
+            border-left-color: ${themeVars.github.bgColor.success.emphasis};
+            border-right-color: ${themeVars.github.bgColor.success.emphasis};
+            &:first-child {
+              border-top-color: ${themeVars.github.bgColor.success.emphasis};
+            }
+            &:last-child {
+              border-bottom-color: ${themeVars.github.bgColor.success.emphasis};
+            }
           }
         }
-      }
-      // 已合并
-      &.purple {
-        background-color: ${themeVars.github.bgColor.done.emphasis};
-        border-radius: ${otherThemeVars.border.radius};
-        + .content > .ui.attached.segment {
-          border-left-color: ${themeVars.github.bgColor.done.emphasis};
-          border-right-color: ${themeVars.github.bgColor.done.emphasis};
-          &:first-child {
-            border-top-color: ${themeVars.github.bgColor.done.emphasis};
+        &.purple {
+          background-color: ${themeVars.github.bgColor.done.emphasis};
+          + .content > .ui.attached.segment {
+            border-left-color: ${themeVars.github.bgColor.done.emphasis};
+            border-right-color: ${themeVars.github.bgColor.done.emphasis};
+            &:first-child {
+              border-top-color: ${themeVars.github.bgColor.done.emphasis};
+            }
+            &:last-child {
+              border-bottom-color: ${themeVars.github.bgColor.done.emphasis};
+            }
           }
-          &:last-child {
-            border-bottom-color: ${themeVars.github.bgColor.done.emphasis};
+        }
+        &.yellow {
+          background-color: ${themeVars.github.bgColor.attention.emphasis};
+          + .content > .ui.attached.segment {
+            border-left-color: ${themeVars.github.bgColor.attention.emphasis};
+            border-right-color: ${themeVars.github.bgColor.attention.emphasis};
+            &:first-child {
+              border-top-color: ${themeVars.github.bgColor.attention.emphasis};
+            }
+            &:last-child {
+              border-bottom-color: ${themeVars.github.bgColor.attention.emphasis};
+            }
+          }
+        }
+        &.red {
+          background-color: ${themeVars.github.bgColor.danger.emphasis};
+          + .content > .ui.attached.segment {
+            border-left-color: ${themeVars.github.bgColor.danger.emphasis};
+            border-right-color: ${themeVars.github.bgColor.danger.emphasis};
+            &:first-child {
+              border-top-color: ${themeVars.github.bgColor.danger.emphasis};
+            }
+            &:last-child {
+              border-bottom-color: ${themeVars.github.bgColor.danger.emphasis};
+            }
           }
         }
       }

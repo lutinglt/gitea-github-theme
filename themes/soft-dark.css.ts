@@ -39,8 +39,8 @@ export const softDarkGithubColors: GithubColor = {
   },
   bgColor: {
     accent: { emphasis: "#316dca", muted: "#4184e41a" },
-    attention: { muted: "#ae7c1426" },
-    danger: { muted: "#e5534b1a" },
+    attention: { emphasis: "#966600", muted: "#ae7c1426" },
+    danger: { emphasis: "#c93c37", muted: "#e5534b1a" },
     default: "#212830",
     done: { emphasis: "#8256d0" },
     emphasis: "#3d444d",
