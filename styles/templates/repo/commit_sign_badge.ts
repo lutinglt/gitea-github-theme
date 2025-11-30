@@ -32,4 +32,10 @@ export const commitSignBadge = css`
       }
     }
   }
+  .ui.label.commit-sign-badge.github-theme-commit-sign-badge {
+    font-family:
+      -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji";
+    font-weight: 500;
+  }
 `;
