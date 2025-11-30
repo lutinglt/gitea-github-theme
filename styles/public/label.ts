@@ -129,6 +129,8 @@ export const shaLabel = css`
   // 验证提交附带的图标
   span.ui.label.commit-is-signed {
     height: 25px;
+    min-width: 50px;
+    justify-content: center;
     // 验证信任
     &.sign-trusted {
       border: 1.5px solid ${themeVars.color.green.badge.self} !important;
@@ -161,11 +163,19 @@ export const shaLabel = css`
         background-color: ${themeVars.color.red.badge.hover.bg} !important;
       }
     }
+    span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
   span.ui.label.commit-is-signed,
   .ui.label.commit-id-short,
   .ui.label.commit-sign-badge {
     font-size: 12px;
+    .ui.avatar {
+      border-radius: 9999px;
+    }
   }
 `;
 
