@@ -1,12 +1,9 @@
-name: release
+name: build
 
 on:
   push:
     branches:
       - main
-
-permissions:
-  contents: write
 
 jobs:
   release:
