@@ -9,7 +9,8 @@
     "format": "prettier --write .",
     "commit": "npm run lint && npm run format && npm run build",
     "version": "node scripts/version.cjs",
-    "install:clean": "npm cache clean --force && rm -rf node_modules package-lock.json && npm install"
+    "install:clean": "npm cache clean --force && rm -rf node_modules package-lock.json && npm install",
+    "tr": "node scripts/translate.ts"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.28.4",
