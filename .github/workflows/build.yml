@@ -28,8 +28,6 @@ jobs:
         run: |
           npm install
           npm run build
-        env:
-          GH_TOKEN: ${{ github.token }}
 
       - name: Upload css assets
         if: steps.build.outcome == 'success'
@@ -44,3 +42,15 @@ jobs:
         with:
           name: templates
           path: templates
+
+      - name: Build locales
+        id: locales
+        if: steps.build.outcome =='success'
+        run: npm run tr
+
+      - name: Upload locales assets
+        if: steps.locales.outcome =='success'
+        uses: actions/upload-artifact@v4
+        with:
+          name: locales
+          path: dist/options/locale

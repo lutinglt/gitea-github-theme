@@ -14,7 +14,7 @@ jobs:
       - name: Build theme
         run: |
           npm install
-          npm run build
+          npm run release
       - name: Create release
         run: |
           tar -zcf dist/theme-github-base.tar.gz --remove-files \
@@ -29,8 +29,9 @@ jobs:
           tar -zcf dist/theme-github-extra-pink.tar.gz --remove-files \
           dist/theme-github-pink-auto.css dist/theme-github-pink-light.css dist/theme-github-pink-dark.css dist/theme-github-pink-soft-dark.css
 
-          tar -zcf dist/theme-github-templates.tar.gz templates options
+          tar -zcf dist/theme-github-templates.tar.gz templates
+          tar -zcf dist/theme-github-translations.tar.gz --remove-files dist/options
           TAG="v$(npm run -s version)"
-          gh release create "$TAG" dist/* --notes-file CHANGELOG.md --draft -t $TAG
+          gh release create "$TAG" dist/*.tar.gz --notes-file CHANGELOG.md --draft -t $TAG
         env:
           GH_TOKEN: ${{ github.token }}

@@ -1,6 +1,6 @@
 {
   "name": "gitea-github-theme",
-  "version": "1.25.3",
+  "version": "1.25.3.rc",
   "type": "module",
   "scripts": {
     "dev": "vite build --mode dev",
@@ -9,8 +9,9 @@
     "format": "prettier --write .",
     "commit": "npm run lint && npm run format && npm run build",
     "version": "node scripts/version.cjs",
-    "install:clean": "npm cache clean --force && rm -rf node_modules package-lock.json && npm install",
-    "tr": "node scripts/translate.ts"
+    "tr": "node scripts/translate.cjs",
+    "release": "npm run build && npm run tr",
+    "install:clean": "npm cache clean --force && rm -rf node_modules package-lock.json && npm install"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.28.4",
