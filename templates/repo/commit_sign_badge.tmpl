@@ -55,6 +55,13 @@ so this template should be kept as small as possible, DO NOT put large component
 	{{- end -}}
 {{- end -}}
 
+{{- $github_verifed := "github-theme.verifed" -}}
+{{- $ctx_github_verifed := ctx.Locale.Tr $github_verifed -}}
+{{- $github_partially_verifed := "github-theme.partially_verifed" -}}
+{{- $ctx_github_partially_verifed := ctx.Locale.Tr $github_partially_verifed -}}
+{{- $github_unverifed := "github-theme.unverifed" -}}
+{{- $ctx_github_unverifed := ctx.Locale.Tr $github_unverifed -}}
+
 {{- if $commit -}}
 <a {{if $commitBaseLink}}href="{{$commitBaseLink}}/{{$commit.ID}}"{{end}} class="ui label commit-id-short {{$extraClass}} github-theme-commit-sha" rel="nofollow">
 {{- end -}}
@@ -62,14 +69,23 @@ so this template should be kept as small as possible, DO NOT put large component
 	<span class="ui label commit-sign-badge github-theme-commit-sign-badge {{$extraClass}}">
 		{{- if $verified -}}
 			{{- if and $signingUser $signingUser.ID -}}
-				<span data-tooltip-content="{{$msgReason}}">Verified</span>
+				<span data-tooltip-content="{{$msgReason}}">
+					{{if eq $ctx_github_verifed $github_verifed }}Verified
+					{{else}}{{$ctx_github_verifed}}{{end}}
+				</span>
 				<span data-tooltip-content="{{$msgSigningKey}}">{{ctx.AvatarUtils.Avatar $signingUser 16}}</span>
 			{{- else -}}
-				<span data-tooltip-content="{{$msgReason}}">Partially verified</span>
+				<span data-tooltip-content="{{$msgReason}}">
+					{{if eq $ctx_github_partially_verifed $github_partially_verifed }}Partially verified
+					{{else}}{{$ctx_github_partially_verifed}}{{end}}
+				</span>
 				<span data-tooltip-content="{{$msgSigningKey}}">{{ctx.AvatarUtils.AvatarByEmail $signingEmail "" 16}}</span>
 			{{- end -}}
 		{{- else -}}
-			<span data-tooltip-content="{{$msgReason}}">Unverified</span>
+			<span data-tooltip-content="{{$msgReason}}">
+				{{if eq $ctx_github_unverifed $github_unverifed }}Unverified
+				{{else}}{{$ctx_github_unverifed}}{{end}}
+			</span>
 		{{- end -}}
 	</span>
 {{- end -}}

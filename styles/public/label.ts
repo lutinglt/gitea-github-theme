@@ -129,7 +129,7 @@ export const shaLabel = css`
   // 验证提交附带的图标
   span.ui.label.commit-is-signed {
     height: 25px;
-    min-width: 50px;
+    min-width: 35px;
     justify-content: center;
     // 验证信任
     &.sign-trusted {

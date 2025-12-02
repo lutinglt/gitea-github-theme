@@ -275,6 +275,11 @@ export const prBranch = css`
   }
 `;
 
+const botLabelStyle = {
+  height: "20px",
+  padding: "0 6px!important",
+  marginLeft: "4px",
+};
 // 评论
 export const comment = css`
   .comment .comment-container {
@@ -299,6 +304,26 @@ export const comment = css`
     .comment-header {
       padding: 4px 4px 4px 16px;
       min-height: 38px;
+      .comment-header-left {
+        // bot 标签
+        .ui.basic.label {
+          ${botLabelStyle}
+        }
+        a:has(relative-time){
+          text-decoration: underline;
+        }
+        // 已编辑按钮
+        .content-history-menu {
+          color: ${themeVars.color.text.light.num1} !important;
+          .menu .item {
+            font-size: 12px;
+            .ui.avatar {
+              height: 20px;
+              width: 20px;
+            }
+          }
+        }
+      }
     }
     .comment-header-right {
       > .item,
@@ -311,12 +336,6 @@ export const comment = css`
         height: 20px;
         padding: 0 6px;
       }
-      // 隐藏顶部菜单的表情按钮
-      // 无法使用此样式, 评论无表情时底部的表情按钮元素不会渲染, 这是一个先有鸡还是先有蛋的问题
-      // 很蛋疼, 希望 Gitea 早日使用 Github 的样式, 因为 Github 的更合理, 无论是操作的方便程度还是按钮的冗余度
-      // .ui.dropdown.action.select-reaction {
-      //   display: none;
-      // }
       .context-dropdown {
         height: 28px;
         padding: 0 6px;
@@ -526,11 +545,9 @@ export const prMerge = css`
       padding: 16px;
       display: grid;
       gap: 8px;
-      &.no-header {
-        &::before,
-        &::after {
-          display: none;
-        }
+      &::before,
+      &::after {
+        display: none;
       }
     }
   }
@@ -555,9 +572,19 @@ export const timeline = css`
         &.event {
           // 修复覆盖后的位置问题
           padding-left: 15px;
-          .avatar {
+          // 避免锚中批准的头像
+          .avatar-with-link .avatar {
             width: 20px;
             height: 20px;
+          }
+          // 批准时间的头像
+          // 头部居中偏移量(头像高度 - 标准行信息高度) / 2: (40px - 32px) / 2 = 4px
+          .timeline-avatar {
+            top: -4px;
+          }
+          // bot 标签
+          .comment-text-line .ui.basic.label {
+            ${botLabelStyle}
           }
           .badge {
             border: 2px solid ${themeVars.color.body};
@@ -658,6 +685,18 @@ export const issueSidebar = css`
           .ui.list {
             margin-top: 0 !important;
             margin-bottom: 0 !important;
+          }
+          // 评审人
+          .ui.relaxed.list {
+            .item {
+              // 操作图标按钮
+              a.muted.icon {
+                color: ${themeVars.color.text.light.num1};
+                &:hover {
+                  color: ${themeVars.color.primary.self};
+                }
+              }
+            }
           }
           // 标签菜单项
           .ui.dropdown > .menu > .scrolling.menu > .item:has(.item-secondary-info) {
