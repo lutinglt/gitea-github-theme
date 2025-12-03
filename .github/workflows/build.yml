@@ -16,9 +16,9 @@ jobs:
           filters: |
             src:
               - "scripts/*"
-              - "src/*.ts"
-              - "styles/*.ts"
-              - "themes/*.ts"
+              - "src/**/*.ts"
+              - "styles/**/*.ts"
+              - "themes/*.css.ts"
               - "vite.config.ts"
               - "package.json"
 
