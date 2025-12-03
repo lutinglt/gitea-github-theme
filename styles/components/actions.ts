@@ -139,13 +139,21 @@ export const runWorkflow = css`
 export const actionViewHeader = css`
   .action-view-header {
     .action-commit-summary {
+      a:hover {
+        text-decoration: inherit;
+      }
+      // 提前哈希
+      > a.muted:first-of-type {
+        text-decoration: underline;
+      }
       // 分支标签按钮
-      .ui.label {
+      .ui.ui.ui.label {
         background-color: ${themeVars.github.bgColor.accent.muted};
+        border-radius: ${otherThemeVars.border.radius};
         color: ${themeVars.github.fgColor.accent};
-        font-family: var(--fontStack-monospace, ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, monospace);
-        font-weight: 400;
         > a {
+          font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+          font-weight: 400;
           opacity: 1;
         }
       }
