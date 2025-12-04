@@ -4,6 +4,7 @@
     "dbaeumer.vscode-eslint",
     "usernamehw.errorlens",
     "mikestead.dotenv",
-    "styled-components.vscode-styled-components"
+    "styled-components.vscode-styled-components",
+    "typescriptteam.native-preview"
   ]
 }

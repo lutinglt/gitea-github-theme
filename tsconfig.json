@@ -30,11 +30,11 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-    "baseUrl": ".",
     "paths": {
-      "src/*": ["src/*"],
-      "styles/*": ["styles/*"],
-      "themes/*": ["themes/*", "themes/*.css"]
+      "*": ["./*"],
+      "src/*": ["./src/*"],
+      "styles/*": ["./styles/*"],
+      "themes/*": ["./themes/*", "./themes/*.css"]
     }
   },
   "include": ["src", "styles", "themes", "vite.config.ts"]
