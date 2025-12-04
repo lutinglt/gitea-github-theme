@@ -101,11 +101,13 @@ export const repoFiles = css`
         background: ${themeVars.color.body};
         min-height: 48px;
         padding: 0px 8px !important;
+        overflow-x: visible;
         svg {
           color: ${themeVars.color.text.light.num1};
         }
         .file-header-left {
-          padding: 8px !important;
+          padding: 6px 8px !important;
+          line-height: 1.45;
           // 伪元素宽度等于按钮宽度而不是父元素宽度
           position: relative;
           &:hover {
@@ -116,7 +118,7 @@ export const repoFiles = css`
             content: "";
             background: ${themeVars.github.underlineNav.borderColor.active};
             border-radius: ${otherThemeVars.border.radius};
-            bottom: -7px;
+            bottom: -8px;
             left: 0;
             height: 2px;
             position: absolute;
@@ -127,9 +129,19 @@ export const repoFiles = css`
             text-decoration-line: none;
           }
         }
-        .file-header-right:hover {
-          background: ${themeVars.github.control.transparent.bgColor.hover};
-          border-radius: ${otherThemeVars.border.radius};
+        .file-header-right {
+          .btn-octicon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0px 8px;
+            border-radius: ${otherThemeVars.border.radius};
+            height: 28px;
+            width: 28px;
+            &:hover {
+              background: ${themeVars.github.control.transparent.bgColor.hover};
+            }
+          }
         }
       }
     }
