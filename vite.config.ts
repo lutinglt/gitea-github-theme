@@ -8,9 +8,8 @@ import * as sass from "sass-embedded";
 import { defineConfig } from "vite";
 import { themeInput, themePlugin } from "./src/core/vite";
 
-dotenv.config({ quiet: true });
-
 const require = createRequire(import.meta.url);
+dotenv.config({ quiet: true });
 
 const outDir = "dist"; // 输出目录
 const themesDir = "themes"; // 颜色主题目录

@@ -564,7 +564,7 @@ export const timeline = css`
       }
       .timeline-item,
       .timeline-item-group {
-        padding: 16px 0;
+        padding: 12px 0;
         .comment-text-line {
           color: ${themeVars.color.text.light.num1};
         }
