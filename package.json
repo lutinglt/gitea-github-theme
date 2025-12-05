@@ -11,7 +11,8 @@
     "version": "node scripts/version.cjs",
     "tr": "node scripts/translate.cjs",
     "release": "npm run build && npm run tr",
-    "install:clean": "npm cache clean --force && rm -rf node_modules package-lock.json && npm install"
+    "install:clean": "npm cache clean --force && rm -rf node_modules package-lock.json && npm install",
+    "install:vite8": "npm install --force"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.28.4",
