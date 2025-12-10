@@ -4,7 +4,8 @@
 
 - Optimize the selection style of items in the menu.
 - Optimize code block styles.
-- Optimize some element styles on Issue/PR page
+- Optimize some element styles on Issue/PR page.
+- Optimize the width of the left side of the workflow details page in different zoom levels.
 
 ##### Template File
 

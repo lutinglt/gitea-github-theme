@@ -163,9 +163,10 @@ export const actionViewHeader = css`
 
 // 工作流左侧作业列表
 export const actionViewLeft = css`
-  .action-view-left {
+  .action-view-left.action-view-left.action-view-left {
     margin-right: 28px;
     border-top: 1px solid ${themeVars.color.console.border};
+    max-width: 22vw;
     &:before {
       content: "Jobs";
       color: ${themeVars.color.console.fg.subtle};
