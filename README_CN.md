@@ -70,6 +70,20 @@ THEMES = gitea-auto, gitea-light, gitea-dark, github-auto, github-light, github-
 > [!IMPORTANT]
 >
 > 模板修改了 Gitea 的布局, 使其更接近 GitHub 的布局, 请勿跨版本使用模板文件, 可能会导致功能缺失等问题
+> 模板布局跟 Gitea 实例绑定, 所有主题都会生效, 会影响其他非本项目的主题的体验
+
+### 翻译文件安装 (可选)
+
+> [!TIP]
+>
+> 仅在使用本项目的模板文件时需要安装翻译文件以提供非英文语言的支持
+
+1. 在发布页下载最新的翻译文件放入 `data/gitea/options/locale` 目录下 (默认可能没有此目录需手动创建)
+2. 重启 Gitea
+
+> [!NOTE]
+>
+> 中文翻译中还额外将 "工单" 替换为 "议题", "合并请求" 替换为 "拉取请求", 以与 GitHub 手机版中文保持一致
 
 ## 截图
 
