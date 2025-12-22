@@ -79,15 +79,19 @@ For details, please refer to the Gitea documentation
 >
 > The template modifies Gitea's layout to make it closer to GitHub's layout. Do not use template files across versions,
 > as this may lead to missing functionality and other issues.
-> Template layout is bound to the Gitea instance and will affect all themes, impacting the experience of other non-project themes.
+>
+> Template layout is bound to the Gitea instance and will affect all themes, impacting the experience of other
+> non-project themes.
 
 ### Translation File Installation (Optional)
 
 > [!TIP]
 >
-> Translation files are only needed when using this project's template files to provide support for non-English languages.
+> Translation files are only needed when using this project's template files to provide support for non-English
+> languages.
 
-1. Download the latest translation files from the release page and place them in the `data/gitea/options/locale` directory (This directory may not be available by default and needs to be manually created)
+1. Download the latest translation files from the release page and place them in the `data/gitea/options/locale`
+   directory (This directory may not be available by default and needs to be manually created)
 2. Restart Gitea
 
 ## Screenshots

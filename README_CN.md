@@ -70,6 +70,7 @@ THEMES = gitea-auto, gitea-light, gitea-dark, github-auto, github-light, github-
 > [!IMPORTANT]
 >
 > 模板修改了 Gitea 的布局, 使其更接近 GitHub 的布局, 请勿跨版本使用模板文件, 可能会导致功能缺失等问题
+>
 > 模板布局跟 Gitea 实例绑定, 所有主题都会生效, 会影响其他非本项目的主题的体验
 
 ### 翻译文件安装 (可选)
