@@ -1,6 +1,6 @@
 {
   "name": "gitea-github-theme",
-  "version": "1.25.3.rc",
+  "version": "1.25.3",
   "type": "module",
   "scripts": {
     "dev": "vite build --mode dev",
@@ -10,6 +10,7 @@
     "commit": "npm run lint && npm run format && npm run build",
     "version": "node scripts/version.cjs",
     "tr": "node scripts/translate.cjs",
+    "tmpl": "node scripts/update_template.cjs",
     "release": "npm run build && npm run tr",
     "install:clean": "npm cache clean --force && rm -rf node_modules package-lock.json && npm install",
     "install:vite8": "npm install --force"

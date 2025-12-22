@@ -17,7 +17,7 @@ const localePath = "options/locale";
 
 const [major, minor, patch, tag = ""] = pkg.version.split(".");
 
-console.log("Version: ", pkg.version);
+console.log("Version:", pkg.version);
 let versionPath = "";
 if (tag.includes("rc") || patch.includes("latest")) {
   versionPath = `${githubBranchPath}/v${major}.${minor}`;
@@ -26,14 +26,12 @@ if (tag.includes("rc") || patch.includes("latest")) {
 }
 
 const githubUrl = `${githubSite}/${giteaRepo}/${versionPath}/${localePath}`;
-
 const locales = fs.readdirSync(path.join(rootDir, localePath)).filter(file => file.endsWith(".ini"));
 
-// 使用立即执行异步函数
 (async () => {
   for (const locale of locales) {
     const localUrl = `${githubUrl}/${locale}`;
-    console.log("LocaleUrl: ", localUrl);
+    console.log("LocaleUrl:", localUrl);
     const themeLocale = fs.readFileSync(path.join(rootDir, localePath, locale), "utf-8");
 
     const response = await fetch(localUrl);
