@@ -123,3 +123,15 @@ export const packagesDetail = css`
     }
   }
 `;
+
+// 手机页面下的软件包详细信息页
+export const packagesListMobile = css`
+  @media (max-width: 767.98px) {
+    .page-content.packages .packages-content {
+      .packages-content-left,
+      .packages-content-right {
+        width: 100%;
+      }
+    }
+  }
+`;

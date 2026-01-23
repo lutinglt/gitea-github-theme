@@ -309,7 +309,7 @@ export const comment = css`
         .ui.basic.label {
           ${botLabelStyle}
         }
-        a:has(relative-time){
+        a:has(relative-time) {
           text-decoration: underline;
         }
         // 已编辑按钮

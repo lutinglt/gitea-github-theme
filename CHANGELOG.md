@@ -1,7 +1,3 @@
-### 🌈 Style
-
-#### More aligned with GitHub style
-
-##### Template File
-
 ### 🐞 Fix
+
+- Fix the width of the detailed page of the software package under the phone
