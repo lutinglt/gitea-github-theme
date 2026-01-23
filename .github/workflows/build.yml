@@ -15,6 +15,7 @@ jobs:
         with:
           filters: |
             src:
+              - ".github/workflows/*.yml"
               - "scripts/*"
               - "src/**/*.ts"
               - "styles/**/*.ts"
@@ -26,7 +27,7 @@ jobs:
         id: build
         if: steps.changes.outputs.src == 'true'
         run: |
-          npm run install
+          npm install
           npm run build
 
       - name: Upload css assets
