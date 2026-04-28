@@ -2,8 +2,8 @@
 
 # 忽略非项目代码统计
 .github/** linguist-vendored
-.vscode/** linguist-vendored
-gitea/** linguist-vendored
+.vscode/** linguist-generated
+gitea/** linguist-generated
 screenshots/** linguist-vendored
 scripts/** linguist-vendored
 eslint.config.js linguist-vendored
