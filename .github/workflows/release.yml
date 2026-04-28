@@ -13,17 +13,17 @@ jobs:
       - uses: actions/checkout@v4
       - name: Build theme
         run: |
-          npm run install:vite8
+          npm install
           npm run release
       - name: Create release
         run: |
           tar -zcf dist/theme-github-base.tar.gz --remove-files \
           dist/theme-github-auto.css dist/theme-github-light.css dist/theme-github-dark.css dist/theme-github-soft-dark.css
 
-          tar -zcf dist/theme-github-colorblindness-colorblind.tar.gz --remove-files \
+          tar -zcf dist/theme-github-colorblind-protanopia-deuteranopia.tar.gz --remove-files \
           dist/theme-github-colorblind-auto.css dist/theme-github-colorblind-light.css dist/theme-github-colorblind-dark.css
 
-          tar -zcf dist/theme-github-colorblindness-tritanopia.tar.gz --remove-files \
+          tar -zcf dist/theme-github-colorblind-tritanopia.tar.gz --remove-files \
           dist/theme-github-tritanopia-auto.css dist/theme-github-tritanopia-light.css dist/theme-github-tritanopia-dark.css
 
           tar -zcf dist/theme-github-extra-pink.tar.gz --remove-files \

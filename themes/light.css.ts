@@ -1,3 +1,22 @@
+/*!
+ * Copyright (c) https://github.com/lutinglt
+ *
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 /**
  * @author lutinglt
  */
@@ -51,7 +70,7 @@ export const lightGithubColors: GithubColor = {
     done: { emphasis: "#8250df" },
     emphasis: "#25292e",
     muted: "#f6f8fa",
-    neutral: { muted: "#818b981f" },
+    neutral: { muted: "#818b981f", emphasis: "#59636e" },
     success: { emphasis: "#1f883d", muted: "#dafbe1" },
     inset: "#f6f8fa",
   },
@@ -63,20 +82,25 @@ export const lightGithubColors: GithubColor = {
     success: { emphasis: "#1a7f37" },
     muted: "#d1d9e0b3",
     translucent: "#1f232826",
+    emphasis: "#818b98",
   },
   button: {
     primary: {
       fgColor: { accent: "#1a7f37", rest: "#ffffff" },
-      bgColor: { rest: themeVars.github.bgColor.success.emphasis, hover: "#1c8139" },
+      bgColor: { rest: themeVars.github.bgColor.success.emphasis, hover: "#1c8139", active: "#197935" },
     },
-    danger: { fgColor: { rest: "#d1242f", hover: "#ffffff" }, bgColor: { hover: "#cf222e" } },
+    danger: { fgColor: { rest: "#d1242f", hover: "#ffffff" }, bgColor: { hover: "#cf222e", active: "#a40e26" } },
     star: { iconColor: "#eac54f" },
   },
   control: {
     bgColor: { active: "#e6eaef", hover: "#eff2f5", rest: "#f6f8fa" },
     transparent: { bgColor: { active: "#818b9826", hover: "#818b981a", selected: "#818b9826" } },
   },
-  shadow: { floating: { small: "#25292e0a" }, resting: { small: "#1f23280f" } },
+  shadow: {
+    floating: { small: "#25292e0a" },
+    inset: "#1f23280a",
+    resting: { small: "#1f23280f", medium: "#25292e1f" },
+  },
   overlay: { backdrop: { bgColor: "#c8d1da66" }, bgColor: "#ffffff" },
   underlineNav: { borderColor: { active: "#fd8c73" } },
   contribution: {

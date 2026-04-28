@@ -1,3 +1,22 @@
+/*!
+ * Copyright (c) https://github.com/lutinglt
+ *
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import { fallbackVar } from "src/functions";
 import { css, customThemeVars, otherThemeVars, themeVars } from "src/types/vars";
 
@@ -77,16 +96,34 @@ export const navbarRight = css`
         &:last-child {
           padding: 0;
           .text {
-            // 不显示小箭头标识
+            // 不显示头像右侧的小箭头下拉菜单标识
             > .not-mobile {
               display: none;
             }
-            // 头像
-            img {
-              border-radius: 9999px;
-              height: 32px;
-              max-height: 32px;
-              margin: 0 !important;
+            // 手机下的用户名
+            > .only-mobile {
+              margin-left: 12px;
+              font-weight: 600;
+            }
+            .navbar-avatar {
+              // 头像
+              img {
+                border-radius: 9999px;
+                height: 32px;
+                max-height: 32px;
+                width: 32px;
+                max-width: 32px;
+                margin: 0 !important;
+              }
+              // 管理员标识
+              .navbar-admin-badge {
+                height: 18px;
+                min-width: 18px;
+                bottom: calc(100% - 32px);
+                left: calc(100% - 11px);
+                padding: 2px;
+                border-color: ${themeVars.color.nav.bg}; // 锁定边框色, 避免鼠标悬浮时改变颜色
+              }
             }
           }
           &.active {

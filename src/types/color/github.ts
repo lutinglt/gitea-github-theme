@@ -1,3 +1,22 @@
+/*!
+ * Copyright (c) https://github.com/lutinglt
+ *
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 export const github = {
   avatar: {
     /** 头像的背景颜色 */
@@ -25,6 +44,10 @@ export const github = {
      * @svg `issueClosed` 工单已关闭图标颜色
      */
     done: null,
+    /** 特别强调的文本颜色
+     * @input `checkBoxAndRadio` 复选框和单选框的文本颜色
+     */
+    onEmphasis: null,
   },
   /** 用于 background 属性的颜色 */
   bgColor: {
@@ -72,6 +95,12 @@ export const github = {
        */
       emphasis: null,
     },
+    neutral: {
+      /** 中性的背景颜色
+       * @action_summary `summaryView` 节点上的端口的填充色
+       */
+      emphasis: null,
+    },
   },
   borderColor: {
     accent: {
@@ -104,6 +133,10 @@ export const github = {
        */
       emphasis: null,
     },
+    /** 强调边框颜色
+     * @input `checkBoxAndRadio` 复选框和单选框的边框颜色
+     */
+    emphasis: null,
   },
   button: {
     /** 普通按钮 */
@@ -138,6 +171,10 @@ export const github = {
          * @setting `tinyHoverStyle` 按钮的悬停背景颜色
          */
         hover: null,
+        /** 激活色
+         * @button `baseButton` primary button 点击时的颜色
+         */
+        active: null,
       },
       borderColor: {
         /** 静止色
@@ -171,6 +208,10 @@ export const github = {
          * @button `redButton` 红色按钮悬停颜色
          */
         hover: null,
+        /** 激活色
+         * @button `redButton` 红色按钮点击时的颜色
+         */
+        active: null,
       },
       borderColor: {
         /** 悬停色
@@ -224,6 +265,10 @@ export const github = {
        */
       small: null,
     },
+    /** 内嵌阴影
+     * @input `input` 输入框阴影
+     */
+    inset: null,
     resting: {
       /** 静止阴影
        * @button `primaryStyle` 主色调按钮阴影
@@ -231,6 +276,10 @@ export const github = {
        * @setting `button` 红色按钮阴影
        */
       small: null,
+      /** 中等阴影
+       * @workflow_summary `summaryView` 节点悬浮时的阴影
+       */
+      medium: null,
     },
   },
   underlineNav: {
@@ -270,4 +319,8 @@ export const github = {
       },
     },
   },
+  /** 工作流流程图节点背景色
+   * @workflow_summary `summaryView` 节点背景色
+   */
+  workflowCardBg: "github-workflow-card-bg",
 };

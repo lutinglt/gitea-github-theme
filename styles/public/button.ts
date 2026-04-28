@@ -1,3 +1,23 @@
+/*!
+ * Copyright (c) https://github.com/lutinglt
+ *
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { type StyleRule } from "@vanilla-extract/css";
 import { css, themeVars } from "src/types/vars";
 
 export const primaryStyle = {
@@ -5,13 +25,13 @@ export const primaryStyle = {
   backgroundColor: themeVars.github.button.primary.bgColor.rest,
   borderColor: themeVars.github.button.primary.borderColor.rest,
   boxShadow: themeVars.github.shadow.resting.small,
-};
+} satisfies StyleRule;
 
 export const primaryHoverStyle = {
   color: themeVars.github.button.primary.fgColor.rest,
   backgroundColor: themeVars.github.button.primary.bgColor.hover,
   borderColor: themeVars.github.button.primary.borderColor.hover,
-};
+} satisfies StyleRule;
 
 // 普通按钮和主色调按钮
 export const baseButton = css`
@@ -37,6 +57,9 @@ export const baseButton = css`
       ${primaryStyle}
       &:hover {
         ${primaryHoverStyle}
+      }
+      &:active {
+        background-color: ${themeVars.github.button.primary.bgColor.active};
       }
     }
     // 按钮组整体有阴影
@@ -71,6 +94,7 @@ export const baseButton = css`
   }
 
   /* 普通按钮激活时背景色 */
+  .ui.button:active,
   .ui.basic.buttons .button:active,
   .ui.basic.button:active,
   .ui.basic.buttons .active.button,
@@ -88,12 +112,17 @@ export const redButton = css`
   .ui.basic.red.button {
     color: ${themeVars.github.button.danger.fgColor.rest};
     background-color: ${themeVars.github.button.danger.bgColor.rest};
-    /* 一些按钮边框色为红色, 比如危险操作区, 统一为暗色边框和 github 一致 */
+    // 一些按钮边框色为红色, 比如危险操作区, 统一为暗色边框和 github 一致
     border-color: ${themeVars.color.light.border};
-
     &:hover {
       color: ${themeVars.github.button.danger.fgColor.hover};
       background-color: ${themeVars.github.button.danger.bgColor.hover};
+      border-color: ${themeVars.github.button.danger.borderColor.hover};
+      box-shadow: ${themeVars.github.shadow.resting.small};
+    }
+    &:active {
+      color: ${themeVars.github.button.danger.fgColor.hover};
+      background-color: ${themeVars.github.button.danger.bgColor.active};
       border-color: ${themeVars.github.button.danger.borderColor.hover};
       box-shadow: ${themeVars.github.shadow.resting.small};
     }

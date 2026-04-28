@@ -1,10 +1,25 @@
+/*!
+ * Copyright (c) https://github.com/lutinglt
+ *
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 export const otherAuto = {
   /** 未知 */
   git: null,
-  light: {
-    /** 不知道什么用, gitea css 中没有使用这个属性的 */
-    mimicEnabled: "color-light-mimic-enabled",
-  },
 };
 
 export const other = {
@@ -49,12 +64,11 @@ export const other = {
     /** 选中时的文字颜色 */
     text: null,
     background: null,
-    /** 找不到, 不知道啥玩意, 似乎是和复选框有关的东西 */
+    /** 滑块按钮的背景色, 不能与背景色一致
+     * @example 管理设置中启用/禁用头像
+     */
     toggleBackgound: "color-input-toggle-background",
-    border: {
-      self: null,
-      hover: null,
-    },
+    border: null,
   },
   light: {
     /** 多行下交替行的强调色, 例提交历史 */
@@ -101,8 +115,13 @@ export const other = {
   expandButton: "color-expand-button",
   /** 不知道 */
   placeholderText: "color-placeholder-text",
-  /** 不知道, css 没有 */
-  editorLineHighlight: "color-editor-line-highlight",
+  /** 在线编辑器 */
+  editor: {
+    /** 行高亮色 */
+    lineHighlight: "color-editor-line-highlight",
+    /** 选中行背景色 */
+    selection: null,
+  },
   /** 仓库项目页面列的背景色 */
   projectColumnBg: "color-project-column-bg",
   /** caret-color 属性 */
@@ -153,4 +172,19 @@ export const other = {
   },
   /** 叠加背景色, 比如弹窗时遮蔽页面其他部分的背景色 */
   overlayBackdrop: "color-overlay-backdrop",
+  /** CSS 中不存在, 默认指向 --color-red 即可
+   * @pr #35911 此 Gitea 提交中添加的颜色
+   */
+  danger: null,
+  /** 图像背景中的透明度网格颜色
+   * @example svg 图像背景中的网格颜色
+   */
+  transparency: {
+    grid: {
+      light: null,
+      dark: null,
+    },
+  },
+  /** Action 页面工作流可视化图像中悬停任务时与其他任务连接的线的颜色 */
+  workflowEdgeHover: "color-workflow-edge-hover",
 };

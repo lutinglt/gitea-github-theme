@@ -1,3 +1,22 @@
+/*!
+ * Copyright (c) https://github.com/lutinglt
+ *
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import { execSync } from "node:child_process";
 import crypto from "node:crypto";
 import fs from "node:fs";
@@ -50,9 +69,33 @@ export function themeInput(outDir: string, themeDir: string, mode: string): { [k
   return input;
 }
 
+const colorBlindMap: Record<string, string> = {
+  colorblind: "red-green",
+  tritanopia: "blue-yellow",
+};
+
 function giteaThemeMetaInfo(nameGroup: string[]): string {
-  const displayName = nameGroup.map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(" ");
-  return `gitea-theme-meta-info{--theme-display-name:"GitHub ${displayName}";}`; // 不要省略分号, 也不要追加任何变量, 否则 Gitea 不识别
+  const colorScheme = nameGroup[nameGroup.length - 1];
+  const colorBlindKey = nameGroup.find(word => word in colorBlindMap);
+  const colorBlindType = colorBlindKey ? colorBlindMap[colorBlindKey] : "";
+  // 将色盲名称放在最后
+  // 调整顺序: 去除 colorBlindKey 和 colorScheme, 把 colorScheme 放回倒数第二, colorBlindKey 替换后放末尾
+  const sorted = [
+    ...nameGroup.filter(word => word !== colorBlindKey && word !== colorScheme),
+    colorScheme,
+    ...(colorBlindKey
+      ? colorBlindKey === "colorblind"
+        ? ["protanopia", "and", "deuteranopia"]
+        : [colorBlindKey]
+      : []),
+  ];
+  const displayName = sorted.map(word => word[0].toUpperCase() + word.slice(1).toLowerCase()).join(" ");
+
+  return `gitea-theme-meta-info {
+  --theme-display-name: "GitHub ${displayName}";${colorBlindType ? `\n  --theme-colorblind-type: "${colorBlindType}";` : ""}
+  --theme-color-scheme: "${colorScheme}";
+}
+`; // 不要省略分号, 也不要追加任何变量, 否则 Gitea 不识别
 }
 
 const prefix = "theme-github-";
@@ -82,7 +125,8 @@ export function themePlugin(): Plugin {
       // 生成所有的主题文件
       for (const [key, value] of Object.entries(bundle)) {
         // 仅为了类型检查, 逻辑上输出中全是 asset 类型
-        if (value.type === "asset") {
+        // vite8 中 bundle 删除后依旧有 styles.css, 追加判断需要有入口的原始文件名
+        if (value.type === "asset" && value.originalFileNames.length > 0) {
           const name = `${prefix}${key}`;
           const fileName = `${prefix}${value.fileName}`;
           const originalFileName = value.originalFileNames.pop();
@@ -122,6 +166,7 @@ export function themePlugin(): Plugin {
       const user = process.env.SSH_USER || "root";
       const theme_path = process.env.GITEA_THEME_PATH;
       const gitea_path = process.env.GITEA_PATH;
+      const sync_tmpl = process.env.SYNC_TMPL === "true";
       if (server) {
         try {
           if (theme_path) {
@@ -129,14 +174,18 @@ export function themePlugin(): Plugin {
             console.log("[themePlugin] exec:", cmd);
             execSync(cmd, { stdio: "inherit" });
           } else {
-            console.log("[themePlugin] no GITEA_THEME_PATH, skip upload");
+            console.log("[themePlugin] no GITEA_THEME_PATH, skip upload theme");
           }
           if (gitea_path) {
-            const cmd = `scp -r templates ${user}@${server}:${gitea_path}`;
-            console.log("[themePlugin] exec:", cmd);
-            execSync(cmd, { stdio: "inherit" });
+            if (sync_tmpl) {
+              const cmd = `scp -r templates ${user}@${server}:${gitea_path}`;
+              console.log("[themePlugin] exec:", cmd);
+              execSync(cmd, { stdio: "inherit" });
+            } else {
+              console.log("[themePlugin] not set SYNC_TMPL=true, skip upload templates");
+            }
           } else {
-            console.log("[themePlugin] no GITEA_TMPL_PATH, skip upload");
+            console.log("[themePlugin] no GITEA_PATH, skip upload templates");
           }
         } catch (_) {
           // continue regardless of error
@@ -144,7 +193,6 @@ export function themePlugin(): Plugin {
       } else {
         console.log("[themePlugin] no SSH_SERVER, skip upload");
       }
-      console.log("[themePlugin] exec end.");
     },
   };
 }

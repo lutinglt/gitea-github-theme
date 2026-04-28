@@ -1,7 +1,33 @@
+/*!
+ * Copyright (c) https://github.com/lutinglt
+ *
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import { css, otherThemeVars, themeVars } from "src/types/vars";
-import { labelStyle } from "styles/public/label";
+import { labelStyle } from "styles/public/label/label";
 
 export const dashboard = css`
+  .page-content.dashboard {
+    // 仪表板切换控制用户按钮
+    .ui.dropdown .menu.context-user-switch .scrolling.menu {
+      animation: none; // 去掉嵌套菜单导致的多余动画
+      box-shadow: 0px 0px 0px 1px ${themeVars.color.light.border} !important;
+    }
+  }
   // 首页仪表板, 避免选中管理员后台的维护管理面板
   .page-content.dashboard.feeds {
     // 仓库列表的仓库/组织切换按钮
@@ -16,7 +42,9 @@ export const dashboard = css`
         padding: 6px 12px !important;
         &.active {
           background: ${themeVars.color.menu};
-          box-shadow: ${themeVars.github.shadow.floating.small};
+          box-shadow:
+            0px 0px 0px 1px ${themeVars.color.light.border},
+            ${themeVars.github.shadow.resting.small};
           font-weight: 600;
         }
         &::before {
@@ -47,7 +75,9 @@ export const dashboard = css`
     .ui.attached.segment {
       background-color: ${themeVars.color.menu};
       border: unset !important;
-      box-shadow: ${themeVars.github.shadow.floating.small};
+      box-shadow:
+        0px 0px 0px 1px ${themeVars.color.light.border},
+        ${themeVars.github.shadow.resting.small};
       &.repos-search {
         border-top-left-radius: 12px;
         border-top-right-radius: 12px;

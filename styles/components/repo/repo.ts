@@ -1,0 +1,112 @@
+/*!
+ * Copyright (c) https://github.com/lutinglt
+ *
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { css, otherThemeVars, themeVars } from "src/types/vars";
+
+// 仓库头信息
+export const repoHeader = css`
+  .page-content.repository .repo-header {
+    // 点星/关注/克隆/RSS 按钮
+    .ui.compact.button {
+      padding: 3px 12px;
+    }
+    // 仓库名称
+    .flex-item {
+      .flex-item-title {
+        // 间隔线颜色
+        color: ${themeVars.color.text.light.num1};
+        // 仓库名称
+        a {
+          display: flex;
+          align-items: center;
+          color: ${themeVars.color.text.self};
+          font-size: 18px;
+          text-decoration: none !important;
+          min-width: 3ch;
+          padding: 0px 6px;
+          border-radius: ${otherThemeVars.border.radius};
+          margin-top: 0.5rem;
+          margin-bottom: 0.5rem;
+          &:hover {
+            background: ${themeVars.github.control.transparent.bgColor.hover};
+          }
+          &.muted:not(.tw-font-normal) {
+            font-weight: 600;
+          }
+        }
+      }
+      // 默认的 hover 为 primary 颜色, 修正
+      a:not(.label, .button):hover {
+        color: ${themeVars.color.text.self} !important;
+      }
+    }
+  }
+`;
+
+// 顶部提交, 标签, 分支统计
+export const repoMenu = css`
+  .page-content.repository {
+    .repository-summary .repository-menu {
+      background-color: ${themeVars.color.box.header};
+      .item {
+        color: ${themeVars.color.text.light.num1};
+        height: 31px; // 文件列表下与右侧输入框对齐
+        b {
+          color: ${themeVars.color.text.self};
+          margin: 0 2px;
+        }
+        &.active {
+          background-color: ${themeVars.color.active};
+          color: ${themeVars.color.text.self};
+          font-weight: 500;
+          svg {
+            color: ${themeVars.color.text.light.num1};
+          }
+        }
+      }
+    }
+  }
+`;
+
+export const repoTopic = css`
+  // 理应只能覆盖探索/组织/用户下仓库的 topic 标签
+  // 避免渲染到仓库的类型标签
+  .flex-item-main > .label-list .ui.label,
+  // 仓库文件列表下的 topic 标签
+  #repo-topics .ui.label.repo-topic {
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 0px 10px;
+    line-height: 22px;
+    background-color: ${themeVars.github.bgColor.accent.muted};
+    color: ${themeVars.github.fgColor.accent};
+    &:hover {
+      background-color: ${themeVars.github.bgColor.accent.emphasis};
+      color: ${themeVars.color.white};
+    }
+  }
+`;
+
+// 仓库动态页面关闭工单状态条颜色
+export const closedIssueTableCell = css`
+  .stats-table .table-cell.tw-bg-red[href="#closed-issues"] {
+    background-color: ${themeVars.color.purple.self} !important;
+  }
+`;

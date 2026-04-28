@@ -5,9 +5,9 @@
         "name": "typescript-plugin-css-modules"
       },
       {
-        "name": "typescript-styled-plugin",
+        "name": "@styled/typescript-styled-plugin",
         "lint": {
-          "validProperties": "rx,ry"
+          "validProperties": ["rx", "ry", "r"]
         }
       }
     ],

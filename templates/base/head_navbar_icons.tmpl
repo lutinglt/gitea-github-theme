@@ -5,7 +5,7 @@
 	{{- $notificationUnreadCount := call $data.GetNotificationUnreadCount -}}
 	{{if $activeStopwatch}}
 	<a class="item active-stopwatch {{$itemExtraClass}}" href="{{$activeStopwatch.IssueLink}}" title="{{ctx.Locale.Tr "active_stopwatch"}}" data-seconds="{{$activeStopwatch.Seconds}}">
-		<div class="tw-relative">
+		<div class="tw-relative flex-text-block">
 			{{svg "octicon-stopwatch"}}
 			<span class="header-stopwatch-dot"></span>
 		</div>
@@ -22,14 +22,9 @@
 	</a>
 	{{end}}
 	<a class="item {{$itemExtraClass}}" href="{{AppSubUrl}}/notifications" data-tooltip-content="{{ctx.Locale.Tr "notifications"}}">
-		<div class="tw-relative tw-h-[16px]">
+		<div class="tw-relative flex-text-block">
 			{{svg "octicon-inbox"}}
 			<span class="notification_count{{if not $notificationUnreadCount}} tw-hidden{{end}}">{{$notificationUnreadCount}}</span>
 		</div>
 	</a>
-	{{if $data.IsSiteAdmin}}
-	<a class="item {{$itemExtraClass}}" href="{{AppSubUrl}}/-/admin" data-tooltip-content="{{ctx.Locale.Tr "admin_panel"}}">
-		{{svg "octicon-server"}}
-	</a>
-	{{end}}
 {{end}}

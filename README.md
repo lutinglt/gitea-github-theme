@@ -33,17 +33,6 @@ For example: Theme version `1.24.5` is applicable to Gitea versions `>=1.24.0` `
 Only the latest released Gitea version is maintained. Issues and PRs for other older theme versions will not be
 accepted.
 
-> Development stage theme version number format: `1.major.minor.timestamp`
-
-### Theme Version Release Rules
-
-- When Gitea releases a minor version, if there are changes in the theme, a new theme version with the same minor
-  version as Gitea will be released
-- When Gitea releases a major version, if there are changes in the theme, a theme version `1.old_major_version.latest`
-  will be released and the old version will no longer be maintained
-- The pre-release version for major version adaptation is `1.major_version.rc`, and when there are no obvious bugs, a
-  theme version with the same major version as Gitea will be released
-
 ## Installation
 
 1. Download the latest CSS theme file from the release page and place it in the `data/gitea/public/assets/css` directory
@@ -78,7 +67,7 @@ For details, please refer to the Gitea documentation
 > [!IMPORTANT]
 >
 > The template modifies Gitea's layout to make it closer to GitHub's layout. Do not use template files across versions,
-> as this may lead to missing functionality and other issues.
+> as this may lead to missing functionality, Gitea instance failing to start, and other issues.
 >
 > Template layout is bound to the Gitea instance and will affect all themes, impacting the experience of other
 > non-project themes.

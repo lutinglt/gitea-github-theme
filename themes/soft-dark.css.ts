@@ -1,3 +1,22 @@
+/*!
+ * Copyright (c) https://github.com/lutinglt
+ *
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 /**
  * @author lutinglt
  */
@@ -35,7 +54,7 @@ export const softDarkGithubColors: GithubColor = {
     success: "#57ab5a",
     black: "#010409",
     white: "#cdd9e5",
-    onEmphasis: "#ffffff",
+    onEmphasis: "#f0f6fc",
   },
   bgColor: {
     accent: { emphasis: "#316dca", muted: "#4184e41a" },
@@ -45,7 +64,7 @@ export const softDarkGithubColors: GithubColor = {
     done: { emphasis: "#8256d0" },
     emphasis: "#3d444d",
     muted: "#262c36",
-    neutral: { muted: "#656c7633" },
+    neutral: darkGithubColors.bgColor.neutral,
     success: { emphasis: "#347d39", muted: "#46954a26" },
     inset: "#151b23",
   },
@@ -57,20 +76,24 @@ export const softDarkGithubColors: GithubColor = {
     success: { emphasis: "#347d39" },
     muted: "#3d444db3",
     translucent: "#cdd9e526",
+    emphasis: "#656c76",
   },
   button: {
     primary: {
       fgColor: { accent: "#57ab5a", rest: "#ffffff" },
-      bgColor: { rest: themeVars.github.bgColor.success.emphasis, hover: "#3b8640" },
+      bgColor: { rest: themeVars.github.bgColor.success.emphasis, hover: "#3b8640", active: "#428f46" },
     },
-    danger: { fgColor: { rest: "#ea5c53", hover: "#ffffff" }, bgColor: { hover: "#ad2e2c" } },
+    danger: {
+      fgColor: { rest: "#ea5c53", hover: "#ffffff" },
+      bgColor: { hover: "#ad2e2c", active: themeVars.github.bgColor.danger.emphasis },
+    },
     star: { iconColor: "#daaa3f" },
   },
   control: {
     bgColor: { active: "#3d444d", hover: "#2f3742", rest: "#2a313c" },
     transparent: { bgColor: { active: "#656c7633", hover: "#656c7626", selected: "#656c761a" } },
   },
-  shadow: { floating: { small: "#01040966" }, resting: { small: "#01040999" } },
+  shadow: darkGithubColors.shadow,
   overlay: { backdrop: { bgColor: "#262c3666" }, bgColor: "#2a313c" },
   underlineNav: { borderColor: { active: "#ec775c" } },
   contribution: {

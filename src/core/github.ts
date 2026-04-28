@@ -1,3 +1,22 @@
+/*!
+ * Copyright (c) https://github.com/lutinglt
+ *
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import { saturate } from "polished";
 import type { Console, Diff, Other } from "src";
 import { scaleColorLight } from "src/functions";
@@ -50,7 +69,7 @@ export type GithubColor = {
     default: string;
     inset: string;
     muted: string;
-    neutral: { muted: string };
+    neutral: { muted: string; emphasis: string };
   };
   borderColor: {
     accent: { emphasis: string };
@@ -60,17 +79,18 @@ export type GithubColor = {
     done: { emphasis: string };
     muted: string;
     translucent: string;
+    emphasis: string;
   };
   button: {
-    primary: { fgColor: { accent: string; rest: string }; bgColor: { rest: string; hover: string } };
-    danger: { fgColor: { rest: string; hover: string }; bgColor: { hover: string } };
+    primary: { fgColor: { accent: string; rest: string }; bgColor: { rest: string; hover: string; active: string } };
+    danger: { fgColor: { rest: string; hover: string }; bgColor: { hover: string; active: string } };
     star: { iconColor: string };
   };
   control: {
     bgColor: { active: string; hover: string; rest: string };
     transparent: { bgColor: { active: string; hover: string; selected: string } };
   };
-  shadow: { floating: { small: string }; resting: { small: string } };
+  shadow: { floating: { small: string }; inset: string; resting: { small: string; medium: string } };
   overlay: { backdrop: { bgColor: string }; bgColor: string };
   underlineNav: { borderColor: { active: string } };
   contribution: {
@@ -95,10 +115,12 @@ export function github2ThemeColor(githubColor: GithubColor): ThemeColor {
       bg: githubColor.overlay.bgColor,
       border: githubColor.borderColor.muted,
     },
+    link: githubColor.fgColor.muted,
   };
 
   const diff: Diff = {
     added: {
+      fg: githubColor.bgColor.success.emphasis,
       linenum: {
         bg: githubColor.diffBlob.addtionNum.bgColor,
       },
@@ -111,6 +133,7 @@ export function github2ThemeColor(githubColor: GithubColor): ThemeColor {
       },
     },
     removed: {
+      fg: githubColor.bgColor.danger.emphasis,
       linenum: {
         bg: githubColor.diffBlob.deletionNum.bgColor,
       },
@@ -156,11 +179,8 @@ export function github2ThemeColor(githubColor: GithubColor): ThemeColor {
     input: {
       text: themeVars.color.text.self,
       background: githubColor.bgColor.muted,
-      toggleBackgound: themeVars.color.body,
-      border: {
-        self: themeVars.color.light.border,
-        hover: themeVars.color.light.border,
-      },
+      toggleBackgound: githubColor.bgColor.inset,
+      border: themeVars.color.light.border,
     },
     light: {
       self: themeVars.color.body,
@@ -189,7 +209,10 @@ export function github2ThemeColor(githubColor: GithubColor): ThemeColor {
     secondaryBg: "unset",
     expandButton: githubColor.diffBlob.hunkNum.bgColor.rest,
     placeholderText: themeVars.color.text.light.num3,
-    editorLineHighlight: themeVars.color.primary.light.num5,
+    editor: {
+      lineHighlight: themeVars.color.primary.light.num5,
+      selection: themeVars.color.editor.lineHighlight,
+    },
     projectColumnBg: githubColor.bgColor.inset,
     caret: themeVars.color.text.dark,
     reaction: {
@@ -220,6 +243,14 @@ export function github2ThemeColor(githubColor: GithubColor): ThemeColor {
       bg: githubColor.bgColor.attention.muted,
     },
     overlayBackdrop: githubColor.overlay.backdrop.bgColor,
+    danger: themeVars.color.red.self,
+    transparency: {
+      grid: {
+        light: "#ffffff",
+        dark: "#e5e5e5",
+      },
+    },
+    workflowEdgeHover: githubColor.bgColor.accent.emphasis,
   };
 
   const github: Github = {
@@ -231,6 +262,7 @@ export function github2ThemeColor(githubColor: GithubColor): ThemeColor {
       accent: githubColor.fgColor.accent,
       success: githubColor.fgColor.success,
       done: githubColor.fgColor.done,
+      onEmphasis: githubColor.fgColor.onEmphasis,
     },
     bgColor: {
       accent: {
@@ -249,6 +281,9 @@ export function github2ThemeColor(githubColor: GithubColor): ThemeColor {
       done: {
         emphasis: githubColor.bgColor.done.emphasis,
       },
+      neutral: {
+        emphasis: githubColor.bgColor.neutral.emphasis,
+      },
     },
     borderColor: {
       accent: {
@@ -263,6 +298,7 @@ export function github2ThemeColor(githubColor: GithubColor): ThemeColor {
       done: {
         emphasis: githubColor.borderColor.done.emphasis,
       },
+      emphasis: githubColor.borderColor.emphasis,
     },
     button: {
       default: {
@@ -281,6 +317,7 @@ export function github2ThemeColor(githubColor: GithubColor): ThemeColor {
         bgColor: {
           rest: githubColor.button.primary.bgColor.rest,
           hover: githubColor.button.primary.bgColor.hover,
+          active: githubColor.button.primary.bgColor.active,
         },
         borderColor: {
           rest: githubColor.borderColor.translucent,
@@ -295,6 +332,7 @@ export function github2ThemeColor(githubColor: GithubColor): ThemeColor {
         bgColor: {
           rest: githubColor.control.bgColor.rest,
           hover: githubColor.button.danger.bgColor.hover,
+          active: githubColor.button.danger.bgColor.active,
         },
         borderColor: {
           hover: githubColor.borderColor.translucent,
@@ -318,8 +356,11 @@ export function github2ThemeColor(githubColor: GithubColor): ThemeColor {
       floating: {
         small: `0px 0px 0px 1px ${themeVars.color.light.border}, 0px 6px 12px -3px ${themeVars.color.shadow.self}, 0px 6px 18px 0px ${themeVars.color.shadow.self};`,
       },
+      inset: `inset 0px 1px 0px 0px ${githubColor.shadow.inset}`,
       resting: {
         small: `0px 1px 1px 0px ${githubColor.shadow.resting.small}, 0px 1px 3px 0px ${githubColor.shadow.resting.small};`,
+        // 此阴影用于工作流的流程图的节点悬浮效果, 该效果在 Gitea 中通过 svg, g 的 filter 实现, 而非 box-shadow
+        medium: `drop-shadow(0 1px 1px ${githubColor.shadow.floating.small}) drop-shadow(0 3px 6px ${githubColor.shadow.resting.medium})`,
       },
     },
     underlineNav: {
@@ -350,6 +391,7 @@ export function github2ThemeColor(githubColor: GithubColor): ThemeColor {
         },
       },
     },
+    workflowCardBg: githubColor.isDarkTheme ? githubColor.bgColor.muted : githubColor.bgColor.default,
   };
   return {
     isDarkTheme: githubColor.isDarkTheme,

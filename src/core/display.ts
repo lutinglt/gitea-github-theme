@@ -1,3 +1,22 @@
+/*!
+ * Copyright (c) https://github.com/lutinglt
+ *
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import { saturate } from "polished";
 import { scaleColorLight } from "src/functions";
 import { type GithubColor } from "./github";
@@ -46,15 +65,22 @@ export function display2GithubColor(
     button: {
       ...baseGithubColor.button,
       primary: {
-        ...baseGithubColor.button.primary,
         fgColor: {
-          ...baseGithubColor.button.primary.fgColor,
           accent: soft ? displayColor.num7 : displayColor.num6,
+          rest: baseGithubColor.button.primary.fgColor.rest,
         },
         bgColor: {
-          ...baseGithubColor.button.primary.bgColor,
           rest: soft ? saturate(-0.1, scaleColorLight(displayColor.num5, -2)) : displayColor.num5,
-          hover: soft ? saturate(-0.1, scaleColorLight(displayColor.num5, 3)) : scaleColorLight(displayColor.num5, 5),
+          hover: soft
+            ? saturate(-0.1, scaleColorLight(displayColor.num5, 4))
+            : baseGithubColor.isDarkTheme
+              ? scaleColorLight(displayColor.num5, 7)
+              : scaleColorLight(displayColor.num5, -5),
+          active: soft
+            ? saturate(-0.1, scaleColorLight(displayColor.num5, 9))
+            : baseGithubColor.isDarkTheme
+              ? scaleColorLight(displayColor.num5, 15)
+              : scaleColorLight(displayColor.num5, -10),
         },
       },
       star: {
@@ -71,7 +97,6 @@ export function display2GithubColor(
     contribution: {
       ...baseGithubColor.contribution,
       default: {
-        ...baseGithubColor.contribution.default,
         bgColor: {
           num0: baseGithubColor.contribution.default.bgColor.num0,
           num1: soft ? displayColor.num2 : displayColor.num1,
@@ -79,6 +104,7 @@ export function display2GithubColor(
           num3: soft ? displayColor.num5 : displayColor.num4,
           num4: soft ? displayColor.num7 : displayColor.num6,
         },
+        borderColor: baseGithubColor.contribution.default.borderColor,
       },
     },
   };
