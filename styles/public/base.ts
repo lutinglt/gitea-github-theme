@@ -17,20 +17,20 @@
  * limitations under the License.
  */
 
-import { css } from "src/types/vars";
+import { css } from "@linaria/core";
 
 export const body = css`
   body {
     line-height: 1.5;
   }
   a {
-    text-underline-offset: 0.2rem; // 0.2rem 可以始终保持下划线不受 overflow: hidden 的影响
+    text-underline-offset: 0.2rem; /* 0.2rem 可以始终保持下划线不受 overflow: hidden 的影响 */
   }
-  // 默认代码块
+  /* 默认代码块 */
   code:not(.code-inner) {
     padding: 0.2em 0.4em;
   }
-  // 快捷键提示(输入框内)
+  /* 快捷键提示(输入框内) */
   kbd {
     background-color: #0000;
     font-size: 12px;

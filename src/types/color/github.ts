@@ -254,6 +254,22 @@ export const github = {
       },
     },
   },
+  controlTrack: {
+    bgColor: {
+      /** 背景色
+       * @compact_menu `smallCompactMenu` 背景色
+       */
+      rest: null,
+    },
+  },
+  controlKnob: {
+    bgColor: {
+      /** 背景色
+       * @compact_menu `smallCompactMenu` 激活项背景色
+       */
+      rest: null,
+    },
+  },
   shadow: {
     floating: {
       /** 悬浮阴影

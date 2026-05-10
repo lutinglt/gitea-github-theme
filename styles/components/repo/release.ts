@@ -17,7 +17,8 @@
  * limitations under the License.
  */
 
-import { css, themeVars } from "src/types/vars";
+import { css } from "@linaria/core";
+import { themeVars } from "src";
 
 // release 顶部栏左侧按钮组
 export const releaseTagMenu = css`
@@ -62,7 +63,7 @@ export const rightButton = css`
 // 标签页样式
 export const tags = css`
   .page-content.repository.tags {
-    // 标签的选项取消下划线
+    /* 标签的选项取消下划线 */
     .tag-list-row {
       .tag-list-row-title {
         line-height: 1.5;
@@ -92,7 +93,7 @@ export const releases = css`
       gap: 32px;
       margin: 32px 0 16px 0;
       .release-entry {
-        // 左侧发布元信息
+        /* 左侧发布元信息 */
         .meta {
           gap: 0.5rem;
           padding-top: 24px;
@@ -113,7 +114,7 @@ export const releases = css`
               margin-top: 1px;
             }
           }
-          // 分支选择按钮
+          /* 分支选择按钮 */
           .ui.button.branch-dropdown-button {
             min-height: 20px;
             line-height: 20px;
@@ -121,7 +122,7 @@ export const releases = css`
             font-size: 12px;
           }
         }
-        // 右侧发布详细信息
+        /* 右侧发布详细信息 */
         .segment.detail {
           padding: 16px;
           img.ui.avatar {
@@ -130,12 +131,12 @@ export const releases = css`
           .svg {
             color: ${themeVars.color.text.light.num1};
           }
-          // 标题
+          /* 标题 */
           .release-list-title {
             font-size: 32px;
             gap: 8px;
           }
-          // 提交信息
+          /* 提交信息 */
           p.text.grey {
             display: flex;
             gap: 6px;
@@ -148,13 +149,13 @@ export const releases = css`
               color: ${themeVars.color.text.self};
             }
           }
-          // 发布内容
+          /* 发布内容 */
           .markup {
             > *:first-child {
               margin-top: 24px !important;
             }
           }
-          // 分割线
+          /* 分割线 */
           .divider {
             position: relative;
             left: -16px;
@@ -162,7 +163,7 @@ export const releases = css`
             border-top-width: 1px;
             margin: 24px 0 16px 0;
           }
-          // 下载列表
+          /* 下载列表 */
           .download {
             summary {
               font-size: 16px;
@@ -181,7 +182,7 @@ export const releases = css`
                 .flex-text-inline {
                   gap: 8px;
                 }
-                // 只选中左侧文件名称
+                /* 只选中左侧文件名称 */
                 strong.flex-text-inline:hover {
                   text-decoration: underline !important;
                 }

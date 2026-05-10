@@ -17,7 +17,8 @@
  * limitations under the License.
  */
 
-import { css, themeVars } from "src/types/vars";
+import { css } from "@linaria/core";
+import { themeVars } from "src";
 
 // 仓库代码布局调整, 侧边栏宽度调整
 export const repoGrid = css`
@@ -37,7 +38,7 @@ export const repoGrid = css`
 export const repoSidebarTop = css`
   .page-content.repository.file.list {
     .repo-home-sidebar-top {
-      // 搜索代码
+      /* 搜索代码 */
       .ui.input > input {
         background: unset;
       }
@@ -46,11 +47,11 @@ export const repoSidebarTop = css`
       }
       .flex-item {
         padding: 10px 0 0 0;
-        // 仓库描述本身
+        /* 仓库描述本身 */
         .flex-item-title {
           margin-top: 10px;
         }
-        // 仓库描述内容
+        /* 仓库描述内容 */
         .flex-item-body {
           > .tw-flex:first-child {
             margin-top: 16px !important;
@@ -108,7 +109,7 @@ export const repoSidebarBottom = css`
           font-size: 12px;
         }
       }
-      // 编程语言
+      /* 编程语言 */
       .language-stats {
         height: 8px;
         margin-bottom: 0px;

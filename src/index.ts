@@ -17,8 +17,13 @@
  * limitations under the License.
  */
 
-export { defaultDarkChroma, defaultLightChroma } from "./core/chroma";
-export { defineTheme, type ThemeColor } from "./core/color";
-export type { Theme } from "./core/theme";
+import selectors from "./selectors";
+
+export { createTheme, defineTheme, display2GithubColor, github2ThemeColor } from "./core";
+export type { DisplayColor, GitHubSyntax, GithubColor, ThemeColor } from "./core";
+export { extractVarName, scaleColorLight } from "./functions";
+export { createThemeMetaInfo } from "./styles";
+export { chromaVars, customThemeVars, otherThemeVars, syntaxVars, themeVars } from "./types";
 export type { Ansi, Chroma, Console, Diff, Github, Message, Named, Other, Primary, Secondary } from "./types";
-export { otherThemeVars, themeVars } from "./types/vars";
+export { defineThemeConfig } from "./vite-plugin";
+export { selectors };

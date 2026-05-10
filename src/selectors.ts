@@ -17,8 +17,14 @@
  * limitations under the License.
  */
 
-export const root = ":root";
-export const emoji = `.emoji[aria-label="check mark"],
+const root = ":root";
+const metaInfo = "gitea-theme-meta-info";
+const chroma = ".chroma";
+const codeMirror = ".code-editor-container";
+const overlayAppear = "overlayAppear";
+const overlayAppearDown = "overlayAppearDown";
+const overlayAppearUp = "overlayAppearUp";
+const emoji = `.emoji[aria-label="check mark"],
 .emoji[aria-label="currency exchange"],
 .emoji[aria-label="TOP arrow"],
 .emoji[aria-label="END arrow"],
@@ -39,6 +45,14 @@ export const emoji = `.emoji[aria-label="check mark"],
 .emoji[aria-label="musical note"],
 .emoji[aria-label="musical notes"]
 `;
-export const overlayAppear = "overlayAppear";
-export const overlayAppearDown = "overlayAppearDown";
-export const overlayAppearUp = "overlayAppearUp";
+
+export default {
+  root,
+  metaInfo,
+  chroma,
+  codeMirror,
+  overlayAppear,
+  overlayAppearDown,
+  overlayAppearUp,
+  emoji,
+} as const;

@@ -17,11 +17,9 @@
  * limitations under the License.
  */
 
-import { css, themeVars } from "src/types/vars";
-
-export const labelStyle = {
-  padding: "0px 6px",
-};
+import { css } from "@linaria/core";
+import { themeVars } from "src";
+import { labelStyle } from "styles/common";
 
 export const label = css`
   .ui.label {
@@ -31,7 +29,7 @@ export const label = css`
   /* a 标签比如仓库点星等按钮旁边的数字标签按钮,提交图中的 tag 标签 */
   div.label,
   span.label,
-  // 包含多个标签的元素, 比如 Issue/PR 详情页中的时间线上的标签
+  /* 包含多个标签的元素, 比如 Issue/PR 详情页中的时间线上的标签 */
   span.labels-list a.label {
     &.ui.ui.ui {
       border-radius: 9999px;
@@ -40,7 +38,7 @@ export const label = css`
       &.mini {
         line-height: 16px;
       }
-      // 多个标签的组合标签的圆角修复
+      /* 多个标签的组合标签的圆角修复 */
       &.scope-parent {
         .scope-left {
           border-top-right-radius: 0;

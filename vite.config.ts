@@ -17,18 +17,14 @@
  * limitations under the License.
  */
 
-import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
-import linaria from "@wyw-in-js/vite";
+import wyw from "@wyw-in-js/vite";
 import * as dotenv from "dotenv";
-import { Features } from "lightningcss";
+import * as lightningcss from "lightningcss";
 import fs from "node:fs";
-import { createRequire } from "node:module";
 import path from "node:path";
-import * as sass from "sass-embedded";
 import { defineConfig } from "vite";
-import { themeInput, themePlugin } from "./src/core/vite";
+import { giteaGitHubThemePlugin } from "./src/vite-plugin";
 
-const require = createRequire(import.meta.url);
 dotenv.config({ quiet: true });
 
 // 版本号: 版本号.YYMMDD
@@ -38,53 +34,33 @@ const year = now.getFullYear().toString().slice(-2);
 const month = (now.getMonth() + 1).toString().padStart(2, "0");
 const day = now.getDate().toString().padStart(2, "0");
 
-const outDir = "dist"; // 输出目录
-const themesDir = "themes"; // 颜色主题目录
-
-export default defineConfig(({ mode }) => {
-  return {
-    define: {
-      __THEME_VERSION__: JSON.stringify(`${pkg.version}.${year}${month}${day}`),
+export default defineConfig({
+  define: {
+    __THEME_VERSION__: JSON.stringify(`${pkg.version}.${year}${month}${day}`),
+  },
+  resolve: {
+    alias: {
+      src: path.resolve(__dirname, "src"),
+      styles: path.resolve(__dirname, "styles"),
+      themes: path.resolve(__dirname, "themes"),
     },
-    resolve: {
-      alias: {
-        src: path.resolve(__dirname, "src"),
-        styles: path.resolve(__dirname, "styles"),
-        themes: path.resolve(__dirname, "themes"),
-      },
-      extensions: [".js", ".ts", ".css.ts"],
+    extensions: [".js", ".ts", ".css.ts"],
+  },
+  css: {
+    transformer: "lightningcss",
+    lightningcss: {
+      exclude: lightningcss.Features.LightDark, // 不生成 LightningCSS 的主题变量
     },
-    css: {
-      transformer: "lightningcss",
-      lightningcss: {
-        minify: true,
-        exclude: Features.LightDark, // 不生成 lightningcss 的主题变量
-      },
-    },
-    plugins: [
-      linaria({
-        include: ["**/*.ts"],
-        babelOptions: {
-          presets: ["@babel/preset-typescript"],
-        },
-        preprocessor: (_selector, cssText) => sass.compileString(cssText).css, // 默认为全局样式并使用 sass-embedded 预处理 css
-        tagResolver: (source, tag) =>
-          // 识别从 src 导出的 css 标签，使用 @linaria/core/processors/css 处理
-          source === "src/types/vars" && tag === "css" ? require.resolve("@linaria/core/processors/css") : null,
-      }),
-      vanillaExtractPlugin(),
-      themePlugin(),
-    ],
-    build: {
-      cssMinify: "lightningcss",
-      cssCodeSplit: true,
-      outDir: outDir,
-      rollupOptions: {
-        input: themeInput(outDir, themesDir, mode),
-        output: {
-          assetFileNames: "[name].[ext]",
-        },
-      },
-    },
-  };
+  },
+  plugins: [
+    wyw({
+      babelOptions: { presets: ["@babel/preset-typescript"] },
+      // 默认为全局样式
+      preprocessor: (_selector, cssText) =>
+        // 当 CSS 嵌套的父选择器是选择器列表（逗号分隔）时, LightningCSS 编译嵌套必须使用 :is() 这是 CSS Nesting 规范定义的语义
+        // LightningCSS 没有提供"展开嵌套但不使用 :is()"的选项, :is() 会提升选择器的优先级
+        lightningcss.transform({ filename: "wyw-in-js.css", code: Buffer.from(cssText) }).code.toString(),
+    }),
+    giteaGitHubThemePlugin(),
+  ],
 });

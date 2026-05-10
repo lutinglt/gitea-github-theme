@@ -17,21 +17,9 @@
  * limitations under the License.
  */
 
-import { type StyleRule } from "@vanilla-extract/css";
-import { css, themeVars } from "src/types/vars";
-
-export const primaryStyle = {
-  color: themeVars.github.button.primary.fgColor.rest,
-  backgroundColor: themeVars.github.button.primary.bgColor.rest,
-  borderColor: themeVars.github.button.primary.borderColor.rest,
-  boxShadow: themeVars.github.shadow.resting.small,
-} satisfies StyleRule;
-
-export const primaryHoverStyle = {
-  color: themeVars.github.button.primary.fgColor.rest,
-  backgroundColor: themeVars.github.button.primary.bgColor.hover,
-  borderColor: themeVars.github.button.primary.borderColor.hover,
-} satisfies StyleRule;
+import { css } from "@linaria/core";
+import { themeVars } from "src";
+import { primaryButtonHoverStyle, primaryButtonStyle } from "styles/common";
 
 // 普通按钮和主色调按钮
 export const baseButton = css`
@@ -46,33 +34,34 @@ export const baseButton = css`
   .ui.button:not(.primary):not(.red) svg {
     color: ${themeVars.color.text.light.num1};
   }
-  // 主色调按钮保持白色
-  .ui.primary.buttons .button svg {
-    color: ${themeVars.color.white};
-  }
+  /* 主色调按钮 */
   .ui.primary {
     &.button,
-    // 按钮组, PR 里的压缩合并按钮
+    /* 按钮组, PR 里的压缩合并按钮 */
     &.buttons .button {
-      ${primaryStyle}
+      ${primaryButtonStyle}
       &:hover {
-        ${primaryHoverStyle}
+        ${primaryButtonHoverStyle}
       }
       &:active {
+        ${primaryButtonHoverStyle}
         background-color: ${themeVars.github.button.primary.bgColor.active};
       }
+      svg {
+        color: ${themeVars.github.button.primary.fgColor.rest};
+      }
     }
-    // 按钮组整体有阴影
+    /* 按钮组整体有阴影 */
     &.buttons {
       box-shadow: ${themeVars.github.shadow.resting.small};
       .button {
-        // 按钮组里的按钮无阴影
+        /* 按钮组里的按钮无阴影 */
         box-shadow: none;
       }
     }
   }
-  // 主色调基本按钮和普通按钮一样
-  // 作者的关注按钮
+  /* 主色调基本按钮和普通按钮一样 */
+  /* 作者的关注按钮 */
   .ui.basic.primary.button {
     background-color: ${themeVars.color.button};
     color: ${themeVars.color.text.self};
@@ -112,7 +101,7 @@ export const redButton = css`
   .ui.basic.red.button {
     color: ${themeVars.github.button.danger.fgColor.rest};
     background-color: ${themeVars.github.button.danger.bgColor.rest};
-    // 一些按钮边框色为红色, 比如危险操作区, 统一为暗色边框和 github 一致
+    /* 一些按钮边框色为红色, 比如危险操作区, 统一为暗色边框和 github 一致 */
     border-color: ${themeVars.color.light.border};
     &:hover {
       color: ${themeVars.github.button.danger.fgColor.hover};
@@ -131,18 +120,18 @@ export const redButton = css`
 
 // 修复按钮高度
 export const fixButtonHeight = css`
-  // 修复一些主色调或者其他小按钮的高度避免过高
+  /* 修复一些主色调或者其他小按钮的高度避免过高 */
   .ui.small.buttons .button,
   .ui.ui.ui.ui.small.button {
     min-height: 26px;
     height: 32px;
   }
-  // 修复仓库页仓库操作按钮高度对齐和修正
+  /* 修复仓库页仓库操作按钮高度对齐和修正 */
   .repo-button-row .ui.button {
     min-height: 32px;
     height: 32px;
   }
-  // 修复因上面小按钮高度导致仓库星标克隆等按钮高度过高
+  /* 修复因上面小按钮高度导致仓库星标克隆等按钮高度过高 */
   .repo-header {
     .ui.ui.ui.ui.small.compact.button,
     .ui.labeled.button > .label {
@@ -158,11 +147,11 @@ export const fixButtonHeight = css`
 `;
 
 export const fixButton = css`
-  // 修复关注&派生 hover 意外点亮右侧 label 左边框
+  /* 修复关注&派生 hover 意外点亮右侧 label 左边框 */
   .ui.ui.ui.ui.small.button {
     z-index: 0;
   }
-  // 代码复制按钮
+  /* 代码复制按钮 */
   .ui.button.code-copy {
     padding: 4px 6px;
     min-height: 28px;

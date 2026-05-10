@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
-import { css } from "src/types/vars";
-import { activeItemAfterStyle } from "styles/public/menu";
+import { css } from "@linaria/core";
+import { activeItemAfterStyle } from "styles/common";
 
 // 新建仓库页面下拉菜单
 export const newRepo = css`

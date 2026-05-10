@@ -1,10 +1,20 @@
+### ⚠️ Breaking Changes
+
+- Because the project uses Lightning CSS to transpile CSS nesting code, it will contain a large number of :is()
+  selectors, and browsers below Chrome 88 are not supported. Using browsers below Chrome 88 may cause many styling
+  issues. Please update to Chrome 88 or above.
+
 ### ✨ Feature
 
 - Adapt the theme color identification and color blindness identification to the new version of Gitea.
 - The theme name for red-green color blindness has been synchronized with GitHub, providing a more accurate display of
   the name.
+- The CSS transpilation engine has been switched from SASS to LightingCSS. Thanks to the optimization provided by
+  LightingCSS, the CSS file size has been reduced by 10%.
 
 ### 🌈 Style
+
+- Add transition animation to the repository/organization buttons on the dashboard page.
 
 #### Adaptation for version 1.26
 
@@ -15,6 +25,7 @@
 - Optimize the style of the actions page.
 - Synchronization shortcut key prompt style.
 - Synchronize the style of the pop-up window for file search results in the repository.
+- Synchronize code highlighting colors and styles for online file editors.
 
 #### More aligned with GitHub style
 

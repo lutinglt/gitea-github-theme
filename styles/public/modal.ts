@@ -17,8 +17,9 @@
  * limitations under the License.
  */
 
-import { animationDown } from "src/core/styles";
-import { css, themeVars } from "src/types/vars";
+import { css } from "@linaria/core";
+import { themeVars } from "src";
+import { animationDown } from "styles/common";
 
 export const modal = css`
   .ui.modal {

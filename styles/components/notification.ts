@@ -17,7 +17,8 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "src/types/vars";
+import { css } from "@linaria/core";
+import { otherThemeVars, themeVars } from "src";
 
 // 用户订阅/关注页面
 export const notification = css`
@@ -29,7 +30,7 @@ export const notification = css`
         > .divider {
           display: none;
         }
-        // 订阅列表
+        /* 订阅列表 */
         &:has(#issue-list) {
           > .tw-flex {
             align-items: center;
@@ -41,7 +42,7 @@ export const notification = css`
             border-top-right-radius: ${otherThemeVars.border.radius};
             height: 52px;
             padding: 8px;
-            // 左侧菜单
+            /* 左侧菜单 */
             > .tw-flex:first-child > .ui.compact.menu {
               align-items: center;
               border: 0;
@@ -63,7 +64,7 @@ export const notification = css`
                 }
               }
             }
-            // 右侧菜单
+            /* 右侧菜单 */
             > .tw-flex:last-child > .ui.menu {
               align-items: center;
               > .item {
@@ -76,7 +77,7 @@ export const notification = css`
             }
           }
         }
-        // 关注列表
+        /* 关注列表 */
         > .flex-list:not([id]) {
           border: 1px solid ${themeVars.color.light.border};
           border-radius: ${otherThemeVars.border.radius};
@@ -107,7 +108,7 @@ export const notification = css`
           }
         }
       }
-      // 通知列表
+      /* 通知列表 */
       &:has(#notification_table) {
         > .flex-text-block:first-child {
           background-color: ${themeVars.color.box.header};
@@ -118,7 +119,7 @@ export const notification = css`
           height: 52px;
           padding: 8px;
           margin-bottom: 0 !important;
-          // 左侧菜单
+          /* 左侧菜单 */
           > .ui.compact.menu {
             align-items: center;
             border: 0;
@@ -144,12 +145,12 @@ export const notification = css`
             }
           }
         }
-        // 通知全部确认按钮
+        /* 通知全部确认按钮 */
         .ui.ui.ui.ui.mini.button {
           height: 32px;
         }
       }
-      // 通知列表
+      /* 通知列表 */
       #notification_table {
         border-top-left-radius: 0;
         border-top-right-radius: 0;

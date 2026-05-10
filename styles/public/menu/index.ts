@@ -22,16 +22,3 @@ import "./menu";
 import "./pagination_menu";
 import "./secondary_menu";
 import "./vertical_menu";
-
-import { type StyleRule } from "@vanilla-extract/css";
-import { otherThemeVars, themeVars } from "src/types/vars";
-
-export const activeItemAfterStyle = {
-  backgroundColor: themeVars.github.borderColor.accent.emphasis,
-  borderRadius: otherThemeVars.border.radius,
-  height: "24px",
-  left: "-8px",
-  position: "absolute",
-  top: "calc(50% - 12px)",
-  width: "4px",
-} satisfies StyleRule;

@@ -17,11 +17,12 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "src/types/vars";
-import { activeItemAfterStyle } from "styles/public/menu";
+import { css } from "@linaria/core";
+import { otherThemeVars, themeVars } from "src";
+import { activeItemAfterStyle } from "styles/common";
 
 export const button = css`
-  // 工单&PR标题右侧按钮
+  /* 工单&PR标题右侧按钮 */
   .repository.view.issue .issue-title-buttons > .ui.button {
     padding: 0 12px;
     height: 32px;
@@ -31,21 +32,21 @@ export const button = css`
 export const babel = css`
   .issue-content-left {
     .badge {
-      // 时间线打开状态标签
+      /* 时间线打开状态标签 */
       &.tw-bg-green {
         background-color: ${themeVars.github.bgColor.success.emphasis} !important;
       }
-      // 时间线关闭状态标签
+      /* 时间线关闭状态标签 */
       &.tw-bg-red {
         background-color: ${themeVars.github.bgColor.done.emphasis} !important;
       }
-      // 时间线合并状态标签
+      /* 时间线合并状态标签 */
       &.tw-bg-purple {
         background-color: ${themeVars.github.bgColor.done.emphasis} !important;
       }
     }
   }
-  // 工单&PR状态标签
+  /* 工单&PR状态标签 */
   .ui.label.issue-state-label {
     border-radius: 25px !important;
     &.green {
@@ -90,9 +91,9 @@ export const prBranch = css`
 
 export const dropdown = css`
   .repository {
-    // Issue/PR 列表下的所有筛选菜单
+    /* Issue/PR 列表下的所有筛选菜单 */
     &.issue-list .ui.dropdown .menu, .ui.menu .ui.dropdown .menu,
-    // Issue/PR 详情下的右侧的上半部分选项菜单
+    /* Issue/PR 详情下的右侧的上半部分选项菜单 */
     &.issue.view .issue-content-right .ui.dropdown .scrolling.menu {
       .item:hover:after {
         content: "";
@@ -105,7 +106,7 @@ export const dropdown = css`
 // PR 界面的 PR 操作评论
 export const prMerge = css`
   .repository.view.issue .comment-list .timeline-item.pull-merge-box {
-    // 头像
+    /* 头像 */
     .timeline-avatar {
       border-radius: 9999px;
       width: 40px;
@@ -117,11 +118,11 @@ export const prMerge = css`
         width: 24px;
         height: 24px;
       }
-      // PR 界面的 PR 操作评论
+      /* PR 界面的 PR 操作评论 */
       &.text {
         color: ${themeVars.color.white} !important;
         border-radius: ${otherThemeVars.border.radius};
-        // 操作评论边框
+        /* 操作评论边框 */
         + .content > .ui.attached.segment {
           border-width: 1.5px;
         }
@@ -182,7 +183,7 @@ export const prMerge = css`
         }
       }
     }
-    // 检查状态
+    /* 检查状态 */
     .commit-status-panel {
       .commit-status-header {
         background: ${themeVars.color.body};
@@ -195,7 +196,7 @@ export const prMerge = css`
           font-weight: 400;
         }
       }
-      // 检查状态列表
+      /* 检查状态列表 */
       .commit-status-list {
         background: ${themeVars.color.menu};
         .commit-status-item {
@@ -215,7 +216,7 @@ export const prMerge = css`
         }
       }
     }
-    // 合并信息和操作
+    /* 合并信息和操作 */
     .merge-section {
       color: ${themeVars.color.text.light.num1};
       padding: 16px;

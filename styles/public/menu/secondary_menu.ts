@@ -17,21 +17,26 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "src/types/vars";
+import { css } from "@linaria/core";
+import { otherThemeVars, themeVars } from "src";
 
 export const secondaryMenu = css`
-  // 二级菜单, 比如 Issue/PR/Actions 的筛选菜单
+  /* 二级菜单, 比如 Issue/PR/Actions 的筛选菜单 */
   .ui.secondary.menu {
     .item {
       padding: 0px 12px;
       height: 32px;
       font-weight: 500;
+      &.active,
+      &:first-child {
+        border-radius: ${otherThemeVars.border.radius};
+      }
     }
     a.item:hover {
       background: ${themeVars.github.control.transparent.bgColor.hover};
     }
   }
-  // 二级导航栏, 比如仓库的导航栏, 仓库列表的导航栏, 探索的类型导航栏
+  /* 二级导航栏, 比如仓库的导航栏, 仓库列表的导航栏, 探索的类型导航栏 */
   .ui.secondary.pointing.menu {
     .overflow-menu-items {
       gap: 4px;
@@ -43,7 +48,7 @@ export const secondaryMenu = css`
       }
     }
     .item {
-      font-weight: 400; // 二级导航栏不需要加粗
+      font-weight: 400; /* 二级导航栏不需要加粗 */
     }
     .active.item,
     .dropdown.item,
@@ -56,9 +61,9 @@ export const secondaryMenu = css`
       }
     }
     .active.item {
-      // 取消激活时的下划线, 需要为透明, 保持间距
+      /* 取消激活时的下划线, 需要为透明, 保持间距 */
       border-color: #ffffff00;
-      // 模仿 github 的下划线
+      /* 模仿 github 的下划线 */
       span:after {
         content: "";
         background: ${themeVars.github.underlineNav.borderColor.active};
@@ -73,7 +78,7 @@ export const secondaryMenu = css`
       }
     }
   }
-  // 修复仓库页面下的二级导航栏的下划线因浏览器 BUG 导致显示的异常问题(导致下划线和分割线重叠变粗)
+  /* 修复仓库页面下的二级导航栏的下划线因浏览器 BUG 导致显示的异常问题(导致下划线和分割线重叠变粗) */
   .page-content.repository .ui.secondary.pointing.menu {
     border-bottom: none !important;
   }

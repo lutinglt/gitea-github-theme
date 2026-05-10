@@ -17,12 +17,13 @@
  * limitations under the License.
  */
 
-import { css, themeVars } from "src/types/vars";
+import { css } from "@linaria/core";
+import { themeVars } from "src";
 
 // 仓库标签 (私有/公开/内部)
 export const repoLabel = css`
   span,
-  // 用户切换面板的标签
+  /* 用户切换面板的标签 */
   .org-visibility div {
     &.ui.basic.label {
       background-color: unset;

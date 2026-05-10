@@ -17,7 +17,8 @@
  * limitations under the License.
  */
 
-import { css, themeVars } from "src/types/vars";
+import { css } from "@linaria/core";
+import { themeVars } from "src";
 
 // 提交中的 SHA 标签
 export const shaLabel = css`
@@ -28,12 +29,12 @@ export const shaLabel = css`
     color: ${themeVars.color.text.light.num1};
     font-size: 12px;
     font-weight: 500;
-    // 仪表盘页的提交 SHA 标签居中对齐
+    /* 仪表盘页的提交 SHA 标签居中对齐 */
     margin-top: 2px;
     &:hover {
       background-color: ${themeVars.color.label.hoverBg};
     }
-    // 验证提交 SHA 标签
+    /* 验证提交 SHA 标签 */
     &.commit-is-signed {
       border: unset !important;
       background-color: unset !important;
@@ -49,16 +50,16 @@ export const shaLabel = css`
       }
     }
   }
-  // 修复带验证的提交 SHA 标签的高度
+  /* 修复带验证的提交 SHA 标签的高度 */
   .ui.label.commit-id-short {
     height: 25px;
   }
-  // 验证提交附带的图标
+  /* 验证提交附带的图标 */
   span.ui.label.commit-is-signed {
     height: 25px;
     min-width: 35px;
     justify-content: center;
-    // 验证信任
+    /* 验证信任 */
     &.sign-trusted {
       border: 1.5px solid ${themeVars.color.green.badge.self} !important;
       color: ${themeVars.color.green.badge.self} !important;
@@ -66,7 +67,7 @@ export const shaLabel = css`
         background-color: ${themeVars.color.green.badge.hover.bg} !important;
       }
     }
-    // 验证未信任
+    /* 验证未信任 */
     &.sign-untrusted {
       border: 1.5px solid ${themeVars.color.yellow.badge.self} !important;
       color: ${themeVars.color.yellow.badge.self} !important;
@@ -74,7 +75,7 @@ export const shaLabel = css`
         background-color: ${themeVars.color.yellow.badge.hover.bg} !important;
       }
     }
-    // 验证未匹配
+    /* 验证未匹配 */
     &.sign-unmatched {
       border: 1.5px solid ${themeVars.color.orange.badge.self} !important;
       color: ${themeVars.color.orange.badge.self} !important;
@@ -82,7 +83,7 @@ export const shaLabel = css`
         background-color: ${themeVars.color.orange.badge.hover.bg} !important;
       }
     }
-    // 验证警告
+    /* 验证警告 */
     &.sign-warning {
       border: 1.5px solid ${themeVars.color.red.badge.self} !important;
       color: ${themeVars.color.red.badge.self} !important;

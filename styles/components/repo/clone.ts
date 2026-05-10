@@ -17,28 +17,29 @@
  * limitations under the License.
  */
 
-import { css, customThemeVars, otherThemeVars, themeVars } from "src/types/vars";
+import { css } from "@linaria/core";
+import { customThemeVars, otherThemeVars, themeVars } from "src";
 
 // 克隆按钮的弹窗
 export const clone = css`
   .tippy-box {
     .clone-panel-popup {
-      //标题和克隆地址
+      /*标题和克隆地址 */
       > .clone-panel-field {
         margin-left: 16px;
         margin-right: 16px;
-        //标题
+        /* 标题 */
         &:first-of-type {
           font-weight: 600;
           margin-top: 16px;
         }
       }
-      // 按钮组
+      /* 按钮组 */
       .clone-panel-tab {
         display: flex;
         gap: 8px;
         margin-left: 16px;
-        // 按钮
+        /* 按钮 */
         .item {
           color: ${themeVars.color.text.self};
           font-weight: 600;
@@ -65,7 +66,7 @@ export const clone = css`
           position: relative;
         }
       }
-      // 克隆地址
+      /* 克隆地址 */
       .ui.input.action {
         > input {
           border: 1px solid ${themeVars.color.light.border};
@@ -101,11 +102,11 @@ export const clone = css`
           }
         }
       }
-      // 面板操作列表之间的分割线
+      /* 面板操作列表之间的分割线 */
       .divider {
         margin: 0;
       }
-      // 面板操作列表
+      /* 面板操作列表 */
       .clone-panel-list {
         margin: 8px;
         .item {
@@ -115,7 +116,7 @@ export const clone = css`
           margin: 0;
           gap: 4px;
           svg {
-            color: ${themeVars.color.text.light.num1} !important; // 覆盖 .gitea-vscodium 颜色
+            color: ${themeVars.color.text.light.num1} !important; /* 覆盖 .gitea-vscodium 颜色 */
             margin-right: 4px;
           }
         }

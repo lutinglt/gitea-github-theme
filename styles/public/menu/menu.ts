@@ -17,8 +17,9 @@
  * limitations under the License.
  */
 
-import { css, themeVars } from "src/types/vars";
-import { labelStyle } from "styles/public/label/label";
+import { css } from "@linaria/core";
+import { themeVars } from "src";
+import { labelStyle } from "styles/common";
 
 export const menu = css`
   .ui.menu {
@@ -27,7 +28,7 @@ export const menu = css`
   .menu .item svg {
     color: ${themeVars.color.text.light.num1};
   }
-  // 菜单默认悬浮色更改
+  /* 菜单默认悬浮色更改 */
   .ui.menu a.item,
   .ui.secondary.pointing.menu a.item,
   .ui.secondary.menu .dropdown.item {
@@ -35,14 +36,14 @@ export const menu = css`
       background: ${themeVars.github.control.transparent.bgColor.hover};
     }
   }
-  // 一些水平小型菜单的颜色更改
+  /* 一些水平小型菜单的颜色更改 */
   .small-menu-items .item {
     background-color: ${themeVars.color.body} !important;
     &:hover {
       background: ${themeVars.github.control.transparent.bgColor.hover} !important;
     }
   }
-  // 一些菜单的悬浮色更改
+  /* 一些菜单的悬浮色更改 */
   .ui.segment .ui.tabular.menu,
   .header-wrapper .ui.tabular.menu,
   .ui.secondary.pointing.menu {
@@ -53,7 +54,7 @@ export const menu = css`
       }
     }
   }
-  // 菜单标签样式
+  /* 菜单标签样式 */
   .ui.menu .item > .label:not(.floating) {
     ${labelStyle}
   }

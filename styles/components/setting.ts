@@ -17,9 +17,10 @@
  * limitations under the License.
  */
 
-import { type StyleRule } from "@vanilla-extract/css";
-import { css, themeVars } from "src/types/vars";
-import { primaryHoverStyle, primaryStyle } from "styles/public/button";
+import { css } from "@linaria/core";
+import type { StyleRule } from "@vanilla-extract/css";
+import { themeVars } from "src";
+import { primaryButtonHoverStyle, primaryButtonStyle } from "styles/common";
 
 const tinyStyle = {
   color: themeVars.github.button.primary.fgColor.accent,
@@ -35,12 +36,12 @@ const tinyHoverStyle = {
 
 // 设置界面下的按钮
 export const button = css`
-  // 不包含管理员的设置界面
+  /* 不包含管理员的设置界面 */
   .user-main-content,
   .repo-setting-content,
   .user-setting-content,
   .org-setting-content {
-    // 主色调按钮替换为普通按钮
+    /* 主色调按钮替换为普通按钮 */
     .ui.primary.button {
       color: ${themeVars.color.text.light.self};
       background-color: ${themeVars.color.button};
@@ -53,7 +54,7 @@ export const button = css`
         background-color: ${themeVars.github.button.default.bgColor.active};
       }
     }
-    // 迷你按钮替换为自定义的主色调按钮 (例: SSH 验证按钮)
+    /* 迷你按钮替换为自定义的主色调按钮 (例: SSH 验证按钮) */
     .ui.primary.button.tiny {
       ${tinyStyle}
       &:hover {
@@ -64,21 +65,21 @@ export const button = css`
       }
     }
   }
-  // 所有设置界面
+  /* 所有设置界面 */
   .user-main-content,
   .repo-setting-content,
   .user-setting-content,
   .org-setting-content,
   .admin-setting-content {
-    // 右上角迷你按钮替换会主色调按钮
+    /* 右上角迷你按钮替换会主色调按钮 */
     .ui.attached.header > .ui.right {
       .ui.primary.button.tiny {
-        ${primaryStyle}
+        ${primaryButtonStyle}
         padding: 3px 12px;
         min-height: 20px;
         line-height: 20px;
         &:hover {
-          ${primaryHoverStyle}
+          ${primaryButtonHoverStyle}
         }
         &:active {
           background-color: ${themeVars.github.button.primary.bgColor.active};
@@ -86,7 +87,7 @@ export const button = css`
       }
     }
   }
-  // 管理员设置界面下的自定义主色调按钮
+  /* 管理员设置界面下的自定义主色调按钮 */
   .admin-setting-content {
     .ui.primary.button {
       ${tinyStyle}
@@ -97,7 +98,7 @@ export const button = css`
       }
       &:active {
         background-color: ${themeVars.github.button.primary.bgColor.active};
-        // 保持鼠标移开时边框颜色和文字颜色不变
+        /* 保持鼠标移开时边框颜色和文字颜色不变 */
         border-color: ${themeVars.github.button.primary.borderColor.hover};
         color: ${themeVars.github.button.primary.fgColor.rest};
       }
@@ -111,9 +112,9 @@ export const button = css`
 `;
 
 export const label = css`
-  // Runner 标签
+  /* Runner 标签 */
   .runner-container {
-    // 普通标签, runner 状态: 离线, runner 标签
+    /* 普通标签, runner 状态: 离线, runner 标签 */
     .ui.label {
       border: 1px solid ${themeVars.color.light.border};
     }

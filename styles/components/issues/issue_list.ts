@@ -17,17 +17,17 @@
  * limitations under the License.
  */
 
-import { extractVarName } from "src/functions";
-import { css, otherThemeVars, themeVars } from "src/types/vars";
+import { css } from "@linaria/core";
+import { extractVarName, otherThemeVars, themeVars } from "src";
 
 // 工单&PR 列表
 export const issueList = css`
-  // 仓库页面的里程碑列表菜单栏
+  /* 仓库页面的里程碑列表菜单栏 */
   .page-content.repository.milestones,
   .page-content.repository.milestone-issue-list,
   .page-content.repository.issue-list {
     ${extractVarName(otherThemeVars.checkbox.size)}: 16px;
-    // 头部筛选菜单栏
+    /* 头部筛选菜单栏 */
     .issue-list-toolbar {
       align-items: center;
       align-content: center;
@@ -40,7 +40,7 @@ export const issueList = css`
       padding: 8px;
       margin-top: 16px;
       .issue-list-toolbar-left {
-        // 复选框
+        /* 复选框 */
         input {
           margin: 0 8px !important;
         }
@@ -93,13 +93,13 @@ export const issueList = css`
       }
     }
   }
-  // 里程碑详细页面的 Issue 列表
+  /* 里程碑详细页面的 Issue 列表 */
   .page-content.repository.milestone-issue-list,
-  // 顶部仪表板的 Issue 列表
+  /* 顶部仪表板的 Issue 列表 */
   .page-content.dashboard.issues,
-  // 用户订阅的 Issue 列表
+  /* 用户订阅的 Issue 列表 */
   .page-content.user.notification,
-  // 仓库 Issue 列表
+  /* 仓库 Issue 列表 */
   .page-content.repository.issue-list {
     .flex-list#issue-list {
       border: 1px solid ${themeVars.color.light.border};
@@ -128,7 +128,7 @@ export const issueList = css`
           margin-left: 16px;
           > .flex-text-inline {
             margin-top: 0px !important;
-            // 复选框
+            /* 复选框 */
             input {
               margin-right: 8px !important;
             }
@@ -150,8 +150,8 @@ export const issueList = css`
       }
     }
   }
-  // 里程碑列表
-  // [TODO] 暂时排除项目的列表
+  /* 里程碑列表 */
+  /* [TODO] 暂时排除项目的列表 */
   .page-content.repository.milestones:not(.projects) .milestone-list {
     border: 1px solid ${themeVars.color.light.border};
     border-bottom-left-radius: ${otherThemeVars.border.radius};

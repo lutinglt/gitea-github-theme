@@ -17,20 +17,17 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "src/types/vars";
+import { css } from "@linaria/core";
+import { otherThemeVars, themeVars } from "src";
+import { botLabelStyle } from "styles/common";
 
-export const botLabelStyle = {
-  height: "20px",
-  padding: "0 6px!important",
-  marginLeft: "4px",
-};
 // 评论
 export const comment = css`
   .comment .comment-container {
     img.ui.avatar {
       border-radius: 9999px;
     }
-    // 去除评论标题左侧指向头像的小箭头
+    /* 去除评论标题左侧指向头像的小箭头 */
     .comment-header,
     &:target .comment-header {
       &:before,
@@ -38,7 +35,7 @@ export const comment = css`
         display: none;
       }
     }
-    // 评论焦点样式
+    /* 评论焦点样式 */
     &:target {
       .comment-container {
         border-color: ${themeVars.github.borderColor.accent.emphasis} !important;
@@ -49,14 +46,14 @@ export const comment = css`
       padding: 4px 4px 4px 16px;
       min-height: 38px;
       .comment-header-left {
-        // bot 标签
+        /* bot 标签 */
         .ui.basic.label {
           ${botLabelStyle}
         }
         a:has(relative-time) {
           text-decoration: underline;
         }
-        // 已编辑按钮
+        /* 已编辑按钮 */
         .content-history-menu {
           color: ${themeVars.color.text.light.num1} !important;
           .menu .item {
@@ -94,7 +91,7 @@ export const comment = css`
             color: inherit;
           }
         }
-        // 评论菜单的删除按钮
+        /* 评论菜单的删除按钮 */
         .menu .item.delete-comment {
           color: ${themeVars.color.red.self};
           &:hover {
@@ -104,7 +101,7 @@ export const comment = css`
         }
       }
     }
-    // 表情菜单按钮头部+底部
+    /* 表情菜单按钮头部+底部 */
     .ui.dropdown.action.select-reaction > a {
       display: flex;
       align-items: center;
@@ -117,7 +114,7 @@ export const comment = css`
       height: 28px;
       width: 28px;
     }
-    // 底部表情栏
+    /* 底部表情栏 */
     .bottom-reactions {
       .ui.ui.ui.label {
         background-color: unset !important;
@@ -136,11 +133,11 @@ export const comment = css`
           margin-left: 0;
         }
       }
-      // 显示表情菜单按钮
+      /* 显示表情菜单按钮 */
       .select-reaction {
         padding: 0;
-        // 两个表情按钮看着怪怪的, 很难受
-        // visibility: visible;
+        /* 两个表情按钮看着怪怪的, 很难受 */
+        /* visibility: visible; */
       }
     }
   }

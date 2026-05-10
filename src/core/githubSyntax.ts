@@ -17,9 +17,10 @@
  * limitations under the License.
  */
 
-import type { Chroma } from "src/types";
+import { type Chroma, type CodeMirror } from "src/types";
+import type { GithubColor } from "./github";
 
-export type prettylightsColor = {
+export type PrettylightsColor = {
   syntax: {
     brackethighlighter: { angle: string; unmatched: string };
     carriage: { return: { bg: string; text: string } };
@@ -49,7 +50,30 @@ export type prettylightsColor = {
   };
 };
 
-export function prettylights2Chroma(prettylights: prettylightsColor): Chroma {
+export type CodeMirrorColor = {
+  syntax: {
+    fgColor: {
+      comment: string;
+      constant: string;
+      entity: string;
+      keyword: string;
+      storage: string;
+      string: string;
+      support: string;
+      variable: string;
+    };
+  };
+  matchingBracket?: {
+    fgColor?: string;
+  };
+};
+
+export type GitHubSyntax = {
+  prettyLights: PrettylightsColor;
+  codeMirror: CodeMirrorColor;
+};
+
+export function prettylights2Chroma(prettylights: PrettylightsColor): Chroma {
   return {
     textWhiteSpace: prettylights.syntax.brackethighlighter.unmatched,
     err: prettylights.syntax.brackethighlighter.unmatched,
@@ -117,6 +141,7 @@ export function prettylights2Chroma(prettylights: prettylightsColor): Chroma {
     operator: {
       self: prettylights.syntax.constant,
       word: prettylights.syntax.constant,
+      reserved: prettylights.syntax.keyword,
     },
     punctuation: prettylights.syntax.markup.bold,
     comment: {
@@ -141,6 +166,46 @@ export function prettylights2Chroma(prettylights: prettylightsColor): Chroma {
       subheading: prettylights.syntax.markup.heading,
       traceback: prettylights.syntax.invalid.illegal.text,
       underline: prettylights.syntax.markup.italic,
+    },
+  };
+}
+
+export function githubSyntax2CodeMirror(githubSyntax: GitHubSyntax, githubColor: GithubColor): CodeMirror {
+  return {
+    token: {
+      keyword: githubSyntax.codeMirror.syntax.fgColor.keyword,
+      atom: githubSyntax.codeMirror.syntax.fgColor.constant,
+      bool: githubSyntax.codeMirror.syntax.fgColor.constant,
+      variableName: githubSyntax.codeMirror.syntax.fgColor.entity,
+      variableName2: githubSyntax.codeMirror.syntax.fgColor.storage,
+      propertyName: githubSyntax.codeMirror.syntax.fgColor.constant,
+      typeName: githubSyntax.codeMirror.syntax.fgColor.variable,
+      className: githubSyntax.codeMirror.syntax.fgColor.variable,
+      namespace: githubSyntax.codeMirror.syntax.fgColor.variable,
+      macroName: githubSyntax.prettyLights.syntax.variable,
+      labelName: githubSyntax.codeMirror.syntax.fgColor.constant,
+      number: githubSyntax.codeMirror.syntax.fgColor.constant,
+      string: githubSyntax.codeMirror.syntax.fgColor.string,
+      string2: githubSyntax.codeMirror.syntax.fgColor.string,
+      operator: githubSyntax.codeMirror.matchingBracket?.fgColor ?? githubColor.fgColor.default,
+      punctuation: githubSyntax.codeMirror.matchingBracket?.fgColor ?? githubColor.fgColor.default,
+      comment: githubSyntax.codeMirror.syntax.fgColor.comment,
+      meta: githubSyntax.codeMirror.syntax.fgColor.support,
+      invalid: githubSyntax.codeMirror.syntax.fgColor.keyword,
+      link: githubSyntax.codeMirror.syntax.fgColor.string,
+      heading: githubSyntax.codeMirror.syntax.fgColor.entity,
+      emphasis: githubSyntax.codeMirror.syntax.fgColor.comment,
+      strong: githubSyntax.codeMirror.syntax.fgColor.comment,
+      inserted: githubSyntax.codeMirror.syntax.fgColor.string,
+      deleted: githubSyntax.codeMirror.syntax.fgColor.keyword,
+    },
+    language: {
+      json: githubSyntax.codeMirror.syntax.fgColor.constant,
+      json5: githubSyntax.codeMirror.syntax.fgColor.constant,
+      yaml: githubSyntax.codeMirror.syntax.fgColor.constant,
+      css: githubSyntax.codeMirror.syntax.fgColor.constant,
+      html: githubSyntax.codeMirror.syntax.fgColor.constant,
+      xml: githubSyntax.codeMirror.syntax.fgColor.constant,
     },
   };
 }

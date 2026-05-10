@@ -6,4 +6,3 @@
 gitea/** linguist-generated
 screenshots/** linguist-vendored
 scripts/** linguist-vendored
-eslint.config.js linguist-vendored

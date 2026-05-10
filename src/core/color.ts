@@ -19,10 +19,9 @@
 
 import { rgba, saturate } from "polished";
 import { scaleColorLight } from "src/functions";
-import type { Ansi, Chroma, Console, Diff, Github, Message, Named, Other, Primary, Secondary } from "src/types";
-import { themeVars } from "src/types/vars";
-import { defaultDarkChroma, defaultLightChroma } from "./chroma";
-import type { Theme } from "./theme";
+import type { Ansi, Console, Diff, Github, Message, Named, Other, Primary, Secondary } from "src/types";
+import { themeVars } from "src/types";
+import type { SyntaxConfig, Theme } from "./theme";
 
 export type ThemeColor = {
   /** 用于标识当前是否为暗色主题: `true` 暗色 `false` 亮色 */
@@ -78,6 +77,10 @@ export type ThemeColor = {
   github: Github;
 };
 
+export type ThemeOptions = {
+  themeColor: ThemeColor;
+} & SyntaxConfig;
+
 /** 定义颜色, 用于生成颜色主题
  * @example
  * 文件名: "dark.css.ts"
@@ -103,7 +106,7 @@ export type ThemeColor = {
  *   github,
  * })
  */
-export function defineTheme(themeColor: ThemeColor, chroma?: Chroma): Theme {
+export function defineTheme({ themeColor, ...syntaxConfig }: ThemeOptions): Theme {
   const brightDir = themeColor.isDarkTheme ? -1 : 1;
 
   const primary: Primary = {
@@ -391,18 +394,21 @@ export function defineTheme(themeColor: ThemeColor, chroma?: Chroma): Theme {
   };
 
   return {
-    isDarkTheme: themeColor.isDarkTheme.toString(),
-    chroma: chroma || (themeColor.isDarkTheme ? defaultDarkChroma : defaultLightChroma),
-    color: {
-      primary,
-      secondary,
-      ...named,
-      ansi,
-      console: themeColor.console,
-      diff: themeColor.diff,
-      ...message,
-      ...themeColor.other,
+    isDarkTheme: themeColor.isDarkTheme,
+    ...syntaxConfig,
+    themeColors: {
+      isDarkTheme: themeColor.isDarkTheme.toString(),
+      color: {
+        primary,
+        secondary,
+        ...named,
+        ansi,
+        console: themeColor.console,
+        diff: themeColor.diff,
+        ...message,
+        ...themeColor.other,
+      },
+      github: themeColor.github,
     },
-    github: themeColor.github,
   };
 }

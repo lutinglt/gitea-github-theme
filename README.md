@@ -35,6 +35,12 @@ accepted.
 
 ## Installation
 
+> [!IMPORTANT]
+>
+> Because the project uses Lightning CSS to transpile CSS nesting code, it will contain a large number of :is()
+> selectors, and browsers below Chrome 88 are not supported. Using browsers below Chrome 88 may cause many styling
+> issues. Please update to Chrome 88 or above.
+
 1. Download the latest CSS theme file from the release page and place it in the `data/gitea/public/assets/css` directory
    (This directory may not be available by default and needs to be manually created)
 2. Modify `data/gitea/conf/app.ini` and append the CSS filename without the `theme-` prefix to the end of `THEMES` under

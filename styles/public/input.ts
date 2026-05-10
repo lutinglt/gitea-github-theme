@@ -17,14 +17,15 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "src/types/vars";
+import { css } from "@linaria/core";
+import { otherThemeVars, themeVars } from "src";
 
 export const input = css`
   textarea,
-  // 排除复选框和单选框
+  /* 排除复选框和单选框 */
   input:not([type=checkbox],[type=radio]),
   .ui.input input:not([type=checkbox],[type=radio]),
-  // 排除可以选择的输入搜索框
+  /* 排除可以选择的输入搜索框 */
   .ui.form input:not([type]):not(.search),
   .ui.form select,
   .ui.form textarea,
@@ -44,9 +45,9 @@ export const input = css`
     padding: 8px 12px;
     &:focus,
     &:focus-visible {
-      background: ${themeVars.color.body} !important;
+      background: ${themeVars.color.body};
       border-color: ${themeVars.github.borderColor.accent.emphasis};
-      // 向内部添加一个 1px 的边框
+      /* 向内部添加一个 1px 的边框 */
       box-shadow: inset 0 0 0 1px ${themeVars.github.borderColor.accent.emphasis};
       outline: none;
     }
@@ -54,19 +55,19 @@ export const input = css`
   .ui.input {
     height: 32px;
   }
-  // 由于输入框高度, 需要输入框在表单中垂直居中
-  // 管理员页面仓库搜索表单
+  /* 由于输入框高度, 需要输入框在表单中垂直居中 */
+  /* 管理员页面仓库搜索表单 */
   .ui.form#repo-search-form {
     align-items: center;
   }
-  // 下拉菜单的输入框
+  /* 下拉菜单的输入框 */
   .ui.dropdown.dropdown .menu > .input {
     margin: 12px 10px;
   }
 `;
 // 复选框和单选框
 export const checkBoxAndRadio = css`
-  // 复选框
+  /* 复选框 */
   input[type="checkbox"],
   .ui.checkbox input[type="checkbox"] {
     background-color: ${themeVars.color.body};
@@ -80,7 +81,7 @@ export const checkBoxAndRadio = css`
       background-color: ${themeVars.github.fgColor.onEmphasis};
     }
   }
-  // 单选框
+  /* 单选框 */
   input[type="radio"],
   .ui.checkbox input[type="radio"] {
     background-color: ${themeVars.color.body};

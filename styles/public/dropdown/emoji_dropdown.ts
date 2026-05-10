@@ -17,7 +17,8 @@
  * limitations under the License.
  */
 
-import { css, themeVars } from "src/types/vars";
+import { css } from "@linaria/core";
+import { themeVars } from "src";
 
 // 包含表情的下拉菜单
 export const emojiDropdown = css`

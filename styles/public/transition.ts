@@ -17,23 +17,23 @@
  * limitations under the License.
  */
 
-import { css } from "src/types/vars";
+import { css } from "@linaria/core";
 
 // 简单的渐变过渡
 export const transition = css`
-  // 差异对比的代码折叠按钮
+  /* 差异对比的代码折叠按钮 */
   .code-expander-button,
-  // 仓库 README 头部的按钮
+  /* 仓库 README 头部的按钮 */
   .file-header-left,
   .file-header-right,
-  // 仪表板仓库列表
+  /* 仪表板仓库列表 */
   .ui.attached.segment.table ul li,
-  // Issue 列表
+  /* Issue 列表 */
   .issue-list-toolbar .item,
   .flex-list#issue-list > .flex-item,
-  // 分页菜单
+  /* 分页菜单 */
   .ui.borderless.pagination.menu .item,
-  // 迁移的元素
+  /* 迁移的元素 */
   #navbar .item,
   .header-wrapper .ui.tabular.menu .item,
   .job-step-summary,
@@ -57,8 +57,8 @@ export const transition = css`
   .ui.secondary.menu .item {
     transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
   }
-  // Gitea 表单元素原始过渡覆盖
-  // 排除复选框和单选框
+  /* Gitea 表单元素原始过渡覆盖 */
+  /* 排除复选框和单选框 */
   input:not([type="checkbox"], [type="radio"]),
   textarea,
   tr,
@@ -77,5 +77,13 @@ export const transition = css`
   .ui.form input[type="file"],
   .ui.form input[type="url"] {
     transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
+  }
+  .ui.button {
+    transition:
+      color 80ms cubic-bezier(0.65, 0, 0.35, 1),
+      fill 80ms cubic-bezier(0.65, 0, 0.35, 1),
+      background-color 80ms cubic-bezier(0.65, 0, 0.35, 1),
+      border-color 80ms cubic-bezier(0.65, 0, 0.35, 1);
+    transition-duration: 80ms;
   }
 `;

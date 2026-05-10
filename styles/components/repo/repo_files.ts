@@ -17,20 +17,21 @@
  * limitations under the License.
  */
 
-import { animationDown } from "src/core/styles";
-import { css, otherThemeVars, themeVars } from "src/types/vars";
+import { css } from "@linaria/core";
+import { otherThemeVars, themeVars } from "src";
+import { animationDown } from "styles/common";
 
 // 文件列表页面下的分支按钮
 export const branchButton = css`
   .page-content.repository.file.list {
     .ui.dropdown.branch-selector-dropdown > .menu > .menu {
-      // 显示默认分支的标签
+      /* 显示默认分支的标签 */
       .ui.label {
         background-color: ${themeVars.color.menu};
         border: 1px solid ${themeVars.color.light.border};
         margin-top: 1px;
         margin-left: auto;
-        margin-right: 20px; // gitea 有 RSS 留出足够的空间
+        margin-right: 20px; /* gitea 有 RSS 留出足够的空间 */
       }
     }
   }
@@ -52,12 +53,12 @@ export const syncFork = css`
 export const fileSearch = css`
   .file-search-popup.file-search-popup.file-search-popup {
     ${animationDown};
-    // 统一所有下拉菜单的样式
+    /* 统一所有下拉菜单的样式 */
     background-color: ${themeVars.color.menu};
     border: unset;
     border-radius: 12px;
     box-shadow: ${themeVars.github.shadow.floating.small};
-    z-index: 2; // 避免文件内容浏览界面中的固定导航栏遮挡
+    z-index: 2; /* 避免文件内容浏览界面中的固定导航栏遮挡 */
     .file-search-results {
       padding: 12px;
       .item {
@@ -82,11 +83,11 @@ export const fileSearch = css`
 `;
 // 仓库文件列表
 export const repoFiles = css`
-  // 文件列表和提交列表的按钮组
+  /* 文件列表和提交列表的按钮组 */
   .repo-button-row {
     margin: 16px 0;
     .repo-button-row-right {
-      // 转到文件搜索框
+      /* 转到文件搜索框 */
       .repo-file-search-container .ui.input {
         min-height: 32px;
         height: 32px;
@@ -94,7 +95,7 @@ export const repoFiles = css`
           background: unset;
         }
       }
-      // 添加文件按钮
+      /* 添加文件按钮 */
       .repo-add-file {
         padding: 0px 26px 0px 12px;
         .menu > .item {
@@ -110,10 +111,10 @@ export const repoFiles = css`
   .repository.file.list {
     #repo-files-table {
       margin: 16px 0;
-      // 头部最后一次提交
+      /* 头部最后一次提交 */
       .repo-file-line {
         padding-right: 16px;
-        // 父目录
+        /* 父目录 */
         &.parent-link {
           gap: 0.5rem;
           padding-left: 16px;
@@ -121,7 +122,7 @@ export const repoFiles = css`
             margin-right: 2px;
           }
         }
-        // 最后一次提交
+        /* 最后一次提交 */
         &.repo-file-last-commit {
           min-height: 3.725rem;
           .latest-commit {
@@ -135,14 +136,14 @@ export const repoFiles = css`
               width: 20px;
               height: 20px;
             }
-            // 作者
+            /* 作者 */
             .author-wrapper {
               display: flex;
               &:hover {
                 color: ${themeVars.color.text.self};
               }
             }
-            // 提交哈希值
+            /* 提交哈希值 */
             .ui.label {
               display: none;
             }
@@ -152,7 +153,7 @@ export const repoFiles = css`
           }
         }
       }
-      // 文件列表
+      /* 文件列表 */
       .repo-file-item {
         .repo-file-cell {
           height: 40px;
@@ -180,7 +181,7 @@ export const repoFiles = css`
         .file-header-left {
           padding: 6px 8px !important;
           line-height: 1.45;
-          // 伪元素宽度等于按钮宽度而不是父元素宽度
+          /* 伪元素宽度等于按钮宽度而不是父元素宽度 */
           position: relative;
           &:hover {
             background: ${themeVars.github.control.transparent.bgColor.hover};

@@ -17,13 +17,14 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "src/types/vars";
+import { css } from "@linaria/core";
+import { otherThemeVars, themeVars } from "src";
 
 // 仓库 Actions 页面
 export const actions = css`
-  // 避免锚中设置界面里的 Actions
+  /* 避免锚中设置界面里的 Actions */
   .page-content.repository.actions:not(.settings) .flex-container {
-    // Actions 列表
+    /* Actions 列表 */
     .flex-container-nav:before {
       content: "Actions";
       display: block;
@@ -32,9 +33,9 @@ export const actions = css`
       margin-top: 6px;
       margin-bottom: 8px;
     }
-    // 工作流列表
+    /* 工作流列表 */
     .flex-container-main {
-      // 工作流列表标题栏菜单
+      /* 工作流列表标题栏菜单 */
       .ui.top.attached.header {
         padding: 16px;
         &:has(+ .ui.info.attached.message) {
@@ -44,17 +45,17 @@ export const actions = css`
           color: ${themeVars.color.text.light.num1};
         }
       }
-      // 事件触发器
+      /* 事件触发器 */
       .ui.info.attached.message {
         padding: 18px 16px;
-        // 事件触发器按钮
+        /* 事件触发器按钮 */
         .ui.mini.button {
           padding: 3px 12px;
           min-height: 27px;
           font-size: 12px;
         }
       }
-      // 工作流列表
+      /* 工作流列表 */
       .ui.attached.segment {
         padding: 0;
         border: 0;
@@ -65,7 +66,7 @@ export const actions = css`
           border-top: 0;
           font-size: 12px;
 
-          // 分支标签按钮
+          /* 分支标签按钮 */
           .run-list-ref {
             background-color: ${themeVars.github.bgColor.accent.muted};
             color: ${themeVars.github.fgColor.accent};
@@ -78,7 +79,7 @@ export const actions = css`
               text-decoration-line: underline !important;
             }
           }
-          // 标签右侧任务信息
+          /* 标签右侧任务信息 */
           .run-list-item-right {
             color: ${themeVars.color.text.light.num1};
           }
@@ -132,11 +133,11 @@ export const label = css`
 export const runWorkflow = css`
   #runWorkflowDispatchForm {
     font-size: 12px;
-    // 描述类标签
+    /* 描述类标签 */
     .ui.field label {
       font-weight: 600;
     }
-    // use workflow from 描述
+    /* use workflow from 描述 */
     .ui.inline.field {
       > :first-child {
         margin-right: 8px;
@@ -145,7 +146,7 @@ export const runWorkflow = css`
         margin-right: 0;
       }
     }
-    // 分支选择按钮
+    /* 分支选择按钮 */
     .ui.dropdown.button.branch-selector-dropdown {
       padding: 3px 21px 3px 12px;
       min-height: 27px;
@@ -159,7 +160,7 @@ export const runWorkflow = css`
       .ui.field > label {
         margin-bottom: 6px;
       }
-      // 运行工作流按钮
+      /* 运行工作流按钮 */
       .ui.tiny.button {
         padding: 0px 8px;
         min-height: 27px;

@@ -17,9 +17,10 @@
  * limitations under the License.
  */
 
-import { animationDown } from "src/core/styles";
-import { fallbackVar } from "src/functions";
-import { css, customThemeVars, otherThemeVars, themeVars } from "src/types/vars";
+import { css } from "@linaria/core";
+import { fallbackVar } from "@vanilla-extract/css";
+import { customThemeVars, otherThemeVars, themeVars } from "src";
+import { animationDown } from "styles/common";
 
 // 分支菜单
 export const branchDropdown = css`
@@ -30,7 +31,7 @@ export const branchDropdown = css`
       ${animationDown};
       height: 32px;
     }
-    // 分支/标签切换
+    /* 分支/标签切换 */
     > .branch-tag-tab {
       > .branch-tag-item {
         font-weight: 500;
@@ -61,7 +62,7 @@ export const branchDropdown = css`
 // 手机页面下的分支菜单
 export const branchDropdownMobile = css`
   @media (max-width: 767.98px) {
-    // 修复手机下分支菜单宽度过宽
+    /* 修复手机下分支菜单宽度过宽 */
     .ui.dropdown.branch-selector-dropdown > .menu {
       width: auto;
     }

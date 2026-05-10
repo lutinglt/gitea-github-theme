@@ -17,11 +17,15 @@
  * limitations under the License.
  */
 
-import type { MapLeafNodes } from "src/core/types";
-import * as color from "./color";
+import type { MapLeafNodes } from "src/core";
+import color from "./color";
 
-/** 代码高亮色 */
+/** GitHub 预览代码高亮色 */
 export type Chroma = MapLeafNodes<typeof color.chroma, string>;
+/** GitHub 编辑代码高亮色 */
+export type CodeMirror = MapLeafNodes<typeof color.codeMirror, string>;
+/** Gitea 代码高亮色 */
+export type Syntax = MapLeafNodes<typeof color.syntax, string>;
 /** 主色调(强调色) */
 export type Primary = MapLeafNodes<typeof color.primary, string>;
 /** 副色调(边框色) */
@@ -40,3 +44,5 @@ export type Diff = MapLeafNodes<typeof color.diff, string>;
 export type Other = MapLeafNodes<typeof color.other, string>;
 /** 仅限本主题的 Github 颜色 */
 export type Github = MapLeafNodes<typeof color.github, string>;
+
+export { chromaVars, codeMirrorVars, customThemeVars, otherThemeVars, syntaxVars, themeVars } from "./vars";

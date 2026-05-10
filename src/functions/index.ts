@@ -18,4 +18,4 @@
  */
 
 export { scaleColorLight } from "./scss";
-export { extractVarName, fallbackVar } from "./var";
+export { extractVarName } from "./var";

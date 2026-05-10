@@ -17,11 +17,12 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "src/types/vars";
+import { css } from "@linaria/core";
+import { otherThemeVars, themeVars } from "src";
 
 export const text = css`
-  // 默认颜色是 --color-text-light, 主题下此颜色是亮白色, 修改为灰色
-  // release 页面下一些描述信息的文本颜色
+  /* 默认颜色是 --color-text-light, 主题下此颜色是亮白色, 修改为灰色 */
+  /* release 页面下一些描述信息的文本颜色 */
   .tw-text-text-light {
     color: ${themeVars.color.text.light.num1} !important;
   }
@@ -35,26 +36,26 @@ export const listHeader = css`
 `;
 
 export const svg = css`
-  // 已标星的图标
+  /* 已标星的图标 */
   .octicon-star-fill {
     color: ${themeVars.github.button.star.iconColor} !important;
   }
-  // VSCode 图标
+  /* VSCode 图标 */
   .gitea-vscode {
     color: #007acc !important;
   }
-  // VSCodium 图标
+  /* VSCodium 图标 */
   .gitea-vscodium {
     color: #429cf0 !important;
   }
-  // 重新打开工单按钮设置为绿色
+  /* 重新打开工单按钮设置为绿色 */
   .tw-text-green {
     .octicon-issue-reopened,
     &.octicon-issue-reopened {
       color: ${themeVars.github.fgColor.success} !important;
     }
   }
-  // 关闭工单按钮设置为紫色
+  /* 关闭工单按钮设置为紫色 */
   .tw-text-red {
     .octicon-issue-closed,
     &.octicon-issue-closed {
@@ -91,11 +92,11 @@ export const toggle = css`
         bottom: 1.5px;
       }
     }
-    // 滑块在左
+    /* 滑块在左 */
     input ~ label:after {
       left: 1.5px;
     }
-    // 滑块在右
+    /* 滑块在右 */
     input:checked ~ label:after {
       left: 19.5px;
     }

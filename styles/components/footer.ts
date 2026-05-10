@@ -17,7 +17,8 @@
  * limitations under the License.
  */
 
-import { css, themeVars } from "src/types/vars";
+import { css } from "@linaria/core";
+import { themeVars } from "src";
 
 export const footer = css`
   .page-footer {
@@ -60,11 +61,11 @@ export const footer = css`
           color: ${themeVars.color.primary.self};
         }
       }
-      // 主题按钮&菜单项
+      /* 主题按钮&菜单项 */
       .ui.dropdown .theme-menu-item {
         gap: 4px;
       }
-      // 主题菜单
+      /* 主题菜单 */
       .menu.theme-menu > .item > .theme-menu-item {
         padding: 0;
       }

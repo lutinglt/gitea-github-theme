@@ -17,7 +17,8 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "src/types/vars";
+import { css } from "@linaria/core";
+import { otherThemeVars, themeVars } from "src";
 
 export const commitSignBadge = css`
   a.ui.label.commit-id-short.github-theme-commit-sha {
@@ -42,7 +43,7 @@ export const commitSignBadge = css`
       font-weight: 500;
       padding: 0px 8px;
       height: 26px;
-      min-width: 85px; // 非等宽字体导致不对齐, 目前看到最大长度为 83px
+      min-width: 85px; /* 非等宽字体导致不对齐, 目前看到最大长度为 83px */
       display: flex;
       align-items: center;
       justify-content: center;

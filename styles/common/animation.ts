@@ -17,29 +17,27 @@
  * limitations under the License.
  */
 
-/**
- * @author lutinglt
- */
+import type { StyleRule } from "@vanilla-extract/css";
+import { selectors } from "src";
 
-import { defineTheme } from "src";
-import { display2GithubColor, type DisplayColor } from "src/core/display";
-import { github2ThemeColor } from "src/core/github";
-import { darkGithubColors } from "themes/dark";
+// 出现动画
+export const animation = {
+  animation: selectors.overlayAppear,
+  animationDuration: "80ms",
+  animationFillMode: "forwards",
+  animationTimingFunction: "ease-in",
+} satisfies StyleRule;
 
-export const pinkDarkDisplayColors: DisplayColor = {
-  num0: "#2d1524",
-  num1: "#451c35",
-  num2: "#65244a",
-  num3: "#842a5d",
-  num4: "#ac2f74",
-  num5: "#d34591",
-  num6: "#e57bb2",
-  num7: "#ec8dbd",
-  num8: "#f4a9cd",
-  num9: "#f9bed9",
-};
+// 向下出现动画
+export const animationDown = {
+  animation: selectors.overlayAppearDown,
+  animationDuration: "200ms",
+  animationTimingFunction: "cubic-bezier(0.33, 1, 0.68, 1)",
+} satisfies StyleRule;
 
-export const pinkDarkGithubColors = display2GithubColor(pinkDarkDisplayColors, darkGithubColors);
-export const pinkDarkColors = github2ThemeColor(pinkDarkGithubColors);
-
-export default defineTheme(pinkDarkColors);
+// 向上出现动画
+export const animationUp = {
+  animation: selectors.overlayAppearUp,
+  animationDuration: "200ms",
+  animationTimingFunction: "cubic-bezier(0.33, 1, 0.68, 1)",
+} satisfies StyleRule;

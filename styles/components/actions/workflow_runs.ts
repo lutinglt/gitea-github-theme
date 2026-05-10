@@ -17,13 +17,14 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "src/types/vars";
+import { css } from "@linaria/core";
+import { otherThemeVars, themeVars } from "src";
 
 // 工作流详情页标题
 export const actionViewHeader = css`
   .action-view-header {
     .action-commit-summary {
-      // yml 文件名
+      /* yml 文件名 */
       > span:first-child {
         color: ${themeVars.github.fgColor.accent};
         b {
@@ -33,15 +34,15 @@ export const actionViewHeader = css`
       a:hover {
         text-decoration: inherit;
       }
-      // 提交哈希
+      /* 提交哈希 */
       > a.muted:first-of-type {
         text-decoration: underline;
       }
-      // 提交作者
+      /* 提交作者 */
       > a.muted:last-of-type {
         font-weight: 600;
       }
-      // 分支标签按钮
+      /* 分支标签按钮 */
       .ui.ui.ui.label {
         background-color: ${themeVars.github.bgColor.accent.muted};
         border-radius: ${otherThemeVars.border.radius};
@@ -66,7 +67,7 @@ export const actionViewLeft = css`
       font-weight: 600;
       margin-left: 0.5rem;
     }
-    // 双重确保覆盖原始样式
+    /* 双重确保覆盖原始样式 */
     .job-brief-item.job-brief-item {
       border-radius: ${otherThemeVars.border.radius} !important;
       padding: 8px;
@@ -88,12 +89,12 @@ export const actionViewLeft = css`
           width: 4px;
         }
       }
-      // 状态图标
+      /* 状态图标 */
       a > span:first-child {
         display: flex;
         align-items: center;
       }
-      // 默认隐藏重新运行按钮
+      /* 默认隐藏重新运行按钮 */
       a > svg.link-action {
         display: none;
         color: ${themeVars.color.console.fg.subtle} !important;
@@ -101,17 +102,17 @@ export const actionViewLeft = css`
           color: ${themeVars.color.text.self} !important;
         }
       }
-      // 运行时长
+      /* 运行时长 */
       a > span:last-child {
         color: ${themeVars.color.console.fg.subtle};
         font-size: 12px;
       }
-      // 鼠标移入时显示重新运行按钮
+      /* 鼠标移入时显示重新运行按钮 */
       &:hover a > svg.link-action {
         display: inline-block;
       }
     }
-    // Run Details 列表
+    /* Run Details 列表 */
     .ui.relaxed.list:last-of-type {
       padding: 0;
       .item {

@@ -17,21 +17,22 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "src/types/vars";
+import { css } from "@linaria/core";
+import { otherThemeVars, themeVars } from "src";
 
 // 仓库头信息
 export const repoHeader = css`
   .page-content.repository .repo-header {
-    // 点星/关注/克隆/RSS 按钮
+    /* 点星/关注/克隆/RSS 按钮 */
     .ui.compact.button {
       padding: 3px 12px;
     }
-    // 仓库名称
+    /* 仓库名称 */
     .flex-item {
       .flex-item-title {
-        // 间隔线颜色
+        /* 间隔线颜色 */
         color: ${themeVars.color.text.light.num1};
-        // 仓库名称
+        /* 仓库名称 */
         a {
           display: flex;
           align-items: center;
@@ -51,7 +52,7 @@ export const repoHeader = css`
           }
         }
       }
-      // 默认的 hover 为 primary 颜色, 修正
+      /* 默认的 hover 为 primary 颜色, 修正 */
       a:not(.label, .button):hover {
         color: ${themeVars.color.text.self} !important;
       }
@@ -66,7 +67,7 @@ export const repoMenu = css`
       background-color: ${themeVars.color.box.header};
       .item {
         color: ${themeVars.color.text.light.num1};
-        height: 31px; // 文件列表下与右侧输入框对齐
+        height: 31px; /* 文件列表下与右侧输入框对齐 */
         b {
           color: ${themeVars.color.text.self};
           margin: 0 2px;
@@ -85,10 +86,10 @@ export const repoMenu = css`
 `;
 
 export const repoTopic = css`
-  // 理应只能覆盖探索/组织/用户下仓库的 topic 标签
-  // 避免渲染到仓库的类型标签
+  /* 理应只能覆盖探索/组织/用户下仓库的 topic 标签 */
+  /* 避免渲染到仓库的类型标签 */
   .flex-item-main > .label-list .ui.label,
-  // 仓库文件列表下的 topic 标签
+  /* 仓库文件列表下的 topic 标签 */
   #repo-topics .ui.label.repo-topic {
     border-radius: 9999px;
     font-size: 12px;

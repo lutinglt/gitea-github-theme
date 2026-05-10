@@ -17,17 +17,16 @@
  * limitations under the License.
  */
 
-import { css, themeVars } from "src/types/vars";
+import type { StyleRule } from "@vanilla-extract/css";
 
-export const monaco = css`
-  .monaco-editor {
-    --vscode-editor-background: ${themeVars.color.body} !important;
-    --vscode-editorGutter-background: ${themeVars.color.body} !important;
-    // 滚动时固定在顶部的行
-    .sticky-widget {
-      background: ${themeVars.color.body} !important;
-      box-shadow: 0 1px 0 ${themeVars.color.secondary.self} !important;
-      width: 100% !important;
-    }
-  }
-`;
+/** 基本标签样式 */
+export const labelStyle = {
+  padding: "0px 6px",
+} satisfies StyleRule;
+
+/** bot 标签样式 */
+export const botLabelStyle = {
+  height: "20px",
+  padding: "0 6px !important",
+  marginLeft: "4px",
+} satisfies StyleRule;

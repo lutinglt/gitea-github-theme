@@ -17,7 +17,8 @@
  * limitations under the License.
  */
 
-import { css, themeVars } from "src/types/vars";
+import { css } from "@linaria/core";
+import { themeVars } from "src";
 
 // 任务状态标签, 目前仅在管理员页面 Runner 状态中看到
 export const taskStatusLabel = css`

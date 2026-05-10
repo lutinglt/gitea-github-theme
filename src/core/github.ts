@@ -20,8 +20,7 @@
 import { saturate } from "polished";
 import type { Console, Diff, Other } from "src";
 import { scaleColorLight } from "src/functions";
-import type { Github } from "src/types";
-import { themeVars } from "src/types/vars";
+import { themeVars, type Github } from "src/types";
 import { type ThemeColor } from "./color";
 
 export type GithubColor = {
@@ -90,6 +89,8 @@ export type GithubColor = {
     bgColor: { active: string; hover: string; rest: string };
     transparent: { bgColor: { active: string; hover: string; selected: string } };
   };
+  controlTrack: { bgColor: { rest: string } };
+  controlKnob: { bgColor: { rest: string } };
   shadow: { floating: { small: string }; inset: string; resting: { small: string; medium: string } };
   overlay: { backdrop: { bgColor: string }; bgColor: string };
   underlineNav: { borderColor: { active: string } };
@@ -103,53 +104,30 @@ export type GithubColor = {
 
 export function github2ThemeColor(githubColor: GithubColor): ThemeColor {
   const console: Console = {
-    fg: {
-      self: githubColor.fgColor.default,
-      subtle: githubColor.fgColor.muted,
-    },
+    fg: { self: githubColor.fgColor.default, subtle: githubColor.fgColor.muted },
     bg: githubColor.bgColor.inset,
     border: githubColor.borderColor.muted,
     activeBg: githubColor.control.bgColor.active,
     hoverBg: githubColor.control.transparent.bgColor.hover,
-    menu: {
-      bg: githubColor.overlay.bgColor,
-      border: githubColor.borderColor.muted,
-    },
+    menu: { bg: githubColor.overlay.bgColor, border: githubColor.borderColor.muted },
     link: githubColor.fgColor.muted,
   };
 
   const diff: Diff = {
     added: {
       fg: githubColor.bgColor.success.emphasis,
-      linenum: {
-        bg: githubColor.diffBlob.addtionNum.bgColor,
-      },
-      row: {
-        bg: githubColor.bgColor.success.muted,
-        border: githubColor.bgColor.success.muted,
-      },
-      word: {
-        bg: githubColor.diffBlob.addtionWord.bgColor,
-      },
+      linenum: { bg: githubColor.diffBlob.addtionNum.bgColor },
+      row: { bg: githubColor.bgColor.success.muted, border: githubColor.bgColor.success.muted },
+      word: { bg: githubColor.diffBlob.addtionWord.bgColor },
     },
     removed: {
       fg: githubColor.bgColor.danger.emphasis,
-      linenum: {
-        bg: githubColor.diffBlob.deletionNum.bgColor,
-      },
-      row: {
-        bg: githubColor.bgColor.danger.muted,
-        border: githubColor.bgColor.danger.muted,
-      },
-      word: {
-        bg: githubColor.diffBlob.deletionWord.bgColor,
-      },
+      linenum: { bg: githubColor.diffBlob.deletionNum.bgColor },
+      row: { bg: githubColor.bgColor.danger.muted, border: githubColor.bgColor.danger.muted },
+      word: { bg: githubColor.diffBlob.deletionWord.bgColor },
     },
     moved: {
-      row: {
-        bg: githubColor.bgColor.attention.muted,
-        border: githubColor.bgColor.attention.muted,
-      },
+      row: { bg: githubColor.bgColor.attention.muted, border: githubColor.bgColor.attention.muted },
     },
     inactive: githubColor.bgColor.muted,
   };
@@ -159,10 +137,7 @@ export function github2ThemeColor(githubColor: GithubColor): ThemeColor {
     body: githubColor.bgColor.default,
     box: {
       header: githubColor.bgColor.muted,
-      body: {
-        self: themeVars.color.body,
-        highlight: githubColor.bgColor.accent.muted,
-      },
+      body: { self: themeVars.color.body, highlight: githubColor.bgColor.accent.muted },
     },
     text: {
       self: githubColor.fgColor.default,
@@ -182,48 +157,26 @@ export function github2ThemeColor(githubColor: GithubColor): ThemeColor {
       toggleBackgound: githubColor.bgColor.inset,
       border: themeVars.color.light.border,
     },
-    light: {
-      self: themeVars.color.body,
-      border: githubColor.borderColor.default,
-    },
-    hover: {
-      self: githubColor.control.bgColor.hover,
-      opaque: themeVars.color.box.header,
-    },
+    light: { self: themeVars.color.body, border: githubColor.borderColor.default },
+    hover: { self: githubColor.control.bgColor.hover, opaque: themeVars.color.box.header },
     active: githubColor.control.transparent.bgColor.selected,
     menu: githubColor.overlay.bgColor,
     card: themeVars.color.body,
     markup: {
       tableRow: githubColor.bgColor.muted,
-      code: {
-        block: githubColor.bgColor.muted,
-        inline: githubColor.bgColor.neutral.muted,
-      },
+      code: { block: githubColor.bgColor.muted, inline: githubColor.bgColor.neutral.muted },
     },
     button: githubColor.control.bgColor.rest,
     codeBg: "unset",
-    shadow: {
-      self: githubColor.shadow.floating.small,
-      opaque: themeVars.color.shadow.self,
-    },
+    shadow: { self: githubColor.shadow.floating.small, opaque: themeVars.color.shadow.self },
     secondaryBg: "unset",
     expandButton: githubColor.diffBlob.hunkNum.bgColor.rest,
     placeholderText: themeVars.color.text.light.num3,
-    editor: {
-      lineHighlight: themeVars.color.primary.light.num5,
-      selection: themeVars.color.editor.lineHighlight,
-    },
+    editor: { lineHighlight: themeVars.color.secondary.light.num1, selection: themeVars.color.editor.lineHighlight },
     projectColumnBg: githubColor.bgColor.inset,
     caret: themeVars.color.text.dark,
-    reaction: {
-      bg: "initial",
-      hoverBg: githubColor.bgColor.accent.muted,
-      activeBg: githubColor.bgColor.accent.muted,
-    },
-    tooltip: {
-      text: githubColor.fgColor.onEmphasis,
-      bg: githubColor.bgColor.emphasis,
-    },
+    reaction: { bg: "initial", hoverBg: githubColor.bgColor.accent.muted, activeBg: githubColor.bgColor.accent.muted },
+    tooltip: { text: githubColor.fgColor.onEmphasis, bg: githubColor.bgColor.emphasis },
     nav: {
       bg: githubColor.bgColor.inset,
       hoverBg: githubColor.control.transparent.bgColor.hover,
@@ -238,26 +191,15 @@ export function github2ThemeColor(githubColor: GithubColor): ThemeColor {
     },
     accent: themeVars.color.primary.light.num1,
     smallAccent: themeVars.color.primary.light.num5,
-    highlight: {
-      fg: githubColor.fgColor.attention,
-      bg: githubColor.bgColor.attention.muted,
-    },
+    highlight: { fg: githubColor.fgColor.attention, bg: githubColor.bgColor.attention.muted },
     overlayBackdrop: githubColor.overlay.backdrop.bgColor,
     danger: themeVars.color.red.self,
-    transparency: {
-      grid: {
-        light: "#ffffff",
-        dark: "#e5e5e5",
-      },
-    },
+    transparency: { grid: { light: "#ffffff", dark: "#e5e5e5" } },
     workflowEdgeHover: githubColor.bgColor.accent.emphasis,
   };
 
   const github: Github = {
-    avatar: {
-      bgColor: githubColor.avatar.bgColor,
-      borderColor: githubColor.avatar.borderColor,
-    },
+    avatar: { bgColor: githubColor.avatar.bgColor, borderColor: githubColor.avatar.borderColor },
     fgColor: {
       accent: githubColor.fgColor.accent,
       success: githubColor.fgColor.success,
@@ -265,47 +207,22 @@ export function github2ThemeColor(githubColor: GithubColor): ThemeColor {
       onEmphasis: githubColor.fgColor.onEmphasis,
     },
     bgColor: {
-      accent: {
-        emphasis: githubColor.bgColor.accent.emphasis,
-        muted: githubColor.bgColor.accent.muted,
-      },
-      success: {
-        emphasis: githubColor.bgColor.success.emphasis,
-      },
-      attention: {
-        emphasis: githubColor.bgColor.attention.emphasis,
-      },
-      danger: {
-        emphasis: githubColor.bgColor.danger.emphasis,
-      },
-      done: {
-        emphasis: githubColor.bgColor.done.emphasis,
-      },
-      neutral: {
-        emphasis: githubColor.bgColor.neutral.emphasis,
-      },
+      accent: { emphasis: githubColor.bgColor.accent.emphasis, muted: githubColor.bgColor.accent.muted },
+      success: { emphasis: githubColor.bgColor.success.emphasis },
+      attention: { emphasis: githubColor.bgColor.attention.emphasis },
+      danger: { emphasis: githubColor.bgColor.danger.emphasis },
+      done: { emphasis: githubColor.bgColor.done.emphasis },
+      neutral: { emphasis: githubColor.bgColor.neutral.emphasis },
     },
     borderColor: {
-      accent: {
-        emphasis: githubColor.borderColor.accent.emphasis,
-      },
-      attention: {
-        emphasis: githubColor.borderColor.attention.emphasis,
-      },
-      success: {
-        emphasis: githubColor.borderColor.success.emphasis,
-      },
-      done: {
-        emphasis: githubColor.borderColor.done.emphasis,
-      },
+      accent: { emphasis: githubColor.borderColor.accent.emphasis },
+      attention: { emphasis: githubColor.borderColor.attention.emphasis },
+      success: { emphasis: githubColor.borderColor.success.emphasis },
+      done: { emphasis: githubColor.borderColor.done.emphasis },
       emphasis: githubColor.borderColor.emphasis,
     },
     button: {
-      default: {
-        bgColor: {
-          active: githubColor.control.bgColor.active,
-        },
-      },
+      default: { bgColor: { active: githubColor.control.bgColor.active } },
       primary: {
         fgColor: {
           accent: saturate(
@@ -319,39 +236,25 @@ export function github2ThemeColor(githubColor: GithubColor): ThemeColor {
           hover: githubColor.button.primary.bgColor.hover,
           active: githubColor.button.primary.bgColor.active,
         },
-        borderColor: {
-          rest: githubColor.borderColor.translucent,
-          hover: githubColor.borderColor.translucent,
-        },
+        borderColor: { rest: githubColor.borderColor.translucent, hover: githubColor.borderColor.translucent },
       },
       danger: {
-        fgColor: {
-          rest: githubColor.button.danger.fgColor.rest,
-          hover: githubColor.button.danger.fgColor.hover,
-        },
+        fgColor: { rest: githubColor.button.danger.fgColor.rest, hover: githubColor.button.danger.fgColor.hover },
         bgColor: {
           rest: githubColor.control.bgColor.rest,
           hover: githubColor.button.danger.bgColor.hover,
           active: githubColor.button.danger.bgColor.active,
         },
-        borderColor: {
-          hover: githubColor.borderColor.translucent,
-        },
+        borderColor: { hover: githubColor.borderColor.translucent },
       },
-      star: {
-        iconColor: githubColor.button.star.iconColor,
-      },
+      star: { iconColor: githubColor.button.star.iconColor },
     },
     control: {
-      bgColor: {
-        rest: githubColor.control.bgColor.rest,
-      },
-      transparent: {
-        bgColor: {
-          hover: githubColor.control.transparent.bgColor.hover,
-        },
-      },
+      bgColor: { rest: githubColor.control.bgColor.rest },
+      transparent: { bgColor: { hover: githubColor.control.transparent.bgColor.hover } },
     },
+    controlTrack: { bgColor: { rest: githubColor.controlTrack.bgColor.rest } },
+    controlKnob: { bgColor: { rest: githubColor.controlKnob.bgColor.rest } },
     shadow: {
       floating: {
         small: `0px 0px 0px 1px ${themeVars.color.light.border}, 0px 6px 12px -3px ${themeVars.color.shadow.self}, 0px 6px 18px 0px ${themeVars.color.shadow.self};`,
@@ -363,11 +266,7 @@ export function github2ThemeColor(githubColor: GithubColor): ThemeColor {
         medium: `drop-shadow(0 1px 1px ${githubColor.shadow.floating.small}) drop-shadow(0 3px 6px ${githubColor.shadow.resting.medium})`,
       },
     },
-    underlineNav: {
-      borderColor: {
-        active: githubColor.underlineNav.borderColor.active,
-      },
-    },
+    underlineNav: { borderColor: { active: githubColor.underlineNav.borderColor.active } },
     contribution: {
       default: {
         bgColor: {

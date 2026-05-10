@@ -17,8 +17,9 @@
  * limitations under the License.
  */
 
-import { animationDown } from "src/core/styles";
-import { css, themeVars } from "src/types/vars";
+import { css } from "@linaria/core";
+import { themeVars } from "src";
+import { animationDown } from "styles/common";
 
 // 工作流右侧作业步骤日志详情
 export const actionViewRight = css`
@@ -26,7 +27,7 @@ export const actionViewRight = css`
     box-shadow: ${themeVars.github.shadow.resting.small};
     /* 提前加载高度和滚动条 */
     min-height: calc(100vh - 245px);
-    // 作业详情页标题
+    /* 作业详情页标题 */
     .job-info-header {
       padding: 16px 12px 16px 24px !important;
       height: 80px !important;
@@ -59,14 +60,14 @@ export const actionViewRight = css`
       padding: 8px;
       .job-step-section {
         margin: 0 4px 4px;
-        // 步骤标题, 双重确保覆盖原始样式
+        /* 步骤标题, 双重确保覆盖原始样式 */
         .job-step-summary.job-step-summary {
           color: ${themeVars.color.console.fg.subtle};
           padding: 8px !important;
           height: 36px;
 
           &.selected {
-            // 滚动时固定在顶部的高度与 job-info-header 高度相同
+            /* 滚动时固定在顶部的高度与 job-info-header 高度相同 */
             top: 80px;
           }
 
@@ -91,25 +92,25 @@ export const actionViewRight = css`
               color: ${themeVars.color.console.fg.self} !important;
             }
           }
-          // 步骤耗时
+          /* 步骤耗时 */
           .step-summary-duration {
             font-size: 12px;
             font-family: var(--fonts-monospace);
           }
         }
-        // 步骤日志
+        /* 步骤日志 */
         .job-step-logs {
           ${animationDown};
           /* 日志字体颜色白色 */
           .job-log-line {
             color: ${themeVars.color.console.fg.self};
-            // 日志
+            /* 日志 */
             .log-msg:hover {
-              //被 hover 时覆盖 ANSI 颜色
+              /*被 hover 时覆盖 ANSI 颜色 */
               * {
                 color: ${themeVars.color.console.fg.self};
               }
-              // 日志超链接
+              /* 日志超链接 */
               a:hover {
                 color: ${themeVars.color.primary.self} !important;
               }

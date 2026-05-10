@@ -17,7 +17,8 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars } from "src/types/vars";
+import { css } from "@linaria/core";
+import { otherThemeVars } from "src";
 
 // 全部圆角替换
 export const radius = css`
@@ -45,7 +46,7 @@ export const radius = css`
 
   .ui.input {
     textarea,
-    // 排除复选框和单选框
+    /* 排除复选框和单选框 */
     input:not([type=checkbox],[type=radio]) {
       border-radius: ${otherThemeVars.border.radius};
     }
@@ -97,7 +98,7 @@ export const radiusImportant = css`
   .ui.secondary.vertical.menu > .item {
     border-radius: ${otherThemeVars.border.radius} !important;
   }
-  // 目前为仓库列表/探索的二级菜单, 改版需要替换为全圆角
+  /* 目前为仓库列表/探索的二级菜单, 改版需要替换为全圆角 */
   .ui.secondary.tabular.menu .item {
     border-radius: ${otherThemeVars.border.radius} !important;
     &.active,
@@ -272,8 +273,7 @@ export const radiusBottomRight = css`
 
 // only-child 顺序最后生效
 export const onlyChild = css`
-  .ui.vertical.menu > .active.item:only-child,
-  .ui.segments:not(.horizontal) > .segment:only-child {
+  :is(.ui.vertical.menu > .active.item:only-child, .ui.segments:not(.horizontal) > .segment:only-child) {
     border-radius: ${otherThemeVars.border.radius};
   }
 
@@ -293,12 +293,12 @@ export const onlyChild = css`
 
 // 修复一些情况下圆角边框线被覆盖的问题
 export const fixRadius = css`
-  // 评论列表标题
+  /* 评论列表标题 */
   .repository.view.issue .comment-list .comment > .content > div:first-child {
     border-top-left-radius: ${otherThemeVars.border.radius};
     border-top-right-radius: ${otherThemeVars.border.radius};
   }
-  // 评论列表内容
+  /* 评论列表内容 */
   .repository.view.issue .comment-list .comment > .content > div:last-child {
     border-bottom-left-radius: ${otherThemeVars.border.radius};
     border-bottom-right-radius: ${otherThemeVars.border.radius};
@@ -307,7 +307,7 @@ export const fixRadius = css`
 
 // 修复一些根本无法理解的生效顺序
 export const fixWhyRadius = css`
-  // Issue 菜单第一个按钮
+  /* Issue 菜单第一个按钮 */
   .ui.secondary.menu .item {
     border-radius: ${otherThemeVars.border.radius};
   }

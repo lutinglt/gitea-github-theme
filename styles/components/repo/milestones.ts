@@ -17,24 +17,25 @@
  * limitations under the License.
  */
 
-import { css, themeVars } from "src/types/vars";
+import { css } from "@linaria/core";
+import { themeVars } from "src";
 
 export const milestone = css`
-  // 里程碑头部
+  /* 里程碑头部 */
   .milestone-header {
     gap: 16px;
-    // 进度条
+    /* 进度条 */
     progress {
       height: 5px;
       width: 300px;
       max-width: 80vw;
     }
   }
-  // 里程碑 Issue 列表的进度条
+  /* 里程碑 Issue 列表的进度条 */
   .milestone-progress-big {
     height: 8px;
   }
-  // 里程碑 Issue 列表
+  /* 里程碑 Issue 列表 */
   .page-content.repository.milestone-issue-list {
     > .ui.container {
       > .flex-text-block:first-child {

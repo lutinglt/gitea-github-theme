@@ -17,18 +17,19 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "src/types/vars";
+import { css } from "@linaria/core";
+import { otherThemeVars, themeVars } from "src";
 
 export const repoFileLastCommit = css`
-  // 仓库页和文件列表文件夹页的最后一次提交
+  /* 仓库页和文件列表文件夹页的最后一次提交 */
   .repository.file.list #repo-files-table .github-theme-templates.repo-file-line.repo-file-last-commit {
     padding-right: 10px;
-    // 提交时间
+    /* 提交时间 */
     .github-latest-time {
       color: ${themeVars.color.text.light.num1};
       font-size: 12px;
     }
-    // 提交历史按钮
+    /* 提交历史按钮 */
     .github-latest-commit {
       display: inline-flex;
       align-items: center;

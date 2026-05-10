@@ -17,34 +17,40 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "src/types/vars";
-import { labelStyle } from "styles/public/label/label";
+import { css } from "@linaria/core";
+import { otherThemeVars, themeVars } from "src";
+import { labelStyle } from "styles/common";
 
 export const dashboard = css`
   .page-content.dashboard {
-    // 仪表板切换控制用户按钮
+    /* 仪表板切换控制用户按钮 */
     .ui.dropdown .menu.context-user-switch .scrolling.menu {
-      animation: none; // 去掉嵌套菜单导致的多余动画
+      animation: none; /* 去掉嵌套菜单导致的多余动画 */
       box-shadow: 0px 0px 0px 1px ${themeVars.color.light.border} !important;
     }
   }
-  // 首页仪表板, 避免选中管理员后台的维护管理面板
+  /* 首页仪表板, 避免选中管理员后台的维护管理面板 */
   .page-content.dashboard.feeds {
-    // 仓库列表的仓库/组织切换按钮
+    /* 仓库列表的仓库/组织切换按钮 */
     .ui.two.item.menu {
-      background: ${themeVars.color.hover.self};
+      background: ${themeVars.github.controlTrack.bgColor.rest};
       border: 0;
+      box-shadow:
+        0px 0px 0px 1px ${themeVars.color.light.border},
+        ${themeVars.github.shadow.resting.small};
       border-radius: 12px;
       margin-bottom: 8px;
+      position: relative;
+      overflow: hidden;
       > .item {
         background: unset;
         border-radius: 12px;
         padding: 6px 12px !important;
+        position: relative;
+        z-index: 2;
         &.active {
-          background: ${themeVars.color.menu};
-          box-shadow:
-            0px 0px 0px 1px ${themeVars.color.light.border},
-            ${themeVars.github.shadow.resting.small};
+          background: unset !important;
+          box-shadow: none !important;
           font-weight: 600;
         }
         &::before {
@@ -59,8 +65,29 @@ export const dashboard = css`
           }
         }
       }
+      /* 滑块指示器 */
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background: ${themeVars.github.controlKnob.bgColor.rest};
+        border-radius: 12px;
+        box-shadow:
+          0px 0px 0px 1px ${themeVars.color.light.border},
+          ${themeVars.github.shadow.resting.small};
+        transition: transform 200ms cubic-bezier(0.33, 1, 0.68, 1);
+        z-index: 1;
+        pointer-events: none;
+      }
+      /* 右侧激活 → 滑块向右滑 */
+      &:has(> .item:last-child.active)::after {
+        transform: translateX(100%);
+      }
     }
-    // 仓库/组织列表标题
+    /* 仓库/组织列表标题 */
     .ui.top.attached.header {
       border: 0;
       font-size: 20px;
@@ -71,7 +98,7 @@ export const dashboard = css`
         border-color: #00000000;
       }
     }
-    // 仓库/组织列表
+    /* 仓库/组织列表 */
     .ui.attached.segment {
       background-color: ${themeVars.color.menu};
       border: unset !important;
@@ -114,7 +141,7 @@ export const dashboard = css`
         }
       }
     }
-    // 组织列表
+    /* 组织列表 */
     .ui.tab.dashboard-orgs .ui.attached.segment.table {
       border-top-left-radius: 12px;
       border-top-right-radius: 12px;

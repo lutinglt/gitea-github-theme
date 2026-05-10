@@ -17,25 +17,7 @@
  * limitations under the License.
  */
 
-import { type StyleRule } from "@vanilla-extract/css";
-import * as selectors from "./selectors";
-
-// 出现动画
-export const animation = {
-  animation: selectors.overlayAppear,
-  animationDuration: "80ms",
-  animationFillMode: "forwards",
-  animationTimingFunction: "ease-in",
-} satisfies StyleRule;
-// 向下出现动画
-export const animationDown = {
-  animation: selectors.overlayAppearDown,
-  animationDuration: "200ms",
-  animationTimingFunction: "cubic-bezier(0.33, 1, 0.68, 1)",
-} satisfies StyleRule;
-// 向上出现动画
-export const animationUp = {
-  animation: selectors.overlayAppearUp,
-  animationDuration: "200ms",
-  animationTimingFunction: "cubic-bezier(0.33, 1, 0.68, 1)",
-} satisfies StyleRule;
+export { activeItemAfterStyle } from "./after";
+export { animation, animationDown, animationUp } from "./animation";
+export { primaryButtonHoverStyle, primaryButtonStyle } from "./button";
+export { botLabelStyle, labelStyle } from "./label";

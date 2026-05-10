@@ -210,6 +210,10 @@ export const chroma = {
      * @example and or not in is
      */
     word: null,
+    /** 保留运算符
+     * @example not in is
+     */
+    reserved: null,
   },
   /** 标点符号
    * @example , . : ; ( ) [ ] { }

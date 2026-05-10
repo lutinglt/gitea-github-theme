@@ -33,6 +33,11 @@ Gitea 理论上小版本号变更不会修改前端布局, 所以主题的小版
 
 ## 安装
 
+> [!IMPORTANT]
+>
+> 因为项目使用了 Lighting CSS 转译 CSS 嵌套代码, 所以会包含大量 :is() 选择器, 不支持 Chrome
+> 88 版本以下的浏览器使用 Chrome 88 以下的浏览器可能会出现大量样式问题, 请更新到 Chrome 88 以上版本
+
 1. 在发布页下载最新的 CSS 主题文件放入 `data/gitea/public/assets/css` 目录下 (默认可能没有此目录需手动创建)
 2. 修改 `data/gitea/conf/app.ini`，并将 CSS 文件名去掉 `theme-` 的名称附加到 `[ui]` 下的 `THEMES` 末尾
 3. 重启 Gitea

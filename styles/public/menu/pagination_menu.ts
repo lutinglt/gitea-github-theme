@@ -17,7 +17,8 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "src/types/vars";
+import { css } from "@linaria/core";
+import { otherThemeVars, themeVars } from "src";
 
 // 分页菜单
 export const paginationMenu = css`
@@ -33,13 +34,13 @@ export const paginationMenu = css`
       min-height: 32px;
       height: 32px;
       justify-content: center;
-      // 避免一些 hover 效果调整内容
+      /* 避免一些 hover 效果调整内容 */
       padding: 5px 10px !important;
       &.active {
         background: ${themeVars.github.bgColor.accent.emphasis};
         color: ${themeVars.color.white};
       }
-      // 设置透明边框线避免 hover 时元素大小变化
+      /* 设置透明边框线避免 hover 时元素大小变化 */
       &:not(.active) {
         border: 1px solid #ffffff00;
         &:hover {
@@ -54,7 +55,7 @@ export const paginationMenu = css`
             color: ${themeVars.color.primary.self};
           }
         }
-        // 对齐文字
+        /* 对齐文字 */
         svg {
           margin-top: 2px;
         }

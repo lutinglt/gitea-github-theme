@@ -17,16 +17,17 @@
  * limitations under the License.
  */
 
-import { css, themeVars } from "src/types/vars";
-import { botLabelStyle } from "./issue_comment";
+import { css } from "@linaria/core";
+import { themeVars } from "src";
+import { botLabelStyle } from "styles/common";
 
 // 时间线
 export const timeline = css`
   .repository.view.issue {
     .comment-list {
-      // 时间线本线
+      /* 时间线本线 */
       .timeline::before {
-        // 不遮挡归档信息框, 归档信息框背景色有透明度时会漏出线
+        /* 不遮挡归档信息框, 归档信息框背景色有透明度时会漏出线 */
         height: calc(100% - 62px);
       }
       .timeline-item,
@@ -35,28 +36,28 @@ export const timeline = css`
         .comment-text-line {
           color: ${themeVars.color.text.light.num1};
         }
-        // 事件
+        /* 事件 */
         &.event {
-          // 修复覆盖后的位置问题
+          /* 修复覆盖后的位置问题 */
           padding-left: 15px;
-          // 避免锚中批准的头像
+          /* 避免锚中批准的头像 */
           .avatar-with-link .avatar {
             width: 20px;
             height: 20px;
           }
-          // 批准时间的头像
-          // 头部居中偏移量(头像高度 - 标准行信息高度) / 2: (40px - 32px) / 2 = 4px
+          /* 批准时间的头像 */
+          /* 头部居中偏移量(头像高度 - 标准行信息高度) / 2: (40px - 32px) / 2 = 4px */
           .timeline-avatar {
             top: -4px;
           }
-          // bot 标签
+          /* bot 标签 */
           .comment-text-line .ui.basic.label {
             ${botLabelStyle}
           }
           .badge {
             border: 2px solid ${themeVars.color.body};
           }
-          // 仅匹配只有 badge
+          /* 仅匹配只有 badge */
           [class="badge"] {
             background-color: ${themeVars.github.control.bgColor.rest};
             svg {
@@ -64,16 +65,16 @@ export const timeline = css`
             }
           }
         }
-        // 提交
+        /* 提交 */
         &.commits-list {
-          // 每个提交之间的间隔
+          /* 每个提交之间的间隔 */
           .flex-text-block {
             padding-top: 4px;
           }
           .badge svg {
             color: ${themeVars.color.text.light.num1};
           }
-          // 仅覆盖左侧 commit 不覆盖右侧 SHA
+          /* 仅覆盖左侧 commit 不覆盖右侧 SHA */
           a.muted {
             font-size: 12px;
             color: ${themeVars.color.text.light.num1};

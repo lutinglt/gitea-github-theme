@@ -17,11 +17,29 @@
  * limitations under the License.
  */
 
-export { chroma } from "./chroma";
-export { ansi, console } from "./console";
-export { diff } from "./diff";
-export { github } from "./github";
-export { primary, secondary } from "./main";
-export { message } from "./message";
-export { named } from "./named";
-export { other, otherAuto } from "./other";
+import { chroma } from "./chroma";
+import { codeMirror } from "./codemirror";
+import { ansi, console } from "./console";
+import { diff } from "./diff";
+import { github } from "./github";
+import { primary, secondary } from "./main";
+import { message } from "./message";
+import { named } from "./named";
+import { other, otherAuto } from "./other";
+import { syntax } from "./syntax";
+
+export default {
+  chroma,
+  ansi,
+  codeMirror,
+  console,
+  diff,
+  github,
+  primary,
+  secondary,
+  message,
+  named,
+  other,
+  otherAuto,
+  syntax,
+};

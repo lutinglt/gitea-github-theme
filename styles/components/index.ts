@@ -18,9 +18,7 @@
  */
 
 import "./actions";
-import "./chroma";
 import "./dashboard";
-import "./editor";
 import "./explore";
 import "./footer";
 import "./heatmap";

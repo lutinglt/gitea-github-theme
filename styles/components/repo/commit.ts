@@ -17,24 +17,26 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "src/types/vars";
+import { css } from "@linaria/core";
+import { otherThemeVars, themeVars } from "src";
 
 // 提交列表
 export const commit = css`
   .page-content.repository.commits {
-    // 提交列表 (选择器保证同等优先级覆盖了 gitea 原生的样式)
+    /* 提交列表 (选择器保证同等优先级覆盖了 gitea 原生的样式) */
     .ui.attached.table.segment.commit-table tbody.commit-list {
-      // 作者
+      /* 作者 */
       .author {
         img.ui.avatar {
           border-radius: 9999px;
         }
-        // 作者名称
+        /* 作者名称 */
         .author-wrapper {
+          display: flex;
           color: ${themeVars.color.text.light.num1};
         }
       }
-      // SHA 标签
+      /* SHA 标签 */
       .sha {
         a.ui.label.commit-id-short {
           padding: 2px 8px;
@@ -44,16 +46,17 @@ export const commit = css`
           margin-left: -8px;
         }
       }
-      // 提交信息
+      /* 提交信息 */
       .message {
-        // tag 标签
+        /* tag 标签 */
         a.ui.basic.label {
           border-radius: 9999px;
           border-width: 1.5px;
           padding: 3px 8px !important;
+          margin-left: 4px;
         }
       }
-      // 提交信息右侧
+      /* 提交信息右侧 */
       .tw-text-right {
         relative-time,
         svg {
@@ -61,15 +64,15 @@ export const commit = css`
         }
       }
       tr {
-        // 整行悬停色
+        /* 整行悬停色 */
         &:hover {
           background-color: ${themeVars.color.hover.opaque};
         }
-        // 偶数行悬停色
+        /* 偶数行悬停色 */
         &:nth-child(2n):hover {
           background-color: ${themeVars.color.hover.opaque} !important;
         }
-        // 尾行圆角
+        /* 尾行圆角 */
         &:last-child {
           td:first-child {
             border-bottom-left-radius: ${otherThemeVars.border.radius};
@@ -106,10 +109,10 @@ export const commitGraph = css`
     img.ui.avatar {
       border-radius: 9999px;
     }
-    // 提交图的 SHA 标签
+    /* 提交图的 SHA 标签 */
     li .ui.label.commit-id-short {
       height: 25px;
-      // 验证提交 SHA 标签
+      /* 验证提交 SHA 标签 */
       &.commit-is-signed {
         span.ui.label.commit-is-signed {
           height: 25px;

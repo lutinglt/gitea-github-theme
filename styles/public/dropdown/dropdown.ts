@@ -17,21 +17,25 @@
  * limitations under the License.
  */
 
-import { animationDown, animationUp } from "src/core/styles";
-import { css, otherThemeVars, themeVars } from "src/types/vars";
-import { activeItemAfterStyle } from "styles/public/menu";
+import { css } from "@linaria/core";
+import { otherThemeVars, themeVars } from "src";
+import { activeItemAfterStyle, animationDown, animationUp } from "styles/common";
 
 export const dropdown = css`
   .ui.dropdown,
   .ui.menu .ui.dropdown {
     .menu {
       ${animationDown};
-      // 统一所有下拉菜单的样式
-      background-color: ${themeVars.color.menu} !important;
-      border: unset !important;
+      /* 统一所有下拉菜单的样式 */
+      background-color: ${themeVars.color.menu};
+      border: none !important;
       border-radius: 12px !important;
-      box-shadow: ${themeVars.github.shadow.floating.small} !important;
-      // 忽略隐藏
+      box-shadow: ${themeVars.github.shadow.floating.small};
+      /* 修复 lightingcss 导致的优先级问题 */
+      &.scrolling {
+        box-shadow: none !important;
+      }
+      /* 忽略隐藏 */
       > .item:not(.tw-hidden) {
         display: flex !important;
         align-items: center;
@@ -45,14 +49,14 @@ export const dropdown = css`
         }
         &:not(.emoji):first-of-type {
           margin-top: 8px;
-          // 工单详细页面的标签菜单中的清除选中标签按钮
+          /* 工单详细页面的标签菜单中的清除选中标签按钮 */
           &.clear-selection {
             margin-top: 0px;
           }
         }
-        // 不知道为什么提交差异对比页面操作中的 cherrypick 按钮无法被选中
+        /* 不知道为什么提交差异对比页面操作中的 cherrypick 按钮无法被选中 */
         &.cherry-pick-button,
-        // 下一个 item 是最后一个并且被隐藏时, 目前仅在顶部导航栏工单和 PR 仪表板的菜单中出现
+        /* 下一个 item 是最后一个并且被隐藏时, 目前仅在顶部导航栏工单和 PR 仪表板的菜单中出现 */
         &:has(+ .tw-hidden:last-of-type),
         &:not(.emoji):last-of-type {
           margin-bottom: 8px;
@@ -77,18 +81,18 @@ export const dropdown = css`
           margin-top: 2px;
           margin-right: 2px;
         }
-        // 复选框对齐
+        /* 复选框对齐 */
         .ui.checkbox input[type="checkbox"] {
           top: 3px;
         }
-        // 修复 Wiki 页面下搜索框中搜索时, 显示隐藏的项目
+        /* 修复 Wiki 页面下搜索框中搜索时, 显示隐藏的项目 */
         &.filtered {
           display: none !important;
         }
       }
-      // 当筛选后, 让菜单提供边距, 因为无法确定保留的是菜单中哪个 item
-      // 不是所有菜单都提供边距方式, 原因为比如会导致分支菜单中的查看所有分支上间隔缺失, 这种方式单独为 Wiki 菜单做处理
-      // 有筛选(.filtered)且有筛选结果(.selected)时提供菜单边距, 没结果时提供会导致多余的菜单边框线
+      /* 当筛选后, 让菜单提供边距, 因为无法确定保留的是菜单中哪个 item */
+      /* 不是所有菜单都提供边距方式, 原因为比如会导致分支菜单中的查看所有分支上间隔缺失, 这种方式单独为 Wiki 菜单做处理 */
+      /* 有筛选(.filtered)且有筛选结果(.selected)时提供菜单边距, 没结果时提供会导致多余的菜单边框线 */
       &:has(> .item.filtered):has(> .item.selected) {
         padding: 8px 0px;
         > .item {
@@ -108,14 +112,14 @@ export const dropdown = css`
       }
     }
   }
-  // 向下弹出的下拉菜单向下偏移
+  /* 向下弹出的下拉菜单向下偏移 */
   .ui.dropdown:not(.upward),
   .ui.menu .ui.dropdown:not(.upward) {
     > .menu {
       margin-top: 4px !important;
     }
   }
-  // 向上弹出的下拉菜单向上偏移
+  /* 向上弹出的下拉菜单向上偏移 */
   .ui.dropdown.upward,
   .ui.menu .ui.dropdown.upward {
     > .menu {
@@ -123,41 +127,41 @@ export const dropdown = css`
       margin-bottom: 4px !important;
     }
   }
-  // 修复 wiki 的页面下拉菜单圆角
+  /* 修复 wiki 的页面下拉菜单圆角 */
   .ui.floating.dropdown > .menu {
     border-radius: 12px !important;
   }
-  // 修复嵌套菜单的圆角问题, wiki 页面和组织页面的用户下拉菜单
+  /* 修复嵌套菜单的圆角问题, wiki 页面和组织页面的用户下拉菜单 */
   .ui.dropdown .menu {
     .scrolling.menu {
       border-radius: 0 0 12px 12px !important;
     }
-    // 修复仪表板切换用户按钮菜单下无创建组织按钮时的菜单圆角
+    /* 修复仪表板切换用户按钮菜单下无创建组织按钮时的菜单圆角 */
     &.context-user-switch {
       .scrolling.menu:last-child {
         border-radius: 0 0 12px 12px !important;
       }
     }
   }
-  // 修复下拉菜单元素溢出问题
-  // 用户菜单
+  /* 修复下拉菜单元素溢出问题 */
+  /* 用户菜单 */
   .user-menu>.item,
-  // Issue/PR 菜单
+  /* Issue/PR 菜单 */
   .ui.menu .ui.dropdown.item .menu .item {
-    width: calc(100% - 16px); // 减去上方 item 的 margin 左右边距
+    width: calc(100% - 16px); /* 减去上方 item 的 margin 左右边距 */
   }
-  // 去掉下拉菜单的边框线
-  // 设置里的下拉菜单
+  /* 去掉下拉菜单的边框线 */
+  /* 设置里的下拉菜单 */
   .ui.selection.dropdown .menu > .item {
     border: unset;
   }
-  // 修复一些菜单下的菜单元素溢出问题
-  // 目前主要为分支菜单
+  /* 修复一些菜单下的菜单元素溢出问题 */
+  /* 目前主要为分支菜单 */
   .ui.dropdown .menu .menu {
     border-radius: 12px !important;
   }
-  // 修复按钮阴影被覆盖缺少边框线的问题
-  // 仓库动态页面的右侧按钮, 比如时间周期
+  /* 修复按钮阴影被覆盖缺少边框线的问题 */
+  /* 仓库动态页面的右侧按钮, 比如时间周期 */
   .ui.floating.dropdown .menu {
     box-shadow: ${themeVars.github.shadow.floating.small} !important;
   }

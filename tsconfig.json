@@ -34,8 +34,8 @@
       "*": ["./*"],
       "src/*": ["./src/*"],
       "styles/*": ["./styles/*"],
-      "themes/*": ["./themes/*", "./themes/*.css"]
+      "themes/*": ["./themes/*"]
     }
   },
-  "include": ["src", "styles", "themes", "vite.config.ts"]
+  "include": ["src", "styles", "themes", "vite.config.ts", "theme.config.ts", "eslint.config.ts"]
 }

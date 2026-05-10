@@ -18,7 +18,7 @@
  */
 
 import { createGlobalThemeContract } from "@vanilla-extract/css";
-import * as color from "./color";
+import color from "./color";
 
 function varMapper(prefix: string | null = null) {
   return (value: string | null, path: string[]) => {
@@ -33,8 +33,8 @@ function varMapper(prefix: string | null = null) {
 }
 
 const vars = {
+  /** Gitea 主题的属性 */
   isDarkTheme: "is-dark-theme",
-  chroma: color.chroma,
   color: {
     ...color.other,
     ...color.message,
@@ -60,13 +60,9 @@ const customVars = {
   org: { repolistColumns: "org-repolist-columns", userlistColumns: "org-userlist-columns" },
 };
 
-const themeInfo = {
-  version: null,
-};
-
 export const themeVars = createGlobalThemeContract(vars, varMapper());
 export const otherThemeVars = createGlobalThemeContract(otherVars, varMapper());
 export const customThemeVars = createGlobalThemeContract(customVars, varMapper("custom"));
-export const themeInfoVars = createGlobalThemeContract(themeInfo, varMapper("theme"));
-
-export { css } from "@linaria/core";
+export const chromaVars = createGlobalThemeContract(color.chroma, varMapper("chroma"));
+export const codeMirrorVars = createGlobalThemeContract(color.codeMirror, varMapper("codeMirror"));
+export const syntaxVars = createGlobalThemeContract(color.syntax, varMapper("color-syntax"));

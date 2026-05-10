@@ -17,11 +17,12 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "src/types/vars";
+import { css } from "@linaria/core";
+import { otherThemeVars, themeVars } from "src";
 
 export const repoButtonRow = css`
   .github-theme-templates {
-    // 仓库按钮行
+    /* 仓库按钮行 */
     &.repo-button-row {
       margin: 0 0 16px 0;
       .repo-button-row-left .repository-summary {
@@ -47,7 +48,7 @@ export const repoButtonRow = css`
         }
       }
       .repo-button-row-right {
-        // 添加文件按钮菜单
+        /* 添加文件按钮菜单 */
         .repo-add-file > .menu {
           min-width: 152px;
         }

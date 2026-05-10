@@ -17,7 +17,8 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "src/types/vars";
+import { css } from "@linaria/core";
+import { otherThemeVars, themeVars } from "src";
 
 const primary = "primary" as const;
 const secondary = "secondary" as const;
