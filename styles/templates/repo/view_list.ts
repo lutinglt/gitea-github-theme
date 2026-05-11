@@ -22,15 +22,15 @@ import { otherThemeVars, themeVars } from "src";
 
 export const repoFileLastCommit = css`
   /* 仓库页和文件列表文件夹页的最后一次提交 */
-  .repository.file.list #repo-files-table .github-theme-templates.repo-file-line.repo-file-last-commit {
+  .repository.file.list #repo-files-table .gitea-github-theme-templates.repo-file-line.repo-file-last-commit {
     padding-right: 10px;
     /* 提交时间 */
-    .github-latest-time {
+    .gitea-github-theme-latest-time {
       color: ${themeVars.color.text.light.num1};
       font-size: 12px;
     }
     /* 提交历史按钮 */
-    .github-latest-commit {
+    .gitea-github-theme-latest-commit {
       display: inline-flex;
       align-items: center;
       gap: 4px;

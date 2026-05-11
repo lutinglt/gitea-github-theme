@@ -1,8 +1,8 @@
 <div class="ui attached table segment commit-table">
-	<ul class="github-theme-templates-commits-list">
+	<ul class="gitea-github-theme-templates-commits-list">
 		{{$commitRepoLink := $.RepoLink}}{{if $.CommitRepoLink}}{{$commitRepoLink = $.CommitRepoLink}}{{end}}
 		{{range.Commits}}
-			<li class="github-theme-commit">
+			<li class="gitea-github-theme-commit">
 				{{/* 提交信息 */}}
 				<div class="message">
 					{{if $.PageIsWiki}}
@@ -21,16 +21,15 @@
 				{{/* 提交者信息 */}}
 				<div class="metadata">
 					{{/* 头像 */}}
-					{{$userName := .Author.Name}}
-					{{if .User}}
-						{{if and .User.FullName DefaultShowFullName}}
-							{{$userName = .User.FullName}}
-						{{end}}
-						{{ctx.AvatarUtils.Avatar .User 16}}<a class="muted author-wrapper" href="{{.User.HomeLink}}">{{$userName}}</a>
-					{{else}}
-						{{ctx.AvatarUtils.AvatarByEmail .Author.Email .Author.Name 16}}
-						<span class="author-wrapper">{{$userName}}</span>
-					{{end}}
+					<span class="author-wrapper">
+						{{- if .User -}}
+							{{- ctx.AvatarUtils.Avatar .User 16 -}}
+							{{- .User.GetShortDisplayNameLinkHTML -}}
+						{{- else -}}
+							{{- ctx.AvatarUtils.AvatarByEmail .Author.Email .Author.Name 16 -}}
+							{{- .Author.Name -}}
+						{{- end -}}
+					</span>
 					{{/* 时间 */}}
 					·
 					{{if .Committer}}
@@ -46,7 +45,7 @@
 					{{/* 标签 */}}
 					{{if $.CommitsTagsMap}}
 						{{range (index $.CommitsTagsMap .ID.String)}}
-							{{- template "repo/tag/name" dict "AdditionalClasses" "github-theme-tag" "RepoLink" $.Repository.Link "TagName" .TagName "IsRelease" (not .IsTag) -}}
+							{{- template "repo/tag/name" dict "AdditionalClasses" "gitea-github-theme-tag" "RepoLink" $.Repository.Link "TagName" .TagName "IsRelease" (not .IsTag) -}}
 						{{end}}
 					{{end}}
 					{{$commitBaseLink := ""}}
@@ -61,19 +60,19 @@
 				</div>
 				{{/* 操作 */}}
 				<div class="actions">
-					<button class="btn interact-bg copy-commit-id github-theme-action" data-tooltip-content="{{ctx.Locale.Tr "copy_hash"}}" data-clipboard-text="{{.ID}}">{{svg "octicon-copy"}}</button>
+					<button class="btn interact-bg copy-commit-id gitea-github-theme-action" data-tooltip-content="{{ctx.Locale.Tr "copy_hash"}}" data-clipboard-text="{{.ID}}">{{svg "octicon-copy"}}</button>
 					{{/* at the moment, wiki doesn't support these "view" links like "view at history point" */}}
 					{{if not $.PageIsWiki}}
 						{{/* view single file diff */}}
 						{{if $.FileTreePath}}
-						<a class="btn interact-bg view-single-diff github-theme-action" data-tooltip-content="{{ctx.Locale.Tr "repo.commits.view_file_diff"}}"
+						<a class="btn interact-bg view-single-diff gitea-github-theme-action" data-tooltip-content="{{ctx.Locale.Tr "repo.commits.view_file_diff"}}"
 							href="{{$commitRepoLink}}/commit/{{.ID.String}}?files={{$.FileTreePath}}"
 						>{{svg "octicon-file-diff"}}</a>
 						{{end}}
 						{{/* view at history point */}}
 						{{$viewCommitLink := printf "%s/src/commit/%s" $commitRepoLink (PathEscape .ID.String)}}
 						{{if $.FileTreePath}}{{$viewCommitLink = printf "%s/%s" $viewCommitLink (PathEscapeSegments $.FileTreePath)}}{{end}}
-						<a class="btn interact-bg view-commit-path github-theme-action" data-tooltip-content="{{ctx.Locale.Tr "repo.commits.view_path"}}" href="{{$viewCommitLink}}">{{svg "octicon-code"}}</a>
+						<a class="btn interact-bg view-commit-path gitea-github-theme-action" data-tooltip-content="{{ctx.Locale.Tr "repo.commits.view_path"}}" href="{{$viewCommitLink}}">{{svg "octicon-code"}}</a>
 					{{end}}
 				</div>
 			</li>

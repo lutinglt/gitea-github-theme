@@ -21,11 +21,12 @@ import { css } from "@linaria/core";
 import { otherThemeVars, themeVars } from "src";
 
 export const repoButtonRow = css`
-  .github-theme-templates {
+  .gitea-github-theme-templates {
     /* 仓库按钮行 */
     &.repo-button-row {
       margin: 0 0 16px 0;
       .repo-button-row-left .repository-summary {
+        /* 分支/标签样式 */
         > .item {
           display: inline-flex;
           align-items: center;
@@ -45,12 +46,6 @@ export const repoButtonRow = css`
           b {
             color: ${themeVars.color.caret};
           }
-        }
-      }
-      .repo-button-row-right {
-        /* 添加文件按钮菜单 */
-        .repo-add-file > .menu {
-          min-width: 152px;
         }
       }
     }

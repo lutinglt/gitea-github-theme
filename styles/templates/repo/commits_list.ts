@@ -26,13 +26,14 @@ const metadata = "metadata" as const;
 const actions = "actions" as const;
 
 export const commitsList = css`
-  ul.github-theme-templates-commits-list {
+  ul.gitea-github-theme-templates-commits-list {
     margin: 0;
     padding: 0;
     list-style: none;
-    li.github-theme-commit {
+    li.gitea-github-theme-commit {
       border-bottom: 1px solid ${themeVars.color.secondary.self};
       padding: 8px 16px;
+      gap: 4px;
       display: grid;
       grid-template-areas: "${primary} ${metadata} ${actions}" "${secondary} ${metadata} ${actions}";
       grid-template-rows: repeat(2, auto);
@@ -96,7 +97,7 @@ export const commitsList = css`
         flex-direction: row;
         flex-wrap: wrap;
         column-gap: 8px;
-        .github-theme-tag {
+        .gitea-github-theme-tag {
           border-width: 1.5px;
           border-radius: 9999px;
           height: 25px;
@@ -109,7 +110,7 @@ export const commitsList = css`
         flex-direction: row;
         gap: 4px;
         color: ${themeVars.color.text.light.num1};
-        .github-theme-action {
+        .gitea-github-theme-action {
           justify-content: center;
           height: 28px;
           width: 28px;
@@ -118,8 +119,8 @@ export const commitsList = css`
     }
   }
   @media (max-width: 767.98px) {
-    ul.github-theme-templates-commits-list {
-      li.github-theme-commit {
+    ul.gitea-github-theme-templates-commits-list {
+      li.gitea-github-theme-commit {
         grid-template-areas: "${primary} ${primary}" "${metadata} ${actions}" "${secondary} ${actions}";
         grid-template-rows: repeat(3, auto);
       }

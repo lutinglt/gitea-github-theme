@@ -21,7 +21,7 @@ import { css } from "@linaria/core";
 import { otherThemeVars, themeVars } from "src";
 
 export const commitSignBadge = css`
-  a.ui.label.commit-id-short.github-theme-commit-sha {
+  a.ui.label.commit-id-short.gitea-github-theme-commit-sha {
     gap: 8px;
     padding: unset;
     margin: unset;
@@ -35,7 +35,7 @@ export const commitSignBadge = css`
         margin: unset;
       }
     }
-    .github-theme-sha {
+    .gitea-github-theme-sha {
       border-radius: ${otherThemeVars.border.radius};
       font-family:
         -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji",
@@ -52,7 +52,7 @@ export const commitSignBadge = css`
       }
     }
   }
-  .ui.label.commit-sign-badge.github-theme-commit-sign-badge {
+  .ui.label.commit-sign-badge.gitea-github-theme-commit-sign-badge {
     font-family:
       -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji",
       "Segoe UI Emoji";

@@ -84,6 +84,9 @@ export const comment = css`
         &:hover {
           background-color: ${themeVars.github.control.transparent.bgColor.hover};
         }
+        &:active {
+          background-color: ${themeVars.github.control.transparent.bgColor.active};
+        }
         a.context-menu {
           display: flex;
           align-items: center;
@@ -97,6 +100,9 @@ export const comment = css`
           &:hover {
             background-color: ${themeVars.color.red.badge.bg} !important;
             color: ${themeVars.color.red.light};
+          }
+          &:active {
+            background-color: ${themeVars.github.control.danger.bgColor.active} !important;
           }
         }
       }

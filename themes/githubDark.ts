@@ -96,6 +96,7 @@ export const githubDarkColor: GitHubColor = {
   control: {
     bgColor: { active: "#2a313c", hover: "#262c36", rest: "#212830" },
     transparent: { bgColor: { active: "#656c7640", hover: "#656c7633", selected: "#656c761a" } },
+    danger: { bgColor: { active: "#f8514966" } },
   },
   // 不同步 GitHub 样式, 对调 --controlKnob-bgColor-rest 和 --controlTrack-bgColor-rest 的颜色
   // 激活颜色与背景色更一致, 在仪表板仓库/组织切换按钮中与菜单颜色一致
@@ -225,6 +226,7 @@ export const githubSoftDarkColor: GitHubColor = {
   control: {
     bgColor: { active: "#3d444d", hover: "#2f3742", rest: "#2a313c" },
     transparent: { bgColor: { active: "#656c7633", hover: "#656c7626", selected: "#656c761a" } },
+    danger: { bgColor: { active: "#e5534b66" } },
   },
   controlTrack: { bgColor: { rest: "#151b23" } },
   controlKnob: { bgColor: { rest: "#2a313c" } },
@@ -321,7 +323,10 @@ export const githubColorblindDarkColor: GitHubColor = {
     },
     star: githubDarkColor.button.star,
   },
-  control: githubDarkColor.control,
+  control: {
+    ...githubDarkColor.control,
+    danger: { bgColor: { active: "#db6d2866" } },
+  },
   controlTrack: githubDarkColor.controlTrack,
   controlKnob: githubDarkColor.controlKnob,
   shadow: githubDarkColor.shadow,
@@ -388,6 +393,10 @@ export const githubTritanopiaDarkColor: GitHubColor = {
   button: {
     ...githubColorblindDarkColor.button,
     danger: githubDarkColor.button.danger,
+  },
+  control: {
+    ...githubColorblindDarkColor.control,
+    danger: githubDarkColor.control.danger,
   },
 };
 /** GitHub 深色主题蓝黄色盲变体语法高亮 */

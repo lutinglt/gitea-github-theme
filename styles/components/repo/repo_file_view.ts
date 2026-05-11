@@ -119,33 +119,54 @@ export const repoFileView = css`
           .ui.button {
             min-height: 32px;
           }
-          /* 打开文件树按钮 */
-          .repo-view-file-tree-toggle {
-            background: initial;
-            border-color: #0000;
-            padding: 0;
-            min-width: 32px;
-            &:hover {
-              background: ${themeVars.color.hover.self};
-            }
-          }
-          /* 分支选择按钮 */
-          .branch-dropdown-button {
-            padding: 0 12px;
-          }
-          /* 路径 */
-          .repo-path {
-            gap: 4px;
-            .section {
-              &:first-child,
-              &.active {
-                font-weight: 600;
+          .repo-button-row-left {
+            /* 打开文件树按钮 */
+            .repo-view-file-tree-toggle {
+              background: initial;
+              border-color: #0000;
+              padding: 0;
+              min-width: 32px;
+              &:hover {
+                background: ${themeVars.color.hover.self};
               }
             }
-            .btn {
-              svg {
-                margin-left: 4px;
-                color: ${themeVars.color.text.light.num1};
+            /* 分支选择按钮 */
+            .branch-dropdown-button {
+              padding: 0 12px;
+            }
+            /* 路径 */
+            .repo-path {
+              gap: 4px;
+              .section {
+                &:first-child,
+                &.active {
+                  font-weight: 600;
+                }
+              }
+              .btn {
+                svg {
+                  margin-left: 4px;
+                  color: ${themeVars.color.text.light.num1};
+                }
+              }
+            }
+          }
+          .repo-button-row-right {
+            gap: 8px;
+            /* 三点更多操作菜单按钮 */
+            .ui.dropdown.basic.button:has(.octicon-kebab-horizontal) {
+              width: 32px;
+              .item.tw-text-danger {
+                &:hover {
+                  background-color: ${themeVars.color.red.badge.bg} !important;
+                  color: ${themeVars.color.red.light} !important;
+                }
+                &:active {
+                  background-color: ${themeVars.github.control.danger.bgColor.active} !important;
+                }
+                svg {
+                  color: inherit;
+                }
               }
             }
           }
@@ -239,7 +260,7 @@ export const repoFileView = css`
     }
   }
   /* 编辑视图下的文件树展开/折叠按钮对齐 */
-  .page-content.repository.file.editor.edit .repo-view-container {
+  .page-content.repository.file.editor .repo-view-container {
     .repo-view-file-tree-container > .repo-button-row {
       padding: 0px;
       &:after {
@@ -345,35 +366,35 @@ export const codeEditorContainer = css`
 export const fileEditor = css`
   .page-content.repository.file.editor {
     .repo-view-content {
-      /* 编辑器 */
-      .ui.edit.form {
-        /* 路径栏 */
-        .repo-editor-header {
-          margin: 16px 0;
-          min-height: 32px;
-          /* 路径 */
-          .breadcrumb {
-            gap: 8px;
-            /* 路径段和分隔符 */
-            .section,
-            .breadcrumb-divider {
-              font-size: 16px;
-            }
-            > .section:first-child {
-              font-weight: 600;
-            }
-            input {
-              margin-right: 0px !important;
-            }
-            svg {
-              color: ${themeVars.color.text.light.num1};
-            }
-            span:has(svg) {
-              display: flex;
-              align-items: center;
-            }
+      /* 路径栏 */
+      .repo-editor-header {
+        margin: 16px 0;
+        min-height: 32px;
+        /* 路径 */
+        .breadcrumb {
+          gap: 8px;
+          /* 路径段和分隔符 */
+          .section,
+          .breadcrumb-divider {
+            font-size: 16px;
+          }
+          > .section:first-child {
+            font-weight: 600;
+          }
+          input {
+            margin-right: 0px !important;
+          }
+          svg {
+            color: ${themeVars.color.text.light.num1};
+          }
+          span:has(svg) {
+            display: flex;
+            align-items: center;
           }
         }
+      }
+      /* 编辑器 */
+      .ui.edit.form {
         /* 编辑器操作栏 */
         .ui.top.attached.header {
           padding: 8px;

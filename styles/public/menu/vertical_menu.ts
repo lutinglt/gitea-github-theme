@@ -37,8 +37,13 @@ export const verticalMenu = css`
       margin-bottom: 0.5rem;
     }
     /* 菜单项被悬停时的背景色, 限制a标签, 避免为子菜单多余渲染 */
-    a.item:hover {
-      background: ${themeVars.github.control.transparent.bgColor.hover};
+    a.item {
+      &:hover {
+        background: ${themeVars.github.control.transparent.bgColor.hover};
+      }
+      &:active {
+        background-color: ${themeVars.github.control.transparent.bgColor.active};
+      }
     }
     /* 菜单项 */
     .item,
@@ -90,6 +95,9 @@ export const verticalMenu = css`
           &:hover {
             background: ${themeVars.github.control.transparent.bgColor.hover};
           }
+          &:active {
+            background-color: ${themeVars.github.control.transparent.bgColor.active};
+          }
         }
         &:after {
           content: "";
@@ -102,6 +110,9 @@ export const verticalMenu = css`
           &:hover {
             background: ${themeVars.github.control.transparent.bgColor.hover};
           }
+          &:active {
+            background-color: ${themeVars.github.control.transparent.bgColor.active};
+          }
         }
         /* 子菜单展开时 */
         &[open] {
@@ -109,6 +120,9 @@ export const verticalMenu = css`
             background: unset;
             &:hover {
               background: ${themeVars.github.control.transparent.bgColor.hover};
+            }
+            &:active {
+              background-color: ${themeVars.github.control.transparent.bgColor.active};
             }
           }
           &:after {

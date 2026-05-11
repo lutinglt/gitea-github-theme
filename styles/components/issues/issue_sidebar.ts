@@ -199,18 +199,21 @@ export const issueSidebar = css`
           &:hover {
             background: ${themeVars.github.control.transparent.bgColor.hover};
           }
+          &:active {
+            background-color: ${themeVars.github.control.transparent.bgColor.active};
+          }
         }
         .ui.show-modal.button[data-modal="#sidebar-delete-issue"] {
           color: ${themeVars.color.red.self};
           svg {
-            color: ${themeVars.color.red.self};
+            color: inherit;
           }
           &:hover {
             background-color: ${themeVars.color.red.badge.bg};
             color: ${themeVars.color.red.light};
-            svg {
-              color: ${themeVars.color.red.light};
-            }
+          }
+          &:active {
+            background-color: ${themeVars.github.control.danger.bgColor.active} !important;
           }
         }
       }

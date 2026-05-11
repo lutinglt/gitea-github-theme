@@ -244,13 +244,31 @@ export const github = {
          * @repo `repoHeader` 仓库标题的悬停背景颜色
          * @commit `commit` 提交信息的 Action 按钮的悬停背景颜色
          * @filelist `repoFiles` README 栏的按钮的悬停背景颜色
-         * @issue `issueSidebar` 操作按钮的悬停背景颜色
+         * @issue_sidebar `issueSidebar` 操作按钮的悬停背景颜色
+         * @issue_comment `issueComment` 操作按钮的悬停背景颜色
          * @issue `issueList` 头部菜单左侧开启关闭菜单的悬停背景颜色
          * @dashboard `dashboard` 仓库列表项目的悬停背景颜色
          * @notification `notification` 通知列表的按钮悬停背景颜色
          * @actions `actions` 列表页运行信息的三点操作按钮悬停背景颜色
          */
         hover: null,
+        /** 激活色
+         * @clone `clone` 克隆按钮下按钮组和面板操作列表的激活背景颜色
+         * @dropdown `dropdown` 下拉框子项的激活背景颜色
+         * @menu `verticalMenu` 垂直菜单项的激活背景颜色
+         * @issue_sidebar `issueSidebar` 操作按钮的激活背景颜色
+         * @issue_comment `issueComment` 操作按钮的激活背景颜色
+         */
+        active: null,
+      },
+    },
+    danger: {
+      bgColor: {
+        /** 激活色
+         * @repo_file_view `repoFileView` 菜单删除操作项激活颜色
+         * @issue_comment `comment` 菜单删除操作项激活颜色
+         */
+        active: null,
       },
     },
   },

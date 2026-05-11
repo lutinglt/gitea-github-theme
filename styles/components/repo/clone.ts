@@ -120,11 +120,15 @@ export const clone = css`
             margin-right: 4px;
           }
         }
-        > .item:hover {
+        > .item{
+          &:hover {
           color: ${themeVars.color.text.self};
           text-decoration: none;
           background: ${themeVars.github.control.transparent.bgColor.hover};
-        }
+          &:active {
+            background: ${themeVars.github.control.transparent.bgColor.active};
+          }
+        }}
       }
     }
   }

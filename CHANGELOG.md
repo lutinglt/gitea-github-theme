@@ -39,6 +39,7 @@
 - Optimize the style of the page when opening the warehouse file.
 - Synchronize the style of list items when they are selected in the Issue & PR list.
 - Synchronize button colors when the mouse is hovering and when it is clicked.
+- Synchronize the mouse click colors of menu operation items and dangerous operation items.
 
 ### 🐞 Fix
 

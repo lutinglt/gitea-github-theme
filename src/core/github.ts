@@ -88,6 +88,7 @@ export type GitHubColor = {
   control: {
     bgColor: { active: string; hover: string; rest: string };
     transparent: { bgColor: { active: string; hover: string; selected: string } };
+    danger: { bgColor: { active: string } };
   };
   controlTrack: { bgColor: { rest: string } };
   controlKnob: { bgColor: { rest: string } };
@@ -251,7 +252,13 @@ export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
     },
     control: {
       bgColor: { rest: githubColor.control.bgColor.rest },
-      transparent: { bgColor: { hover: githubColor.control.transparent.bgColor.hover } },
+      transparent: {
+        bgColor: {
+          hover: githubColor.control.transparent.bgColor.hover,
+          active: githubColor.control.transparent.bgColor.active,
+        },
+      },
+      danger: { bgColor: { active: githubColor.control.danger.bgColor.active } },
     },
     controlTrack: { bgColor: { rest: githubColor.controlTrack.bgColor.rest } },
     controlKnob: { bgColor: { rest: githubColor.controlKnob.bgColor.rest } },

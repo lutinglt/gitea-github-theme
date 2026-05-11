@@ -64,10 +64,16 @@ export const dropdown = css`
         &:hover {
           background-color: ${themeVars.github.control.transparent.bgColor.hover} !important;
         }
+        &:active {
+          background-color: ${themeVars.github.control.transparent.bgColor.active} !important;
+        }
         &.selected {
           background-color: ${themeVars.color.active} !important;
           &:hover {
             background-color: ${themeVars.github.control.transparent.bgColor.hover} !important;
+          }
+          &:active {
+            background-color: ${themeVars.github.control.transparent.bgColor.active} !important;
           }
         }
         &.active,

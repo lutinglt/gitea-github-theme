@@ -93,6 +93,7 @@ export const githubLightColor: GitHubColor = {
   control: {
     bgColor: { active: "#e6eaef", hover: "#eff2f5", rest: "#f6f8fa" },
     transparent: { bgColor: { active: "#818b9826", hover: "#818b981a", selected: "#818b9826" } },
+    danger: { bgColor: { active: "#ffebe966" } },
   },
   controlTrack: { bgColor: { rest: "#e6eaef" } },
   controlKnob: { bgColor: { rest: "#ffffff" } },
@@ -190,7 +191,10 @@ export const githubColorblindLightColor: GitHubColor = {
     danger: { fgColor: { rest: "#bc4c00", hover: "#ffffff" }, bgColor: { hover: "#bc4c00", active: "#953800" } },
     star: githubLightColor.button.star,
   },
-  control: githubLightColor.control,
+  control: {
+    ...githubLightColor.control,
+    danger: { bgColor: { active: "#fff1e566" } },
+  },
   controlTrack: githubLightColor.controlTrack,
   controlKnob: githubLightColor.controlKnob,
   shadow: githubLightColor.shadow,
@@ -263,6 +267,10 @@ export const githubTritanopiaLightColor: GitHubColor = {
   button: {
     ...githubColorblindLightColor.button,
     danger: githubLightColor.button.danger,
+  },
+  control: {
+    ...githubColorblindLightColor.control,
+    danger: githubLightColor.control.danger,
   },
 };
 /** GitHub 浅色主题 蓝黄色盲变体语法高亮 */
