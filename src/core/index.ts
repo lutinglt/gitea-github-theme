@@ -17,10 +17,10 @@
  * limitations under the License.
  */
 
-export { defineTheme, type ThemeColor } from "./color";
+export type { ThemeColor } from "./color";
 export { display2GithubColor, type DisplayColor } from "./display";
 export { github2ThemeColor, type GithubColor } from "./github";
 export type { GitHubSyntax } from "./githubSyntax";
-export { createTheme } from "./theme";
-export type { Theme } from "./theme";
+export { createTheme, defineTheme } from "./theme";
+export type { GiteaColor, Theme } from "./theme";
 export type { CSSVarFunction, MapLeafNodes } from "./types";

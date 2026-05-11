@@ -36,7 +36,7 @@ export const smallCompactMenu = css`
       background: ${themeVars.github.controlTrack.bgColor.rest} !important;
       border: 1px solid ${themeVars.color.light.border};
       font-size: 14px;
-      gap: 8px;
+      gap: 4px;
       height: 32px;
       min-height: 32px !important;
       > .item {
@@ -48,22 +48,32 @@ export const smallCompactMenu = css`
           background: ${themeVars.github.controlKnob.bgColor.rest} !important;
           border-color: ${themeVars.color.light.border};
           font-weight: 600;
+          margin-top: -1px;
+          margin-bottom: -1px;
+          &:first-child {
+            margin-left: -1px;
+            margin-right: 1px;
+          }
+          &:last-child {
+            margin-right: -1px;
+            margin-left: 1px;
+          }
         }
         &::before {
           display: none;
         }
         &:not(.active) {
-          top: 4px;
+          top: 2px;
           padding: 4px 12px !important;
-          height: calc(100% - 8px);
+          height: calc(100% - 4px);
           position: relative;
           /* 该方案只适用于 2 个 item 的情况 */
           /* left / right 数值为 gap 数值的一半 */
           &:first-child {
-            left: 4px;
+            left: 2px;
           }
           &:last-child {
-            right: 4px;
+            right: 2px;
           }
           &:hover {
             background: ${themeVars.github.control.transparent.bgColor.hover} !important;

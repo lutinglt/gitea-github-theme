@@ -22,7 +22,7 @@
  */
 
 import type { GithubColor, GitHubSyntax } from "src";
-import { defineTheme, github2ThemeColor, themeVars } from "src";
+import { defineTheme, themeVars } from "src";
 
 /** GitHub 浅色主题 */
 export const githubLightGithubColors: GithubColor = {
@@ -289,31 +289,21 @@ export const githubTritanopiaLightSyntax: GitHubSyntax = {
   },
 };
 
-/** GitHub 浅色主题颜色 */
-export const githubLightColors = github2ThemeColor(githubLightGithubColors);
-/** GitHub 浅色主题 红绿色盲变体颜色 */
-export const githubColorblindLightColors = github2ThemeColor(githubColorblindLightGithubColors);
-/** GitHub 浅色主题 蓝黄色盲变体颜色 */
-export const githubTritanopiaLightColors = github2ThemeColor(githubTritanopiaLightGithubColors);
-
 /** GitHub 浅色主题 */
 export const githubLight = defineTheme({
-  themeColor: githubLightColors,
-  syntaxType: "github",
-  syntaxColors: githubLightSyntax,
-  githubColors: githubLightGithubColors,
+  colorType: "github",
+  themeColor: githubLightGithubColors,
+  syntaxColor: githubLightSyntax,
 });
 /** GitHub 浅色主题 红绿色盲变体 */
 export const githubColorblindLight = defineTheme({
-  themeColor: githubColorblindLightColors,
-  syntaxType: "github",
-  syntaxColors: githubColorblindLightSyntax,
-  githubColors: githubColorblindLightGithubColors,
+  colorType: "github",
+  themeColor: githubLightGithubColors,
+  syntaxColor: githubColorblindLightSyntax,
 });
 /** GitHub 浅色主题 蓝黄色盲变体 */
 export const githubTritanopiaLight = defineTheme({
-  themeColor: githubTritanopiaLightColors,
-  syntaxType: "github",
-  syntaxColors: githubTritanopiaLightSyntax,
-  githubColors: githubTritanopiaLightGithubColors,
+  colorType: "github",
+  themeColor: githubLightGithubColors,
+  syntaxColor: githubTritanopiaLightSyntax,
 });

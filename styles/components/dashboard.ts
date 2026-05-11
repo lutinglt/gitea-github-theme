@@ -35,13 +35,9 @@ export const dashboard = css`
     .ui.two.item.menu {
       background: ${themeVars.github.controlTrack.bgColor.rest};
       border: 0;
-      box-shadow:
-        0px 0px 0px 1px ${themeVars.color.light.border},
-        ${themeVars.github.shadow.resting.small};
       border-radius: 12px;
       margin-bottom: 8px;
       position: relative;
-      overflow: hidden;
       > .item {
         background: unset;
         border-radius: 12px;

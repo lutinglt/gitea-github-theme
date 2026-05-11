@@ -21,7 +21,7 @@ import { rgba, saturate } from "polished";
 import { scaleColorLight } from "src/functions";
 import type { Ansi, Console, Diff, Github, Message, Named, Other, Primary, Secondary } from "src/types";
 import { themeVars } from "src/types";
-import type { SyntaxConfig, Theme } from "./theme";
+import type { GiteaColor } from "./theme";
 
 export type ThemeColor = {
   /** 用于标识当前是否为暗色主题: `true` 暗色 `false` 亮色 */
@@ -77,36 +77,7 @@ export type ThemeColor = {
   github: Github;
 };
 
-export type ThemeOptions = {
-  themeColor: ThemeColor;
-} & SyntaxConfig;
-
-/** 定义颜色, 用于生成颜色主题
- * @example
- * 文件名: "dark.css.ts"
- * import type { Console, Diff, Other, Github } from "src/types";
- * import { defineTheme, themeVars } from "src";
- *
- * const console: Console = {
- *   fg: {
- *     self: "#f0f6fc", // self 表示本身等于 --color-console-fg: #f0f6fc, 所有键名为 self 的都将被忽略
- *     subtle: themeVars.color.body, // 引用别的CSS变量等于 --color-console-fg-subtle: var(--color-body)
- *     num1: "rgb(125, 133, 144)", // 由于纯数字无法在 TS 中使用点调用, 采用 num 前缀等于 --color-console-fg-1: rgb(125, 133, 144)
- *   },
- *   ...
- * }
- * ...
- * export default defineTheme({
- *   isDarkTheme: true,
- *   primary: "#0969da",
- *   ...
- *   console,
- *   diff,
- *   other,
- *   github,
- * })
- */
-export function defineTheme({ themeColor, ...syntaxConfig }: ThemeOptions): Theme {
+export function theme2GiteaColor(themeColor: ThemeColor): GiteaColor {
   const brightDir = themeColor.isDarkTheme ? -1 : 1;
 
   const primary: Primary = {
@@ -395,20 +366,16 @@ export function defineTheme({ themeColor, ...syntaxConfig }: ThemeOptions): Them
 
   return {
     isDarkTheme: themeColor.isDarkTheme,
-    ...syntaxConfig,
-    themeColors: {
-      isDarkTheme: themeColor.isDarkTheme.toString(),
-      color: {
-        primary,
-        secondary,
-        ...named,
-        ansi,
-        console: themeColor.console,
-        diff: themeColor.diff,
-        ...message,
-        ...themeColor.other,
-      },
-      github: themeColor.github,
+    color: {
+      primary,
+      secondary,
+      ...named,
+      ansi,
+      console: themeColor.console,
+      diff: themeColor.diff,
+      ...message,
+      ...themeColor.other,
     },
+    github: themeColor.github,
   };
 }

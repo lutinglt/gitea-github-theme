@@ -22,7 +22,7 @@
  */
 
 import type { DisplayColor } from "src";
-import { defineTheme, display2GithubColor, github2ThemeColor } from "src";
+import { defineTheme, display2GithubColor } from "src";
 import {
   githubDarkGithubColors,
   githubDarkSyntax,
@@ -44,14 +44,6 @@ export const githubPinkDarkDisplayColors: DisplayColor = {
   num8: "#f4a9cd",
   num9: "#f9bed9",
 };
-/** GitHub 粉色深色主题 */
-export const githubPinkDarkGithubColors = display2GithubColor(githubPinkDarkDisplayColors, githubDarkGithubColors);
-/** GitHub 粉色柔和深色主题 */
-export const pinkSoftDarkGithubColors = display2GithubColor(
-  githubPinkDarkDisplayColors,
-  githubSoftDarkGithubColors,
-  true
-);
 /** GitHub 粉色浅色主题色阶*/
 export const githubPinkLightDisplayColors: DisplayColor = {
   num0: "#ffe5f1",
@@ -65,33 +57,33 @@ export const githubPinkLightDisplayColors: DisplayColor = {
   num8: "#6e2b53",
   num9: "#4d233d",
 };
+
+/** GitHub 粉色深色主题 */
+export const githubPinkDarkGithubColors = display2GithubColor(githubPinkDarkDisplayColors, githubDarkGithubColors);
+/** GitHub 粉色柔和深色主题 */
+export const pinkSoftDarkGithubColors = display2GithubColor(
+  githubPinkDarkDisplayColors,
+  githubSoftDarkGithubColors,
+  true
+);
 /** GitHub 粉色浅色主题*/
 export const githubPinkLightGithubColors = display2GithubColor(githubPinkLightDisplayColors, githubLightGithubColors);
 
-/** GitHub 粉色深色主题颜色 */
-export const githubPinkDarkColors = github2ThemeColor(githubPinkDarkGithubColors);
-export const pinkSoftDarkColors = github2ThemeColor(pinkSoftDarkGithubColors);
-/** GitHub 粉色浅色主题颜色 */
-export const githubPinkLightColors = github2ThemeColor(githubPinkLightGithubColors);
-
 /** Gitea GitHub Theme 拓展 GitHub 粉色深色主题 */
 export const githubPinkDark = defineTheme({
-  themeColor: githubPinkDarkColors,
-  syntaxType: "github",
-  syntaxColors: githubDarkSyntax,
-  githubColors: githubPinkDarkGithubColors,
+  colorType: "github",
+  themeColor: githubPinkDarkGithubColors,
+  syntaxColor: githubDarkSyntax,
 });
 /** Gitea GitHub Theme 拓展 GitHub 粉色柔和深色主题 */
 export const githubPinkSoftDark = defineTheme({
-  themeColor: pinkSoftDarkColors,
-  syntaxType: "github",
-  syntaxColors: githubSoftDarkSyntax,
-  githubColors: pinkSoftDarkGithubColors,
+  colorType: "github",
+  themeColor: pinkSoftDarkGithubColors,
+  syntaxColor: githubSoftDarkSyntax,
 });
 /** Gitea GitHub Theme 拓展 GitHub 粉色浅色主题 */
 export const githubPinkLight = defineTheme({
-  themeColor: githubPinkLightColors,
-  syntaxType: "github",
-  syntaxColors: githubLightSyntax,
-  githubColors: githubPinkLightGithubColors,
+  colorType: "github",
+  themeColor: githubPinkDarkGithubColors,
+  syntaxColor: githubLightSyntax,
 });

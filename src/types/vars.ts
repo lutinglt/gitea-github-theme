@@ -34,7 +34,6 @@ function varMapper(prefix: string | null = null) {
 
 const vars = {
   /** Gitea 主题的属性 */
-  isDarkTheme: "is-dark-theme",
   color: {
     ...color.other,
     ...color.message,

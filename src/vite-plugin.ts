@@ -53,8 +53,16 @@ type ThemeConfig = {
 };
 
 type Themes =
-  | { dark: ThemeConfig; [themeKeyName: string]: ThemeConfig }
-  | { light: ThemeConfig; [themeKeyName: string]: ThemeConfig };
+  | {
+      /** 主题系列的深色模式主题 */
+      dark: ThemeConfig;
+      [themeKeyName: string]: ThemeConfig;
+    }
+  | {
+      /** 主题系列的浅色模式主题 */
+      light: ThemeConfig;
+      [themeKeyName: string]: ThemeConfig;
+    };
 
 type ThemeSeries = {
   /** 主题系列名称, 做为前缀用于生成文件名和显示名称  */
@@ -66,14 +74,11 @@ type ThemeSeries = {
     /** 色盲类型, 仅用于声明主题为色盲主题 */
     colorblindType?: ColorblindType;
   };
-  /** 必须至少声明 dark/light 其中一个 */
+  /** 必须至少声明 dark/light 其中一个, 如果 dark & light 都声明了, 会生成自动颜色主题 */
   themes: Themes;
 };
 
-/**
- * 定义主题配置, 规定入口文件必须默认导出此函数的返回值
- * 类似 vite 的 defineConfig, 提供类型约束
- */
+/** 定义主题配置 */
 export function defineThemeConfig(config: ThemeSeries[]): ThemeSeries[] {
   // 检查主题系列名称是否重复
   const names = config.map(c => c.themeSeriesName);
@@ -86,6 +91,7 @@ export function defineThemeConfig(config: ThemeSeries[]): ThemeSeries[] {
 
 /** Gitea GitHub Theme 主题插件: 解析入口文件, 生成主题 */
 export function giteaGitHubThemePlugin(): PluginOption[] {
+  const PLUGIN_NAME = "GiteaGitHubThemePlugin";
   const PREFIX = "theme-github-";
   let themeEntries: ThemeEntry[];
   const autoThemeEntries = new Map<string, AutoThemeEntry>();
@@ -94,7 +100,7 @@ export function giteaGitHubThemePlugin(): PluginOption[] {
     // createGlobalTheme 直接创建变量时, 仅使用对象值
     vanillaExtractPlugin({ identifiers: ({ debugId }) => `${debugId}` }),
     {
-      name: "themePlugin",
+      name: PLUGIN_NAME,
 
       async config(userConfig) {
         const root = userConfig.root || process.cwd();
@@ -146,7 +152,7 @@ export function giteaGitHubThemePlugin(): PluginOption[] {
         const themeConfig: ThemeSeries[] = (await import(pathToFileURL(tmpBundle).href)).default;
 
         if (!themeConfig || typeof themeConfig !== "object") {
-          throw new Error("[themePlugin] Entry file must default-export a defineThemeConfig result");
+          throw new Error(`[${PLUGIN_NAME}] Entry file must default-export a defineThemeConfig result`);
         }
 
         /** 辅助函数: 按 "-" 分割字符串并首字母大写 */
@@ -295,27 +301,27 @@ export function giteaGitHubThemePlugin(): PluginOption[] {
           try {
             if (theme_path) {
               const cmd = `scp dist/${PREFIX}*.css ${user}@${server}:${theme_path}`;
-              console.log("[themePlugin] exec:", cmd);
+              console.log(`[${PLUGIN_NAME}] exec:`, cmd);
               execSync(cmd, { stdio: "inherit" });
             } else {
-              console.log("[themePlugin] no GITEA_THEME_PATH, skip upload theme");
+              console.log(`[${PLUGIN_NAME}] no GITEA_THEME_PATH, skip upload theme`);
             }
             if (gitea_path) {
               if (sync_tmpl) {
                 const cmd = `scp -r templates ${user}@${server}:${gitea_path}`;
-                console.log("[themePlugin] exec:", cmd);
+                console.log(`[${PLUGIN_NAME}] exec:`, cmd);
                 execSync(cmd, { stdio: "inherit" });
               } else {
-                console.log("[themePlugin] not set SYNC_TMPL=true, skip upload templates");
+                console.log(`[${PLUGIN_NAME}] not set SYNC_TMPL=true, skip upload templates`);
               }
             } else {
-              console.log("[themePlugin] no GITEA_PATH, skip upload templates");
+              console.log(`[${PLUGIN_NAME}] no GITEA_PATH, skip upload templates`);
             }
           } catch (e) {
-            console.warn("[themePlugin] upload failed:", e);
+            console.warn(`[${PLUGIN_NAME}] upload failed:`, e);
           }
         } else {
-          console.log("[themePlugin] no SSH_SERVER, skip upload");
+          console.log(`[${PLUGIN_NAME}] no SSH_SERVER, skip upload`);
         }
       },
     },

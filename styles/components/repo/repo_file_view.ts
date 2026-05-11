@@ -67,7 +67,7 @@ export const repoFileView = css`
           align-content: center;
           background: ${themeVars.color.body};
           font-size: 16px;
-          margin: 16px 0;
+          margin: 15px 0;
           padding: 8px;
           /* 固定头部, 早期父元素有多余的页脚和内容高度导致滚动时无法固定, 修复后也可保留此属性无需删除 */
           position: sticky;
@@ -238,6 +238,25 @@ export const repoFileView = css`
       }
     }
   }
+  /* 编辑视图下的文件树展开/折叠按钮对齐 */
+  .page-content.repository.file.editor.edit .repo-view-container {
+    .repo-view-file-tree-container > .repo-button-row {
+      padding: 0px;
+      &:after {
+        content: "";
+        position: absolute;
+        top: 48px;
+        left: -16px;
+        width: calc(100% + 16px);
+        height: 1px;
+        background: ${themeVars.color.secondary.self};
+      }
+    }
+    .repo-view-content .repo-editor-header .repo-view-file-tree-toggle {
+      min-height: 32px;
+      min-width: 32px;
+    }
+  }
 `;
 
 // 避免手机/平板下路径容器过长导致换行, 取消固定
@@ -266,6 +285,12 @@ export const codeEditorContainer = css`
   .code-editor-container {
     /* Gitea 限制最小高度为 90vh, 导致手机下留白过多, 但意义不明? */
     min-height: auto;
+    /* 内容编辑区 */
+    .cm-editor {
+      /* 最大高度 = 视窗高度 - 一级导航栏 - 二级导航栏 - 路径栏 - 操作面板 - 确保避免一些隐藏元素的补偿高度 */
+      /* 将整个内容区高度确保限制在视窗范围内, 避免需要滚动才能看见完整内容 */
+      max-height: calc(100vh - 64px - 128px - 32px - 64px - 32px);
+    }
     /* 搜索面板 */
     .cm-panel.cm-search {
       background-color: ${themeVars.color.box.header};

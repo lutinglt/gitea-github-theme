@@ -22,7 +22,7 @@
  */
 
 import type { GithubColor, GitHubSyntax } from "src";
-import { defineTheme, github2ThemeColor, themeVars } from "src";
+import { defineTheme, themeVars } from "src";
 
 /** GitHub 深色主题 */
 export const githubDarkGithubColors: GithubColor = {
@@ -97,8 +97,10 @@ export const githubDarkGithubColors: GithubColor = {
     bgColor: { active: "#2a313c", hover: "#262c36", rest: "#212830" },
     transparent: { bgColor: { active: "#656c7640", hover: "#656c7633", selected: "#656c761a" } },
   },
-  controlTrack: { bgColor: { rest: "#010409" } },
-  controlKnob: { bgColor: { rest: "#262c36" } },
+  // 不同步 GitHub 样式, 对调 --controlKnob-bgColor-rest 和 --controlTrack-bgColor-rest 的颜色
+  // 激活颜色与背景色更一致, 在仪表板仓库/组织切换按钮中与菜单颜色一致
+  controlKnob: { bgColor: { rest: "#010409" } },
+  controlTrack: { bgColor: { rest: "#262c36" } },
   shadow: {
     floating: { small: "#01040966" },
     inset: "#0104093d",
@@ -418,40 +420,28 @@ export const githubTritanopiaDarkSyntax: GitHubSyntax = {
   },
 };
 
-/** GitHub 深色主题颜色 */
-export const githubDarkColors = github2ThemeColor(githubDarkGithubColors);
-/** GitHub 柔和深色主题颜色 */
-export const githubSoftDarkColors = github2ThemeColor(githubSoftDarkGithubColors);
-/** GitHub 深色主题 红绿色盲变体颜色 */
-export const githubColorblindDarkColors = github2ThemeColor(githubColorblindDarkGithubColors);
-/** GitHub 深色主题 蓝黄色盲变体颜色 */
-export const githubTritanopiaDarkColors = github2ThemeColor(githubTritanopiaDarkGithubColors);
-
 /** GitHub 深色主题 */
 export const githubDark = defineTheme({
-  themeColor: githubDarkColors,
-  syntaxType: "github",
-  syntaxColors: githubDarkSyntax,
-  githubColors: githubDarkGithubColors,
+  colorType: "github",
+  themeColor: githubDarkGithubColors,
+  syntaxColor: githubDarkSyntax,
 });
+
 /** GitHub 柔和深色主题 */
 export const githubSoftDark = defineTheme({
-  themeColor: githubSoftDarkColors,
-  syntaxType: "github",
-  syntaxColors: githubSoftDarkSyntax,
-  githubColors: githubSoftDarkGithubColors,
+  colorType: "github",
+  themeColor: githubSoftDarkGithubColors,
+  syntaxColor: githubSoftDarkSyntax,
 });
 /** GitHub 深色主题 红绿色盲变体*/
 export const githubColorblindDark = defineTheme({
-  themeColor: githubColorblindDarkColors,
-  syntaxType: "github",
-  syntaxColors: githubColorblindDarkSyntax,
-  githubColors: githubColorblindDarkGithubColors,
+  colorType: "github",
+  themeColor: githubColorblindDarkGithubColors,
+  syntaxColor: githubColorblindDarkSyntax,
 });
 /** GitHub 深色主题 蓝黄色盲变体 */
 export const githubTritanopiaDark = defineTheme({
-  themeColor: githubTritanopiaDarkColors,
-  syntaxType: "github",
-  syntaxColors: githubTritanopiaDarkSyntax,
-  githubColors: githubTritanopiaDarkGithubColors,
+  colorType: "github",
+  themeColor: githubTritanopiaDarkGithubColors,
+  syntaxColor: githubTritanopiaDarkSyntax,
 });
