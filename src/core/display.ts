@@ -19,7 +19,7 @@
 
 import { saturate } from "polished";
 import { scaleColorLight } from "src/functions";
-import { type GithubColor } from "./github";
+import { type GitHubColor } from "./github";
 
 export type DisplayColor = {
   num0: string;
@@ -34,51 +34,51 @@ export type DisplayColor = {
   num9: string;
 };
 
-export function display2GithubColor(
+export function display2GitHubColor(
   displayColor: DisplayColor,
-  baseGithubColor: GithubColor,
+  baseGitHubColor: GitHubColor,
   soft?: boolean
-): GithubColor {
+): GitHubColor {
   return {
-    ...baseGithubColor,
+    ...baseGitHubColor,
     diffBlob: {
-      ...baseGithubColor.diffBlob,
+      ...baseGitHubColor.diffBlob,
       hunkNum: { bgColor: { rest: soft ? displayColor.num2 : displayColor.num1 } },
     },
     fgColor: {
-      ...baseGithubColor.fgColor,
+      ...baseGitHubColor.fgColor,
       accent: soft ? displayColor.num7 : displayColor.num6,
     },
     bgColor: {
-      ...baseGithubColor.bgColor,
+      ...baseGitHubColor.bgColor,
       accent: {
         emphasis: soft ? saturate(-0.1, scaleColorLight(displayColor.num5, -2)) : displayColor.num5,
         muted: soft ? displayColor.num1 : displayColor.num0,
       },
     },
     borderColor: {
-      ...baseGithubColor.borderColor,
+      ...baseGitHubColor.borderColor,
       accent: {
         emphasis: soft ? displayColor.num6 : displayColor.num5,
       },
     },
     button: {
-      ...baseGithubColor.button,
+      ...baseGitHubColor.button,
       primary: {
         fgColor: {
           accent: soft ? displayColor.num7 : displayColor.num6,
-          rest: baseGithubColor.button.primary.fgColor.rest,
+          rest: baseGitHubColor.button.primary.fgColor.rest,
         },
         bgColor: {
           rest: soft ? saturate(-0.1, scaleColorLight(displayColor.num5, -2)) : displayColor.num5,
           hover: soft
             ? saturate(-0.1, scaleColorLight(displayColor.num5, 4))
-            : baseGithubColor.isDarkTheme
+            : baseGitHubColor.isDarkTheme
               ? scaleColorLight(displayColor.num5, 7)
               : scaleColorLight(displayColor.num5, -5),
           active: soft
             ? saturate(-0.1, scaleColorLight(displayColor.num5, 9))
-            : baseGithubColor.isDarkTheme
+            : baseGitHubColor.isDarkTheme
               ? scaleColorLight(displayColor.num5, 15)
               : scaleColorLight(displayColor.num5, -10),
         },
@@ -95,16 +95,16 @@ export function display2GithubColor(
       },
     },
     contribution: {
-      ...baseGithubColor.contribution,
+      ...baseGitHubColor.contribution,
       default: {
         bgColor: {
-          num0: baseGithubColor.contribution.default.bgColor.num0,
+          num0: baseGitHubColor.contribution.default.bgColor.num0,
           num1: soft ? displayColor.num2 : displayColor.num1,
           num2: soft ? displayColor.num3 : displayColor.num2,
           num3: soft ? displayColor.num5 : displayColor.num4,
           num4: soft ? displayColor.num7 : displayColor.num6,
         },
-        borderColor: baseGithubColor.contribution.default.borderColor,
+        borderColor: baseGitHubColor.contribution.default.borderColor,
       },
     },
   };

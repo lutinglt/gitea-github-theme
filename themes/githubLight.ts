@@ -21,11 +21,11 @@
  * @author lutinglt
  */
 
-import type { GithubColor, GitHubSyntax } from "src";
+import type { GitHubColor, GitHubSyntax } from "src";
 import { defineTheme, themeVars } from "src";
 
 /** GitHub 浅色主题 */
-export const githubLightGithubColors: GithubColor = {
+export const githubLightColor: GitHubColor = {
   isDarkTheme: false,
   avatar: { bgColor: "#ffffff", borderColor: "#1f232826" },
   display: {
@@ -157,10 +157,10 @@ export const githubLightSyntax: GitHubSyntax = {
   },
 };
 /** GitHub 浅色主题 红绿色盲变体 */
-export const githubColorblindLightGithubColors: GithubColor = {
+export const githubColorblindLightColor: GitHubColor = {
   isDarkTheme: false,
-  avatar: githubLightGithubColors.avatar,
-  display: githubLightGithubColors.display,
+  avatar: githubLightColor.avatar,
+  display: githubLightColor.display,
   diffBlob: {
     addtionNum: { bgColor: "#b6e3ff" },
     addtionWord: { bgColor: "#b6e3ff" },
@@ -169,17 +169,17 @@ export const githubColorblindLightGithubColors: GithubColor = {
     hunkNum: { bgColor: { rest: "#e6eaef" } },
   },
   fgColor: {
-    ...githubLightGithubColors.fgColor,
+    ...githubLightColor.fgColor,
     danger: "#bc4c00",
     success: "#0969da",
   },
   bgColor: {
-    ...githubLightGithubColors.bgColor,
+    ...githubLightColor.bgColor,
     danger: { emphasis: "#bc4c00", muted: "#fff1e5" },
     success: { emphasis: "#0969da", muted: "#ddf4ff" },
   },
   borderColor: {
-    ...githubLightGithubColors.borderColor,
+    ...githubLightColor.borderColor,
     success: { emphasis: "#0969da" },
   },
   button: {
@@ -188,15 +188,15 @@ export const githubColorblindLightGithubColors: GithubColor = {
       bgColor: { rest: themeVars.github.bgColor.success.emphasis, hover: "#0864d1", active: "#075fc8" },
     },
     danger: { fgColor: { rest: "#bc4c00", hover: "#ffffff" }, bgColor: { hover: "#bc4c00", active: "#953800" } },
-    star: githubLightGithubColors.button.star,
+    star: githubLightColor.button.star,
   },
-  control: githubLightGithubColors.control,
-  controlTrack: githubLightGithubColors.controlTrack,
-  controlKnob: githubLightGithubColors.controlKnob,
-  shadow: githubLightGithubColors.shadow,
-  overlay: githubLightGithubColors.overlay,
-  underlineNav: githubLightGithubColors.underlineNav,
-  contribution: githubLightGithubColors.contribution,
+  control: githubLightColor.control,
+  controlTrack: githubLightColor.controlTrack,
+  controlKnob: githubLightColor.controlKnob,
+  shadow: githubLightColor.shadow,
+  overlay: githubLightColor.overlay,
+  underlineNav: githubLightColor.underlineNav,
+  contribution: githubLightColor.contribution,
 };
 /** GitHub 浅色主题 红绿色盲变体语法高亮 */
 export const githubColorblindLightSyntax: GitHubSyntax = {
@@ -245,24 +245,24 @@ export const githubColorblindLightSyntax: GitHubSyntax = {
   },
 };
 /** GitHub 浅色主题 蓝黄色盲变体 */
-export const githubTritanopiaLightGithubColors: GithubColor = {
-  ...githubColorblindLightGithubColors,
+export const githubTritanopiaLightColor: GitHubColor = {
+  ...githubColorblindLightColor,
   diffBlob: {
-    ...githubColorblindLightGithubColors.diffBlob,
-    deletionNum: githubLightGithubColors.diffBlob.deletionNum,
-    deletionWord: githubLightGithubColors.diffBlob.deletionWord,
+    ...githubColorblindLightColor.diffBlob,
+    deletionNum: githubLightColor.diffBlob.deletionNum,
+    deletionWord: githubLightColor.diffBlob.deletionWord,
   },
   fgColor: {
-    ...githubColorblindLightGithubColors.fgColor,
-    danger: githubLightGithubColors.fgColor.danger,
+    ...githubColorblindLightColor.fgColor,
+    danger: githubLightColor.fgColor.danger,
   },
   bgColor: {
-    ...githubColorblindLightGithubColors.bgColor,
-    danger: githubLightGithubColors.bgColor.danger,
+    ...githubColorblindLightColor.bgColor,
+    danger: githubLightColor.bgColor.danger,
   },
   button: {
-    ...githubColorblindLightGithubColors.button,
-    danger: githubLightGithubColors.button.danger,
+    ...githubColorblindLightColor.button,
+    danger: githubLightColor.button.danger,
   },
 };
 /** GitHub 浅色主题 蓝黄色盲变体语法高亮 */
@@ -290,20 +290,20 @@ export const githubTritanopiaLightSyntax: GitHubSyntax = {
 };
 
 /** GitHub 浅色主题 */
-export const githubLight = defineTheme({
+export const githubLightTheme = defineTheme({
   colorType: "github",
-  themeColor: githubLightGithubColors,
+  themeColor: githubLightColor,
   syntaxColor: githubLightSyntax,
 });
 /** GitHub 浅色主题 红绿色盲变体 */
-export const githubColorblindLight = defineTheme({
+export const githubColorblindLightTheme = defineTheme({
   colorType: "github",
-  themeColor: githubLightGithubColors,
+  themeColor: githubColorblindLightColor,
   syntaxColor: githubColorblindLightSyntax,
 });
 /** GitHub 浅色主题 蓝黄色盲变体 */
-export const githubTritanopiaLight = defineTheme({
+export const githubTritanopiaLightTheme = defineTheme({
   colorType: "github",
-  themeColor: githubLightGithubColors,
+  themeColor: githubTritanopiaLightColor,
   syntaxColor: githubTritanopiaLightSyntax,
 });

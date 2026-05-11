@@ -22,14 +22,14 @@ import { github2ThemeColor, selectors } from "src";
 import { createChroma, createCodeMirror } from "src/styles";
 import { otherThemeVars, syntaxVars, themeVars, type Syntax } from "src/types";
 import { theme2GiteaColor, type ThemeColor } from "./color";
-import type { GithubColor } from "./github";
+import type { GitHubColor } from "./github";
 import { githubSyntax2CodeMirror, prettylights2Chroma, type GitHubSyntax } from "./githubSyntax";
 import type { MapLeafNodes } from "./types";
 
 type themeVarsColor = MapLeafNodes<typeof themeVars, string>;
 export type GiteaColor = { isDarkTheme: boolean } & themeVarsColor;
 export type ThemeColors =
-  | { colorType: "github"; themeColor: GithubColor; syntaxColor: GitHubSyntax }
+  | { colorType: "github"; themeColor: GitHubColor; syntaxColor: GitHubSyntax }
   | { colorType: "gitea"; themeColor: GiteaColor; syntaxColor: Syntax }
   | { colorType: "theme"; themeColor: ThemeColor; syntaxColor: Syntax };
 export type Theme = {

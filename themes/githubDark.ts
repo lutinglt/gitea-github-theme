@@ -21,11 +21,11 @@
  * @author lutinglt
  */
 
-import type { GithubColor, GitHubSyntax } from "src";
+import type { GitHubColor, GitHubSyntax } from "src";
 import { defineTheme, themeVars } from "src";
 
 /** GitHub 深色主题 */
-export const githubDarkGithubColors: GithubColor = {
+export const githubDarkColor: GitHubColor = {
   isDarkTheme: true,
   avatar: { bgColor: "#ffffff1a", borderColor: "#ffffff26" },
   display: {
@@ -162,10 +162,10 @@ export const githubDarkSyntax: GitHubSyntax = {
   },
 };
 /** GitHub 柔和深色主题 */
-export const githubSoftDarkGithubColors: GithubColor = {
+export const githubSoftDarkColor: GitHubColor = {
   isDarkTheme: true,
   avatar: { bgColor: "#cdd9e51a", borderColor: "#cdd9e526" },
-  display: githubDarkGithubColors.display,
+  display: githubDarkColor.display,
   diffBlob: {
     addtionNum: { bgColor: "#57ab5a4d" },
     addtionWord: { bgColor: "#46954a66" },
@@ -197,7 +197,7 @@ export const githubSoftDarkGithubColors: GithubColor = {
     done: { emphasis: "#8256d0" },
     emphasis: "#3d444d",
     muted: "#262c36",
-    neutral: githubDarkGithubColors.bgColor.neutral,
+    neutral: githubDarkColor.bgColor.neutral,
     success: { emphasis: "#347d39", muted: "#46954a26" },
     inset: "#151b23",
   },
@@ -228,7 +228,7 @@ export const githubSoftDarkGithubColors: GithubColor = {
   },
   controlTrack: { bgColor: { rest: "#151b23" } },
   controlKnob: { bgColor: { rest: "#2a313c" } },
-  shadow: githubDarkGithubColors.shadow,
+  shadow: githubDarkColor.shadow,
   overlay: { backdrop: { bgColor: "#262c3666" }, bgColor: "#2a313c" },
   underlineNav: { borderColor: { active: "#ec775c" } },
   contribution: {
@@ -285,10 +285,10 @@ export const githubSoftDarkSyntax: GitHubSyntax = {
   },
 };
 /** GitHub 深色主题红绿色盲变体 */
-export const githubColorblindDarkGithubColors: GithubColor = {
+export const githubColorblindDarkColor: GitHubColor = {
   isDarkTheme: true,
-  avatar: githubDarkGithubColors.avatar,
-  display: githubDarkGithubColors.display,
+  avatar: githubDarkColor.avatar,
+  display: githubDarkColor.display,
   diffBlob: {
     addtionNum: { bgColor: "#58a6ff4d" },
     addtionWord: { bgColor: "#388bfd66" },
@@ -297,17 +297,17 @@ export const githubColorblindDarkGithubColors: GithubColor = {
     hunkNum: { bgColor: { rest: "#2f3742" } },
   },
   fgColor: {
-    ...githubDarkGithubColors.fgColor,
+    ...githubDarkColor.fgColor,
     danger: "#f0883e",
     success: "#58a6ff",
   },
   bgColor: {
-    ...githubDarkGithubColors.bgColor,
+    ...githubDarkColor.bgColor,
     danger: { emphasis: "#bd561d", muted: "#db6d281a" },
     success: { emphasis: "#1f6feb", muted: "#388bfd33" },
   },
   borderColor: {
-    ...githubDarkGithubColors.borderColor,
+    ...githubDarkColor.borderColor,
     success: { emphasis: "#1f6feb" },
   },
   button: {
@@ -319,15 +319,15 @@ export const githubColorblindDarkGithubColors: GithubColor = {
       fgColor: { rest: "#f0883e", hover: "#ffffff" },
       bgColor: { hover: "#9b4215", active: themeVars.github.bgColor.danger.emphasis },
     },
-    star: githubDarkGithubColors.button.star,
+    star: githubDarkColor.button.star,
   },
-  control: githubDarkGithubColors.control,
-  controlTrack: githubDarkGithubColors.controlTrack,
-  controlKnob: githubDarkGithubColors.controlKnob,
-  shadow: githubDarkGithubColors.shadow,
-  overlay: githubDarkGithubColors.overlay,
-  underlineNav: githubDarkGithubColors.underlineNav,
-  contribution: githubDarkGithubColors.contribution,
+  control: githubDarkColor.control,
+  controlTrack: githubDarkColor.controlTrack,
+  controlKnob: githubDarkColor.controlKnob,
+  shadow: githubDarkColor.shadow,
+  overlay: githubDarkColor.overlay,
+  underlineNav: githubDarkColor.underlineNav,
+  contribution: githubDarkColor.contribution,
 };
 /** GitHub 深色主题红绿色盲变体语法高亮 */
 export const githubColorblindDarkSyntax: GitHubSyntax = {
@@ -370,24 +370,24 @@ export const githubColorblindDarkSyntax: GitHubSyntax = {
   },
 };
 /** GitHub 深色主题蓝黄色盲变体 */
-export const githubTritanopiaDarkGithubColors: GithubColor = {
-  ...githubColorblindDarkGithubColors,
+export const githubTritanopiaDarkColor: GitHubColor = {
+  ...githubColorblindDarkColor,
   diffBlob: {
-    ...githubColorblindDarkGithubColors.diffBlob,
-    deletionNum: githubDarkGithubColors.diffBlob.deletionNum,
-    deletionWord: githubDarkGithubColors.diffBlob.deletionWord,
+    ...githubColorblindDarkColor.diffBlob,
+    deletionNum: githubDarkColor.diffBlob.deletionNum,
+    deletionWord: githubDarkColor.diffBlob.deletionWord,
   },
   fgColor: {
-    ...githubColorblindDarkGithubColors.fgColor,
-    danger: githubDarkGithubColors.fgColor.danger,
+    ...githubColorblindDarkColor.fgColor,
+    danger: githubDarkColor.fgColor.danger,
   },
   bgColor: {
-    ...githubColorblindDarkGithubColors.bgColor,
-    danger: githubDarkGithubColors.bgColor.danger,
+    ...githubColorblindDarkColor.bgColor,
+    danger: githubDarkColor.bgColor.danger,
   },
   button: {
-    ...githubColorblindDarkGithubColors.button,
-    danger: githubDarkGithubColors.button.danger,
+    ...githubColorblindDarkColor.button,
+    danger: githubDarkColor.button.danger,
   },
 };
 /** GitHub 深色主题蓝黄色盲变体语法高亮 */
@@ -421,27 +421,27 @@ export const githubTritanopiaDarkSyntax: GitHubSyntax = {
 };
 
 /** GitHub 深色主题 */
-export const githubDark = defineTheme({
+export const githubDarkTheme = defineTheme({
   colorType: "github",
-  themeColor: githubDarkGithubColors,
+  themeColor: githubDarkColor,
   syntaxColor: githubDarkSyntax,
 });
 
 /** GitHub 柔和深色主题 */
-export const githubSoftDark = defineTheme({
+export const githubSoftDarkTheme = defineTheme({
   colorType: "github",
-  themeColor: githubSoftDarkGithubColors,
+  themeColor: githubSoftDarkColor,
   syntaxColor: githubSoftDarkSyntax,
 });
 /** GitHub 深色主题 红绿色盲变体*/
-export const githubColorblindDark = defineTheme({
+export const githubColorblindDarkTheme = defineTheme({
   colorType: "github",
-  themeColor: githubColorblindDarkGithubColors,
+  themeColor: githubColorblindDarkColor,
   syntaxColor: githubColorblindDarkSyntax,
 });
 /** GitHub 深色主题 蓝黄色盲变体 */
-export const githubTritanopiaDark = defineTheme({
+export const githubTritanopiaDarkTheme = defineTheme({
   colorType: "github",
-  themeColor: githubTritanopiaDarkGithubColors,
+  themeColor: githubTritanopiaDarkColor,
   syntaxColor: githubTritanopiaDarkSyntax,
 });

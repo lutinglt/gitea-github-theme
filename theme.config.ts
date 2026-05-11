@@ -26,9 +26,9 @@ export default defineThemeConfig([
   {
     themeSeriesName: "base",
     themes: {
-      dark: { theme: githubDark.githubDark },
-      light: { theme: githubLight.githubLight },
-      "soft-dark": { theme: githubDark.githubSoftDark },
+      dark: { theme: githubDark.githubDarkTheme },
+      light: { theme: githubLight.githubLightTheme },
+      "soft-dark": { theme: githubDark.githubSoftDarkTheme },
     },
   },
   {
@@ -38,12 +38,12 @@ export default defineThemeConfig([
       dark: {
         displayName: "Dark Protanopia And Deuteranopia",
         colorblindType: "red-green",
-        theme: githubDark.githubColorblindDark,
+        theme: githubDark.githubColorblindDarkTheme,
       },
       light: {
         displayName: "Light Protanopia And Deuteranopia",
         colorblindType: "red-green",
-        theme: githubLight.githubColorblindLight,
+        theme: githubLight.githubColorblindLightTheme,
       },
     },
   },
@@ -54,21 +54,21 @@ export default defineThemeConfig([
       dark: {
         displayName: "Dark Tritanopia",
         colorblindType: "blue-yellow",
-        theme: githubDark.githubTritanopiaDark,
+        theme: githubDark.githubTritanopiaDarkTheme,
       },
       light: {
         displayName: "Light Tritanopia",
         colorblindType: "blue-yellow",
-        theme: githubLight.githubTritanopiaLight,
+        theme: githubLight.githubTritanopiaLightTheme,
       },
     },
   },
   {
     themeSeriesName: "pink",
     themes: {
-      dark: { theme: githubPink.githubPinkDark },
-      light: { theme: githubPink.githubPinkLight },
-      "soft-dark": { theme: githubPink.githubPinkSoftDark },
+      dark: { theme: githubPink.githubPinkDarkTheme },
+      light: { theme: githubPink.githubPinkLightTheme },
+      "soft-dark": { theme: githubPink.githubPinkSoftDarkTheme },
     },
   },
 ]);

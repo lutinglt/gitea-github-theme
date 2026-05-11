@@ -19,8 +19,8 @@
 
 import selectors from "./selectors";
 
-export { createTheme, defineTheme, display2GithubColor, github2ThemeColor } from "./core";
-export type { DisplayColor, GitHubSyntax, GithubColor, ThemeColor } from "./core";
+export { createTheme, defineTheme, display2GitHubColor, github2ThemeColor } from "./core";
+export type { DisplayColor, GitHubColor, GitHubSyntax, ThemeColor } from "./core";
 export { extractVarName, scaleColorLight } from "./functions";
 export { createThemeMetaInfo } from "./styles";
 export { chromaVars, customThemeVars, otherThemeVars, syntaxVars, themeVars } from "./types";

@@ -18,7 +18,7 @@
  */
 
 import { type Chroma, type CodeMirror } from "src/types";
-import type { GithubColor } from "./github";
+import type { GitHubColor } from "./github";
 
 export type PrettylightsColor = {
   syntax: {
@@ -170,7 +170,7 @@ export function prettylights2Chroma(prettylights: PrettylightsColor): Chroma {
   };
 }
 
-export function githubSyntax2CodeMirror(githubSyntax: GitHubSyntax, githubColor: GithubColor): CodeMirror {
+export function githubSyntax2CodeMirror(githubSyntax: GitHubSyntax, githubColor: GitHubColor): CodeMirror {
   return {
     token: {
       keyword: githubSyntax.codeMirror.syntax.fgColor.keyword,

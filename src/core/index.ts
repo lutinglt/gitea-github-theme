@@ -18,8 +18,8 @@
  */
 
 export type { ThemeColor } from "./color";
-export { display2GithubColor, type DisplayColor } from "./display";
-export { github2ThemeColor, type GithubColor } from "./github";
+export { display2GitHubColor, type DisplayColor } from "./display";
+export { github2ThemeColor, type GitHubColor } from "./github";
 export type { GitHubSyntax } from "./githubSyntax";
 export { createTheme, defineTheme } from "./theme";
 export type { GiteaColor, Theme } from "./theme";

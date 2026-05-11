@@ -23,7 +23,7 @@ import { scaleColorLight } from "src/functions";
 import { themeVars, type Github } from "src/types";
 import { type ThemeColor } from "./color";
 
-export type GithubColor = {
+export type GitHubColor = {
   isDarkTheme: boolean;
   avatar: { bgColor: string; borderColor: string };
   display: {
@@ -102,7 +102,7 @@ export type GithubColor = {
   };
 };
 
-export function github2ThemeColor(githubColor: GithubColor): ThemeColor {
+export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
   const console: Console = {
     fg: { self: githubColor.fgColor.default, subtle: githubColor.fgColor.muted },
     bg: githubColor.bgColor.inset,
