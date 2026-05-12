@@ -48,7 +48,7 @@ export const baseButton = css`
         background-color: ${themeVars.github.button.primary.bgColor.active};
       }
       svg {
-        color: ${themeVars.github.button.primary.fgColor.rest};
+        color: inherit;
       }
     }
     /* 按钮组整体有阴影 */

@@ -106,6 +106,10 @@ export const repoFiles = css`
           }
         }
       }
+      /* 克隆按钮 */
+      .ui.primary.button.js-btn-clone-panel {
+        padding: 0px 12px;
+      }
     }
   }
   .repository.file.list {

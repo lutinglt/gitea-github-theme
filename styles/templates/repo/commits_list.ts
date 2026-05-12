@@ -79,6 +79,10 @@ export const commitsList = css`
         align-items: center;
         flex-direction: row;
         gap: 4px;
+        .author-wrapper {
+          display: flex;
+          align-items: center;
+        }
         img.ui.avatar {
           border-radius: 9999px;
           margin-right: 4px;
