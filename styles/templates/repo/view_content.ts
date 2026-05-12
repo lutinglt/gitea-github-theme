@@ -41,6 +41,7 @@ export const repoButtonRow = css`
             text-decoration-line: none;
           }
           svg {
+            color: ${themeVars.github.button.invisible.iconColor.rest};
             margin-right: 4px;
           }
           b {

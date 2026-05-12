@@ -3,6 +3,7 @@
 #### More GitHub-like style
 
 - Optimize the length of the clone button.
+- Optimize the color of the branch/tag/submission history icon for the soft dark theme in the template.
 
 ### 🐞 Fix
 

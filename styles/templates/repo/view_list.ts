@@ -46,7 +46,7 @@ export const repoFileLastCommit = css`
         text-decoration-line: none;
       }
       svg {
-        color: ${themeVars.color.text.light.num1};
+        color: ${themeVars.github.button.invisible.iconColor.rest};
       }
     }
   }

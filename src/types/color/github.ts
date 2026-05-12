@@ -224,6 +224,14 @@ export const github = {
       /** 已标星的星星颜色 */
       iconColor: null,
     },
+    invisible: {
+      iconColor: {
+        /** 静止色
+         * @templates view_content.ts & view_list.ts 专用图标色(基本是 soft-dark 主题专用色)
+         */
+        rest: null,
+      },
+    },
   },
   control: {
     bgColor: {

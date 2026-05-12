@@ -222,6 +222,7 @@ export const githubSoftDarkColor: GitHubColor = {
       bgColor: { hover: "#ad2e2c", active: themeVars.github.bgColor.danger.emphasis },
     },
     star: { iconColor: "#daaa3f" },
+    invisible: { iconColor: { rest: "#b7bdc8" } },
   },
   control: {
     bgColor: { active: "#3d444d", hover: "#2f3742", rest: "#2a313c" },
