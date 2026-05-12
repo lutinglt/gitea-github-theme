@@ -47,6 +47,7 @@ jobs:
       - name: Build locales
         id: locales
         if: steps.build.outcome =='success'
+        continue-on-error: true
         run: npm run tr
 
       - name: Upload locales assets

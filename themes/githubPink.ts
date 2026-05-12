@@ -78,3 +78,9 @@ export const githubPinkLightTheme = defineTheme({
   themeColor: githubPinkLightColor,
   syntaxColor: githubLightSyntax,
 });
+
+export default {
+  githubPinkDarkTheme,
+  githubPinkSoftDarkTheme,
+  githubPinkLightTheme,
+};

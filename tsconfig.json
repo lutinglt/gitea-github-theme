@@ -32,9 +32,9 @@
     "noUncheckedSideEffectImports": true,
     "paths": {
       "*": ["./*"],
-      "src/*": ["./src/*"],
-      "styles/*": ["./styles/*"],
-      "themes/*": ["./themes/*"]
+      "src": ["./src"],
+      "styles": ["./styles"],
+      "themes": ["./themes"]
     }
   },
   "include": ["src", "styles", "themes", "vite.config.ts", "theme.config.ts", "eslint.config.ts"]

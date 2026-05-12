@@ -315,3 +315,9 @@ export const githubTritanopiaLightTheme = defineTheme({
   themeColor: githubTritanopiaLightColor,
   syntaxColor: githubTritanopiaLightSyntax,
 });
+
+export default {
+  githubLightTheme,
+  githubColorblindLightTheme,
+  githubTritanopiaLightTheme,
+};

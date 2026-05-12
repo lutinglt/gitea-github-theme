@@ -454,3 +454,10 @@ export const githubTritanopiaDarkTheme = defineTheme({
   themeColor: githubTritanopiaDarkColor,
   syntaxColor: githubTritanopiaDarkSyntax,
 });
+
+export default {
+  githubDarkTheme,
+  githubSoftDarkTheme,
+  githubColorblindDarkTheme,
+  githubTritanopiaDarkTheme,
+};

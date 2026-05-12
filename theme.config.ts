@@ -18,17 +18,15 @@
  */
 
 import { defineThemeConfig } from "src";
-import * as githubDark from "./themes/githubDark";
-import * as githubLight from "./themes/githubLight";
-import * as githubPink from "./themes/githubPink";
+import themes from "themes";
 
 export default defineThemeConfig([
   {
     themeSeriesName: "base",
     themes: {
-      dark: { theme: githubDark.githubDarkTheme },
-      light: { theme: githubLight.githubLightTheme },
-      "soft-dark": { theme: githubDark.githubSoftDarkTheme },
+      dark: { theme: themes.github.dark },
+      light: { theme: themes.github.light },
+      "soft-dark": { theme: themes.github.softDark },
     },
   },
   {
@@ -38,12 +36,12 @@ export default defineThemeConfig([
       dark: {
         displayName: "Dark Protanopia And Deuteranopia",
         colorblindType: "red-green",
-        theme: githubDark.githubColorblindDarkTheme,
+        theme: themes.github.colorblind.dark,
       },
       light: {
         displayName: "Light Protanopia And Deuteranopia",
         colorblindType: "red-green",
-        theme: githubLight.githubColorblindLightTheme,
+        theme: themes.github.colorblind.light,
       },
     },
   },
@@ -54,21 +52,21 @@ export default defineThemeConfig([
       dark: {
         displayName: "Dark Tritanopia",
         colorblindType: "blue-yellow",
-        theme: githubDark.githubTritanopiaDarkTheme,
+        theme: themes.github.tritanopia.dark,
       },
       light: {
         displayName: "Light Tritanopia",
         colorblindType: "blue-yellow",
-        theme: githubLight.githubTritanopiaLightTheme,
+        theme: themes.github.tritanopia.light,
       },
     },
   },
   {
     themeSeriesName: "pink",
     themes: {
-      dark: { theme: githubPink.githubPinkDarkTheme },
-      light: { theme: githubPink.githubPinkLightTheme },
-      "soft-dark": { theme: githubPink.githubPinkSoftDarkTheme },
+      dark: { theme: themes.github.pink.dark },
+      light: { theme: themes.github.pink.light },
+      "soft-dark": { theme: themes.github.pink.softDark },
     },
   },
 ]);
