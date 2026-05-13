@@ -17,10 +17,18 @@
  * limitations under the License.
  */
 
-const fs = require("fs");
-const path = require("path");
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { ProxyAgent, setGlobalDispatcher } from "undici";
+import pkg from "../package.json" with { type: "json" };
 
-const pkgPath = path.join(__dirname, "..", "package.json");
-const pkg = JSON.parse(fs.readFileSync(pkgPath));
+export function setGlobalProxy() {
+  const proxyUrl = process.env.HTTPS_PROXY || process.env.HTTP_PROXY || process.env.ALL_PROXY;
+  if (proxyUrl) {
+    setGlobalDispatcher(new ProxyAgent(proxyUrl));
+  }
+}
 
-console.log(pkg.version);
+export { pkg };
+export const __dirname = path.dirname(fileURLToPath(import.meta.url));
+export const rootDir = path.join(__dirname, "..");

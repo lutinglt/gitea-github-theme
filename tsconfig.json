@@ -37,5 +37,5 @@
       "themes": ["./themes"]
     }
   },
-  "include": ["src", "styles", "themes", "vite.config.ts", "theme.config.ts", "eslint.config.ts"]
+  "include": ["src", "styles", "themes", "scripts", "vite.config.ts", "theme.config.ts", "eslint.config.ts"]
 }

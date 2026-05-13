@@ -100,7 +100,7 @@ export const selectionDropdown = css`
     border-bottom-right-radius: ${otherThemeVars.border.radius} !important;
   }
   /* 修复 Gitea 1.26 (:not(:focus)) 导致的小按钮右边框出现问题, 例如软件包类型, 通常相邻有元素 */
-  .ui.action.input:not([class*="left action"])>.ui.small.dropdown.selection {
+  .ui.action.input:not([class*="left action"]) > .ui.small.dropdown.selection {
     border-right: none;
   }
   /* 修复因为上面的排除导致的圆角问题 */

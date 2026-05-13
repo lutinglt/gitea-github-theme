@@ -24,12 +24,12 @@ import tseslint from "typescript-eslint";
 
 export default defineConfig([
   {
-    files: ["**/*.{js,mjs,cjs,ts,mts,cts}"],
+    files: ["**/*.ts"],
     plugins: { js },
     extends: ["js/recommended"],
     languageOptions: {
       ecmaVersion: "latest",
-      globals: globals.browser,
+      globals: globals.node,
     },
     rules: {
       "@typescript-eslint/no-unused-vars": [

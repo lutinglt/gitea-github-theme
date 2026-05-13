@@ -1,6 +1,6 @@
 {
   "name": "gitea-github-theme",
-  "version": "1.26.2",
+  "version": "1.26.1",
   "license": "Apache-2.0",
   "author": {
     "name": "lutinglt",
@@ -12,9 +12,9 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "commit": "npm run lint && npm run format && npm run build",
-    "version": "node scripts/version.cjs",
-    "tr": "node scripts/translate.cjs",
-    "update:gitea": "node scripts/update_gitea.cjs",
+    "version": "node scripts/version.ts",
+    "tr": "node scripts/translate.ts",
+    "update:gitea": "node scripts/update_gitea.ts",
     "release": "npm run build && npm run tr",
     "install:clean": "npm cache clean --force && rm -rf node_modules package-lock.json && npm install"
   },

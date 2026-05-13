@@ -4,5 +4,3 @@
 .github/** linguist-vendored
 .vscode/** linguist-generated
 gitea/** linguist-generated
-screenshots/** linguist-vendored
-scripts/** linguist-vendored

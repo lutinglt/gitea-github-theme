@@ -17,18 +17,11 @@
  * limitations under the License.
  */
 
-const fs = require("fs");
-const path = require("path");
+import fs from "node:fs";
+import path from "node:path";
+import { pkg, rootDir, setGlobalProxy } from "./utils.ts";
 
-const { ProxyAgent, setGlobalDispatcher } = require("undici");
-const proxyUrl = process.env.HTTPS_PROXY || process.env.HTTP_PROXY || process.env.ALL_PROXY;
-if (proxyUrl) {
-  setGlobalDispatcher(new ProxyAgent(proxyUrl));
-}
-
-const rootDir = path.join(__dirname, "..");
-const pkgPath = path.join(rootDir, "package.json");
-const pkg = JSON.parse(fs.readFileSync(pkgPath));
+setGlobalProxy();
 
 const githubSite = "https://raw.githubusercontent.com";
 const giteaRepo = "go-gitea/gitea";
@@ -40,8 +33,8 @@ const versionPath = `${githubTagPath}/v${major}.${minor}.${patch}`;
 const githubBaseUrl = `${githubSite}/${giteaRepo}/${versionPath}`;
 
 // 递归读取所有子目录中的文件
-function readFilesRecursively(dir) {
-  const results = [];
+function readFilesRecursively(dir: string) {
+  const results: string[] = [];
   const files = fs.readdirSync(dir);
 
   for (const file of files) {
@@ -72,7 +65,7 @@ const files = readFilesRecursively(localGiteaPath);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-    let content = await response.text();
+    const content = await response.text();
     fs.writeFileSync(path.join(localGiteaPath, file), content);
   }
 })();

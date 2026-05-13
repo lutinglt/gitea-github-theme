@@ -17,16 +17,6 @@
  * limitations under the License.
  */
 
-import { assertVarName } from "@vanilla-extract/css";
-import type { CSSVarFunction } from "src/core";
+import { pkg } from "./utils.ts";
 
-type CSSVarName = `--${string}`;
-/** 提取 CSS 变量名
- * @param cssvar `var(--${string})`
- * @returns `--${string}`
- */
-export function extractVarName(cssvar: CSSVarFunction): CSSVarName {
-  assertVarName(cssvar);
-  const varName = cssvar.replace("var(--", "").replace(")", "");
-  return `--${varName}`;
-}
+console.log(pkg.version);

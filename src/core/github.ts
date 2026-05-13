@@ -156,7 +156,7 @@ export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
     input: {
       text: themeVars.color.text.self,
       background: githubColor.bgColor.muted,
-      toggleBackgound: githubColor.bgColor.inset,
+      toggleBackground: githubColor.bgColor.inset,
       border: themeVars.color.light.border,
     },
     light: { self: themeVars.color.body, border: githubColor.borderColor.default },

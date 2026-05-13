@@ -67,7 +67,7 @@ export const other = {
     /** 滑块按钮的背景色, 不能与背景色一致
      * @example 管理设置中启用/禁用头像
      */
-    toggleBackgound: "color-input-toggle-background",
+    toggleBackground: "color-input-toggle-background",
     border: null,
   },
   light: {

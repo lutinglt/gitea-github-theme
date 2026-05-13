@@ -17,22 +17,14 @@
  * limitations under the License.
  */
 
-const fs = require("fs");
-const path = require("path");
-const child_process = require("child_process");
+import dotenv from "dotenv";
+import child_process from "node:child_process";
+import fs from "node:fs";
+import path from "node:path";
+import { pkg, rootDir, setGlobalProxy } from "./utils.ts";
 
-const { ProxyAgent, setGlobalDispatcher } = require("undici");
-const proxyUrl = process.env.HTTPS_PROXY || process.env.HTTP_PROXY || process.env.ALL_PROXY;
-if (proxyUrl) {
-  setGlobalDispatcher(new ProxyAgent(proxyUrl));
-}
-
-const dotenv = require("dotenv");
 dotenv.config({ quiet: true });
-
-const rootDir = path.join(__dirname, "..");
-const pkgPath = path.join(rootDir, "package.json");
-const pkg = JSON.parse(fs.readFileSync(pkgPath));
+setGlobalProxy();
 
 const githubSite = "https://raw.githubusercontent.com";
 const giteaRepo = "go-gitea/gitea";
@@ -41,14 +33,12 @@ const githubTagPath = "refs/tags";
 const localePath = "options/locale";
 
 const [major, minor, patch, tag = ""] = pkg.version.split(".");
-
 console.log("Version:", pkg.version);
-let versionPath = "";
-if (tag.includes("rc") || patch.includes("latest")) {
-  versionPath = `${githubBranchPath}/v${major}.${minor}`;
-} else {
-  versionPath = `${githubTagPath}/v${major}.${minor}.${patch}`;
-}
+
+const versionPath =
+  tag.includes("rc") || patch.includes("latest")
+    ? `${githubBranchPath}/v${major}.${minor}`
+    : `${githubTagPath}/v${major}.${minor}.${patch}`;
 
 const githubUrl = `${githubSite}/${giteaRepo}/${versionPath}/${localePath}`;
 const locales = fs.readdirSync(path.join(rootDir, localePath)).filter(file => file.endsWith(".json"));
@@ -63,7 +53,7 @@ const locales = fs.readdirSync(path.join(rootDir, localePath)).filter(file => fi
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-    let content = await response.json();
+    const content = (await response.json()) as Record<string, string>;
     if (locale.includes("zh-CN")) {
       for (const key of Object.keys(content)) {
         if (typeof content[key] === "string") {
