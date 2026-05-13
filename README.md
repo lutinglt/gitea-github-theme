@@ -37,9 +37,8 @@ accepted.
 
 > [!IMPORTANT]
 >
-> Because the project uses Lightning CSS to transpile CSS nesting code, it will contain a large number of :is()
-> selectors, and browsers below Chrome 88 are not supported. Using browsers below Chrome 88 may cause many styling
-> issues. Please update to Chrome 88 or above.
+> Because the project uses new CSS features, ensure styles are applied correctly by keeping Chrome/Edge >= 105,
+> Firefox >= 121, Safari >= 15.4
 
 1. Download the latest CSS theme file from the release page and place it in the `data/gitea/public/assets/css` directory
    (This directory may not be available by default and needs to be manually created)
@@ -179,7 +178,7 @@ Add the following code at the beginning or end of the theme's CSS file
 
 You might want to use the development version of the theme instead of the released version
 
-Please ensure you have Node.js environment installed, Node.js 20 or above is recommended
+Please ensure you have Node.js environment installed, Node.js 24.12.0 or above is recommended
 
 ```bash
 git clone https://github.com/lutinglt/gitea-github-theme.git
