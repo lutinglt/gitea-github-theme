@@ -21,6 +21,13 @@
 		{{svg "octicon-git-pull-request"}}
 	</a>
 	{{end}}
+	{{if not (and ctx.Consts.RepoUnitTypeIssues.UnitGlobalDisabled ctx.Consts.RepoUnitTypePullRequests.UnitGlobalDisabled)}}
+		{{if .ShowMilestonesDashboardPage}}
+			<a class="item {{$itemExtraClass}}" href="{{AppSubUrl}}/milestones" data-tooltip-content="{{ctx.Locale.Tr "milestones"}}">
+				{{svg "octicon-milestone"}}
+			</a>
+		{{end}}
+	{{end}}
 	<a class="item {{$itemExtraClass}}" href="{{AppSubUrl}}/notifications" data-tooltip-content="{{ctx.Locale.Tr "notifications"}}">
 		<div class="tw-relative flex-text-block">
 			{{svg "octicon-inbox"}}

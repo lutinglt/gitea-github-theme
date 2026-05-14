@@ -89,6 +89,10 @@ export const transition = css`
     &:active {
       transform: translateY(1px);
     }
+    /* 下拉图标的过渡会导致在下移过程中出现的菜单被短暂遮挡 */
+    &.dropdown {
+      z-index: 999;
+    }
     .button:active {
       transform: none;
     }

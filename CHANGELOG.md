@@ -7,6 +7,10 @@
 - Optimize the length of the clone button.
 - Optimize the color of the branch/tag/submission history icon for the soft dark theme in the template.
 
+##### Template File
+
+- Move the navigation bar milestone to the right.
+
 ### 🐞 Fix
 
 - Fix template submission list avatar alignment issue.
