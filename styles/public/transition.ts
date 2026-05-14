@@ -83,7 +83,14 @@ export const transition = css`
       color 80ms cubic-bezier(0.65, 0, 0.35, 1),
       fill 80ms cubic-bezier(0.65, 0, 0.35, 1),
       background-color 80ms cubic-bezier(0.65, 0, 0.35, 1),
+      /* 位移慢一点, 这样视觉上与颜色变化同步 */ transform 200ms cubic-bezier(0.65, 0, 0.35, 1),
       border-color 80ms cubic-bezier(0.65, 0, 0.35, 1);
     transition-duration: 80ms;
+    &:active {
+      transform: translateY(1px);
+    }
+    .button:active {
+      transform: none;
+    }
   }
 `;

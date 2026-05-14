@@ -1,5 +1,7 @@
 ### 🌈 Style
 
+- Add a click displacement animation similar to shadcn style to the button.
+
 #### More GitHub-like style
 
 - Optimize the length of the clone button.
