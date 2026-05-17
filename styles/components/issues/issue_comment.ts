@@ -103,6 +103,7 @@ export const comment = css`
           }
           &:active {
             background-color: ${themeVars.github.control.danger.bgColor.active} !important;
+            color: ${themeVars.color.red.light};
           }
         }
       }
