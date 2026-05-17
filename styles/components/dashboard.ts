@@ -26,7 +26,7 @@ export const dashboard = css`
     /* 仪表板切换控制用户按钮 */
     .ui.dropdown .menu.context-user-switch .scrolling.menu {
       animation: none; /* 去掉嵌套菜单导致的多余动画 */
-      box-shadow: 0px 0px 0px 1px ${themeVars.color.light.border} !important;
+      box-shadow: 0px 0px 0px 1px ${themeVars.color.secondary.self} !important;
     }
   }
   /* 首页仪表板, 避免选中管理员后台的维护管理面板 */
@@ -72,7 +72,7 @@ export const dashboard = css`
         background: ${themeVars.github.controlKnob.bgColor.rest};
         border-radius: 12px;
         box-shadow:
-          0px 0px 0px 1px ${themeVars.color.light.border},
+          0px 0px 0px 1px ${themeVars.color.secondary.self},
           ${themeVars.github.shadow.resting.small};
         transition: transform 200ms cubic-bezier(0.33, 1, 0.68, 1);
         z-index: 1;
@@ -99,7 +99,7 @@ export const dashboard = css`
       background-color: ${themeVars.color.menu};
       border: unset !important;
       box-shadow:
-        0px 0px 0px 1px ${themeVars.color.light.border},
+        0px 0px 0px 1px ${themeVars.color.secondary.self},
         ${themeVars.github.shadow.resting.small};
       &.repos-search {
         border-top-left-radius: 12px;

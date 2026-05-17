@@ -20,8 +20,8 @@
 import { saturate } from "polished";
 import type { Console, Diff, Other } from "src";
 import { scaleColorLight } from "src/functions";
-import { themeVars, type Github } from "src/types";
-import { type ThemeColor } from "./color";
+import { themeVars, type GitHub } from "src/types";
+import type { ThemeColor } from "./theme";
 
 export type GitHubColor = {
   isDarkTheme: boolean;
@@ -200,7 +200,7 @@ export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
     workflowEdgeHover: githubColor.bgColor.accent.emphasis,
   };
 
-  const github: Github = {
+  const github: GitHub = {
     avatar: { bgColor: githubColor.avatar.bgColor, borderColor: githubColor.avatar.borderColor },
     fgColor: {
       accent: githubColor.fgColor.accent,

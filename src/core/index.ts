@@ -17,10 +17,6 @@
  * limitations under the License.
  */
 
-export type { ThemeColor } from "./color";
-export { display2GitHubColor, type DisplayColor } from "./display";
-export { github2ThemeColor, type GitHubColor } from "./github";
-export type { GitHubSyntax } from "./githubSyntax";
 export { createTheme, defineTheme } from "./theme";
-export type { GiteaColor, Theme } from "./theme";
+export type { Theme, ThemeVars } from "./theme";
 export type { CSSVarFunction, MapLeafNodes } from "./types";

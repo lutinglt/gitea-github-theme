@@ -17,6 +17,8 @@
  * limitations under the License.
  */
 
+import { giteaDarkTheme } from "./giteaDark";
+import { giteaLightTheme } from "./giteaLight";
 import githubDark from "./githubDark";
 import githubLight from "./githubLight";
 import githubPink from "./githubPink";
@@ -39,5 +41,9 @@ export default {
       light: githubPink.githubPinkLightTheme,
       softDark: githubPink.githubPinkSoftDarkTheme,
     },
+  },
+  gitea: {
+    dark: giteaDarkTheme,
+    light: giteaLightTheme,
   },
 };

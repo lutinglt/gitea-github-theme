@@ -27,10 +27,10 @@ export const commitSignBadge = css`
     margin: unset;
     height: 26px;
     margin: 0 4px;
+    &:hover {
+      background-color: unset !important;
+    }
     &.commit-is-signed {
-      &:hover {
-        background-color: unset !important;
-      }
       span.ui.label.commit-sign-badge.commit-is-signed {
         margin: unset;
       }

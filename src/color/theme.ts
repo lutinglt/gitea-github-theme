@@ -18,10 +18,10 @@
  */
 
 import { rgba, saturate } from "polished";
+import type { ThemeVars } from "src/core";
 import { scaleColorLight } from "src/functions";
-import type { Ansi, Console, Diff, Github, Message, Named, Other, Primary, Secondary } from "src/types";
+import type { Ansi, Console, Diff, GitHub, Message, Named, Other, Primary, Secondary } from "src/types";
 import { themeVars } from "src/types";
-import type { GiteaColor } from "./theme";
 
 export type ThemeColor = {
   /** 用于标识当前是否为暗色主题: `true` 暗色 `false` 亮色 */
@@ -74,10 +74,10 @@ export type ThemeColor = {
   /** 其他 */
   other: Other;
   /** 仅适用于本主题的全局变量, 取自 Github */
-  github: Github;
+  github: GitHub;
 };
 
-export function theme2GiteaColor(themeColor: ThemeColor): GiteaColor {
+export function theme2ThemeVars(themeColor: ThemeColor): ThemeVars {
   const brightDir = themeColor.isDarkTheme ? -1 : 1;
 
   const primary: Primary = {

@@ -17,14 +17,8 @@
  * limitations under the License.
  */
 
-import selectors from "./selectors";
-
-export { display2GitHubColor, github2ThemeColor } from "./color";
-export type { DisplayColor, GitHubColor, GitHubSyntax, GiteaColor, ThemeColor } from "./color";
-export { createTheme, defineTheme } from "./core";
-export { extractVarName, scaleColorLight } from "./functions";
-export { createThemeMetaInfo } from "./styles";
-export { chromaVars, customThemeVars, otherThemeVars, syntaxVars, themeVars } from "./types";
-export type { Ansi, Chroma, Console, Diff, GitHub, Message, Named, Other, Primary, Secondary, Syntax } from "./types";
-export { defineThemeConfig } from "./vite-plugin";
-export { selectors };
+export { display2GitHubColor, type DisplayColor } from "./display";
+export { gitea2ThemeVars, type GiteaColor } from "./gitea";
+export { github2ThemeColor, type GitHubColor } from "./github";
+export { githubSyntax2CodeMirror, prettylights2Chroma, type GitHubSyntax } from "./githubSyntax";
+export { theme2ThemeVars, type ThemeColor } from "./theme";

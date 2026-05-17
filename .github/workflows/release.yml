@@ -32,6 +32,9 @@ jobs:
           tar -zcf dist/theme-github-extra-pink.tar.gz --remove-files \
           dist/theme-github-pink-auto.css dist/theme-github-pink-light.css dist/theme-github-pink-dark.css dist/theme-github-pink-soft-dark.css
 
+          tar -zcf dist/theme-github-extra-gitea.tar.gz --remove-files \
+          dist/theme-github-gitea-auto.css dist/theme-github-gitea-light.css dist/theme-github-gitea-dark.css
+
           tar -zcf dist/theme-github-templates.tar.gz templates
           tar -zcf dist/theme-github-translations.tar.gz --remove-files dist/options
           TAG="v$(npm run -s version)"

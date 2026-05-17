@@ -1,3 +1,7 @@
+### ✨ Feature
+
+- Add gitea color theme.
+
 ### 🌈 Style
 
 - Add a click displacement animation similar to shadcn style to the button.

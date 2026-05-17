@@ -38,6 +38,7 @@ export const issueSidebar = css`
       gap: 24px;
       /* 侧边栏 */
       .issue-content-right {
+        background-color: ${themeVars.color.body};
         border: 0;
         font-size: 12px;
         padding: 0;

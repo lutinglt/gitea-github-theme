@@ -34,19 +34,19 @@ export const smallCompactMenu = css`
   .page-content.repository.labels .issue-navbar {
     .ui.compact.small.menu.small-menu-items {
       background: ${themeVars.github.controlTrack.bgColor.rest} !important;
-      border: 1px solid ${themeVars.color.light.border};
+      border: 1px solid ${themeVars.color.secondary.self};
       font-size: 14px;
       gap: 4px;
       height: 32px;
       min-height: 32px !important;
       > .item {
         background: unset !important;
-        border: 1px solid ${themeVars.github.controlTrack.bgColor.rest};
+        border: 1px solid #0000;
         border-radius: ${otherThemeVars.border.radius};
         padding: 6px 12px !important;
         &.active {
           background: ${themeVars.github.controlKnob.bgColor.rest} !important;
-          border-color: ${themeVars.color.light.border};
+          border-color: ${themeVars.color.secondary.self};
           font-weight: 600;
           margin-top: -1px;
           margin-bottom: -1px;

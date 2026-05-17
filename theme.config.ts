@@ -69,4 +69,11 @@ export default defineThemeConfig([
       "soft-dark": { theme: themes.github.pink.softDark },
     },
   },
+  {
+    themeSeriesName: "gitea",
+    themes: {
+      dark: { theme: themes.gitea.dark },
+      light: { theme: themes.gitea.light },
+    },
+  },
 ]);

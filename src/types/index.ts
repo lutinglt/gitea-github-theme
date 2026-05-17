@@ -42,7 +42,7 @@ export type Console = MapLeafNodes<typeof color.console, string>;
 export type Diff = MapLeafNodes<typeof color.diff, string>;
 /** 其他颜色 */
 export type Other = MapLeafNodes<typeof color.other, string>;
-/** 仅限本主题的 Github 颜色 */
-export type Github = MapLeafNodes<typeof color.github, string>;
+/** 仅限本主题的 GitHub 颜色 */
+export type GitHub = MapLeafNodes<typeof color.github, string>;
 
 export { chromaVars, codeMirrorVars, customThemeVars, otherThemeVars, syntaxVars, themeVars } from "./vars";

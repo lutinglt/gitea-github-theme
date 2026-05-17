@@ -19,7 +19,7 @@
 
 import { saturate } from "polished";
 import { scaleColorLight } from "src/functions";
-import { type GitHubColor } from "./github";
+import type { GitHubColor } from "./github";
 
 export type DisplayColor = {
   num0: string;

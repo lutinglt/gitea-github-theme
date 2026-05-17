@@ -115,6 +115,10 @@ export const actions = css`
             }
           }
         }
+        /* 分页按钮, GitHub Gitea 修正, 不影响其他配色 */
+        .center.page.buttons {
+          background: ${themeVars.color.body};
+        }
       }
     }
   }

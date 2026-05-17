@@ -19,15 +19,13 @@
 
 import { createGlobalTheme, globalKeyframes, globalStyle } from "@vanilla-extract/css";
 import { github2ThemeColor, selectors } from "src";
+import type { GiteaColor, GitHubColor, GitHubSyntax, ThemeColor } from "src/color";
+import { gitea2ThemeVars, githubSyntax2CodeMirror, prettylights2Chroma, theme2ThemeVars } from "src/color";
 import { createChroma, createCodeMirror } from "src/styles";
 import { otherThemeVars, syntaxVars, themeVars, type Syntax } from "src/types";
-import { theme2GiteaColor, type ThemeColor } from "./color";
-import type { GitHubColor } from "./github";
-import { githubSyntax2CodeMirror, prettylights2Chroma, type GitHubSyntax } from "./githubSyntax";
 import type { MapLeafNodes } from "./types";
 
-type themeVarsColor = MapLeafNodes<typeof themeVars, string>;
-export type GiteaColor = { isDarkTheme: boolean } & themeVarsColor;
+export type ThemeVars = { isDarkTheme: boolean } & MapLeafNodes<typeof themeVars, string>;
 export type ThemeColors =
   | { colorType: "github"; themeColor: GitHubColor; syntaxColor: GitHubSyntax }
   | { colorType: "gitea"; themeColor: GiteaColor; syntaxColor: Syntax }
@@ -85,10 +83,10 @@ declare const __THEME_VERSION__: string;
 export function createTheme(theme: Theme): void {
   const { isDarkTheme, ...themeVarsColor } =
     theme.colorType === "github"
-      ? theme2GiteaColor(github2ThemeColor(theme.themeColor))
+      ? theme2ThemeVars(github2ThemeColor(theme.themeColor))
       : theme.colorType === "theme"
-        ? theme2GiteaColor(theme.themeColor)
-        : theme.themeColor;
+        ? theme2ThemeVars(theme.themeColor)
+        : gitea2ThemeVars(theme.themeColor);
 
   // 注入主题标识和版本号
   createGlobalTheme(selectors.root, {
