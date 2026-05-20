@@ -86,6 +86,10 @@ export const repoFiles = css`
   /* 文件列表和提交列表的按钮组 */
   .repo-button-row {
     margin: 16px 0;
+    /* 修复 Forgejo 最新版中 .clone-panel 内"更多操作"下拉菜单被下方 .code-search 遮挡 */
+    /* 在此建立堆叠上下文，使内部 .jump.dropdown .menu 能正确浮出 */
+    position: relative;
+    z-index: 1;
     .repo-button-row-right {
       /* 转到文件搜索框 */
       .repo-file-search-container .ui.input {
