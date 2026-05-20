@@ -76,4 +76,13 @@ export default defineThemeConfig([
       light: { theme: themes.gitea.light },
     },
   },
+  {
+    themeSeriesName: "catppuccin",
+    themes: {
+      light: { themeName: "latte", theme: themes.catppuccin.latte },
+      dark: { themeName: "mocha", theme: themes.catppuccin.mocha },
+      frappe: { theme: themes.catppuccin.frappe },
+      macchiato: { theme: themes.catppuccin.macchiato },
+    },
+  },
 ]);

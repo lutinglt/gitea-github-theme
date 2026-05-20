@@ -19,10 +19,15 @@
 
 import { rgba, saturate } from "polished";
 import type { ThemeVars } from "src/core";
-import { scaleColorLight } from "src/functions";
+import { scaleColorLight, themeVars2GitHub } from "src/functions";
 import type { Ansi, Console, Diff, GitHub, Message, Named, Other, Primary, Secondary } from "src/types";
 import { themeVars } from "src/types";
 
+type OverrideColor = {
+  ansi?: Ansi;
+  message?: Message;
+  named?: Named;
+};
 export type ThemeColor = {
   /** 用于标识当前是否为暗色主题: `true` 暗色 `false` 亮色 */
   isDarkTheme: boolean;
@@ -74,9 +79,10 @@ export type ThemeColor = {
   /** 其他 */
   other: Other;
   /** 仅适用于本主题的全局变量, 取自 Github */
-  github: GitHub;
+  github?: GitHub;
+  /** 覆盖默认生成的颜色 */
+  override?: OverrideColor;
 };
-
 export function theme2ThemeVars(themeColor: ThemeColor): ThemeVars {
   const brightDir = themeColor.isDarkTheme ? -1 : 1;
 
@@ -155,7 +161,7 @@ export function theme2ThemeVars(themeColor: ThemeColor): ThemeVars {
     active: themeColor.isDarkTheme ? themeVars.color.secondary.dark.num2 : themeVars.color.secondary.dark.num6,
   };
 
-  const named: Named = {
+  const named: Named = themeColor.override?.named ?? {
     red: {
       self: themeColor.base.red,
       light: themeColor.isDarkTheme
@@ -314,7 +320,7 @@ export function theme2ThemeVars(themeColor: ThemeColor): ThemeVars {
     white: themeColor.base.white,
   };
 
-  const message: Message = {
+  const message: Message = themeColor.override?.message ?? {
     error: {
       bg: {
         self: rgba(themeColor.base.red, 0.1),
@@ -341,7 +347,7 @@ export function theme2ThemeVars(themeColor: ThemeColor): ThemeVars {
     },
   };
 
-  const ansi: Ansi = {
+  const ansi: Ansi = themeColor.override?.ansi ?? {
     black: themeVars.color.black.self,
     red: themeVars.color.red.self,
     green: themeVars.color.green.self,
@@ -364,6 +370,10 @@ export function theme2ThemeVars(themeColor: ThemeColor): ThemeVars {
     },
   };
 
+  const github: GitHub =
+    themeColor.github ??
+    themeVars2GitHub(themeColor.isDarkTheme, { primary: primary.self, red_badge_bg: named.red.badge.bg });
+
   return {
     isDarkTheme: themeColor.isDarkTheme,
     color: {
@@ -376,6 +386,6 @@ export function theme2ThemeVars(themeColor: ThemeColor): ThemeVars {
       ...message,
       ...themeColor.other,
     },
-    github: themeColor.github,
+    github,
   };
 }

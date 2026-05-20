@@ -1,6 +1,7 @@
 ### ✨ Feature
 
 - Add gitea color theme.
+- Add catppuccin color theme.
 
 ### 🌈 Style
 

@@ -17,6 +17,7 @@
  * limitations under the License.
  */
 
+import catppuccin from "./catppuccin";
 import { giteaDarkTheme } from "./giteaDark";
 import { giteaLightTheme } from "./giteaLight";
 import githubDark from "./githubDark";
@@ -45,5 +46,11 @@ export default {
   gitea: {
     dark: giteaDarkTheme,
     light: giteaLightTheme,
+  },
+  catppuccin: {
+    latte: catppuccin.catppuccinLatteTheme,
+    frappe: catppuccin.catppuccinFrappeTheme,
+    macchiato: catppuccin.catppuccinMacchiatoTheme,
+    mocha: catppuccin.catppuccinMochaTheme,
   },
 };

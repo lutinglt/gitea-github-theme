@@ -23,8 +23,8 @@
 
 import type { DisplayColor } from "src";
 import { defineTheme, display2GitHubColor } from "src";
-import { githubDarkColor, githubDarkSyntax, githubSoftDarkColor, githubSoftDarkSyntax } from "themes/githubDark";
-import { githubLightColor, githubLightSyntax } from "themes/githubLight";
+import { githubDarkColor, githubDarkSyntax, githubSoftDarkColor, githubSoftDarkSyntax } from "./githubDark";
+import { githubLightColor, githubLightSyntax } from "./githubLight";
 
 /** GitHub 粉色深色主题色阶 */
 export const githubPinkDarkDisplayColor: DisplayColor = {

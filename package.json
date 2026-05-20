@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.28.5",
+    "@catppuccin/palette": "^1.8.0",
     "@eslint/js": "^10.0.1",
     "@linaria/core": "^7.0.0",
     "@types/node": "^25.5.2",

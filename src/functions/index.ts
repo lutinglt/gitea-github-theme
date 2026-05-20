@@ -17,5 +17,6 @@
  * limitations under the License.
  */
 
+export { themeVars2GitHub } from "./github";
 export { scaleColorLight } from "./scss";
 export { extractVarName } from "./var";
