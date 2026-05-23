@@ -18,6 +18,7 @@
  */
 
 export { catppuccin2ThemeColor } from "./catppuccin";
+export { catppuccin2Syntax } from "./catppuccinSyntax";
 export { display2GitHubColor, type DisplayColor } from "./display";
 export { gitea2ThemeVars, type GiteaColor } from "./gitea";
 export { github2ThemeColor, type GitHubColor } from "./github";

@@ -22,33 +22,31 @@
  */
 
 import { flavors } from "@catppuccin/palette";
-import { catppuccin2ThemeColor, defineTheme } from "src";
-import { giteaDarkSyntax } from "./giteaDark";
-import { giteaLightSyntax } from "./giteaLight";
+import { catppuccin2Syntax, catppuccin2ThemeColor, defineTheme } from "src";
 
 /** Gitea GitHub Theme 拓展 GitHub 粉色深色主题 */
 export const catppuccinLatteTheme = defineTheme({
   colorType: "theme",
   themeColor: catppuccin2ThemeColor(flavors.latte),
-  syntaxColor: giteaLightSyntax,
+  syntaxColor: catppuccin2Syntax(flavors.latte),
 });
 /** Gitea GitHub Theme 拓展 GitHub 粉色柔和深色主题 */
 export const catppuccinFrappeTheme = defineTheme({
   colorType: "theme",
   themeColor: catppuccin2ThemeColor(flavors.frappe),
-  syntaxColor: giteaDarkSyntax,
+  syntaxColor: catppuccin2Syntax(flavors.frappe),
 });
 /** Gitea GitHub Theme 拓展 GitHub 粉色浅色主题 */
 export const catppuccinMacchiatoTheme = defineTheme({
   colorType: "theme",
   themeColor: catppuccin2ThemeColor(flavors.macchiato),
-  syntaxColor: giteaDarkSyntax,
+  syntaxColor: catppuccin2Syntax(flavors.macchiato),
 });
 /** Gitea GitHub Theme 拓展 GitHub 粉色浅色主题 */
 export const catppuccinMochaTheme = defineTheme({
   colorType: "theme",
   themeColor: catppuccin2ThemeColor(flavors.mocha),
-  syntaxColor: giteaDarkSyntax,
+  syntaxColor: catppuccin2Syntax(flavors.mocha),
 });
 
 export default {

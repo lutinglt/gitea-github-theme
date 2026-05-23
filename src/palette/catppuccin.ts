@@ -120,7 +120,8 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
       tableRow: rgba(flavor.colors.text.hex, 0.02),
       code: { block: rgba(flavor.colors.text.hex, 0.05), inline: flavor.colors.surface0.hex },
     },
-    button: mix(0.5, flavor.colors.base.hex, flavor.colors.surface0.hex),
+    // 颜色偏向 base, 避免 latte 下与背景色相同
+    button: mix(0.75, flavor.colors.base.hex, flavor.colors.surface0.hex),
     codeBg: "unset",
     shadow: { self: rgba(lv1Color, 0.1), opaque: themeVars.color.shadow.self },
     secondaryBg: "unset",

@@ -79,8 +79,8 @@ export default defineThemeConfig([
   {
     themeSeriesName: "catppuccin",
     themes: {
-      light: { themeName: "latte", theme: themes.catppuccin.latte },
       dark: { themeName: "mocha", theme: themes.catppuccin.mocha },
+      light: { themeName: "latte", theme: themes.catppuccin.latte },
       frappe: { theme: themes.catppuccin.frappe },
       macchiato: { theme: themes.catppuccin.macchiato },
     },
