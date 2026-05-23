@@ -345,6 +345,11 @@ export function theme2ThemeVars(themeColor: ThemeColor): ThemeVars {
       border: rgba(themeColor.base.blue, 0.4),
       text: saturate(0.2, themeColor.base.blue),
     },
+    priority: {
+      bg: rgba(themeColor.base.purple, 0.1),
+      border: rgba(themeColor.base.purple, 0.4),
+      text: saturate(0.2, themeColor.base.purple),
+    },
   };
 
   const ansi: Ansi = themeColor.override?.ansi ?? {

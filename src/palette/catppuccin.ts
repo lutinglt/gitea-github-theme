@@ -18,7 +18,7 @@
  */
 
 import type { CatppuccinFlavor } from "@catppuccin/palette";
-import { darken, lighten, rgba, saturate } from "polished";
+import { darken, lighten, mix, rgba, saturate } from "polished";
 import { scaleColorLight } from "src/functions";
 import type { Ansi, Console, Diff, GitHub, Other } from "src/types";
 import { themeVars } from "src/types";
@@ -112,7 +112,7 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
       border: flavor.colors.surface1.hex,
     },
     light: { self: themeVars.color.body, border: flavor.colors.surface2.hex },
-    hover: { self: rgba(flavor.colors.overlay0.hex, 0.2), opaque: themeVars.color.box.header },
+    hover: { self: rgba(flavor.colors.overlay1.hex, 0.3), opaque: themeVars.color.box.header },
     active: rgba(flavor.colors.text.hex, 0.1),
     menu: flavor.colors.base.hex,
     card: flavor.colors.base.hex,
@@ -120,7 +120,7 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
       tableRow: rgba(flavor.colors.text.hex, 0.02),
       code: { block: rgba(flavor.colors.text.hex, 0.05), inline: flavor.colors.surface0.hex },
     },
-    button: flavor.colors.surface0.hex,
+    button: mix(0.5, flavor.colors.base.hex, flavor.colors.surface0.hex),
     codeBg: "unset",
     shadow: { self: rgba(lv1Color, 0.1), opaque: themeVars.color.shadow.self },
     secondaryBg: "unset",

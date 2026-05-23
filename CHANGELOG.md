@@ -21,3 +21,4 @@
 - Fix template submission list avatar alignment issue.
 - Fix the SVG color of the primary color button.
 - Fix the issue of the right border flashing on the small button.
+- Fix the style of the pagination menu when hovering over the mouse.

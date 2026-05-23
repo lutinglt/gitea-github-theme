@@ -191,22 +191,27 @@ const message: Message = {
   error: {
     bg: { self: "#322226", active: "#49262a", hover: "#3c2427" },
     border: "#763232",
-    text: themeVars.color.text.self,
+    text: "#f85149",
   },
   success: {
     bg: "#1c3329",
     border: "#225633",
-    text: themeVars.color.text.self,
+    text: "#3fb950",
   },
   warning: {
     bg: "#342e1f",
     border: "#5f481a",
-    text: themeVars.color.text.self,
+    text: "#d29922",
   },
   info: {
     bg: "#1b283a",
     border: "#254a7e",
-    text: themeVars.color.text.self,
+    text: "#2f81f7",
+  },
+  priority: {
+    bg: "#251c39",
+    border: "#4a268d",
+    text: "#a371f7",
   },
 };
 const other: Other = {

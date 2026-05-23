@@ -28,7 +28,7 @@ export const paginationMenu = css`
     border: 0;
     gap: 4px;
     min-height: fit-content;
-    .item {
+    .item.item {
       border-radius: ${otherThemeVars.border.radius};
       min-width: 32px;
       min-height: 32px;
