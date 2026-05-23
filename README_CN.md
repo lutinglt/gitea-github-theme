@@ -51,6 +51,10 @@ Gitea 理论上小版本号变更不会修改前端布局, 所以主题的小版
 THEMES = gitea-auto, gitea-light, gitea-dark, github-auto, github-light, github-dark, github-soft-dark
 ```
 
+> [!TIP]
+>
+> 不设置 THEMES 时, Gitea 会使用所有主题
+
 详细请查看 Gitea 文档
 [Gitea docs](https://docs.gitea.com/next/administration/customizing-gitea#customizing-the-look-of-gitea)
 
@@ -111,9 +115,9 @@ THEMES = github-tritanopia-auto, github-tritanopia-light, github-tritanopia-dark
 <details>
 <summary>Colorblind & Tritanopia (红绿色盲 & 蓝色盲)</summary>
 <h4>theme-github-colorblind-light.css & theme-github-tritanopia-light.css</h4>
-<img src="screenshots/colorblind-light.png"/>
+<img src="screenshots/colorblind/colorblind-light.png"/>
 <h4>theme-github-colorblind-dark.css & theme-github-tritanopia-dark.css</h4>
-<img src="screenshots/colorblind-dark.png"/>
+<img src="screenshots/colorblind/colorblind-dark.png"/>
 </details>
 
 ### 粉色主题
@@ -130,6 +134,38 @@ THEMES = github-pink-auto, github-pink-light, github-pink-dark, github-pink-soft
 <img src="screenshots/pink/pink-dark.png"/>
 <h4>theme-github-pink-soft-dark.css</h4>
 <img src="screenshots/pink/pink-soft-dark.png"/>
+</details>
+
+### Gitea 主题
+
+```ini
+THEMES = github-gitea-auto, github-gitea-light, github-gitea-dark
+```
+
+<details>
+<summary>Gitea</summary>
+<h4>theme-github-gitea-light.css</h4>
+<img src="screenshots/gitea/gitea-light.png"/>
+<h4>theme-github-gitea-dark.css</h4>
+<img src="screenshots/gitea/gitea-dark.png"/>
+</details>
+
+### Catppuccin 主题
+
+```ini
+THEMES = github-catppuccin-auto, github-catppuccin-latte, github-catppuccin-frappe, github-catppuccin-macchiato, github-catppuccin-mocha
+```
+
+<details>
+<summary>Catppuccin</summary>
+<h4>theme-github-catppuccin-latte.css</h4>
+<img src="screenshots/catppuccin/catppuccin-latte.png"/>
+<h4>theme-github-catppuccin-frappe.css</h4>
+<img src="screenshots/catppuccin/catppuccin-frappe.png"/>
+<h4>theme-github-catppuccin-macchiato.css</h4>
+<img src="screenshots/catppuccin/catppuccin-macchiato.png"/>
+<h4>theme-github-catppuccin-mocha.css</h4>
+<img src="screenshots/catppuccin/catppuccin-mocha.png"/>
 </details>
 
 ## 自定义 CSS 变量

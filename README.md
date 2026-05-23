@@ -12,7 +12,7 @@ A Gitea theme that pursues GitHub style not only in colors but also in styling d
 
 </h4>
 
-![Dashboard](screenshots/en/dashboard-en.png)
+![Dashboard](screenshots/dashboard.png)
 
 > [!TIP]
 >
@@ -55,6 +55,10 @@ Example `data/gitea/conf/app.ini`:
 [ui]
 THEMES = gitea-auto, gitea-light, gitea-dark, github-auto, github-light, github-dark, github-soft-dark
 ```
+
+> [!TIP]
+>
+> When THEMES is not set, Gitea will use all themes
 
 For details, please refer to the Gitea documentation
 [Gitea docs](https://docs.gitea.com/next/administration/customizing-gitea#customizing-the-look-of-gitea)
@@ -99,11 +103,11 @@ THEMES = github-auto, github-light, github-dark, github-soft-dark
 <details>
 <summary>Base</summary>
 <h4>theme-github-light.css</h4>
-<img src="screenshots/en/light.png"/>
+<img src="screenshots/light.png"/>
 <h4>theme-github-dark.css</h4>
-<img src="screenshots/en/dark.png"/>
+<img src="screenshots/dark.png"/>
 <h4>theme-github-soft-dark.css</h4>
-<img src="screenshots/en/soft-dark.png"/>
+<img src="screenshots/soft-dark.png"/>
 </details>
 
 ### Colorblind Themes (Beta)
@@ -116,9 +120,9 @@ THEMES = github-tritanopia-auto, github-tritanopia-light, github-tritanopia-dark
 <details>
 <summary>Colorblind & Tritanopia</summary>
 <h4>theme-github-colorblind-light.css & theme-github-tritanopia-light.css</h4>
-<img src="screenshots/en/colorblind-light.png"/>
+<img src="screenshots/colorblind/colorblind-light.png"/>
 <h4>theme-github-colorblind-dark.css & theme-github-tritanopia-dark.css</h4>
-<img src="screenshots/en/colorblind-dark.png"/>
+<img src="screenshots/colorblind/colorblind-dark.png"/>
 </details>
 
 ### Pink Themes
@@ -130,11 +134,43 @@ THEMES = github-pink-auto, github-pink-light, github-pink-dark, github-pink-soft
 <details>
 <summary>Pink</summary>
 <h4>theme-github-pink-light.css</h4>
-<img src="screenshots/pink/en/pink-light-en.png"/>
+<img src="screenshots/pink/pink-light.png"/>
 <h4>theme-github-pink-dark.css</h4>
-<img src="screenshots/pink/en/pink-dark-en.png"/>
+<img src="screenshots/pink/pink-dark.png"/>
 <h4>theme-github-pink-soft-dark.css</h4>
-<img src="screenshots/pink/en/pink-soft-dark-en.png"/>
+<img src="screenshots/pink/pink-soft-dark.png"/>
+</details>
+
+### Gitea Themes
+
+```ini
+THEMES = github-gitea-auto, github-gitea-light, github-gitea-dark
+```
+
+<details>
+<summary>Gitea</summary>
+<h4>theme-github-gitea-light.css</h4>
+<img src="screenshots/gitea/gitea-light.png"/>
+<h4>theme-github-gitea-dark.css</h4>
+<img src="screenshots/gitea/gitea-dark.png"/>
+</details>
+
+### Catppuccin Themes
+
+```ini
+THEMES = github-catppuccin-auto, github-catppuccin-latte, github-catppuccin-frappe, github-catppuccin-macchiato, github-catppuccin-mocha
+```
+
+<details>
+<summary>Catppuccin</summary>
+<h4>theme-github-catppuccin-latte.css</h4>
+<img src="screenshots/catppuccin/catppuccin-latte.png"/>
+<h4>theme-github-catppuccin-frappe.css</h4>
+<img src="screenshots/catppuccin/catppuccin-frappe.png"/>
+<h4>theme-github-catppuccin-macchiato.css</h4>
+<img src="screenshots/catppuccin/catppuccin-macchiato.png"/>
+<h4>theme-github-catppuccin-mocha.css</h4>
+<img src="screenshots/catppuccin/catppuccin-mocha.png"/>
 </details>
 
 ## Custom CSS Variables
