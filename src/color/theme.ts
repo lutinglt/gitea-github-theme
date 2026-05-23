@@ -19,7 +19,7 @@
 
 import { rgba, saturate } from "polished";
 import type { ThemeVars } from "src/core";
-import { scaleColorLight, themeVars2GitHub } from "src/functions";
+import { scaleColorLight } from "src/functions";
 import type { Ansi, Console, Diff, GitHub, Message, Named, Other, Primary, Secondary } from "src/types";
 import { themeVars } from "src/types";
 
@@ -79,7 +79,7 @@ export type ThemeColor = {
   /** 其他 */
   other: Other;
   /** 仅适用于本主题的全局变量, 取自 Github */
-  github?: GitHub;
+  github: GitHub;
   /** 覆盖默认生成的颜色 */
   override?: OverrideColor;
 };
@@ -370,10 +370,6 @@ export function theme2ThemeVars(themeColor: ThemeColor): ThemeVars {
     },
   };
 
-  const github: GitHub =
-    themeColor.github ??
-    themeVars2GitHub(themeColor.isDarkTheme, { primary: primary.self, red_badge_bg: named.red.badge.bg });
-
   return {
     isDarkTheme: themeColor.isDarkTheme,
     color: {
@@ -386,6 +382,6 @@ export function theme2ThemeVars(themeColor: ThemeColor): ThemeVars {
       ...message,
       ...themeColor.other,
     },
-    github,
+    github: themeColor.github,
   };
 }
