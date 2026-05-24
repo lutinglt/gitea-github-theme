@@ -19,7 +19,6 @@
 
 import type { CatppuccinFlavor } from "@catppuccin/palette";
 import { darken, lighten, mix, rgba, saturate } from "polished";
-import { scaleColorLight } from "src/functions";
 import type { Ansi, Console, Diff, GitHub, Other } from "src/types";
 import { themeVars } from "src/types";
 import type { ThemeColor } from "./theme";
@@ -27,7 +26,6 @@ import type { ThemeColor } from "./theme";
 // 颜色映射标准: https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md
 // 颜色映射参考: https://github.com/catppuccin/gitea/blob/main/src/_theme.scss
 export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
-  const brightDir = flavor.dark ? -1 : 1;
   const accentColor = flavor.colors.mauve.hex;
   const lv1Color = flavor.dark ? flavor.colors.crust.hex : flavor.colors.base.hex;
   const lv2Color = flavor.colors.mantle.hex;
@@ -142,10 +140,10 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
     },
     secondaryNavBg: themeVars.color.body,
     label: {
-      text: flavor.colors.crust.hex,
-      bg: accentColor,
-      hoverBg: scaleColorLight(accentColor, 6 * brightDir),
-      activeBg: scaleColorLight(accentColor, 3 * brightDir),
+      text: flavor.colors.text.hex,
+      bg: rgba(flavor.colors.surface0.hex, 0.4),
+      hoverBg: rgba(flavor.colors.surface2.hex, 0.2),
+      activeBg: rgba(flavor.colors.overlay0.hex, 0.5),
     },
     accent: accentColor,
     smallAccent: themeVars.color.primary.light.num5,
