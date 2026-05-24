@@ -230,7 +230,7 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
     contribution: {
       default: {
         bgColor: {
-          num0: rgba(accentColor, 0.05),
+          num0: flavor.colors.mantle.hex,
           num1: rgba(accentColor, 0.25),
           num2: rgba(accentColor, 0.45),
           num3: rgba(accentColor, 0.65),
