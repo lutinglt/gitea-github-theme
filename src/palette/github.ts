@@ -268,9 +268,9 @@ export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
       floating: {
         small: `0px 0px 0px 1px ${themeVars.color.light.border}, 0px 6px 12px -3px ${themeVars.color.shadow.self}, 0px 6px 18px 0px ${themeVars.color.shadow.self};`,
       },
-      inset: `inset 0px 1px 0px 0px ${githubColor.shadow.inset}`,
+      inset: githubColor.shadow.inset,
       resting: {
-        small: `0px 1px 1px 0px ${githubColor.shadow.resting.small}, 0px 1px 3px 0px ${githubColor.shadow.resting.small};`,
+        small: githubColor.shadow.resting.small,
         // 此阴影用于工作流的流程图的节点悬浮效果, 该效果在 Gitea 中通过 svg, g 的 filter 实现, 而非 box-shadow
         medium: `drop-shadow(0 1px 1px ${githubColor.shadow.floating.small}) drop-shadow(0 3px 6px ${githubColor.shadow.resting.medium})`,
       },

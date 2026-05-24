@@ -20,22 +20,21 @@
 import catppuccin from "./catppuccin";
 import { giteaDarkTheme } from "./giteaDark";
 import { giteaLightTheme } from "./giteaLight";
-import githubDark from "./githubDark";
-import githubLight from "./githubLight";
+import github from "./github";
 import githubPink from "./githubPink";
 
 export default {
   github: {
-    dark: githubDark.githubDarkTheme,
-    light: githubLight.githubLightTheme,
-    softDark: githubDark.githubSoftDarkTheme,
+    dark: github.githubDarkTheme,
+    light: github.githubLightTheme,
+    softDark: github.githubSoftDarkTheme,
     colorblind: {
-      dark: githubDark.githubColorblindDarkTheme,
-      light: githubLight.githubColorblindLightTheme,
+      dark: github.githubColorblindDarkTheme,
+      light: github.githubColorblindLightTheme,
     },
     tritanopia: {
-      dark: githubDark.githubTritanopiaDarkTheme,
-      light: githubLight.githubTritanopiaLightTheme,
+      dark: github.githubTritanopiaDarkTheme,
+      light: github.githubTritanopiaLightTheme,
     },
     pink: {
       dark: githubPink.githubPinkDarkTheme,

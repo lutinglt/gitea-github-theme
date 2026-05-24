@@ -21,7 +21,15 @@ import selectors from "./selectors";
 
 export { createTheme, defineTheme } from "./core";
 export { extractVarName, scaleColorLight } from "./functions";
-export { catppuccin2Syntax, catppuccin2ThemeColor, display2GitHubColor, github2ThemeColor } from "./palette";
+export {
+  catppuccin2Syntax,
+  catppuccin2ThemeColor,
+  display2GitHubColor,
+  github2ThemeColor,
+  primer2GitHubColor,
+  primer2GitHubSyntax,
+  primer,
+} from "./palette";
 export type { DisplayColor, GitHubColor, GitHubSyntax, GiteaColor, ThemeColor } from "./palette";
 export { createThemeMetaInfo } from "./styles";
 export { chromaVars, customThemeVars, otherThemeVars, syntaxVars, themeVars } from "./types";
