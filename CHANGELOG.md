@@ -1,6 +1,7 @@
 ### 🌈 Style
 
 - Optimize catppuccin theme with regular label colors.
+- Fine tune the border color of catppuccin theme.
 
 #### More GitHub-like style
 

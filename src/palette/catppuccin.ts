@@ -109,7 +109,7 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
       toggleBackground: lv2Color,
       border: flavor.colors.surface1.hex,
     },
-    light: { self: themeVars.color.body, border: flavor.colors.surface2.hex },
+    light: { self: themeVars.color.body, border: flavor.colors.surface1.hex },
     hover: { self: rgba(flavor.colors.overlay1.hex, 0.3), opaque: themeVars.color.box.header },
     active: rgba(flavor.colors.text.hex, 0.1),
     menu: flavor.colors.base.hex,
@@ -217,7 +217,7 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
     controlKnob: { bgColor: { rest: flavor.colors.base.hex } },
     shadow: {
       floating: {
-        small: `0px 0px 0px 1px ${flavor.colors.overlay0.hex}, 0px 6px 12px -3px ${flavor.colors.crust.hex}, 0px 6px 18px 0px ${flavor.colors.crust.hex};`,
+        small: `0px 0px 0px 1px ${flavor.colors.surface1.hex}, 0px 6px 12px -3px ${flavor.colors.crust.hex}, 0px 6px 18px 0px ${flavor.colors.crust.hex};`,
       },
       inset: `inset 0px 1px 0px 0px ${flavor.colors.crust.hex}`,
       resting: {
@@ -253,7 +253,7 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
     isDarkTheme: flavor.dark,
     primary: accentColor,
     primaryContrast: lv1Color,
-    secondary: flavor.colors.overlay0.hex,
+    secondary: flavor.colors.surface1.hex,
     base: {
       red: flavor.colors.red.hex,
       orange: flavor.colors.peach.hex,
