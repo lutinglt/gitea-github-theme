@@ -85,4 +85,44 @@ export default defineThemeConfig([
       macchiato: { theme: themes.catppuccin.macchiato },
     },
   },
+  {
+    themeSeriesName: "high-contrast",
+    themes: {
+      dark: { theme: themes.github.highContrast.dark },
+      light: { theme: themes.github.highContrast.light },
+      "soft-dark": { theme: themes.github.highContrast.softDark },
+    },
+  },
+  {
+    themeSeriesName: "high-contrast-colorblind",
+    autoTheme: { displayName: "High Contrast Auto Protanopia And Deuteranopia", colorblindType: "red-green" },
+    themes: {
+      dark: {
+        displayName: "High Contrast Dark Protanopia And Deuteranopia",
+        colorblindType: "red-green",
+        theme: themes.github.highContrast.colorblind.dark,
+      },
+      light: {
+        displayName: "High Contrast Light Protanopia And Deuteranopia",
+        colorblindType: "red-green",
+        theme: themes.github.highContrast.colorblind.light,
+      },
+    },
+  },
+  {
+    themeSeriesName: "high-contrast-tritanopia",
+    autoTheme: { displayName: "High Contrast Auto Tritanopia", colorblindType: "blue-yellow" },
+    themes: {
+      dark: {
+        displayName: "High Contrast Dark Tritanopia",
+        colorblindType: "blue-yellow",
+        theme: themes.github.highContrast.tritanopia.dark,
+      },
+      light: {
+        displayName: "High Contrast Light Tritanopia",
+        colorblindType: "blue-yellow",
+        theme: themes.github.highContrast.tritanopia.light,
+      },
+    },
+  },
 ]);

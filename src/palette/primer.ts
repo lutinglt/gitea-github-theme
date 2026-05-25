@@ -257,20 +257,34 @@ export function primer2GitHubSyntax(primerTokens: PrimerTokens): GitHubSyntax {
   return { prettyLights, codeMirror };
 }
 
+import darkColorblindHighContrast from "@primer/primitives/dist/styleLint/functional/themes/dark-colorblind-high-contrast.json" with { type: "json" };
 import darkColorblind from "@primer/primitives/dist/styleLint/functional/themes/dark-colorblind.json" with { type: "json" };
+import darkDimmedHighContrast from "@primer/primitives/dist/styleLint/functional/themes/dark-dimmed-high-contrast.json" with { type: "json" };
 import darkDimmed from "@primer/primitives/dist/styleLint/functional/themes/dark-dimmed.json" with { type: "json" };
+import darkHighContrast from "@primer/primitives/dist/styleLint/functional/themes/dark-high-contrast.json" with { type: "json" };
+import darkTritanopiaHighContrast from "@primer/primitives/dist/styleLint/functional/themes/dark-tritanopia-high-contrast.json" with { type: "json" };
 import darkTritanopia from "@primer/primitives/dist/styleLint/functional/themes/dark-tritanopia.json" with { type: "json" };
 import dark from "@primer/primitives/dist/styleLint/functional/themes/dark.json" with { type: "json" };
+import lightColorblindHighContrast from "@primer/primitives/dist/styleLint/functional/themes/light-colorblind-high-contrast.json" with { type: "json" };
 import lightColorblind from "@primer/primitives/dist/styleLint/functional/themes/light-colorblind.json" with { type: "json" };
+import lightHighContrast from "@primer/primitives/dist/styleLint/functional/themes/light-high-contrast.json" with { type: "json" };
+import lightTritanopiaHighContrast from "@primer/primitives/dist/styleLint/functional/themes/light-tritanopia-high-contrast.json" with { type: "json" };
 import lightTritanopia from "@primer/primitives/dist/styleLint/functional/themes/light-tritanopia.json" with { type: "json" };
 import light from "@primer/primitives/dist/styleLint/functional/themes/light.json" with { type: "json" };
 
 export default {
   dark,
   darkColorblind,
-  darkDimmed,
   darkTritanopia,
+  darkDimmed,
   light,
   lightColorblind,
   lightTritanopia,
+  darkHighContrast,
+  darkColorblindHighContrast,
+  darkTritanopiaHighContrast,
+  darkDimmedHighContrast,
+  lightHighContrast,
+  lightColorblindHighContrast,
+  lightTritanopiaHighContrast,
 };

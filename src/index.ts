@@ -26,9 +26,9 @@ export {
   catppuccin2ThemeColor,
   display2GitHubColor,
   github2ThemeColor,
+  primer,
   primer2GitHubColor,
   primer2GitHubSyntax,
-  primer,
 } from "./palette";
 export type { DisplayColor, GitHubColor, GitHubSyntax, GiteaColor, ThemeColor } from "./palette";
 export { createThemeMetaInfo } from "./styles";

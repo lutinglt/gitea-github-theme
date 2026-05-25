@@ -41,6 +41,19 @@ export default {
       light: githubPink.githubPinkLightTheme,
       softDark: githubPink.githubPinkSoftDarkTheme,
     },
+    highContrast: {
+      dark: github.githubDarkHighContrastTheme,
+      light: github.githubLightHighContrastTheme,
+      softDark: github.githubSoftDarkHighContrastTheme,
+      colorblind: {
+        dark: github.githubDarkColorblindHighContrastTheme,
+        light: github.githubLightColorblindHighContrastTheme,
+      },
+      tritanopia: {
+        dark: github.githubDarkTritanopiaHighContrastTheme,
+        light: github.githubLightTritanopiaHighContrastTheme,
+      },
+    },
   },
   gitea: {
     dark: giteaDarkTheme,

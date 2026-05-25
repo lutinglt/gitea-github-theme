@@ -1,3 +1,7 @@
+### ✨ Feature
+
+- Add high contrast color themes.
+
 ### 🌈 Style
 
 - Optimize catppuccin theme with regular label colors.
@@ -7,3 +11,8 @@
 #### More GitHub-like style
 
 - Fine tune the heatmap colors of catppuccin theme and pink soft dark theme.
+- Optimize heat map style.
+
+### 🐞 Fix
+
+- Fix the missing highlight style when hovering the heatmap mouse.
