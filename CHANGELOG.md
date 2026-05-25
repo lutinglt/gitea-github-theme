@@ -2,6 +2,7 @@
 
 - Optimize catppuccin theme with regular label colors.
 - Fine tune the border color of catppuccin theme.
+- Optimize the avatar background color of catppuccin theme.
 
 #### More GitHub-like style
 

@@ -155,7 +155,7 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
   };
   // 颜色映射参考: https://github.com/catppuccin/userstyles/blob/main/styles/github/catppuccin.user.less
   const github: GitHub = {
-    avatar: { bgColor: rgba(flavor.colors.text.hex, 0.26), borderColor: flavor.colors.surface0.hex },
+    avatar: { bgColor: rgba(flavor.colors.surface1.hex, 0.26), borderColor: flavor.colors.surface0.hex },
     fgColor: {
       accent: accentColor,
       success: flavor.colors.green.hex,
