@@ -22,16 +22,16 @@ import { scaleColorLight } from "../functions";
 import type { GitHubColor } from "./github";
 
 export type DisplayColor = {
-  num0: string;
-  num1: string;
-  num2: string;
-  num3: string;
-  num4: string;
-  num5: string;
-  num6: string;
-  num7: string;
-  num8: string;
-  num9: string;
+  "0": string;
+  "1": string;
+  "2": string;
+  "3": string;
+  "4": string;
+  "5": string;
+  "6": string;
+  "7": string;
+  "8": string;
+  "9": string;
 };
 
 export function display2GitHubColor(
@@ -43,66 +43,64 @@ export function display2GitHubColor(
     ...baseGitHubColor,
     diffBlob: {
       ...baseGitHubColor.diffBlob,
-      hunkNum: { bgColor: { rest: soft ? displayColor.num2 : displayColor.num1 } },
+      hunkNum: { bgColor: { rest: soft ? displayColor[2] : displayColor[1] } },
     },
     fgColor: {
       ...baseGitHubColor.fgColor,
-      accent: soft ? displayColor.num7 : displayColor.num6,
+      accent: soft ? displayColor[7] : displayColor[6],
     },
     bgColor: {
       ...baseGitHubColor.bgColor,
       accent: {
-        emphasis: soft ? saturate(-0.1, scaleColorLight(displayColor.num5, -2)) : displayColor.num5,
-        muted: soft ? displayColor.num1 : displayColor.num0,
+        emphasis: soft ? saturate(-0.1, scaleColorLight(displayColor[5], -2)) : displayColor[5],
+        muted: soft ? displayColor[1] : displayColor[0],
       },
     },
     borderColor: {
       ...baseGitHubColor.borderColor,
       accent: {
-        emphasis: soft ? displayColor.num6 : displayColor.num5,
+        emphasis: soft ? displayColor[6] : displayColor[5],
       },
     },
     button: {
       ...baseGitHubColor.button,
       primary: {
         fgColor: {
-          accent: soft ? displayColor.num7 : displayColor.num6,
+          accent: soft ? displayColor[7] : displayColor[6],
           rest: baseGitHubColor.button.primary.fgColor.rest,
         },
         bgColor: {
-          rest: soft ? saturate(-0.1, scaleColorLight(displayColor.num5, -2)) : displayColor.num5,
+          rest: soft ? saturate(-0.1, scaleColorLight(displayColor[5], -2)) : displayColor[5],
           hover: soft
-            ? saturate(-0.1, scaleColorLight(displayColor.num5, 4))
+            ? saturate(-0.1, scaleColorLight(displayColor[5], 4))
             : baseGitHubColor.isDarkTheme
-              ? scaleColorLight(displayColor.num5, 7)
-              : scaleColorLight(displayColor.num5, -5),
+              ? scaleColorLight(displayColor[5], 7)
+              : scaleColorLight(displayColor[5], -5),
           active: soft
-            ? saturate(-0.1, scaleColorLight(displayColor.num5, 9))
+            ? saturate(-0.1, scaleColorLight(displayColor[5], 9))
             : baseGitHubColor.isDarkTheme
-              ? scaleColorLight(displayColor.num5, 15)
-              : scaleColorLight(displayColor.num5, -10),
+              ? scaleColorLight(displayColor[5], 15)
+              : scaleColorLight(displayColor[5], -10),
         },
       },
       star: {
-        iconColor: soft
-          ? scaleColorLight(displayColor.num6, -2)
-          : saturate(0.1, scaleColorLight(displayColor.num6, -2)),
+        iconColor: soft ? scaleColorLight(displayColor[6], -2) : saturate(0.1, scaleColorLight(displayColor[6], -2)),
       },
     },
     underlineNav: {
       borderColor: {
-        active: soft ? scaleColorLight(saturate(0.1, displayColor.num6), -5) : saturate(0.2, displayColor.num6),
+        active: soft ? scaleColorLight(saturate(0.1, displayColor[6]), -5) : saturate(0.2, displayColor[6]),
       },
     },
     contribution: {
       ...baseGitHubColor.contribution,
       default: {
         bgColor: {
-          0: baseGitHubColor.contribution.default.bgColor[0],
-          1: soft ? displayColor.num2 : displayColor.num1,
-          2: soft ? displayColor.num3 : displayColor.num2,
-          3: soft ? displayColor.num4 : displayColor.num4,
-          4: soft ? displayColor.num5 : displayColor.num6,
+          "0": baseGitHubColor.contribution.default.bgColor[0],
+          "1": soft ? displayColor[2] : displayColor[1],
+          "2": soft ? displayColor[3] : displayColor[2],
+          "3": soft ? displayColor[4] : displayColor[4],
+          "4": soft ? displayColor[5] : displayColor[6],
         },
         borderColor: baseGitHubColor.contribution.default.borderColor,
       },

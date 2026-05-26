@@ -21,7 +21,6 @@ import catppuccin from "./catppuccin";
 import { giteaDarkTheme } from "./giteaDark";
 import { giteaLightTheme } from "./giteaLight";
 import github from "./github";
-import githubPink from "./githubPink";
 
 export default {
   github: {
@@ -37,9 +36,9 @@ export default {
       light: github.githubTritanopiaLightTheme,
     },
     pink: {
-      dark: githubPink.githubPinkDarkTheme,
-      light: githubPink.githubPinkLightTheme,
-      softDark: githubPink.githubPinkSoftDarkTheme,
+      dark: github.githubPinkDarkTheme,
+      light: github.githubPinkLightTheme,
+      softDark: github.githubPinkSoftDarkTheme,
     },
     highContrast: {
       dark: github.githubDarkHighContrastTheme,

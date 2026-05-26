@@ -19,7 +19,6 @@
 
 import type { Primer } from "@gitea-github-theme/primer";
 import type { GitHubColor } from "./github";
-import type { GitHubSyntax } from "./githubSyntax";
 
 export function primer2GitHubColor(primer: Primer, dark: boolean = false): GitHubColor {
   return {
@@ -42,12 +41,5 @@ export function primer2GitHubColor(primer: Primer, dark: boolean = false): GitHu
       floating: { ...primer.shadow.floating, small: dark ? "#01040966" : "#25292e0a" },
       resting: { ...primer.shadow.resting, medium: dark ? "#010409cc" : "#25292e1f" },
     },
-  };
-}
-
-export function primer2GitHubSyntax(primer: Primer): GitHubSyntax {
-  return {
-    prettyLights: primer.prettylights,
-    codeMirror: primer.codeMirror,
   };
 }

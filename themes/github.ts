@@ -22,129 +22,65 @@
  */
 
 import type { GitHubColor } from "@gitea-github-theme/core";
-import { defineTheme, primer2GitHubColor, primer2GitHubSyntax } from "@gitea-github-theme/core";
-import primer from "@gitea-github-theme/primer";
-/** - 仅适用于 Dark 主题
- * - 不同步 GitHub 样式, 对调 --controlKnob-bgColor-rest 和 --controlTrack-bgColor-rest 的颜色
- * - 激活颜色与背景色更一致, 在仪表板仓库/组织切换按钮中与菜单颜色一致
- */
-function swapKnobAndTrackBgColor(color: GitHubColor): GitHubColor {
+import { defineTheme, display2GitHubColor, primer2GitHubColor } from "@gitea-github-theme/core";
+import { default as primer, type Primer } from "@gitea-github-theme/primer";
+
+/** - 仅适用于 Dark 主题的颜色转换 */
+function darkConvert(color: GitHubColor): GitHubColor {
   return {
     ...color,
+    // 不同步 GitHub 样式, 对调 --controlKnob-bgColor-rest 和 --controlTrack-bgColor-rest 的颜色
+    // 激活颜色与背景色更一致, 在仪表板仓库/组织切换按钮中与菜单颜色一致
     controlKnob: { bgColor: { rest: color.controlTrack.bgColor.rest } },
     controlTrack: { bgColor: { rest: color.controlKnob.bgColor.rest } },
   };
 }
-
-export const githubDarkColor = swapKnobAndTrackBgColor(primer2GitHubColor(primer.dark, true));
-export const githubColorblindDarkColor = swapKnobAndTrackBgColor(primer2GitHubColor(primer.darkColorblind, true));
-export const githubTritanopiaDarkColor = swapKnobAndTrackBgColor(primer2GitHubColor(primer.darkTritanopia, true));
+// 普通主题
+export const githubDarkColor = darkConvert(primer2GitHubColor(primer.dark, true));
+export const githubColorblindDarkColor = darkConvert(primer2GitHubColor(primer.darkColorblind, true));
+export const githubTritanopiaDarkColor = darkConvert(primer2GitHubColor(primer.darkTritanopia, true));
 export const githubSoftDarkColor = primer2GitHubColor(primer.darkDimmed, true);
 export const githubLightColor = primer2GitHubColor(primer.light);
 export const githubColorblindLightColor = primer2GitHubColor(primer.lightColorblind);
 export const githubTritanopiaLightColor = primer2GitHubColor(primer.lightTritanopia);
-
-export const githubDarkHighContrastColor = swapKnobAndTrackBgColor(primer2GitHubColor(primer.darkHighContrast, true));
-export const githubDarkColorblindHighContrastColor = swapKnobAndTrackBgColor(
-  primer2GitHubColor(primer.darkColorblindHighContrast, true)
-);
-export const githubDarkTritanopiaHighContrastColor = swapKnobAndTrackBgColor(
-  primer2GitHubColor(primer.darkTritanopiaHighContrast, true)
-);
+// 高对比度主题
+export const githubDarkHighContrastColor = darkConvert(primer2GitHubColor(primer.darkHighContrast, true));
+export const githubDarkColorblindHighContrastColor = darkConvert(primer2GitHubColor(primer.darkColorblindHighContrast, true));
+export const githubDarkTritanopiaHighContrastColor = darkConvert(primer2GitHubColor(primer.darkTritanopiaHighContrast, true));
 export const githubSoftDarkHighContrastColor = primer2GitHubColor(primer.darkDimmedHighContrast, true);
 export const githubLightHighContrastColor = primer2GitHubColor(primer.lightHighContrast);
 export const githubLightColorblindHighContrastColor = primer2GitHubColor(primer.lightColorblindHighContrast);
 export const githubLightTritanopiaHighContrastColor = primer2GitHubColor(primer.lightTritanopiaHighContrast);
+// 自定义主题
+export const githubPinkDarkColor = display2GitHubColor(primer.dark.display.pink.scale, githubDarkColor);
+export const githubPinkSoftDarkColor = display2GitHubColor(primer.dark.display.pink.scale, githubSoftDarkColor, true);
+export const githubPinkLightColor = display2GitHubColor(primer.light.display.pink.scale, githubLightColor);
 
-export const githubDarkSyntax = primer2GitHubSyntax(primer.dark);
-export const githubSoftDarkSyntax = primer2GitHubSyntax(primer.darkDimmed);
-export const githubColorblindDarkSyntax = primer2GitHubSyntax(primer.darkColorblind);
-export const githubTritanopiaDarkSyntax = primer2GitHubSyntax(primer.darkTritanopia);
-export const githubLightSyntax = primer2GitHubSyntax(primer.light);
-export const githubColorblindLightSyntax = primer2GitHubSyntax(primer.lightColorblind);
-export const githubTritanopiaLightSyntax = primer2GitHubSyntax(primer.lightTritanopia);
+const defineGitHubTheme = (color: GitHubColor, syntaxColor: Primer) => defineTheme({ colorType: "github", themeColor: color, syntaxColor });
 
-export const githubDarkHighContrastSyntax = primer2GitHubSyntax(primer.darkHighContrast);
-export const githubDarkColorblindHighContrastSyntax = primer2GitHubSyntax(primer.darkColorblindHighContrast);
-export const githubDarkTritanopiaHighContrastSyntax = primer2GitHubSyntax(primer.darkTritanopiaHighContrast);
-export const githubSoftDarkHighContrastSyntax = primer2GitHubSyntax(primer.darkDimmedHighContrast);
-export const githubLightHighContrastSyntax = primer2GitHubSyntax(primer.lightHighContrast);
-export const githubLightColorblindHighContrastSyntax = primer2GitHubSyntax(primer.lightColorblindHighContrast);
-export const githubLightTritanopiaHighContrastSyntax = primer2GitHubSyntax(primer.lightTritanopiaHighContrast);
-
-export const githubDarkTheme = defineTheme({
-  colorType: "github",
-  themeColor: githubDarkColor,
-  syntaxColor: githubDarkSyntax,
-});
-export const githubSoftDarkTheme = defineTheme({
-  colorType: "github",
-  themeColor: githubSoftDarkColor,
-  syntaxColor: githubSoftDarkSyntax,
-});
-export const githubColorblindDarkTheme = defineTheme({
-  colorType: "github",
-  themeColor: githubColorblindDarkColor,
-  syntaxColor: githubColorblindDarkSyntax,
-});
-export const githubTritanopiaDarkTheme = defineTheme({
-  colorType: "github",
-  themeColor: githubTritanopiaDarkColor,
-  syntaxColor: githubTritanopiaDarkSyntax,
-});
-export const githubLightTheme = defineTheme({
-  colorType: "github",
-  themeColor: githubLightColor,
-  syntaxColor: githubLightSyntax,
-});
-export const githubColorblindLightTheme = defineTheme({
-  colorType: "github",
-  themeColor: githubColorblindLightColor,
-  syntaxColor: githubColorblindLightSyntax,
-});
-export const githubTritanopiaLightTheme = defineTheme({
-  colorType: "github",
-  themeColor: githubTritanopiaLightColor,
-  syntaxColor: githubTritanopiaLightSyntax,
-});
-
-export const githubDarkHighContrastTheme = defineTheme({
-  colorType: "github",
-  themeColor: githubDarkHighContrastColor,
-  syntaxColor: githubDarkHighContrastSyntax,
-});
-export const githubDarkColorblindHighContrastTheme = defineTheme({
-  colorType: "github",
-  themeColor: githubDarkColorblindHighContrastColor,
-  syntaxColor: githubDarkColorblindHighContrastSyntax,
-});
-export const githubDarkTritanopiaHighContrastTheme = defineTheme({
-  colorType: "github",
-  themeColor: githubDarkTritanopiaHighContrastColor,
-  syntaxColor: githubDarkTritanopiaHighContrastSyntax,
-});
-export const githubSoftDarkHighContrastTheme = defineTheme({
-  colorType: "github",
-  themeColor: githubSoftDarkHighContrastColor,
-  syntaxColor: githubSoftDarkHighContrastSyntax,
-});
-export const githubLightHighContrastTheme = defineTheme({
-  colorType: "github",
-  themeColor: githubLightHighContrastColor,
-  syntaxColor: githubLightHighContrastSyntax,
-});
-export const githubLightColorblindHighContrastTheme = defineTheme({
-  colorType: "github",
-  themeColor: githubLightColorblindHighContrastColor,
-  syntaxColor: githubLightColorblindHighContrastSyntax,
-});
-export const githubLightTritanopiaHighContrastTheme = defineTheme({
-  colorType: "github",
-  themeColor: githubLightTritanopiaHighContrastColor,
-  syntaxColor: githubLightTritanopiaHighContrastSyntax,
-});
+// 普通主题
+export const githubDarkTheme = defineGitHubTheme(githubDarkColor, primer.dark);
+export const githubSoftDarkTheme = defineGitHubTheme(githubSoftDarkColor, primer.darkDimmed);
+export const githubColorblindDarkTheme = defineGitHubTheme(githubColorblindDarkColor, primer.darkColorblind);
+export const githubTritanopiaDarkTheme = defineGitHubTheme(githubTritanopiaDarkColor, primer.darkTritanopia);
+export const githubLightTheme = defineGitHubTheme(githubLightColor, primer.light);
+export const githubColorblindLightTheme = defineGitHubTheme(githubColorblindLightColor, primer.lightColorblind);
+export const githubTritanopiaLightTheme = defineGitHubTheme(githubTritanopiaLightColor, primer.lightTritanopia);
+// 高对比度主题
+export const githubDarkHighContrastTheme = defineGitHubTheme(githubDarkHighContrastColor, primer.darkHighContrast);
+export const githubDarkColorblindHighContrastTheme = defineGitHubTheme(githubDarkColorblindHighContrastColor, primer.darkColorblindHighContrast);
+export const githubDarkTritanopiaHighContrastTheme = defineGitHubTheme(githubDarkTritanopiaHighContrastColor, primer.darkTritanopiaHighContrast);
+export const githubSoftDarkHighContrastTheme = defineGitHubTheme(githubSoftDarkHighContrastColor, primer.darkDimmedHighContrast);
+export const githubLightHighContrastTheme = defineGitHubTheme(githubLightHighContrastColor, primer.lightHighContrast);
+export const githubLightColorblindHighContrastTheme = defineGitHubTheme(githubLightColorblindHighContrastColor, primer.lightColorblindHighContrast);
+export const githubLightTritanopiaHighContrastTheme = defineGitHubTheme(githubLightTritanopiaHighContrastColor, primer.lightTritanopiaHighContrast);
+// 自定义主题
+export const githubPinkDarkTheme = defineGitHubTheme(githubPinkDarkColor, primer.dark);
+export const githubPinkSoftDarkTheme = defineGitHubTheme(githubPinkSoftDarkColor, primer.darkDimmed);
+export const githubPinkLightTheme = defineGitHubTheme(githubPinkLightColor, primer.light);
 
 export default {
+  // 普通主题
   githubDarkTheme,
   githubSoftDarkTheme,
   githubColorblindDarkTheme,
@@ -152,6 +88,7 @@ export default {
   githubLightTheme,
   githubColorblindLightTheme,
   githubTritanopiaLightTheme,
+  // 高对比度主题
   githubDarkHighContrastTheme,
   githubDarkColorblindHighContrastTheme,
   githubDarkTritanopiaHighContrastTheme,
@@ -159,4 +96,8 @@ export default {
   githubLightHighContrastTheme,
   githubLightColorblindHighContrastTheme,
   githubLightTritanopiaHighContrastTheme,
+  // 自定义主题
+  githubPinkDarkTheme,
+  githubPinkSoftDarkTheme,
+  githubPinkLightTheme,
 };

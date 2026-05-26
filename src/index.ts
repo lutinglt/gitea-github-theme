@@ -27,9 +27,8 @@ export {
   display2GitHubColor,
   github2ThemeColor,
   primer2GitHubColor,
-  primer2GitHubSyntax,
 } from "./palette";
-export type { DisplayColor, GitHubColor, GitHubSyntax, GiteaColor, ThemeColor } from "./palette";
+export type { DisplayColor, GitHubColor, GiteaColor, ThemeColor } from "./palette";
 export { createThemeMetaInfo } from "./styles";
 export { chromaVars, customThemeVars, otherThemeVars, syntaxVars, themeVars } from "./types";
 export type { Ansi, Chroma, Console, Diff, GitHub, Message, Named, Other, Primary, Secondary, Syntax } from "./types";

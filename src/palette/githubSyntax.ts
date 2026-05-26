@@ -67,10 +67,6 @@ export type CodeMirrorColor = {
   };
 };
 
-export type GitHubSyntax = {
-  prettyLights: PrettylightsColor;
-  codeMirror: CodeMirrorColor;
-};
 
 export function prettylights2Chroma(prettylights: PrettylightsColor): Chroma {
   return {
@@ -169,42 +165,42 @@ export function prettylights2Chroma(prettylights: PrettylightsColor): Chroma {
   };
 }
 
-export function githubSyntax2CodeMirror(githubSyntax: GitHubSyntax): CodeMirror {
+export function githubCodeMirrorConvert(codeMirror: CodeMirrorColor): CodeMirror {
   return {
     token: {
-      keyword: githubSyntax.codeMirror.syntax.fgColor.keyword,
-      atom: githubSyntax.codeMirror.syntax.fgColor.constant,
-      bool: githubSyntax.codeMirror.syntax.fgColor.constant,
-      variableName: githubSyntax.codeMirror.syntax.fgColor.entity,
-      variableName2: githubSyntax.codeMirror.syntax.fgColor.storage,
-      propertyName: githubSyntax.codeMirror.syntax.fgColor.constant,
-      typeName: githubSyntax.codeMirror.syntax.fgColor.variable,
-      className: githubSyntax.codeMirror.syntax.fgColor.variable,
-      namespace: githubSyntax.codeMirror.syntax.fgColor.variable,
-      macroName: githubSyntax.prettyLights.syntax.variable,
-      labelName: githubSyntax.codeMirror.syntax.fgColor.constant,
-      number: githubSyntax.codeMirror.syntax.fgColor.constant,
-      string: githubSyntax.codeMirror.syntax.fgColor.string,
-      string2: githubSyntax.codeMirror.syntax.fgColor.string,
-      operator: githubSyntax.codeMirror.matchingBracket.fgColor,
-      punctuation: githubSyntax.codeMirror.matchingBracket.fgColor,
-      comment: githubSyntax.codeMirror.syntax.fgColor.comment,
-      meta: githubSyntax.codeMirror.syntax.fgColor.support,
-      invalid: githubSyntax.codeMirror.syntax.fgColor.keyword,
-      link: githubSyntax.codeMirror.syntax.fgColor.string,
-      heading: githubSyntax.codeMirror.syntax.fgColor.entity,
-      emphasis: githubSyntax.codeMirror.syntax.fgColor.comment,
-      strong: githubSyntax.codeMirror.syntax.fgColor.comment,
-      inserted: githubSyntax.codeMirror.syntax.fgColor.string,
-      deleted: githubSyntax.codeMirror.syntax.fgColor.keyword,
+      keyword: codeMirror.syntax.fgColor.keyword,
+      atom: codeMirror.syntax.fgColor.constant,
+      bool: codeMirror.syntax.fgColor.constant,
+      variableName: codeMirror.syntax.fgColor.entity,
+      variableName2: codeMirror.syntax.fgColor.storage,
+      propertyName: codeMirror.syntax.fgColor.constant,
+      typeName: codeMirror.syntax.fgColor.variable,
+      className: codeMirror.syntax.fgColor.variable,
+      namespace: codeMirror.syntax.fgColor.variable,
+      macroName: codeMirror.syntax.fgColor.variable,
+      labelName: codeMirror.syntax.fgColor.constant,
+      number: codeMirror.syntax.fgColor.constant,
+      string: codeMirror.syntax.fgColor.string,
+      string2: codeMirror.syntax.fgColor.string,
+      operator: codeMirror.matchingBracket.fgColor,
+      punctuation: codeMirror.matchingBracket.fgColor,
+      comment: codeMirror.syntax.fgColor.comment,
+      meta: codeMirror.syntax.fgColor.support,
+      invalid: codeMirror.syntax.fgColor.keyword,
+      link: codeMirror.syntax.fgColor.string,
+      heading: codeMirror.syntax.fgColor.entity,
+      emphasis: codeMirror.syntax.fgColor.comment,
+      strong: codeMirror.syntax.fgColor.comment,
+      inserted: codeMirror.syntax.fgColor.string,
+      deleted: codeMirror.syntax.fgColor.keyword,
     },
     language: {
-      json: githubSyntax.codeMirror.syntax.fgColor.constant,
-      json5: githubSyntax.codeMirror.syntax.fgColor.constant,
-      yaml: githubSyntax.codeMirror.syntax.fgColor.constant,
-      css: githubSyntax.codeMirror.syntax.fgColor.constant,
-      html: githubSyntax.codeMirror.syntax.fgColor.constant,
-      xml: githubSyntax.codeMirror.syntax.fgColor.constant,
+      json: codeMirror.syntax.fgColor.constant,
+      json5: codeMirror.syntax.fgColor.constant,
+      yaml: codeMirror.syntax.fgColor.constant,
+      css: codeMirror.syntax.fgColor.constant,
+      html: codeMirror.syntax.fgColor.constant,
+      xml: codeMirror.syntax.fgColor.constant,
     },
   };
 }

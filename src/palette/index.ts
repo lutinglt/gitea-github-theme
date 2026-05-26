@@ -22,6 +22,6 @@ export { catppuccin2Syntax } from "./catppuccinSyntax";
 export { display2GitHubColor, type DisplayColor } from "./display";
 export { gitea2ThemeVars, type GiteaColor } from "./gitea";
 export { github2ThemeColor, type GitHubColor } from "./github";
-export { githubSyntax2CodeMirror, prettylights2Chroma, type GitHubSyntax } from "./githubSyntax";
-export { primer2GitHubColor, primer2GitHubSyntax } from "./primer";
+export { githubCodeMirrorConvert, prettylights2Chroma } from "./githubSyntax";
+export { primer2GitHubColor } from "./primer";
 export { theme2ThemeVars, type ThemeColor } from "./theme";

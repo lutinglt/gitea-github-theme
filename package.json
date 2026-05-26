@@ -63,6 +63,16 @@
     "plugins": [
       "prettier-plugin-organize-imports"
     ],
-    "organizeImportsSkipDestructiveCodeActions": false
+    "organizeImportsSkipDestructiveCodeActions": false,
+    "overrides": [
+      {
+        "files": [
+          "themes/github.ts"
+        ],
+        "options": {
+          "printWidth": 150
+        }
+      }
+    ]
   }
 }

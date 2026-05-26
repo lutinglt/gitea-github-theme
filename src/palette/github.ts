@@ -84,7 +84,7 @@ export type GitHubColor = {
     primary: { fgColor: { accent: string; rest: string }; bgColor: { rest: string; hover: string; active: string } };
     danger: { fgColor: { rest: string; hover: string }; bgColor: { hover: string; active: string } };
     star: { iconColor: string };
-    invisible?: { iconColor?: { rest?: string } };
+    invisible: { iconColor: { rest: string } };
   };
   control: {
     bgColor: { active: string; hover: string; rest: string };
@@ -98,8 +98,8 @@ export type GitHubColor = {
   underlineNav: { borderColor: { active: string } };
   contribution: {
     default: {
-      bgColor: { 0: string; 1: string; 2: string; 3: string; 4: string };
-      borderColor: { 0: string; 1: string; 2: string; 3: string; 4: string };
+      bgColor: { "0": string; "1": string; "2": string; "3": string; "4": string };
+      borderColor: { "0": string; "1": string; "2": string; "3": string; "4": string };
     };
   };
 };
@@ -250,7 +250,7 @@ export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
         borderColor: { hover: githubColor.borderColor.translucent },
       },
       star: { iconColor: githubColor.button.star.iconColor },
-      invisible: { iconColor: { rest: githubColor.button.invisible?.iconColor?.rest ?? githubColor.fgColor.muted } },
+      invisible: { iconColor: { rest: githubColor.button.invisible.iconColor.rest } },
     },
     control: {
       bgColor: { rest: githubColor.control.bgColor.rest },

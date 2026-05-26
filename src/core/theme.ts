@@ -17,12 +17,13 @@
  * limitations under the License.
  */
 
+import type { Primer } from "@gitea-github-theme/primer";
 import { createGlobalTheme, globalKeyframes, globalStyle } from "@vanilla-extract/css";
-import type { GiteaColor, GitHubColor, GitHubSyntax, ThemeColor } from "../palette";
+import type { GiteaColor, GitHubColor, ThemeColor } from "../palette";
 import {
   gitea2ThemeVars,
   github2ThemeColor,
-  githubSyntax2CodeMirror,
+  githubCodeMirrorConvert,
   prettylights2Chroma,
   theme2ThemeVars,
 } from "../palette";
@@ -33,7 +34,7 @@ import type { MapLeafNodes } from "./types";
 
 export type ThemeVars = { isDarkTheme: boolean } & MapLeafNodes<typeof themeVars, string>;
 export type ThemeColors =
-  | { colorType: "github"; themeColor: GitHubColor; syntaxColor: GitHubSyntax }
+  | { colorType: "github"; themeColor: GitHubColor; syntaxColor: Primer }
   | { colorType: "gitea"; themeColor: GiteaColor; syntaxColor: Syntax }
   | { colorType: "theme"; themeColor: ThemeColor; syntaxColor: Syntax };
 export type Theme = {
@@ -127,8 +128,8 @@ export function createTheme(theme: Theme): void {
   });
   // 代码高亮
   if (theme.colorType === "github") {
-    createChroma(prettylights2Chroma(theme.syntaxColor.prettyLights));
-    createCodeMirror(githubSyntax2CodeMirror(theme.syntaxColor));
+    createChroma(prettylights2Chroma(theme.syntaxColor.prettylights));
+    createCodeMirror(githubCodeMirrorConvert(theme.syntaxColor.codeMirror));
   } else {
     createGlobalTheme(selectors.root, syntaxVars, theme.syntaxColor);
   }
