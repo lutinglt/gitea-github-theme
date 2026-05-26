@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
+import { themeVars } from "@gitea-github-theme/core";
 import type { StyleRule } from "@vanilla-extract/css";
-import { themeVars } from "src";
 
 /** 主色调按钮样式 */
 export const primaryButtonStyle = {

@@ -18,11 +18,17 @@
  */
 
 import { createGlobalTheme, globalKeyframes, globalStyle } from "@vanilla-extract/css";
-import { github2ThemeColor, selectors } from "src";
-import type { GiteaColor, GitHubColor, GitHubSyntax, ThemeColor } from "src/palette";
-import { gitea2ThemeVars, githubSyntax2CodeMirror, prettylights2Chroma, theme2ThemeVars } from "src/palette";
-import { createChroma, createCodeMirror } from "src/styles";
-import { otherThemeVars, syntaxVars, themeVars, type Syntax } from "src/types";
+import type { GiteaColor, GitHubColor, GitHubSyntax, ThemeColor } from "../palette";
+import {
+  gitea2ThemeVars,
+  github2ThemeColor,
+  githubSyntax2CodeMirror,
+  prettylights2Chroma,
+  theme2ThemeVars,
+} from "../palette";
+import selectors from "../selectors";
+import { createChroma, createCodeMirror } from "../styles";
+import { otherThemeVars, syntaxVars, themeVars, type Syntax } from "../types";
 import type { MapLeafNodes } from "./types";
 
 export type ThemeVars = { isDarkTheme: boolean } & MapLeafNodes<typeof themeVars, string>;
@@ -41,8 +47,8 @@ export type Theme = {
  * - "theme": GiteaGitHubTheme 用于简化 Gitea 颜色变量设置的配色, 使用 Gitea 的代码语法高亮色
  *
  * @example
- * import type { Console, Diff, Other, Github, ThemeColor, Syntax } from "src";
- * import { defineTheme, themeVars } from "src";
+ * import type { Console, Diff, Other, Github, ThemeColor, Syntax } from "@gitea-github-theme/core";
+ * import { defineTheme, themeVars } from "@gitea-github-theme/core";
  *
  * const console: Console = {
  *   fg: {
@@ -122,7 +128,7 @@ export function createTheme(theme: Theme): void {
   // 代码高亮
   if (theme.colorType === "github") {
     createChroma(prettylights2Chroma(theme.syntaxColor.prettyLights));
-    createCodeMirror(githubSyntax2CodeMirror(theme.syntaxColor, theme.themeColor));
+    createCodeMirror(githubSyntax2CodeMirror(theme.syntaxColor));
   } else {
     createGlobalTheme(selectors.root, syntaxVars, theme.syntaxColor);
   }

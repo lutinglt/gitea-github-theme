@@ -24,9 +24,9 @@ import fs from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { rolldown } from "rolldown";
-import type { Theme } from "src/core";
-import type { ColorblindType, GiteaThemeMeta } from "src/styles";
 import type { PluginOption } from "vite";
+import type { Theme } from "./core";
+import type { ColorblindType, GiteaThemeMeta } from "./styles";
 
 type ThemeEntry = {
   /** 主题名称 */
@@ -199,15 +199,16 @@ export function giteaGitHubThemePlugin(): PluginOption[] {
           const tmpCssTs = `${themeName}.css.ts`;
           fs.writeFileSync(
             path.join(tmpDir, `${tmpCssTs}`),
+            // 字符串导入代码
             [
-              `import { createTheme, createThemeMetaInfo } from "src";`,
+              `import { createTheme, createThemeMetaInfo } from "@gitea-github-theme/core";`,
               `createThemeMetaInfo(${JSON.stringify(entry.meta)});`,
               `createTheme(${JSON.stringify(theme)});`,
             ].join("\n")
           );
           // 生成主题入口的 .ts 文件, 合并样式和颜色主题
           const tmpInputTs = path.join(tmpDir, `${themeName}.ts`);
-          fs.writeFileSync(tmpInputTs, [`import "styles";`, `import "./${tmpCssTs}";`].join("\n"));
+          fs.writeFileSync(tmpInputTs, [`import "@gitea-github-theme/styles";`, `import "./${tmpCssTs}";`].join("\n"));
 
           input[themeName] = tmpInputTs;
         }
@@ -226,7 +227,11 @@ export function giteaGitHubThemePlugin(): PluginOption[] {
             const tmpCssTs = `${themeName}.css.ts`;
             fs.writeFileSync(
               path.join(tmpDir, `${tmpCssTs}`),
-              [`import { createThemeMetaInfo } from "src";`, `createThemeMetaInfo(${JSON.stringify(meta)});`].join("\n")
+              // 字符串导入代码
+              [
+                `import { createThemeMetaInfo } from "@gitea-github-theme/core";`,
+                `createThemeMetaInfo(${JSON.stringify(meta)});`,
+              ].join("\n")
             );
             const tmpInputTs = path.join(tmpDir, `${themeName}.ts`);
             fs.writeFileSync(tmpInputTs, `import "./${tmpCssTs}";`);

@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
+import { themeVars } from "@gitea-github-theme/core";
 import { css } from "@linaria/core";
-import { themeVars } from "src";
 
 export const summaryView = css`
   .action-view-right:has(.action-run-summary-view) {

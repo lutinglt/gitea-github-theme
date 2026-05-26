@@ -40,9 +40,10 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      src: path.resolve(__dirname, "src"),
-      styles: path.resolve(__dirname, "styles"),
-      themes: path.resolve(__dirname, "themes"),
+      "@gitea-github-theme/core": path.resolve(__dirname, "src"),
+      "@gitea-github-theme/styles": path.resolve(__dirname, "styles"),
+      "@gitea-github-theme/themes": path.resolve(__dirname, "themes"),
+      "@gitea-github-theme/primer": path.resolve(__dirname, "primer"),
     },
     extensions: [".js", ".ts", ".css.ts"],
   },

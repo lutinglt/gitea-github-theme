@@ -17,36 +17,35 @@
  * limitations under the License.
  */
 
-import { type Chroma, type CodeMirror } from "src/types";
-import type { GitHubColor } from "./github";
+import { type Chroma, type CodeMirror } from "../types";
 
 export type PrettylightsColor = {
   syntax: {
-    brackethighlighter: { angle: string; unmatched: string };
-    carriage: { return: { bg: string; text: string } };
     comment: string;
     constant: string;
     constantOtherReferenceLink: string;
-    entity: string;
     entityTag: string;
-    invalid: { illegal: { bg: string; text: string } };
+    entity: string;
+    storageModifierImport: string;
     keyword: string;
+    string: string;
+    variable: string;
+    brackethighlighter: { angle: string; unmatched: string };
+    invalid: { illegal: { bg: string; text: string } };
+    carriage: { return: { bg: string; text: string } };
+    stringRegexp: string;
     markup: {
-      bold: string;
-      changed: { bg: string; text: string };
-      deleted: { bg: string; text: string };
-      heading: string;
-      ignored: { bg: string; text: string };
-      inserted: { bg: string; text: string };
-      italic: string;
       list: string;
+      heading: string;
+      italic: string;
+      bold: string;
+      deleted: { bg: string; text: string };
+      inserted: { bg: string; text: string };
+      changed: { bg: string; text: string };
+      ignored: { bg: string; text: string };
     };
     metaDiffRange: string;
-    storageModifierImport: string;
-    string: string;
-    stringRegexp: string;
-    sublimelinterGutterMark: string;
-    variable: string;
+    sublimeLinterGutterMark: string;
   };
 };
 
@@ -63,8 +62,8 @@ export type CodeMirrorColor = {
       variable: string;
     };
   };
-  matchingBracket?: {
-    fgColor?: string;
+  matchingBracket: {
+    fgColor: string;
   };
 };
 
@@ -170,7 +169,7 @@ export function prettylights2Chroma(prettylights: PrettylightsColor): Chroma {
   };
 }
 
-export function githubSyntax2CodeMirror(githubSyntax: GitHubSyntax, githubColor: GitHubColor): CodeMirror {
+export function githubSyntax2CodeMirror(githubSyntax: GitHubSyntax): CodeMirror {
   return {
     token: {
       keyword: githubSyntax.codeMirror.syntax.fgColor.keyword,
@@ -187,8 +186,8 @@ export function githubSyntax2CodeMirror(githubSyntax: GitHubSyntax, githubColor:
       number: githubSyntax.codeMirror.syntax.fgColor.constant,
       string: githubSyntax.codeMirror.syntax.fgColor.string,
       string2: githubSyntax.codeMirror.syntax.fgColor.string,
-      operator: githubSyntax.codeMirror.matchingBracket?.fgColor ?? githubColor.fgColor.default,
-      punctuation: githubSyntax.codeMirror.matchingBracket?.fgColor ?? githubColor.fgColor.default,
+      operator: githubSyntax.codeMirror.matchingBracket.fgColor,
+      punctuation: githubSyntax.codeMirror.matchingBracket.fgColor,
       comment: githubSyntax.codeMirror.syntax.fgColor.comment,
       meta: githubSyntax.codeMirror.syntax.fgColor.support,
       invalid: githubSyntax.codeMirror.syntax.fgColor.keyword,

@@ -17,9 +17,9 @@
  * limitations under the License.
  */
 
+import { themeVars } from "@gitea-github-theme/core";
+import { primaryButtonHoverStyle, primaryButtonStyle } from "@gitea-github-theme/styles/common";
 import { css } from "@linaria/core";
-import { themeVars } from "src";
-import { primaryButtonHoverStyle, primaryButtonStyle } from "styles/common";
 
 // 普通按钮和主色调按钮
 export const baseButton = css`

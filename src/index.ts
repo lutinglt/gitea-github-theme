@@ -19,14 +19,13 @@
 
 import selectors from "./selectors";
 
-export { createTheme, defineTheme } from "./core";
+export { createTheme, defineTheme, type MapLeafNodes } from "./core";
 export { extractVarName, scaleColorLight } from "./functions";
 export {
   catppuccin2Syntax,
   catppuccin2ThemeColor,
   display2GitHubColor,
   github2ThemeColor,
-  primer,
   primer2GitHubColor,
   primer2GitHubSyntax,
 } from "./palette";

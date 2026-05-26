@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
+import { otherThemeVars, themeVars } from "@gitea-github-theme/core";
 import { css } from "@linaria/core";
-import { otherThemeVars, themeVars } from "src";
 
 // 仓库 Actions 页面
 export const actions = css`

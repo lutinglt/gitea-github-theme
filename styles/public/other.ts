@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
+import { otherThemeVars, themeVars } from "@gitea-github-theme/core";
 import { css } from "@linaria/core";
-import { otherThemeVars, themeVars } from "src";
 
 export const text = css`
   /* 默认颜色是 --color-text-light, 主题下此颜色是亮白色, 修改为灰色 */

@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
+import { themeVars } from "@gitea-github-theme/core";
 import { css } from "@linaria/core";
-import { themeVars } from "src";
 
 // 用户点星仓库列表
 export const stars = css`

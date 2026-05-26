@@ -17,9 +17,9 @@
  * limitations under the License.
  */
 
+import { themeVars } from "@gitea-github-theme/core";
+import { animationDown } from "@gitea-github-theme/styles/common";
 import { css } from "@linaria/core";
-import { themeVars } from "src";
-import { animationDown } from "styles/common";
 
 export const modal = css`
   .ui.modal {

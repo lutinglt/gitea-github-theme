@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
+import { otherThemeVars, themeVars } from "@gitea-github-theme/core";
 import { css } from "@linaria/core";
-import { otherThemeVars, themeVars } from "src";
 
 export const attached = css`
   /* 设置右面板的内容 */

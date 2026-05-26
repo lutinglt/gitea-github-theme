@@ -17,9 +17,9 @@
  * limitations under the License.
  */
 
+import { otherThemeVars, themeVars } from "@gitea-github-theme/core";
+import { activeItemAfterStyle, animationDown, animationUp } from "@gitea-github-theme/styles/common";
 import { css } from "@linaria/core";
-import { otherThemeVars, themeVars } from "src";
-import { activeItemAfterStyle, animationDown, animationUp } from "styles/common";
 
 export const dropdown = css`
   .ui.dropdown,

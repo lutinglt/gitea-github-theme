@@ -18,7 +18,7 @@
  */
 
 import { saturate } from "polished";
-import { scaleColorLight } from "src/functions";
+import { scaleColorLight } from "../functions";
 import type { GitHubColor } from "./github";
 
 export type DisplayColor = {
@@ -98,11 +98,11 @@ export function display2GitHubColor(
       ...baseGitHubColor.contribution,
       default: {
         bgColor: {
-          num0: baseGitHubColor.contribution.default.bgColor.num0,
-          num1: soft ? displayColor.num2 : displayColor.num1,
-          num2: soft ? displayColor.num3 : displayColor.num2,
-          num3: soft ? displayColor.num4 : displayColor.num4,
-          num4: soft ? displayColor.num5 : displayColor.num6,
+          0: baseGitHubColor.contribution.default.bgColor[0],
+          1: soft ? displayColor.num2 : displayColor.num1,
+          2: soft ? displayColor.num3 : displayColor.num2,
+          3: soft ? displayColor.num4 : displayColor.num4,
+          4: soft ? displayColor.num5 : displayColor.num6,
         },
         borderColor: baseGitHubColor.contribution.default.borderColor,
       },

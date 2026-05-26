@@ -59,7 +59,6 @@ const files = readFilesRecursively(localGiteaPath);
 (async () => {
   for (const file of files) {
     const fileUrl = `${githubBaseUrl}/${file}`;
-    console.log("FileUrl:", fileUrl);
 
     const response = await fetch(fileUrl);
     if (!response.ok) {
@@ -67,5 +66,6 @@ const files = readFilesRecursively(localGiteaPath);
     }
     const content = await response.text();
     fs.writeFileSync(path.join(localGiteaPath, file), content);
+    console.log("✔︎ FileUrl:", fileUrl);
   }
 })();

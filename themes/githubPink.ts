@@ -21,8 +21,8 @@
  * @author lutinglt
  */
 
-import type { DisplayColor } from "src";
-import { defineTheme, display2GitHubColor } from "src";
+import type { DisplayColor } from "@gitea-github-theme/core";
+import { defineTheme, display2GitHubColor } from "@gitea-github-theme/core";
 import {
   githubDarkColor,
   githubDarkSyntax,

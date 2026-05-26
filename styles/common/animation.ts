@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
+import { selectors } from "@gitea-github-theme/core";
 import type { StyleRule } from "@vanilla-extract/css";
-import { selectors } from "src";
 
 // 出现动画
 export const animation = {

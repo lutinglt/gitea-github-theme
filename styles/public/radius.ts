@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
+import { otherThemeVars } from "@gitea-github-theme/core";
 import { css } from "@linaria/core";
-import { otherThemeVars } from "src";
 
 // 全部圆角替换
 export const radius = css`

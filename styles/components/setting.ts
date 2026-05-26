@@ -17,10 +17,10 @@
  * limitations under the License.
  */
 
+import { themeVars } from "@gitea-github-theme/core";
+import { primaryButtonHoverStyle, primaryButtonStyle } from "@gitea-github-theme/styles/common";
 import { css } from "@linaria/core";
 import type { StyleRule } from "@vanilla-extract/css";
-import { themeVars } from "src";
-import { primaryButtonHoverStyle, primaryButtonStyle } from "styles/common";
 
 const tinyStyle = {
   color: themeVars.github.button.primary.fgColor.accent,

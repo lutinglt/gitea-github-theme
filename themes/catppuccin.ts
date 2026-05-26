@@ -22,7 +22,7 @@
  */
 
 import { flavors } from "@catppuccin/palette";
-import { catppuccin2Syntax, catppuccin2ThemeColor, defineTheme } from "src";
+import { catppuccin2Syntax, catppuccin2ThemeColor, defineTheme } from "@gitea-github-theme/core";
 
 /** Gitea GitHub Theme 拓展 GitHub 粉色深色主题 */
 export const catppuccinLatteTheme = defineTheme({

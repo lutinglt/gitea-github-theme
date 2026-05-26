@@ -17,9 +17,9 @@
  * limitations under the License.
  */
 
+import { otherThemeVars, themeVars } from "@gitea-github-theme/core";
+import { labelStyle } from "@gitea-github-theme/styles/common";
 import { css } from "@linaria/core";
-import { otherThemeVars, themeVars } from "src";
-import { labelStyle } from "styles/common";
 
 export const dashboard = css`
   .page-content.dashboard {

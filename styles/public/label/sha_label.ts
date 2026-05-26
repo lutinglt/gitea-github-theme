@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
+import { themeVars } from "@gitea-github-theme/core";
 import { css } from "@linaria/core";
-import { themeVars } from "src";
 
 // 提交中的 SHA 标签
 export const shaLabel = css`

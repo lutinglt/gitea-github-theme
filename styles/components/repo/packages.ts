@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
+import { otherThemeVars, themeVars } from "@gitea-github-theme/core";
 import { css } from "@linaria/core";
-import { otherThemeVars, themeVars } from "src";
 
 // 组织/仓库的软件包列表(包含用户但未测试)
 export const packagesList = css`

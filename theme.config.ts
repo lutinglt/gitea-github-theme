@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
-import { defineThemeConfig } from "src";
-import themes from "themes";
+import { defineThemeConfig } from "@gitea-github-theme/core";
+import themes from "@gitea-github-theme/themes";
 
 export default defineThemeConfig([
   {

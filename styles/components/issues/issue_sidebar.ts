@@ -17,9 +17,9 @@
  * limitations under the License.
  */
 
+import { otherThemeVars, themeVars } from "@gitea-github-theme/core";
 import { css } from "@linaria/core";
 import type { StyleRule } from "@vanilla-extract/css";
-import { otherThemeVars, themeVars } from "src";
 
 const sidebarPadding = {
   padding: "4px 8px",

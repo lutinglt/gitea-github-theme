@@ -1,0 +1,244 @@
+// @source https://github.com/primer/primitives/blob/main/scripts/themes.config.ts
+
+import type { TokenBuildInput } from "@primer/primitives/dist/build/types/tokenBuildInput";
+
+export const themes: TokenBuildInput[] = [
+  {
+    filename: "light",
+    theme: "light",
+    exportToFigma: true,
+    source: [
+      `src/tokens/functional/shadow/shadow.json5`,
+      `src/tokens/functional/border/*.json5`,
+      `src/tokens/functional/color/*.json5`,
+      `src/tokens/component/*.json5`,
+    ],
+    include: [
+      `src/tokens/functional/size/border.json5`,
+      `src/tokens/base/color/light/light.json5`,
+      `src/tokens/base/color/light/display-light.json5`,
+    ],
+  },
+  {
+    filename: "light-tritanopia",
+    theme: "light-tritanopia",
+    exportToFigma: true,
+    source: [
+      `src/tokens/functional/shadow/shadow.json5`,
+      `src/tokens/functional/border/*.json5`,
+      `src/tokens/functional/color/*.json5`,
+      `src/tokens/component/*.json5`,
+    ],
+    include: [
+      `src/tokens/functional/size/border.json5`,
+      `src/tokens/base/color/light/light.json5`,
+      `src/tokens/base/color/light/display-light.json5`,
+    ],
+  },
+  {
+    filename: "light-tritanopia-high-contrast",
+    theme: "light-tritanopia-high-contrast",
+    exportToFigma: false,
+    source: [
+      `src/tokens/functional/shadow/shadow.json5`,
+      `src/tokens/functional/border/*.json5`,
+      `src/tokens/component/*.json5`,
+      `src/tokens/functional/color/*.json5`,
+      `src/tokens/functional/color/light/*.json5`,
+    ],
+    include: [
+      `src/tokens/functional/size/border.json5`,
+      `src/tokens/base/color/light/light.json5`,
+      `src/tokens/base/color/light/light.high-contrast.json5`,
+      `src/tokens/base/color/light/display-light.json5`,
+    ],
+  },
+  {
+    filename: "light-colorblind",
+    theme: "light-protanopia-deuteranopia",
+    exportToFigma: true,
+    source: [
+      `src/tokens/functional/shadow/shadow.json5`,
+      `src/tokens/functional/border/*.json5`,
+      `src/tokens/functional/color/*.json5`,
+      `src/tokens/component/*.json5`,
+    ],
+    include: [
+      `src/tokens/functional/size/border.json5`,
+      `src/tokens/base/color/light/light.json5`,
+      `src/tokens/base/color/light/display-light.json5`,
+    ],
+  },
+  {
+    filename: "light-colorblind-high-contrast",
+    theme: "light-protanopia-deuteranopia-high-contrast",
+    exportToFigma: false,
+    source: [
+      `src/tokens/functional/shadow/shadow.json5`,
+      `src/tokens/functional/border/*.json5`,
+      `src/tokens/component/*.json5`,
+      `src/tokens/functional/color/*.json5`,
+      `src/tokens/functional/color/light/*.json5`,
+    ],
+    include: [
+      `src/tokens/functional/size/border.json5`,
+      `src/tokens/base/color/light/light.json5`,
+      `src/tokens/base/color/light/light.high-contrast.json5`,
+      `src/tokens/base/color/light/display-light.json5`,
+    ],
+  },
+  {
+    filename: "light-high-contrast",
+    theme: "light-high-contrast",
+    exportToFigma: true,
+    source: [
+      `src/tokens/functional/shadow/shadow.json5`,
+      `src/tokens/functional/border/*.json5`,
+      `src/tokens/functional/color/*.json5`,
+      `src/tokens/component/*.json5`,
+    ],
+    include: [
+      `src/tokens/functional/size/border.json5`,
+      `src/tokens/base/color/light/light.json5`,
+      `src/tokens/base/color/light/light.high-contrast.json5`,
+      `src/tokens/base/color/light/display-light.json5`,
+    ],
+  },
+  {
+    filename: "dark",
+    theme: "dark",
+    exportToFigma: true,
+    source: [
+      `src/tokens/functional/shadow/shadow.json5`,
+      `src/tokens/functional/border/*.json5`,
+      `src/tokens/functional/color/*.json5`,
+      `src/tokens/component/*.json5`,
+    ],
+    include: [
+      `src/tokens/functional/size/border.json5`,
+      `src/tokens/base/color/dark/dark.json5`,
+      `src/tokens/base/color/dark/display-dark.json5`,
+    ],
+  },
+  {
+    filename: "dark-dimmed",
+    theme: "dark-dimmed",
+    exportToFigma: true,
+    source: [
+      `src/tokens/functional/shadow/shadow.json5`,
+      `src/tokens/functional/border/*.json5`,
+      `src/tokens/functional/color/*.json5`,
+      `src/tokens/component/*.json5`,
+    ],
+    include: [
+      `src/tokens/functional/size/border.json5`,
+      `src/tokens/base/color/dark/dark.json5`,
+      `src/tokens/base/color/dark/dark.dimmed.json5`,
+      `src/tokens/base/color/dark/display-dark.json5`,
+    ],
+  },
+  {
+    filename: "dark-dimmed-high-contrast",
+    theme: "dark-dimmed-high-contrast",
+    exportToFigma: false,
+    source: [
+      `src/tokens/functional/shadow/shadow.json5`,
+      `src/tokens/functional/border/*.json5`,
+      `src/tokens/component/*.json5`,
+      `src/tokens/functional/color/*.json5`,
+      `src/tokens/functional/color/dark/*.json5`,
+    ],
+    include: [
+      `src/tokens/functional/size/border.json5`,
+      `src/tokens/base/color/dark/dark.json5`,
+      `src/tokens/base/color/dark/dark.high-contrast.json5`,
+      `src/tokens/base/color/dark/dark.dimmed.json5`,
+      `src/tokens/base/color/dark/display-dark.json5`,
+    ],
+  },
+  {
+    filename: "dark-tritanopia",
+    theme: "dark-tritanopia",
+    exportToFigma: true,
+    source: [
+      `src/tokens/functional/shadow/shadow.json5`,
+      `src/tokens/functional/border/*.json5`,
+      `src/tokens/functional/color/*.json5`,
+      `src/tokens/component/*.json5`,
+    ],
+    include: [
+      `src/tokens/functional/size/border.json5`,
+      `src/tokens/base/color/dark/dark.json5`,
+      `src/tokens/base/color/dark/display-dark.json5`,
+    ],
+  },
+  {
+    filename: "dark-tritanopia-high-contrast",
+    theme: "dark-tritanopia-high-contrast",
+    exportToFigma: false,
+    source: [
+      `src/tokens/functional/shadow/shadow.json5`,
+      `src/tokens/functional/border/*.json5`,
+      `src/tokens/component/*.json5`,
+      `src/tokens/functional/color/*.json5`,
+      `src/tokens/functional/color/dark/*.json5`,
+    ],
+    include: [
+      `src/tokens/functional/size/border.json5`,
+      `src/tokens/base/color/dark/dark.json5`,
+      `src/tokens/base/color/dark/dark.high-contrast.json5`,
+      `src/tokens/base/color/dark/display-dark.json5`,
+    ],
+  },
+  {
+    filename: "dark-colorblind",
+    theme: "dark-protanopia-deuteranopia",
+    exportToFigma: true,
+    source: [
+      `src/tokens/functional/shadow/shadow.json5`,
+      `src/tokens/functional/border/*.json5`,
+      `src/tokens/functional/color/*.json5`,
+      `src/tokens/component/*.json5`,
+    ],
+    include: [
+      `src/tokens/functional/size/border.json5`,
+      `src/tokens/base/color/dark/dark.json5`,
+      `src/tokens/base/color/dark/display-dark.json5`,
+    ],
+  },
+  {
+    filename: "dark-colorblind-high-contrast",
+    theme: "dark-protanopia-deuteranopia-high-contrast",
+    exportToFigma: false,
+    source: [
+      `src/tokens/functional/shadow/shadow.json5`,
+      `src/tokens/functional/border/*.json5`,
+      `src/tokens/component/*.json5`,
+      `src/tokens/functional/color/*.json5`,
+      `src/tokens/functional/color/dark/*.json5`,
+    ],
+    include: [
+      `src/tokens/functional/size/border.json5`,
+      `src/tokens/base/color/dark/dark.json5`,
+      `src/tokens/base/color/dark/dark.high-contrast.json5`,
+      `src/tokens/base/color/dark/display-dark.json5`,
+    ],
+  },
+  {
+    filename: "dark-high-contrast",
+    theme: "dark-high-contrast",
+    exportToFigma: true,
+    source: [
+      `src/tokens/functional/shadow/shadow.json5`,
+      `src/tokens/functional/border/*.json5`,
+      `src/tokens/functional/color/*.json5`,
+      `src/tokens/component/*.json5`,
+    ],
+    include: [
+      `src/tokens/functional/size/border.json5`,
+      `src/tokens/base/color/dark/dark.json5`,
+      `src/tokens/base/color/dark/dark.high-contrast.json5`,
+      `src/tokens/base/color/dark/display-dark.json5`,
+    ],
+  },
+];

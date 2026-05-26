@@ -31,11 +31,12 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
     "paths": {
-      "*": ["./*"],
-      "src": ["./src"],
-      "styles": ["./styles"],
-      "themes": ["./themes"]
+      "@gitea-github-theme/core": ["./src"],
+      "@gitea-github-theme/styles": ["./styles"],
+      "@gitea-github-theme/styles/common": ["./styles/common"],
+      "@gitea-github-theme/themes": ["./themes"],
+      "@gitea-github-theme/primer": ["./primer"]
     }
   },
-  "include": ["src", "styles", "themes", "scripts", "vite.config.ts", "theme.config.ts", "eslint.config.ts"]
+  "include": ["src", "styles", "themes", "scripts", "primer", "vite.config.ts", "theme.config.ts", "eslint.config.ts"]
 }

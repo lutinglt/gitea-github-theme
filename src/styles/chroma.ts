@@ -18,8 +18,8 @@
  */
 
 import { createGlobalTheme, globalStyle, type StyleRule } from "@vanilla-extract/css";
-import { selectors } from "src";
-import { chromaVars, type Chroma } from "src/types";
+import selectors from "../selectors";
+import { chromaVars, type Chroma } from "../types";
 
 function chromaStyle(selector: string, style: StyleRule): void;
 function chromaStyle(selector: string[], style: StyleRule): void;

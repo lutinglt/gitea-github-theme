@@ -17,9 +17,9 @@
  * limitations under the License.
  */
 
+import { otherThemeVars, themeVars } from "@gitea-github-theme/core";
+import { botLabelStyle } from "@gitea-github-theme/styles/common";
 import { css } from "@linaria/core";
-import { otherThemeVars, themeVars } from "src";
-import { botLabelStyle } from "styles/common";
 
 // 评论
 export const comment = css`

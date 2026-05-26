@@ -18,10 +18,10 @@
  */
 
 import { opacify, saturate } from "polished";
-import type { ThemeVars } from "src/core";
-import { scaleColorLight } from "src/functions";
-import type { Ansi, Console, Diff, GitHub, Message, Named, Other, Primary, Secondary } from "src/types";
-import { themeVars } from "src/types";
+import type { ThemeVars } from "../core";
+import { scaleColorLight } from "../functions";
+import type { Ansi, Console, Diff, GitHub, Message, Named, Other, Primary, Secondary } from "../types";
+import { themeVars } from "../types";
 
 export type GiteaColor = {
   isDarkTheme: boolean;

@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
+import { themeVars } from "@gitea-github-theme/core";
 import { css } from "@linaria/core";
-import { themeVars } from "src";
 
 // 仓库标签 (私有/公开/内部)
 export const repoLabel = css`

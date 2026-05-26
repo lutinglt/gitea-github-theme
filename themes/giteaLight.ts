@@ -21,8 +21,19 @@
  * @author lutinglt
  */
 
-import type { Ansi, Console, Diff, GiteaColor, Message, Named, Other, Primary, Secondary, Syntax } from "src";
-import { defineTheme, themeVars } from "src";
+import type {
+  Ansi,
+  Console,
+  Diff,
+  GiteaColor,
+  Message,
+  Named,
+  Other,
+  Primary,
+  Secondary,
+  Syntax,
+} from "@gitea-github-theme/core";
+import { defineTheme, themeVars } from "@gitea-github-theme/core";
 
 const primary: Primary = {
   self: "#4183c4",

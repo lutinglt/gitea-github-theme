@@ -44,9 +44,9 @@ const githubUrl = `${githubSite}/${giteaRepo}/${versionPath}/${localePath}`;
 const locales = fs.readdirSync(path.join(rootDir, localePath)).filter(file => file.endsWith(".json"));
 
 (async () => {
+  fs.mkdirSync(path.join(rootDir, "dist", localePath), { recursive: true });
   for (const locale of locales) {
     const localUrl = `${githubUrl}/${locale}`;
-    console.log("LocaleUrl:", localUrl);
     const themeLocale = JSON.parse(fs.readFileSync(path.join(rootDir, localePath, locale), "utf-8"));
 
     const response = await fetch(localUrl);
@@ -62,8 +62,8 @@ const locales = fs.readdirSync(path.join(rootDir, localePath)).filter(file => fi
       }
     }
     Object.assign(content, themeLocale);
-    fs.mkdirSync(path.join(rootDir, "dist", localePath), { recursive: true });
     fs.writeFileSync(path.join(rootDir, "dist", localePath, locale), JSON.stringify(content, null, 2));
+    console.log("✔︎ LocaleUrl:", localUrl);
   }
 
   if (process.env.SSH_SERVER && process.env.GITEA_PATH && process.env.SSH_USER) {

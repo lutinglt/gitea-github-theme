@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
+import { themeVars } from "@gitea-github-theme/core";
 import { css } from "@linaria/core";
-import { themeVars } from "src";
 
 // release 顶部栏左侧按钮组
 export const releaseTagMenu = css`

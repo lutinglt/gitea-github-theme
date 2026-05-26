@@ -18,7 +18,7 @@
  */
 
 import { createGlobalTheme } from "@vanilla-extract/css";
-import { selectors } from "src";
+import selectors from "../selectors";
 
 export type ColorblindType = "red-green" | "blue-yellow";
 export type GiteaThemeMeta = {

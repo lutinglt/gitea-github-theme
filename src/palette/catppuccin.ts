@@ -19,8 +19,8 @@
 
 import type { CatppuccinFlavor } from "@catppuccin/palette";
 import { darken, lighten, mix, rgba, saturate } from "polished";
-import type { Ansi, Console, Diff, GitHub, Other } from "src/types";
-import { themeVars } from "src/types";
+import type { Ansi, Console, Diff, GitHub, Other } from "../types";
+import { themeVars } from "../types";
 import type { ThemeColor } from "./theme";
 
 // 颜色映射标准: https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md

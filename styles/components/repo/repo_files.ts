@@ -17,9 +17,9 @@
  * limitations under the License.
  */
 
+import { otherThemeVars, themeVars } from "@gitea-github-theme/core";
+import { animationDown } from "@gitea-github-theme/styles/common";
 import { css } from "@linaria/core";
-import { otherThemeVars, themeVars } from "src";
-import { animationDown } from "styles/common";
 
 // 文件列表页面下的分支按钮
 export const branchButton = css`

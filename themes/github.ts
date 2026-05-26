@@ -21,8 +21,9 @@
  * @author lutinglt
  */
 
-import type { GitHubColor } from "src";
-import { defineTheme, primer, primer2GitHubColor, primer2GitHubSyntax } from "src";
+import type { GitHubColor } from "@gitea-github-theme/core";
+import { defineTheme, primer2GitHubColor, primer2GitHubSyntax } from "@gitea-github-theme/core";
+import primer from "@gitea-github-theme/primer";
 /** - 仅适用于 Dark 主题
  * - 不同步 GitHub 样式, 对调 --controlKnob-bgColor-rest 和 --controlTrack-bgColor-rest 的颜色
  * - 激活颜色与背景色更一致, 在仪表板仓库/组织切换按钮中与菜单颜色一致

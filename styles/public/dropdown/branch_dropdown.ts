@@ -17,10 +17,10 @@
  * limitations under the License.
  */
 
+import { customThemeVars, otherThemeVars, themeVars } from "@gitea-github-theme/core";
+import { animationDown } from "@gitea-github-theme/styles/common";
 import { css } from "@linaria/core";
 import { fallbackVar } from "@vanilla-extract/css";
-import { customThemeVars, otherThemeVars, themeVars } from "src";
-import { animationDown } from "styles/common";
 
 // 分支菜单
 export const branchDropdown = css`

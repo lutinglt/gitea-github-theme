@@ -19,7 +19,7 @@
 
 import type { CatppuccinFlavor } from "@catppuccin/palette";
 import { rgba } from "polished";
-import type { Syntax } from "src/types";
+import type { Syntax } from "../types";
 
 /**
  * @source https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md

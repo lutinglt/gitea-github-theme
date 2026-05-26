@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
+import { otherThemeVars, themeVars } from "@gitea-github-theme/core";
 import { css } from "@linaria/core";
-import { otherThemeVars, themeVars } from "src";
 
 export const secondaryMenu = css`
   /* 二级菜单, 比如 Issue/PR/Actions 的筛选菜单 */

@@ -18,9 +18,9 @@
  */
 
 import { saturate } from "polished";
-import type { Console, Diff, Other } from "src";
-import { scaleColorLight } from "src/functions";
-import { themeVars, type GitHub } from "src/types";
+import { scaleColorLight } from "../functions";
+import type { Console, Diff, Other } from "../types";
+import { themeVars, type GitHub } from "../types";
 import type { ThemeColor } from "./theme";
 
 export type GitHubColor = {
@@ -36,8 +36,8 @@ export type GitHubColor = {
     teal: { fgColor: string };
   };
   diffBlob: {
-    addtionNum: { bgColor: string };
-    addtionWord: { bgColor: string };
+    additionNum: { bgColor: string };
+    additionWord: { bgColor: string };
     deletionNum: { bgColor: string };
     deletionWord: { bgColor: string };
     hunkNum: { bgColor: { rest: string } };
@@ -98,8 +98,8 @@ export type GitHubColor = {
   underlineNav: { borderColor: { active: string } };
   contribution: {
     default: {
-      bgColor: { num0: string; num1: string; num2: string; num3: string; num4: string };
-      borderColor: { num0: string };
+      bgColor: { 0: string; 1: string; 2: string; 3: string; 4: string };
+      borderColor: { 0: string; 1: string; 2: string; 3: string; 4: string };
     };
   };
 };
@@ -118,9 +118,9 @@ export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
   const diff: Diff = {
     added: {
       fg: githubColor.bgColor.success.emphasis,
-      linenum: { bg: githubColor.diffBlob.addtionNum.bgColor },
+      linenum: { bg: githubColor.diffBlob.additionNum.bgColor },
       row: { bg: githubColor.bgColor.success.muted, border: githubColor.bgColor.success.muted },
-      word: { bg: githubColor.diffBlob.addtionWord.bgColor },
+      word: { bg: githubColor.diffBlob.additionWord.bgColor },
     },
     removed: {
       fg: githubColor.bgColor.danger.emphasis,
@@ -279,23 +279,23 @@ export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
     contribution: {
       default: {
         bgColor: {
-          num0: githubColor.contribution.default.bgColor.num0,
-          num1: githubColor.contribution.default.bgColor.num1,
-          num2: githubColor.contribution.default.bgColor.num2,
-          num3: githubColor.contribution.default.bgColor.num3,
-          num4: githubColor.contribution.default.bgColor.num4,
+          num0: githubColor.contribution.default.bgColor[0],
+          num1: githubColor.contribution.default.bgColor[1],
+          num2: githubColor.contribution.default.bgColor[2],
+          num3: githubColor.contribution.default.bgColor[3],
+          num4: githubColor.contribution.default.bgColor[4],
           num5: saturate(
             0.2,
-            scaleColorLight(githubColor.contribution.default.bgColor.num4, githubColor.isDarkTheme ? 58 : -58)
+            scaleColorLight(githubColor.contribution.default.bgColor[4], githubColor.isDarkTheme ? 58 : -58)
           ),
         },
         borderColor: {
-          num0: githubColor.contribution.default.borderColor.num0,
-          num1: themeVars.github.contribution.default.borderColor.num0,
-          num2: themeVars.github.contribution.default.borderColor.num0,
-          num3: themeVars.github.contribution.default.borderColor.num0,
-          num4: themeVars.github.contribution.default.borderColor.num0,
-          num5: themeVars.github.contribution.default.borderColor.num0,
+          num0: githubColor.contribution.default.borderColor[0],
+          num1: githubColor.contribution.default.borderColor[1],
+          num2: githubColor.contribution.default.borderColor[2],
+          num3: githubColor.contribution.default.borderColor[3],
+          num4: githubColor.contribution.default.borderColor[4],
+          num5: githubColor.contribution.default.borderColor[4],
         },
       },
     },
