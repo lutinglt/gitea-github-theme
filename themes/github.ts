@@ -56,7 +56,9 @@ export const githubPinkDarkColor = display2GitHubColor(primer.dark.display.pink.
 export const githubPinkSoftDarkColor = display2GitHubColor(primer.dark.display.pink.scale, githubSoftDarkColor, true);
 export const githubPinkLightColor = display2GitHubColor(primer.light.display.pink.scale, githubLightColor);
 
-const defineGitHubTheme = (color: GitHubColor, syntaxColor: Primer) => defineTheme({ colorType: "github", themeColor: color, syntaxColor });
+function defineGitHubTheme(color: GitHubColor, syntaxColor: Primer) {
+  return defineTheme({ colorType: "github", themeColor: color, syntaxColor });
+}
 
 // 普通主题
 export const githubDarkTheme = defineGitHubTheme(githubDarkColor, primer.dark);
