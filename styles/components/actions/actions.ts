@@ -69,6 +69,7 @@ export const actions = css`
           /* 分支标签按钮 */
           .run-list-ref {
             background-color: ${themeVars.github.bgColor.accent.muted};
+            border-color: #0000;
             color: ${themeVars.github.fgColor.accent};
             font-family: var(--fonts-monospace);
             font-weight: 400;
