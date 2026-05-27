@@ -209,6 +209,7 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
       bgColor: { rest: themeVars.color.timeline },
       transparent: {
         bgColor: { hover: rgba(flavor.colors.surface2.hex, 0.2), active: rgba(flavor.colors.overlay0.hex, 0.5) },
+        borderColor: { active: "#0000" },
       },
       danger: { bgColor: { active: rgba(flavor.colors.red.hex, 0.3) } },
     },
@@ -246,6 +247,9 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
       },
     },
     workflowCardBg: flavor.colors.surface0.hex,
+    counter: { borderColor: "#0000" },
+    progressBar: { track: { bgColor: "#0000", borderColor: "#0000" } },
+    topicTag: { borderColor: "#0000" },
     themeExtra: {
       button: { primary: { fgColor: { accent: flavor.colors.green.hex } } },
       contribution: {

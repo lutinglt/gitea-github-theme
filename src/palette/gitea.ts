@@ -101,6 +101,7 @@ export function gitea2ThemeVars(giteaColor: GiteaColor): ThemeVars {
       bgColor: { rest: giteaColor.other.timeline },
       transparent: {
         bgColor: { hover: giteaColor.other.hover.self, active: giteaColor.other.active },
+        borderColor: { active: "#0000" },
       },
       danger: {
         bgColor: {
@@ -142,6 +143,9 @@ export function gitea2ThemeVars(giteaColor: GiteaColor): ThemeVars {
       },
     },
     workflowCardBg: giteaColor.other.button,
+    counter: { borderColor: "#0000" },
+    progressBar: { track: { bgColor: "#0000", borderColor: "#0000" } },
+    topicTag: { borderColor: "#0000" },
     themeExtra: {
       button: {
         primary: {

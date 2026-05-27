@@ -95,6 +95,7 @@ export const clone = css`
           margin-left: 5px;
           &:hover {
             background-color: ${themeVars.github.control.transparent.bgColor.hover};
+            box-shadow: inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active};
           }
           svg {
             width: 16px;
@@ -125,6 +126,7 @@ export const clone = css`
             color: ${themeVars.color.text.self};
             text-decoration: none;
             background: ${themeVars.github.control.transparent.bgColor.hover};
+            box-shadow: inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active};
             &:active {
               background: ${themeVars.github.control.transparent.bgColor.active};
             }

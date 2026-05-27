@@ -23,7 +23,7 @@ import { css } from "@linaria/core";
 
 export const label = css`
   .ui.label {
-    border: 1px solid #00000000;
+    border: 1px solid ${themeVars.github.counter.borderColor};
   }
   /* 所有标签, 但不包括 a 标签 */
   /* a 标签比如仓库点星等按钮旁边的数字标签按钮,提交图中的 tag 标签 */

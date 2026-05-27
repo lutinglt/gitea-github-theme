@@ -69,10 +69,11 @@ export const fileSearch = css`
         color: ${themeVars.color.text.light.num1};
         &.selected {
           background-color: unset;
-          box-shadow: 0 0 0 2px ${themeVars.github.borderColor.accent.emphasis};
+          box-shadow: 0 0 0 2px ${themeVars.github.borderColor.accent.emphasis} !important;
         }
         &:hover {
           background: ${themeVars.github.control.transparent.bgColor.hover} !important;
+          box-shadow: inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active};
         }
         .full-path :nth-child(2n) {
           color: ${themeVars.color.text.self};
@@ -131,6 +132,7 @@ export const repoFiles = css`
           min-height: 3.725rem;
           .latest-commit {
             gap: 8px;
+            line-height: 24px;
             .commit-summary {
               color: ${themeVars.color.text.light.num1};
             }
@@ -143,6 +145,7 @@ export const repoFiles = css`
             /* 作者 */
             .author-wrapper {
               display: flex;
+              align-items: center;
               &:hover {
                 color: ${themeVars.color.text.self};
               }
@@ -217,6 +220,7 @@ export const repoFiles = css`
             width: 28px;
             &:hover {
               background: ${themeVars.github.control.transparent.bgColor.hover};
+              box-shadow: inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active};
             }
           }
         }

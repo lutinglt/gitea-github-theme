@@ -103,7 +103,7 @@ export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
     projectColumnBg: githubColor.bgColor.inset,
     caret: themeVars.color.text.dark,
     reaction: { bg: "initial", hoverBg: githubColor.bgColor.accent.muted, activeBg: githubColor.bgColor.accent.muted },
-    tooltip: { text: githubColor.fgColor.onEmphasis, bg: githubColor.bgColor.emphasis },
+    tooltip: { text: githubColor.tooltip.fgColor, bg: githubColor.tooltip.bgColor },
     nav: {
       bg: githubColor.bgColor.inset,
       hoverBg: githubColor.control.transparent.bgColor.hover,
@@ -124,7 +124,6 @@ export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
     transparency: { grid: { light: "#ffffff", dark: "#e5e5e5" } },
     workflowEdgeHover: githubColor.bgColor.accent.emphasis,
   };
-
   const github: GitHub = {
     avatar: { bgColor: githubColor.avatar.bgColor, borderColor: githubColor.avatar.borderColor },
     fgColor: {
@@ -149,7 +148,7 @@ export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
       emphasis: githubColor.borderColor.emphasis,
     },
     button: {
-      default: { bgColor: { active: githubColor.control.bgColor.active } },
+      default: { bgColor: { active: githubColor.button.default.bgColor.active } },
       primary: {
         fgColor: {
           rest: githubColor.button.primary.fgColor.rest,
@@ -159,16 +158,19 @@ export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
           hover: githubColor.button.primary.bgColor.hover,
           active: githubColor.button.primary.bgColor.active,
         },
-        borderColor: { rest: githubColor.borderColor.translucent, hover: githubColor.borderColor.translucent },
+        borderColor: {
+          rest: githubColor.button.primary.borderColor.rest,
+          hover: githubColor.button.primary.borderColor.hover,
+        },
       },
       danger: {
         fgColor: { rest: githubColor.button.danger.fgColor.rest, hover: githubColor.button.danger.fgColor.hover },
         bgColor: {
-          rest: githubColor.control.bgColor.rest,
+          rest: githubColor.button.danger.bgColor.rest,
           hover: githubColor.button.danger.bgColor.hover,
           active: githubColor.button.danger.bgColor.active,
         },
-        borderColor: { hover: githubColor.borderColor.translucent },
+        borderColor: { hover: githubColor.button.danger.borderColor.hover },
       },
       star: { iconColor: githubColor.button.star.iconColor },
       invisible: { iconColor: { rest: githubColor.button.invisible.iconColor.rest } },
@@ -180,6 +182,7 @@ export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
           hover: githubColor.control.transparent.bgColor.hover,
           active: githubColor.control.transparent.bgColor.active,
         },
+        borderColor: { active: githubColor.control.transparent.borderColor.active },
       },
       danger: { bgColor: { active: githubColor.control.danger.bgColor.active } },
     },
@@ -196,6 +199,16 @@ export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
         medium: `drop-shadow(0 1px 1px ${githubColor.shadow.floating.small}) drop-shadow(0 3px 6px ${githubColor.shadow.resting.medium})`,
       },
     },
+    counter: {
+      borderColor: githubColor.counter.borderColor,
+    },
+    progressBar: {
+      track: {
+        bgColor: githubColor.progressBar.track.bgColor,
+        borderColor: githubColor.progressBar.track.borderColor,
+      },
+    },
+    topicTag: { borderColor: githubColor.topicTag.borderColor },
     underlineNav: { borderColor: { active: githubColor.underlineNav.borderColor.active } },
     contribution: {
       default: {

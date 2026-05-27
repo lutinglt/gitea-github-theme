@@ -113,6 +113,9 @@ export const repoSidebarBottom = css`
       .language-stats {
         height: 8px;
         margin-bottom: 0px;
+        background-color: ${themeVars.github.progressBar.track.bgColor};
+        outline: 1px solid ${themeVars.github.progressBar.track.borderColor};
+        outline-offset: -1px;
       }
       .language-stats-details .item {
         font-size: 12px;

@@ -62,6 +62,7 @@ export const commitsList = css`
           vertical-align: bottom;
           &:hover {
             background: ${themeVars.color.hover.self};
+            box-shadow: inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active};
           }
         }
         .commit-body {
@@ -118,6 +119,9 @@ export const commitsList = css`
           justify-content: center;
           height: 28px;
           width: 28px;
+          &:hover {
+            box-shadow: inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active};
+          }
         }
       }
     }

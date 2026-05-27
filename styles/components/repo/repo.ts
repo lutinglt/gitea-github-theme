@@ -98,6 +98,7 @@ export const repoTopic = css`
     line-height: 22px;
     background-color: ${themeVars.github.bgColor.accent.muted};
     color: ${themeVars.github.fgColor.accent};
+    border-color: ${themeVars.github.topicTag.borderColor};
     &:hover {
       background-color: ${themeVars.github.bgColor.accent.emphasis};
       color: ${themeVars.color.white};

@@ -33,6 +33,7 @@ export const shaLabel = css`
     margin-top: 2px;
     &:hover {
       background-color: ${themeVars.color.label.hoverBg};
+      box-shadow: inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active};
     }
     /* 验证提交 SHA 标签 */
     &.commit-is-signed {

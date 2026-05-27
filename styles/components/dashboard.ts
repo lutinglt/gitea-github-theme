@@ -91,7 +91,7 @@ export const dashboard = css`
       background-color: unset !important;
       margin-bottom: 0.25rem;
       .ui.label {
-        border-color: #00000000;
+        border-color: ${themeVars.github.counter.borderColor};
       }
     }
     /* 仓库/组织列表 */
@@ -106,7 +106,7 @@ export const dashboard = css`
         border-top-right-radius: 12px;
         > .menu.repos-filter {
           .ui.circular.label {
-            border-color: #00000000;
+            border-color: ${themeVars.github.counter.borderColor};
             min-height: fit-content;
             padding: ${labelStyle.padding} !important;
           }

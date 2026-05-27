@@ -164,11 +164,11 @@ export function giteaGitHubThemePlugin(): PluginOption[] {
         }
         /** 辅助函数: 将主题名称转为正式主题名称 */
         function buildFullThemeName(themeSeries: ThemeSeries, themeName: string): string {
-          return `${PREFIX}${themeSeries.themeSeriesName !== "base" ? `${themeSeries.themeSeriesName}-` : ""}${themeName}`;
+          return `${PREFIX}${themeSeries.themeSeriesName !== "default" ? `${themeSeries.themeSeriesName}-` : ""}${themeName}`;
         }
         /** 辅助函数: 将显示名称转为正式名称 */
         function buildFullDisplayName(themeSeries: ThemeSeries, displayName: string): string {
-          return `GitHub${themeSeries.themeSeriesName !== "base" ? ` ${kebabToTitle(themeSeries.themeSeriesName)}` : ""} ${kebabToTitle(displayName)}`;
+          return `GitHub ${kebabToTitle(themeSeries.themeSeriesName)} ${kebabToTitle(displayName)}`;
         }
 
         // 4. 解析主题条目

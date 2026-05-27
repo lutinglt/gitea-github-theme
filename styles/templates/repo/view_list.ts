@@ -42,6 +42,7 @@ export const repoFileLastCommit = css`
       font-weight: 500;
       &:hover {
         background-color: ${themeVars.github.control.transparent.bgColor.hover};
+        box-shadow: inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active};
         color: inherit;
         text-decoration-line: none;
       }

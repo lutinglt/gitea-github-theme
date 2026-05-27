@@ -62,6 +62,9 @@ export const commit = css`
         svg {
           color: ${themeVars.color.text.light.num1};
         }
+        .btn.interact-bg:hover {
+          box-shadow: inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active};
+        }
       }
       tr {
         /* 整行悬停色 */

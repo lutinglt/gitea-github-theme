@@ -22,7 +22,7 @@ import themes from "@gitea-github-theme/themes";
 
 export default defineThemeConfig([
   {
-    themeSeriesName: "base",
+    themeSeriesName: "default",
     themes: {
       dark: { theme: themes.github.dark },
       light: { theme: themes.github.light },
@@ -31,15 +31,15 @@ export default defineThemeConfig([
   },
   {
     themeSeriesName: "colorblind",
-    autoTheme: { displayName: "Auto Protanopia And Deuteranopia", colorblindType: "red-green" },
+    autoTheme: { displayName: "Default Auto Protanopia And Deuteranopia", colorblindType: "red-green" },
     themes: {
       dark: {
-        displayName: "Dark Protanopia And Deuteranopia",
+        displayName: "Default Dark Protanopia And Deuteranopia",
         colorblindType: "red-green",
         theme: themes.github.colorblind.dark,
       },
       light: {
-        displayName: "Light Protanopia And Deuteranopia",
+        displayName: "Default Light Protanopia And Deuteranopia",
         colorblindType: "red-green",
         theme: themes.github.colorblind.light,
       },
@@ -47,15 +47,15 @@ export default defineThemeConfig([
   },
   {
     themeSeriesName: "tritanopia",
-    autoTheme: { displayName: "Auto Tritanopia", colorblindType: "blue-yellow" },
+    autoTheme: { displayName: "Default Auto Tritanopia", colorblindType: "blue-yellow" },
     themes: {
       dark: {
-        displayName: "Dark Tritanopia",
+        displayName: "Default Dark Tritanopia",
         colorblindType: "blue-yellow",
         theme: themes.github.tritanopia.dark,
       },
       light: {
-        displayName: "Light Tritanopia",
+        displayName: "Default Light Tritanopia",
         colorblindType: "blue-yellow",
         theme: themes.github.tritanopia.light,
       },

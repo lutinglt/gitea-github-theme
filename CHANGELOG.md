@@ -1,6 +1,8 @@
 ### ✨ Feature
 
 - Add high contrast color themes.
+- Add default to the basic default theme display name to sort it together when there are many themes in the list.
+  `GitHub Dark` -> `GitHub Default Dark`
 
 ### 🌈 Style
 
@@ -12,7 +14,9 @@
 
 - Fine tune the heatmap colors of catppuccin theme and pink soft dark theme.
 - Optimize heat map style.
+- Synchronize styles under high contrast themes.
 
 ### 🐞 Fix
 
 - Fix the missing highlight style when hovering the heatmap mouse.
+- Fix the last commit avatar on the repo homepage being blocked.

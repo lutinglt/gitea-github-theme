@@ -265,6 +265,19 @@ export const github = {
          */
         active: null,
       },
+      borderColor: {
+        /** 激活色, 默认 #0000, 高对比度专属色
+         * @dropdown `dropdown` 下拉框子项悬停时的边框色
+         * @sha_label `shaLabel` 提交 SHA 标签悬停时的边框色
+         * @commit `commit` 提交信息的 Action 按钮的悬停边框色
+         * @repo_files `fileSearch` 文件搜索框子项的悬停边框色 `repoFiles` README 右侧操作悬停边框色
+         * @clone `clone` 克隆按钮和面板操作列表的悬停边框色
+         * @templates @commit_sign_badge `commitSignBadge` SHA 标签悬停时的边框色
+         * @templates @commits_list `commitsList` 提交操作按钮悬停时的边框色
+         * @templates @view_list `repoFileLastCommit` 提交历史按钮悬停时的边框色
+         */
+        active: null,
+      },
     },
     danger: {
       bgColor: {
@@ -355,6 +368,31 @@ export const github = {
    * @workflow_summary `summaryView` 节点背景色
    */
   workflowCardBg: "github-workflow-card-bg",
+  counter: {
+    /** 标签的边框色, 默认为 #0000, 高对比度专属颜色
+     * @label `label` 标签的边框色
+     * @dashboard `dashboard` 仓库/组织列表标签的边框色
+     */
+    borderColor: null,
+  },
+  progressBar: {
+    track: {
+      /** 进度条轨道背景色, 默认为 #0000, 高对比度专属颜色
+       * @repo_sidebar `repoSidebarBottom` 语言统计条的背景色
+       */
+      bgColor: null,
+      /** 进度条轨道边框色, 默认为 #0000, 高对比度专属颜色
+       * @repo_sidebar `repoSidebarBottom` 语言统计条的边框色
+       */
+      borderColor: null,
+    },
+  },
+  topicTag: {
+    /** 主题标签的边框色, 默认为 #0000, 高对比度专属颜色
+     * @repo `repoTopic` 仓库标签的边框色
+     */
+    borderColor: null,
+  },
   /** 主题额外的 GitHub 颜色 */
   themeExtra: {
     button: {

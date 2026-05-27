@@ -63,6 +63,7 @@ export const dropdown = css`
         }
         &:hover {
           background-color: ${themeVars.github.control.transparent.bgColor.hover} !important;
+          box-shadow: inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active};
         }
         &:active {
           background-color: ${themeVars.github.control.transparent.bgColor.active} !important;

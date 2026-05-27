@@ -29,6 +29,7 @@ export const commitSignBadge = css`
     margin: 0 4px;
     &:hover {
       background-color: unset !important;
+      box-shadow: unset;
     }
     &.commit-is-signed {
       span.ui.label.commit-sign-badge.commit-is-signed {
@@ -49,6 +50,7 @@ export const commitSignBadge = css`
       justify-content: center;
       &:hover {
         background-color: ${themeVars.color.hover.self};
+        box-shadow: inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active};
       }
     }
   }
