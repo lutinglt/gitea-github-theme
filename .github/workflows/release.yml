@@ -31,7 +31,6 @@ jobs:
           tar -zcf dist/theme-github-extra-gitea.tar.gz dist/theme-github-gitea-*.css
           tar -zcf dist/theme-github-extra-catppuccin.tar.gz dist/theme-github-catppuccin-*.css
 
-
           tar -zcf dist/theme-github.tar.gz --remove-files dist/theme-github-*.css
 
           tar -zcf dist/theme-github-templates.tar.gz templates

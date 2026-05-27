@@ -23,7 +23,7 @@ import { css } from "@linaria/core";
 import type { StyleRule } from "@vanilla-extract/css";
 
 const tinyStyle = {
-  color: themeVars.github.button.primary.fgColor.accent,
+  color: themeVars.github.themeExtra.button.primary.fgColor.accent,
   backgroundColor: themeVars.color.button,
   borderColor: themeVars.color.light.border,
 } satisfies StyleRule;

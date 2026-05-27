@@ -156,10 +156,6 @@ export const github = {
          * @setting `tinyHoverStyle` 按钮的悬停文本颜色
          */
         rest: null,
-        /** 强调色 (Github 没有此颜色, 为本主题自定义, 需自行设置)
-         * @setting `tinyStyle` 按钮的文本颜色
-         */
-        accent: null,
       },
       bgColor: {
         /** 静止色
@@ -344,8 +340,6 @@ export const github = {
         num2: null,
         num3: null,
         num4: null,
-        /** github 无此颜色需自行计算 */
-        num5: null,
       },
       /** 热力图方块的内边框颜色 */
       borderColor: {
@@ -354,10 +348,6 @@ export const github = {
         num2: null,
         num3: null,
         num4: null,
-        /** github 无此颜色需自行计算
-         * @example 目前均取 num0 的值
-         */
-        num5: null,
       },
     },
   },
@@ -365,4 +355,34 @@ export const github = {
    * @workflow_summary `summaryView` 节点背景色
    */
   workflowCardBg: "github-workflow-card-bg",
+  /** 主题额外的 GitHub 颜色 */
+  themeExtra: {
+    button: {
+      /** 主色调按钮 */
+      primary: {
+        fgColor: {
+          /** 强调色
+           * @setting `tinyStyle` 按钮的文本颜色
+           */
+          accent: null,
+        },
+      },
+    },
+    contribution: {
+      default: {
+        /** 热力图方块的颜色 */
+        bgColor: {
+          /** Gitea 比 GitHub 多出一阶的颜色 */
+          num5: null,
+        },
+        /** 热力图方块的内边框颜色 */
+        borderColor: {
+          /** Gitea 比 GitHub 多出一阶的颜色
+           * @example 目前均取 num0 的值
+           */
+          num5: null,
+        },
+      },
+    },
+  },
 };

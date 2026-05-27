@@ -79,8 +79,8 @@ export const heatmap = css`
           outline-color: ${themeVars.github.contribution.default.borderColor.num4};
         }
         &[style="fill: var(--color-primary-dark-4);"] {
-          fill: ${themeVars.github.contribution.default.bgColor.num5} !important;
-          outline-color: ${themeVars.github.contribution.default.borderColor.num5};
+          fill: ${themeVars.github.themeExtra.contribution.default.bgColor.num5} !important;
+          outline-color: ${themeVars.github.themeExtra.contribution.default.borderColor.num5};
         }
       }
     }

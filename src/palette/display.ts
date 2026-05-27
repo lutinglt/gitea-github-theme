@@ -17,56 +17,32 @@
  * limitations under the License.
  */
 
+import type { Primer } from "@gitea-github-theme/primer";
 import { saturate } from "polished";
 import { scaleColorLight } from "../functions";
+import { deepOverride } from "../utils";
 import type { GitHubColor } from "./github";
 
-export type DisplayColor = {
-  "0": string;
-  "1": string;
-  "2": string;
-  "3": string;
-  "4": string;
-  "5": string;
-  "6": string;
-  "7": string;
-  "8": string;
-  "9": string;
-};
+export type DisplayColor = Primer["display"]["pink"]["scale"];
 
 export function display2GitHubColor(
   displayColor: DisplayColor,
   baseGitHubColor: GitHubColor,
   soft?: boolean
 ): GitHubColor {
-  return {
-    ...baseGitHubColor,
-    diffBlob: {
-      ...baseGitHubColor.diffBlob,
-      hunkNum: { bgColor: { rest: soft ? displayColor[2] : displayColor[1] } },
-    },
-    fgColor: {
-      ...baseGitHubColor.fgColor,
-      accent: soft ? displayColor[7] : displayColor[6],
-    },
+  return deepOverride(baseGitHubColor, {
+    diffBlob: { hunkNum: { bgColor: { rest: soft ? displayColor[2] : displayColor[1] } } },
+    fgColor: { accent: soft ? displayColor[7] : displayColor[6] },
     bgColor: {
-      ...baseGitHubColor.bgColor,
       accent: {
         emphasis: soft ? saturate(-0.1, scaleColorLight(displayColor[5], -2)) : displayColor[5],
         muted: soft ? displayColor[1] : displayColor[0],
       },
     },
-    borderColor: {
-      ...baseGitHubColor.borderColor,
-      accent: {
-        emphasis: soft ? displayColor[6] : displayColor[5],
-      },
-    },
+    borderColor: { accent: { emphasis: soft ? displayColor[6] : displayColor[5] } },
     button: {
-      ...baseGitHubColor.button,
       primary: {
         fgColor: {
-          accent: soft ? displayColor[7] : displayColor[6],
           rest: baseGitHubColor.button.primary.fgColor.rest,
         },
         bgColor: {
@@ -93,7 +69,6 @@ export function display2GitHubColor(
       },
     },
     contribution: {
-      ...baseGitHubColor.contribution,
       default: {
         bgColor: {
           "0": baseGitHubColor.contribution.default.bgColor[0],
@@ -105,5 +80,6 @@ export function display2GitHubColor(
         borderColor: baseGitHubColor.contribution.default.borderColor,
       },
     },
-  };
+    themeExtra: { button: { primary: { fgColor: { accent: soft ? displayColor[7] : displayColor[6] } } } },
+  });
 }

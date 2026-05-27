@@ -70,7 +70,6 @@ export function gitea2ThemeVars(giteaColor: GiteaColor): ThemeVars {
       default: { bgColor: { active: giteaColor.other.active } },
       primary: {
         fgColor: {
-          accent: saturate(0.1, scaleColorLight(giteaColor.primary.self, giteaColor.isDarkTheme ? 10 : -10)),
           rest: giteaColor.named.white,
         },
         bgColor: giteaColor.isDarkTheme
@@ -132,7 +131,6 @@ export function gitea2ThemeVars(giteaColor: GiteaColor): ThemeVars {
           num2: giteaColor.primary.light.num2,
           num3: giteaColor.primary.self,
           num4: giteaColor.primary.dark.num2,
-          num5: giteaColor.primary.dark.num4,
         },
         borderColor: {
           num0: giteaColor.secondary.alpha.num10,
@@ -140,11 +138,25 @@ export function gitea2ThemeVars(giteaColor: GiteaColor): ThemeVars {
           num2: themeVars.github.contribution.default.borderColor.num0,
           num3: themeVars.github.contribution.default.borderColor.num0,
           num4: themeVars.github.contribution.default.borderColor.num0,
-          num5: themeVars.github.contribution.default.borderColor.num0,
         },
       },
     },
     workflowCardBg: giteaColor.other.button,
+    themeExtra: {
+      button: {
+        primary: {
+          fgColor: {
+            accent: saturate(0.1, scaleColorLight(giteaColor.primary.self, giteaColor.isDarkTheme ? 10 : -10)),
+          },
+        },
+      },
+      contribution: {
+        default: {
+          bgColor: { num5: giteaColor.primary.dark.num4 },
+          borderColor: { num5: themeVars.github.contribution.default.borderColor.num0 },
+        },
+      },
+    },
   };
   return {
     isDarkTheme: giteaColor.isDarkTheme,

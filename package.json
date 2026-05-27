@@ -8,15 +8,17 @@
   },
   "type": "module",
   "scripts": {
-    "build": "tsgo -b && vite build",
+    "test": "vitest",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "commit": "npm run lint && npm run format && npm run build",
+    "build": "tsgo -b && vite build",
+    "commit": "npm run format && npm run lint && npm run test && npm run build",
     "version": "node scripts/version.ts",
-    "tr": "node scripts/translate.ts",
-    "build:primer": "node scripts/buildPrimerTSToken.ts",
+    "release": "npm run build && npm run update:locale",
+    "build:ci": "npm run lint && npm run test && npm run build",
+    "update:primer": "node scripts/buildPrimerTSToken.ts",
+    "update:locale": "node scripts/translate.ts",
     "update:gitea": "node scripts/updateGitea.ts",
-    "release": "npm run build && npm run tr",
     "install:clean": "npm cache clean --force && rm -rf node_modules package-lock.json && npm install"
   },
   "devDependencies": {
@@ -43,7 +45,8 @@
     "typescript-eslint": "^8.59.1",
     "typescript-plugin-css-modules": "^5.2.0",
     "undici": "^7.0.0",
-    "vite": "^8.0.5"
+    "vite": "^8.0.5",
+    "vitest": "^3.2.4"
   },
   "prettier": {
     "printWidth": 120,

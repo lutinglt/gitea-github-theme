@@ -17,6 +17,7 @@
  * limitations under the License.
  */
 
+import type { Primer } from "@gitea-github-theme/primer";
 import { saturate } from "polished";
 import { scaleColorLight } from "../functions";
 import type { Console, Diff, Other } from "../types";
@@ -25,84 +26,8 @@ import type { ThemeColor } from "./theme";
 
 export type GitHubColor = {
   isDarkTheme: boolean;
-  avatar: { bgColor: string; borderColor: string };
-  display: {
-    blue: { fgColor: string };
-    brown: { fgColor: string };
-    cyan: { fgColor: string };
-    indigo: { fgColor: string };
-    lemon: { fgColor: string };
-    olive: { fgColor: string };
-    teal: { fgColor: string };
-  };
-  diffBlob: {
-    additionNum: { bgColor: string };
-    additionWord: { bgColor: string };
-    deletionNum: { bgColor: string };
-    deletionWord: { bgColor: string };
-    hunkNum: { bgColor: { rest: string } };
-  };
-  fgColor: {
-    accent: string;
-    attention: string;
-    danger: string;
-    default: string;
-    disabled: string;
-    done: string;
-    neutral: string;
-    severe: string;
-    sponsors: string;
-    success: string;
-    black: string;
-    white: string;
-    muted: string;
-    onEmphasis: string;
-  };
-  bgColor: {
-    accent: { emphasis: string; muted: string };
-    attention: { emphasis: string; muted: string };
-    emphasis: string;
-    success: { emphasis: string; muted: string };
-    danger: { emphasis: string; muted: string };
-    done: { emphasis: string };
-    default: string;
-    inset: string;
-    muted: string;
-    neutral: { muted: string; emphasis: string };
-  };
-  borderColor: {
-    accent: { emphasis: string };
-    attention: { emphasis: string };
-    default: string;
-    success: { emphasis: string };
-    done: { emphasis: string };
-    muted: string;
-    translucent: string;
-    emphasis: string;
-  };
-  button: {
-    primary: { fgColor: { accent: string; rest: string }; bgColor: { rest: string; hover: string; active: string } };
-    danger: { fgColor: { rest: string; hover: string }; bgColor: { hover: string; active: string } };
-    star: { iconColor: string };
-    invisible: { iconColor: { rest: string } };
-  };
-  control: {
-    bgColor: { active: string; hover: string; rest: string };
-    transparent: { bgColor: { active: string; hover: string; selected: string } };
-    danger: { bgColor: { active: string } };
-  };
-  controlTrack: { bgColor: { rest: string } };
-  controlKnob: { bgColor: { rest: string } };
-  shadow: { floating: { small: string }; inset: string; resting: { small: string; medium: string } };
-  overlay: { backdrop: { bgColor: string }; bgColor: string };
-  underlineNav: { borderColor: { active: string } };
-  contribution: {
-    default: {
-      bgColor: { "0": string; "1": string; "2": string; "3": string; "4": string };
-      borderColor: { "0": string; "1": string; "2": string; "3": string; "4": string };
-    };
-  };
-};
+  themeExtra: { button: { primary: { fgColor: { accent: string } } } };
+} & Primer;
 
 export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
   const console: Console = {
@@ -227,10 +152,6 @@ export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
       default: { bgColor: { active: githubColor.control.bgColor.active } },
       primary: {
         fgColor: {
-          accent: saturate(
-            0.1,
-            scaleColorLight(githubColor.button.primary.fgColor.accent, githubColor.isDarkTheme ? 10 : -10)
-          ),
           rest: githubColor.button.primary.fgColor.rest,
         },
         bgColor: {
@@ -284,10 +205,6 @@ export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
           num2: githubColor.contribution.default.bgColor[2],
           num3: githubColor.contribution.default.bgColor[3],
           num4: githubColor.contribution.default.bgColor[4],
-          num5: saturate(
-            0.2,
-            scaleColorLight(githubColor.contribution.default.bgColor[4], githubColor.isDarkTheme ? 58 : -58)
-          ),
         },
         borderColor: {
           num0: githubColor.contribution.default.borderColor[0],
@@ -295,11 +212,33 @@ export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
           num2: githubColor.contribution.default.borderColor[2],
           num3: githubColor.contribution.default.borderColor[3],
           num4: githubColor.contribution.default.borderColor[4],
-          num5: githubColor.contribution.default.borderColor[4],
         },
       },
     },
     workflowCardBg: githubColor.isDarkTheme ? githubColor.bgColor.muted : githubColor.bgColor.default,
+    themeExtra: {
+      button: {
+        primary: {
+          fgColor: {
+            accent: saturate(
+              0.1,
+              scaleColorLight(githubColor.themeExtra.button.primary.fgColor.accent, githubColor.isDarkTheme ? 10 : -10)
+            ),
+          },
+        },
+      },
+      contribution: {
+        default: {
+          bgColor: {
+            num5: saturate(
+              0.2,
+              scaleColorLight(githubColor.contribution.default.bgColor[4], githubColor.isDarkTheme ? 58 : -58)
+            ),
+          },
+          borderColor: { num5: githubColor.contribution.default.borderColor[4] },
+        },
+      },
+    },
   };
   return {
     isDarkTheme: githubColor.isDarkTheme,

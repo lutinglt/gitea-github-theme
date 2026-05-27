@@ -185,7 +185,7 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
     button: {
       default: { bgColor: { active: flavor.colors.surface2.hex } },
       primary: {
-        fgColor: { accent: flavor.colors.green.hex, rest: flavor.colors.base.hex },
+        fgColor: { rest: flavor.colors.base.hex },
         bgColor: {
           rest: flavor.colors.green.hex,
           hover: lighten(0.05, flavor.colors.green.hex),
@@ -235,7 +235,6 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
           num2: rgba(accentColor, 0.45),
           num3: rgba(accentColor, 0.65),
           num4: rgba(accentColor, 0.85),
-          num5: accentColor,
         },
         borderColor: {
           num0: rgba(flavor.colors.overlay0.hex, 0.05),
@@ -243,11 +242,19 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
           num2: themeVars.github.contribution.default.borderColor.num0,
           num3: themeVars.github.contribution.default.borderColor.num0,
           num4: themeVars.github.contribution.default.borderColor.num0,
-          num5: themeVars.github.contribution.default.borderColor.num0,
         },
       },
     },
     workflowCardBg: flavor.colors.surface0.hex,
+    themeExtra: {
+      button: { primary: { fgColor: { accent: flavor.colors.green.hex } } },
+      contribution: {
+        default: {
+          bgColor: { num5: accentColor },
+          borderColor: { num5: themeVars.github.contribution.default.borderColor.num0 },
+        },
+      },
+    },
   };
   return {
     isDarkTheme: flavor.dark,
