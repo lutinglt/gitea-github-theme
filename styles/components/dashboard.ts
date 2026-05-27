@@ -128,6 +128,7 @@ export const dashboard = css`
             }
             &:hover {
               background: ${themeVars.github.control.transparent.bgColor.hover};
+              box-shadow: inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active};
             }
             a.muted:hover {
               color: inherit;
