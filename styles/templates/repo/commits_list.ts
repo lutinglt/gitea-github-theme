@@ -83,6 +83,7 @@ export const commitsList = css`
         .author-wrapper {
           display: flex;
           align-items: center;
+          overflow: visible;
         }
         img.ui.avatar {
           border-radius: 9999px;

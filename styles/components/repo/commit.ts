@@ -34,6 +34,7 @@ export const commit = css`
         .author-wrapper {
           display: flex;
           color: ${themeVars.color.text.light.num1};
+          overflow: visible;
         }
       }
       /* SHA 标签 */
