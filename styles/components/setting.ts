@@ -49,9 +49,13 @@ export const button = css`
       box-shadow: none;
       &:hover {
         background-color: ${themeVars.color.hover.self};
+        color: ${themeVars.color.text.self};
+        border-color: ${themeVars.color.light.border};
       }
       &:active {
         background-color: ${themeVars.github.button.default.bgColor.active};
+        color: ${themeVars.color.text.self};
+        border-color: ${themeVars.color.light.border};
       }
     }
     /* 迷你按钮替换为自定义的主色调按钮 (例: SSH 验证按钮) */

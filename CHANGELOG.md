@@ -9,6 +9,7 @@
 - Optimize catppuccin theme with regular label colors.
 - Fine tune the border color of catppuccin theme.
 - Optimize the avatar background color of catppuccin theme.
+- Optimize the tooltip box color of catppucin theme.
 
 #### More GitHub-like style
 
@@ -20,3 +21,5 @@
 
 - Fix the missing highlight style when hovering the heatmap mouse.
 - Fix the last commit avatar on the repo homepage being blocked.
+- Fix the color of the danger button in the catppuccin theme.
+- Fix the common button floating and clicking colors on the catppuccin and gitea theme settings pages.

@@ -31,6 +31,8 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
   const lv1Color = flavor.dark ? flavor.colors.crust.hex : flavor.colors.base.hex;
   const lv2Color = flavor.colors.mantle.hex;
   // const lv3Color = flavor.dark ? flavor.colors.base.hex : flavor.colors.crust.hex;
+  // 颜色偏向 base, 避免 latte 下与背景色相同
+  const buttonColor = mix(0.75, flavor.colors.base.hex, flavor.colors.surface0.hex);
 
   const ansi: Ansi = {
     black: flavor.ansiColors.black.normal.hex,
@@ -119,8 +121,7 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
       tableRow: rgba(flavor.colors.text.hex, 0.02),
       code: { block: rgba(flavor.colors.text.hex, 0.05), inline: flavor.colors.surface0.hex },
     },
-    // 颜色偏向 base, 避免 latte 下与背景色相同
-    button: mix(0.75, flavor.colors.base.hex, flavor.colors.surface0.hex),
+    button: buttonColor,
     codeBg: "unset",
     shadow: { self: rgba(lv1Color, 0.1), opaque: themeVars.color.shadow.self },
     secondaryBg: "unset",
@@ -133,7 +134,7 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
     projectColumnBg: themeVars.color.secondary.light.num2,
     caret: themeVars.color.text.self,
     reaction: { bg: "initial", hoverBg: themeVars.color.primary.self, activeBg: themeVars.color.primary.alpha.num40 },
-    tooltip: { text: themeVars.color.text.self, bg: flavor.colors.overlay0.hex },
+    tooltip: { text: flavor.colors.base.hex, bg: flavor.colors.lavender.hex },
     nav: {
       bg: lv2Color,
       hoverBg: themeVars.color.hover.self,
@@ -197,7 +198,7 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
       danger: {
         fgColor: { rest: flavor.colors.red.hex, hover: flavor.colors.base.hex },
         bgColor: {
-          rest: flavor.colors.surface0.hex,
+          rest: buttonColor,
           hover: flavor.colors.red.hex,
           active: darken(0.05, flavor.colors.red.hex),
         },
