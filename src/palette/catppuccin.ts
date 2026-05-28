@@ -19,6 +19,7 @@
 
 import type { CatppuccinFlavor } from "@catppuccin/palette";
 import { darken, lighten, mix, rgba, saturate } from "polished";
+import { scaleColorLight } from "../functions";
 import type { Ansi, Console, Diff, GitHub, Other } from "../types";
 import { themeVars } from "../types";
 import type { ThemeColor } from "./theme";
@@ -211,7 +212,15 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
         bgColor: { hover: rgba(flavor.colors.surface2.hex, 0.2), active: rgba(flavor.colors.overlay0.hex, 0.5) },
         borderColor: { active: "#0000" },
       },
-      danger: { bgColor: { active: rgba(flavor.colors.red.hex, 0.3) } },
+      danger: {
+        fgColor: {
+          hover: flavor.dark ? scaleColorLight(flavor.colors.red.hex, 15) : scaleColorLight(flavor.colors.red.hex, 25),
+        },
+        bgColor: {
+          hover: rgba(flavor.colors.red.hex, 0.1),
+          active: rgba(flavor.colors.red.hex, 0.3),
+        },
+      },
     },
     // 对调颜色映射, 倾向于个人标准(激活项颜色和菜单色一致)
     controlTrack: { bgColor: { rest: flavor.colors.surface0.hex } },

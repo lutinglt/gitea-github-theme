@@ -104,7 +104,9 @@ export function gitea2ThemeVars(giteaColor: GiteaColor): ThemeVars {
         borderColor: { active: "#0000" },
       },
       danger: {
+        fgColor: { hover: giteaColor.named.red.light },
         bgColor: {
+          hover: giteaColor.named.red.badge.bg,
           active: opacify(0.3, giteaColor.named.red.badge.bg),
         },
       },

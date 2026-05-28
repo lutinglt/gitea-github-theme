@@ -18,6 +18,7 @@
  */
 
 import { otherThemeVars, themeVars } from "@gitea-github-theme/core";
+import { deleteHoverActiveStyle } from "@gitea-github-theme/styles/common";
 import { css } from "@linaria/core";
 import type { StyleRule } from "@vanilla-extract/css";
 
@@ -83,6 +84,7 @@ export const issueSidebar = css`
             height: 28px;
             &:hover {
               background: ${themeVars.github.control.transparent.bgColor.hover};
+              box-shadow: inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active};
             }
           }
           .ui.list {
@@ -199,9 +201,11 @@ export const issueSidebar = css`
           justify-content: left;
           &:hover {
             background: ${themeVars.github.control.transparent.bgColor.hover};
+            box-shadow: inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active};
           }
           &:active {
             background-color: ${themeVars.github.control.transparent.bgColor.active};
+            box-shadow: inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active};
           }
         }
         .ui.show-modal.button[data-modal="#sidebar-delete-issue"] {
@@ -209,14 +213,7 @@ export const issueSidebar = css`
           svg {
             color: inherit;
           }
-          &:hover {
-            background-color: ${themeVars.color.red.badge.bg};
-            color: ${themeVars.color.red.light};
-          }
-          &:active {
-            background-color: ${themeVars.github.control.danger.bgColor.active} !important;
-            color: ${themeVars.color.red.light};
-          }
+          ${deleteHoverActiveStyle}
         }
       }
     }

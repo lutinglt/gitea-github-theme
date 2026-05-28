@@ -41,7 +41,6 @@ export const selectionDropdown = css`
     }
     /* 悬停提供伪元素 */
     .item:hover:after {
-      content: "";
       ${activeItemAfterStyle};
     }
   }

@@ -47,6 +47,7 @@ export const clone = css`
           margin: 8px 0;
           &:hover {
             background: ${themeVars.github.control.transparent.bgColor.hover};
+            box-shadow: inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active};
             border-radius: ${otherThemeVars.border.radius};
           }
           &.active:after {

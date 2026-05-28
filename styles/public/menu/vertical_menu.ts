@@ -40,6 +40,7 @@ export const verticalMenu = css`
     a.item {
       &:hover {
         background: ${themeVars.github.control.transparent.bgColor.hover};
+        box-shadow: inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active};
       }
       &:active {
         background-color: ${themeVars.github.control.transparent.bgColor.active};
@@ -73,7 +74,6 @@ export const verticalMenu = css`
     }
     /* 添加伪元素, 用于指示当前激活的菜单项 */
     .active.item:after {
-      content: "";
       ${activeItemAfterStyle};
     }
     /* 部分菜单项的子菜单 */
@@ -81,6 +81,7 @@ export const verticalMenu = css`
       /* 子菜单的标题 */
       summary:hover {
         background: ${themeVars.github.control.transparent.bgColor.hover};
+        box-shadow: inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active};
       }
       /* 子菜单的选项 */
       .menu .item {
@@ -100,7 +101,6 @@ export const verticalMenu = css`
           }
         }
         &:after {
-          content: "";
           ${activeItemAfterStyle};
         }
         /* 子菜单的选项 */

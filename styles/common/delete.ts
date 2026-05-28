@@ -17,19 +17,17 @@
  * limitations under the License.
  */
 
-import { otherThemeVars, themeVars } from "@gitea-github-theme/core";
+import { themeVars } from "@gitea-github-theme/core";
 import type { StyleRule } from "@vanilla-extract/css";
 
-/** 激活项后缀样式
- * @example 菜单激活子项前面的竖线, 方便识别
- */
-export const activeItemAfterStyle = {
-  content: `""`,
-  backgroundColor: themeVars.github.borderColor.accent.emphasis,
-  borderRadius: otherThemeVars.border.radius,
-  height: "24px",
-  left: "-8px",
-  position: "absolute",
-  top: "calc(50% - 12px)",
-  width: "4px",
-} satisfies StyleRule;
+export const deleteHoverActiveStyle = {
+  "&:hover": {
+    backgroundColor: `${themeVars.github.control.danger.bgColor.hover} !important`,
+    color: `${themeVars.github.control.danger.fgColor.hover} !important`,
+  } satisfies StyleRule,
+  "&:active": {
+    backgroundColor: `${themeVars.github.control.danger.bgColor.active} !important`,
+    color: `${themeVars.github.control.danger.fgColor.hover} !important`,
+    boxShadow: `inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active}`,
+  } satisfies StyleRule,
+};

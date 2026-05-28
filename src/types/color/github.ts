@@ -280,7 +280,11 @@ export const github = {
       },
     },
     danger: {
+      fgColor: {
+        hover: null,
+      },
       bgColor: {
+        hover: null,
         /** 激活色
          * @repo_file_view `repoFileView` 菜单删除操作项激活颜色
          * @issue_comment `comment` 菜单删除操作项激活颜色

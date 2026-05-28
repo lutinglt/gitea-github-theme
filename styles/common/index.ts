@@ -20,4 +20,5 @@
 export { activeItemAfterStyle } from "./after";
 export { animation, animationDown, animationUp } from "./animation";
 export { primaryButtonHoverStyle, primaryButtonStyle } from "./button";
+export { deleteHoverActiveStyle } from "./delete";
 export { botLabelStyle, labelStyle } from "./label";

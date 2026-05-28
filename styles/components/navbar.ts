@@ -34,6 +34,9 @@ export const navbarRight = css`
       > .item {
         padding: 4px 8px;
         min-height: 20px;
+        &:hover {
+          box-shadow: inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active};
+        }
         &.active {
           font-weight: 600;
         }

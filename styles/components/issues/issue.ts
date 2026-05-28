@@ -32,6 +32,7 @@ export const button = css`
 export const babel = css`
   .issue-content-left {
     .badge {
+      box-shadow: inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active};
       /* 时间线打开状态标签 */
       &.tw-bg-green {
         background-color: ${themeVars.github.bgColor.success.emphasis} !important;
@@ -53,16 +54,19 @@ export const babel = css`
       color: ${themeVars.color.white} !important;
       background-color: ${themeVars.github.bgColor.success.emphasis} !important;
       border-color: ${themeVars.github.bgColor.success.emphasis} !important;
+      box-shadow: inset 0 0 0 1px ${themeVars.github.borderColor.success.emphasis};
     }
     &.red {
       color: ${themeVars.color.white} !important;
       background-color: ${themeVars.github.bgColor.done.emphasis} !important;
       border-color: ${themeVars.github.bgColor.done.emphasis} !important;
+      box-shadow: inset 0 0 0 1px ${themeVars.github.borderColor.done.emphasis};
     }
     &.purple {
       color: ${themeVars.color.white} !important;
       background-color: ${themeVars.github.bgColor.done.emphasis} !important;
       border-color: ${themeVars.github.bgColor.done.emphasis} !important;
+      box-shadow: inset 0 0 0 1px ${themeVars.github.borderColor.done.emphasis};
     }
   }
 `;
@@ -96,7 +100,6 @@ export const dropdown = css`
     /* Issue/PR 详情下的右侧的上半部分选项菜单 */
     &.issue.view .issue-content-right .ui.dropdown .scrolling.menu {
       .item:hover:after {
-        content: "";
         ${activeItemAfterStyle}
       }
     }

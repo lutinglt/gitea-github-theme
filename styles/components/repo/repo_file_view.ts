@@ -18,7 +18,7 @@
  */
 
 import { otherThemeVars, themeVars } from "@gitea-github-theme/core";
-import { activeItemAfterStyle } from "@gitea-github-theme/styles/common";
+import { activeItemAfterStyle, deleteHoverActiveStyle } from "@gitea-github-theme/styles/common";
 import { css } from "@linaria/core";
 
 // 仓库打开文件时的视图
@@ -81,9 +81,13 @@ export const repoFileView = css`
             height: 1px;
             background: ${themeVars.color.secondary.self};
           }
+          /* 收起文件树按钮 */
           .repo-view-file-tree-toggle {
             border-color: #0000;
             min-width: 32px;
+            &:hover {
+              box-shadow: inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active};
+            }
           }
           .ui.compact.icon.button {
             border: 0;
@@ -95,8 +99,10 @@ export const repoFileView = css`
           .tree-item {
             position: relative;
             margin-left: 8px;
+            &:hover {
+              box-shadow: inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active};
+            }
             &.selected:after {
-              content: "";
               ${activeItemAfterStyle}
             }
           }
@@ -128,6 +134,7 @@ export const repoFileView = css`
               min-width: 32px;
               &:hover {
                 background: ${themeVars.color.hover.self};
+                box-shadow: inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active};
               }
             }
             /* 分支选择按钮 */
@@ -157,13 +164,7 @@ export const repoFileView = css`
             .ui.dropdown.basic.button:has(.octicon-kebab-horizontal) {
               width: 32px;
               .item.tw-text-danger {
-                &:hover {
-                  background-color: ${themeVars.color.red.badge.bg} !important;
-                  color: ${themeVars.color.red.light} !important;
-                }
-                &:active {
-                  background-color: ${themeVars.github.control.danger.bgColor.active} !important;
-                }
+                ${deleteHoverActiveStyle}
                 svg {
                   color: inherit;
                 }

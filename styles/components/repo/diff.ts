@@ -18,6 +18,7 @@
  */
 
 import { otherThemeVars, themeVars } from "@gitea-github-theme/core";
+import { activeItemAfterStyle } from "@gitea-github-theme/styles/common";
 import { css } from "@linaria/core";
 
 export const diff = css`
@@ -81,6 +82,9 @@ export const diff = css`
       color: ${themeVars.color.text.self} !important;
     }
   }
+`;
+// 差异对比文件盒子头
+export const diffFileBoxHeader = css`
   /* 差异对比文件盒子 */
   .diff-file-box {
     /* 差异对比文件头 */
@@ -93,9 +97,6 @@ export const diff = css`
           min-height: 16px;
           height: 16px;
           width: 16px;
-        }
-        .diff-stats-bar {
-          height: 8px;
         }
         > div,
         .file-link {
@@ -112,16 +113,30 @@ export const diff = css`
         .tw-text-diff-removed-fg {
           font-weight: 600;
         }
+        /* 增加/删除的状态条 */
+        .diff-stats-bar {
+          border: 1px solid ${themeVars.color.secondary.self};
+          border-radius: 2px;
+          overflow: hidden;
+          .diff-stats-add-bar {
+            border-right: 1px solid ${themeVars.github.borderColor.success.emphasis};
+          }
+        }
+        /* 三点操作展开按钮 */
         .diff-header-popup-btn {
           border-radius: ${otherThemeVars.border.radius};
           padding: 5px !important;
           &:hover {
             background-color: ${themeVars.github.control.transparent.bgColor.hover};
+            box-shadow: inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active};
           }
         }
       }
     }
   }
+`;
+// 差异对比文件盒子内容
+export const diffFileBoxCodeDiff = css`
   /* 差异对比文件盒子 */
   .repository .diff-file-box {
     .code-diff {
@@ -172,6 +187,27 @@ export const diff = css`
     .file-body.file-code {
       border-radius: 0 0 ${otherThemeVars.border.radius} ${otherThemeVars.border.radius};
       overflow: hidden;
+    }
+  }
+`;
+// 差异对比左侧文件树
+export const diffFileTree = css`
+  #diff-file-tree {
+    margin-right: 8px;
+    .diff-file-tree-items {
+      .item-file.item-file {
+        position: relative;
+        margin-left: 8px;
+        &.selected:after {
+          ${activeItemAfterStyle}
+        }
+      }
+      .item-file.item-file,
+      .item-directory.item-directory {
+        &:hover {
+          box-shadow: inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active};
+        }
+      }
     }
   }
 `;

@@ -25,7 +25,6 @@ export const newRepo = css`
   .page-content.repository.new-repo {
     .ui.dropdown .menu {
       .item:hover:after {
-        content: "";
         ${activeItemAfterStyle}
       }
     }

@@ -1,7 +1,7 @@
 ### ✨ Feature
 
 - Add high contrast color themes.
-- Add default to the basic default theme display name to sort it together when there are many themes in the list.
+- Add default to the base default theme display name to sort it together when there are many themes in the list.
   `GitHub Dark` -> `GitHub Default Dark`
 
 ### 🌈 Style

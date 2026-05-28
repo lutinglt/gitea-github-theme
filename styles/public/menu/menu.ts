@@ -34,6 +34,7 @@ export const menu = css`
   .ui.secondary.menu .dropdown.item {
     &:hover {
       background: ${themeVars.github.control.transparent.bgColor.hover};
+      box-shadow: inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active};
     }
   }
   /* 一些水平小型菜单的颜色更改 */

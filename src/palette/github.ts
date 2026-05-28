@@ -42,13 +42,13 @@ export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
 
   const diff: Diff = {
     added: {
-      fg: githubColor.bgColor.success.emphasis,
+      fg: githubColor.fgColor.success,
       linenum: { bg: githubColor.diffBlob.additionNum.bgColor },
       row: { bg: githubColor.bgColor.success.muted, border: githubColor.bgColor.success.muted },
       word: { bg: githubColor.diffBlob.additionWord.bgColor },
     },
     removed: {
-      fg: githubColor.bgColor.danger.emphasis,
+      fg: githubColor.fgColor.danger,
       linenum: { bg: githubColor.diffBlob.deletionNum.bgColor },
       row: { bg: githubColor.bgColor.danger.muted, border: githubColor.bgColor.danger.muted },
       word: { bg: githubColor.diffBlob.deletionWord.bgColor },
@@ -184,7 +184,13 @@ export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
         },
         borderColor: { active: githubColor.control.transparent.borderColor.active },
       },
-      danger: { bgColor: { active: githubColor.control.danger.bgColor.active } },
+      danger: {
+        fgColor: { hover: githubColor.control.danger.fgColor.hover },
+        bgColor: {
+          hover: githubColor.control.danger.bgColor.hover,
+          active: githubColor.control.danger.bgColor.active,
+        },
+      },
     },
     controlTrack: { bgColor: { rest: githubColor.controlTrack.bgColor.rest } },
     controlKnob: { bgColor: { rest: githubColor.controlKnob.bgColor.rest } },

@@ -18,7 +18,7 @@
  */
 
 import { otherThemeVars, themeVars } from "@gitea-github-theme/core";
-import { botLabelStyle } from "@gitea-github-theme/styles/common";
+import { botLabelStyle, deleteHoverActiveStyle } from "@gitea-github-theme/styles/common";
 import { css } from "@linaria/core";
 
 // 评论
@@ -83,9 +83,11 @@ export const comment = css`
         border-radius: ${otherThemeVars.border.radius};
         &:hover {
           background-color: ${themeVars.github.control.transparent.bgColor.hover};
+          box-shadow: inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active};
         }
         &:active {
           background-color: ${themeVars.github.control.transparent.bgColor.active};
+          box-shadow: inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active};
         }
         a.context-menu {
           display: flex;
@@ -97,14 +99,7 @@ export const comment = css`
         /* 评论菜单的删除按钮 */
         .menu .item.delete-comment {
           color: ${themeVars.color.red.self};
-          &:hover {
-            background-color: ${themeVars.color.red.badge.bg} !important;
-            color: ${themeVars.color.red.light};
-          }
-          &:active {
-            background-color: ${themeVars.github.control.danger.bgColor.active} !important;
-            color: ${themeVars.color.red.light};
-          }
+          ${deleteHoverActiveStyle}
         }
       }
     }

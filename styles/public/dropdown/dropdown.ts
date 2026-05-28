@@ -80,7 +80,6 @@ export const dropdown = css`
         &.active,
         &.selected {
           &:after {
-            content: "";
             ${activeItemAfterStyle};
           }
         }
