@@ -134,8 +134,13 @@ export const label = css`
   }
 `;
 
-// 手动工作流下拉列表
+// 手动工作流
 export const runWorkflow = css`
+  /* 手动工作流弹窗 */
+  #runWorkflowDispatchModal {
+    overflow: hidden;
+  }
+  /* 手动工作流下拉列表 */
   #runWorkflowDispatchForm {
     font-size: 12px;
     /* 描述类标签 */

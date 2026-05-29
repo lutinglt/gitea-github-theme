@@ -18,10 +18,10 @@
  */
 
 import type { Primer } from "@gitea-github-theme/primer";
-import { saturate } from "polished";
+import { mix, saturate } from "polished";
 import { scaleColorLight } from "../functions";
-import type { Console, Diff, Other } from "../types";
-import { themeVars, type GitHub } from "../types";
+import type { Ansi, Console, Diff, GitHub, Message, Other } from "../types";
+import { themeVars } from "../types";
 import type { ThemeColor } from "./theme";
 
 export type GitHubColor = {
@@ -30,6 +30,57 @@ export type GitHubColor = {
 } & Primer;
 
 export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
+  const ansi: Ansi = {
+    black: githubColor.ansi.black,
+    red: githubColor.ansi.red,
+    green: githubColor.ansi.green,
+    yellow: githubColor.ansi.yellow,
+    blue: githubColor.ansi.blue,
+    magenta: githubColor.ansi.magenta,
+    cyan: githubColor.ansi.cyan,
+    white: githubColor.ansi.white,
+    bright: {
+      black: githubColor.ansi.blackBright,
+      red: githubColor.ansi.redBright,
+      green: githubColor.ansi.greenBright,
+      yellow: githubColor.ansi.yellowBright,
+      blue: githubColor.ansi.blueBright,
+      magenta: githubColor.ansi.magentaBright,
+      cyan: githubColor.ansi.cyanBright,
+      white: githubColor.ansi.whiteBright,
+    },
+  };
+  const message: Message = {
+    error: {
+      bg: {
+        self: githubColor.bgColor.danger.muted,
+        active: githubColor.bgColor.danger.emphasis,
+        hover: mix(0.25, githubColor.bgColor.danger.muted, githubColor.bgColor.danger.emphasis),
+      },
+      border: githubColor.borderColor.danger.muted,
+      text: githubColor.fgColor.danger, // Gitea 用处更多, 不与 GitHub 保持一致
+    },
+    success: {
+      bg: githubColor.bgColor.success.muted,
+      border: githubColor.borderColor.success.muted,
+      text: githubColor.fgColor.success, // Gitea 用处更多, 不与 GitHub 保持一致
+    },
+    warning: {
+      bg: githubColor.bgColor.attention.muted,
+      border: githubColor.borderColor.attention.muted,
+      text: githubColor.fgColor.attention, // Gitea 用处更多, 不与 GitHub 保持一致
+    },
+    info: {
+      bg: githubColor.bgColor.accent.muted,
+      border: githubColor.borderColor.accent.muted,
+      text: githubColor.fgColor.accent, // Gitea 用处更多, 不与 GitHub 保持一致
+    },
+    priority: {
+      bg: githubColor.bgColor.done.muted,
+      border: githubColor.borderColor.done.muted,
+      text: githubColor.fgColor.done, // Gitea 用处更多, 不与 GitHub 保持一致
+    },
+  };
   const console: Console = {
     fg: { self: githubColor.fgColor.default, subtle: githubColor.fgColor.muted },
     bg: githubColor.bgColor.inset,
@@ -286,5 +337,6 @@ export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
     diff,
     other,
     github,
+    override: { message, ansi },
   };
 }

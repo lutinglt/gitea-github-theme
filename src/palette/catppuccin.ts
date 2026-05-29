@@ -30,9 +30,8 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
   const accentColor = flavor.colors.mauve.hex;
   const lv1Color = flavor.dark ? flavor.colors.crust.hex : flavor.colors.base.hex;
   const lv2Color = flavor.colors.mantle.hex;
-  // const lv3Color = flavor.dark ? flavor.colors.base.hex : flavor.colors.crust.hex;
   // 颜色偏向 base, 避免 latte 下与背景色相同
-  const buttonColor = mix(0.75, flavor.colors.base.hex, flavor.colors.surface0.hex);
+  const buttonColor = mix(0.6, flavor.colors.base.hex, flavor.colors.surface0.hex);
 
   const ansi: Ansi = {
     black: flavor.ansiColors.black.normal.hex,
@@ -89,9 +88,9 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
   };
   const other: Other = {
     logo: themeVars.color.primary.self,
-    body: lv1Color,
+    body: flavor.colors.base.hex,
     box: {
-      header: lv2Color,
+      header: mix(0.65, flavor.colors.base.hex, flavor.colors.surface0.hex),
       body: { self: themeVars.color.body, highlight: rgba(accentColor, 0.2) },
     },
     text: {

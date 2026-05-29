@@ -18,7 +18,6 @@
  */
 
 import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
-import { execSync } from "node:child_process";
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
@@ -98,7 +97,7 @@ export function giteaGitHubThemePlugin(): PluginOption[] {
 
   return [
     // createGlobalTheme 直接创建变量时, 仅使用对象值
-    vanillaExtractPlugin({ identifiers: ({ debugId }) => `${debugId}` }),
+    vanillaExtractPlugin({ identifiers: "debug" }),
     {
       name: PLUGIN_NAME,
 
@@ -292,41 +291,6 @@ export function giteaGitHubThemePlugin(): PluginOption[] {
               value.source = `${value.source.toString()}${styles}`;
             }
           }
-        }
-      },
-
-      writeBundle() {
-        // 上传到服务器
-        const server = process.env.SSH_SERVER;
-        const user = process.env.SSH_USER || "root";
-        const theme_path = process.env.GITEA_THEME_PATH;
-        const gitea_path = process.env.GITEA_PATH;
-        const sync_tmpl = process.env.SYNC_TMPL === "true";
-        if (server) {
-          try {
-            if (theme_path) {
-              const cmd = `scp dist/${PREFIX}*.css ${user}@${server}:${theme_path}`;
-              console.log(`[${PLUGIN_NAME}] exec:`, cmd);
-              execSync(cmd, { stdio: "inherit" });
-            } else {
-              console.log(`[${PLUGIN_NAME}] no GITEA_THEME_PATH, skip upload theme`);
-            }
-            if (gitea_path) {
-              if (sync_tmpl) {
-                const cmd = `scp -r templates ${user}@${server}:${gitea_path}`;
-                console.log(`[${PLUGIN_NAME}] exec:`, cmd);
-                execSync(cmd, { stdio: "inherit" });
-              } else {
-                console.log(`[${PLUGIN_NAME}] not set SYNC_TMPL=true, skip upload templates`);
-              }
-            } else {
-              console.log(`[${PLUGIN_NAME}] no GITEA_PATH, skip upload templates`);
-            }
-          } catch (e) {
-            console.warn(`[${PLUGIN_NAME}] upload failed:`, e);
-          }
-        } else {
-          console.log(`[${PLUGIN_NAME}] no SSH_SERVER, skip upload`);
         }
       },
     },

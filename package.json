@@ -15,11 +15,13 @@
     "commit": "npm run format && npm run lint && npm run test && npm run build",
     "version": "node scripts/version.ts",
     "release": "npm run build && npm run update:locale",
-    "build:ci": "npm run lint && npm run test && npm run build",
+    "sync:theme": "node scripts/syncTheme.ts",
     "update:primer": "node scripts/buildPrimerTSToken.ts",
     "update:locale": "node scripts/translate.ts",
     "update:gitea": "node scripts/updateGitea.ts",
-    "install:clean": "npm cache clean --force && rm -rf node_modules package-lock.json && npm install"
+    "install:clean": "npm cache clean --force && rm -rf node_modules package-lock.json && npm install",
+    "build:ci": "npm run lint && npm run test && npm run build",
+    "build:dev": "npm run build && npm run sync:theme"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.28.5",

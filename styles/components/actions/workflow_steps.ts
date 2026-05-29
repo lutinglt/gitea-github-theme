@@ -116,6 +116,15 @@ export const actionViewRight = css`
               }
             }
           }
+          /* 可展开折叠的日志 */
+          .job-log-group {
+            /* 日志所属的命令 */
+            .job-log-group-summary {
+              /* summary 的 三角号对齐, 而不是偏左 */
+              /* job-step-summary padding 8px + SVG 16px */
+              padding-left: calc(8px + 16px);
+            }
+          }
         }
       }
     }

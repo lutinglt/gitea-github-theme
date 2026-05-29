@@ -47,10 +47,14 @@ export const actionViewHeader = css`
         background-color: ${themeVars.github.bgColor.accent.muted};
         border-radius: ${otherThemeVars.border.radius};
         color: ${themeVars.github.fgColor.accent};
+        border-color: #0000;
         > a {
           font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
           font-weight: 400;
           opacity: 1;
+          &:hover {
+            text-decoration: underline;
+          }
         }
       }
     }

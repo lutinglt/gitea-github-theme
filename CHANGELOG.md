@@ -6,16 +6,15 @@
 
 ### 🌈 Style
 
-- Optimize catppuccin theme with regular label colors.
+- Optimize catppuccin theme colors.
 - Fine tune the border color of catppuccin theme.
-- Optimize the avatar background color of catppuccin theme.
-- Optimize the tooltip box color of catppucin theme.
 
 #### More GitHub-like style
 
 - Fine tune the heatmap colors of catppuccin theme and pink soft dark theme.
 - Optimize heat map style.
 - Synchronize styles under high contrast themes.
+- Optimize the style of workflow log pages.
 
 ### 🐞 Fix
 
