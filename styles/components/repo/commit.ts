@@ -17,8 +17,7 @@
  * limitations under the License.
  */
 
-import { otherThemeVars, themeVars } from "@gitea-github-theme/core";
-import { css } from "@linaria/core";
+import { css, otherThemeVars, themeVars } from "@gitea-github-theme/core";
 
 // 提交列表
 export const commit = css`

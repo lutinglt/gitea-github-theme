@@ -17,8 +17,7 @@
  * limitations under the License.
  */
 
-import { otherThemeVars, themeVars } from "@gitea-github-theme/core";
-import { css } from "@linaria/core";
+import { css, otherThemeVars, themeVars } from "@gitea-github-theme/core";
 
 // 仓库头信息
 export const repoHeader = css`
@@ -101,7 +100,7 @@ export const repoTopic = css`
     border-color: ${themeVars.github.topicTag.borderColor};
     &:hover {
       background-color: ${themeVars.github.bgColor.accent.emphasis};
-      color: ${themeVars.color.white};
+      color: ${themeVars.github.button.primary.fgColor.rest};
     }
   }
 `;

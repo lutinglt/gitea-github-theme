@@ -17,14 +17,12 @@
  * limitations under the License.
  */
 
-import { otherThemeVars, themeVars } from "@gitea-github-theme/core";
+import { css, otherThemeVars, themeVars, toCSS } from "@gitea-github-theme/core";
 import { deleteHoverActiveStyle } from "@gitea-github-theme/styles/common";
-import { css } from "@linaria/core";
-import type { StyleRule } from "@vanilla-extract/css";
 
-const sidebarPadding = {
+const sidebarPadding = toCSS({
   padding: "4px 8px",
-} satisfies StyleRule;
+});
 
 // 侧边栏
 export const issueSidebar = css`

@@ -17,17 +17,16 @@
  * limitations under the License.
  */
 
-import { themeVars } from "@gitea-github-theme/core";
-import type { StyleRule } from "@vanilla-extract/css";
+import { themeVars, toCSS } from "@gitea-github-theme/core";
 
-export const deleteHoverActiveStyle = {
+export const deleteHoverActiveStyle = toCSS({
   "&:hover": {
     backgroundColor: `${themeVars.github.control.danger.bgColor.hover} !important`,
     color: `${themeVars.github.control.danger.fgColor.hover} !important`,
-  } satisfies StyleRule,
+  },
   "&:active": {
     backgroundColor: `${themeVars.github.control.danger.bgColor.active} !important`,
     color: `${themeVars.github.control.danger.fgColor.hover} !important`,
     boxShadow: `inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active}`,
-  } satisfies StyleRule,
-};
+  },
+});

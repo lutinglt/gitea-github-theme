@@ -17,9 +17,8 @@
  * limitations under the License.
  */
 
-import { themeVars } from "@gitea-github-theme/core";
+import { css, themeVars } from "@gitea-github-theme/core";
 import { animationDown } from "@gitea-github-theme/styles/common";
-import { css } from "@linaria/core";
 
 // 工作流右侧作业步骤日志详情
 export const actionViewRight = css`

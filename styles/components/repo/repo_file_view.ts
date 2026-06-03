@@ -17,9 +17,8 @@
  * limitations under the License.
  */
 
-import { otherThemeVars, themeVars } from "@gitea-github-theme/core";
+import { css, otherThemeVars, themeVars } from "@gitea-github-theme/core";
 import { activeItemAfterStyle, deleteHoverActiveStyle } from "@gitea-github-theme/styles/common";
-import { css } from "@linaria/core";
 
 // 仓库打开文件时的视图
 export const repoFileView = css`

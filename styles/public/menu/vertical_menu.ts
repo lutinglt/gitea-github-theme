@@ -17,9 +17,8 @@
  * limitations under the License.
  */
 
-import { otherThemeVars, themeVars } from "@gitea-github-theme/core";
+import { css, otherThemeVars, themeVars } from "@gitea-github-theme/core";
 import { activeItemAfterStyle } from "@gitea-github-theme/styles/common";
-import { css } from "@linaria/core";
 
 export const verticalMenu = css`
   /* 垂直菜单, 用于左侧边栏 */

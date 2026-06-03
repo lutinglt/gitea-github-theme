@@ -17,22 +17,20 @@
  * limitations under the License.
  */
 
-import { themeVars } from "@gitea-github-theme/core";
+import { css, themeVars, toCSS } from "@gitea-github-theme/core";
 import { primaryButtonHoverStyle, primaryButtonStyle } from "@gitea-github-theme/styles/common";
-import { css } from "@linaria/core";
-import type { StyleRule } from "@vanilla-extract/css";
 
-const tinyStyle = {
+const tinyStyle = toCSS({
   color: themeVars.github.themeExtra.button.primary.fgColor.accent,
   backgroundColor: themeVars.color.button,
   borderColor: themeVars.color.light.border,
-} satisfies StyleRule;
+});
 
-const tinyHoverStyle = {
+const tinyHoverStyle = toCSS({
   color: themeVars.github.button.primary.fgColor.rest,
   backgroundColor: themeVars.github.button.primary.bgColor.hover,
   borderColor: themeVars.github.button.primary.borderColor.hover,
-} satisfies StyleRule;
+});
 
 // 设置界面下的按钮
 export const button = css`

@@ -17,8 +17,7 @@
  * limitations under the License.
  */
 
-import { themeVars } from "@gitea-github-theme/core";
-import { css } from "@linaria/core";
+import { css, themeVars } from "@gitea-github-theme/core";
 
 // 仓库代码布局调整, 侧边栏宽度调整
 export const repoGrid = css`

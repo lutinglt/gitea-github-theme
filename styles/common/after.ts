@@ -17,13 +17,12 @@
  * limitations under the License.
  */
 
-import { otherThemeVars, themeVars } from "@gitea-github-theme/core";
-import type { StyleRule } from "@vanilla-extract/css";
+import { otherThemeVars, themeVars, toCSS } from "@gitea-github-theme/core";
 
 /** 激活项后缀样式
  * @example 菜单激活子项前面的竖线, 方便识别
  */
-export const activeItemAfterStyle = {
+export const activeItemAfterStyle = toCSS({
   content: `""`,
   backgroundColor: themeVars.github.borderColor.accent.emphasis,
   borderRadius: otherThemeVars.border.radius,
@@ -32,4 +31,4 @@ export const activeItemAfterStyle = {
   position: "absolute",
   top: "calc(50% - 12px)",
   width: "4px",
-} satisfies StyleRule;
+});

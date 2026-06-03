@@ -17,8 +17,7 @@
  * limitations under the License.
  */
 
-import { themeVars } from "@gitea-github-theme/core";
-import { css } from "@linaria/core";
+import { css, themeVars } from "@gitea-github-theme/core";
 
 export const summaryView = css`
   .action-view-right:has(.action-run-summary-view) {
@@ -28,6 +27,7 @@ export const summaryView = css`
     /* 工作流运行信息 */
     .action-run-summary-block {
       background: ${themeVars.color.body};
+      border-color: ${themeVars.color.console.border};
       > .flex-text-block {
         /* 工作流触发方式和触发时间 */
         &:first-child {

@@ -17,9 +17,8 @@
  * limitations under the License.
  */
 
-import { otherThemeVars, themeVars } from "@gitea-github-theme/core";
+import { css, otherThemeVars, themeVars } from "@gitea-github-theme/core";
 import { activeItemAfterStyle } from "@gitea-github-theme/styles/common";
-import { css } from "@linaria/core";
 
 export const button = css`
   /* 工单&PR标题右侧按钮 */
@@ -35,14 +34,17 @@ export const babel = css`
       box-shadow: inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active};
       /* 时间线打开状态标签 */
       &.tw-bg-green {
+        color: ${themeVars.github.button.primary.fgColor.rest} !important;
         background-color: ${themeVars.github.bgColor.success.emphasis} !important;
       }
       /* 时间线关闭状态标签 */
       &.tw-bg-red {
+        color: ${themeVars.github.button.primary.fgColor.rest} !important;
         background-color: ${themeVars.github.bgColor.done.emphasis} !important;
       }
       /* 时间线合并状态标签 */
       &.tw-bg-purple {
+        color: ${themeVars.github.button.primary.fgColor.rest} !important;
         background-color: ${themeVars.github.bgColor.done.emphasis} !important;
       }
     }
@@ -51,19 +53,19 @@ export const babel = css`
   .ui.label.issue-state-label {
     border-radius: 25px !important;
     &.green {
-      color: ${themeVars.color.white} !important;
+      color: ${themeVars.github.button.primary.fgColor.rest} !important;
       background-color: ${themeVars.github.bgColor.success.emphasis} !important;
       border-color: ${themeVars.github.bgColor.success.emphasis} !important;
       box-shadow: inset 0 0 0 1px ${themeVars.github.borderColor.success.emphasis};
     }
     &.red {
-      color: ${themeVars.color.white} !important;
+      color: ${themeVars.github.button.primary.fgColor.rest} !important;
       background-color: ${themeVars.github.bgColor.done.emphasis} !important;
       border-color: ${themeVars.github.bgColor.done.emphasis} !important;
       box-shadow: inset 0 0 0 1px ${themeVars.github.borderColor.done.emphasis};
     }
     &.purple {
-      color: ${themeVars.color.white} !important;
+      color: ${themeVars.github.button.primary.fgColor.rest} !important;
       background-color: ${themeVars.github.bgColor.done.emphasis} !important;
       border-color: ${themeVars.github.bgColor.done.emphasis} !important;
       box-shadow: inset 0 0 0 1px ${themeVars.github.borderColor.done.emphasis};

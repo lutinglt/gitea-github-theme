@@ -17,7 +17,6 @@
  * limitations under the License.
  */
 
-import wyw from "@wyw-in-js/vite";
 import * as dotenv from "dotenv";
 import * as lightningcss from "lightningcss";
 import fs from "node:fs";
@@ -53,15 +52,5 @@ export default defineConfig({
       exclude: lightningcss.Features.LightDark, // 不生成 LightningCSS 的主题变量
     },
   },
-  plugins: [
-    wyw({
-      babelOptions: { presets: ["@babel/preset-typescript"] },
-      // 默认为全局样式
-      preprocessor: (_selector, cssText) =>
-        // 当 CSS 嵌套的父选择器是选择器列表（逗号分隔）时, LightningCSS 编译嵌套必须使用 :is() 这是 CSS Nesting 规范定义的语义
-        // LightningCSS 没有提供"展开嵌套但不使用 :is()"的选项, :is() 会提升选择器的优先级
-        lightningcss.transform({ filename: "wyw-in-js.css", code: Buffer.from(cssText) }).code.toString(),
-    }),
-    giteaGitHubThemePlugin(),
-  ],
+  plugins: [giteaGitHubThemePlugin()],
 });

@@ -17,8 +17,7 @@
  * limitations under the License.
  */
 
-import { otherThemeVars, themeVars } from "@gitea-github-theme/core";
-import { css } from "@linaria/core";
+import { css, otherThemeVars, themeVars } from "@gitea-github-theme/core";
 
 const primary = "primary" as const;
 const secondary = "secondary" as const;

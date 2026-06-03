@@ -17,27 +17,26 @@
  * limitations under the License.
  */
 
-import { selectors } from "@gitea-github-theme/core";
-import type { StyleRule } from "@vanilla-extract/css";
+import { selectors, toCSS } from "@gitea-github-theme/core";
 
 // 出现动画
-export const animation = {
+export const animation = toCSS({
   animation: selectors.overlayAppear,
   animationDuration: "80ms",
   animationFillMode: "forwards",
   animationTimingFunction: "ease-in",
-} satisfies StyleRule;
+});
 
 // 向下出现动画
-export const animationDown = {
+export const animationDown = toCSS({
   animation: selectors.overlayAppearDown,
   animationDuration: "200ms",
   animationTimingFunction: "cubic-bezier(0.33, 1, 0.68, 1)",
-} satisfies StyleRule;
+});
 
 // 向上出现动画
-export const animationUp = {
+export const animationUp = toCSS({
   animation: selectors.overlayAppearUp,
   animationDuration: "200ms",
   animationTimingFunction: "cubic-bezier(0.33, 1, 0.68, 1)",
-} satisfies StyleRule;
+});

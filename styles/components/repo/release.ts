@@ -17,8 +17,7 @@
  * limitations under the License.
  */
 
-import { themeVars } from "@gitea-github-theme/core";
-import { css } from "@linaria/core";
+import { css, themeVars } from "@gitea-github-theme/core";
 
 // release 顶部栏左侧按钮组
 export const releaseTagMenu = css`
@@ -31,7 +30,7 @@ export const releaseTagMenu = css`
           font-weight: 500;
           &.active {
             background: ${themeVars.github.bgColor.accent.emphasis} !important;
-            color: ${themeVars.color.white};
+            color: ${themeVars.github.button.primary.fgColor.rest};
           }
         }
       }

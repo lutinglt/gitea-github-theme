@@ -17,8 +17,7 @@
  * limitations under the License.
  */
 
-import { customThemeVars, otherThemeVars, themeVars } from "@gitea-github-theme/core";
-import { css } from "@linaria/core";
+import { css, customThemeVars, otherThemeVars, themeVars } from "@gitea-github-theme/core";
 import { fallbackVar } from "@vanilla-extract/css";
 
 export const navbarRight = css`
@@ -139,14 +138,18 @@ export const navbarRight = css`
       a.item {
         .notification_count,
         .header-stopwatch-dot {
+          content-visibility: hidden;
           background-color: ${themeVars.github.bgColor.accent.emphasis};
-          border-radius: 9999px;
+          border-radius: 50%;
           border-color: ${themeVars.color.nav.bg};
-          color: ${themeVars.color.white};
-          font-size: 9px;
-          font-weight: 600;
-          top: -15px;
-          left: 11px;
+          bottom: calc(100% - 1px);
+          left: calc(100% - 1px);
+          height: 12px;
+          width: 12px;
+          min-height: 12px;
+          min-width: 12px;
+          display: block;
+          padding: 0;
         }
       }
     }

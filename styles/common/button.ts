@@ -17,20 +17,19 @@
  * limitations under the License.
  */
 
-import { themeVars } from "@gitea-github-theme/core";
-import type { StyleRule } from "@vanilla-extract/css";
+import { themeVars, toCSS } from "@gitea-github-theme/core";
 
 /** 主色调按钮样式 */
-export const primaryButtonStyle = {
+export const primaryButtonStyle = toCSS({
   color: themeVars.github.button.primary.fgColor.rest,
   backgroundColor: themeVars.github.button.primary.bgColor.rest,
   borderColor: themeVars.github.button.primary.borderColor.rest,
   boxShadow: themeVars.github.shadow.resting.small,
-} satisfies StyleRule;
+});
 
 /** 主色调按钮悬停样式 */
-export const primaryButtonHoverStyle = {
+export const primaryButtonHoverStyle = toCSS({
   color: themeVars.github.button.primary.fgColor.rest,
   backgroundColor: themeVars.github.button.primary.bgColor.hover,
   borderColor: themeVars.github.button.primary.borderColor.hover,
-} satisfies StyleRule;
+});

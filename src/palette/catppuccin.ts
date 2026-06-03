@@ -26,10 +26,9 @@ import type { ThemeColor } from "./theme";
 
 // 颜色映射标准: https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md
 // 颜色映射参考: https://github.com/catppuccin/gitea/blob/main/src/_theme.scss
+// 颜色映射参考: https://github.com/catppuccin/userstyles/blob/main/styles/github/catppuccin.user.less
 export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
   const accentColor = flavor.colors.mauve.hex;
-  const lv1Color = flavor.dark ? flavor.colors.crust.hex : flavor.colors.base.hex;
-  const lv2Color = flavor.colors.mantle.hex;
   // 颜色偏向 base, 避免 latte 下与背景色相同
   const buttonColor = mix(0.6, flavor.colors.base.hex, flavor.colors.surface0.hex);
 
@@ -58,10 +57,10 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
       self: flavor.colors.text.hex,
       subtle: flavor.colors.subtext0.hex,
     },
-    bg: flavor.colors.base.hex,
+    bg: flavor.colors.crust.hex,
     border: flavor.colors.overlay0.hex,
-    activeBg: flavor.colors.overlay0.hex,
-    hoverBg: rgba(flavor.colors.overlay0.hex, 0.2),
+    activeBg: flavor.colors.surface1.hex,
+    hoverBg: rgba(flavor.colors.surface2.hex, 0.2),
     menu: {
       bg: themeVars.color.menu,
       border: themeVars.color.secondary.self,
@@ -103,12 +102,12 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
       },
       dark: flavor.colors.subtext0.hex,
     },
-    footer: lv2Color,
+    footer: flavor.colors.mantle.hex,
     timeline: flavor.colors.surface0.hex,
     input: {
       text: themeVars.color.text.self,
-      background: lv2Color,
-      toggleBackground: lv2Color,
+      background: flavor.colors.mantle.hex,
+      toggleBackground: flavor.colors.mantle.hex,
       border: flavor.colors.surface1.hex,
     },
     light: { self: themeVars.color.body, border: flavor.colors.surface1.hex },
@@ -122,7 +121,7 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
     },
     button: buttonColor,
     codeBg: "unset",
-    shadow: { self: rgba(lv1Color, 0.1), opaque: themeVars.color.shadow.self },
+    shadow: { self: rgba(flavor.colors.crust.hex, 0.1), opaque: themeVars.color.shadow.self },
     secondaryBg: "unset",
     expandButton: rgba(accentColor, 0.5),
     placeholderText: themeVars.color.text.light.num3,
@@ -135,7 +134,7 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
     reaction: { bg: "initial", hoverBg: themeVars.color.primary.self, activeBg: themeVars.color.primary.alpha.num40 },
     tooltip: { text: flavor.colors.base.hex, bg: flavor.colors.lavender.hex },
     nav: {
-      bg: lv2Color,
+      bg: flavor.colors.mantle.hex,
       hoverBg: themeVars.color.hover.self,
       text: themeVars.color.text.self,
     },
@@ -149,7 +148,7 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
     accent: accentColor,
     smallAccent: themeVars.color.primary.light.num5,
     highlight: { fg: flavor.colors.text.hex, bg: rgba(flavor.colors.teal.hex, 0.2) },
-    overlayBackdrop: rgba(flavor.colors.overlay2.hex, 0.4),
+    overlayBackdrop: "#161b2266",
     danger: themeVars.color.red.self,
     transparency: { grid: { light: "#ffffff", dark: "#e5e5e5" } },
     workflowEdgeHover: accentColor,
@@ -240,14 +239,14 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
     contribution: {
       default: {
         bgColor: {
-          num0: flavor.colors.mantle.hex,
-          num1: rgba(accentColor, 0.25),
-          num2: rgba(accentColor, 0.45),
-          num3: rgba(accentColor, 0.65),
-          num4: rgba(accentColor, 0.85),
+          num0: rgba(accentColor, 0.1),
+          num1: rgba(accentColor, 0.4),
+          num2: rgba(accentColor, 0.6),
+          num3: rgba(accentColor, 0.8),
+          num4: accentColor,
         },
         borderColor: {
-          num0: rgba(flavor.colors.overlay0.hex, 0.05),
+          num0: rgba(flavor.colors.base.hex, 0.05),
           num1: themeVars.github.contribution.default.borderColor.num0,
           num2: themeVars.github.contribution.default.borderColor.num0,
           num3: themeVars.github.contribution.default.borderColor.num0,
@@ -263,7 +262,7 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
       button: { primary: { fgColor: { accent: flavor.colors.green.hex } } },
       contribution: {
         default: {
-          bgColor: { num5: accentColor },
+          bgColor: { num5: saturate(0.1, scaleColorLight(accentColor, flavor.dark ? 25 : -25)) },
           borderColor: { num5: themeVars.github.contribution.default.borderColor.num0 },
         },
       },
@@ -272,7 +271,7 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
   return {
     isDarkTheme: flavor.dark,
     primary: accentColor,
-    primaryContrast: lv1Color,
+    primaryContrast: flavor.colors.crust.hex,
     secondary: flavor.colors.surface1.hex,
     base: {
       red: flavor.colors.red.hex,

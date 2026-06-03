@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css } from "@linaria/core";
+import { css } from "@gitea-github-theme/core";
 
 export const body = css`
   body {

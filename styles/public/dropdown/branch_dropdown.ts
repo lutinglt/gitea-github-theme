@@ -17,9 +17,8 @@
  * limitations under the License.
  */
 
-import { customThemeVars, otherThemeVars, themeVars } from "@gitea-github-theme/core";
+import { css, customThemeVars, otherThemeVars, themeVars } from "@gitea-github-theme/core";
 import { animationDown } from "@gitea-github-theme/styles/common";
-import { css } from "@linaria/core";
 import { fallbackVar } from "@vanilla-extract/css";
 
 // 分支菜单

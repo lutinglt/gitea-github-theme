@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
+import { css } from "@gitea-github-theme/core";
 import { activeItemAfterStyle } from "@gitea-github-theme/styles/common";
-import { css } from "@linaria/core";
 
 // 新建仓库页面下拉菜单
 export const newRepo = css`

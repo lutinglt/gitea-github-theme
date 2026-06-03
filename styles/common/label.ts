@@ -17,16 +17,16 @@
  * limitations under the License.
  */
 
-import type { StyleRule } from "@vanilla-extract/css";
+import { toCSS } from "@gitea-github-theme/core";
 
 /** 基本标签样式 */
-export const labelStyle = {
+export const labelStyle = toCSS({
   padding: "0px 6px",
-} satisfies StyleRule;
+});
 
 /** bot 标签样式 */
-export const botLabelStyle = {
+export const botLabelStyle = toCSS({
   height: "20px",
   padding: "0 6px !important",
   marginLeft: "4px",
-} satisfies StyleRule;
+});

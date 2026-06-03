@@ -17,9 +17,8 @@
  * limitations under the License.
  */
 
-import { otherThemeVars, themeVars } from "@gitea-github-theme/core";
+import { css, otherThemeVars, themeVars } from "@gitea-github-theme/core";
 import { animation, animationDown } from "@gitea-github-theme/styles/common";
-import { css } from "@linaria/core";
 
 // 一些界面内的提示框, 比如克隆按钮, PR信息, Runner信息 等
 export const tippyBox = css`

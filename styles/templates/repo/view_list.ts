@@ -17,8 +17,7 @@
  * limitations under the License.
  */
 
-import { otherThemeVars, themeVars } from "@gitea-github-theme/core";
-import { css } from "@linaria/core";
+import { css, otherThemeVars, themeVars } from "@gitea-github-theme/core";
 
 export const repoFileLastCommit = css`
   /* 仓库页和文件列表文件夹页的最后一次提交 */

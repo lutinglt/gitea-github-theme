@@ -17,8 +17,7 @@
  * limitations under the License.
  */
 
-import { otherThemeVars, themeVars } from "@gitea-github-theme/core";
-import { css } from "@linaria/core";
+import { css, otherThemeVars, themeVars } from "@gitea-github-theme/core";
 
 // 分页菜单
 export const paginationMenu = css`
@@ -38,7 +37,7 @@ export const paginationMenu = css`
       padding: 5px 10px !important;
       &.active {
         background: ${themeVars.github.bgColor.accent.emphasis};
-        color: ${themeVars.color.white};
+        color: ${themeVars.github.button.primary.fgColor.rest};
       }
       /* 设置透明边框线避免 hover 时元素大小变化 */
       &:not(.active) {

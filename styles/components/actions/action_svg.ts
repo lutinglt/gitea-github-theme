@@ -17,8 +17,7 @@
  * limitations under the License.
  */
 
-import { themeVars } from "@gitea-github-theme/core";
-import { css } from "@linaria/core";
+import { css, themeVars } from "@gitea-github-theme/core";
 
 // 修改 action 页面 svg 颜色 (主要为了覆盖工作流状态中的白色图标)
 export const actionSVG = css`

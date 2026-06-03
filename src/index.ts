@@ -20,6 +20,7 @@
 import selectors from "./selectors";
 
 export { createTheme, defineTheme, type MapLeafNodes } from "./core";
+export { css, flushCSS } from "./css";
 export { extractVarName, scaleColorLight } from "./functions";
 export {
   catppuccin2Syntax,
@@ -30,6 +31,7 @@ export {
 } from "./palette";
 export type { DisplayColor, GitHubColor, GiteaColor, ThemeColor } from "./palette";
 export { createThemeMetaInfo } from "./styles";
+export { toCSS } from "./toCSS";
 export { chromaVars, customThemeVars, otherThemeVars, syntaxVars, themeVars } from "./types";
 export type { Ansi, Chroma, Console, Diff, GitHub, Message, Named, Other, Primary, Secondary, Syntax } from "./types";
 export { deepOverride } from "./utils";

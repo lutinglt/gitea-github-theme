@@ -15,6 +15,7 @@
 - Optimize heat map style.
 - Synchronize styles under high contrast themes.
 - Optimize the style of workflow log pages.
+- Synchronize the style of the notification prompt (small dots).
 
 ### 🐞 Fix
 

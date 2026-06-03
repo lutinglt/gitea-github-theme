@@ -17,9 +17,8 @@
  * limitations under the License.
  */
 
-import { otherThemeVars, themeVars } from "@gitea-github-theme/core";
+import { css, otherThemeVars, themeVars } from "@gitea-github-theme/core";
 import { activeItemAfterStyle } from "@gitea-github-theme/styles/common";
-import { css } from "@linaria/core";
 
 export const diff = css`
   /* 这里的折叠行和代码行高度与 GitHub 的 release 和 review 的差异对比时的高度一致, 不需要像 commit 中的差异对比那样行高过高 */
@@ -47,7 +46,7 @@ export const diff = css`
       color: ${themeVars.color.text.light.num1};
       &:hover {
         background: ${themeVars.github.bgColor.accent.emphasis};
-        color: ${themeVars.color.white};
+        color: ${themeVars.github.button.primary.fgColor.rest};
       }
     }
     /* 折叠行文本 */
