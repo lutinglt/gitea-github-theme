@@ -17,6 +17,6 @@
  * limitations under the License.
  */
 
-import { pkg } from "./utils.ts";
+import { pkg } from "./utils";
 
 console.log(pkg.version);

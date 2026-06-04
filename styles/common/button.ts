@@ -17,10 +17,10 @@
  * limitations under the License.
  */
 
-import { themeVars, toCSS } from "@gitea-github-theme/core";
+import { cssStyle, themeVars } from "@lutinglt/gitea-github-theme/core";
 
 /** 主色调按钮样式 */
-export const primaryButtonStyle = toCSS({
+export const primaryButtonStyle = cssStyle({
   color: themeVars.github.button.primary.fgColor.rest,
   backgroundColor: themeVars.github.button.primary.bgColor.rest,
   borderColor: themeVars.github.button.primary.borderColor.rest,
@@ -28,7 +28,7 @@ export const primaryButtonStyle = toCSS({
 });
 
 /** 主色调按钮悬停样式 */
-export const primaryButtonHoverStyle = toCSS({
+export const primaryButtonHoverStyle = cssStyle({
   color: themeVars.github.button.primary.fgColor.rest,
   backgroundColor: themeVars.github.button.primary.bgColor.hover,
   borderColor: themeVars.github.button.primary.borderColor.hover,

@@ -17,9 +17,9 @@
  * limitations under the License.
  */
 
-import { themeVars, toCSS } from "@gitea-github-theme/core";
+import { cssStyle, themeVars } from "@lutinglt/gitea-github-theme/core";
 
-export const deleteHoverActiveStyle = toCSS({
+export const deleteHoverActiveStyle = cssStyle({
   "&:hover": {
     backgroundColor: `${themeVars.github.control.danger.bgColor.hover} !important`,
     color: `${themeVars.github.control.danger.fgColor.hover} !important`,

@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, customThemeVars, otherThemeVars, themeVars } from "@gitea-github-theme/core";
+import { css, customThemeVars, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 
 // 克隆按钮的弹窗
 export const clone = css`

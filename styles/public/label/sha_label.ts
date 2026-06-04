@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, themeVars } from "@gitea-github-theme/core";
+import { css, themeVars } from "@lutinglt/gitea-github-theme/core";
 
 // 提交中的 SHA 标签
 export const shaLabel = css`

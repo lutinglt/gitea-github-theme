@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "@gitea-github-theme/core";
+import { css, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 
 export const text = css`
   /* 默认颜色是 --color-text-light, 主题下此颜色是亮白色, 修改为灰色 */

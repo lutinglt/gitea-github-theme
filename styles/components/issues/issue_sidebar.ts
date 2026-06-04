@@ -17,10 +17,10 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars, toCSS } from "@gitea-github-theme/core";
-import { deleteHoverActiveStyle } from "@gitea-github-theme/styles/common";
+import { css, cssStyle, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { deleteHoverActiveStyle } from "@lutinglt/gitea-github-theme/styles/common";
 
-const sidebarPadding = toCSS({
+const sidebarPadding = cssStyle({
   padding: "4px 8px",
 });
 

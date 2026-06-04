@@ -1,0 +1,3 @@
+# bunfig.toml
+[install]
+registry = "https://registry.npmjs.org"

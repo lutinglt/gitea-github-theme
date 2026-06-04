@@ -32,3 +32,26 @@ export function deepOverride<T extends object>(target: T, patch: DeepPartial<T>)
   }
   return result;
 }
+/**
+ * 从调用堆栈中获取调用者信息（文件名:行号）。
+ *
+ * 堆栈帧结构（0-based）：
+ *   stack[0] = "Error"
+ *   stack[1] = getCallerInfo 自身      ← 始终跳过
+ *   stack[2] = 直接调用者               ← skipFrames=0 时返回此行
+ *   stack[3] = 上层调用者               ← skipFrames=1 时返回此行
+ *   ...
+ *
+ * 每层中间函数由调用方自行声明需要跳过的帧数，
+ * 而非将调用深度硬编码在此函数中。
+ *
+ * @param skipFrames 额外跳过的帧数（默认 0：返回直接调用者）
+ * @returns 格式 "path/file:line"，无法解析时返回 "unknown"
+ */
+export function getCallerInfo(skipFrames: number = 0): string {
+  const stack = new Error().stack?.split("\n") || [];
+  const index = 2 + skipFrames;
+  const frame = stack[index] || stack[stack.length - 1] || "";
+  const match = frame.match(/\((.+?):(\d+):(\d+)\)/) ?? frame.match(/at\s+(.+?):(\d+):(\d+)/);
+  return match ? `${match[1]}:${match[2]}` : frame.trim() || "unknown";
+}

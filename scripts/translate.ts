@@ -21,7 +21,7 @@ import dotenv from "dotenv";
 import child_process from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
-import { pkg, rootDir, setGlobalProxy } from "./utils.ts";
+import { pkg, rootDir, setGlobalProxy } from "./utils";
 
 dotenv.config({ quiet: true });
 setGlobalProxy();

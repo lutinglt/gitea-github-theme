@@ -17,40 +17,7 @@
  * limitations under the License.
  */
 
-import * as dotenv from "dotenv";
-import * as lightningcss from "lightningcss";
-import fs from "node:fs";
-import path from "node:path";
+import { giteaGitHubTheme } from "@lutinglt/gitea-github-theme/vite-plugin";
 import { defineConfig } from "vite";
-import { giteaGitHubThemePlugin } from "./src/vite-plugin";
 
-dotenv.config({ quiet: true });
-
-// 版本号: 版本号.YYMMDD
-const pkg = JSON.parse(fs.readFileSync("package.json", "utf-8"));
-const now = new Date();
-const year = now.getFullYear().toString().slice(-2);
-const month = (now.getMonth() + 1).toString().padStart(2, "0");
-const day = now.getDate().toString().padStart(2, "0");
-
-export default defineConfig({
-  define: {
-    __THEME_VERSION__: JSON.stringify(`${pkg.version}.${year}${month}${day}`),
-  },
-  resolve: {
-    alias: {
-      "@gitea-github-theme/core": path.resolve(__dirname, "src"),
-      "@gitea-github-theme/styles": path.resolve(__dirname, "styles"),
-      "@gitea-github-theme/themes": path.resolve(__dirname, "themes"),
-      "@gitea-github-theme/primer": path.resolve(__dirname, "primer"),
-    },
-    extensions: [".js", ".ts", ".css.ts"],
-  },
-  css: {
-    transformer: "lightningcss",
-    lightningcss: {
-      exclude: lightningcss.Features.LightDark, // 不生成 LightningCSS 的主题变量
-    },
-  },
-  plugins: [giteaGitHubThemePlugin()],
-});
+export default defineConfig({ plugins: [giteaGitHubTheme()] });

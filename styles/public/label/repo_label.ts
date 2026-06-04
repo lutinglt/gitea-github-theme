@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, themeVars } from "@gitea-github-theme/core";
+import { css, themeVars } from "@lutinglt/gitea-github-theme/core";
 
 // 仓库标签 (私有/公开/内部)
 export const repoLabel = css`

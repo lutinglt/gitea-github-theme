@@ -17,6 +17,10 @@
  * limitations under the License.
  */
 
+export { createChroma } from "./chroma";
+export { createCodeMirror } from "./codemirror";
+export { css, cssStyle, flushCSS } from "./css";
+export { createThemeMetaInfo, type ColorblindType, type GiteaThemeMeta } from "./meta";
 export { createTheme, defineTheme } from "./theme";
 export type { Theme, ThemeVars } from "./theme";
 export type { CSSVarFunction, MapLeafNodes } from "./types";

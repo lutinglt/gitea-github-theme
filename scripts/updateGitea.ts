@@ -19,7 +19,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import { pkg, rootDir, setGlobalProxy } from "./utils.ts";
+import { pkg, rootDir, setGlobalProxy } from "./utils";
 
 setGlobalProxy();
 

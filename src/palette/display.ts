@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import type { Primer } from "@gitea-github-theme/primer";
+import type { Primer } from "@lutinglt/gitea-github-theme/primer";
 import { saturate } from "polished";
 import { scaleColorLight } from "../functions";
 import { deepOverride } from "../utils";

@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "@gitea-github-theme/core";
+import { css, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 
 export const commitSignBadge = css`
   a.ui.label.commit-id-short.gitea-github-theme-commit-sha {

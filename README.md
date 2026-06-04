@@ -37,8 +37,8 @@ accepted.
 
 > [!IMPORTANT]
 >
-> Because the project uses new CSS features, ensure styles are applied correctly by keeping Chrome/Edge >= 105,
-> Firefox >= 121, Safari >= 15.4
+> Because the project uses new CSS features, ensure styles are applied correctly by keeping Chrome/Edge >= 120,
+> Firefox >= 121, Safari >= 16.5
 
 1. Download the latest CSS theme file from the release page and place it in the `data/gitea/public/assets/css` directory
    (This directory may not be available by default and needs to be manually created)
@@ -214,13 +214,13 @@ Add the following code at the beginning or end of the theme's CSS file
 
 You might want to use the development version of the theme instead of the released version
 
-Please ensure you have Node.js environment installed, Node.js 24.12.0 or above is recommended
+Please ensure you have Bun environment installed, Bun 1.3.14 or above is recommended
 
 ```bash
 git clone https://github.com/lutinglt/gitea-github-theme.git
 cd gitea-github-theme
-npm install
-npm run build
+bun install
+bun bundle
 ```
 
 After compilation, theme files will be generated in the `dist` directory. You can place the theme files into the

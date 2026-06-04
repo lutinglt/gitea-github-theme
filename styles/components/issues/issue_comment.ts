@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "@gitea-github-theme/core";
-import { botLabelStyle, deleteHoverActiveStyle } from "@gitea-github-theme/styles/common";
+import { css, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { botLabelStyle, deleteHoverActiveStyle } from "@lutinglt/gitea-github-theme/styles/common";
 
 // 评论
 export const comment = css`

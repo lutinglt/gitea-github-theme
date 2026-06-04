@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css } from "@gitea-github-theme/core";
+import { css } from "@lutinglt/gitea-github-theme/core";
 
 // 简单的渐变过渡
 export const transition = css`

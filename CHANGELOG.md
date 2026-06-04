@@ -1,3 +1,8 @@
+### ⚠️ Breaking Changes
+
+- Starting from this version, CSS nesting will no longer be expanded, which will reduce the volume by 40% and improve
+  loading speed,ensure styles are applied correctly by keeping Chrome/Edge >= 120, Firefox >= 121, Safari >= 16.5.
+
 ### ✨ Feature
 
 - Add high contrast color themes.

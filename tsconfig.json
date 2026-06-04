@@ -2,9 +2,6 @@
   "compilerOptions": {
     "plugins": [
       {
-        "name": "typescript-plugin-css-modules"
-      },
-      {
         "name": "@styled/typescript-styled-plugin",
         "lint": {
           "validProperties": ["rx", "ry", "r"]
@@ -31,11 +28,13 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
     "paths": {
-      "@gitea-github-theme/core": ["./src"],
-      "@gitea-github-theme/styles": ["./styles"],
-      "@gitea-github-theme/styles/common": ["./styles/common"],
-      "@gitea-github-theme/themes": ["./themes"],
-      "@gitea-github-theme/primer": ["./primer"]
+      "@lutinglt/gitea-github-theme/theme.config.ts": ["./theme.config.ts"],
+      "@lutinglt/gitea-github-theme/core": ["./src"],
+      "@lutinglt/gitea-github-theme/vite-plugin": ["./src/vite-plugin"],
+      "@lutinglt/gitea-github-theme/styles": ["./styles"],
+      "@lutinglt/gitea-github-theme/styles/common": ["./styles/common"],
+      "@lutinglt/gitea-github-theme/themes": ["./themes"],
+      "@lutinglt/gitea-github-theme/primer": ["./primer"]
     }
   },
   "include": ["src", "styles", "themes", "scripts", "primer", "vite.config.ts", "theme.config.ts", "eslint.config.ts"]

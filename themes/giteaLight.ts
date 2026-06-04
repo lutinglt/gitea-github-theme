@@ -32,8 +32,8 @@ import type {
   Primary,
   Secondary,
   Syntax,
-} from "@gitea-github-theme/core";
-import { defineTheme, themeVars } from "@gitea-github-theme/core";
+} from "@lutinglt/gitea-github-theme/core";
+import { defineTheme, themeVars } from "@lutinglt/gitea-github-theme/core";
 
 const primary: Primary = {
   self: "#4183c4",

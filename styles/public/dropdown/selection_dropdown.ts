@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "@gitea-github-theme/core";
-import { activeItemAfterStyle } from "@gitea-github-theme/styles/common";
+import { css, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { activeItemAfterStyle } from "@lutinglt/gitea-github-theme/styles/common";
 
 // 选择框的下拉菜单看起来像普通按钮
 export const selectionDropdown = css`

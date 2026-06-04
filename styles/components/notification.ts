@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "@gitea-github-theme/core";
+import { css, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 
 // 用户订阅/关注页面
 export const notification = css`

@@ -18,12 +18,23 @@
  */
 
 import { createGlobalTheme, globalKeyframes, globalStyle } from "@vanilla-extract/css";
+import pkg from "../../package.json";
 import type { GiteaColor, GitHubColor, ThemeColor } from "../palette";
 import { gitea2ThemeVars, github2ThemeColor, primer2Chroma, primer2CodeMirror, theme2ThemeVars } from "../palette";
 import selectors from "../selectors";
-import { createChroma, createCodeMirror } from "../styles";
 import { otherThemeVars, syntaxVars, themeVars, type Syntax } from "../types";
+import { createChroma } from "./chroma";
+import { createCodeMirror } from "./codemirror";
 import type { MapLeafNodes } from "./types";
+
+function getThemeVersion(): string {
+  // 版本号: 版本号.YYMMDD
+  const now = new Date();
+  const year = now.getFullYear().toString().slice(-2);
+  const month = (now.getMonth() + 1).toString().padStart(2, "0");
+  const day = now.getDate().toString().padStart(2, "0");
+  return `${pkg.version}.${year}${month}${day}`;
+}
 
 export type ThemeVars = { isDarkTheme: boolean } & MapLeafNodes<typeof themeVars, string>;
 export type ThemeColors =
@@ -41,8 +52,8 @@ export type Theme = {
  * - "theme": GiteaGitHubTheme 用于简化 Gitea 颜色变量设置的配色, 使用 Gitea 的代码语法高亮色
  *
  * @example
- * import type { Console, Diff, Other, Github, ThemeColor, Syntax } from "@gitea-github-theme/core";
- * import { defineTheme, themeVars } from "@gitea-github-theme/core";
+ * import type { Console, Diff, Other, Github, ThemeColor, Syntax } from "@lutinglt/gitea-github-theme/core";
+ * import { defineTheme, themeVars } from "@lutinglt/gitea-github-theme/core";
  *
  * const console: Console = {
  *   fg: {
@@ -77,9 +88,6 @@ export function defineTheme(themeColors: ThemeColors): Theme {
   };
 }
 
-// vite define 编译时注入的常量
-declare const __THEME_VERSION__: string;
-
 export function createTheme(theme: Theme): void {
   const { isDarkTheme, ...themeVarsColor } =
     theme.colorType === "github"
@@ -90,7 +98,7 @@ export function createTheme(theme: Theme): void {
 
   // 注入主题标识和版本号
   createGlobalTheme(selectors.root, {
-    theme: { version: `"${__THEME_VERSION__}"` },
+    theme: { version: `"${getThemeVersion()}"` },
     is: { dark: { theme: isDarkTheme.toString() } },
   });
   // 全局主题变量

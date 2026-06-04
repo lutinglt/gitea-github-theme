@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import type { MapLeafNodes } from "@gitea-github-theme/core";
+import type { MapLeafNodes } from "@lutinglt/gitea-github-theme/core";
 
 import dark from "./dark";
 import darkColorblind from "./dark-colorblind";

@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import type { Primer } from "@gitea-github-theme/primer";
+import type { Primer } from "@lutinglt/gitea-github-theme/primer";
 import { mix, saturate } from "polished";
 import { scaleColorLight } from "../functions";
 import type { Ansi, Console, Diff, GitHub, Message, Other } from "../types";

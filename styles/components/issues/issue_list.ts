@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, extractVarName, otherThemeVars, themeVars } from "@gitea-github-theme/core";
+import { css, extractVarName, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 
 // 工单&PR 列表
 export const issueList = css`

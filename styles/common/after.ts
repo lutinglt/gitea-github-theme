@@ -17,12 +17,12 @@
  * limitations under the License.
  */
 
-import { otherThemeVars, themeVars, toCSS } from "@gitea-github-theme/core";
+import { cssStyle, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 
 /** 激活项后缀样式
  * @example 菜单激活子项前面的竖线, 方便识别
  */
-export const activeItemAfterStyle = toCSS({
+export const activeItemAfterStyle = cssStyle({
   content: `""`,
   backgroundColor: themeVars.github.borderColor.accent.emphasis,
   borderRadius: otherThemeVars.border.radius,

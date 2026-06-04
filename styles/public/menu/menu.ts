@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
-import { css, themeVars } from "@gitea-github-theme/core";
-import { labelStyle } from "@gitea-github-theme/styles/common";
+import { css, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { labelStyle } from "@lutinglt/gitea-github-theme/styles/common";
 
 export const menu = css`
   .ui.menu {

@@ -35,7 +35,7 @@ Gitea 理论上小版本号变更不会修改前端布局, 所以主题的小版
 
 > [!IMPORTANT]
 >
-> 因为项目使用了 CSS 新特性, 确保样式正确应用需保持 Chrome/Edge >= 105, Firefox >= 121, Safari >= 15.4
+> 因为项目使用了 CSS 新特性, 确保样式正确应用需保持 Chrome/Edge >= 120, Firefox >= 121, Safari >= 16.5
 
 1. 在发布页下载最新的 CSS 主题文件放入 `data/gitea/public/assets/css` 目录下 (默认可能没有此目录需手动创建)
 2. 修改 `data/gitea/conf/app.ini`，并将 CSS 文件名去掉 `theme-` 的名称附加到 `[ui]` 下的 `THEMES` 末尾
@@ -208,13 +208,13 @@ THEMES = github-catppuccin-auto, github-catppuccin-latte, github-catppuccin-frap
 
 也许你会想使用开发中的主题, 而不是发布的主题
 
-请确保你已经安装了 Node.js 环境, 推荐使用 Node.js 24.12.0 或以上版本
+请确保你已经安装了 Bun 环境, 推荐使用 Bun 1.3.14 或以上版本
 
 ```bash
 git clone https://github.com/lutinglt/gitea-github-theme.git
 cd gitea-github-theme
-npm install
-npm run build
+bun install
+bun bundle
 ```
 
 编译完成后, 会在 `dist` 目录下生成主题文件, 你可以将主题文件放入 `gitea/public/assets/css` 目录下, 然后在

@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css } from "@gitea-github-theme/core";
+import { css } from "@lutinglt/gitea-github-theme/core";
 
 // 注册/登录界面
 export const signIn = css`

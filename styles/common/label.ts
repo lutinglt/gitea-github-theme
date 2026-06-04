@@ -17,15 +17,15 @@
  * limitations under the License.
  */
 
-import { toCSS } from "@gitea-github-theme/core";
+import { cssStyle } from "@lutinglt/gitea-github-theme/core";
 
 /** 基本标签样式 */
-export const labelStyle = toCSS({
+export const labelStyle = cssStyle({
   padding: "0px 6px",
 });
 
 /** bot 标签样式 */
-export const botLabelStyle = toCSS({
+export const botLabelStyle = cssStyle({
   height: "20px",
   padding: "0 6px !important",
   marginLeft: "4px",

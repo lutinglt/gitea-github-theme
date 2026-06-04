@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "@gitea-github-theme/core";
+import { css, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 
 // 分页菜单
 export const paginationMenu = css`

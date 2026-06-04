@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, customThemeVars, otherThemeVars, themeVars } from "@gitea-github-theme/core";
+import { css, customThemeVars, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 import { fallbackVar } from "@vanilla-extract/css";
 
 const userRepoVar = fallbackVar(customThemeVars.userRepolistColumns, "2");

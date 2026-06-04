@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars } from "@gitea-github-theme/core";
+import { css, otherThemeVars } from "@lutinglt/gitea-github-theme/core";
 
 // 全部圆角替换
 export const radius = css`

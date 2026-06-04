@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
-import { css, themeVars } from "@gitea-github-theme/core";
-import { botLabelStyle } from "@gitea-github-theme/styles/common";
+import { css, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { botLabelStyle } from "@lutinglt/gitea-github-theme/styles/common";
 
 // 时间线
 export const timeline = css`
