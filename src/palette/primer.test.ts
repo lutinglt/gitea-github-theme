@@ -25,7 +25,7 @@ import { primer2Chroma, primer2CodeMirror, primer2GitHubColor } from "./primer";
 // primer2GitHubColor
 // ============================================================================
 
-describe.sequential("primer2GitHubColor", () => {
+describe("primer2GitHubColor", () => {
   it("dark 快照", () => {
     expect(primer2GitHubColor(defaultPrimer.dark, true)).toMatchSnapshot();
   });
@@ -54,7 +54,7 @@ describe.sequential("primer2GitHubColor", () => {
 // primer2Chroma
 // ============================================================================
 
-describe.sequential("primer2Chroma", () => {
+describe("primer2Chroma", () => {
   it("dark 快照", () => {
     expect(primer2Chroma(defaultPrimer.dark)).toMatchSnapshot();
   });
@@ -102,7 +102,7 @@ describe.sequential("primer2Chroma", () => {
 // primer2CodeMirror
 // ============================================================================
 
-describe.sequential("primer2CodeMirror", () => {
+describe("primer2CodeMirror", () => {
   it("dark 快照", () => {
     expect(primer2CodeMirror(defaultPrimer.dark)).toMatchSnapshot();
   });

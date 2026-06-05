@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`github2ThemeColor > dark 全链快照 1`] = `
+exports[`github2ThemeColor > dark isDarkTheme 为 true 1`] = `
 {
   "color": {
     "accent": "var(--color-primary-light-1)",
@@ -595,7 +595,7 @@ exports[`github2ThemeColor > dark 全链快照 1`] = `
 }
 `;
 
-exports[`github2ThemeColor > light 全链快照 1`] = `
+exports[`github2ThemeColor > dark isDarkTheme 为 true 2`] = `
 {
   "color": {
     "accent": "var(--color-primary-light-1)",

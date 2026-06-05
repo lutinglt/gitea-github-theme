@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`gitea2ThemeVars > dark 快照 1`] = `
+exports[`gitea2ThemeVars > dark 输出含 color 和 github 顶层键 1`] = `
 {
   "color": {
     "accent": "var(--color-primary-light-1)",
@@ -595,7 +595,7 @@ exports[`gitea2ThemeVars > dark 快照 1`] = `
 }
 `;
 
-exports[`gitea2ThemeVars > light 快照 1`] = `
+exports[`gitea2ThemeVars > dark 输出含 color 和 github 顶层键 2`] = `
 {
   "color": {
     "accent": "var(--color-primary-light-1)",

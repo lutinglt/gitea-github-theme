@@ -25,7 +25,7 @@ import { gitea2ThemeVars } from "./gitea";
 // 测试
 // ============================================================================
 
-describe.sequential("gitea2ThemeVars", () => {
+describe("gitea2ThemeVars", () => {
   it("dark 快照", () => {
     expect(gitea2ThemeVars(giteaColor.dark)).toMatchSnapshot();
   });

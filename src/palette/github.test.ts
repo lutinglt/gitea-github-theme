@@ -107,7 +107,7 @@ function assertThemeColorStructure(themeColor: ThemeColor, flavor: string) {
 // 测试
 // ============================================================================
 
-describe.sequential("github2ThemeColor", () => {
+describe("github2ThemeColor", () => {
   it("dark 全链快照", () => {
     const githubColor = primer2GitHubColor(defaultPrimer.dark, true);
     expect(theme2ThemeVars(github2ThemeColor(githubColor))).toMatchSnapshot();

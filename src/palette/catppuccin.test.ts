@@ -107,7 +107,7 @@ function assertThemeColorStructure(themeColor: ThemeColor, flavor: string) {
 // 快照测试
 // ============================================================================
 
-describe.sequential("catppuccin2ThemeColor", () => {
+describe("catppuccin2ThemeColor", () => {
   it("mocha (dark) 全链快照", () => {
     expect(theme2ThemeVars(catppuccin2ThemeColor(flavors.mocha))).toMatchSnapshot();
   });
@@ -153,7 +153,7 @@ describe.sequential("catppuccin2ThemeColor", () => {
   });
 });
 
-describe.sequential("catppuccin2Syntax", () => {
+describe("catppuccin2Syntax", () => {
   for (const flavor of [flavors.latte, flavors.frappe, flavors.macchiato, flavors.mocha]) {
     it(`${flavor.name} 快照`, () => {
       expect(catppuccin2Syntax(flavor)).toMatchSnapshot();

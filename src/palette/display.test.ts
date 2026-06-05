@@ -26,7 +26,7 @@ import { primer2GitHubColor } from "./primer";
 // 测试
 // ============================================================================
 
-describe.sequential("display2GitHubColor", () => {
+describe("display2GitHubColor", () => {
   const darkBase = primer2GitHubColor(defaultPrimer.dark, true);
   const lightBase = primer2GitHubColor(defaultPrimer.light);
 

@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`display2GitHubColor > pink dark 快照 1`] = `
+exports[`display2GitHubColor > cover 后 contribution 颜色被改写 1`] = `
 {
   "ansi": {
     "black": "#2f3742",
@@ -1802,7 +1802,7 @@ exports[`display2GitHubColor > pink dark 快照 1`] = `
 }
 `;
 
-exports[`display2GitHubColor > pink light 快照 1`] = `
+exports[`display2GitHubColor > cover 后 contribution 颜色被改写 2`] = `
 {
   "ansi": {
     "black": "#1f2328",
@@ -3604,7 +3604,7 @@ exports[`display2GitHubColor > pink light 快照 1`] = `
 }
 `;
 
-exports[`display2GitHubColor > pink soft-dark 快照 1`] = `
+exports[`display2GitHubColor > cover 后 contribution 颜色被改写 3`] = `
 {
   "ansi": {
     "black": "#2f3742",

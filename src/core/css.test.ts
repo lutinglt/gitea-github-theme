@@ -200,7 +200,7 @@ describe("cssCombine", () => {
 // 输出格式为 "prop: value;" (冒号后有空格)
 // ============================================================================
 
-describe.sequential("cssStyle", () => {
+describe("cssStyle", () => {
   describe("扁平属性", () => {
     it("单个属性", () => {
       const style = cssStyle({ color: "red" });
