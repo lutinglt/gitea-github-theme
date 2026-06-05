@@ -4,3 +4,5 @@
 .github/** linguist-vendored
 .vscode/** linguist-generated
 gitea/** linguist-generated
+primer/** linguist-generated
+primer/index.ts -linguist-generated
