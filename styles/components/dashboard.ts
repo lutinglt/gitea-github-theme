@@ -108,7 +108,7 @@ export const dashboard = css`
             background: #0000;
             &:hover {
               background: ${themeVars.github.control.transparent.bgColor.hover};
-              color: ${themeVars.color.text.self}
+              color: ${themeVars.color.text.self};
             }
           }
           .ui.circular.label {

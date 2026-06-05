@@ -79,26 +79,3 @@ export const githubLightTritanopiaHighContrastTheme = defineGitHubTheme(githubLi
 export const githubPinkDarkTheme = defineGitHubTheme(githubPinkDarkColor);
 export const githubPinkSoftDarkTheme = defineGitHubTheme(githubPinkSoftDarkColor);
 export const githubPinkLightTheme = defineGitHubTheme(githubPinkLightColor);
-
-export default {
-  // 普通主题
-  githubDarkTheme,
-  githubSoftDarkTheme,
-  githubColorblindDarkTheme,
-  githubTritanopiaDarkTheme,
-  githubLightTheme,
-  githubColorblindLightTheme,
-  githubTritanopiaLightTheme,
-  // 高对比度主题
-  githubDarkHighContrastTheme,
-  githubDarkColorblindHighContrastTheme,
-  githubDarkTritanopiaHighContrastTheme,
-  githubSoftDarkHighContrastTheme,
-  githubLightHighContrastTheme,
-  githubLightColorblindHighContrastTheme,
-  githubLightTritanopiaHighContrastTheme,
-  // 自定义主题
-  githubPinkDarkTheme,
-  githubPinkSoftDarkTheme,
-  githubPinkLightTheme,
-};

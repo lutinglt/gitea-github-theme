@@ -36,10 +36,3 @@ export const catppuccinLatteTheme = defineCatppuccinTheme(flavors.latte);
 export const catppuccinFrappeTheme = defineCatppuccinTheme(flavors.frappe);
 export const catppuccinMacchiatoTheme = defineCatppuccinTheme(flavors.macchiato);
 export const catppuccinMochaTheme = defineCatppuccinTheme(flavors.mocha);
-
-export default {
-  catppuccinLatteTheme,
-  catppuccinFrappeTheme,
-  catppuccinMacchiatoTheme,
-  catppuccinMochaTheme,
-};

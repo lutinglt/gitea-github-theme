@@ -1,5 +1,5 @@
 /*!
- * Copyright (c) https://github.com/lutinglt
+ * Copyright (c) https://com/lutinglt
  *
  * See the NOTICE file distributed with this work for additional
  * information regarding copyright ownership.
@@ -17,40 +17,63 @@
  * limitations under the License.
  */
 
-import catppuccin from "./catppuccin";
+import {
+  catppuccinFrappeTheme,
+  catppuccinLatteTheme,
+  catppuccinMacchiatoTheme,
+  catppuccinMochaTheme,
+} from "./catppuccin";
 import { giteaDarkTheme } from "./giteaDark";
 import { giteaLightTheme } from "./giteaLight";
-import github from "./github";
+import {
+  githubColorblindDarkTheme,
+  githubColorblindLightTheme,
+  githubDarkColorblindHighContrastTheme,
+  githubDarkHighContrastTheme,
+  githubDarkTheme,
+  githubDarkTritanopiaHighContrastTheme,
+  githubLightColorblindHighContrastTheme,
+  githubLightHighContrastTheme,
+  githubLightTheme,
+  githubLightTritanopiaHighContrastTheme,
+  githubPinkDarkTheme,
+  githubPinkLightTheme,
+  githubPinkSoftDarkTheme,
+  githubSoftDarkHighContrastTheme,
+  githubSoftDarkTheme,
+  githubTritanopiaDarkTheme,
+  githubTritanopiaLightTheme,
+} from "./github";
 
 export default {
   github: {
-    dark: github.githubDarkTheme,
-    light: github.githubLightTheme,
-    softDark: github.githubSoftDarkTheme,
+    dark: githubDarkTheme,
+    light: githubLightTheme,
+    softDark: githubSoftDarkTheme,
     colorblind: {
-      dark: github.githubColorblindDarkTheme,
-      light: github.githubColorblindLightTheme,
+      dark: githubColorblindDarkTheme,
+      light: githubColorblindLightTheme,
     },
     tritanopia: {
-      dark: github.githubTritanopiaDarkTheme,
-      light: github.githubTritanopiaLightTheme,
+      dark: githubTritanopiaDarkTheme,
+      light: githubTritanopiaLightTheme,
     },
     pink: {
-      dark: github.githubPinkDarkTheme,
-      light: github.githubPinkLightTheme,
-      softDark: github.githubPinkSoftDarkTheme,
+      dark: githubPinkDarkTheme,
+      light: githubPinkLightTheme,
+      softDark: githubPinkSoftDarkTheme,
     },
     highContrast: {
-      dark: github.githubDarkHighContrastTheme,
-      light: github.githubLightHighContrastTheme,
-      softDark: github.githubSoftDarkHighContrastTheme,
+      dark: githubDarkHighContrastTheme,
+      light: githubLightHighContrastTheme,
+      softDark: githubSoftDarkHighContrastTheme,
       colorblind: {
-        dark: github.githubDarkColorblindHighContrastTheme,
-        light: github.githubLightColorblindHighContrastTheme,
+        dark: githubDarkColorblindHighContrastTheme,
+        light: githubLightColorblindHighContrastTheme,
       },
       tritanopia: {
-        dark: github.githubDarkTritanopiaHighContrastTheme,
-        light: github.githubLightTritanopiaHighContrastTheme,
+        dark: githubDarkTritanopiaHighContrastTheme,
+        light: githubLightTritanopiaHighContrastTheme,
       },
     },
   },
@@ -59,9 +82,9 @@ export default {
     light: giteaLightTheme,
   },
   catppuccin: {
-    latte: catppuccin.catppuccinLatteTheme,
-    frappe: catppuccin.catppuccinFrappeTheme,
-    macchiato: catppuccin.catppuccinMacchiatoTheme,
-    mocha: catppuccin.catppuccinMochaTheme,
+    latte: catppuccinLatteTheme,
+    frappe: catppuccinFrappeTheme,
+    macchiato: catppuccinMacchiatoTheme,
+    mocha: catppuccinMochaTheme,
   },
 };
