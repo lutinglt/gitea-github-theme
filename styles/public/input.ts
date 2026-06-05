@@ -17,9 +17,9 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 
-export const input = css`
+const input = css`
   textarea,
   /* 排除复选框和单选框 */
   input:not([type=checkbox],[type=radio]),
@@ -65,7 +65,7 @@ export const input = css`
   }
 `;
 // 复选框和单选框
-export const checkBoxAndRadio = css`
+const checkBoxAndRadio = css`
   /* 复选框 */
   input[type="checkbox"],
   .ui.checkbox input[type="checkbox"] {
@@ -91,3 +91,5 @@ export const checkBoxAndRadio = css`
     }
   }
 `;
+
+export default cssCombine(input, checkBoxAndRadio);

@@ -17,7 +17,10 @@
  * limitations under the License.
  */
 
-import "./commit_sign_badge";
-import "./commits_list";
-import "./view_content";
-import "./view_list";
+import { cssCombine } from "@lutinglt/gitea-github-theme/core";
+import commitSignBadge from "./commit_sign_badge";
+import commitsList from "./commits_list";
+import viewContent from "./view_content";
+import viewList from "./view_list";
+
+export default cssCombine(commitSignBadge, commitsList, viewContent, viewList);

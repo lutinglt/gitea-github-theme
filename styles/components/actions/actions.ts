@@ -17,10 +17,10 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 
 // 仓库 Actions 页面
-export const actions = css`
+const actions = css`
   /* 避免锚中设置界面里的 Actions */
   .page-content.repository.actions:not(.settings) .flex-container {
     /* Actions 列表 */
@@ -125,7 +125,7 @@ export const actions = css`
 `;
 
 // 工作流禁用标签
-export const label = css`
+const label = css`
   .page-content.repository.actions:not(.settings) .ui.vertical.menu .item > .ui.red.label {
     color: ${themeVars.color.error.text};
     border: 1px solid ${themeVars.color.error.border};
@@ -134,7 +134,7 @@ export const label = css`
 `;
 
 // 手动工作流
-export const runWorkflow = css`
+const runWorkflow = css`
   /* 手动工作流弹窗 */
   #runWorkflowDispatchModal {
     overflow: hidden;
@@ -177,3 +177,5 @@ export const runWorkflow = css`
     }
   }
 `;
+
+export default cssCombine(actions, label, runWorkflow);

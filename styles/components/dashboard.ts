@@ -17,10 +17,10 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 import { labelStyle } from "@lutinglt/gitea-github-theme/styles/common";
 
-export const dashboard = css`
+const dashboard = css`
   .page-content.dashboard {
     /* 仪表板切换控制用户按钮 */
     .ui.dropdown .menu.context-user-switch .scrolling.menu {
@@ -153,7 +153,7 @@ export const dashboard = css`
 `;
 
 // 导航栏的工单/PR/里程碑仪表板
-export const dashboardIssues = css`
+const dashboardIssues = css`
   .page-content.dashboard.issues {
     .list-header {
       background-color: ${themeVars.color.box.header};
@@ -200,7 +200,7 @@ export const dashboardIssues = css`
 `;
 
 // 避免手机/平板下菜单错位
-export const issueListMobile = css`
+const issueListMobile = css`
   @media (max-width: 767.98px) {
     .page-content.dashboard.issues .list-header {
       height: auto;
@@ -209,8 +209,10 @@ export const issueListMobile = css`
 `;
 
 // 修复仪表板下二级面板选择菜单组织的标签间隔
-export const fixOrgLabel = css`
+const fixOrgLabel = css`
   .dashboard .secondary-nav .org-visibility .label {
     margin-right: 0;
   }
 `;
+
+export default cssCombine(dashboard, dashboardIssues, issueListMobile, fixOrgLabel);

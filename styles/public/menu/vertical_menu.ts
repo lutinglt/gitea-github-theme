@@ -17,10 +17,10 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 import { activeItemAfterStyle } from "@lutinglt/gitea-github-theme/styles/common";
 
-export const verticalMenu = css`
+const verticalMenu = css`
   /* 垂直菜单, 用于左侧边栏 */
   /* 设置页面中的菜单, Actions 工作流菜单, WorkflowRuns Job 菜单 */
   .ui.vertical.menu {
@@ -132,3 +132,5 @@ export const verticalMenu = css`
     }
   }
 `;
+
+export default cssCombine(verticalMenu);

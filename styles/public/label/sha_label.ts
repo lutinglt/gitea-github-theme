@@ -17,10 +17,10 @@
  * limitations under the License.
  */
 
-import { css, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
 
 // 提交中的 SHA 标签
-export const shaLabel = css`
+const shaLabel = css`
   a.ui.label.sha,
   a.ui.label.commit-id-short {
     border: unset;
@@ -106,3 +106,5 @@ export const shaLabel = css`
     }
   }
 `;
+
+export default cssCombine(shaLabel);

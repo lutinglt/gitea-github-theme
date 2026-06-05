@@ -17,11 +17,11 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 import { activeItemAfterStyle } from "@lutinglt/gitea-github-theme/styles/common";
 
 // 选择框的下拉菜单看起来像普通按钮
-export const selectionDropdown = css`
+const selectionDropdown = css`
   /* 排除可以选择的输入搜索框和创建仓库的拥有者 */
   .ui.selection.dropdown:not(.search):not(.ellipsis-text-items),
   .ui.selection.dropdown.active:not(.search):not(.ellipsis-text-items) {
@@ -129,10 +129,12 @@ export const selectionDropdown = css`
   }
 `;
 
-export const fixSelectionDropdown = css`
+const fixSelectionDropdown = css`
   /* 具体工单页面下依赖菜单选择框 */
   #new-dependency-drop-list.ui.selection.dropdown {
     /* 高度对齐问题, 应该与 input 框高度一致 */
     min-height: 32px;
   }
 `;
+
+export default cssCombine(selectionDropdown, fixSelectionDropdown);

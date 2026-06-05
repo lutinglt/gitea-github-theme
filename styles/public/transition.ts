@@ -17,10 +17,10 @@
  * limitations under the License.
  */
 
-import { css } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine } from "@lutinglt/gitea-github-theme/core";
 
 // 简单的渐变过渡
-export const transition = css`
+const transition = css`
   /* 差异对比的代码折叠按钮 */
   .code-expander-button,
   /* 仓库 README 头部的按钮 */
@@ -100,3 +100,5 @@ export const transition = css`
     }
   }
 `;
+
+export default cssCombine(transition);

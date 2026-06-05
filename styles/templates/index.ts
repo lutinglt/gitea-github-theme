@@ -17,4 +17,7 @@
  * limitations under the License.
  */
 
-import "./repo";
+import { cssCombine } from "@lutinglt/gitea-github-theme/core";
+import repo from "./repo";
+
+export default cssCombine(repo);

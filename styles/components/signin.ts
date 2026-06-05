@@ -17,10 +17,10 @@
  * limitations under the License.
  */
 
-import { css } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine } from "@lutinglt/gitea-github-theme/core";
 
 // 注册/登录界面
-export const signIn = css`
+const signIn = css`
   .page-content.user.signin {
     .ui.grid {
       justify-content: center;
@@ -79,3 +79,5 @@ export const signIn = css`
     }
   }
 `;
+
+export default cssCombine(signIn);

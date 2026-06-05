@@ -17,11 +17,11 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 import { animationDown } from "@lutinglt/gitea-github-theme/styles/common";
 
 // 文件列表页面下的分支按钮
-export const branchButton = css`
+const branchButton = css`
   .page-content.repository.file.list {
     .ui.dropdown.branch-selector-dropdown > .menu > .menu {
       /* 显示默认分支的标签 */
@@ -36,7 +36,7 @@ export const branchButton = css`
   }
 `;
 // 仓库同步派生
-export const syncFork = css`
+const syncFork = css`
   .page-content.repository.file.list {
     .repo-home-filelist > .ui.message {
       background: ${themeVars.color.box.header};
@@ -49,7 +49,7 @@ export const syncFork = css`
   }
 `;
 // 转到文件搜索结果弹窗
-export const fileSearch = css`
+const fileSearch = css`
   .file-search-popup.file-search-popup.file-search-popup {
     ${animationDown};
     /* 统一所有下拉菜单的样式 */
@@ -82,7 +82,7 @@ export const fileSearch = css`
   }
 `;
 // 仓库文件列表
-export const repoFiles = css`
+const repoFiles = css`
   /* 文件列表和提交列表的按钮组 */
   .repo-button-row {
     margin: 16px 0;
@@ -228,7 +228,7 @@ export const repoFiles = css`
   }
 `;
 // 手机下隐藏提交信息
-export const repoFilesMobile = css`
+const repoFilesMobile = css`
   @media (max-width: 767.98px) {
     #repo-files-table {
       grid-template-columns: 1fr auto;
@@ -246,3 +246,5 @@ export const repoFilesMobile = css`
     }
   }
 `;
+
+export default cssCombine(branchButton, syncFork, fileSearch, repoFiles, repoFilesMobile);

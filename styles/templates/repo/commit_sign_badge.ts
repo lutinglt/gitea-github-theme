@@ -17,9 +17,9 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 
-export const commitSignBadge = css`
+const commitSignBadge = css`
   a.ui.label.commit-id-short.gitea-github-theme-commit-sha {
     gap: 8px;
     padding: unset;
@@ -60,3 +60,5 @@ export const commitSignBadge = css`
     font-weight: 500;
   }
 `;
+
+export default cssCombine(commitSignBadge);

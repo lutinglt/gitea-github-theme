@@ -17,7 +17,10 @@
  * limitations under the License.
  */
 
-import "./branch_dropdown";
-import "./dropdown";
-import "./emoji_dropdown";
-import "./selection_dropdown";
+import { cssCombine } from "@lutinglt/gitea-github-theme/core";
+import branchDropdown from "./branch_dropdown";
+import dropdown from "./dropdown";
+import emojiDropdown from "./emoji_dropdown";
+import selectionDropdown from "./selection_dropdown";
+
+export default cssCombine(branchDropdown, dropdown, emojiDropdown, selectionDropdown);

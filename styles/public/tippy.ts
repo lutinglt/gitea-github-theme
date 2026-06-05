@@ -17,11 +17,11 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 import { animation, animationDown } from "@lutinglt/gitea-github-theme/styles/common";
 
 // 一些界面内的提示框, 比如克隆按钮, PR信息, Runner信息 等
-export const tippyBox = css`
+const tippyBox = css`
   .tippy-box {
     margin-top: -3px;
     border-radius: ${otherThemeVars.border.radius};
@@ -72,3 +72,5 @@ export const tippyBox = css`
     }
   }
 `;
+
+export default cssCombine(tippyBox);

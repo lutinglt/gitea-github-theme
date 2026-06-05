@@ -17,10 +17,10 @@
  * limitations under the License.
  */
 
-import { css, extractVarName, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, extractVarName, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 
 // 工单&PR 列表
-export const issueList = css`
+const issueList = css`
   /* 仓库页面的里程碑列表菜单栏 */
   .page-content.repository.milestones,
   .page-content.repository.milestone-issue-list,
@@ -178,7 +178,7 @@ export const issueList = css`
 `;
 
 // 避免手机/平板下菜单错位
-export const issueListMobile = css`
+const issueListMobile = css`
   @media (max-width: 1023.98px) {
     .page-content.repository.milestones,
     .page-content.repository.milestone-issue-list,
@@ -191,7 +191,7 @@ export const issueListMobile = css`
 `;
 
 // 置顶 Issue
-export const issuePins = css`
+const issuePins = css`
   #issue-pins {
     gap: 12px;
     margin-bottom: 16px;
@@ -221,3 +221,5 @@ export const issuePins = css`
     }
   }
 `;
+
+export default cssCombine(issueList, issueListMobile, issuePins);

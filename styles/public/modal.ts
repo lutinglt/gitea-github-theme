@@ -17,10 +17,10 @@
  * limitations under the License.
  */
 
-import { css, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
 import { animationDown } from "@lutinglt/gitea-github-theme/styles/common";
 
-export const modal = css`
+const modal = css`
   .ui.modal {
     ${animationDown};
     border: 1.5px solid ${themeVars.color.light.border};
@@ -46,3 +46,5 @@ export const modal = css`
     }
   }
 `;
+
+export default cssCombine(modal);

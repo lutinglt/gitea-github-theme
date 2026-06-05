@@ -17,10 +17,10 @@
  * limitations under the License.
  */
 
-import { css, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
 
 // 修改 action 页面 svg 颜色 (主要为了覆盖工作流状态中的白色图标)
-export const actionSVG = css`
+const actionSVG = css`
   .page-content.repository.actions,
   .action-view-header,
   .action-view-body {
@@ -33,3 +33,5 @@ export const actionSVG = css`
     }
   }
 `;
+
+export default cssCombine(actionSVG);

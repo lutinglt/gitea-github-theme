@@ -17,11 +17,11 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 import { botLabelStyle, deleteHoverActiveStyle } from "@lutinglt/gitea-github-theme/styles/common";
 
 // 评论
-export const comment = css`
+const comment = css`
   .comment .comment-container {
     img.ui.avatar {
       border-radius: 9999px;
@@ -145,7 +145,7 @@ export const comment = css`
 `;
 
 // 评论书写框
-export const commentForm = css`
+const commentForm = css`
   .repository .comment.form .content .segment {
     &::before,
     &::after {
@@ -153,3 +153,5 @@ export const commentForm = css`
     }
   }
 `;
+
+export default cssCombine(comment, commentForm);

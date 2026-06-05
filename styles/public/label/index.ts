@@ -17,7 +17,10 @@
  * limitations under the License.
  */
 
-import "./label";
-import "./repo_label";
-import "./sha_label";
-import "./task_status_label";
+import { cssCombine } from "@lutinglt/gitea-github-theme/core";
+import label from "./label";
+import repoLabel from "./repo_label";
+import shaLabel from "./sha_label";
+import taskStatusLabel from "./task_status_label";
+
+export default cssCombine(label, repoLabel, shaLabel, taskStatusLabel);

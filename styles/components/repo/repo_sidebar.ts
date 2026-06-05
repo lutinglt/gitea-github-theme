@@ -17,10 +17,10 @@
  * limitations under the License.
  */
 
-import { css, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
 
 // 仓库代码布局调整, 侧边栏宽度调整
-export const repoGrid = css`
+const repoGrid = css`
   .repo-grid-filelist-sidebar {
     grid-template-columns: auto 312px;
     gap: 24px;
@@ -34,7 +34,7 @@ export const repoGrid = css`
 `;
 
 // 仓库代码页面侧边栏上半部, 版本发布以上
-export const repoSidebarTop = css`
+const repoSidebarTop = css`
   .page-content.repository.file.list {
     .repo-home-sidebar-top {
       /* 搜索代码 */
@@ -85,7 +85,7 @@ export const repoSidebarTop = css`
 `;
 
 // 仓库代码页面侧边栏下半部, 版本发布以下
-export const repoSidebarBottom = css`
+const repoSidebarBottom = css`
   .page-content.repository.file.list {
     .repo-home-sidebar-bottom {
       a.muted:hover {
@@ -132,3 +132,5 @@ export const repoSidebarBottom = css`
     }
   }
 `;
+
+export default cssCombine(repoGrid, repoSidebarTop, repoSidebarBottom);

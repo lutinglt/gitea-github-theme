@@ -17,11 +17,13 @@
  * limitations under the License.
  */
 
-import { css, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
 
-export const table = css`
+const table = css`
   .ui.table > tr > td,
   .ui.table > tbody > tr > td {
     border-top: 1px solid ${themeVars.color.secondary.alpha.num70};
   }
 `;
+
+export default cssCombine(table);

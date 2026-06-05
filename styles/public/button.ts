@@ -17,11 +17,11 @@
  * limitations under the License.
  */
 
-import { css, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
 import { primaryButtonHoverStyle, primaryButtonStyle } from "@lutinglt/gitea-github-theme/styles/common";
 
 // 普通按钮和主色调按钮
-export const baseButton = css`
+const baseButton = css`
   .ui.button {
     min-height: 30px;
     font-weight: 500;
@@ -94,7 +94,7 @@ export const baseButton = css`
 `;
 
 // 红色按钮
-export const redButton = css`
+const redButton = css`
   .ui.red.button,
   .ui.basic.red.buttons .button,
   .ui.basic.red.button {
@@ -118,7 +118,7 @@ export const redButton = css`
 `;
 
 // 修复按钮高度
-export const fixButtonHeight = css`
+const fixButtonHeight = css`
   /* 修复一些主色调或者其他小按钮的高度避免过高 */
   .ui.small.buttons .button,
   .ui.ui.ui.ui.small.button {
@@ -145,7 +145,7 @@ export const fixButtonHeight = css`
   }
 `;
 
-export const fixButton = css`
+const fixButton = css`
   /* 修复关注&派生 hover 意外点亮右侧 label 左边框 */
   .ui.ui.ui.ui.small.button {
     z-index: 0;
@@ -156,3 +156,5 @@ export const fixButton = css`
     min-height: 28px;
   }
 `;
+
+export default cssCombine(baseButton, redButton, fixButtonHeight, fixButton);

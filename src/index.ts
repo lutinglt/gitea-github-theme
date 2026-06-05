@@ -19,7 +19,7 @@
 
 import selectors from "./selectors";
 
-export { css, cssStyle, defineTheme, type MapLeafNodes } from "./core";
+export { css, cssCombine, cssStyle, defineTheme, type MapLeafNodes } from "./core";
 export { extractVarName, scaleColorLight } from "./functions";
 export {
   catppuccin2Syntax,

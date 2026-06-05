@@ -17,9 +17,9 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 
-export const repoButtonRow = css`
+const repoButtonRow = css`
   .gitea-github-theme-templates {
     /* 仓库按钮行 */
     &.repo-button-row {
@@ -52,3 +52,5 @@ export const repoButtonRow = css`
     }
   }
 `;
+
+export default cssCombine(repoButtonRow);

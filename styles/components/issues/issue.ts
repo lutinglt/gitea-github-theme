@@ -17,10 +17,10 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 import { activeItemAfterStyle } from "@lutinglt/gitea-github-theme/styles/common";
 
-export const button = css`
+const button = css`
   /* 工单&PR标题右侧按钮 */
   .repository.view.issue .issue-title-buttons > .ui.button {
     padding: 0 12px;
@@ -28,7 +28,7 @@ export const button = css`
   }
 `;
 
-export const babel = css`
+const babel = css`
   .issue-content-left {
     .badge {
       box-shadow: inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active};
@@ -74,7 +74,7 @@ export const babel = css`
 `;
 
 // PR 分支标签
-export const prBranch = css`
+const prBranch = css`
   .repository.view.issue .pull-desc code,
   #issue-list .flex-item-body .branches .branch {
     color: ${themeVars.github.fgColor.accent};
@@ -95,7 +95,7 @@ export const prBranch = css`
   }
 `;
 
-export const dropdown = css`
+const dropdown = css`
   .repository {
     /* Issue/PR 列表下的所有筛选菜单 */
     &.issue-list .ui.dropdown .menu, .ui.menu .ui.dropdown .menu,
@@ -109,7 +109,7 @@ export const dropdown = css`
 `;
 
 // PR 界面的 PR 操作评论
-export const prMerge = css`
+const prMerge = css`
   .repository.view.issue .comment-list .timeline-item.pull-merge-box {
     /* 头像 */
     .timeline-avatar {
@@ -236,7 +236,7 @@ export const prMerge = css`
 `;
 
 // 工单标题
-export const issueTitle = css`
+const issueTitle = css`
   .page-content.repository.issue {
     .issue-title-header {
       .issue-title-meta {
@@ -250,3 +250,5 @@ export const issueTitle = css`
     }
   }
 `;
+
+export default cssCombine(button, babel, prBranch, dropdown, prMerge, issueTitle);

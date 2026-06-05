@@ -17,12 +17,12 @@
  * limitations under the License.
  */
 
-import { css, customThemeVars, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, customThemeVars, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 import { animationDown } from "@lutinglt/gitea-github-theme/styles/common";
 import { fallbackVar } from "@vanilla-extract/css";
 
 // 分支菜单
-export const branchDropdown = css`
+const branchDropdown = css`
   .ui.dropdown.branch-selector-dropdown > .menu {
     width: ${fallbackVar(customThemeVars.branchMenuWidth, "320px")};
     max-width: 640px;
@@ -59,7 +59,7 @@ export const branchDropdown = css`
 `;
 
 // 手机页面下的分支菜单
-export const branchDropdownMobile = css`
+const branchDropdownMobile = css`
   @media (max-width: 767.98px) {
     /* 修复手机下分支菜单宽度过宽 */
     .ui.dropdown.branch-selector-dropdown > .menu {
@@ -67,3 +67,5 @@ export const branchDropdownMobile = css`
     }
   }
 `;
+
+export default cssCombine(branchDropdown, branchDropdownMobile);

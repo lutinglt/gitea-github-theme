@@ -17,10 +17,10 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 
 // 仓库头信息
-export const repoHeader = css`
+const repoHeader = css`
   .page-content.repository .repo-header {
     /* 点星/关注/克隆/RSS 按钮 */
     .ui.compact.button {
@@ -60,7 +60,7 @@ export const repoHeader = css`
 `;
 
 // 顶部提交, 标签, 分支统计
-export const repoMenu = css`
+const repoMenu = css`
   .page-content.repository {
     .repository-summary .repository-menu {
       background-color: ${themeVars.color.box.header};
@@ -84,7 +84,7 @@ export const repoMenu = css`
   }
 `;
 
-export const repoTopic = css`
+const repoTopic = css`
   /* 理应只能覆盖探索/组织/用户下仓库的 topic 标签 */
   /* 避免渲染到仓库的类型标签 */
   .flex-item-main > .label-list .ui.label,
@@ -106,8 +106,10 @@ export const repoTopic = css`
 `;
 
 // 仓库动态页面关闭工单状态条颜色
-export const closedIssueTableCell = css`
+const closedIssueTableCell = css`
   .stats-table .table-cell.tw-bg-red[href="#closed-issues"] {
     background-color: ${themeVars.color.purple.self} !important;
   }
 `;
+
+export default cssCombine(repoHeader, repoMenu, repoTopic, closedIssueTableCell);

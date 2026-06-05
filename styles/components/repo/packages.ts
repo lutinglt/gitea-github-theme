@@ -17,10 +17,10 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 
 // 组织/仓库的软件包列表(包含用户但未测试)
-export const packagesList = css`
+const packagesList = css`
   .page-content.packages {
     /* 这里必须要用 >, 否则会影响到软件包详细信息页的样式 */
     > .ui.container > div:not([class]) {
@@ -64,7 +64,7 @@ export const packagesList = css`
 `;
 
 // 软件包详细信息页
-export const packagesDetail = css`
+const packagesDetail = css`
   .page-content.packages {
     .issue-title-header > div {
       color: ${themeVars.color.text.light.num1};
@@ -144,7 +144,7 @@ export const packagesDetail = css`
 `;
 
 // 手机页面下的软件包详细信息页
-export const packagesListMobile = css`
+const packagesListMobile = css`
   @media (max-width: 767.98px) {
     .page-content.packages .packages-content {
       .packages-content-left,
@@ -154,3 +154,5 @@ export const packagesListMobile = css`
     }
   }
 `;
+
+export default cssCombine(packagesList, packagesDetail, packagesListMobile);

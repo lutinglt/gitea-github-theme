@@ -17,10 +17,10 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 
 // 用户订阅/关注页面
-export const notification = css`
+const notification = css`
   .page-content.user.notification {
     > .ui.container {
       > .ui.attached.segment {
@@ -199,3 +199,5 @@ export const notification = css`
     }
   }
 `;
+
+export default cssCombine(notification);

@@ -17,10 +17,10 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 import { activeItemAfterStyle, animationDown, animationUp } from "@lutinglt/gitea-github-theme/styles/common";
 
-export const dropdown = css`
+const dropdown = css`
   .ui.dropdown,
   .ui.menu .ui.dropdown {
     .menu {
@@ -171,3 +171,5 @@ export const dropdown = css`
     box-shadow: ${themeVars.github.shadow.floating.small} !important;
   }
 `;
+
+export default cssCombine(dropdown);

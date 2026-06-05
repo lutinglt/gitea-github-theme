@@ -17,10 +17,10 @@
  * limitations under the License.
  */
 
-import { css, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
 
 // 仓库标签 (私有/公开/内部)
-export const repoLabel = css`
+const repoLabel = css`
   span,
   /* 用户切换面板的标签 */
   .org-visibility div {
@@ -32,3 +32,5 @@ export const repoLabel = css`
     }
   }
 `;
+
+export default cssCombine(repoLabel);

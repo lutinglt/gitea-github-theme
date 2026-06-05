@@ -22,7 +22,7 @@ import fs from "node:fs";
 import path from "node:path";
 import type { PluginOption } from "vite";
 import type { GiteaThemeMeta, Theme } from "../core";
-import { createTheme, createThemeMetaInfo, flushCSS } from "../core";
+import { createTheme, createThemeMetaInfo } from "../core";
 import { compileCSS } from "../vanilla-extract";
 import { buildFullDisplayName, buildFullThemeName } from "./utils";
 
@@ -93,10 +93,8 @@ export function giteaGitHubTheme(): PluginOption {
         delete bundle[key];
       }
 
-      // 1. 编译公共样式 (替代 wyw-in-js)
-      // Bun 原生 TS + exports 自引用，导入即触发所有 css() 副作用
-      await import("@lutinglt/gitea-github-theme/styles");
-      const rawStyles = Buffer.from(flushCSS());
+      // 编译公共样式
+      const rawStyles = Buffer.from((await import("@lutinglt/gitea-github-theme/styles")).default);
       const styles = transform({ filename: "styles.css", code: rawStyles, minify: true }).code.toString();
 
       // 编译每个主题的 CSS 并输出
@@ -118,11 +116,7 @@ export function giteaGitHubTheme(): PluginOption {
             ].join("\n")
           : `${themeCSS}${styles}`;
 
-        this.emitFile({
-          type: "asset",
-          fileName: `${themeName}.css`,
-          source,
-        });
+        this.emitFile({ type: "asset", fileName: `${themeName}.css`, source });
       }
     },
   };

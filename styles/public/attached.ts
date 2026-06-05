@@ -17,9 +17,9 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 
-export const attached = css`
+const attached = css`
   /* 设置右面板的内容 */
   .user-main-content,
   .repo-setting-content,
@@ -75,7 +75,7 @@ export const attached = css`
 `;
 
 // 仓库活动页面下的边框线修复
-export const fixActivity = css`
+const fixActivity = css`
   .page-content.repository.commits .flex-container-main:has(.ui.header.activity-header) {
     > .ui.attached.segment {
       border-radius: 0;
@@ -86,3 +86,5 @@ export const fixActivity = css`
     }
   }
 `;
+
+export default cssCombine(attached, fixActivity);

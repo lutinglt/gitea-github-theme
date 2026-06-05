@@ -17,10 +17,10 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars } from "@lutinglt/gitea-github-theme/core";
 
 // 全部圆角替换
-export const radius = css`
+const radius = css`
   .ui.form textarea,
   .ui.form input:not([type]),
   .ui.form input[type="date"],
@@ -86,7 +86,7 @@ export const radius = css`
 `;
 
 // 全部圆角替换(原CSS带!important)
-export const radiusImportant = css`
+const radiusImportant = css`
   .ui.dropdown .menu .menu,
   .ui.dropdown .menu .left.menu,
   .ui.dropdown .menu .right.menu,
@@ -109,7 +109,7 @@ export const radiusImportant = css`
 `;
 
 // 上半部分圆角替换
-export const radiusTop = css`
+const radiusTop = css`
   .ui.vertical.menu > .item,
   .ui.vertical.menu > .active.item,
   .ui.segments:not(.horizontal) > .segment {
@@ -134,7 +134,7 @@ export const radiusTop = css`
 `;
 
 // 上半部分圆角替换(原CSS带!important)
-export const radiusTopImportant = css`
+const radiusTopImportant = css`
   .ui.tabular.menu .item,
   .ui.simple.upward.dropdown {
     &.active,
@@ -146,7 +146,7 @@ export const radiusTopImportant = css`
 `;
 
 // 下半部分圆角替换
-export const radiusBottom = css`
+const radiusBottom = css`
   .ui.attached.segment,
   .ui.vertical.menu > .item,
   .ui.vertical.menu > .active.item,
@@ -182,7 +182,7 @@ export const radiusBottom = css`
 `;
 
 // 下半部分圆角替换(原CSS带!important)
-export const radiusBottomImportant = css`
+const radiusBottomImportant = css`
   .ui.upward.selection.dropdown.visible,
   .ui.active.upward.selection.dropdown {
     border-radius: 0 0 ${otherThemeVars.border.radius} ${otherThemeVars.border.radius} !important;
@@ -190,7 +190,7 @@ export const radiusBottomImportant = css`
 `;
 
 // 左半部分圆角替换
-export const radiusLeft = css`
+const radiusLeft = css`
   .ui.menu > .item,
   .ui.action.input > .button,
   .ui.action.input > .dropdown,
@@ -207,7 +207,7 @@ export const radiusLeft = css`
 `;
 
 // 右半部分圆角替换
-export const radiusRight = css`
+const radiusRight = css`
   .ui.compact.menu .item,
   .ui.compact.menu:not(.secondary) .item,
   .ui.pagination.menu .item,
@@ -227,7 +227,7 @@ export const radiusRight = css`
 `;
 
 // 左上圆角替换
-export const radiusTopLeft = css`
+const radiusTopLeft = css`
   .ui.top.attached.menu > .item:first-child,
   .ui.table > thead > tr:first-child > th:first-child {
     border-top-left-radius: ${otherThemeVars.border.radius};
@@ -235,7 +235,7 @@ export const radiusTopLeft = css`
 `;
 
 // 右上圆角替换
-export const radiusTopRight = css`
+const radiusTopRight = css`
   .ui.table > thead > tr:first-child > th:last-child,
   .ui.category.search > .results .category:first-child .name + .result {
     border-top-right-radius: ${otherThemeVars.border.radius};
@@ -243,7 +243,7 @@ export const radiusTopRight = css`
 `;
 
 // 左下圆角替换
-export const radiusBottomLeft = css`
+const radiusBottomLeft = css`
   .ui.table > tfoot > tr:first-child {
     > th,
     > td {
@@ -255,7 +255,7 @@ export const radiusBottomLeft = css`
 `;
 
 // 右下圆角替换
-export const radiusBottomRight = css`
+const radiusBottomRight = css`
   .ui.table > tfoot > tr:first-child {
     > th,
     > td {
@@ -271,7 +271,7 @@ export const radiusBottomRight = css`
 `;
 
 // only-child 顺序最后生效
-export const onlyChild = css`
+const onlyChild = css`
   :is(.ui.vertical.menu > .active.item:only-child, .ui.segments:not(.horizontal) > .segment:only-child) {
     border-radius: ${otherThemeVars.border.radius};
   }
@@ -291,7 +291,7 @@ export const onlyChild = css`
 `;
 
 // 修复一些情况下圆角边框线被覆盖的问题
-export const fixRadius = css`
+const fixRadius = css`
   /* 评论列表标题 */
   .repository.view.issue .comment-list .comment > .content > div:first-child {
     border-top-left-radius: ${otherThemeVars.border.radius};
@@ -305,9 +305,27 @@ export const fixRadius = css`
 `;
 
 // 修复一些根本无法理解的生效顺序
-export const fixWhyRadius = css`
+const fixWhyRadius = css`
   /* Issue 菜单第一个按钮 */
   .ui.secondary.menu .item {
     border-radius: ${otherThemeVars.border.radius};
   }
 `;
+
+export default cssCombine(
+  radius,
+  radiusImportant,
+  radiusTop,
+  radiusTopImportant,
+  radiusBottom,
+  radiusBottomImportant,
+  radiusLeft,
+  radiusRight,
+  radiusTopLeft,
+  radiusTopRight,
+  radiusBottomLeft,
+  radiusBottomRight,
+  onlyChild,
+  fixRadius,
+  fixWhyRadius
+);

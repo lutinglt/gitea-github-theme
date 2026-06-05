@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, cssStyle, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, cssStyle, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 import { deleteHoverActiveStyle } from "@lutinglt/gitea-github-theme/styles/common";
 
 const sidebarPadding = cssStyle({
@@ -25,7 +25,7 @@ const sidebarPadding = cssStyle({
 });
 
 // 侧边栏
-export const issueSidebar = css`
+const issueSidebar = css`
   /* 创建PR页面 */
   .page-content.repository.diff.compare.pull,
   /* 工单&创建工单&PR页面侧边栏 */
@@ -217,3 +217,5 @@ export const issueSidebar = css`
     }
   }
 `;
+
+export default cssCombine(issueSidebar);

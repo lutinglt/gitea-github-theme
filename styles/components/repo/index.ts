@@ -17,13 +17,27 @@
  * limitations under the License.
  */
 
-import "./clone";
-import "./commit";
-import "./diff";
-import "./milestones";
-import "./packages";
-import "./release";
-import "./repo";
-import "./repo_file_view";
-import "./repo_files";
-import "./repo_sidebar";
+import { cssCombine } from "@lutinglt/gitea-github-theme/core";
+import clone from "./clone";
+import commit from "./commit";
+import diff from "./diff";
+import milestones from "./milestones";
+import packages from "./packages";
+import release from "./release";
+import repo from "./repo";
+import repoFileView from "./repo_file_view";
+import repoFiles from "./repo_files";
+import repoSidebar from "./repo_sidebar";
+
+export default cssCombine(
+  clone,
+  commit,
+  diff,
+  milestones,
+  packages,
+  release,
+  repo,
+  repoFileView,
+  repoFiles,
+  repoSidebar
+);

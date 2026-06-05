@@ -17,9 +17,9 @@
  * limitations under the License.
  */
 
-import { css } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine } from "@lutinglt/gitea-github-theme/core";
 
-export const body = css`
+const body = css`
   body {
     line-height: 1.5;
   }
@@ -40,3 +40,5 @@ export const body = css`
     line-height: 10px;
   }
 `;
+
+export default cssCombine(body);

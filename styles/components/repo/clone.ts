@@ -17,10 +17,10 @@
  * limitations under the License.
  */
 
-import { css, customThemeVars, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, customThemeVars, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 
 // 克隆按钮的弹窗
-export const clone = css`
+const clone = css`
   .tippy-box {
     .clone-panel-popup {
       /*标题和克隆地址 */
@@ -136,3 +136,5 @@ export const clone = css`
     }
   }
 `;
+
+export default cssCombine(clone);

@@ -17,10 +17,10 @@
  * limitations under the License.
  */
 
-import { css, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
 import { labelStyle } from "@lutinglt/gitea-github-theme/styles/common";
 
-export const menu = css`
+const menu = css`
   .ui.menu {
     min-height: 32px;
   }
@@ -59,3 +59,5 @@ export const menu = css`
     ${labelStyle}
   }
 `;
+
+export default cssCombine(menu);

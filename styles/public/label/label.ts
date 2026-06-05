@@ -17,10 +17,10 @@
  * limitations under the License.
  */
 
-import { css, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
 import { labelStyle } from "@lutinglt/gitea-github-theme/styles/common";
 
-export const label = css`
+const label = css`
   .ui.label {
     border: 1px solid ${themeVars.github.counter.borderColor};
   }
@@ -107,3 +107,5 @@ export const label = css`
     font-size: 10px;
   }
 `;
+
+export default cssCombine(label);

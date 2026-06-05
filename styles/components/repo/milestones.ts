@@ -17,9 +17,9 @@
  * limitations under the License.
  */
 
-import { css, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
 
-export const milestone = css`
+const milestone = css`
   /* 里程碑头部 */
   .milestone-header {
     gap: 16px;
@@ -69,10 +69,12 @@ export const milestone = css`
 `;
 
 // 避免手机/平板下菜单错位
-export const milestoneMobile = css`
+const milestoneMobile = css`
   @media (max-width: 767.98px) {
     .page-content.repository.milestone-issue-list > .ui.container > .flex-text-block:first-child + .tw-flex {
       flex-direction: column !important;
     }
   }
 `;
+
+export default cssCombine(milestone, milestoneMobile);

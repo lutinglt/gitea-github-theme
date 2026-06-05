@@ -17,10 +17,10 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 
 // 提交列表
-export const commit = css`
+const commit = css`
   .page-content.repository.commits {
     /* 提交列表 (选择器保证同等优先级覆盖了 gitea 原生的样式) */
     .ui.attached.table.segment.commit-table tbody.commit-list {
@@ -89,7 +89,7 @@ export const commit = css`
   }
 `;
 
-export const commitStatus = css`
+const commitStatus = css`
   .flex-text-inline[data-global-init="initCommitStatuses"] {
     padding: 3px;
     margin-top: 2px;
@@ -107,7 +107,7 @@ export const commitStatus = css`
 `;
 
 // 提交图
-export const commitGraph = css`
+const commitGraph = css`
   .page-content.repository #git-graph-container {
     img.ui.avatar {
       border-radius: 9999px;
@@ -124,3 +124,5 @@ export const commitGraph = css`
     }
   }
 `;
+
+export default cssCombine(commit, commitStatus, commitGraph);

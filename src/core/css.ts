@@ -25,6 +25,7 @@ import { captureStyle } from "../vanilla-extract";
 declare const CSSBrand: unique symbol;
 type CSSObject = { [CSSBrand]: true };
 type CSSPrimitive = string | number;
+type CSSString = string & CSSObject;
 type CSSInterpolation = CSSPrimitive | CSSObject | undefined;
 type SelectorStyleRule =
   | StyleRule
@@ -32,27 +33,24 @@ type SelectorStyleRule =
       [key: string]: StyleRule | SelectorStyleRule;
     };
 
-const SHARED_CACHE_KEY = "__GITEA_GITHUB_THEME_CSS_CACHE__";
-const g = globalThis as Record<string, unknown>;
-const cssCache: string[] = (g[SHARED_CACHE_KEY] as string[]) || (g[SHARED_CACHE_KEY] = []);
-
 /**
  * css 模板字符串 —— 类式 linaria 的 css tag，用于 vscode-styled-components 高亮。
- * 运行时校验 CSS 语法，收集输出到缓存，供 flushCSS() 获取。
+ * 构建时校验 CSS 语法并返回 CSS 字符串。
  */
-export function css(strings: TemplateStringsArray, ...values: CSSInterpolation[]): string {
+export function css(strings: TemplateStringsArray, ...values: CSSInterpolation[]): CSSString {
   const result = strings.reduce((acc, s, i) => acc + s + String(values[i] ?? ""), "");
   // 构建时校验 CSS 语法
   transform({ filename: getCallerInfo(1), code: Buffer.from(result) });
-  cssCache.push(result);
-  return result;
+  return result as CSSString;
 }
 
-/** 构建时一次性获取所有通过 css() 收集的 CSS */
-export function flushCSS(): string {
-  const all = cssCache.join("\n");
-  cssCache.length = 0;
-  return all;
+/**
+ * 将多个 CSS 字符串合并为一个 CSS 字符串
+ *
+ * 合并按参数顺序排列
+ */
+export function cssCombine(...styles: CSSString[]): CSSString {
+  return styles.join("\n") as CSSString;
 }
 
 /** cssStyle 用于 css 模板字符串的插值

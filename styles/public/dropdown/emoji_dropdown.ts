@@ -17,10 +17,10 @@
  * limitations under the License.
  */
 
-import { css, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
 
 // 包含表情的下拉菜单
-export const emojiDropdown = css`
+const emojiDropdown = css`
   .ui.dropdown.action.select-reaction.active .menu:has(.emoji) {
     display: flex !important;
     flex-direction: row;
@@ -38,3 +38,5 @@ export const emojiDropdown = css`
     }
   }
 `;
+
+export default cssCombine(emojiDropdown);

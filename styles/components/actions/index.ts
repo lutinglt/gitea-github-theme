@@ -17,8 +17,11 @@
  * limitations under the License.
  */
 
-import "./action_svg";
-import "./actions";
-import "./workflow_runs";
-import "./workflow_steps";
-import "./workflow_summary";
+import { cssCombine } from "@lutinglt/gitea-github-theme/core";
+import actionSvg from "./action_svg";
+import actions from "./actions";
+import workflowRuns from "./workflow_runs";
+import workflowSteps from "./workflow_steps";
+import workflowSummary from "./workflow_summary";
+
+export default cssCombine(actionSvg, actions, workflowRuns, workflowSteps, workflowSummary);

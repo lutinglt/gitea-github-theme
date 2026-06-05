@@ -17,8 +17,11 @@
  * limitations under the License.
  */
 
-import "./issue";
-import "./issue_comment";
-import "./issue_list";
-import "./issue_sidebar";
-import "./issue_timeline";
+import { cssCombine } from "@lutinglt/gitea-github-theme/core";
+import issue from "./issue";
+import issueComment from "./issue_comment";
+import issueList from "./issue_list";
+import issueSidebar from "./issue_sidebar";
+import issueTimeline from "./issue_timeline";
+
+export default cssCombine(issue, issueComment, issueList, issueSidebar, issueTimeline);

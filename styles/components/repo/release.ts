@@ -17,10 +17,10 @@
  * limitations under the License.
  */
 
-import { css, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
 
 // release 顶部栏左侧按钮组
-export const releaseTagMenu = css`
+const releaseTagMenu = css`
   .page-content.repository {
     &.releases,
     &.tags {
@@ -39,7 +39,7 @@ export const releaseTagMenu = css`
 `;
 
 // 顶部右侧按钮组
-export const rightButton = css`
+const rightButton = css`
   .page-content.repository {
     &.releases,
     &.tags {
@@ -60,7 +60,7 @@ export const rightButton = css`
 `;
 
 // 标签页样式
-export const tags = css`
+const tags = css`
   .page-content.repository.tags {
     /* 标签的选项取消下划线 */
     .tag-list-row {
@@ -83,7 +83,7 @@ export const tags = css`
 `;
 
 // 发布页样式
-export const releases = css`
+const releases = css`
   .page-content.repository.releases {
     > .ui.container > .divider {
       margin: 16px 0;
@@ -199,3 +199,5 @@ export const releases = css`
     }
   }
 `;
+
+export default cssCombine(releaseTagMenu, rightButton, tags, releases);

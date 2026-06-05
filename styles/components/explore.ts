@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, customThemeVars, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, customThemeVars, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 import { fallbackVar } from "@vanilla-extract/css";
 
 const userRepoVar = fallbackVar(customThemeVars.userRepolistColumns, "2");
@@ -25,7 +25,7 @@ const exploreRepoVar = fallbackVar(customThemeVars.explore.repolistColumns, "2")
 const orgRepoVar = fallbackVar(customThemeVars.org.repolistColumns, "1");
 
 // 仓库列表
-export const repoList = css`
+const repoList = css`
   /* 组织 */
   .page-content.organization.profile > .ui.container > .ui.stackable > .ui.eleven,
   /* 用户 */
@@ -109,7 +109,7 @@ const exploreUserVar = fallbackVar(customThemeVars.explore.userlistColumns, "3")
 const orgUserVar = fallbackVar(customThemeVars.org.userlistColumns, "2");
 
 // 用户列表
-export const userList = css`
+const userList = css`
   /* 组织 */
   .page-content.organization.members > .ui.container,
   /* 探索的用户和组织 */
@@ -156,7 +156,7 @@ export const userList = css`
 `;
 
 // 手机下的仓库和用户列表
-export const mobileList = css`
+const mobileList = css`
   @media (max-width: 767.98px) {
     /* 组织的仓库列表 */
     .page-content.organization.profile > .ui.container > .ui.stackable > .ui.eleven,
@@ -178,7 +178,7 @@ export const mobileList = css`
 `;
 
 // 统一无搜索结果时的样式
-export const notMatch = css`
+const notMatch = css`
   /* 组织的仓库列表 */
   .page-content.organization.profile > .ui.container > .ui.stackable > .ui.eleven,
   /* 用户的仓库列表 */
@@ -206,3 +206,5 @@ export const notMatch = css`
     }
   }
 `;
+
+export default cssCombine(repoList, userList, mobileList, notMatch);

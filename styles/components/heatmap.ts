@@ -17,9 +17,9 @@
  * limitations under the License.
  */
 
-import { css, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
 
-export const heatmap = css`
+const heatmap = css`
   #user-heatmap {
     + .divider:not(.divider-text) {
       border-color: #0000;
@@ -87,7 +87,7 @@ export const heatmap = css`
 `;
 
 // 动态
-export const activity = css`
+const activity = css`
   .activity-heatmap-container + .divider:not(.divider-text) {
     border-color: #0000;
   }
@@ -172,3 +172,5 @@ export const activity = css`
     }
   }
 `;
+
+export default cssCombine(heatmap, activity);

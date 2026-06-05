@@ -17,11 +17,11 @@
  * limitations under the License.
  */
 
-import { css, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
 import { botLabelStyle } from "@lutinglt/gitea-github-theme/styles/common";
 
 // 时间线
-export const timeline = css`
+const timeline = css`
   .repository.view.issue {
     .comment-list {
       /* 时间线本线 */
@@ -87,3 +87,5 @@ export const timeline = css`
     }
   }
 `;
+
+export default cssCombine(timeline);

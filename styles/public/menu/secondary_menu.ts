@@ -17,9 +17,9 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 
-export const secondaryMenu = css`
+const secondaryMenu = css`
   /* 二级菜单, 比如 Issue/PR/Actions 的筛选菜单 */
   .ui.secondary.menu {
     .item {
@@ -82,3 +82,5 @@ export const secondaryMenu = css`
     border-bottom: none !important;
   }
 `;
+
+export default cssCombine(secondaryMenu);

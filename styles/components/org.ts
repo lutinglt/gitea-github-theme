@@ -17,9 +17,9 @@
  * limitations under the License.
  */
 
-import { css, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
 
-export const org = css`
+const org = css`
   .page-content.organization {
     /* 组织成员头像 */
     .members .ui.avatar {
@@ -65,3 +65,5 @@ export const org = css`
     }
   }
 `;
+
+export default cssCombine(org);

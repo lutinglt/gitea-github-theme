@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, cssStyle, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, cssStyle, themeVars } from "@lutinglt/gitea-github-theme/core";
 import { primaryButtonHoverStyle, primaryButtonStyle } from "@lutinglt/gitea-github-theme/styles/common";
 
 const tinyStyle = cssStyle({
@@ -33,7 +33,7 @@ const tinyHoverStyle = cssStyle({
 });
 
 // 设置界面下的按钮
-export const button = css`
+const button = css`
   /* 不包含管理员的设置界面 */
   .user-main-content,
   .repo-setting-content,
@@ -113,7 +113,7 @@ export const button = css`
   }
 `;
 
-export const label = css`
+const label = css`
   /* Runner 标签 */
   .runner-container {
     /* 普通标签, runner 状态: 离线, runner 标签 */
@@ -124,10 +124,12 @@ export const label = css`
 `;
 
 // 修复组织设置界面的组织设置中多余的边框
-export const fixOrgSetting = css`
+const fixOrgSetting = css`
   .page-content.organization.settings {
     .org-setting-content {
       border: 0;
     }
   }
 `;
+
+export default cssCombine(button, label, fixOrgSetting);

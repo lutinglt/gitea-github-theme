@@ -17,11 +17,11 @@
  * limitations under the License.
  */
 
-import { css } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine } from "@lutinglt/gitea-github-theme/core";
 import { activeItemAfterStyle } from "@lutinglt/gitea-github-theme/styles/common";
 
 // 新建仓库页面下拉菜单
-export const newRepo = css`
+const newRepo = css`
   .page-content.repository.new-repo {
     .ui.dropdown .menu {
       .item:hover:after {
@@ -30,3 +30,5 @@ export const newRepo = css`
     }
   }
 `;
+
+export default cssCombine(newRepo);

@@ -17,10 +17,10 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 
 // 分页菜单
-export const paginationMenu = css`
+const paginationMenu = css`
   .ui.borderless.pagination.menu {
     align-items: center;
     background-color: unset;
@@ -62,3 +62,5 @@ export const paginationMenu = css`
     }
   }
 `;
+
+export default cssCombine(paginationMenu);

@@ -17,11 +17,11 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 import { activeItemAfterStyle, deleteHoverActiveStyle } from "@lutinglt/gitea-github-theme/styles/common";
 
 // 仓库打开文件时的视图
-export const repoFileView = css`
+const repoFileView = css`
   /* 隐藏主内容的下内容和页脚, 避免滚动文件树时滚动条遮挡 */
   body > .full.height:has(.repo-view-file-tree-container) {
     padding-bottom: 0;
@@ -281,7 +281,7 @@ export const repoFileView = css`
 `;
 
 // 避免手机/平板下路径容器过长导致换行, 取消固定
-export const repoFileViewMobile = css`
+const repoFileViewMobile = css`
   @media (max-width: 1023.98px) {
     .page-content.repository.file.list,
     .page-content.repository.file.editor {
@@ -302,7 +302,7 @@ export const repoFileViewMobile = css`
 `;
 
 // 代码编辑器
-export const codeEditorContainer = css`
+const codeEditorContainer = css`
   .code-editor-container {
     /* Gitea 限制最小高度为 90vh, 导致手机下留白过多, 但意义不明? */
     min-height: auto;
@@ -363,7 +363,7 @@ export const codeEditorContainer = css`
 `;
 
 // 文件编辑器
-export const fileEditor = css`
+const fileEditor = css`
   .page-content.repository.file.editor {
     .repo-view-content {
       /* 路径栏 */
@@ -431,7 +431,7 @@ export const fileEditor = css`
 `;
 
 // 提交表单(编译修改时底部的提交信息)
-export const commitForm = css`
+const commitForm = css`
   .repository.file.editor .commit-form-wrapper {
     .commit-avatar {
       border-radius: 9999px;
@@ -444,3 +444,5 @@ export const commitForm = css`
     }
   }
 `;
+
+export default cssCombine(repoFileView, repoFileViewMobile, codeEditorContainer, fileEditor, commitForm);

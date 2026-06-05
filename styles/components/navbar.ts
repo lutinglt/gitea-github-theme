@@ -17,10 +17,10 @@
  * limitations under the License.
  */
 
-import { css, customThemeVars, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, customThemeVars, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 import { fallbackVar } from "@vanilla-extract/css";
 
-export const navbarRight = css`
+const navbarRight = css`
   #navbar {
     padding: 8px 16px; /* 上下内边距 + .navbar-left & .navbar-right 的 min-height = 64px */
     min-height: 64px;
@@ -204,7 +204,7 @@ export const navbarRight = css`
 `;
 
 // 二级导航栏
-export const secondaryNav = css`
+const secondaryNav = css`
   .page-content > :first-child.secondary-nav {
     margin-bottom: 16px;
     /* 仪表板界面的二级导航栏用户菜单 */
@@ -230,3 +230,5 @@ export const secondaryNav = css`
     }
   }
 `;
+
+export default cssCombine(navbarRight, secondaryNav);

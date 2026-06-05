@@ -17,9 +17,9 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 
-export const repoFileLastCommit = css`
+const repoFileLastCommit = css`
   /* 仓库页和文件列表文件夹页的最后一次提交 */
   .repository.file.list #repo-files-table .gitea-github-theme-templates.repo-file-line.repo-file-last-commit {
     padding-right: 10px;
@@ -51,3 +51,5 @@ export const repoFileLastCommit = css`
     }
   }
 `;
+
+export default cssCombine(repoFileLastCommit);

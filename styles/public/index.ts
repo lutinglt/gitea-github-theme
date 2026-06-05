@@ -1,6 +1,3 @@
-// organize-imports-ignore
-// tslint:disable:ordered-imports
-// 组件导入有顺序, 禁止插件优化
 /*!
  * Copyright (c) https://github.com/lutinglt
  *
@@ -20,16 +17,33 @@
  * limitations under the License.
  */
 
-import "./base"; // 基础样式, 确保在其他样式之前导入
-import "./radius"; // 圆角, 此样式为基础样式, 确保在其他样式之前导入
-import "./transition"; // 过渡效果
-import "./table"; // 表格
-import "./button"; // 按钮
-import "./dropdown"; // 下拉框
-import "./input"; // 输入框
-import "./label"; // 标签
-import "./menu"; // 菜单
-import "./modal"; // 弹窗
-import "./tippy"; // 提示框
-import "./attached"; // 附加样式
-import "./other"; // 其他样式
+import { cssCombine } from "@lutinglt/gitea-github-theme/core";
+import attached from "./attached"; // 附加样式
+import base from "./base"; // 基础样式
+import button from "./button"; // 按钮
+import dropdown from "./dropdown"; // 下拉框
+import input from "./input"; // 输入框
+import label from "./label"; // 标签
+import menu from "./menu"; // 菜单
+import modal from "./modal"; // 弹窗
+import other from "./other"; // 其他样式
+import radius from "./radius"; // 圆角基础样式
+import table from "./table"; // 表格
+import tippy from "./tippy"; // 提示框
+import transition from "./transition"; // 过渡效果
+
+export default cssCombine(
+  base, // 基础样式, 确保在其他样式之前
+  radius, // 圆角基础样式, 确保在其他样式之前
+  transition,
+  table,
+  button,
+  dropdown,
+  input,
+  label,
+  menu,
+  modal,
+  tippy,
+  attached,
+  other
+);

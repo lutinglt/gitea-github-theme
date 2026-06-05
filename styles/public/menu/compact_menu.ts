@@ -17,10 +17,10 @@
  * limitations under the License.
  */
 
-import { css, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 
 // 单行双选项菜单
-export const smallCompactMenu = css`
+const smallCompactMenu = css`
   /* 编辑/预览切换菜单(仓库编辑文件时的编辑器操作栏左侧) */
   .page-content.repository.file.editor .repo-view-content .ui.edit.form .ui.top.attached.header,
   /* 订阅/关注切换菜单(应只选中订阅/关注页面, 不能选中通知页面) */
@@ -82,3 +82,5 @@ export const smallCompactMenu = css`
     }
   }
 `;
+
+export default cssCombine(smallCompactMenu);
