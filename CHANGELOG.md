@@ -28,3 +28,5 @@
 - Fix the last commit avatar on the repo homepage being blocked.
 - Fix the color of the danger button in the catppuccin theme.
 - Fix the common button floating and clicking colors on the catppuccin and gitea theme settings pages.
+- Fix the hovering and activation colors of the sub items in the second level menu of warehouse filtering on the
+  dashboard page.

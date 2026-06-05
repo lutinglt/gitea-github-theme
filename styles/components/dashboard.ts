@@ -104,6 +104,13 @@ export const dashboard = css`
         border-top-left-radius: 12px;
         border-top-right-radius: 12px;
         > .menu.repos-filter {
+          .item.active {
+            background: #0000;
+            &:hover {
+              background: ${themeVars.github.control.transparent.bgColor.hover};
+              color: ${themeVars.color.text.self}
+            }
+          }
           .ui.circular.label {
             border-color: ${themeVars.github.counter.borderColor};
             min-height: fit-content;
