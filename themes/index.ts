@@ -1,5 +1,5 @@
 /*!
- * Copyright (c) https://com/lutinglt
+ * Copyright (c) https://github.com/lutinglt
  *
  * See the NOTICE file distributed with this work for additional
  * information regarding copyright ownership.

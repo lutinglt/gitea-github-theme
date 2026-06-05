@@ -1,5 +1,15 @@
 {
   "name": "@lutinglt/gitea-github-theme",
+  "version": "1.26.2",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "lutinglt",
+    "url": "https://github.com/lutinglt"
+  },
+  "type": "module",
+  "engines": {
+    "bun": ">=1.3.14"
+  },
   "exports": {
     "./theme.config.ts": "./theme.config.ts",
     "./core": "./src/index.ts",
@@ -9,17 +19,10 @@
     "./themes": "./themes/index.ts",
     "./primer": "./primer/index.ts"
   },
-  "version": "1.26.2",
-  "license": "Apache-2.0",
-  "author": {
-    "name": "lutinglt",
-    "url": "https://github.com/lutinglt"
-  },
-  "type": "module",
   "scripts": {
     "lint": "bun eslint .",
     "format": "bun prettier --write .",
-    "bundle": "tsgo -b -v && bunx --bun vite build",
+    "bundle": "tsgo -b && bunx --bun vite build",
     "commit": "bun format && bun lint && bun test && bun bundle",
     "version": "bun scripts/version.ts",
     "release": "bun bundle && bun update:locale",

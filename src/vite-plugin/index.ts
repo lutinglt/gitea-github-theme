@@ -22,17 +22,19 @@ import fs from "node:fs";
 import path from "node:path";
 import type { PluginOption } from "vite";
 import type { GiteaThemeMeta, Theme } from "../core";
-import { createTheme, createThemeMetaInfo } from "../core";
-import { flushCSS } from "../core/css";
+import { createTheme, createThemeMetaInfo, flushCSS } from "../core";
 import { compileCSS } from "../vanilla-extract";
 import { buildFullDisplayName, buildFullThemeName } from "./utils";
 
-type ThemeEntry = { themeName: string; meta: GiteaThemeMeta; theme: Theme };
-type AutoThemeEntry = { darkThemeName: string; lightThemeName: string };
+type ThemeEntry = {
+  themeName: string;
+  meta: GiteaThemeMeta;
+  theme?: Theme;
+  autoTheme?: { darkThemeName: string; lightThemeName: string };
+};
 
 export function giteaGitHubTheme(): PluginOption {
-  const themeEntries = new Array<ThemeEntry>();
-  const autoThemeEntries = new Map<string, AutoThemeEntry>();
+  const themeEntries: ThemeEntry[] = [];
 
   return {
     name: "lutinglt-gitea-github-theme",
@@ -41,7 +43,7 @@ export function giteaGitHubTheme(): PluginOption {
       // 1. 动态导入 theme.config.ts（Bun 原生 TS + exports 自引用）
       const themeConfig = (await import("@lutinglt/gitea-github-theme/theme.config.ts")).default;
 
-      // 2. 解析主题条目
+      // 2. 解析主题条目 + 自动主题条目
       for (const themeSeries of themeConfig) {
         for (const [themeKeyName, entry] of Object.entries(themeSeries.themes)) {
           const name = entry.themeName ?? themeKeyName;
@@ -57,25 +59,23 @@ export function giteaGitHubTheme(): PluginOption {
             theme: entry.theme,
           });
         }
-      }
 
-      // 3. 解析自动主题条目
-      for (const themeSeries of themeConfig) {
         if (themeSeries.themes.dark && themeSeries.themes.light) {
           const themeName = buildFullThemeName(themeSeries, "auto");
-          const meta: GiteaThemeMeta = {
-            colorScheme: "auto",
-            displayName: themeSeries.autoTheme?.displayName
-              ? `GitHub ${themeSeries.autoTheme.displayName}`
-              : buildFullDisplayName(themeSeries, "auto"),
-            colorblindType: themeSeries.autoTheme?.colorblindType,
-          };
-          autoThemeEntries.set(themeName, {
-            darkThemeName: themeSeries.themes.dark.themeName!,
-            lightThemeName: themeSeries.themes.light.themeName!,
+          themeEntries.push({
+            themeName,
+            meta: {
+              colorScheme: "auto",
+              displayName: themeSeries.autoTheme?.displayName
+                ? `GitHub ${themeSeries.autoTheme.displayName}`
+                : buildFullDisplayName(themeSeries, "auto"),
+              colorblindType: themeSeries.autoTheme?.colorblindType,
+            },
+            autoTheme: {
+              darkThemeName: themeSeries.themes.dark.themeName!,
+              lightThemeName: themeSeries.themes.light.themeName!,
+            },
           });
-          // 将自动主题也加入 themeEntries 以便编译 CSS
-          themeEntries.push({ themeName, meta, theme: null as unknown as Theme });
         }
       }
 
@@ -101,14 +101,12 @@ export function giteaGitHubTheme(): PluginOption {
 
       // 编译每个主题的 CSS 并输出
       for (const entry of themeEntries) {
-        const { themeName, meta } = entry;
-        const autoTheme = autoThemeEntries.get(themeName);
+        const { themeName, meta, autoTheme } = entry;
 
         const rawThemeCSS = Buffer.from(
           compileCSS(() => {
             createThemeMetaInfo(meta);
-            // 自动主题不需要颜色变量, 只有 metaInfo
-            if (!autoTheme) createTheme(entry.theme);
+            if (entry.theme) createTheme(entry.theme);
           })
         );
         const themeCSS = transform({ filename: themeName + ".css", code: rawThemeCSS, minify: true }).code.toString();
