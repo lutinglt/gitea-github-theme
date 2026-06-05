@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { deepOverride, type DeepPartial } from "./utils";
+import { deepOverride, getCallerInfo, type DeepPartial } from "./utils";
 
 describe("deepOverride", () => {
   it("浅层覆盖字符串值", () => {
@@ -91,5 +91,58 @@ describe("deepOverride", () => {
       a: { x: "10", y: "2" },
       b: { x: "3", y: "40" },
     });
+  });
+});
+
+describe("getCallerInfo", () => {
+  it("直接调用者 — 返回此测试文件路径", () => {
+    const info = getCallerInfo();
+    expect(info).toContain("utils.test.ts");
+    expect(info).toMatch(/:\d+$/); // 以 :行号 结尾
+  });
+
+  it("skipFrames=0 返回直接调用者", () => {
+    function wrapper() {
+      return getCallerInfo(0);
+    }
+    const info = wrapper();
+    // wrapper 是直接调用者
+    expect(info).toContain("utils.test.ts");
+  });
+
+  it("skipFrames=1 跳过一个调用帧", () => {
+    function outer() {
+      return inner();
+    }
+    function inner() {
+      return getCallerInfo(1);
+    }
+    const info = outer();
+    // inner 被跳过，返回 outer 的调用者（即测试函数本身的位置）
+    expect(info).toContain("utils.test.ts");
+  });
+
+  it("返回格式为 '路径:行号'", () => {
+    const info = getCallerInfo();
+    // 格式: 绝对路径:数字行号
+    expect(info).toMatch(/\.ts:\d+$/);
+  });
+
+  it("返回非空字符串", () => {
+    const info = getCallerInfo();
+    expect(typeof info).toBe("string");
+    expect(info.length).toBeGreaterThan(0);
+  });
+
+  it("不返回 'unknown' (正常调用时)", () => {
+    const info = getCallerInfo();
+    expect(info).not.toBe("unknown");
+  });
+
+  it("负值 skipFrames 被规范化为 0 (不会越界)", () => {
+    const info = getCallerInfo(-5);
+    // 负值被 Math.max(0, skipFrames) 处理为 0
+    expect(info).toContain("utils.test.ts");
+    expect(typeof info).toBe("string");
   });
 });

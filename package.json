@@ -23,7 +23,7 @@
     "lint": "bun eslint .",
     "format": "bun prettier --write .",
     "bundle": "tsgo -b && bunx --bun vite build",
-    "commit": "bun format && bun lint && bun test && bun bundle",
+    "commit": "bun format && bun lint && bun bundle && bun vitest",
     "version": "bun scripts/version.ts",
     "release": "bun bundle && bun update:locale",
     "sync:theme": "bun scripts/syncTheme.ts",
@@ -31,7 +31,7 @@
     "update:locale": "bun scripts/translate.ts",
     "update:gitea": "bun scripts/updateGitea.ts",
     "install:clean": "rm -rf node_modules bun.lock bun.lockb && bun install",
-    "bundle:ci": "bun lint && bun vitest && bun bundle",
+    "bundle:ci": "bun lint && bun bundle && bun vitest ",
     "bundle:dev": "bun bundle && bun sync:theme"
   },
   "devDependencies": {

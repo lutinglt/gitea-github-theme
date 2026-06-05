@@ -1,119 +1,121 @@
-# 贡献指南
+# Contributing Guide
 
-## 目录结构
+## Directory Structure
 
-| 目录              | 说明                                      |
-| ----------------- | ----------------------------------------- |
-| src               | 主题生成框架与辅助工具的包                |
-| src/core          | 主题生成框架（CSS 变量、语法高亮样式）    |
-| src/functions     | 主题辅助工具（颜色计算等）                |
-| src/palette       | 主题调色板（GitHub / Gitea / Catppuccin） |
-| src/types         | 主题颜色变量类型定义                      |
-| src/vite-plugin   | 主题的 Vite 构建插件                      |
-| styles            | 主题样式覆盖                              |
-| styles/common     | 可复用的 CSS 样式片段                     |
-| styles/public     | 基础元素或跨页面元素的样式                |
-| styles/components | 具体页面的样式                            |
-| styles/templates  | 模板专属样式                              |
-| themes            | 颜色主题定义                              |
-| primer            | 自动生成的 Primer 设计令牌                |
-| scripts           | 构建和工具脚本                            |
-| templates         | Gitea 模板覆盖（可选）                    |
-| gitea             | 上游 Gitea 参考文件                       |
-| screenshots       | 主题截图                                  |
+| Directory         | Description                                    |
+| ----------------- | ---------------------------------------------- |
+| src               | Theme generation framework and utilities        |
+| src/core          | Theme generation framework (CSS vars, syntax highlighting styles) |
+| src/functions     | Theme utilities (color calculations, etc.)      |
+| src/palette       | Theme palettes (GitHub / Gitea / Catppuccin)    |
+| src/types         | Theme color variable type definitions           |
+| src/vite-plugin   | Theme Vite build plugin                         |
+| styles            | Theme style overrides                           |
+| styles/common     | Reusable CSS style fragments                    |
+| styles/public     | Base element or cross-page element styles       |
+| styles/components | Page-specific styles                            |
+| styles/templates  | Template-specific styles                        |
+| themes            | Color theme definitions                         |
+| primer            | Auto-generated Primer design tokens             |
+| scripts           | Build and utility scripts                       |
+| templates         | Gitea template overrides (optional)             |
+| gitea             | Upstream Gitea reference files                  |
+| screenshots       | Theme screenshots                               |
 
-## 贡献说明
+## Contribution Notes
 
-不推荐主题样式贡献, 因为 Gitea 主题最终是由单个 CSS 文件提供, 所以会有先后顺序覆盖, 样式影响广泛等问题.
+Style contributions are not recommended, as Gitea themes are ultimately delivered as a single CSS file, which introduces issues like ordering/override conflicts and broad-reaching style impacts.
 
-开发者每个人的思路不一样, 审核很难看出这些问题, 会极大增加维护难度.
+Each developer has their own approach, making it difficult for review to catch these issues, greatly increasing maintenance difficulty.
 
-如果确定理解了 Gitea 的样式布局和我的思路, 请先提交 Issue 确认工作量和预期效果, 然后再开发提交 PR.
+If you have confirmed understanding of Gitea's style layout and the project's approach, please first file an Issue to confirm scope and expected results, then develop and submit a PR.
 
-如果认为有更好的思路, 欢迎提交 Issue.
+If you believe you have a better approach, feel free to submit an Issue.
 
 > [!IMPORTANT]
 >
-> 提交 PR 时, 请执行 `bun commit`
+> When submitting a PR, please run `bun commit`
 
-## 开发环境
+## Development Environment
 
-主题依赖于 Bun 环境, 请确保你的环境中已经安装了 Bun, 推荐使用 Bun 1.3.14 或以上版本.
+The theme depends on the Bun runtime. Please ensure Bun is installed in your environment. Bun 1.3.14 or later is recommended.
 
-请使用 VSCode 开发, 并安装仓库中推荐的插件.
+Please use VSCode for development and install the recommended extensions in the repository.
 
-如果不喜欢多余的插件, 请务必安装 `vscode-styled-components` 插件, 此插件用于渲染和检查 TypeScript 中的 CSS 模板字符串.
+If you prefer fewer extensions, you must install the `vscode-styled-components` extension, which is used for rendering and checking CSS template strings in TypeScript.
 
-推荐使用 VSCode 1.102.0 版本以上开发, 此版本以上提供 TypeScript 代码中 16 进制颜色的支持.
+VSCode 1.102.0 or later is recommended for development, as this version and above support hex color rendering in TypeScript code.
 
-## 开发流程
+## Development Workflow
 
-### 安装依赖
+### Install Dependencies
 
 ```bash
 bun install
 ```
 
-### 设置环境变量
+### Set Environment Variables
 
-在项目根目录下创建 `.env` 文件, 变量参考 `.env.example` 文件.
+Create a `.env` file in the project root. Refer to `.env.example` for available variables.
 
-环境变量用于发送编译后的主题到服务器上, 快速预览主题.
+Environment variables are used to send compiled themes to a server for quick preview.
 
-### 编译主题
+### Compile Themes
 
-编译并同步到远程服务器预览
+Compile and sync to remote server for preview:
 
 ```bash
 bun bundle:dev
 ```
 
-编译所有主题
+Compile all themes:
 
 ```bash
 bun bundle
 ```
 
-格式化项目中的代码
+Format project code:
 
 ```bash
 bun format
 ```
 
-用于 PR, 检查并编译项目中的所有代码并进行格式化
+For PR submission — check and compile all project code with formatting:
 
 ```bash
 bun commit
 ```
 
-## 开发规范
+## Development Conventions
 
-`src`, `styles`, `themes` 为项目的主目录.
+`src`, `styles`, and `themes` are the project's main directories.
 
-跨模块引用时使用 package exports 路径, 例如 `import { defineTheme } from "@lutinglt/gitea-github-theme/core"`
+When referencing across modules, use package exports paths. For example:
+`import { defineTheme } from "@lutinglt/gitea-github-theme/core"`
 
-同模块内文件互相引用时使用相对路径, 例如 `import { defineTheme } from "./theme"`
+When referencing files within the same module, use relative paths. For example:
+`import { defineTheme } from "./theme"`
 
-## 颜色主题贡献
+## Color Theme Contributions
 
-主题文件命名格式: `主题名称.ts`，配合 `theme.config.ts` 注册使用。
+Theme file naming format: `themeName.ts`, used together with `theme.config.ts` registration.
 
-如果主题同时有深色和亮色变体, 框架会自动生成 auto 自动颜色主题.
+If a theme has both dark and light variants, the framework automatically generates an auto color theme.
 
-项目接受自定义主题并会附加到发布的版本中, 但项目所有者不参与维护和审核.
+The project accepts custom themes and will include them in published releases, but the project owner does not participate in their maintenance or review.
 
-请在颜色主题文件头部附加自己的作者信息, 方便 Issue 提问者找到你 `@`.
+Please add your author info at the top of the color theme file so Issue reporters can `@` mention you.
 
-推荐使用 `defineTheme` 配合 `ThemeColor` 类型来定义主题颜色, 框架会自动计算生成所有 Gitea CSS 变量.
+It is recommended to use `defineTheme` with the `ThemeColor` type to define theme colors. The framework will automatically compute and generate all Gitea CSS variables.
 
-颜色计算函数可从 `@lutinglt/gitea-github-theme/core` 导入 `scaleColorLight`, 或使用 `polished` 库.
+Color calculation functions can be imported from `@lutinglt/gitea-github-theme/core` (`scaleColorLight`), or use the `polished` library.
 
-例: `themes/主题名称.ts`
+Example: `themes/my-theme.ts`
 
 ```ts
 /**
- * @author 你的名字
- * @description 主题描述
+ * @author your-name
+ * @description theme description
  */
 import { defineTheme, scaleColorLight } from "@lutinglt/gitea-github-theme/core";
 import type { ThemeColor, Syntax } from "@lutinglt/gitea-github-theme/core";
@@ -139,13 +141,13 @@ const themeColor: ThemeColor = {
 };
 
 const syntaxColor: Syntax = {
-  /* 自定义代码高亮色, 或导入使用其他主题的代码高亮色 */
+  /* Custom code highlight colors, or import from another theme */
 };
 
 export default defineTheme({ colorType: "theme", themeColor, syntaxColor });
 ```
 
-如需使用 Gitea 原生颜色格式, 使用 `colorType: "gitea"` 配合 `GiteaColor` 类型:
+To use Gitea's native color format, use `colorType: "gitea"` with the `GiteaColor` type:
 
 ```ts
 import type { GiteaColor, Syntax } from "@lutinglt/gitea-github-theme/core";
@@ -160,25 +162,20 @@ const syntaxColor: Syntax = {
 export default defineTheme({ colorType: "gitea", themeColor: giteaColor, syntaxColor });
 ```
 
-完成主题颜色开发后, 在 `theme.config.ts` 中注册主题系列, 编译后在 Gitea 实例中截图放入 `screenshots`
-目录, 截图名与主题名相同. (推荐克隆本仓库, 避免泄露个人隐私)
+After completing theme color development, register the theme series in `theme.config.ts`, compile it, and take screenshots in a Gitea instance. Place them in the `screenshots` directory with filenames matching the theme names. (Cloning the repository is recommended to avoid leaking personal information.)
 
-然后将截图信息添加到 `README.md` 文件中.
+Then add screenshot information to `README.md`.
 
-颜色复用案例可参考 `themes/github.ts` 的色盲主题实现.
+For color reuse patterns, see the colorblind theme implementation in `themes/github.ts`.
 
-## 主题样式贡献
+## Theme Style Contributions
 
-主题样式使用 `css()`
-模板字符串开发，字符串经过 LightningCSS 处理, 支持 CSS 嵌套语法。请勿使用 SCSS 函数，如需复杂处理请使用 TypeScript 相关库，比如项目自带的
-`polished` 库。
+Theme styles use the `css()` template string for development. Strings are processed by LightningCSS and support CSS nesting syntax. Do not use SCSS functions; for complex processing, use TypeScript libraries such as the bundled `polished` library.
 
-推荐需要复杂处理时，提取逻辑到 `src/functions` 目录下的函数中。
+For complex logic, it is recommended to extract it into functions under the `src/functions` directory.
 
-主题样式中使用到的所有颜色必须使用颜色变量，导入 `import { themeVars } from "@lutinglt/gitea-github-theme/core"`
+All colors used in theme styles must use color variables. Import them via `import { themeVars } from "@lutinglt/gitea-github-theme/core"`.
 
-涉及到主题自己的颜色变量 `${themeVars.github.xxx}`，在使用时请将使用的文件和变量添加到对应变量的注释中
-`src/types/color/github`
+When using theme-specific color variables like `${themeVars.github.xxx}`, please add the file and variable to the corresponding variable's comment in `src/types/color/github`.
 
-小型圆角 (6px) 请使用全局圆角变量，导入
-`import { otherThemeVars } from "@lutinglt/gitea-github-theme/core"`，`${otherThemeVars.border.radius}`
+For small border-radius values (6px), use the global border-radius variable. Import via `import { otherThemeVars } from "@lutinglt/gitea-github-theme/core"` and use `${otherThemeVars.border.radius}`.

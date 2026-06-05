@@ -3,6 +3,7 @@
 # 忽略非项目代码统计
 .github/** linguist-vendored
 .vscode/** linguist-generated
+dist/** linguist-generated
 gitea/** linguist-generated
 primer/** linguist-generated
 primer/index.ts -linguist-generated

@@ -45,13 +45,38 @@ export function deepOverride<T extends object>(target: T, patch: DeepPartial<T>)
  * 每层中间函数由调用方自行声明需要跳过的帧数，
  * 而非将调用深度硬编码在此函数中。
  *
+ * - Bun 的 Error.stack 格式与 V8 兼容 (at funcName (file:line:col))
+ * - 通过预编译正则和限制堆栈深度来减少开销
+ *
  * @param skipFrames 额外跳过的帧数（默认 0：返回直接调用者）
  * @returns 格式 "path/file:line"，无法解析时返回 "unknown"
  */
+
+// 预编译正则：匹配 "at funcName (file:line:col)" 或 "(file:line:col)"
+const STACK_FRAME_WITH_PARENS_RE = /\((.+?):(\d+):(\d+)\)/;
+// 匹配 "at file:line:col"（无函数名或匿名场景）
+const STACK_FRAME_BARE_RE = /at\s+(.+?):(\d+):(\d+)/;
+
 export function getCallerInfo(skipFrames: number = 0): string {
+  // 限制 Error 堆栈深度以减少字符串内存开销，仅需要定位调用者
+  const prevLimit = Error.stackTraceLimit;
+  Error.stackTraceLimit = Math.max(3, 3 + Math.max(0, skipFrames));
+
   const stack = new Error().stack?.split("\n") || [];
-  const index = 2 + skipFrames;
+
+  // 恢复堆栈深度限制，避免影响其他依赖完整堆栈的代码
+  Error.stackTraceLimit = prevLimit;
+
+  const index = 2 + Math.max(0, skipFrames);
   const frame = stack[index] || stack[stack.length - 1] || "";
-  const match = frame.match(/\((.+?):(\d+):(\d+)\)/) ?? frame.match(/at\s+(.+?):(\d+):(\d+)/);
-  return match ? `${match[1]}:${match[2]}` : frame.trim() || "unknown";
+
+  // 优先匹配括号内的 file:line:col 格式（V8 / Bun 通用）
+  const parensMatch = frame.match(STACK_FRAME_WITH_PARENS_RE);
+  if (parensMatch) return `${parensMatch[1]}:${parensMatch[2]}`;
+
+  // 回退：匹配不带括号的格式（匿名函数 / eval 场景）
+  const bareMatch = frame.match(STACK_FRAME_BARE_RE);
+  if (bareMatch) return `${bareMatch[1]}:${bareMatch[2]}`;
+
+  return frame.trim() || "unknown";
 }

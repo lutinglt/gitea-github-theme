@@ -23,8 +23,8 @@ import {
   catppuccinMacchiatoTheme,
   catppuccinMochaTheme,
 } from "./catppuccin";
-import { giteaDarkTheme } from "./giteaDark";
-import { giteaLightTheme } from "./giteaLight";
+import { giteaDarkColor, giteaDarkTheme } from "./giteaDark";
+import { giteaLightColor, giteaLightTheme } from "./giteaLight";
 import {
   githubColorblindDarkTheme,
   githubColorblindLightTheme,
@@ -44,6 +44,11 @@ import {
   githubTritanopiaDarkTheme,
   githubTritanopiaLightTheme,
 } from "./github";
+
+export const giteaColor = {
+  dark: giteaDarkColor,
+  light: giteaLightColor,
+};
 
 export default {
   github: {
