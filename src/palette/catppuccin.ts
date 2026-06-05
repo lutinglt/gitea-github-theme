@@ -254,7 +254,7 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
         },
       },
     },
-    workflowCardBg: flavor.colors.surface0.hex,
+    workflowCardBg: flavor.colors.mantle.hex,
     counter: { borderColor: "#0000" },
     progressBar: { track: { bgColor: "#0000", borderColor: "#0000" } },
     topicTag: { borderColor: "#0000" },
