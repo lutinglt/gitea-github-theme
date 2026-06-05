@@ -134,7 +134,7 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
     reaction: { bg: "initial", hoverBg: themeVars.color.primary.self, activeBg: themeVars.color.primary.alpha.num40 },
     tooltip: { text: flavor.colors.base.hex, bg: flavor.colors.lavender.hex },
     nav: {
-      bg: flavor.colors.mantle.hex,
+      bg: flavor.colors.crust.hex,
       hoverBg: themeVars.color.hover.self,
       text: themeVars.color.text.self,
     },
