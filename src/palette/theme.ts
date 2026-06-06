@@ -17,9 +17,9 @@
  * limitations under the License.
  */
 
-import { rgba, saturate } from "polished";
+import { saturate } from "color2k";
 import type { ThemeVars } from "../core";
-import { scaleColorLight } from "../functions";
+import { rgba, scaleColorLight } from "../functions";
 import type { Ansi, Console, Diff, GitHub, Message, Named, Other, Primary, Secondary } from "../types";
 import { themeVars } from "../types";
 
@@ -328,27 +328,27 @@ export function theme2ThemeVars(themeColor: ThemeColor): ThemeVars {
         hover: rgba(themeColor.base.red, 0.3),
       },
       border: rgba(themeColor.base.red, 0.4),
-      text: saturate(0.2, themeColor.base.red), // 饱和度提高
+      text: saturate(themeColor.base.red, 0.2), // 饱和度提高
     },
     success: {
       bg: rgba(themeColor.base.green, 0.1),
       border: rgba(themeColor.base.green, 0.4),
-      text: saturate(0.2, themeColor.base.green),
+      text: saturate(themeColor.base.green, 0.2),
     },
     warning: {
       bg: rgba(themeColor.base.yellow, 0.1),
       border: rgba(themeColor.base.yellow, 0.4),
-      text: saturate(0.2, themeColor.base.yellow),
+      text: saturate(themeColor.base.yellow, 0.2),
     },
     info: {
       bg: rgba(themeColor.base.blue, 0.1),
       border: rgba(themeColor.base.blue, 0.4),
-      text: saturate(0.2, themeColor.base.blue),
+      text: saturate(themeColor.base.blue, 0.2),
     },
     priority: {
       bg: rgba(themeColor.base.purple, 0.1),
       border: rgba(themeColor.base.purple, 0.4),
-      text: saturate(0.2, themeColor.base.purple),
+      text: saturate(themeColor.base.purple, 0.2),
     },
   };
 

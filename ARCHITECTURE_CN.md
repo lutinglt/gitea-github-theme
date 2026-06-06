@@ -302,7 +302,7 @@ theme-github-auto.css:
 
 ### 颜色缩放计算
 
-[src/functions/scss.ts](src/functions/scss.ts) 中的 `scaleColorLight()` 实现了 Sass `color.scale()` 算法：
+[src/functions/color.ts](src/functions/color.ts) 中的 `scaleColorLight()` 实现了 Sass `color.scale()` 算法：
 
 ```
 变暗:  newL = currentL × (1 + scale/100)    [scale < 0]
@@ -401,7 +401,7 @@ const baseButton = css`
 │   │   ├── display.ts      # Display color scale → GitHubColor 覆写
 │   │   └── catppuccinSyntax.ts  # Catppuccin 语法高亮
 │   ├── functions/          # 工具函数
-│   │   ├── scss.ts         # scaleColorLight（Sass color.scale 移植）
+│   │   ├── color.ts         # scaleColorLight（Sass color.scale）+ rgba 转换
 │   │   └── var.ts          # extractVarName（CSS 变量名提取）
 │   ├── types/              # 类型定义与 CSS 变量契约
 │   │   ├── color/          # 颜色结构定义（primary, secondary, named, 等）

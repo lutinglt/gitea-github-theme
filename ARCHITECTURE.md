@@ -312,7 +312,7 @@ theme-github-auto.css:
 
 ### Color Scale Calculation
 
-`scaleColorLight()` in [src/functions/scss.ts](src/functions/scss.ts) implements the Sass `color.scale()` algorithm:
+`scaleColorLight()` in [src/functions/color.ts](src/functions/color.ts) implements the Sass `color.scale()` algorithm:
 
 ```
 darken:  newL = currentL × (1 + scale/100)         [scale < 0]
@@ -416,7 +416,7 @@ outputs static CSS strings.
 │   │   ├── display.ts      # Display color scale → GitHubColor overrides
 │   │   └── catppuccinSyntax.ts  # Catppuccin syntax highlighting
 │   ├── functions/          # Utility functions
-│   │   ├── scss.ts         # scaleColorLight (Sass color.scale port)
+│   │   ├── color.ts         # scaleColorLight (Sass color.scale) + rgba wrapper
 │   │   └── var.ts          # extractVarName (CSS variable name extraction)
 │   ├── types/              # Type definitions and CSS variable contracts
 │   │   ├── color/          # Color structure definitions (primary, secondary, named, etc.)

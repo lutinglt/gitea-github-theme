@@ -306,9 +306,9 @@ exports[`display2GitHubColor > cover 后 contribution 颜色被改写 1`] = `
     },
     "primary": {
       "bgColor": {
-        "active": "#da61a2",
+        "active": "hsla(328, 62%, 62%, 1)",
         "disabled": "#105823",
-        "hover": "#d65299",
+        "hover": "hsla(328, 62%, 58%, 1)",
         "rest": "#d34591",
       },
       "borderColor": {
@@ -330,7 +330,7 @@ exports[`display2GitHubColor > cover 后 contribution 颜色被改写 1`] = `
       },
     },
     "star": {
-      "iconColor": "#ec6daf",
+      "iconColor": "hsla(329, 77%, 68%, 1)",
     },
   },
   "buttonCounter": {
@@ -1792,7 +1792,7 @@ exports[`display2GitHubColor > cover 后 contribution 颜色被改写 1`] = `
   },
   "underlineNav": {
     "borderColor": {
-      "active": "#f56bb3",
+      "active": "hsla(329, 87%, 69%, 1)",
       "hover": "#3d444db3",
     },
     "iconColor": {
@@ -2108,9 +2108,9 @@ exports[`display2GitHubColor > cover 后 contribution 颜色被改写 2`] = `
     },
     "primary": {
       "bgColor": {
-        "active": "#b92878",
+        "active": "hsla(327, 65%, 44%, 1)",
         "disabled": "#95d8a6",
-        "hover": "#c42a7e",
+        "hover": "hsla(327, 65%, 47%, 1)",
         "rest": "#ce2c85",
       },
       "borderColor": {
@@ -2132,7 +2132,7 @@ exports[`display2GitHubColor > cover 后 contribution 颜色被改写 2`] = `
       },
     },
     "star": {
-      "iconColor": "#b82379",
+      "iconColor": "hsla(326, 68%, 43%, 1)",
     },
   },
   "buttonCounter": {
@@ -3594,7 +3594,7 @@ exports[`display2GitHubColor > cover 后 contribution 颜色被改写 2`] = `
   },
   "underlineNav": {
     "borderColor": {
-      "active": "#c7197c",
+      "active": "hsla(326, 78%, 44%, 1)",
       "hover": "#d1d9e0b3",
     },
     "iconColor": {
@@ -3640,7 +3640,7 @@ exports[`display2GitHubColor > cover 后 contribution 颜色被改写 3`] = `
   },
   "bgColor": {
     "accent": {
-      "emphasis": "#c64c8d",
+      "emphasis": "hsla(328, 52%, 54%, 1)",
       "muted": "#451c35",
     },
     "attention": {
@@ -3910,10 +3910,10 @@ exports[`display2GitHubColor > cover 后 contribution 颜色被改写 3`] = `
     },
     "primary": {
       "bgColor": {
-        "active": "#cd609a",
+        "active": "hsla(328, 52%, 59%, 1)",
         "disabled": "#105823",
-        "hover": "#ca5794",
-        "rest": "#c64c8d",
+        "hover": "hsla(328, 52%, 57%, 1)",
+        "rest": "hsla(328, 52%, 54%, 1)",
       },
       "borderColor": {
         "active": "#cdd9e526",
@@ -3934,7 +3934,7 @@ exports[`display2GitHubColor > cover 后 contribution 颜色被改写 3`] = `
       },
     },
     "star": {
-      "iconColor": "#e475af",
+      "iconColor": "hsla(329, 67%, 68%, 1)",
     },
   },
   "buttonCounter": {
@@ -5396,7 +5396,7 @@ exports[`display2GitHubColor > cover 后 contribution 颜色被改写 3`] = `
   },
   "underlineNav": {
     "borderColor": {
-      "active": "#eb63a9",
+      "active": "hsla(329, 77%, 66%, 1)",
       "hover": "#3d444db3",
     },
     "iconColor": {

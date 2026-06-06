@@ -510,7 +510,7 @@ exports[`gitea2ThemeVars > dark 输出含 color 和 github 顶层键 1`] = `
       },
       "danger": {
         "bgColor": {
-          "active": "rgba(219,40,40,0.4)",
+          "active": "rgba(219, 40, 40, 0.402)",
           "hover": "#db28281a",
         },
         "fgColor": {
@@ -566,7 +566,7 @@ exports[`gitea2ThemeVars > dark 输出含 color 和 github 顶层键 1`] = `
       "button": {
         "primary": {
           "fgColor": {
-            "accent": "#498fd5",
+            "accent": "hsla(210, 63%, 56%, 1)",
           },
         },
       },
@@ -1105,7 +1105,7 @@ exports[`gitea2ThemeVars > dark 输出含 color 和 github 顶层键 2`] = `
       },
       "danger": {
         "bgColor": {
-          "active": "rgba(219,40,40,0.4)",
+          "active": "rgba(219, 40, 40, 0.402)",
           "hover": "#db28281a",
         },
         "fgColor": {
@@ -1161,7 +1161,7 @@ exports[`gitea2ThemeVars > dark 输出含 color 和 github 顶层键 2`] = `
       "button": {
         "primary": {
           "fgColor": {
-            "accent": "#2c76bf",
+            "accent": "hsla(210, 63%, 46%, 1)",
           },
         },
       },

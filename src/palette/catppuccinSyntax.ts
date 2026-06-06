@@ -18,7 +18,7 @@
  */
 
 import type { CatppuccinFlavor } from "@catppuccin/palette";
-import { rgba } from "polished";
+import { rgba } from "../functions";
 import type { Syntax } from "../types";
 
 /**

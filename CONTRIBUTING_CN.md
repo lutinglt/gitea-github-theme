@@ -106,7 +106,7 @@ bun commit
 
 推荐使用 `defineTheme` 配合 `ThemeColor` 类型来定义主题颜色, 框架会自动计算生成所有 Gitea CSS 变量.
 
-颜色计算函数可从 `@lutinglt/gitea-github-theme/core` 导入 `scaleColorLight`, 或使用 `polished` 库.
+颜色计算函数可从 `@lutinglt/gitea-github-theme/core` 导入 `scaleColorLight` 和 `rgba`, 或使用 `color2k` 库进行额外颜色操作.
 
 例: `themes/主题名称.ts`
 
@@ -171,7 +171,7 @@ export default defineTheme({ colorType: "gitea", themeColor: giteaColor, syntaxC
 
 主题样式使用 `css()`
 模板字符串开发，字符串经过 LightningCSS 处理, 支持 CSS 嵌套语法。请勿使用 SCSS 函数，如需复杂处理请使用 TypeScript 相关库，比如项目自带的
-`polished` 库。
+`color2k` 库。
 
 推荐需要复杂处理时，提取逻辑到 `src/functions` 目录下的函数中。
 

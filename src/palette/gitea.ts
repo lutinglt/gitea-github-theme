@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { opacify, saturate } from "polished";
+import { opacify, saturate } from "color2k";
 import type { ThemeVars } from "../core";
 import { scaleColorLight } from "../functions";
 import type { Ansi, Console, Diff, GitHub, Message, Named, Other, Primary, Secondary } from "../types";
@@ -107,7 +107,7 @@ export function gitea2ThemeVars(giteaColor: GiteaColor): ThemeVars {
         fgColor: { hover: giteaColor.named.red.light },
         bgColor: {
           hover: giteaColor.named.red.badge.bg,
-          active: opacify(0.3, giteaColor.named.red.badge.bg),
+          active: opacify(giteaColor.named.red.badge.bg, 0.3),
         },
       },
     },
@@ -152,7 +152,7 @@ export function gitea2ThemeVars(giteaColor: GiteaColor): ThemeVars {
       button: {
         primary: {
           fgColor: {
-            accent: saturate(0.1, scaleColorLight(giteaColor.primary.self, giteaColor.isDarkTheme ? 10 : -10)),
+            accent: saturate(scaleColorLight(giteaColor.primary.self, giteaColor.isDarkTheme ? 10 : -10), 0.1),
           },
         },
       },

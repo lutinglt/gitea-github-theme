@@ -17,5 +17,5 @@
  * limitations under the License.
  */
 
-export { scaleColorLight } from "./scss";
+export { rgba, scaleColorLight } from "./color";
 export { extractVarName } from "./var";

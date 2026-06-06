@@ -47,7 +47,6 @@
     "globals": "^17.6.0",
     "jiti": "^2.6.1",
     "lightningcss": "^1.32.0",
-    "polished": "^4.3.1",
     "prettier": "3.8.1",
     "prettier-plugin-organize-imports": "^4.3.0",
     "style-dictionary": "^5.4.1",
@@ -85,5 +84,8 @@
         }
       }
     ]
+  },
+  "dependencies": {
+    "culori": "^4.0.2"
   }
 }

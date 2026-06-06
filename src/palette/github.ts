@@ -18,7 +18,7 @@
  */
 
 import type { Primer } from "@lutinglt/gitea-github-theme/primer";
-import { mix, saturate } from "polished";
+import { mix, saturate } from "color2k";
 import { scaleColorLight } from "../functions";
 import type { Ansi, Console, Diff, GitHub, Message, Other } from "../types";
 import { themeVars } from "../types";
@@ -55,7 +55,7 @@ export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
       bg: {
         self: githubColor.bgColor.danger.muted,
         active: githubColor.bgColor.danger.emphasis,
-        hover: mix(0.25, githubColor.bgColor.danger.muted, githubColor.bgColor.danger.emphasis),
+        hover: mix(githubColor.bgColor.danger.muted, githubColor.bgColor.danger.emphasis, 0.75),
       },
       border: githubColor.borderColor.danger.muted,
       text: githubColor.fgColor.danger, // Gitea 用处更多, 不与 GitHub 保持一致
@@ -291,8 +291,8 @@ export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
         primary: {
           fgColor: {
             accent: saturate(
-              0.1,
-              scaleColorLight(githubColor.themeExtra.button.primary.fgColor.accent, githubColor.isDarkTheme ? 10 : -10)
+              scaleColorLight(githubColor.themeExtra.button.primary.fgColor.accent, githubColor.isDarkTheme ? 10 : -10),
+              0.1
             ),
           },
         },
@@ -301,8 +301,8 @@ export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
         default: {
           bgColor: {
             num5: saturate(
-              0.2,
-              scaleColorLight(githubColor.contribution.default.bgColor[4], githubColor.isDarkTheme ? 58 : -58)
+              scaleColorLight(githubColor.contribution.default.bgColor[4], githubColor.isDarkTheme ? 58 : -58),
+              0.2
             ),
           },
           borderColor: { num5: githubColor.contribution.default.borderColor[4] },

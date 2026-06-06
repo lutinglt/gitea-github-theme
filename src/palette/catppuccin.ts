@@ -18,8 +18,8 @@
  */
 
 import type { CatppuccinFlavor } from "@catppuccin/palette";
-import { darken, lighten, mix, rgba, saturate } from "polished";
-import { scaleColorLight } from "../functions";
+import { darken, lighten, mix, saturate } from "color2k";
+import { rgba, scaleColorLight } from "../functions";
 import type { Ansi, Console, Diff, GitHub, Other } from "../types";
 import { themeVars } from "../types";
 import type { ThemeColor } from "./theme";
@@ -30,7 +30,7 @@ import type { ThemeColor } from "./theme";
 export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
   const accentColor = flavor.colors.mauve.hex;
   // 颜色偏向 base, 避免 latte 下与背景色相同
-  const buttonColor = mix(0.6, flavor.colors.base.hex, flavor.colors.surface0.hex);
+  const buttonColor = mix(flavor.colors.base.hex, flavor.colors.surface0.hex, 0.4);
 
   const ansi: Ansi = {
     black: flavor.ansiColors.black.normal.hex,
@@ -89,7 +89,7 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
     logo: themeVars.color.primary.self,
     body: flavor.colors.base.hex,
     box: {
-      header: mix(0.65, flavor.colors.base.hex, flavor.colors.surface0.hex),
+      header: mix(flavor.colors.base.hex, flavor.colors.surface0.hex, 0.35),
       body: { self: themeVars.color.body, highlight: rgba(accentColor, 0.2) },
     },
     text: {
@@ -188,8 +188,8 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
         fgColor: { rest: flavor.colors.base.hex },
         bgColor: {
           rest: flavor.colors.green.hex,
-          hover: lighten(0.05, flavor.colors.green.hex),
-          active: saturate(0.05, flavor.colors.green.hex),
+          hover: lighten(flavor.colors.green.hex, 0.05),
+          active: saturate(flavor.colors.green.hex, 0.05),
         },
         borderColor: { rest: flavor.colors.green.hex, hover: flavor.colors.green.hex },
       },
@@ -198,7 +198,7 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
         bgColor: {
           rest: buttonColor,
           hover: flavor.colors.red.hex,
-          active: darken(0.05, flavor.colors.red.hex),
+          active: darken(flavor.colors.red.hex, 0.05),
         },
         borderColor: { hover: flavor.colors.red.hex },
       },
@@ -262,7 +262,7 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
       button: { primary: { fgColor: { accent: flavor.colors.green.hex } } },
       contribution: {
         default: {
-          bgColor: { num5: saturate(0.1, scaleColorLight(accentColor, flavor.dark ? 25 : -25)) },
+          bgColor: { num5: saturate(scaleColorLight(accentColor, flavor.dark ? 25 : -25), 0.1) },
           borderColor: { num5: themeVars.github.contribution.default.borderColor.num0 },
         },
       },

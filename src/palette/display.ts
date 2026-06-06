@@ -18,7 +18,7 @@
  */
 
 import type { Primer } from "@lutinglt/gitea-github-theme/primer";
-import { saturate } from "polished";
+import { saturate } from "color2k";
 import { scaleColorLight } from "../functions";
 import { deepOverride } from "../utils";
 import type { GitHubColor } from "./github";
@@ -35,7 +35,7 @@ export function display2GitHubColor(
     fgColor: { accent: soft ? displayColor[7] : displayColor[6] },
     bgColor: {
       accent: {
-        emphasis: soft ? saturate(-0.1, scaleColorLight(displayColor[5], -2)) : displayColor[5],
+        emphasis: soft ? saturate(scaleColorLight(displayColor[5], -2), -0.1) : displayColor[5],
         muted: soft ? displayColor[1] : displayColor[0],
       },
     },
@@ -46,26 +46,26 @@ export function display2GitHubColor(
           rest: baseGitHubColor.button.primary.fgColor.rest,
         },
         bgColor: {
-          rest: soft ? saturate(-0.1, scaleColorLight(displayColor[5], -2)) : displayColor[5],
+          rest: soft ? saturate(scaleColorLight(displayColor[5], -2), -0.1) : displayColor[5],
           hover: soft
-            ? saturate(-0.1, scaleColorLight(displayColor[5], 4))
+            ? saturate(scaleColorLight(displayColor[5], 4), -0.1)
             : baseGitHubColor.isDarkTheme
               ? scaleColorLight(displayColor[5], 7)
               : scaleColorLight(displayColor[5], -5),
           active: soft
-            ? saturate(-0.1, scaleColorLight(displayColor[5], 9))
+            ? saturate(scaleColorLight(displayColor[5], 9), -0.1)
             : baseGitHubColor.isDarkTheme
               ? scaleColorLight(displayColor[5], 15)
               : scaleColorLight(displayColor[5], -10),
         },
       },
       star: {
-        iconColor: soft ? scaleColorLight(displayColor[6], -2) : saturate(0.1, scaleColorLight(displayColor[6], -2)),
+        iconColor: soft ? scaleColorLight(displayColor[6], -2) : saturate(scaleColorLight(displayColor[6], -2), 0.1),
       },
     },
     underlineNav: {
       borderColor: {
-        active: soft ? scaleColorLight(saturate(0.1, displayColor[6]), -5) : saturate(0.2, displayColor[6]),
+        active: soft ? scaleColorLight(saturate(displayColor[6], 0.1), -5) : saturate(displayColor[6], 0.2),
       },
     },
     contribution: {

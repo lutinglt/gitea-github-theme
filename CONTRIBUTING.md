@@ -115,8 +115,8 @@ Please add your author info at the top of the color theme file so Issue reporter
 It is recommended to use `defineTheme` with the `ThemeColor` type to define theme colors. The framework will
 automatically compute and generate all Gitea CSS variables.
 
-Color calculation functions can be imported from `@lutinglt/gitea-github-theme/core` (`scaleColorLight`), or use the
-`polished` library.
+Color calculation functions can be imported from `@lutinglt/gitea-github-theme/core` (`scaleColorLight`, `rgba`),
+or use the `color2k` library for additional color manipulation.
 
 Example: `themes/my-theme.ts`
 
@@ -182,7 +182,7 @@ For color reuse patterns, see the colorblind theme implementation in `themes/git
 
 Theme styles use the `css()` template string for development. Strings are processed by LightningCSS and support CSS
 nesting syntax. Do not use SCSS functions; for complex processing, use TypeScript libraries such as the bundled
-`polished` library.
+`color2k` library.
 
 For complex logic, it is recommended to extract it into functions under the `src/functions` directory.
 
