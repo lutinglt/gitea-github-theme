@@ -3,6 +3,16 @@
 - Starting from this version, CSS nesting will no longer be expanded, which will reduce the volume by 40% and improve
   loading speed,ensure styles are applied correctly by keeping Chrome/Edge >= 120, Firefox >= 121, Safari >= 16.5.
 
+### 🎉 The theme framework is now stable
+
+The core internal generation framework of the theme has been refactored, with build speed optimized to under 1 second.
+There are three ways to define a theme, and you can choose according to your needs. Custom themes also support
+additional custom styles. Feel free to check out CONTRIBUTING.md and the project’s internal documentation to contribute
+your own themes!
+
+All currently known GitHub color themes have been adapted, with additional support for custom pink, Gitea colors, and
+Catppuccin colors.
+
 ### ✨ Feature
 
 - Add high contrast color themes.
