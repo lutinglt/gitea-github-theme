@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import type { ColorblindType, Theme } from "../core";
+import type { ColorblindType, CSSString, Theme } from "../core";
 
 type ThemeConfig = {
   /** 主题名称, 用于生成文件名, 未指定时取 themes 中的键名 */
@@ -54,6 +54,8 @@ export type ThemeSeries = {
   };
   /** 必须至少声明 dark/light 其中一个, 如果 dark & light 都声明了, 会生成自动颜色主题 */
   themes: Themes;
+  /** 主题系列追加的样式, 优先级高于默认样式 */
+  styles?: CSSString;
 };
 
 /** 定义主题配置 */

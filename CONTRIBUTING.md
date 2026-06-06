@@ -83,7 +83,7 @@ bun bundle
 Format project code:
 
 ```bash
-bun format
+bun fmt
 ```
 
 For PR submission — check and compile all project code with formatting:

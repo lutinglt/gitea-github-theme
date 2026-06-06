@@ -77,7 +77,7 @@ bun bundle
 格式化项目中的代码
 
 ```bash
-bun format
+bun fmt
 ```
 
 用于 PR, 检查并编译项目中的所有代码并进行格式化

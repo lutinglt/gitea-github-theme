@@ -25,7 +25,6 @@ import { captureStyle } from "../vanilla-extract";
 declare const CSSBrand: unique symbol;
 type CSSObject = { [CSSBrand]: true };
 type CSSPrimitive = string | number;
-type CSSString = string & CSSObject;
 type CSSInterpolation = CSSPrimitive | CSSObject | undefined;
 type SelectorStyleRule =
   | StyleRule
@@ -33,6 +32,7 @@ type SelectorStyleRule =
       [key: string]: StyleRule | SelectorStyleRule;
     };
 
+export type CSSString = string & CSSObject;
 /**
  * css 模板字符串 —— 类式 linaria 的 css tag，用于 vscode-styled-components 高亮。
  * 构建时校验 CSS 语法并返回 CSS 字符串。

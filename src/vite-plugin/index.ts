@@ -19,7 +19,7 @@
 
 import { transform } from "lightningcss";
 import type { PluginOption } from "vite";
-import { createTheme, createThemeMetaInfo, type GiteaThemeMeta, type Theme } from "../core";
+import { createTheme, createThemeMetaInfo, type CSSString, type GiteaThemeMeta, type Theme } from "../core";
 import { compileCSS } from "../vanilla-extract";
 import { buildFullDisplayName, buildFullThemeName } from "./utils";
 
@@ -30,6 +30,7 @@ type ThemeEntry = {
   meta: GiteaThemeMeta;
   theme?: Theme;
   autoTheme?: { darkThemeName: string; lightThemeName: string };
+  styles?: CSSString;
 };
 
 export function giteaGitHubTheme(): PluginOption {
@@ -68,6 +69,7 @@ export function giteaGitHubTheme(): PluginOption {
               colorblindType: entry.colorblindType,
             },
             theme: entry.theme,
+            styles: themeSeries.styles,
           });
         }
         // 处理自动主题
@@ -92,11 +94,11 @@ export function giteaGitHubTheme(): PluginOption {
 
       // 2. 编译公共样式
       const rawStyles = Buffer.from((await import("@lutinglt/gitea-github-theme/styles")).default);
-      const styles = transform({ filename: "styles.css", code: rawStyles, minify: true }).code.toString();
+      const globalStyles = transform({ filename: "globalStyles.css", code: rawStyles, minify: true }).code.toString();
 
       // 3. 编译每个主题的 CSS 并输出
       for (const entry of themeEntries) {
-        const { themeName, meta, autoTheme } = entry;
+        const { themeName, meta, autoTheme, styles } = entry;
 
         const rawThemeCSS = Buffer.from(
           compileCSS(() => {
@@ -105,13 +107,17 @@ export function giteaGitHubTheme(): PluginOption {
           })
         );
         const themeCSS = transform({ filename: themeName + ".css", code: rawThemeCSS, minify: true }).code.toString();
+        const stylesCSS = styles
+          ? transform({ filename: themeName + ".styles.css", code: Buffer.from(styles), minify: true }).code.toString()
+          : "";
+
         const source = autoTheme
           ? [
               `@import "./${autoTheme.darkThemeName}.css" (prefers-color-scheme: dark);`,
               `@import "./${autoTheme.lightThemeName}.css" (prefers-color-scheme: light);`,
               themeCSS,
             ].join("\n")
-          : `${themeCSS}${styles}`;
+          : `${themeCSS}${globalStyles}${stylesCSS}`;
 
         this.emitFile({ type: "asset", fileName: `${themeName}.css`, source });
       }
