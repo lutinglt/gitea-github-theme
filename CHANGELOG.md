@@ -22,13 +22,11 @@
 ### 🌈 Style
 
 - Optimize catppuccin theme colors.
-- Fine tune the border color of catppuccin theme.
 
 #### More GitHub-like style
 
-- Fine tune the heatmap colors of catppuccin theme and pink soft dark theme.
+- Fine tune the heatmap colors of pink soft dark theme.
 - Optimize heat map style.
-- Synchronize styles under high contrast themes.
 - Optimize the style of workflow log pages.
 - Synchronize the style of the notification prompt (small dots).
 
@@ -36,7 +34,5 @@
 
 - Fix the missing highlight style when hovering the heatmap mouse.
 - Fix the last commit avatar on the repo homepage being blocked.
-- Fix the color of the danger button in the catppuccin theme.
-- Fix the common button floating and clicking colors on the catppuccin and gitea theme settings pages.
 - Fix the hovering and activation colors of the sub items in the second level menu of warehouse filtering on the
   dashboard page.
