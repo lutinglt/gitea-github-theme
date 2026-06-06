@@ -19,8 +19,7 @@
 
 import { transform } from "lightningcss";
 import type { PluginOption } from "vite";
-import type { GiteaThemeMeta, Theme } from "../core";
-import { createTheme, createThemeMetaInfo } from "../core";
+import { createTheme, createThemeMetaInfo, type GiteaThemeMeta, type Theme } from "../core";
 import { compileCSS } from "../vanilla-extract";
 import { buildFullDisplayName, buildFullThemeName } from "./utils";
 

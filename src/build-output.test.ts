@@ -21,7 +21,7 @@ import { execSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { describe, expect, it } from "vitest";
+import { beforeAll, describe, expect, it } from "vitest";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT_DIR = path.resolve(__dirname, "..");
@@ -120,7 +120,7 @@ describe("非 auto 主题 CSS 内容验证", () => {
     describe(fileName, () => {
       let css: string;
 
-      it.beforeAll(() => {
+      beforeAll(() => {
         css = fs.readFileSync(path.join(DIST_DIR, fileName), "utf-8");
       });
 
@@ -163,7 +163,7 @@ describe("auto 主题 CSS 内容验证", () => {
     describe(fileName, () => {
       let css: string;
 
-      it.beforeAll(() => {
+      beforeAll(() => {
         css = fs.readFileSync(path.join(DIST_DIR, fileName), "utf-8");
       });
 

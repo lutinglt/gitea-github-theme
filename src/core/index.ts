@@ -21,6 +21,5 @@ export { createChroma } from "./chroma";
 export { createCodeMirror } from "./codemirror";
 export { css, cssCombine, cssStyle } from "./css";
 export { createThemeMetaInfo, type ColorblindType, type GiteaThemeMeta } from "./meta";
-export { createTheme, defineTheme } from "./theme";
-export type { Theme, ThemeVars } from "./theme";
+export { createTheme, defineTheme, type Theme, type ThemeVars } from "./theme";
 export type { CSSVarFunction, MapLeafNodes } from "./types";

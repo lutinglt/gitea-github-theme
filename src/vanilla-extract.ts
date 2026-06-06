@@ -17,8 +17,7 @@
  * limitations under the License.
  */
 
-import type { StyleRule } from "@vanilla-extract/css";
-import { globalStyle } from "@vanilla-extract/css";
+import { globalStyle, type StyleRule } from "@vanilla-extract/css";
 import { removeAdapter, setAdapter } from "@vanilla-extract/css/adapter";
 import { endFileScope, setFileScope } from "@vanilla-extract/css/fileScope";
 import { transformCss } from "@vanilla-extract/css/transformCss";
