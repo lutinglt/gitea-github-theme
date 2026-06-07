@@ -164,10 +164,10 @@ describe("cssCombine", () => {
     expect(combined).toBe("");
   });
 
-  it("多个空字符串合并 (join 产生换行)", () => {
+  it("多个空字符串合并不产生额外换行", () => {
     const combined = cssCombine(css``, css``);
     // join("\n") of two empty strings = "\n"
-    expect(combined).toBe("\n");
+    expect(combined).toBe("");
   });
 
   it("保持合并顺序", () => {
