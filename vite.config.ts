@@ -19,5 +19,6 @@
 
 import { giteaGitHubTheme } from "@lutinglt/gitea-github-theme/vite-plugin";
 import { defineConfig } from "vite";
+import themeConfig from "./theme.config.ts";
 
-export default defineConfig({ plugins: [giteaGitHubTheme()] });
+export default defineConfig({ plugins: [giteaGitHubTheme(themeConfig)] });

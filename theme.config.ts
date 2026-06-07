@@ -18,111 +18,115 @@
  */
 
 import { defineThemeConfig } from "@lutinglt/gitea-github-theme/core";
+import styles from "@lutinglt/gitea-github-theme/styles";
 import themes from "@lutinglt/gitea-github-theme/themes";
 
-export default defineThemeConfig([
-  {
-    themeSeriesName: "default",
-    themes: {
-      dark: { theme: themes.github.dark },
-      light: { theme: themes.github.light },
-      "soft-dark": { theme: themes.github.softDark },
-    },
-  },
-  {
-    themeSeriesName: "colorblind",
-    autoTheme: { displayName: "Default Auto Protanopia And Deuteranopia", colorblindType: "red-green" },
-    themes: {
-      dark: {
-        displayName: "Default Dark Protanopia And Deuteranopia",
-        colorblindType: "red-green",
-        theme: themes.github.colorblind.dark,
-      },
-      light: {
-        displayName: "Default Light Protanopia And Deuteranopia",
-        colorblindType: "red-green",
-        theme: themes.github.colorblind.light,
+export default defineThemeConfig({
+  globalStyles: styles,
+  themeSeries: [
+    {
+      themeSeriesName: "default",
+      themes: {
+        dark: { theme: themes.github.dark },
+        light: { theme: themes.github.light },
+        "soft-dark": { theme: themes.github.softDark },
       },
     },
-  },
-  {
-    themeSeriesName: "tritanopia",
-    autoTheme: { displayName: "Default Auto Tritanopia", colorblindType: "blue-yellow" },
-    themes: {
-      dark: {
-        displayName: "Default Dark Tritanopia",
-        colorblindType: "blue-yellow",
-        theme: themes.github.tritanopia.dark,
-      },
-      light: {
-        displayName: "Default Light Tritanopia",
-        colorblindType: "blue-yellow",
-        theme: themes.github.tritanopia.light,
-      },
-    },
-  },
-  {
-    themeSeriesName: "pink",
-    themes: {
-      dark: { theme: themes.github.pink.dark },
-      light: { theme: themes.github.pink.light },
-      "soft-dark": { theme: themes.github.pink.softDark },
-    },
-  },
-  {
-    themeSeriesName: "gitea",
-    themes: {
-      dark: { theme: themes.gitea.dark },
-      light: { theme: themes.gitea.light },
-    },
-  },
-  {
-    themeSeriesName: "catppuccin",
-    themes: {
-      dark: { themeName: "mocha", theme: themes.catppuccin.mocha },
-      light: { themeName: "latte", theme: themes.catppuccin.latte },
-      frappe: { theme: themes.catppuccin.frappe },
-      macchiato: { theme: themes.catppuccin.macchiato },
-    },
-  },
-  {
-    themeSeriesName: "high-contrast",
-    themes: {
-      dark: { theme: themes.github.highContrast.dark },
-      light: { theme: themes.github.highContrast.light },
-      "soft-dark": { theme: themes.github.highContrast.softDark },
-    },
-  },
-  {
-    themeSeriesName: "high-contrast-colorblind",
-    autoTheme: { displayName: "High Contrast Auto Protanopia And Deuteranopia", colorblindType: "red-green" },
-    themes: {
-      dark: {
-        displayName: "High Contrast Dark Protanopia And Deuteranopia",
-        colorblindType: "red-green",
-        theme: themes.github.highContrast.colorblind.dark,
-      },
-      light: {
-        displayName: "High Contrast Light Protanopia And Deuteranopia",
-        colorblindType: "red-green",
-        theme: themes.github.highContrast.colorblind.light,
+    {
+      themeSeriesName: "colorblind",
+      autoTheme: { displayName: "Default Auto Protanopia And Deuteranopia", colorblindType: "red-green" },
+      themes: {
+        dark: {
+          displayName: "Default Dark Protanopia And Deuteranopia",
+          colorblindType: "red-green",
+          theme: themes.github.colorblind.dark,
+        },
+        light: {
+          displayName: "Default Light Protanopia And Deuteranopia",
+          colorblindType: "red-green",
+          theme: themes.github.colorblind.light,
+        },
       },
     },
-  },
-  {
-    themeSeriesName: "high-contrast-tritanopia",
-    autoTheme: { displayName: "High Contrast Auto Tritanopia", colorblindType: "blue-yellow" },
-    themes: {
-      dark: {
-        displayName: "High Contrast Dark Tritanopia",
-        colorblindType: "blue-yellow",
-        theme: themes.github.highContrast.tritanopia.dark,
-      },
-      light: {
-        displayName: "High Contrast Light Tritanopia",
-        colorblindType: "blue-yellow",
-        theme: themes.github.highContrast.tritanopia.light,
+    {
+      themeSeriesName: "tritanopia",
+      autoTheme: { displayName: "Default Auto Tritanopia", colorblindType: "blue-yellow" },
+      themes: {
+        dark: {
+          displayName: "Default Dark Tritanopia",
+          colorblindType: "blue-yellow",
+          theme: themes.github.tritanopia.dark,
+        },
+        light: {
+          displayName: "Default Light Tritanopia",
+          colorblindType: "blue-yellow",
+          theme: themes.github.tritanopia.light,
+        },
       },
     },
-  },
-]);
+    {
+      themeSeriesName: "pink",
+      themes: {
+        dark: { theme: themes.github.pink.dark },
+        light: { theme: themes.github.pink.light },
+        "soft-dark": { theme: themes.github.pink.softDark },
+      },
+    },
+    {
+      themeSeriesName: "gitea",
+      themes: {
+        dark: { theme: themes.gitea.dark },
+        light: { theme: themes.gitea.light },
+      },
+    },
+    {
+      themeSeriesName: "catppuccin",
+      themes: {
+        dark: { themeName: "mocha", theme: themes.catppuccin.mocha },
+        light: { themeName: "latte", theme: themes.catppuccin.latte },
+        frappe: { theme: themes.catppuccin.frappe },
+        macchiato: { theme: themes.catppuccin.macchiato },
+      },
+    },
+    {
+      themeSeriesName: "high-contrast",
+      themes: {
+        dark: { theme: themes.github.highContrast.dark },
+        light: { theme: themes.github.highContrast.light },
+        "soft-dark": { theme: themes.github.highContrast.softDark },
+      },
+    },
+    {
+      themeSeriesName: "high-contrast-colorblind",
+      autoTheme: { displayName: "High Contrast Auto Protanopia And Deuteranopia", colorblindType: "red-green" },
+      themes: {
+        dark: {
+          displayName: "High Contrast Dark Protanopia And Deuteranopia",
+          colorblindType: "red-green",
+          theme: themes.github.highContrast.colorblind.dark,
+        },
+        light: {
+          displayName: "High Contrast Light Protanopia And Deuteranopia",
+          colorblindType: "red-green",
+          theme: themes.github.highContrast.colorblind.light,
+        },
+      },
+    },
+    {
+      themeSeriesName: "high-contrast-tritanopia",
+      autoTheme: { displayName: "High Contrast Auto Tritanopia", colorblindType: "blue-yellow" },
+      themes: {
+        dark: {
+          displayName: "High Contrast Dark Tritanopia",
+          colorblindType: "blue-yellow",
+          theme: themes.github.highContrast.tritanopia.dark,
+        },
+        light: {
+          displayName: "High Contrast Light Tritanopia",
+          colorblindType: "blue-yellow",
+          theme: themes.github.highContrast.tritanopia.light,
+        },
+      },
+    },
+  ],
+});

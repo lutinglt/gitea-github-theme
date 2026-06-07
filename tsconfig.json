@@ -28,7 +28,6 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
     "paths": {
-      "@lutinglt/gitea-github-theme/theme.config.ts": ["./theme.config.ts"],
       "@lutinglt/gitea-github-theme/core": ["./src"],
       "@lutinglt/gitea-github-theme/vite-plugin": ["./src/vite-plugin"],
       "@lutinglt/gitea-github-theme/styles": ["./styles"],

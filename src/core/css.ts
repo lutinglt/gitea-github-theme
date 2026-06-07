@@ -49,8 +49,8 @@ export function css(strings: TemplateStringsArray, ...values: CSSInterpolation[]
  *
  * 合并按参数顺序排列
  */
-export function cssCombine(...styles: CSSString[]): CSSString {
-  return styles.join("\n") as CSSString;
+export function cssCombine(...styles: (CSSString | undefined)[]): CSSString {
+  return styles.filter(Boolean).join("\n") as CSSString;
 }
 
 /** cssStyle 用于 css 模板字符串的插值

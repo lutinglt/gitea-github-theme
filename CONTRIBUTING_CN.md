@@ -106,7 +106,8 @@ bun commit
 
 推荐使用 `defineTheme` 配合 `ThemeColor` 类型来定义主题颜色, 框架会自动计算生成所有 Gitea CSS 变量.
 
-颜色计算函数可从 `@lutinglt/gitea-github-theme/core` 导入 `scaleColorLight` 和 `rgba`, 或使用 `color2k` 库进行额外颜色操作.
+颜色计算函数可从 `@lutinglt/gitea-github-theme/core` 导入 `scaleColorLight` 和 `rgba`, 或使用 `color2k`
+库进行额外颜色操作.
 
 例: `themes/主题名称.ts`
 

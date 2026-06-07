@@ -19,7 +19,7 @@
 
 import type { ColorblindType, CSSString, Theme } from "../core";
 
-type ThemeConfig = {
+type ThemeSpec = {
   /** 主题名称, 用于生成文件名, 未指定时取 themes 中的键名 */
   themeName?: string;
   /** 显示名称, 用于 Gitea UI 显示的名称
@@ -30,17 +30,19 @@ type ThemeConfig = {
   /** 色盲类型, 仅用于声明主题为色盲主题 */
   colorblindType?: ColorblindType;
   theme: Theme;
+  /** 主题追加的样式, 优先级高于默认样式和主题系列样式 */
+  styles?: CSSString;
 };
 type Themes =
   | {
       /** 主题系列的深色模式主题 */
-      dark: ThemeConfig;
-      [themeKeyName: string]: ThemeConfig;
+      dark: ThemeSpec;
+      [themeKeyName: string]: ThemeSpec;
     }
   | {
       /** 主题系列的浅色模式主题 */
-      light: ThemeConfig;
-      [themeKeyName: string]: ThemeConfig;
+      light: ThemeSpec;
+      [themeKeyName: string]: ThemeSpec;
     };
 export type ThemeSeries = {
   /** 主题系列名称, 做为前缀用于生成文件名和显示名称  */
@@ -58,13 +60,20 @@ export type ThemeSeries = {
   styles?: CSSString;
 };
 
+export type ThemeConfig = {
+  /** 全局样式 */
+  globalStyles?: CSSString;
+  /** 主题系列 */
+  themeSeries: ThemeSeries[];
+};
+
 /** 定义主题配置 */
-export function defineThemeConfig(config: ThemeSeries[]): ThemeSeries[] {
+export function defineThemeConfig(themeConfig: ThemeConfig): ThemeConfig {
   // 检查主题系列名称是否重复
-  const names = config.map(c => c.themeSeriesName);
+  const names = themeConfig.themeSeries.map(c => c.themeSeriesName);
   const duplicates = names.filter((name, index) => names.indexOf(name) !== index);
   if (duplicates.length > 0) {
     throw new Error(`Duplicate themeSeriesName found: ${[...new Set(duplicates)].join(", ")}`);
   }
-  return config;
+  return themeConfig;
 }

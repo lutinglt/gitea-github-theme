@@ -115,8 +115,8 @@ Please add your author info at the top of the color theme file so Issue reporter
 It is recommended to use `defineTheme` with the `ThemeColor` type to define theme colors. The framework will
 automatically compute and generate all Gitea CSS variables.
 
-Color calculation functions can be imported from `@lutinglt/gitea-github-theme/core` (`scaleColorLight`, `rgba`),
-or use the `color2k` library for additional color manipulation.
+Color calculation functions can be imported from `@lutinglt/gitea-github-theme/core` (`scaleColorLight`, `rgba`), or use
+the `color2k` library for additional color manipulation.
 
 Example: `themes/my-theme.ts`
 

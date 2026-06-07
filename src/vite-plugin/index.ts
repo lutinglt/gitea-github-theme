@@ -19,8 +19,10 @@
 
 import { transform } from "lightningcss";
 import type { PluginOption } from "vite";
-import { createTheme, createThemeMetaInfo, type CSSString, type GiteaThemeMeta, type Theme } from "../core";
+import type { CSSString, GiteaThemeMeta, Theme } from "../core";
+import { createTheme, createThemeMetaInfo, cssCombine } from "../core";
 import { compileCSS } from "../vanilla-extract";
+import type { ThemeConfig } from "./themeConfig";
 import { buildFullDisplayName, buildFullThemeName } from "./utils";
 
 const VIRTUAL_ID = "virtual:gitea-github-theme-placeholder";
@@ -33,7 +35,7 @@ type ThemeEntry = {
   styles?: CSSString;
 };
 
-export function giteaGitHubTheme(): PluginOption {
+export function giteaGitHubTheme(themeConfig: ThemeConfig): PluginOption {
   return {
     name: "lutinglt-gitea-github-theme",
 
@@ -47,17 +49,15 @@ export function giteaGitHubTheme(): PluginOption {
       return { build: { rolldownOptions: { input: VIRTUAL_ID } } };
     },
 
-    async generateBundle(this, _options, bundle) {
+    generateBundle(this, _options, bundle) {
       // 清除占位入口产物
       for (const key of Object.keys(bundle)) {
         delete bundle[key];
       }
 
       // 1. 解析主题配置
-      const themeConfig = (await import("@lutinglt/gitea-github-theme/theme.config.ts")).default;
       const themeEntries: ThemeEntry[] = [];
-
-      for (const themeSeries of themeConfig) {
+      for (const themeSeries of themeConfig.themeSeries) {
         for (const [themeKeyName, entry] of Object.entries(themeSeries.themes)) {
           const name = entry.themeName ?? themeKeyName;
           entry.themeName = buildFullThemeName(themeSeries, name);
@@ -69,7 +69,7 @@ export function giteaGitHubTheme(): PluginOption {
               colorblindType: entry.colorblindType,
             },
             theme: entry.theme,
-            styles: themeSeries.styles,
+            styles: cssCombine(themeSeries.styles, entry.styles),
           });
         }
         // 处理自动主题
@@ -93,8 +93,13 @@ export function giteaGitHubTheme(): PluginOption {
       }
 
       // 2. 编译公共样式
-      const rawStyles = Buffer.from((await import("@lutinglt/gitea-github-theme/styles")).default);
-      const globalStyles = transform({ filename: "globalStyles.css", code: rawStyles, minify: true }).code.toString();
+      const globalStyles = themeConfig.globalStyles
+        ? transform({
+            filename: "globalStyles.css",
+            code: Buffer.from(themeConfig.globalStyles),
+            minify: true,
+          }).code.toString()
+        : "";
 
       // 3. 编译每个主题的 CSS 并输出
       for (const entry of themeEntries) {
