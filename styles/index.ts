@@ -22,7 +22,5 @@ import componentStyles from "./components";
 import publicStyles from "./public";
 import templateStyles from "./templates";
 
+export * as themeStyles from "./themes";
 export default cssCombine(publicStyles, componentStyles, templateStyles);
-
-// 专属主题样式
-export { exampleThemeStyles } from "./themes";
