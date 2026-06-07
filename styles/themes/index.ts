@@ -18,11 +18,6 @@
  */
 
 import { cssCombine } from "@lutinglt/gitea-github-theme/core";
-import componentStyles from "./components";
-import publicStyles from "./public";
-import templateStyles from "./templates";
+import example from "./example";
 
-export default cssCombine(publicStyles, componentStyles, templateStyles);
-
-// 专属主题样式
-export { exampleThemeStyles } from "./themes";
+export const exampleThemeStyles = cssCombine(example);

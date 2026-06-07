@@ -17,12 +17,28 @@
  * limitations under the License.
  */
 
-import { cssCombine } from "@lutinglt/gitea-github-theme/core";
-import componentStyles from "./components";
-import publicStyles from "./public";
-import templateStyles from "./templates";
+import { css, cssCombine, cssStyle, themeVars } from "@lutinglt/gitea-github-theme/core";
 
-export default cssCombine(publicStyles, componentStyles, templateStyles);
+const exampleStyle = cssStyle({
+  backgroundColor: themeVars.color.body,
+  color: themeVars.color.text.self,
+  padding: 16,
+  "&:hover": {
+    backgroundColor: themeVars.color.hover.self,
+  },
+});
 
-// 专属主题样式
-export { exampleThemeStyles } from "./themes";
+const exampleCSS1 = css`
+  .ui.button {
+    ${exampleStyle}
+    font-size: 16px;
+  }
+`;
+
+const exampleCSS2 = css`
+  .ui.button {
+    font-weight: 600;
+  }
+`;
+
+export default cssCombine(exampleCSS1, exampleCSS2);
