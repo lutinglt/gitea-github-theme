@@ -25,6 +25,7 @@ import {
 } from "./catppuccin";
 import { giteaDarkColor, giteaDarkTheme } from "./giteaDark";
 import { giteaLightColor, giteaLightTheme } from "./giteaLight";
+import { mikuDarkColor, mikuDarkTheme, mikuLightColor, mikuLightTheme } from "./hatsuneMiku";
 import {
   githubColorblindDarkTheme,
   githubColorblindLightTheme,
@@ -48,6 +49,11 @@ import {
 export const giteaColor = {
   dark: giteaDarkColor,
   light: giteaLightColor,
+};
+
+export const mikuColor = {
+  dark: mikuDarkColor,
+  light: mikuLightColor,
 };
 
 export default {
@@ -85,6 +91,10 @@ export default {
   gitea: {
     dark: giteaDarkTheme,
     light: giteaLightTheme,
+  },
+  miku: {
+    dark: mikuDarkTheme,
+    light: mikuLightTheme,
   },
   catppuccin: {
     latte: catppuccinLatteTheme,

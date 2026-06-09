@@ -141,6 +141,24 @@ THEMES = github-pink-auto, github-pink-light, github-pink-dark, github-pink-soft
 <img src="screenshots/pink/pink-soft-dark.png"/>
 </details>
 
+### Miku Themes
+
+> Inspired by [Hatsune Miku Theme](https://github.com/vauxe/hatsune-miku-theme) — a color theme traced from Hatsune Miku's character design, built with perceptual color science for readability and color vision accessibility.
+
+```ini
+THEMES = github-miku-auto, github-miku-light, github-miku-dark
+```
+
+<details>
+<summary>Miku</summary>
+<h4>theme-github-miku-dark.css</h4>
+<p>Dark: Hatsune Miku — the concert hall at night. Tonic at F# (180° teal), twelve-tone hue system, soprano/mp ensemble. Skirt-stage background, four-voice interactive states, CVD-safe status palette.</p>
+<!-- TODO: screenshot -->
+<h4>theme-github-miku-light.css</h4>
+<p>Light: Snow Miku 2026 — Shiawase Patisserie. Tonic at G (210° cyan), warm cream canvas + cool blue chrome, dual-tier ensemble (sopranino/soprano), gamut-max mp. Chocolate ink on cream, ice frost selection.</p>
+<!-- TODO: screenshot -->
+</details>
+
 ### Gitea Themes
 
 ```ini

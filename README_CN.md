@@ -136,6 +136,24 @@ THEMES = github-pink-auto, github-pink-light, github-pink-dark, github-pink-soft
 <img src="screenshots/pink/pink-soft-dark.png"/>
 </details>
 
+### 初音未来主题
+
+> 灵感来源于 [Hatsune Miku Theme](https://github.com/vauxe/hatsune-miku-theme) — 从初音未来角色设计中提取的色彩主题，基于感知色彩科学构建，兼顾可读性与色觉无障碍。
+
+```ini
+THEMES = github-miku-auto, github-miku-light, github-miku-dark
+```
+
+<details>
+<summary>Miku</summary>
+<h4>theme-github-miku-dark.css</h4>
+<p>深色：初音未来 — 夜晚的演唱会厅。主音 F#（180° 蓝绿），十二音色相体系，soprano/mp 合奏。裙子色舞台背景，四声部交互状态，CVD 安全状态色板。</p>
+<!-- TODO: screenshot -->
+<h4>theme-github-miku-light.css</h4>
+<p>浅色：Snow Miku 2026 — 幸福甜点店。主音 G（210° 青色），暖奶油画布 + 冷蓝色框架，双音区合奏（sopranino/soprano），gamut-max mp。巧克力油墨书于奶油，冰霜结晶选中。</p>
+<!-- TODO: screenshot -->
+</details>
+
 ### Gitea 主题
 
 ```ini
