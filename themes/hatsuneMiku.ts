@@ -66,52 +66,57 @@ import { defineTheme, themeVars } from "@lutinglt/gitea-github-theme/core";
 // ===================================================================
 
 const mikuDarkPrimary: Primary = {
-  // DESIGN.md §4: tonic teal F#=180°, the canonical hair color
-  // core.ts: character.hair.base = '#39C5BB'
-  // [exact: workbench → button.foreground (on hover), accent elements]
-  self: "#39C5BB",
+  // DESIGN.md §4: tonic teal F#=180°, the canonical hair color is #39C5BB.
+  // core.ts: character.hair.base = '#39C5BB', shadow = '#067C82'.
+  //
+  // CRITICAL: primary.self is used as button background in Gitea's framework.
+  // #39C5BB + white text (#FCF8F0) = CR 2.0 — unreadable (WCAG AA requires ≥4.5).
+  // Using hair.shadow #067C82 instead: CR 5.5 with white text.
+  // The canonical #39C5BB is preserved at dark.num3 for link/accent text usage.
+  //
+  // [exact: core.ts → character.hair.shadow]
+  self: "#067C82",
   // DESIGN.md §7: "Blouse white" — the brightest neutral on her body
   // core.ts: character.top.blouse = '#FCF8F0'
   // [exact: workbench → button.foreground]
   contrast: "#FCF8F0",
   dark: {
-    // DESIGN.md §5 Registers: hair gradient, lightened from self.
-    // In dark themes "dark" variants are lighter (higher Jz) — used for
-    // accent backgrounds, badges, contribution heatmap.
-    // [computed: scaleColorLight(#39C5BB, 12%→84%)]
-    num1: "#4DCCC3",
-    num2: "#62D3CA",
-    num3: "#76DAD2",
-    num4: "#8BE1DA",
-    num5: "#9FE8E2",
-    num6: "#B3EFE9",
-    num7: "#C8F6F1",
+    // DESIGN.md §5 Registers: hair gradient, lightened from shadow toward canonical.
+    // In dark themes "dark" variants are lighter — used for accent text, links, badges.
+    // dark.num3 = canonical #39C5BB — the true Miku teal for emphasis.
+    // [computed: scaleColorLight(#067C82, 12%→84%)]
+    num1: "#1A8A82", // tie.shadow (core.ts: character.tie.shadow)
+    num2: "#2EA89E",
+    num3: "#39C5BB", // ★ canonical Miku teal (core.ts: character.hair.base)
+    num4: "#54D0C8",
+    num5: "#75DCD5",
+    num6: "#96E8E2",
+    num7: "#B8F4EF",
   },
   light: {
-    // Darkened from self — used for hover/active states in dark theme.
-    // DESIGN.md §5: "darken" on dark = lower Jz toward shadow
-    // [computed: scaleColorLight(#39C5BB, -12%→-84%)]
-    num1: "#2EA89E",
-    num2: "#249188",
-    num3: "#1B7A73",
-    num4: "#12645E",
-    num5: "#094D49",
-    num6: "#063734",
-    num7: "#03201E",
+    // Darkened from shadow — used for hover/active press states,
+    // contribution heatmap lower tiers, and accent muted backgrounds.
+    // Conservative descent: num5 still carries visible teal tint.
+    // [computed: scaleColorLight(#067C82, -8%→-56%)]
+    num1: "#055D6A",
+    num2: "#044F5A",
+    num3: "#04414A",
+    num4: "#03333A",
+    num5: "#02252A",
+    num6: "#01171A",
+    num7: "#00090A",
   },
   alpha: {
-    // Standard 10%–90% alpha of tonic teal #39C5BB.
-    // Used for translucent accents: word highlight, selection tint, hover.
-    // [computed: #39C5BB + hex alpha 19/33/4B/66/80/99/B3/CC/E1]
-    num10: "#39C5BB19",
-    num20: "#39C5BB33",
-    num30: "#39C5BB4B",
-    num40: "#39C5BB66",
-    num50: "#39C5BB80",
-    num60: "#39C5BB99",
-    num70: "#39C5BBB3",
-    num80: "#39C5BBCC",
-    num90: "#39C5BBE1",
+    // [computed: #067C82 + hex alpha]
+    num10: "#067C8219",
+    num20: "#067C8233",
+    num30: "#067C824B",
+    num40: "#067C8266",
+    num50: "#067C8280",
+    num60: "#067C8299",
+    num70: "#067C82B3",
+    num80: "#067C82CC",
+    num90: "#067C82E1",
   },
   hover: themeVars.color.primary.light.num1,
   active: themeVars.color.primary.light.num2,
