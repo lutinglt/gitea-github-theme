@@ -119,9 +119,11 @@ const mikuDarkPrimary: Primary = {
 
 const mikuDarkSecondary: Secondary = {
   // DESIGN.md §7: Structural chrome uses skirt-family colors.
-  // secondary.self is House tier (Stage+0.008Jz), NOT the Stage (#1A1F24).
-  // §7: "Structural chrome (sidebar, tabs, bars) rises above into the House tier."
-  // [exact: workbench → sideBar.background, statusBar.background]
+  // secondary.self is House tier (Stage+0.008Jz), for borders and separators.
+  // In Gitea convention, nav recedes darker than body, but borders must stay
+  // lighter than body to be visible. House serves border duty, Void serves nav.
+  // House tier: #23282D = Stage+0.008Jz ≈ sideBar.background in VS Code.
+  // [exact: workbench → sideBar.background]
   self: "#23282D",
   dark: {
     // Lighter steps from House toward Float and beyond.
@@ -182,15 +184,14 @@ const mikuDarkConsole: Console = {
   // DESIGN.md §7: House tier, structural edge
   // [exact: workbench → timeline ≈ secondary.dark.num1]
   border: "#2C3339",
-  // [approx: border, used for Actions log step active]
-  activeBg: "#2C3339",
-  // [approx: House tier, lighter step]
-  hoverBg: "#23282D",
+  // [approx: between Void and Stage, for Actions log step active]
+  activeBg: "#1C2128",
+  // [approx: between Void and Stage, for Actions log step hover]
+  hoverBg: "#181D23",
   menu: {
-    // [exact: workbench → sideBar.background = House]
-    bg: "#23282D",
-    // [approx: secondary.dark.num2]
-    border: "#3D464D",
+    // [approx: nav tier, for Actions log settings menu]
+    bg: "#15191D",
+    border: "#2C3339",
   },
   // [exact: core.ts → character.hair.base]
   link: "#39C5BB",
@@ -529,8 +530,8 @@ const mikuDarkOther: Other = {
   // DESIGN.md §7: Float tier — overlays, hover widgets, notifications
   // [exact: workbench → editorWidget.background, menu.background]
   menu: "#2A3035",
-  // [approx: between Stage and House, for card surfaces]
-  card: "#1E2328",
+  // [approx: between Stage and House, for card surfaces above the body background]
+  card: "#1C2128",
   markup: {
     // DESIGN.md §7: Markdown table alternating row
     // [blend: primary teal at very low opacity]
@@ -550,8 +551,8 @@ const mikuDarkOther: Other = {
   // DESIGN.md §7: Shadows — void-hue black at low opacity
   // [approx: void-hue #0F1117 at 34% and 100%]
   shadow: { self: "#0F111758", opaque: "#0F1117" },
-  // [approx: between Stage and House for secondary background regions]
-  secondaryBg: "#1E2328",
+  // [approx: same tier as card, for secondary background panels]
+  secondaryBg: "#1C2128",
   // [exact: workbench → timeline ≈ secondary.dark.num1]
   expandButton: "#2C3339",
   // DESIGN.md §7: Placeholder text — tertiary + slight desaturation
@@ -584,14 +585,18 @@ const mikuDarkOther: Other = {
     bg: "#0F1117F0",
   },
   nav: {
-    // DESIGN.md §7: Nav = House tier (Architecture material)
-    // [exact: workbench → sideBar.background]
-    bg: "#23282D",
+    // Gitea convention: nav recedes darker than body (all dark themes do nav < body).
+    // VS Code has sidebar lighter than editor, but Gitea layout inverts this —
+    // the nav bar hugs the edge and should visually retreat.
+    // Void tier (§7): Stage − 0.008Jz, reduced Cz ×0.4
+    // [approx: skirt #1A1F24 darkened to Void direction]
+    bg: "#15191D",
     hoverBg: themeVars.color.secondary.dark.num1,
     text: themeVars.color.text.self,
   },
-  // [approx: slightly darker House variant for secondary nav]
-  secondaryNavBg: "#1E2328",
+  // Gitea convention: secondary nav matches primary nav for consistent chrome
+  // [exact: same as nav.bg]
+  secondaryNavBg: "#15191D",
   label: {
     text: themeVars.color.text.self,
     // DESIGN.md §7: Labels — silver-grey tint at 29%/62%/100%
