@@ -118,39 +118,37 @@ const mikuDarkPrimary: Primary = {
 };
 
 const mikuDarkSecondary: Secondary = {
-  // DESIGN.md §7: Structural chrome uses skirt-family colors.
-  // secondary.self is House tier (Stage+0.008Jz), for borders and separators.
-  // In Gitea convention, nav recedes darker than body, but borders must stay
-  // lighter than body to be visible. House serves border duty, Void serves nav.
-  // House tier: #23282D = Stage+0.008Jz ≈ sideBar.background in VS Code.
-  // [exact: workbench → sideBar.background]
-  self: "#23282D",
+  // DESIGN.md §7: Skirt-family structural chrome. secondary.self must be
+  // visibly lighter than body (#1A1F24) for borders to read. Compared to
+  // other Gitea dark themes (GitHub #3D444D, Gitea #3F4248, Catppuccin
+  // #45475A), using House tier (#23282D) is too close to Stage.
+  // Bumped to #2C3339 (≈Stage+0.012Jz) for ~18-point lightness gap.
+  // [approx: skirt #1A1F24 + significant Jz offset for border visibility]
+  self: "#2C3339",
   dark: {
-    // Lighter steps from House toward Float and beyond.
-    // DESIGN.md §7: House → Float progression (ΔJz 0.007)
-    // [computed: scaleColorLight(#23282D, 6%→78% steps)]
-    num1: "#2C3339", // = timeline [exact: workbench → secondary light]
-    num2: "#363D44",
-    num3: "#404850",
-    num4: "#4A535C", // = secondary.button reference
-    num5: "#545E68",
-    num6: "#5F6A75",
-    num7: "#6A7682",
-    num8: "#758290",
-    num9: "#808E9D",
-    num10: "#8C9BAA",
-    num11: "#97A8B8",
-    num12: "#A3B5C5",
+    // Lighter steps from secondary.self toward Float and beyond.
+    // [computed: scaleColorLight(#2C3339, 6%→78% steps)]
+    num1: "#363D44",
+    num2: "#404850",
+    num3: "#4A535C",
+    num4: "#545E68", // = secondary.button reference
+    num5: "#5F6A75",
+    num6: "#6A7682",
+    num7: "#758290",
+    num8: "#808E9D",
+    num9: "#8C9BAA",
+    num10: "#97A8B8",
+    num11: "#A3B5C5",
+    num12: "#B0C2D3",
     num13: "#B0C2D3",
   },
   light: {
-    // Darker steps from House toward Void.
-    // DESIGN.md §7: Void tier (Jz 0.023) ≈ Stage − 0.008Jz
-    // [computed: scaleColorLight(#23282D, -18%→-88%)]
-    num1: "#15191D", // ≈ Stage base (skirt #1A1F24 darkened)
-    num2: "#0F1216", // ≈ Void tier
-    num3: "#0A0C0F",
-    num4: "#050608",
+    // Darker steps from secondary.self toward Stage and Void.
+    // [computed: scaleColorLight(#2C3339, -12%→-48%)]
+    num1: "#23282D", // House tier — was secondary.self
+    num2: "#1A1F24", // Stage tier — body
+    num3: "#111417", // toward Void
+    num4: "#0A0D10",
   },
   alpha: {
     // [computed: #23282D + hex alpha]
@@ -181,8 +179,8 @@ const mikuDarkConsole: Console = {
   // DESIGN.md §7: Stage tier — editor canvas
   // [exact: workbench → editor.background]
   bg: "#1A1F24",
-  // DESIGN.md §7: House tier, structural edge
-  // [exact: workbench → timeline ≈ secondary.dark.num1]
+  // DESIGN.md §7: border = secondary.self tier, visible structural edge
+  // [exact: workbench → secondary medium-light border]
   border: "#2C3339",
   // [approx: between Void and Stage, for Actions log step active]
   activeBg: "#1C2128",
@@ -516,10 +514,10 @@ const mikuDarkOther: Other = {
     border: "#DEE8F228",
   },
   hover: {
-    // DESIGN.md §7: Four Voices — Engagement (teal tint 25% → 10% alpha)
+    // DESIGN.md §7: Four Voices — Engagement (teal tint ~10% alpha on body)
     // [blend: #39C5BB at 10% on House]
     self: "#39C5BB19",
-    // [exact: workbench → sideBar.background = House]
+    // [approx: House tier #23282D — subtle hover on body(#1A1F24), visible vs dark nav(#15191D)]
     opaque: "#23282D",
   },
   // DESIGN.md §7: Four Voices — Selection (frost tint)
@@ -551,9 +549,9 @@ const mikuDarkOther: Other = {
   // DESIGN.md §7: Shadows — void-hue black at low opacity
   // [approx: void-hue #0F1117 at 34% and 100%]
   shadow: { self: "#0F111758", opaque: "#0F1117" },
-  // [approx: same tier as card, for secondary background panels]
+  // [approx: House tier, for hidden scrollbar area vs body]
   secondaryBg: "#1C2128",
-  // [exact: workbench → timeline ≈ secondary.dark.num1]
+  // [exact: workbench → timeline color, now = secondary.self]
   expandButton: "#2C3339",
   // DESIGN.md §7: Placeholder text — tertiary + slight desaturation
   // [exact: workbench → input.placeholderForeground]
@@ -565,8 +563,9 @@ const mikuDarkOther: Other = {
     // [computed: primary alpha at 50% for selection]
     selection: themeVars.color.primary.alpha.num50,
   },
-  // [approx: between Void and Stage for project kanban columns]
-  projectColumnBg: themeVars.color.secondary.light.num2,
+  // Gitea: project kanban column sits on body, should recede slightly.
+  // [approx: between Void and Stage, same tier as nav]
+  projectColumnBg: "#15191D",
   // DESIGN.md §7: Identity voice — cursor
   // core.ts: character.headphones.cushion #E05096 + 0.055Jz
   // [exact: workbench → editorCursor.foreground]
