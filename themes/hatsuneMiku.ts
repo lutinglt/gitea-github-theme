@@ -249,15 +249,22 @@ const mikuDarkNamed: Named = {
     dark: { num1: "#6EA63A", num2: "#619434" }, // [computed: scaleColorLight(self, -10%,-20%)]
   },
 
-  // === F Green (150°) — Major 7th: one breath from home ===
-  // [exact: workbench → gitDecoration.addedResourceForeground]
+  // === F Green (150°) — Major 7th: negi green ===
   // DESIGN.md §7: negi green = success / added
-  // core.ts: character.negi.bright #79E2A8 → rendered #
+  // core.ts: character.negi.stalk #8FBF68, character.negi.bright #79E2A8
+  //
+  // CRITICAL: Gitea uses --color-green as BUTTON BACKGROUND for .ui.green.button.
+  // Borderline vs foreground green:
+  //   .ui.green.button { color: white; background: var(--color-green) }
+  // #8AF9B4 (negi.bright, L≈0.60) + white = CR 1.8 — unreadable.
+  // Using negi.stalk deepened further: #5A8F4A (L≈0.25, CR≈3.1).
+  // The bright negi is preserved in named.green.light and in git/diff/message
+  // where green is used as foreground text, not background.
   green: {
-    self: "#8AF9B4",
-    light: "#A4FAC5",
-    dark: { num1: "#7CE0A2", num2: "#6EC890" },
-    badge: { self: "#8AF9B4", bg: "#8AF9B41A", hover: { bg: "#8AF9B44D" } },
+    self: "#5A8F4A",
+    light: "#8AF9B4", // bright negi = foreground emphasis (git added, success text)
+    dark: { num1: "#4E7E3E", num2: "#426E32" },
+    badge: { self: "#5A8F4A", bg: "#5A8F4A1A", hover: { bg: "#5A8F4A4D" } },
   },
 
   // === F# Teal (180°) — Unison: she sings ===
