@@ -127,10 +127,10 @@ const mikuDarkSecondary: Secondary = {
     // Lighter steps from House toward Float and beyond.
     // DESIGN.md §7: House → Float progression (ΔJz 0.007)
     // [computed: scaleColorLight(#23282D, 6%→78% steps)]
-    num1: "#2C3339",  // = timeline [exact: workbench → secondary light]
+    num1: "#2C3339", // = timeline [exact: workbench → secondary light]
     num2: "#363D44",
     num3: "#404850",
-    num4: "#4A535C",  // = secondary.button reference
+    num4: "#4A535C", // = secondary.button reference
     num5: "#545E68",
     num6: "#5F6A75",
     num7: "#6A7682",
@@ -145,8 +145,8 @@ const mikuDarkSecondary: Secondary = {
     // Darker steps from House toward Void.
     // DESIGN.md §7: Void tier (Jz 0.023) ≈ Stage − 0.008Jz
     // [computed: scaleColorLight(#23282D, -18%→-88%)]
-    num1: "#15191D",  // ≈ Stage base (skirt #1A1F24 darkened)
-    num2: "#0F1216",  // ≈ Void tier
+    num1: "#15191D", // ≈ Stage base (skirt #1A1F24 darkened)
+    num2: "#0F1216", // ≈ Void tier
     num3: "#0A0C0F",
     num4: "#050608",
   },
@@ -209,7 +209,7 @@ const mikuDarkNamed: Named = {
   // DESIGN.md §7: commit signature badge — unverified color
   red: {
     self: "#FF8DED",
-    light: "#FFA8F2",        // [computed: scaleColorLight(self, 10%)]
+    light: "#FFA8F2", // [computed: scaleColorLight(self, 10%)]
     dark: { num1: "#E57FD5", num2: "#CC71BE" }, // [computed: scaleColorLight(self, -10%,-20%)]
     badge: { self: "#FF8DED", bg: "#FF8DED1A", hover: { bg: "#FF8DED4D" } }, // [computed: self + alpha 10%/30%]
   },
@@ -241,7 +241,7 @@ const mikuDarkNamed: Named = {
   // [approx: between lime(120°) and green(150°)]
   olive: {
     self: "#7AB840",
-    light: "#8DCC58",           // [computed: scaleColorLight(self, 15%)]
+    light: "#8DCC58", // [computed: scaleColorLight(self, 15%)]
     dark: { num1: "#6EA63A", num2: "#619434" }, // [computed: scaleColorLight(self, -10%,-20%)]
   },
 
@@ -261,7 +261,7 @@ const mikuDarkNamed: Named = {
   // DESIGN.md §4: The tonic, the canonical hex printed on a thousand concert tickets
   teal: {
     self: "#39C5BB",
-    light: "#54D0C8",           // [computed: scaleColorLight(self, 15%)]
+    light: "#54D0C8", // [computed: scaleColorLight(self, 15%)]
     dark: { num1: "#2EA89E", num2: "#249188" }, // [computed: scaleColorLight(self, -10%,-20%)]
   },
 
@@ -319,7 +319,7 @@ const mikuDarkNamed: Named = {
   // DESIGN.md §7: "The editor canvas is Miku's skirt"
   black: {
     self: "#1A1F24",
-    light: "#3D464D",           // [approx: secondary.dark.num3 level]
+    light: "#3D464D", // [approx: secondary.dark.num3 level]
     dark: { num1: "#2C3339", num2: "#111417" }, // [computed: scaleColorLight, void direction]
   },
   // === Grey — silver vest tertiary ===
@@ -327,7 +327,7 @@ const mikuDarkNamed: Named = {
   // DESIGN.md §7: tertiary text = silver (dim)
   grey: {
     self: "#89A0A1",
-    light: "#9AB2B3",           // [exact: workbench → terminal.ansiBrightBlack]
+    light: "#9AB2B3", // [exact: workbench → terminal.ansiBrightBlack]
   },
   // === Gold — class/enum syntax ===
   // [exact: workbench → tokenColor "User Classes", scope entity.name.class]
@@ -347,23 +347,23 @@ const mikuDarkAnsi: Ansi = {
   //
   // All values: [exact: workbench → terminal.ansi*]
   // ──────────────────────────────────────────────────────────────────
-  black: "#909BA7",   // countertenor/ppp — near-background
-  red: "#FF8FC4",     // rose mezzo+mf — alert
-  green: "#51FEA1",   // green 150° soprano/f — success (deutan-safe)
-  yellow: "#FFE8C7",  // amber sopranino/p — caution (bright + soft)
-  blue: "#AEB4FA",    // azure mezzo/mp — info
+  black: "#909BA7", // countertenor/ppp — near-background
+  red: "#FF8FC4", // rose mezzo+mf — alert
+  green: "#51FEA1", // green 150° soprano/f — success (deutan-safe)
+  yellow: "#FFE8C7", // amber sopranino/p — caution (bright + soft)
+  blue: "#AEB4FA", // azure mezzo/mp — info
   magenta: "#FFC4FA", // violet treble/p — special
-  cyan: "#76FFE6",    // tonic teal treble/mp — ★ her voice ★
-  white: "#F3BEC4",   // warm peach soprano/pp — muted foreground
+  cyan: "#76FFE6", // tonic teal treble/mp — ★ her voice ★
+  white: "#F3BEC4", // warm peach soprano/pp — muted foreground
   bright: {
-    black: "#9AB2B3",  // alto — comment-level gray
-    red: "#FF8DD2",    // soprano+f — bright alert
-    green: "#62FFB1",  // treble/f — bright success
+    black: "#9AB2B3", // alto — comment-level gray
+    red: "#FF8DD2", // soprano+f — bright alert
+    green: "#62FFB1", // treble/f — bright success
     yellow: "#FFE2B7", // sopranino/mp — bright warning
-    blue: "#AAB0FF",   // mezzo/mf — bright info
-    magenta: "#FFD6FF",// sopranino/p — bright magic
-    cyan: "#4BFFF9",   // sopranino/mf — bright Miku ★
-    white: "#8CE5EA",  // soprano/p cool — bright foreground
+    blue: "#AAB0FF", // mezzo/mf — bright info
+    magenta: "#FFD6FF", // sopranino/p — bright magic
+    cyan: "#4BFFF9", // sopranino/mf — bright Miku ★
+    white: "#8CE5EA", // soprano/p cool — bright foreground
   },
 };
 
@@ -1069,24 +1069,24 @@ const mikuLightAnsi: Ansi = {
   //
   // All values: [exact: workbench-light → terminal.ansi*]
   // ──────────────────────────────────────────────────────────────────
-  black: "#AB9894",   // warm brown — near background
-  red: "#BD0067",     // vivid rose — alarm
-  green: "#467E00",   // vivid pistachio — success
-  yellow: "#8F2B00",  // vivid baked — caution
-  blue: "#005B9F",    // vivid azure — info
+  black: "#AB9894", // warm brown — near background
+  red: "#BD0067", // vivid rose — alarm
+  green: "#467E00", // vivid pistachio — success
+  yellow: "#8F2B00", // vivid baked — caution
+  blue: "#005B9F", // vivid azure — info
   magenta: "#7B00A7", // vivid raspberry — special
-  cyan: "#007D8D",    // vivid tonic — ★ her voice ★
-  white: "#6E6B50",   // warm cream — muted foreground
+  cyan: "#007D8D", // vivid tonic — ★ her voice ★
+  white: "#6E6B50", // warm cream — muted foreground
   bright: {
     // DESIGN-LIGHT.md §8: "Bright" = darker Jz on light bg
-    black: "#746461",  // deeper brown
-    red: "#9F0051",    // deeper rose
-    green: "#407700",  // deeper green
+    black: "#746461", // deeper brown
+    red: "#9F0051", // deeper rose
+    green: "#407700", // deeper green
     yellow: "#8A2500", // deeper amber
-    blue: "#004F91",   // deeper blue
-    magenta: "#6F0099",// deeper magenta
-    cyan: "#006E7E",   // deeper tonic
-    white: "#483430",  // deep chocolate ink
+    blue: "#004F91", // deeper blue
+    magenta: "#6F0099", // deeper magenta
+    cyan: "#006E7E", // deeper tonic
+    white: "#483430", // deep chocolate ink
   },
 };
 

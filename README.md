@@ -143,7 +143,8 @@ THEMES = github-pink-auto, github-pink-light, github-pink-dark, github-pink-soft
 
 ### Miku Themes
 
-> Inspired by [Hatsune Miku Theme](https://github.com/vauxe/hatsune-miku-theme) — a color theme traced from Hatsune Miku's character design, built with perceptual color science for readability and color vision accessibility.
+> Inspired by [Hatsune Miku Theme](https://github.com/vauxe/hatsune-miku-theme) — a color theme traced from Hatsune
+> Miku's character design, built with perceptual color science for readability and color vision accessibility.
 
 ```ini
 THEMES = github-miku-auto, github-miku-light, github-miku-dark

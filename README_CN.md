@@ -138,7 +138,8 @@ THEMES = github-pink-auto, github-pink-light, github-pink-dark, github-pink-soft
 
 ### 初音未来主题
 
-> 灵感来源于 [Hatsune Miku Theme](https://github.com/vauxe/hatsune-miku-theme) — 从初音未来角色设计中提取的色彩主题，基于感知色彩科学构建，兼顾可读性与色觉无障碍。
+> 灵感来源于 [Hatsune Miku Theme](https://github.com/vauxe/hatsune-miku-theme)
+> — 从初音未来角色设计中提取的色彩主题，基于感知色彩科学构建，兼顾可读性与色觉无障碍。
 
 ```ini
 THEMES = github-miku-auto, github-miku-light, github-miku-dark
