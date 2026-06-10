@@ -35,7 +35,7 @@ export type GiteaColor = {
   diff: Diff;
   other: Other;
   /** 自定义 GitHub 主题变量映射，未填写的字段自动使用默认值 */
-  github: DeepPartial<GitHub>;
+  github?: DeepPartial<GitHub>;
 };
 
 export function gitea2ThemeVars(giteaColor: GiteaColor): ThemeVars {
@@ -179,6 +179,6 @@ export function gitea2ThemeVars(giteaColor: GiteaColor): ThemeVars {
       console: giteaColor.console,
       diff: giteaColor.diff,
     },
-    github: deepOverride(github, giteaColor.github),
+    github: deepOverride(github, giteaColor.github ?? {}),
   };
 }
