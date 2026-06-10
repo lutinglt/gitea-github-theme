@@ -52,6 +52,10 @@ const EXPECTED_THEME_FILES = [
   `${PREFIX}pink-light.css`,
   `${PREFIX}pink-soft-dark.css`,
   `${PREFIX}pink-auto.css`,
+  // miku
+  `${PREFIX}miku-dark.css`,
+  `${PREFIX}miku-light.css`,
+  `${PREFIX}miku-auto.css`,
   // gitea
   `${PREFIX}gitea-dark.css`,
   `${PREFIX}gitea-light.css`,
