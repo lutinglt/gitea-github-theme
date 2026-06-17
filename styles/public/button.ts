@@ -92,7 +92,15 @@ const baseButton = css`
     background-color: ${themeVars.github.button.default.bgColor.active};
   }
 `;
-
+// 绿色按钮
+const greenButton = css`
+  .ui.green.button,
+  .ui.green.buttons .button {
+    /* 覆盖默认的白色, 避免 Catppuccin 类似的主题下对比度太低 */
+    color: ${themeVars.github.button.primary.fgColor.rest};
+    box-shadow: ${primaryButtonStyle.boxShadow};
+  }
+`;
 // 红色按钮
 const redButton = css`
   .ui.red.button,
@@ -157,4 +165,4 @@ const fixButton = css`
   }
 `;
 
-export default cssCombine(baseButton, redButton, fixButtonHeight, fixButton);
+export default cssCombine(baseButton, greenButton, redButton, fixButtonHeight, fixButton);
