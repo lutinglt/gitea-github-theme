@@ -21,28 +21,25 @@ import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
 
 // 任务状态标签, 目前仅在管理员页面 Runner 状态中看到
 const taskStatusLabel = css`
-  .runner-container .ui.label.task-status- {
-    &success {
+  .runner-container .ui.label {
+    &.task-status-success {
       color: ${themeVars.color.success.text};
       border: 1px solid ${themeVars.color.success.border};
       background: ${themeVars.color.success.bg};
     }
-
-    &failure {
+    &.task-status-failure {
       color: ${themeVars.color.error.text};
       border: 1px solid ${themeVars.color.error.border};
       background: ${themeVars.color.error.bg.self};
     }
-
-    &running,
-    &skipped {
+    &.task-status-running,
+    &.task-status-skipped {
       color: ${themeVars.color.info.text};
       border: 1px solid ${themeVars.color.info.border};
       background: ${themeVars.color.info.bg};
     }
-
-    &cancelled,
-    &blocked {
+    &.task-status-cancelled,
+    &.task-status-blocked {
       color: ${themeVars.color.warning.text};
       border: 1px solid ${themeVars.color.warning.border};
       background: ${themeVars.color.warning.bg};

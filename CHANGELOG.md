@@ -36,3 +36,6 @@
 - Fix the last commit avatar on the repo homepage being blocked.
 - Fix the hovering and activation colors of the sub items in the second level menu of warehouse filtering on the
   dashboard page.
+- Fix some green label styles.
+- Fix Runner task status label style.
+- Fix the style of PR comment operation panel.
