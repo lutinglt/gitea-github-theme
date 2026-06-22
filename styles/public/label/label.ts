@@ -53,6 +53,7 @@ const label = css`
       }
     }
   }
+  a,
   div,
   span {
     &.ui.ui.ui.label {

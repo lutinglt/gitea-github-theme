@@ -12,12 +12,7 @@
 
 </h4>
 
-![Dashboard](screenshots/dashboard.png)
-
-> [!TIP]
->
-> 推荐搭配 Catppuccin 文件图标浏览器插件一起使用更佳
-> [web-file-explorer-icons](https://github.com/catppuccin/web-file-explorer-icons)
+![Dashboard](https://raw.githubusercontent.com/lutinglt/gitea-github-theme/assets/screenshots/dashboard.png)
 
 ## 版本号说明
 
@@ -55,17 +50,14 @@ THEMES = gitea-auto, gitea-light, gitea-dark, github-auto, github-light, github-
 >
 > 不设置 THEMES 时, Gitea 会使用所有主题
 
-详细请查看 Gitea 文档
-[Gitea docs](https://docs.gitea.com/next/administration/customizing-gitea#customizing-the-look-of-gitea)
-
 > [!IMPORTANT]
 >
 > 自动颜色主题需要亮色和暗色的主题文件
 
-### 模板文件安装 (可选)
+详细请查看 Gitea 文档
+[Gitea docs](https://docs.gitea.com/next/administration/customizing-gitea#customizing-the-look-of-gitea)
 
-1. 在发布页下载最新的模板文件放入 `data/gitea/templates` 目录下 (默认可能没有此目录需手动创建)
-2. 重启 Gitea
+### 模板文件安装 (可选)
 
 > [!IMPORTANT]
 >
@@ -73,6 +65,9 @@ THEMES = gitea-auto, gitea-light, gitea-dark, github-auto, github-light, github-
 > Gitea 实例无法启动等问题
 >
 > 模板布局跟 Gitea 实例绑定, 所有主题都会生效, 会影响其他非本项目的主题的体验
+
+1. 在发布页下载最新的模板文件放入 `data/gitea/templates` 目录下 (默认可能没有此目录需手动创建)
+2. 重启 Gitea
 
 ### 翻译文件安装 (可选)
 
@@ -89,20 +84,20 @@ THEMES = gitea-auto, gitea-light, gitea-dark, github-auto, github-light, github-
 
 ## 截图
 
-### 基本主题
+### 默认主题
 
 ```ini
 THEMES = github-auto, github-light, github-dark, github-soft-dark
 ```
 
 <details>
-<summary>Base</summary>
+<summary>Default</summary>
 <h4>theme-github-light.css</h4>
-<img src="screenshots/light.png"/>
+<img src="https://raw.githubusercontent.com/lutinglt/gitea-github-theme/assets/screenshots/light.png"/>
 <h4>theme-github-dark.css</h4>
-<img src="screenshots/dark.png"/>
+<img src="https://raw.githubusercontent.com/lutinglt/gitea-github-theme/assets/screenshots/dark.png"/>
 <h4>theme-github-soft-dark.css</h4>
-<img src="screenshots/soft-dark.png"/>
+<img src="https://raw.githubusercontent.com/lutinglt/gitea-github-theme/assets/screenshots/soft-dark.png"/>
 </details>
 
 ### 色盲主题 ( Beta )
@@ -115,9 +110,40 @@ THEMES = github-tritanopia-auto, github-tritanopia-light, github-tritanopia-dark
 <details>
 <summary>Colorblind & Tritanopia (红绿色盲 & 蓝色盲)</summary>
 <h4>theme-github-colorblind-light.css & theme-github-tritanopia-light.css</h4>
-<img src="screenshots/colorblind/colorblind-light.png"/>
+<img src="https://raw.githubusercontent.com/lutinglt/gitea-github-theme/assets/screenshots/colorblind/colorblind-light.png"/>
 <h4>theme-github-colorblind-dark.css & theme-github-tritanopia-dark.css</h4>
-<img src="screenshots/colorblind/colorblind-dark.png"/>
+<img src="https://raw.githubusercontent.com/lutinglt/gitea-github-theme/assets/screenshots/colorblind/colorblind-dark.png"/>
+</details>
+
+### 高对比度主题
+
+```ini
+THEMES = github-high-contrast-auto, github-high-contrast-light, github-high-contrast-dark, github-high-contrast-soft-dark
+```
+
+<details>
+<summary>HighContrast</summary>
+<h4>theme-github-high-contrast-light.css</h4>
+<img src="https://raw.githubusercontent.com/lutinglt/gitea-github-theme/assets/screenshots/high-contrast/high-contrast-light.png"/>
+<h4>theme-github-high-contrast-dark.css</h4>
+<img src="https://raw.githubusercontent.com/lutinglt/gitea-github-theme/assets/screenshots/high-contrast/high-contrast-dark.png"/>
+<h4>theme-github-high-contrast-soft-dark.css</h4>
+<img src="https://raw.githubusercontent.com/lutinglt/gitea-github-theme/assets/screenshots/high-contrast/high-contrast-soft-dark.png"/>
+</details>
+
+### 高对比度色盲主题 ( Beta )
+
+```ini
+THEMES = github-high-contrast-colorblind-auto, github-high-contrast-colorblind-light, github-high-contrast-colorblind-dark
+THEMES = github-high-contrast-tritanopia-auto, github-high-contrast-tritanopia-light, github-high-contrast-tritanopia-dark
+```
+
+<details>
+<summary>HighContrast Colorblind & Tritanopia (红绿色盲 & 蓝色盲)</summary>
+<h4>theme-github-high-contrast-colorblind-light.css & theme-github-high-contrast-tritanopia-light.css</h4>
+<img src="https://raw.githubusercontent.com/lutinglt/gitea-github-theme/assets/screenshots/high-contrast-colorblind/high-contrast-colorblind-light.png"/>
+<h4>theme-github-high-contrast-colorblind-dark.css & theme-github-high-contrast-tritanopia-dark.css</h4>
+<img src="https://raw.githubusercontent.com/lutinglt/gitea-github-theme/assets/screenshots/high-contrast-colorblind/high-contrast-colorblind-dark.png"/>
 </details>
 
 ### 粉色主题
@@ -129,11 +155,11 @@ THEMES = github-pink-auto, github-pink-light, github-pink-dark, github-pink-soft
 <details>
 <summary>Pink</summary>
 <h4>theme-github-pink-light.css</h4>
-<img src="screenshots/pink/pink-light.png"/>
+<img src="https://raw.githubusercontent.com/lutinglt/gitea-github-theme/assets/screenshots/pink/pink-light.png"/>
 <h4>theme-github-pink-dark.css</h4>
-<img src="screenshots/pink/pink-dark.png"/>
+<img src="https://raw.githubusercontent.com/lutinglt/gitea-github-theme/assets/screenshots/pink/pink-dark.png"/>
 <h4>theme-github-pink-soft-dark.css</h4>
-<img src="screenshots/pink/pink-soft-dark.png"/>
+<img src="https://raw.githubusercontent.com/lutinglt/gitea-github-theme/assets/screenshots/pink/pink-soft-dark.png"/>
 </details>
 
 ### 初音未来主题
@@ -164,9 +190,9 @@ THEMES = github-gitea-auto, github-gitea-light, github-gitea-dark
 <details>
 <summary>Gitea</summary>
 <h4>theme-github-gitea-light.css</h4>
-<img src="screenshots/gitea/gitea-light.png"/>
+<img src="https://raw.githubusercontent.com/lutinglt/gitea-github-theme/assets/screenshots/gitea/gitea-light.png"/>
 <h4>theme-github-gitea-dark.css</h4>
-<img src="screenshots/gitea/gitea-dark.png"/>
+<img src="https://raw.githubusercontent.com/lutinglt/gitea-github-theme/assets/screenshots/gitea/gitea-dark.png"/>
 </details>
 
 ### Catppuccin 主题
@@ -178,13 +204,13 @@ THEMES = github-catppuccin-auto, github-catppuccin-latte, github-catppuccin-frap
 <details>
 <summary>Catppuccin</summary>
 <h4>theme-github-catppuccin-latte.css</h4>
-<img src="screenshots/catppuccin/catppuccin-latte.png"/>
+<img src="https://raw.githubusercontent.com/lutinglt/gitea-github-theme/assets/screenshots/catppuccin/catppuccin-latte.png"/>
 <h4>theme-github-catppuccin-frappe.css</h4>
-<img src="screenshots/catppuccin/catppuccin-frappe.png"/>
+<img src="https://raw.githubusercontent.com/lutinglt/gitea-github-theme/assets/screenshots/catppuccin/catppuccin-frappe.png"/>
 <h4>theme-github-catppuccin-macchiato.css</h4>
-<img src="screenshots/catppuccin/catppuccin-macchiato.png"/>
+<img src="https://raw.githubusercontent.com/lutinglt/gitea-github-theme/assets/screenshots/catppuccin/catppuccin-macchiato.png"/>
 <h4>theme-github-catppuccin-mocha.css</h4>
-<img src="screenshots/catppuccin/catppuccin-mocha.png"/>
+<img src="https://raw.githubusercontent.com/lutinglt/gitea-github-theme/assets/screenshots/catppuccin/catppuccin-mocha.png"/>
 </details>
 
 ## 自定义 CSS 变量

@@ -125,6 +125,7 @@ const navbarRight = css`
                 bottom: calc(100% - 32px);
                 left: calc(100% - 11px);
                 padding: 2px;
+                background: ${themeVars.github.fgColor.accent};
                 border-color: ${themeVars.color.nav.bg}; /* 锁定边框色, 避免鼠标悬浮时改变颜色 */
               }
             }
@@ -139,7 +140,7 @@ const navbarRight = css`
         .notification_count,
         .header-stopwatch-dot {
           content-visibility: hidden;
-          background-color: ${themeVars.github.bgColor.accent.emphasis};
+          background-color: ${themeVars.github.fgColor.accent};
           border-radius: 50%;
           border-color: ${themeVars.color.nav.bg};
           bottom: calc(100% - 1px);
