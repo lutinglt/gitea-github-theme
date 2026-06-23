@@ -84,12 +84,12 @@ const transition = css`
       fill 80ms cubic-bezier(0.65, 0, 0.35, 1),
       background-color 80ms cubic-bezier(0.65, 0, 0.35, 1),
       box-shadow 80ms cubic-bezier(0.65, 0, 0.35, 1),
-      /* 位移慢一点, 这样视觉上与颜色变化同步 */ transform 200ms cubic-bezier(0.65, 0, 0.35, 1),
+      /* 位移慢一点, 这样视觉上与颜色变化同步 */ transform 80ms cubic-bezier(0.65, 0, 0.35, 1),
       border-color 80ms cubic-bezier(0.65, 0, 0.35, 1);
     transition-duration: 80ms;
     /* 避免在下拉菜单中点击按钮时出现的抖动 */
     &:active:not(:has(.menu:active)) {
-      transform: translateY(1px);
+      transform: translateY(0.5px);
     }
     /* 下拉图标的过渡会导致在下移过程中出现的菜单被短暂遮挡 */
     &.dropdown {
