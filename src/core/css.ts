@@ -33,6 +33,11 @@ type SelectorStyleRule =
     };
 
 export type CSSString = string & CSSObject;
+
+/** 将类型标记为品牌类型 */
+function brandCSS<T>(input: T): T & CSSObject {
+  return input as T & CSSObject;
+}
 /**
  * css 模板字符串 —— 类式 linaria 的 css tag，用于 vscode-styled-components 高亮。
  * 构建时校验 CSS 语法并返回 CSS 字符串。
@@ -41,7 +46,7 @@ export function css(strings: TemplateStringsArray, ...values: CSSInterpolation[]
   const result = strings.reduce((acc, s, i) => acc + s + String(values[i] ?? ""), "");
   // 构建时校验 CSS 语法
   transform({ filename: getCallerInfo(1), code: Buffer.from(result) });
-  return result as CSSString;
+  return brandCSS(result);
 }
 
 /**
@@ -50,7 +55,7 @@ export function css(strings: TemplateStringsArray, ...values: CSSInterpolation[]
  * 合并按参数顺序排列
  */
 export function cssCombine(...styles: (CSSString | undefined)[]): CSSString {
-  return styles.filter(Boolean).join("\n") as CSSString;
+  return brandCSS(styles.filter(Boolean).join("\n"));
 }
 
 /** cssStyle 用于 css 模板字符串的插值
@@ -84,5 +89,5 @@ export function cssStyle<T extends SelectorStyleRule>(input: T): T & CSSObject {
   const cssText = cssParts.join("");
   input.toString = () => cssText;
 
-  return input as T & CSSObject;
+  return brandCSS(input);
 }
