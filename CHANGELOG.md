@@ -12,6 +12,9 @@
 
 #### More GitHub-like style
 
+- Fine tune the spacing of elements in menu sub items.
+- Optimize the spacing of warehouse themes on exploration pages.
+
 ### 🐞 Fix
 
 - Fix the issue where the branch menu under the manual workflow pop-up window is obscured.

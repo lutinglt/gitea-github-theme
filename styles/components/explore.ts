@@ -81,6 +81,9 @@ const repoList = css`
           /* 主题标签 */
           > .label-list {
             margin-top: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
           }
         }
       }
