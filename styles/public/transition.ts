@@ -30,7 +30,7 @@ const transition = css`
   .ui.attached.segment.table ul li,
   /* Issue 列表 */
   .issue-list-toolbar .item,
-  .flex-list#issue-list > .flex-item,
+  #issue-list > .item,
   /* 分页菜单 */
   .ui.borderless.pagination.menu .item,
   /* 迁移的元素 */

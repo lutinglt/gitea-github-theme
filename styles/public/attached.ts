@@ -62,6 +62,12 @@ const attached = css`
         border-top-left-radius: ${otherThemeVars.border.radius} !important;
         border-top-right-radius: ${otherThemeVars.border.radius} !important;
       }
+      /* 元素和元素之间有隐藏的元素 */
+      &:has(+ .tw-hidden) + .ui.attached.segment + .ui.attached.segment {
+        border-top-width: 0 !important;
+        border-top-left-radius: 0 !important;
+        border-top-right-radius: 0 !important;
+      }
       &:has(+ :not(.ui.attached.segment)),
       &:last-child {
         border-bottom-left-radius: ${otherThemeVars.border.radius} !important;
@@ -82,6 +88,9 @@ const fixActivity = css`
       &:has(+ :not(.ui.attached.segment)) {
         border-bottom-left-radius: ${otherThemeVars.border.radius};
         border-bottom-right-radius: ${otherThemeVars.border.radius};
+      }
+      &:only-of-type {
+        border-radius: ${otherThemeVars.border.radius};
       }
     }
   }

@@ -31,7 +31,7 @@ const notification = css`
         }
         /* 订阅列表 */
         &:has(#issue-list) {
-          > .tw-flex {
+          > .flex-left-right {
             align-items: center;
             align-content: center;
             background-color: ${themeVars.color.box.header};
@@ -64,7 +64,7 @@ const notification = css`
               }
             }
             /* 右侧菜单 */
-            > .tw-flex:last-child > .ui.menu {
+            > .ui.secondary.menu:last-child {
               align-items: center;
               > .item {
                 color: ${themeVars.color.text.light.num1};
@@ -77,18 +77,18 @@ const notification = css`
           }
         }
         /* 关注列表 */
-        > .flex-list:not([id]) {
+        > .items-with-main:not([id]) {
           border: 1px solid ${themeVars.color.light.border};
           border-radius: ${otherThemeVars.border.radius};
-          > .flex-item {
+          > .item {
             padding: 16px;
-            > .flex-item-main {
+            > .item-main {
               gap: 4px;
-              > .flex-item-header {
-                > .flex-item-title {
+              > .item-header {
+                > .item-title {
                   gap: 12px;
                 }
-                > .flex-item-trailing {
+                > .item-trailing {
                   color: ${themeVars.color.text.light.num1};
                   font-size: 12px;
                   font-weight: 400;
@@ -100,7 +100,7 @@ const notification = css`
                   }
                 }
               }
-              > .flex-item-body:last-child {
+              > .item-body:last-child {
                 font-size: 12px;
               }
             }
@@ -109,7 +109,7 @@ const notification = css`
       }
       /* 通知列表 */
       &:has(#notification_table) {
-        > .flex-text-block:first-child {
+        > .flex-left-right:first-child {
           background-color: ${themeVars.color.box.header};
           border: 1px solid ${themeVars.color.light.border};
           border-bottom: 0;
@@ -171,6 +171,10 @@ const notification = css`
             background: ${themeVars.github.bgColor.accent.muted};
             box-shadow: 2px 0 0 ${themeVars.github.borderColor.accent.emphasis} inset;
             color: ${themeVars.color.text.self};
+          }
+          > .tw-self-start:has(svg) {
+            margin-top: 1px !important;
+            line-height: 1;
           }
           > .notifications-link > div {
             &:first-child {

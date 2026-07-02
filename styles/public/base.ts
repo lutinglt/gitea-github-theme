@@ -25,6 +25,9 @@ const body = css`
   }
   a {
     text-underline-offset: 0.2rem; /* 0.2rem 可以始终保持下划线不受 overflow: hidden 的影响 */
+    &:hover {
+      text-underline-position: unset;
+    }
   }
   /* 默认代码块 */
   code:not(.code-inner) {

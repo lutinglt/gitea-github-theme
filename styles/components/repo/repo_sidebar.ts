@@ -23,12 +23,18 @@ import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
 const repoGrid = css`
   .repo-grid-filelist-sidebar {
     grid-template-columns: auto 312px;
-    gap: 24px;
+    gap: 16px;
   }
 
   @media (max-width: 767.98px) {
     .repo-grid-filelist-sidebar {
       grid-template-columns: 100%;
+    }
+  }
+  .repo-grid-filelist-sidebar {
+    .repo-home-sidebar-top,
+    .repo-home-sidebar-bottom {
+      padding-left: 24px;
     }
   }
 `;
@@ -44,40 +50,41 @@ const repoSidebarTop = css`
       a.muted:hover {
         text-decoration: none;
       }
-      .flex-item {
-        padding: 10px 0 0 0;
-        /* 仓库描述本身 */
-        .flex-item-title {
-          margin-top: 10px;
+      /* 仓库描述本身 */
+      .repo-home-sidebar-header {
+        margin-top: 10px;
+      }
+      /* 仓库描述内容 */
+      .repo-description {
+        margin-top: 10px;
+        color: ${themeVars.color.text.self};
+      }
+      /* 仓库标签 */
+      #repo-topics {
+        margin: 8px 0px !important;
+        gap: 4px !important;
+      }
+      #manage_topic {
+        color: ${themeVars.color.text.light.num1} !important;
+      }
+      /* 仓库属性 */
+      .flex-text-block {
+        color: ${themeVars.color.text.light.num1};
+        font-size: 14px;
+        font-weight: 600;
+        margin-top: 10px;
+        &.muted {
+          margin-top: 2px;
+          font-weight: normal;
         }
-        /* 仓库描述内容 */
-        .flex-item-body {
-          > .tw-flex:first-child {
-            margin-top: 16px !important;
-            gap: 8px !important;
-          }
-          .repo-description {
-            color: ${themeVars.color.text.self};
-          }
-          #repo-topics {
-            margin: 8px 0px !important;
-          }
-          .flex-text-block {
-            font-size: 14px;
-            font-weight: 600;
-            margin-top: 10px;
-            &.muted {
-              margin-top: 2px;
-              font-weight: normal;
-            }
-            svg.svg {
-              margin-right: 4px;
-              &.octicon-database,
-              &.octicon-law {
-                margin-right: 6px;
-              }
-            }
-          }
+        svg.svg {
+          margin-right: 4px;
+        }
+      }
+      #manage_topic,
+      a.flex-text-block.muted {
+        &:hover {
+          color: ${themeVars.color.primary.self} !important;
         }
       }
     }
@@ -91,20 +98,29 @@ const repoSidebarBottom = css`
       a.muted:hover {
         text-decoration: none;
       }
-      .flex-item {
-        padding: 16px 0;
-        .flex-item {
-          padding: 16px 0 0 0;
-          .flex-item-leading {
-            svg.svg.octicon-tag {
-              color: ${themeVars.color.green.self};
-            }
-          }
-          .flex-item-header .flex-item-title {
+      svg.svg.octicon-tag {
+        color: ${themeVars.color.green.self};
+      }
+      .repo-home-sidebar-header {
+        margin: 8px 0;
+      }
+      /* 版本 */
+      .repo-home-sidebar-header + .flex-relaxed-list {
+        gap: 0px;
+        margin-bottom: 8px;
+        .flex-text-block {
+          /* 版本名称 */
+          > a.muted {
             font-size: 14px;
+            font-weight: 600;
+          }
+          /* 版本标签 */
+          > .tw-shrink-0 {
+            display: inline-flex;
           }
         }
-        .flex-item-body {
+        relative-time {
+          color: ${themeVars.color.text.light.num1};
           font-size: 12px;
         }
       }
@@ -117,6 +133,7 @@ const repoSidebarBottom = css`
         outline-offset: -1px;
       }
       .language-stats-details .item {
+        color: ${themeVars.color.text.light.num1};
         font-size: 12px;
         margin-right: 8px;
         .color-icon {

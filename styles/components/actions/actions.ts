@@ -84,17 +84,16 @@ const actions = css`
             color: ${themeVars.color.text.light.num1};
           }
 
-          .flex-item {
+          .item {
             padding: 16px;
             line-height: 18px;
-            .flex-item-leading {
+            .item-leading {
               align-self: flex-start;
-              margin-top: 2px;
             }
-            .flex-item-main {
+            .item-main {
               gap: 0.5rem;
             }
-            .flex-item-trailing {
+            .item-trailing {
               > .ui.label {
                 border-radius: ${otherThemeVars.border.radius};
               }
@@ -137,7 +136,9 @@ const label = css`
 const runWorkflow = css`
   /* 手动工作流弹窗 */
   #runWorkflowDispatchModal {
-    overflow: hidden;
+    > .content {
+      border-radius: ${otherThemeVars.border.radius};
+    }
   }
   /* 手动工作流下拉列表 */
   #runWorkflowDispatchForm {

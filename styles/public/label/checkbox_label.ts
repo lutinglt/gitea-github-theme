@@ -17,11 +17,14 @@
  * limitations under the License.
  */
 
-import { cssCombine } from "@lutinglt/gitea-github-theme/core";
-import checkboxLabel from "./checkbox_label";
-import label from "./label";
-import repoLabel from "./repo_label";
-import shaLabel from "./sha_label";
-import taskStatusLabel from "./task_status_label";
+import { css, cssCombine } from "@lutinglt/gitea-github-theme/core";
 
-export default cssCombine(label, repoLabel, shaLabel, taskStatusLabel, checkboxLabel);
+const checkboxLabel = css`
+  .ui.checkbox label {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+  }
+`;
+
+export default cssCombine(checkboxLabel);

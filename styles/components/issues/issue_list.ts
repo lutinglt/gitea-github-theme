@@ -100,14 +100,14 @@ const issueList = css`
   .page-content.user.notification,
   /* 仓库 Issue 列表 */
   .page-content.repository.issue-list {
-    .flex-list#issue-list {
+    #issue-list {
       border: 1px solid ${themeVars.color.light.border};
       border-bottom-left-radius: ${otherThemeVars.border.radius};
       border-bottom-right-radius: ${otherThemeVars.border.radius};
       img.ui.avatar {
         border-radius: 9999px;
       }
-      > .flex-item {
+      > .item {
         align-items: center;
         padding: 0;
         min-height: 64px;
@@ -121,7 +121,7 @@ const issueList = css`
         &:has(:checked) {
           background-color: ${themeVars.github.bgColor.accent.muted};
         }
-        > .flex-item-leading {
+        > .item-leading {
           align-self: flex-start;
           margin-top: 14px;
           margin-left: 16px;
@@ -133,32 +133,34 @@ const issueList = css`
             }
           }
         }
-        > .flex-item-main {
+        > .item-main {
           gap: 4px;
-          .flex-item-header {
+          .item-header {
             padding-top: 8px;
           }
-          .flex-item-body {
+          .item-body {
             font-size: 12px;
             padding-bottom: 8px;
           }
         }
-        > .flex-item-trailing {
+        > .item-trailing {
           margin-right: 32px;
         }
       }
     }
   }
+
   /* 里程碑列表 */
   /* [TODO] 暂时排除项目的列表 */
-  .page-content.repository.milestones:not(.projects) .milestone-list {
+  .page-content.repository.milestones:not(.projects) .milestone-list,
+  /* 仪表板的里程碑列表 */
+  .page-content.repository.milestones.dashboard .flex-divided-list   {
     border: 1px solid ${themeVars.color.light.border};
     border-bottom-left-radius: ${otherThemeVars.border.radius};
     border-bottom-right-radius: ${otherThemeVars.border.radius};
-    .milestone-card {
+    .item {
       padding: 8px 16px 10px 16px;
-      .milestone-header {
-        h3 {
+      .list-item-large-title {
           font-size: 16px;
           font-weight: 500;
         }
@@ -166,11 +168,11 @@ const issueList = css`
           font-size: 14px;
           font-weight: 600;
         }
-      }
+
     }
-    .milestone-toolbar {
+    .list-item-secondary-bar {
       font-size: 12px;
-      .group > a {
+      .a {
         font-size: 13px;
       }
     }

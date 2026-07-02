@@ -33,25 +33,25 @@ const repoList = css`
   /* 探索 */
   .page-content.explore.repositories > .ui.container {
     /* 排除用户的公开活动页 */
-    > .flex-list:not(#activity-feed) {
+    > .items-with-main:not(#activity-feed) {
       display: grid;
-      > .flex-item {
+      > .item {
         border: 1px solid ${themeVars.color.light.border};
         border-radius: ${otherThemeVars.border.radius};
         padding: 16px;
         /* 仓库头像 */
-        > .flex-item-leading {
+        > .item-leading {
           img,
           svg {
             color: ${themeVars.color.text.light.num1};
           }
         }
         /* 仓库信息 */
-        > .flex-item-main {
+        > .item-main {
           /* 仓库标题 */
-          > .flex-item-header {
+          > .item-header {
             /* 仓库名称 */
-            > .flex-item-title {
+            > .item-title {
               gap: 8px;
               /* 仓库中间的间隔线 */
               &:not(a) {
@@ -59,7 +59,7 @@ const repoList = css`
               }
             }
             /* 仓库语言, 星标 */
-            > .flex-item-trailing {
+            > .item-trailing {
               color: ${themeVars.color.text.light.num1};
               gap: 16px;
               font-size: 12px;
@@ -71,7 +71,7 @@ const repoList = css`
             }
           }
           /* 描述和更新时间 */
-          > .flex-item-body {
+          > .item-body {
             margin-top: 8px;
             /* 更新时间 */
             &:last-child {
@@ -88,18 +88,18 @@ const repoList = css`
   }
   /* 仓库列表列数 */
   /* 组织 */
-  .page-content.organization.profile > .ui.container > .ui.stackable > .ui.eleven > .flex-list {
+  .page-content.organization.profile > .ui.container > .ui.stackable > .ui.eleven > .items-with-main {
     grid-template-columns: repeat(${orgRepoVar}, 1fr);
     gap: min(${orgRepoVar} * 8px, 16px);
   }
   /* 用户 */
   /* 排除用户的公开活动页 */
-  .page-content.user.profile > .ui.container > .ui.stackable > .ui.twelve > .flex-list:not(#activity-feed) {
+  .page-content.user.profile > .ui.container > .ui.stackable > .ui.twelve > .items-with-main:not(#activity-feed) {
     grid-template-columns: repeat(${userRepoVar}, 1fr);
     gap: min(${userRepoVar} * 8px, 16px);
   }
   /* 探索 */
-  .page-content.explore.repositories > .ui.container > .flex-list {
+  .page-content.explore.repositories > .ui.container > .items-with-main {
     grid-template-columns: repeat(${exploreRepoVar}, 1fr);
     gap: min(${exploreRepoVar} * 8px, 16px);
   }
@@ -114,15 +114,15 @@ const userList = css`
   .page-content.organization.members > .ui.container,
   /* 探索的用户和组织 */
   .page-content.explore.users > .ui.container {
-    > .flex-list {
+    > .items-with-main {
       display: grid;
-      > .flex-item {
+      > .item {
         border: 1px solid ${themeVars.color.light.border};
         border-radius: ${otherThemeVars.border.radius};
         padding: 16px;
-        > .flex-item-main {
+        > .item-main {
           /* 用户名称 */
-          > .flex-item-title {
+          > .item-title {
             gap: 8px;
             margin-bottom: 8px;
             /* 用户标签 */
@@ -131,7 +131,7 @@ const userList = css`
             }
           }
           /* 用户描述 */
-          > .flex-item-body {
+          > .item-body {
             font-size: 12px;
             svg {
               width: 12px;
@@ -144,12 +144,12 @@ const userList = css`
   }
   /* 用户列表列数 */
   /* 组织 */
-  .page-content.organization.members > .ui.container > .flex-list {
+  .page-content.organization.members > .ui.container > .items-with-main {
     grid-template-columns: repeat(${orgUserVar}, 1fr);
     gap: min(${orgUserVar} * 8px, 16px);
   }
   /* 探索的用户和组织 */
-  .page-content.explore.users > .ui.container > .flex-list {
+  .page-content.explore.users > .ui.container > .items-with-main {
     grid-template-columns: repeat(${exploreUserVar}, 1fr);
     gap: min(${exploreUserVar} * 8px, 16px);
   }
@@ -169,7 +169,7 @@ const mobileList = css`
     /* 探索的用户和组织列表 */
     .page-content.explore.users >.ui.container {
       /* 排除用户的公开活动页 */
-      > .flex-list:not(#activity-feed) {
+      > .items-with-main:not(#activity-feed) {
         grid-template-columns: 1fr;
         gap: 8px;
       }
@@ -190,8 +190,8 @@ const notMatch = css`
   /* 探索的用户和组织列表 */
   .page-content.explore.users >.ui.container {
     /* 排除用户的公开活动页 */
-    > .flex-list:not(#activity-feed) {
-      &:has(> div:only-child):not(:has(.flex-item-main)) {
+    > .items-with-main:not(#activity-feed) {
+      &:has(> div:only-child):not(:has(.item-main)) {
         grid-template-columns: 1fr;
         > div {
           border: 1px solid ${themeVars.color.light.border};

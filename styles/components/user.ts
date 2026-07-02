@@ -23,25 +23,25 @@ import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
 const stars = css`
   .page-content.user.profile {
     .stars {
-      > .flex-list {
-        > .flex-item {
+      > .items-with-main {
+        > .item {
           padding: 24px 0;
           &:first-child {
             padding-top: 14px;
           }
           /* 仓库头像 */
-          > .flex-item-leading {
+          > .item-leading {
             img,
             svg {
               color: ${themeVars.color.text.light.num1};
             }
           }
           /* 仓库信息 */
-          > .flex-item-main {
+          > .item-main {
             /* 仓库标题 */
-            > .flex-item-header {
+            > .item-header {
               /* 仓库名称 */
-              > .flex-item-title {
+              > .item-title {
                 font-size: 20px;
                 gap: 8px;
                 /* 仓库中间的间隔线 */
@@ -50,7 +50,7 @@ const stars = css`
                 }
               }
               /* 仓库语言, 星标 */
-              > .flex-item-trailing {
+              > .item-trailing {
                 color: ${themeVars.color.text.light.num1};
                 gap: 16px;
                 font-size: 12px;
@@ -62,7 +62,7 @@ const stars = css`
               }
             }
             /* 描述和更新时间 */
-            > .flex-item-body {
+            > .item-body {
               margin-top: 10px;
               /* 更新时间 */
               &:last-child {

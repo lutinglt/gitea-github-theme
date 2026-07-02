@@ -23,19 +23,20 @@ import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-gith
 const packagesList = css`
   .page-content.packages {
     /* 这里必须要用 >, 否则会影响到软件包详细信息页的样式 */
-    > .ui.container > div:not([class]) {
+    /* 避免锚中组织头像 */
+    > .ui.container > div:not([class]):not(:has(img.ui.avatar)) {
       border: 1px solid ${themeVars.color.light.border};
       border-radius: ${otherThemeVars.border.radius};
       margin-top: 16px;
-      .flex-list {
+      .items-with-main {
         border-top: 1px solid ${themeVars.color.light.border};
         &:first-child {
           border-top: 0;
         }
-        .flex-item {
+        .item {
           padding: 16px;
-          .flex-item-main {
-            .flex-item-title {
+          .item-main {
+            .item-title {
               gap: 8px;
               > a {
                 min-height: 25px;
@@ -50,7 +51,7 @@ const packagesList = css`
                 color: ${themeVars.color.primary.self};
               }
             }
-            .flex-item-body {
+            .item-body {
               font-size: 12px;
               a {
                 text-decoration: underline;

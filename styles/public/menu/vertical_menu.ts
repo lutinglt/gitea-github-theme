@@ -30,10 +30,10 @@ const verticalMenu = css`
     /* 设置页面的菜单头部 */
     .header.item {
       color: ${themeVars.color.text.light.num1} !important;
-      font-size: 1.5rem;
-      font-weight: 700;
+      font-size: 20px;
+      font-weight: 600;
       background: unset;
-      margin-bottom: 0.5rem;
+      margin-bottom: 8px;
     }
     /* 菜单项被悬停时的背景色, 限制a标签, 避免为子菜单多余渲染 */
     a.item {
@@ -48,7 +48,7 @@ const verticalMenu = css`
     /* 菜单项 */
     .item,
     .item > summary {
-      font-size: 1.1rem;
+      font-size: 14px;
       background: unset;
       border-radius: ${otherThemeVars.border.radius};
       padding: 6px 8px;
@@ -76,7 +76,15 @@ const verticalMenu = css`
       ${activeItemAfterStyle};
     }
     /* 部分菜单项的子菜单 */
-    details.item {
+    > details.item {
+      /* Actions 其他工作流菜单 */
+      > summary,
+      > .menu.items-full-width > .item {
+        padding: 6px 8px;
+      }
+      > .menu {
+        margin: 0;
+      }
       /* 子菜单的标题 */
       summary:hover {
         background: ${themeVars.github.control.transparent.bgColor.hover};
