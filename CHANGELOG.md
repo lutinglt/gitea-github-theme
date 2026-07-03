@@ -14,6 +14,7 @@
 
 - Fine tune the spacing of elements in menu sub items.
 - Optimize the spacing of warehouse themes on exploration pages.
+- Increase the corner angle of the pop-up window.
 
 ### 🐞 Fix
 
