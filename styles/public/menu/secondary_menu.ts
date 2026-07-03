@@ -18,6 +18,7 @@
  */
 
 import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { basicButtonStyle } from "@lutinglt/gitea-github-theme/styles/common";
 
 const secondaryMenu = css`
   /* 二级菜单, 比如 Issue/PR/Actions 的筛选菜单 */
@@ -83,4 +84,19 @@ const secondaryMenu = css`
   }
 `;
 
-export default cssCombine(secondaryMenu);
+// 小型的一般带搜索框和下拉菜单按钮的二级菜单栏
+// 例: 探索页面搜索框和筛选菜单/排序菜单, 关注/用户/组织仓库的搜索栏和筛选菜单/排序菜单
+const secondarySmallFilterMenu = css`
+  .ui.small.secondary.filter.menu {
+    /* 下拉菜单按钮 */
+    .ui.small.dropdown.item {
+      ${basicButtonStyle}
+    }
+    /* 搜索框 */
+    input[type="search"] {
+      background: unset;
+    }
+  }
+`;
+
+export default cssCombine(secondaryMenu, secondarySmallFilterMenu);

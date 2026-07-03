@@ -18,7 +18,11 @@
  */
 
 import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
-import { primaryButtonHoverStyle, primaryButtonStyle } from "@lutinglt/gitea-github-theme/styles/common";
+import {
+  basicButtonStyle,
+  primaryButtonHoverStyle,
+  primaryButtonStyle,
+} from "@lutinglt/gitea-github-theme/styles/common";
 
 // 普通按钮和主色调按钮
 const baseButton = css`
@@ -62,15 +66,7 @@ const baseButton = css`
   /* 主色调基本按钮和普通按钮一样 */
   /* 作者的关注按钮 */
   .ui.basic.primary.button {
-    background-color: ${themeVars.color.button};
-    color: ${themeVars.color.text.self};
-    border-color: ${themeVars.color.light.border};
-    box-shadow: none;
-    &:hover {
-      background-color: ${themeVars.color.hover.self};
-      color: ${themeVars.color.text.self};
-      border-color: ${themeVars.color.light.border};
-    }
+    ${basicButtonStyle}
   }
   /* 普通按钮边框色不变 */
   .ui.basic.button,
