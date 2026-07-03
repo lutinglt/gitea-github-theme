@@ -21,7 +21,19 @@ import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-gith
 
 // 工作流详情页标题
 const actionViewHeader = css`
-  .action-view-header {
+  .action-view-header.action-view-header {
+    margin: 16px 0;
+    .action-info-summary {
+      .ui.basic.button {
+        font-size: 14px;
+      }
+      .ui.dropdown.compact.button {
+        z-index: 1; /* 避免被遮挡 */
+        > .menu > .item {
+          align-items: start;
+        }
+      }
+    }
     .action-commit-summary {
       /* yml 文件名 */
       > span:first-child {
@@ -64,7 +76,8 @@ const actionViewHeader = css`
 const actionViewLeft = css`
   .action-view-left.action-view-left.action-view-left {
     margin-right: 28px;
-    max-width: 22vw;
+    min-width: 224px;
+    max-width: 18vw;
     .left-list-header {
       font-size: 12px;
       font-weight: 600;

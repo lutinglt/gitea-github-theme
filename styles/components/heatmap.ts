@@ -27,7 +27,8 @@ const heatmap = css`
     }
     .heatmap-footer {
       color: ${themeVars.color.text.light.num1};
-      padding: 2px 20px 0px 25px;
+      padding-left: 20px;
+      padding-right: 8px;
     }
     > div {
       padding: 12px 20px;

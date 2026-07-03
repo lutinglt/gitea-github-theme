@@ -16,6 +16,7 @@
 - Optimize the spacing of warehouse themes on exploration pages.
 - Increase the corner angle of the pop-up window.
 - Synchronize the style of the search bar.
+- Synchronize workflow summary style.
 
 ### 🐞 Fix
 

@@ -17,12 +17,13 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 import { animationDown } from "@lutinglt/gitea-github-theme/styles/common";
 
 // 工作流右侧作业步骤日志详情
 const actionViewRight = css`
   .action-view-right {
+    border-radius: ${otherThemeVars.border.radius};
     box-shadow: ${themeVars.github.shadow.resting.small};
     /* 提前加载高度和滚动条 */
     min-height: calc(100vh - 245px);

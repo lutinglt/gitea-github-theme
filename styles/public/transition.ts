@@ -39,6 +39,8 @@ const transition = css`
   .job-step-summary,
   .job-step-logs,
   .job-brief-item,
+  /* 流程图 */
+  .workflow-graph svg rect,
   .repo-file-cell,
   .tippy-box .flex-items-block .item,
   .clone-panel-tab .item,
