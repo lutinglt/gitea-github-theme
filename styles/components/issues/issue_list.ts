@@ -154,21 +154,20 @@ const issueList = css`
   /* [TODO] 暂时排除项目的列表 */
   .page-content.repository.milestones:not(.projects) .milestone-list,
   /* 仪表板的里程碑列表 */
-  .page-content.repository.milestones.dashboard .flex-divided-list   {
+  .page-content.repository.milestones.dashboard .flex-divided-list {
     border: 1px solid ${themeVars.color.light.border};
     border-bottom-left-radius: ${otherThemeVars.border.radius};
     border-bottom-right-radius: ${otherThemeVars.border.radius};
     .item {
       padding: 8px 16px 10px 16px;
       .list-item-large-title {
-          font-size: 16px;
-          font-weight: 500;
-        }
-        div span {
-          font-size: 14px;
-          font-weight: 600;
-        }
-
+        font-size: 16px;
+        font-weight: 500;
+      }
+      div span {
+        font-size: 14px;
+        font-weight: 600;
+      }
     }
     .list-item-secondary-bar {
       font-size: 12px;

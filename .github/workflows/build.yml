@@ -34,7 +34,7 @@ jobs:
         if: steps.changes.outputs.src == 'true'
         run: |
           bun install
-          bun bundle:ci
+          bun ci
 
       - name: Upload css assets
         if: steps.build.outcome == 'success'
