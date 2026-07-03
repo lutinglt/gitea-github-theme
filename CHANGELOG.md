@@ -20,4 +20,5 @@
 
 ### 🐞 Fix
 
+- Fix filter button overlaps with profile menu. #39
 - Fix the issue where the branch menu under the manual workflow pop-up window is obscured.
