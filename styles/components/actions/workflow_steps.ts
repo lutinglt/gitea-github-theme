@@ -65,32 +65,27 @@ const actionViewRight = css`
           color: ${themeVars.color.console.fg.subtle};
           padding: 8px !important;
           height: 36px;
+          gap: 12px;
 
           &.selected {
             /* 滚动时固定在顶部的高度与 job-info-header 高度相同 */
             top: 80px;
-          }
-
-          &.step-expandable:hover {
-            color: ${themeVars.color.console.fg.subtle};
-          }
-
-          .tw-mr-2:not(.svg) svg.svg {
-            margin: 1.5px 6px 0px 2px;
-          }
-          /* 绿色步骤状态改为白色 */
-          svg.tw-text-green {
-            color: ${themeVars.color.console.fg.subtle} !important;
-          }
-
-          &.selected {
             /* 不被 hover 效果影响 */
             color: ${themeVars.color.console.fg.self} !important;
             background-color: ${themeVars.color.console.activeBg} !important;
 
-            svg.tw-text-green {
-              color: ${themeVars.color.console.fg.self} !important;
-            }
+          }
+          /* 步骤标题三角号, 折叠展开图标 */
+          > svg.step-summary-chevron {
+            margin: 0 !important;
+          }
+          /* 步骤状态图标 */
+          > span:not([class]):has(svg) {
+            display: inline-flex;
+          }
+          /* 绿色步骤状态改为白色 */
+          svg.tw-text-green {
+            color: ${themeVars.color.console.fg.subtle} !important;
           }
           /* 步骤耗时 */
           .step-summary-duration {

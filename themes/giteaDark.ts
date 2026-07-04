@@ -290,7 +290,9 @@ const other: Other = {
   overlayBackdrop: "#080808c0",
   danger: themeVars.color.red.self,
   transparency: { grid: { light: "#2a2a2a", dark: "#1a1a1a" } },
-  workflowEdgeHover: "#666a73",
+  // workflowEdgeHover: "#666a73",
+  // 此颜色在 Gitea 中使用在 1.27 版本中出现偏差, CSS 高亮使用 primary 覆盖, 这里还原视觉效果与主题文件有偏差
+  workflowEdgeHover: primary.self,
 };
 
 export const giteaDarkColor: GiteaColor = {
