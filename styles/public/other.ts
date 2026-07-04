@@ -69,6 +69,7 @@ const avatar = css`
   .ui.avatar svg {
     background-color: ${themeVars.github.avatar.bgColor};
     box-shadow: 0 0 0 1px ${themeVars.github.avatar.borderColor};
+    backdrop-filter: blur(12px);
   }
 `;
 // 切换按钮
