@@ -73,7 +73,6 @@ const actionViewRight = css`
             /* 不被 hover 效果影响 */
             color: ${themeVars.color.console.fg.self} !important;
             background-color: ${themeVars.color.console.activeBg} !important;
-
           }
           /* 步骤标题三角号, 折叠展开图标 */
           > svg.step-summary-chevron {

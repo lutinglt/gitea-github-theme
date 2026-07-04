@@ -28,7 +28,7 @@ const actionViewHeader = css`
         font-size: 14px;
       }
       .ui.dropdown.compact.button {
-        z-index: 11; /* 避免被遮挡 */
+        z-index: 2; /* 避免被遮挡 */
         > .menu > .item {
           align-items: start;
         }
