@@ -19,8 +19,8 @@
     "./primer": "./primer/index.ts"
   },
   "scripts": {
-    "lint": "bun eslint .",
-    "fmt": "bun prettier --write .",
+    "lint": "bunx --bun eslint .",
+    "fmt": "bunx --bun prettier --write .",
     "bundle": "tsgo -b && bunx --bun vite build",
     "dev": "bun bundle && bun sync:theme",
     "ci": "bun lint && bun bundle && bun vitest ",
@@ -31,6 +31,7 @@
     "update:primer": "bun scripts/buildPrimerTSToken.ts",
     "update:locale": "bun scripts/translate.ts",
     "update:gitea": "bun scripts/updateGitea.ts",
+    "update:snapshot": "bun vitest --update",
     "install:clean": "rm -rf node_modules bun.lock bun.lockb && bun install"
   },
   "devDependencies": {

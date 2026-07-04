@@ -18,13 +18,13 @@ jobs:
           - vitest
           - build
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: "1.3.14"
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@v6
         with:
           path: |
             node_modules
@@ -34,13 +34,13 @@ jobs:
       - run: bun install
 
       - if: matrix.check == 'eslint'
-        run: bun eslint .
+        run: bun lint
 
       - if: matrix.check == 'prettier'
-        run: bun prettier --check .
+        run: bun fmt --check
 
       - if: matrix.check == 'tsgo'
-        run: bunx --bun tsgo -b
+        run: bun tsgo -b
 
       - if: matrix.check == 'vitest'
         run: bun vitest --run
