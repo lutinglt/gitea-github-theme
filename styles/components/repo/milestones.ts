@@ -31,7 +31,7 @@ const milestone = css`
     }
   }
   /* 里程碑 Issue 列表的进度条 */
-  .milestone-progress-big {
+  .list-item-title-progress {
     height: 8px;
   }
   /* 里程碑 Issue 列表 */

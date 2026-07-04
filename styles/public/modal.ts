@@ -47,4 +47,11 @@ const modal = css`
   }
 `;
 
-export default cssCombine(modal);
+const modalFix = css`
+  /* 覆盖默认的动画 */
+  .ui.modal.transition {
+    ${animationDown}
+  }
+`;
+
+export default cssCombine(modal, modalFix);

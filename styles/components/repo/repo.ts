@@ -26,9 +26,9 @@ const repoHeader = css`
     .ui.compact.button {
       padding: 3px 12px;
     }
-    /* 仓库名称 */
-    .flex-item {
-      .flex-item-title {
+    > .flex-text-block:first-child {
+      /* 仓库名称 */
+      > .flex-text-block:first-of-type {
         /* 间隔线颜色 */
         color: ${themeVars.color.text.light.num1};
         /* 仓库名称 */
@@ -41,8 +41,8 @@ const repoHeader = css`
           min-width: 3ch;
           padding: 0px 6px;
           border-radius: ${otherThemeVars.border.radius};
-          margin-top: 0.5rem;
-          margin-bottom: 0.5rem;
+          margin-top: 8px;
+          margin-bottom: 8px;
           &:hover {
             background: ${themeVars.github.control.transparent.bgColor.hover};
           }
@@ -50,10 +50,6 @@ const repoHeader = css`
             font-weight: 600;
           }
         }
-      }
-      /* 默认的 hover 为 primary 颜色, 修正 */
-      a:not(.label, .button):hover {
-        color: ${themeVars.color.text.self} !important;
       }
     }
   }
@@ -87,7 +83,7 @@ const repoMenu = css`
 const repoTopic = css`
   /* 理应只能覆盖探索/组织/用户下仓库的 topic 标签 */
   /* 避免渲染到仓库的类型标签 */
-  .flex-item-main > .label-list .ui.label,
+  .items-with-main > .item > .item-main > .label-list > .ui.label,
   /* 仓库文件列表下的 topic 标签 */
   #repo-topics .ui.label.repo-topic {
     border-radius: 9999px;

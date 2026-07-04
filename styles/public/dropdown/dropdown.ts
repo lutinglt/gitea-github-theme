@@ -42,7 +42,7 @@ const dropdown = css`
         padding: 6px 8px !important;
         min-height: 32px;
         border-radius: ${otherThemeVars.border.radius} !important;
-        gap: 4px;
+        gap: 8px;
         &:not(.emoji) {
           margin: 0 8px;
         }

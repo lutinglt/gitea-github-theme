@@ -76,7 +76,7 @@ const babel = css`
 // PR 分支标签
 const prBranch = css`
   .repository.view.issue .pull-desc code,
-  #issue-list .flex-item-body .branches .branch {
+  #issue-list .branches .branch {
     color: ${themeVars.github.fgColor.accent};
     background-color: ${themeVars.github.bgColor.accent.muted};
     border-radius: ${otherThemeVars.border.radius};

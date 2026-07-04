@@ -48,7 +48,12 @@ const vars = {
   github: color.github,
 };
 
-const otherVars = { border: { radius: null }, color: { ...color.otherAuto }, checkbox: { size: null } };
+const otherVars = {
+  border: { radius: null },
+  color: { ...color.otherAuto },
+  checkbox: { size: null },
+  gap: { inline: null, block: null },
+};
 
 const customVars = {
   branchMenuWidth: "branch-menu-width",

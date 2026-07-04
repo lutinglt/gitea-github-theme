@@ -107,6 +107,7 @@ export function createTheme(theme: Theme): void {
     border: { radius: "6px" },
     color: { git: "#f05133" },
     checkbox: { size: "14px" },
+    gap: { inline: "4px", block: "8px" },
   });
   // 全局样式
   globalStyle(selectors.root, {

@@ -23,6 +23,9 @@ import { labelStyle } from "@lutinglt/gitea-github-theme/styles/common";
 const menu = css`
   .ui.menu {
     min-height: 32px;
+    .item {
+      line-height: 21px;
+    }
   }
   .menu .item svg {
     color: ${themeVars.color.text.light.num1};
