@@ -42,6 +42,8 @@ export type Console = MapLeafNodes<typeof color.console, string>;
 export type Diff = MapLeafNodes<typeof color.diff, string>;
 /** 其他颜色 */
 export type Other = MapLeafNodes<typeof color.other, string>;
+/** 16 色调色板 */
+export type Series16 = MapLeafNodes<typeof color.series16, string>;
 /** 仅限本主题的 GitHub 颜色 */
 export type GitHub = MapLeafNodes<typeof color.github, string>;
 

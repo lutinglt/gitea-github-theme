@@ -17,31 +17,21 @@
  * limitations under the License.
  */
 
-import { chroma } from "./chroma";
-import { codeMirror } from "./codemirror";
-import { ansi, console } from "./console";
-import { diff } from "./diff";
-import { github } from "./github";
-import { primary, secondary } from "./main";
-import { message } from "./message";
-import { named } from "./named";
-import { other, otherAuto } from "./other";
-import { series16 } from "./series";
-import { syntax } from "./syntax";
-
-export default {
-  chroma,
-  ansi,
-  codeMirror,
-  console,
-  diff,
-  github,
-  primary,
-  secondary,
-  message,
-  named,
-  other,
-  otherAuto,
-  syntax,
-  series16,
+export const series16 = {
+  num0: null,
+  num1: null,
+  num2: null,
+  num3: null,
+  num4: null,
+  num5: null,
+  num6: null,
+  num7: null,
+  num8: null,
+  num9: null,
+  num10: null,
+  num11: null,
+  num12: null,
+  num13: null,
+  num14: null,
+  num15: null,
 };

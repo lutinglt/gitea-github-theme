@@ -33,17 +33,37 @@ jobs:
 
       - run: bun install
 
-      - if: matrix.check == 'eslint'
+      - name: Lint
+        if: matrix.check == 'eslint'
         run: bun lint
 
-      - if: matrix.check == 'prettier'
+      - name: Format check
+        if: matrix.check == 'prettier'
         run: bun fmt --check
 
-      - if: matrix.check == 'tsgo'
+      - name: Type check
+        if: matrix.check == 'tsgo'
         run: bun tsgo -b
 
-      - if: matrix.check == 'vitest'
+      - name: Test
+        if: matrix.check == 'vitest'
         run: bun vitest --run
 
-      - if: matrix.check == 'build'
+      - name: Build
+        id: build
+        if: matrix.check == 'build'
         run: bun bundle
+
+      - name: Upload css assets
+        if: steps.build.outcome == 'success'
+        uses: actions/upload-artifact@v7
+        with:
+          name: themes
+          path: dist/*.css
+
+      - name: Upload templates assets
+        if: steps.build.outcome == 'success'
+        uses: actions/upload-artifact@v7
+        with:
+          name: templates
+          path: templates

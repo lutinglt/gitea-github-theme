@@ -30,7 +30,20 @@ export {
 } from "./palette";
 export type { DisplayColor, GitHubColor, GiteaColor, ThemeColor } from "./palette";
 export { chromaVars, customThemeVars, otherThemeVars, syntaxVars, themeVars } from "./types";
-export type { Ansi, Chroma, Console, Diff, GitHub, Message, Named, Other, Primary, Secondary, Syntax } from "./types";
+export type {
+  Ansi,
+  Chroma,
+  Console,
+  Diff,
+  GitHub,
+  Message,
+  Named,
+  Other,
+  Primary,
+  Secondary,
+  Series16,
+  Syntax,
+} from "./types";
 export { deepOverride } from "./utils";
 export { defineThemeConfig } from "./vite-plugin/themeConfig";
 export { selectors };

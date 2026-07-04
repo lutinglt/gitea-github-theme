@@ -9,6 +9,8 @@
 - Fix some border corner issues.
 - Fix the horizontal alignment issue of check boxes in some drop-down menus.
 - Optimize heat map style.
+- Optimize transparency when stacking avatars.
+- Synchronize the color of branches in Git commit graph.
 
 #### More GitHub-like style
 

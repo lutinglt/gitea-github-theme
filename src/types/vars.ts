@@ -44,6 +44,7 @@ const vars = {
     ansi: color.ansi,
     console: color.console,
     diff: color.diff,
+    series: { num16: color.series16 },
   },
   github: color.github,
 };

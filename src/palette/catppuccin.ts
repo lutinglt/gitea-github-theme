@@ -277,7 +277,7 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
       red: flavor.colors.red.hex,
       orange: flavor.colors.peach.hex,
       yellow: flavor.colors.yellow.hex,
-      olive: flavor.colors.green.hex,
+      olive: mix(flavor.colors.yellow.hex, flavor.colors.green.hex, 0.35),
       green: flavor.colors.green.hex,
       teal: flavor.colors.teal.hex,
       cyan: flavor.colors.sky.hex,

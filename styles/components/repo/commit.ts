@@ -28,6 +28,7 @@ const commit = css`
       .author {
         img.ui.avatar {
           border-radius: 9999px;
+          backdrop-filter: blur(12px);
         }
         /* 作者名称 */
         .author-wrapper {

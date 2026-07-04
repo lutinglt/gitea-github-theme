@@ -31,6 +31,7 @@ import type {
   Other,
   Primary,
   Secondary,
+  Series16,
   Syntax,
 } from "@lutinglt/gitea-github-theme/core";
 import { defineTheme, themeVars } from "@lutinglt/gitea-github-theme/core";
@@ -295,6 +296,25 @@ const other: Other = {
   workflowEdgeHover: primary.self,
 };
 
+const series16: Series16 = {
+  num0: "#7db233",
+  num1: "#499a37",
+  num2: "#ce4751",
+  num3: "#8f9121",
+  num4: "#ac32a6",
+  num5: "#7445e9",
+  num6: "#c67d28",
+  num7: "#4db392",
+  num8: "#aa4d30",
+  num9: "#2a6f84",
+  num10: "#c45327",
+  num11: "#3d965c",
+  num12: "#792a93",
+  num13: "#439d73",
+  num14: "#103aad",
+  num15: "#982e85",
+};
+
 export const giteaDarkColor: GiteaColor = {
   isDarkTheme: true,
   primary,
@@ -305,6 +325,7 @@ export const giteaDarkColor: GiteaColor = {
   console,
   diff,
   other,
+  series16,
 };
 
 export const giteaDarkSyntax: Syntax = {
