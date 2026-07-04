@@ -104,7 +104,7 @@ const summaryView = css`
               }
               /* 高亮连线 */
               .highlighted-edge {
-                stroke-width: 3px !important;
+                stroke-width: 2.5px;
               }
               /* 高亮节点 */
               .job-node-group.related-node {
@@ -114,7 +114,7 @@ const summaryView = css`
               .job-node-group,
               .highlighted-edge-layer {
                 .node-port {
-                  r: 5.5;
+                  r: 5;
                   stroke: ${themeVars.color.menu};
                   stroke-width: 3px;
                 }
@@ -137,7 +137,7 @@ const summaryView = css`
                 /* 矩阵节点 */
                 .matrix-panel-summary-row {
                   span {
-                    line-height: 1; /* 使图标垂直居中 */
+                    display: inline-flex; /* 使图标垂直居中 */
                   }
                 }
                 /* 节点中的任务项 */
@@ -145,13 +145,30 @@ const summaryView = css`
                   padding: 6px;
                   border-radius: ${otherThemeVars.border.radius};
                 }
+                .job-name,
+                .graph-list-row-name {
+                  font-size: 12px;
+                }
+                .grouped-panel,
+                .matrix-panel {
+                  padding: 6px 8px; /* 避免被端口遮挡 */
+                }
                 /* 矩阵节点 */
                 .matrix-panel {
+                  .matrix-panel-label {
+                    font-size: 10px;
+                    color: ${themeVars.color.text.self};
+                    padding-left: 6px;
+                  }
                   .matrix-panel-jobs {
                     padding: 6px 0 0 0;
                   }
                   .matrix-panel-collapsed {
-                    padding: 10px 0 0 10px;
+                    padding: 10px 0 0 8px;
+                    .matrix-panel-toggle {
+                      padding-left: 0;
+                      padding-top: 4px;
+                    }
                   }
                 }
               }
