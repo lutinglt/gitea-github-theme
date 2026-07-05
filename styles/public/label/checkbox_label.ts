@@ -20,7 +20,7 @@
 import { css, cssCombine } from "@lutinglt/gitea-github-theme/core";
 
 const checkboxLabel = css`
-  .ui.checkbox label {
+  .ui.checkbox label:not(:has(+ *)) {
     display: inline-flex;
     align-items: center;
     gap: 2px;

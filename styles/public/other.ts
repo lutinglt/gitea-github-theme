@@ -48,18 +48,19 @@ const svg = css`
     color: #429cf0 !important;
   }
   /* 重新打开工单按钮设置为绿色 */
-  .tw-text-green {
-    .octicon-issue-reopened,
-    &.octicon-issue-reopened {
-      color: ${themeVars.github.fgColor.success} !important;
-    }
+  .tw-text-green .octicon-issue-reopened,
+  .tw-text-green.octicon-issue-reopened {
+    color: ${themeVars.github.fgColor.success} !important;
   }
   /* 关闭工单按钮设置为紫色 */
-  .tw-text-red {
-    .octicon-issue-closed,
-    &.octicon-issue-closed {
-      color: ${themeVars.github.fgColor.done} !important;
-    }
+  .tw-text-red .octicon-issue-closed,
+  .tw-text-red.octicon-issue-closed {
+    color: ${themeVars.github.fgColor.done} !important;
+  }
+  /* 关闭 PR 按钮设置为红色 */
+  .tw-text-red .octicon-git-pull-request-closed,
+  .tw-text-red.octicon-git-pull-request-closed {
+    color: ${themeVars.color.red.self} !important;
   }
 `;
 // 头像

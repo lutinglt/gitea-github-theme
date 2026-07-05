@@ -1,6 +1,7 @@
 ### 🌈 Style
 
 - Reduce the displacement when the button is clicked.
+- Remove the shadow of the administrator interface button.
 
 #### Adaptation for version 1.27
 
@@ -11,6 +12,7 @@
 - Optimize heat map style.
 - Optimize transparency when stacking avatars.
 - Synchronize the color of branches in Git commit graph.
+- Synchronize PR operation comment panel style.
 
 #### More GitHub-like style
 

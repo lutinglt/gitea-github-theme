@@ -86,10 +86,13 @@ const button = css`
       ${tinyStyle}
       padding: 5px 16px;
       line-height: 22px;
+      box-shadow: none;
       &:hover {
         ${tinyHoverStyle}
+        box-shadow: ${themeVars.github.shadow.resting.small};
       }
       &:active {
+        box-shadow: ${themeVars.github.shadow.resting.small};
         background-color: ${themeVars.github.button.primary.bgColor.active};
         /* 保持鼠标移开时边框颜色和文字颜色不变 */
         border-color: ${themeVars.github.button.primary.borderColor.hover};
@@ -97,7 +100,6 @@ const button = css`
       }
     }
     .ui.red.button {
-      box-shadow: ${themeVars.github.shadow.resting.small};
       padding: 5px 16px;
       line-height: 22px;
     }

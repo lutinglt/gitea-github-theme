@@ -24,14 +24,13 @@ const summaryView = css`
     min-height: auto;
   }
   .action-view-right:has(.action-run-summary-view) {
-    border-radius: ${otherThemeVars.border.radius};
-    box-shadow: none;
     .action-view-right-panel {
       background: unset;
+      box-shadow: none;
       border: unset;
       .action-run-summary-view {
         > div {
-          border: 1px solid ${themeVars.color.console.border};
+          border: 1px solid ${themeVars.color.light.border};
           border-radius: ${otherThemeVars.border.radius};
           box-shadow: ${themeVars.github.shadow.resting.small};
           margin-bottom: 16px;
@@ -42,7 +41,7 @@ const summaryView = css`
         /* 工作流运行信息 */
         .action-run-summary-block {
           background: ${themeVars.color.body};
-          padding: 16px;
+          padding: 16px 20px;
           > div {
             gap: 4px;
           }
@@ -63,13 +62,6 @@ const summaryView = css`
               }
             }
           }
-          /* 工作流运行时间 */
-          > .action-run-summary-stat-divider + .action-run-summary-stat + .action-run-summary-stat {
-            .action-run-summary-stat-value {
-              text-decoration: underline;
-              text-underline-offset: 0.2rem;
-            }
-          }
         }
         /* 流程图 */
         .workflow-graph {
@@ -77,7 +69,7 @@ const summaryView = css`
           .graph-header {
             border-top-left-radius: ${otherThemeVars.border.radius};
             border-top-right-radius: ${otherThemeVars.border.radius};
-            padding: 16px;
+            padding: 16px 20px;
             /* 流程图信息 */
             .graph-stats {
               font-size: 12px;

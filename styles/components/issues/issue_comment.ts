@@ -154,4 +154,118 @@ const commentForm = css`
   }
 `;
 
-export default cssCombine(comment, commentForm);
+// PR 界面的 PR 操作评论
+const prMerge = css`
+  .repository.view.issue .comment-list .timeline-item.pull-merge-box {
+    /* 头像 */
+    .timeline-avatar {
+      border-radius: 9999px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: ${themeVars.github.button.primary.fgColor.rest} !important;
+      border-radius: ${otherThemeVars.border.radius};
+      /* 操作评论边框 */
+      + .content > .ui.segment {
+        border-width: 1.5px;
+      }
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+      &.tw-text-text-light {
+        background-color: ${themeVars.color.text.light.num1};
+      }
+      &.tw-text-green {
+        background-color: ${themeVars.github.bgColor.success.emphasis};
+        + .content > .ui.segment {
+          border-color: ${themeVars.github.bgColor.success.emphasis};
+        }
+      }
+      &.tw-text-purple {
+        background-color: ${themeVars.github.bgColor.done.emphasis};
+        + .content > .ui.segment {
+          border-color: ${themeVars.github.bgColor.done.emphasis};
+        }
+      }
+      &.tw-text-yellow {
+        background-color: ${themeVars.github.bgColor.attention.emphasis};
+        + .content > .ui.segment {
+          border-color: ${themeVars.github.bgColor.attention.emphasis};
+        }
+      }
+      &.tw-text-red {
+        background-color: ${themeVars.github.bgColor.danger.emphasis};
+        + .content > .ui.segment {
+          border-color: ${themeVars.github.bgColor.danger.emphasis};
+        }
+      }
+    }
+    .avatar-content-left-arrow {
+      &::before,
+      &::after {
+        display: none;
+      }
+      /* 合并信息和操作 */
+      .merge-section {
+        /* 检查状态 */
+        .item.commit-status-toggle {
+          padding: 16px;
+          font-size: 16px;
+          font-weight: 600;
+          .btn {
+            color: ${themeVars.color.text.light.num1} !important;
+            font-size: 14px;
+            font-weight: 400;
+          }
+        }
+        .item {
+          /* 覆盖 Gitea 的样式 */
+          + .item {
+            border-top: 0;
+          }
+          &:has(+ .item) {
+            border-bottom: 1px solid ${themeVars.color.light.border};
+          }
+          /* 检查状态列表 */
+          .commit-status-list {
+            background: ${themeVars.color.console.bg};
+            padding: 0 8px;
+            .commit-status-item {
+              padding: 0;
+              margin: 0px 16px;
+              height: 37px;
+              &:hover {
+                background-color: ${themeVars.color.hover.opaque};
+                border-radius: ${otherThemeVars.border.radius};
+                padding-left: 14px;
+                padding-right: 14px;
+                margin-left: 2px;
+                margin-right: 2px;
+              }
+              &:first-child {
+                margin-top: 8px;
+              }
+              &:last-child {
+                margin-bottom: 8px;
+              }
+              .gt-ellipsis span {
+                font-size: 12px;
+                margin-left: 4px;
+              }
+              a {
+                color: ${themeVars.color.text.light.num1};
+                &:hover {
+                  color: ${themeVars.color.primary.self};
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+export default cssCombine(comment, commentForm, prMerge);
