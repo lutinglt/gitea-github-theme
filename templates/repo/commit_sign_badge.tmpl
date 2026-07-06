@@ -73,13 +73,13 @@ so this template should be kept as small as possible, DO NOT put large component
 					{{if eq $ctx_github_verifed $github_verifed }}Verified
 					{{else}}{{$ctx_github_verifed}}{{end}}
 				</span>
-				<span data-tooltip-content="{{$msgSigningKey}}">{{ctx.AvatarUtils.Avatar $signingUser 16}}</span>
+				<span data-tooltip-content="{{$msgSigningKey}}">{{ctx.AvatarUtils.Avatar $signingUser 20}}</span>
 			{{- else -}}
 				<span data-tooltip-content="{{$msgReason}}">
 					{{if eq $ctx_github_partially_verifed $github_partially_verifed }}Partially verified
 					{{else}}{{$ctx_github_partially_verifed}}{{end}}
 				</span>
-				<span data-tooltip-content="{{$msgSigningKey}}">{{ctx.AvatarUtils.AvatarByEmail $signingEmail "" 16}}</span>
+				<span data-tooltip-content="{{$msgSigningKey}}">{{ctx.AvatarUtils.AvatarByEmail $signingEmail "" 20}}</span>
 			{{- end -}}
 		{{- else -}}
 			<span data-tooltip-content="{{$msgReason}}">
