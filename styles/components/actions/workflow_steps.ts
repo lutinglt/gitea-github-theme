@@ -17,111 +17,108 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 import { animationDown } from "@lutinglt/gitea-github-theme/styles/common";
 
 // 工作流右侧作业步骤日志详情
 const actionViewRight = css`
   .action-view-right {
-    box-shadow: ${themeVars.github.shadow.resting.small};
     /* 提前加载高度和滚动条 */
     min-height: calc(100vh - 245px);
-    /* 作业详情页标题 */
-    .job-info-header {
-      padding: 16px 12px 16px 24px !important;
-      height: 80px !important;
-      .job-info-header-left {
-        .job-info-header-title {
-          color: ${themeVars.github.fgColor.accent} !important;
+    .action-view-right-panel {
+      border-radius: ${otherThemeVars.border.radius};
+      box-shadow: ${themeVars.github.shadow.resting.small};
+      /* 作业详情页标题 */
+      .job-info-header {
+        padding: 16px 12px 16px 24px !important;
+        height: 80px !important;
+        .job-info-header-left {
+          .job-info-header-title {
+            color: ${themeVars.github.fgColor.accent} !important;
+          }
+          .job-info-header-detail {
+            margin-top: 8px;
+          }
         }
-        .job-info-header-detail {
-          margin-top: 8px;
-        }
-      }
-      .job-info-header-right {
-        .ui.dropdown {
-          > .button {
-            background: unset;
-            border: unset;
-            padding: 7px !important;
-            &:hover {
-              background: ${themeVars.github.control.transparent.bgColor.hover};
+        .job-info-header-right {
+          .ui.dropdown {
+            > .button {
+              background: unset;
+              border: unset;
+              padding: 7px !important;
+              &:hover {
+                background: ${themeVars.github.control.transparent.bgColor.hover};
+              }
+            }
+            .menu > .item > i.icon {
+              margin-right: 2px;
             }
           }
-          .menu > .item > i.icon {
-            margin-right: 2px;
-          }
         }
       }
-    }
 
-    .job-step-container {
-      padding: 8px;
-      .job-step-section {
-        margin: 0 4px 4px;
-        /* 步骤标题, 双重确保覆盖原始样式 */
-        .job-step-summary.job-step-summary {
-          color: ${themeVars.color.console.fg.subtle};
-          padding: 8px !important;
-          height: 36px;
-
-          &.selected {
-            /* 滚动时固定在顶部的高度与 job-info-header 高度相同 */
-            top: 80px;
-          }
-
-          &.step-expandable:hover {
+      .job-step-container {
+        padding: 8px;
+        .job-step-section {
+          margin: 0 4px 4px;
+          /* 步骤标题, 双重确保覆盖原始样式 */
+          .job-step-summary.job-step-summary {
             color: ${themeVars.color.console.fg.subtle};
-          }
+            padding: 8px !important;
+            height: 36px;
+            gap: 12px;
 
-          .tw-mr-2:not(.svg) svg.svg {
-            margin: 1.5px 6px 0px 2px;
-          }
-          /* 绿色步骤状态改为白色 */
-          svg.tw-text-green {
-            color: ${themeVars.color.console.fg.subtle} !important;
-          }
-
-          &.selected {
-            /* 不被 hover 效果影响 */
-            color: ${themeVars.color.console.fg.self} !important;
-            background-color: ${themeVars.color.console.activeBg} !important;
-
-            svg.tw-text-green {
+            &.selected {
+              /* 滚动时固定在顶部的高度与 job-info-header 高度相同 */
+              top: 80px;
+              /* 不被 hover 效果影响 */
               color: ${themeVars.color.console.fg.self} !important;
+              background-color: ${themeVars.color.console.activeBg} !important;
+            }
+            /* 步骤标题三角号, 折叠展开图标 */
+            > svg.step-summary-chevron {
+              margin: 0 !important;
+            }
+            /* 步骤状态图标 */
+            > span:not([class]):has(svg) {
+              display: inline-flex;
+            }
+            /* 绿色步骤状态改为白色 */
+            svg.tw-text-green {
+              color: ${themeVars.color.console.fg.subtle} !important;
+            }
+            /* 步骤耗时 */
+            .step-summary-duration {
+              font-size: 12px;
+              font-family: var(--fonts-monospace);
             }
           }
-          /* 步骤耗时 */
-          .step-summary-duration {
-            font-size: 12px;
-            font-family: var(--fonts-monospace);
-          }
-        }
-        /* 步骤日志 */
-        .job-step-logs {
-          ${animationDown};
-          /* 日志字体颜色白色 */
-          .job-log-line {
-            color: ${themeVars.color.console.fg.self};
-            /* 日志 */
-            .log-msg:hover {
-              /*被 hover 时覆盖 ANSI 颜色 */
-              * {
-                color: ${themeVars.color.console.fg.self};
-              }
-              /* 日志超链接 */
-              a:hover {
-                color: ${themeVars.color.primary.self} !important;
+          /* 步骤日志 */
+          .job-step-logs {
+            ${animationDown};
+            /* 日志字体颜色白色 */
+            .job-log-line {
+              color: ${themeVars.color.console.fg.self};
+              /* 日志 */
+              .log-msg:hover {
+                /*被 hover 时覆盖 ANSI 颜色 */
+                * {
+                  color: ${themeVars.color.console.fg.self};
+                }
+                /* 日志超链接 */
+                a:hover {
+                  color: ${themeVars.color.primary.self} !important;
+                }
               }
             }
-          }
-          /* 可展开折叠的日志 */
-          .job-log-group {
-            /* 日志所属的命令 */
-            .job-log-group-summary {
-              /* summary 的 三角号对齐, 而不是偏左 */
-              /* job-step-summary padding 8px + SVG 16px */
-              padding-left: calc(8px + 16px);
+            /* 可展开折叠的日志 */
+            .job-log-group {
+              /* 日志所属的命令 */
+              .job-log-group-summary {
+                /* summary 的 三角号对齐, 而不是偏左 */
+                /* job-step-summary padding 8px + SVG 16px */
+                padding-left: calc(8px + 16px);
+              }
             }
           }
         }

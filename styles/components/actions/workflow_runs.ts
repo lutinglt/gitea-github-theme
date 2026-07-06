@@ -21,7 +21,19 @@ import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-gith
 
 // 工作流详情页标题
 const actionViewHeader = css`
-  .action-view-header {
+  .action-view-header.action-view-header {
+    margin: 16px 0;
+    .action-info-summary {
+      .ui.basic.button {
+        font-size: 14px;
+      }
+      .ui.dropdown.compact.button {
+        z-index: 3; /* 避免被遮挡, 比 ActionViewLeft 的 z-index 高 */
+        > .menu > .item {
+          align-items: start;
+        }
+      }
+    }
     .action-commit-summary {
       /* yml 文件名 */
       > span:first-child {
@@ -64,7 +76,8 @@ const actionViewHeader = css`
 const actionViewLeft = css`
   .action-view-left.action-view-left.action-view-left {
     margin-right: 28px;
-    max-width: 22vw;
+    min-width: 224px;
+    max-width: 18vw;
     .left-list-header {
       font-size: 12px;
       font-weight: 600;
@@ -142,5 +155,51 @@ const actionViewLeftMobile = css`
     }
   }
 `;
+// 工作流顶部作业输出的总结信息
+const actionViewJobSummary = css`
+  .action-view-right.action-view-right {
+    gap: 16px;
+    .action-view-right-panel.job-summary-section {
+      overflow: visible;
+      .job-summary-section-header {
+        display: none;
+      }
+      /* 作业输出总结列表 */
+      .job-summary-list {
+        padding: 0;
+        gap: 16px;
+        .job-summary-item {
+          padding: 0;
+          background: ${themeVars.color.body};
+          box-shadow: ${themeVars.github.shadow.resting.small};
+          border: 1px solid ${themeVars.color.light.border};
+          border-radius: ${otherThemeVars.border.radius};
+          /* 作业名称 */
+          .job-summary-header {
+            background: ${themeVars.color.box.header};
+            border-top-left-radius: ${otherThemeVars.border.radius};
+            border-top-right-radius: ${otherThemeVars.border.radius};
+            border-bottom: 1px solid ${themeVars.color.light.border};
+            padding: 12px 20px;
+            margin-bottom: 0;
+            font-size: 16px;
+            font-weight: 600;
+            &::after {
+              content: "summary";
+              font-size: inherit;
+              font-weight: inherit;
+              display: inline;
+              margin-left: 4px;
+            }
+          }
+          /* 作业输出总结内容 */
+          .job-summary-body {
+            padding: 16px 20px;
+          }
+        }
+      }
+    }
+  }
+`;
 
-export default cssCombine(actionViewHeader, actionViewLeft, actionViewLeftMobile);
+export default cssCombine(actionViewHeader, actionViewLeft, actionViewLeftMobile, actionViewJobSummary);

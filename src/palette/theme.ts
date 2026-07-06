@@ -20,13 +20,14 @@
 import { saturate } from "color2k";
 import type { ThemeVars } from "../core";
 import { rgba, scaleColorLight } from "../functions";
-import type { Ansi, Console, Diff, GitHub, Message, Named, Other, Primary, Secondary } from "../types";
+import type { Ansi, Console, Diff, GitHub, Message, Named, Other, Primary, Secondary, Series16 } from "../types";
 import { themeVars } from "../types";
 
 type OverrideColor = {
   ansi?: Ansi;
   message?: Message;
   named?: Named;
+  series16?: Series16;
 };
 export type ThemeColor = {
   /** 用于标识当前是否为暗色主题: `true` 暗色 `false` 亮色 */
@@ -374,6 +375,25 @@ export function theme2ThemeVars(themeColor: ThemeColor): ThemeVars {
       white: themeVars.color.console.fg.self,
     },
   };
+  /** AI 仿照 Gitea 的色值映射 */
+  const series16: Series16 = themeColor.override?.series16 ?? {
+    num0: themeColor.base.green,
+    num1: scaleColorLight(themeColor.base.green, -12),
+    num2: themeColor.base.red,
+    num3: themeColor.base.olive,
+    num4: themeColor.base.pink,
+    num5: themeColor.base.violet,
+    num6: themeColor.base.orange,
+    num7: themeColor.base.teal,
+    num8: themeColor.base.brown,
+    num9: themeColor.base.cyan,
+    num10: scaleColorLight(themeColor.base.orange, -12),
+    num11: scaleColorLight(themeColor.base.green, -24),
+    num12: themeColor.base.purple,
+    num13: scaleColorLight(themeColor.base.teal, -12),
+    num14: themeColor.base.blue,
+    num15: scaleColorLight(themeColor.base.pink, -12),
+  };
 
   return {
     isDarkTheme: themeColor.isDarkTheme,
@@ -384,6 +404,7 @@ export function theme2ThemeVars(themeColor: ThemeColor): ThemeVars {
       ansi,
       console: themeColor.console,
       diff: themeColor.diff,
+      series: { num16: series16 },
       ...message,
       ...themeColor.other,
     },

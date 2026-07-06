@@ -134,12 +134,6 @@ const label = css`
 
 // 手动工作流
 const runWorkflow = css`
-  /* 手动工作流弹窗 */
-  #runWorkflowDispatchModal {
-    > .content {
-      border-radius: ${otherThemeVars.border.radius};
-    }
-  }
   /* 手动工作流下拉列表 */
   #runWorkflowDispatchForm {
     font-size: 12px;

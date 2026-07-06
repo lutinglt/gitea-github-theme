@@ -20,7 +20,7 @@
 import { opacify, saturate } from "color2k";
 import type { ThemeVars } from "../core";
 import { scaleColorLight } from "../functions";
-import type { Ansi, Console, Diff, GitHub, Message, Named, Other, Primary, Secondary } from "../types";
+import type { Ansi, Console, Diff, GitHub, Message, Named, Other, Primary, Secondary, Series16 } from "../types";
 import { themeVars } from "../types";
 import { type DeepPartial, deepOverride } from "../utils";
 
@@ -34,6 +34,7 @@ export type GiteaColor = {
   console: Console;
   diff: Diff;
   other: Other;
+  series16: Series16;
   /** 自定义 GitHub 主题变量映射，未填写的字段自动使用默认值 */
   github?: DeepPartial<GitHub>;
 };
@@ -178,6 +179,7 @@ export function gitea2ThemeVars(giteaColor: GiteaColor): ThemeVars {
       ansi: giteaColor.ansi,
       console: giteaColor.console,
       diff: giteaColor.diff,
+      series: { num16: giteaColor.series16 },
     },
     github: deepOverride(github, giteaColor.github ?? {}),
   };

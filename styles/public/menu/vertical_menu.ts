@@ -81,6 +81,9 @@ const verticalMenu = css`
       > summary,
       > .menu.items-full-width > .item {
         padding: 6px 8px;
+        &:hover {
+          background: ${themeVars.github.control.transparent.bgColor.hover};
+        }
       }
       > .menu {
         margin: 0;

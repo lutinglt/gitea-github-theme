@@ -17,8 +17,21 @@
  * limitations under the License.
  */
 
-export { activeItemAfterStyle } from "./after";
-export { animation, animationDown, animationUp } from "./animation";
-export { basicButtonStyle, primaryButtonHoverStyle, primaryButtonStyle } from "./button";
-export { deleteHoverActiveStyle } from "./delete";
-export { botLabelStyle, labelStyle } from "./label";
+export const series16 = {
+  num0: null,
+  num1: null,
+  num2: null,
+  num3: null,
+  num4: null,
+  num5: null,
+  num6: null,
+  num7: null,
+  num8: null,
+  num9: null,
+  num10: null,
+  num11: null,
+  num12: null,
+  num13: null,
+  num14: null,
+  num15: null,
+};

@@ -21,25 +21,33 @@ import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
 import { animationDown } from "@lutinglt/gitea-github-theme/styles/common";
 
 const modal = css`
-  .ui.modal {
+  .ui.ui.modal {
     ${animationDown};
     border: 1.5px solid ${themeVars.color.light.border};
+    border-radius: 12px;
 
+    > :first-child:not(.icon):not(.dimmer) {
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
+    > :last-child:not(.icon):not(.dimmer) {
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+    }
     > .header {
       background-color: ${themeVars.color.menu};
       border-bottom: 1.5px solid ${themeVars.color.light.border};
     }
-
     > .content,
     form > .content {
       background-color: ${themeVars.color.menu};
     }
-
     > .actions,
     .content + .actions,
     .content + form > .actions {
       background-color: ${themeVars.color.menu};
       border-top: 1.5px solid ${themeVars.color.light.border};
+      border-radius: 0 0 12px 12px;
     }
     .actions > .ui.button {
       padding: 8px 12px;

@@ -26,6 +26,7 @@ import { primary, secondary } from "./main";
 import { message } from "./message";
 import { named } from "./named";
 import { other, otherAuto } from "./other";
+import { series16 } from "./series";
 import { syntax } from "./syntax";
 
 export default {
@@ -42,4 +43,5 @@ export default {
   other,
   otherAuto,
   syntax,
+  series16,
 };

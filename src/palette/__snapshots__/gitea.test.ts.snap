@@ -332,6 +332,26 @@ exports[`gitea2ThemeVars > dark 输出含 color 和 github 顶层键 1`] = `
     },
     "secondaryBg": "#2e3033",
     "secondaryNavBg": "#1a1b1e",
+    "series": {
+      "num16": {
+        "num0": "#7db233",
+        "num1": "#499a37",
+        "num10": "#c45327",
+        "num11": "#3d965c",
+        "num12": "#792a93",
+        "num13": "#439d73",
+        "num14": "#103aad",
+        "num15": "#982e85",
+        "num2": "#ce4751",
+        "num3": "#8f9121",
+        "num4": "#ac32a6",
+        "num5": "#7445e9",
+        "num6": "#c67d28",
+        "num7": "#4db392",
+        "num8": "#aa4d30",
+        "num9": "#2a6f84",
+      },
+    },
     "shadow": {
       "opaque": "#0b0b0c",
       "self": "#0b0b0c58",
@@ -385,7 +405,7 @@ exports[`gitea2ThemeVars > dark 输出含 color 和 github 顶层键 1`] = `
       "text": "#d29922",
     },
     "white": "#ffffff",
-    "workflowEdgeHover": "#666a73",
+    "workflowEdgeHover": "#4183c4",
     "yellow": {
       "badge": {
         "bg": "#fbbd081a",
@@ -927,6 +947,26 @@ exports[`gitea2ThemeVars > dark 输出含 color 和 github 顶层键 2`] = `
     },
     "secondaryBg": "#f2f5f8",
     "secondaryNavBg": "#f9fafb",
+    "series": {
+      "num16": {
+        "num0": "#7db233",
+        "num1": "#499a37",
+        "num10": "#c45327",
+        "num11": "#3d965c",
+        "num12": "#792a93",
+        "num13": "#439d73",
+        "num14": "#103aad",
+        "num15": "#982e85",
+        "num2": "#ce4751",
+        "num3": "#8f9121",
+        "num4": "#ac32a6",
+        "num5": "#7445e9",
+        "num6": "#c67d28",
+        "num7": "#4db392",
+        "num8": "#aa4d30",
+        "num9": "#2a6f84",
+      },
+    },
     "shadow": {
       "opaque": "#c7ced5",
       "self": "#00001726",
@@ -980,7 +1020,7 @@ exports[`gitea2ThemeVars > dark 输出含 color 和 github 顶层键 2`] = `
       "text": "#9a6700",
     },
     "white": "#ffffff",
-    "workflowEdgeHover": "#b1b7bd",
+    "workflowEdgeHover": "#4183c4",
     "yellow": {
       "badge": {
         "bg": "#fbbd081a",

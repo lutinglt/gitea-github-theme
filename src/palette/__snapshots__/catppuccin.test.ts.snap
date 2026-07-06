@@ -192,11 +192,11 @@ exports[`catppuccin 暗/亮模式语义 > light 主题 base.black 应为深色 1
     },
     "olive": {
       "dark": {
-        "num1": "hsla(115, 54%, 68%, 1)",
-        "num2": "hsla(115, 54%, 61%, 1)",
+        "num1": "hsla(66, 49%, 70%, 1)",
+        "num2": "hsla(66, 49%, 62%, 1)",
       },
-      "light": "hsla(115, 54%, 80%, 1)",
-      "self": "#a6e3a1",
+      "light": "hsla(66, 49%, 81%, 1)",
+      "self": "rgba(220, 226, 170, 1)",
     },
     "orange": {
       "badge": {
@@ -332,6 +332,26 @@ exports[`catppuccin 暗/亮模式语义 > light 主题 base.black 应为深色 1
     },
     "secondaryBg": "unset",
     "secondaryNavBg": "var(--color-body)",
+    "series": {
+      "num16": {
+        "num0": "#a6e3a1",
+        "num1": "hsla(115, 54%, 67%, 1)",
+        "num10": "hsla(23, 92%, 66%, 1)",
+        "num11": "hsla(115, 54%, 58%, 1)",
+        "num12": "#cba6f7",
+        "num13": "hsla(170, 57%, 65%, 1)",
+        "num14": "#89b4fa",
+        "num15": "hsla(316, 72%, 76%, 1)",
+        "num2": "#f38ba8",
+        "num3": "rgba(220, 226, 170, 1)",
+        "num4": "#f5c2e7",
+        "num5": "#b4befe",
+        "num6": "#fab387",
+        "num7": "#94e2d5",
+        "num8": "#f2cdcd",
+        "num9": "#89dceb",
+      },
+    },
     "shadow": {
       "opaque": "var(--color-shadow)",
       "self": "rgba(17, 17, 27, 0.1)",
@@ -787,11 +807,11 @@ exports[`catppuccin 暗/亮模式语义 > light 主题 base.black 应为深色 2
     },
     "olive": {
       "dark": {
-        "num1": "hsla(109, 58%, 36%, 1)",
-        "num2": "hsla(109, 58%, 32%, 1)",
+        "num1": "hsla(51, 66%, 35%, 1)",
+        "num2": "hsla(51, 66%, 32%, 1)",
       },
-      "light": "hsla(109, 58%, 55%, 1)",
-      "self": "#40a02b",
+      "light": "hsla(51, 66%, 55%, 1)",
+      "self": "rgba(167, 148, 34, 1)",
     },
     "orange": {
       "badge": {
@@ -927,6 +947,26 @@ exports[`catppuccin 暗/亮模式语义 > light 主题 base.black 应为深色 2
     },
     "secondaryBg": "unset",
     "secondaryNavBg": "var(--color-body)",
+    "series": {
+      "num16": {
+        "num0": "#40a02b",
+        "num1": "hsla(109, 58%, 35%, 1)",
+        "num10": "hsla(22, 99%, 46%, 1)",
+        "num11": "hsla(109, 58%, 30%, 1)",
+        "num12": "#8839ef",
+        "num13": "hsla(183, 74%, 30%, 1)",
+        "num14": "#1e66f5",
+        "num15": "hsla(316, 73%, 61%, 1)",
+        "num2": "#d20f39",
+        "num3": "rgba(167, 148, 34, 1)",
+        "num4": "#ea76cb",
+        "num5": "#7287fd",
+        "num6": "#fe640b",
+        "num7": "#179299",
+        "num8": "#dd7878",
+        "num9": "#04a5e5",
+      },
+    },
     "shadow": {
       "opaque": "var(--color-shadow)",
       "self": "rgba(220, 224, 232, 0.1)",
@@ -1382,11 +1422,11 @@ exports[`catppuccin 暗/亮模式语义 > light 主题 base.black 应为深色 3
     },
     "olive": {
       "dark": {
-        "num1": "hsla(96, 44%, 61%, 1)",
-        "num2": "hsla(96, 44%, 54%, 1)",
+        "num1": "hsla(56, 40%, 62%, 1)",
+        "num2": "hsla(56, 40%, 55%, 1)",
       },
-      "light": "hsla(96, 44%, 73%, 1)",
-      "self": "#a6d189",
+      "light": "hsla(56, 40%, 73%, 1)",
+      "self": "rgba(207, 203, 142, 1)",
     },
     "orange": {
       "badge": {
@@ -1522,6 +1562,26 @@ exports[`catppuccin 暗/亮模式语义 > light 主题 base.black 应为深色 3
     },
     "secondaryBg": "unset",
     "secondaryNavBg": "var(--color-body)",
+    "series": {
+      "num16": {
+        "num0": "#a6d189",
+        "num1": "hsla(96, 44%, 60%, 1)",
+        "num10": "hsla(20, 79%, 62%, 1)",
+        "num11": "hsla(96, 44%, 52%, 1)",
+        "num12": "#ca9ee6",
+        "num13": "hsla(172, 39%, 57%, 1)",
+        "num14": "#8caaee",
+        "num15": "hsla(316, 73%, 74%, 1)",
+        "num2": "#e78284",
+        "num3": "rgba(207, 203, 142, 1)",
+        "num4": "#f4b8e4",
+        "num5": "#babbf1",
+        "num6": "#ef9f76",
+        "num7": "#81c8be",
+        "num8": "#eebebe",
+        "num9": "#99d1db",
+      },
+    },
     "shadow": {
       "opaque": "var(--color-shadow)",
       "self": "rgba(35, 38, 52, 0.1)",
@@ -1977,11 +2037,11 @@ exports[`catppuccin 暗/亮模式语义 > light 主题 base.black 应为深色 4
     },
     "olive": {
       "dark": {
-        "num1": "hsla(105, 48%, 65%, 1)",
-        "num2": "hsla(105, 48%, 58%, 1)",
+        "num1": "hsla(61, 41%, 65%, 1)",
+        "num2": "hsla(61, 41%, 58%, 1)",
       },
-      "light": "hsla(105, 48%, 76%, 1)",
-      "self": "#a6da95",
+      "light": "hsla(61, 41%, 77%, 1)",
+      "self": "rgba(213, 214, 156, 1)",
     },
     "orange": {
       "badge": {
@@ -2117,6 +2177,26 @@ exports[`catppuccin 暗/亮模式语义 > light 主题 base.black 应为深色 4
     },
     "secondaryBg": "unset",
     "secondaryNavBg": "var(--color-body)",
+    "series": {
+      "num16": {
+        "num0": "#a6da95",
+        "num1": "hsla(105, 48%, 63%, 1)",
+        "num10": "hsla(21, 86%, 64%, 1)",
+        "num11": "hsla(105, 48%, 55%, 1)",
+        "num12": "#c6a0f6",
+        "num13": "hsla(171, 47%, 61%, 1)",
+        "num14": "#8aadf4",
+        "num15": "hsla(316, 74%, 75%, 1)",
+        "num2": "#ed8796",
+        "num3": "rgba(213, 214, 156, 1)",
+        "num4": "#f5bde6",
+        "num5": "#b7bdf8",
+        "num6": "#f5a97f",
+        "num7": "#8bd5ca",
+        "num8": "#f0c6c6",
+        "num9": "#91d7e3",
+      },
+    },
     "shadow": {
       "opaque": "var(--color-shadow)",
       "self": "rgba(24, 25, 38, 0.1)",

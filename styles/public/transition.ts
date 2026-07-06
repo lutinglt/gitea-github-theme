@@ -39,6 +39,8 @@ const transition = css`
   .job-step-summary,
   .job-step-logs,
   .job-brief-item,
+  /* 流程图 */
+  .workflow-graph svg rect,
   .repo-file-cell,
   .tippy-box .flex-items-block .item,
   .clone-panel-tab .item,
@@ -93,7 +95,7 @@ const transition = css`
     }
     /* 下拉图标的过渡会导致在下移过程中出现的菜单被短暂遮挡 */
     &.dropdown {
-      z-index: 999;
+      z-index: 1;
     }
     .button:active {
       transform: none;

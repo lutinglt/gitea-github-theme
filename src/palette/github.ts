@@ -20,7 +20,7 @@
 import type { Primer } from "@lutinglt/gitea-github-theme/primer";
 import { mix, saturate } from "color2k";
 import { scaleColorLight } from "../functions";
-import type { Ansi, Console, Diff, GitHub, Message, Other } from "../types";
+import type { Ansi, Console, Diff, GitHub, Message, Other, Series16 } from "../types";
 import { themeVars } from "../types";
 import type { ThemeColor } from "./theme";
 
@@ -175,6 +175,26 @@ export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
     transparency: { grid: { light: "#ffffff", dark: "#e5e5e5" } },
     workflowEdgeHover: githubColor.bgColor.accent.emphasis,
   };
+
+  const series16: Series16 = {
+    num0: githubColor.display.lime.fgColor,
+    num1: githubColor.display.green.fgColor,
+    num2: githubColor.display.red.fgColor,
+    num3: githubColor.display.olive.fgColor,
+    num4: githubColor.display.pink.fgColor,
+    num5: githubColor.display.purple.fgColor,
+    num6: githubColor.display.orange.fgColor,
+    num7: githubColor.display.teal.fgColor,
+    num8: githubColor.display.orange.bgColor.emphasis,
+    num9: githubColor.display.cyan.fgColor,
+    num10: githubColor.display.orange.borderColor.emphasis,
+    num11: githubColor.display.pine.fgColor,
+    num12: githubColor.display.plum.fgColor,
+    num13: githubColor.display.pine.bgColor.emphasis,
+    num14: githubColor.display.blue.fgColor,
+    num15: githubColor.display.pink.bgColor.emphasis,
+  };
+
   const github: GitHub = {
     avatar: { bgColor: githubColor.avatar.bgColor, borderColor: githubColor.avatar.borderColor },
     fgColor: {
@@ -337,6 +357,6 @@ export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
     diff,
     other,
     github,
-    override: { message, ansi },
+    override: { message, ansi, series16 },
   };
 }

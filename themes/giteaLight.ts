@@ -31,6 +31,7 @@ import type {
   Other,
   Primary,
   Secondary,
+  Series16,
   Syntax,
 } from "@lutinglt/gitea-github-theme/core";
 import { defineTheme, themeVars } from "@lutinglt/gitea-github-theme/core";
@@ -290,7 +291,28 @@ const other: Other = {
   overlayBackdrop: "#080808c0",
   danger: themeVars.color.red.self,
   transparency: { grid: { light: "#fafafa", dark: "#e2e2e2" } },
-  workflowEdgeHover: "#b1b7bd",
+  // workflowEdgeHover: "#b1b7bd",
+  // 此颜色在 Gitea 中使用在 1.27 版本中出现偏差, CSS 高亮使用 primary 覆盖, 这里还原视觉效果与主题文件有偏差
+  workflowEdgeHover: primary.self,
+};
+
+const series16: Series16 = {
+  num0: "#7db233",
+  num1: "#499a37",
+  num2: "#ce4751",
+  num3: "#8f9121",
+  num4: "#ac32a6",
+  num5: "#7445e9",
+  num6: "#c67d28",
+  num7: "#4db392",
+  num8: "#aa4d30",
+  num9: "#2a6f84",
+  num10: "#c45327",
+  num11: "#3d965c",
+  num12: "#792a93",
+  num13: "#439d73",
+  num14: "#103aad",
+  num15: "#982e85",
 };
 
 export const giteaLightColor: GiteaColor = {
@@ -303,6 +325,7 @@ export const giteaLightColor: GiteaColor = {
   console,
   diff,
   other,
+  series16,
 };
 
 export const giteaLightSyntax: Syntax = {

@@ -19,6 +19,24 @@
 
 import { cssStyle, themeVars } from "@lutinglt/gitea-github-theme/core";
 
+/** 普通按钮样式 */
+export const basicButtonStyle = cssStyle({
+  backgroundColor: themeVars.color.button,
+  color: themeVars.color.text.light.self,
+  border: `1px solid ${themeVars.color.light.border}`,
+  boxShadow: "none",
+  "&:hover": {
+    backgroundColor: themeVars.color.hover.self,
+    color: themeVars.color.text.self,
+    borderColor: themeVars.color.light.border,
+  },
+  "&:active": {
+    backgroundColor: themeVars.github.button.default.bgColor.active,
+    color: themeVars.color.text.self,
+    borderColor: themeVars.color.light.border,
+  },
+});
+
 /** 主色调按钮样式 */
 export const primaryButtonStyle = cssStyle({
   color: themeVars.github.button.primary.fgColor.rest,

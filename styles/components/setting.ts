@@ -18,7 +18,11 @@
  */
 
 import { css, cssCombine, cssStyle, themeVars } from "@lutinglt/gitea-github-theme/core";
-import { primaryButtonHoverStyle, primaryButtonStyle } from "@lutinglt/gitea-github-theme/styles/common";
+import {
+  basicButtonStyle,
+  primaryButtonHoverStyle,
+  primaryButtonStyle,
+} from "@lutinglt/gitea-github-theme/styles/common";
 
 const tinyStyle = cssStyle({
   color: themeVars.github.themeExtra.button.primary.fgColor.accent,
@@ -41,20 +45,7 @@ const button = css`
   .org-setting-content {
     /* 主色调按钮替换为普通按钮 */
     .ui.primary.button {
-      color: ${themeVars.color.text.light.self};
-      background-color: ${themeVars.color.button};
-      border-color: ${themeVars.color.light.border};
-      box-shadow: none;
-      &:hover {
-        background-color: ${themeVars.color.hover.self};
-        color: ${themeVars.color.text.self};
-        border-color: ${themeVars.color.light.border};
-      }
-      &:active {
-        background-color: ${themeVars.github.button.default.bgColor.active};
-        color: ${themeVars.color.text.self};
-        border-color: ${themeVars.color.light.border};
-      }
+      ${basicButtonStyle}
     }
     /* 迷你按钮替换为自定义的主色调按钮 (例: SSH 验证按钮) */
     .ui.primary.button.tiny {
@@ -95,10 +86,13 @@ const button = css`
       ${tinyStyle}
       padding: 5px 16px;
       line-height: 22px;
+      box-shadow: none;
       &:hover {
         ${tinyHoverStyle}
+        box-shadow: ${themeVars.github.shadow.resting.small};
       }
       &:active {
+        box-shadow: ${themeVars.github.shadow.resting.small};
         background-color: ${themeVars.github.button.primary.bgColor.active};
         /* 保持鼠标移开时边框颜色和文字颜色不变 */
         border-color: ${themeVars.github.button.primary.borderColor.hover};
@@ -106,7 +100,6 @@ const button = css`
       }
     }
     .ui.red.button {
-      box-shadow: ${themeVars.github.shadow.resting.small};
       padding: 5px 16px;
       line-height: 22px;
     }

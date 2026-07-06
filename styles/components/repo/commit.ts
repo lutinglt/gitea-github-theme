@@ -25,15 +25,10 @@ const commit = css`
     /* 提交列表 (选择器保证同等优先级覆盖了 gitea 原生的样式) */
     .ui.attached.table.segment.commit-table tbody.commit-list {
       /* 作者 */
-      .author {
+      .author .avatar-stack-names {
+        color: ${themeVars.color.text.light.num1};
         img.ui.avatar {
           border-radius: 9999px;
-        }
-        /* 作者名称 */
-        .author-wrapper {
-          display: flex;
-          color: ${themeVars.color.text.light.num1};
-          overflow: visible;
         }
       }
       /* SHA 标签 */

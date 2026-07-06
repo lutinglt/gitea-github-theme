@@ -32,7 +32,7 @@ const commitsList = css`
     li.gitea-github-theme-commit {
       border-bottom: 1px solid ${themeVars.color.secondary.self};
       padding: 8px 16px;
-      gap: 4px;
+      gap: 8px;
       display: grid;
       grid-template-areas: "${primary} ${metadata} ${actions}" "${secondary} ${metadata} ${actions}";
       grid-template-rows: repeat(2, auto);
@@ -51,6 +51,7 @@ const commitsList = css`
           font-size: 16px;
           font-weight: 500;
           white-space: pre-wrap;
+          display: inline-flex; /* 避免 pre-wrap 导致多余的空白 */
         }
         .ellipsis-button {
           padding: unset;
@@ -79,11 +80,6 @@ const commitsList = css`
         align-items: center;
         flex-direction: row;
         gap: 4px;
-        .author-wrapper {
-          display: flex;
-          align-items: center;
-          overflow: visible;
-        }
         img.ui.avatar {
           border-radius: 9999px;
           margin-right: 4px;
@@ -101,7 +97,7 @@ const commitsList = css`
         align-items: center;
         flex-direction: row;
         flex-wrap: wrap;
-        column-gap: 8px;
+        gap: 8px;
         .gitea-github-theme-tag {
           border-width: 1.5px;
           border-radius: 9999px;
@@ -131,6 +127,11 @@ const commitsList = css`
       li.gitea-github-theme-commit {
         grid-template-areas: "${primary} ${primary}" "${metadata} ${actions}" "${secondary} ${actions}";
         grid-template-rows: repeat(3, auto);
+        .metadata {
+          .avatar-stack-names {
+            max-width: 45vw;
+          }
+        }
       }
     }
   }
