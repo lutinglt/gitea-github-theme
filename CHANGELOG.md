@@ -2,6 +2,7 @@
 
 - Reduce the displacement when the button is clicked.
 - Remove the shadow of the administrator interface button.
+- Fine tune the font size of the dashboard code.
 
 #### Adaptation for version 1.27
 
