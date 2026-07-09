@@ -161,6 +161,8 @@ const actionViewJobSummary = css`
     gap: 16px;
     .action-view-right-panel.job-summary-section {
       overflow: visible;
+      border: unset;
+      box-shadow: unset;
       .job-summary-section-header {
         display: none;
       }
