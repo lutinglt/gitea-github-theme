@@ -14,7 +14,7 @@ jobs:
         check:
           - eslint
           - prettier
-          - tsgo
+          - typescript
           - vitest
           - build
     steps:
@@ -42,8 +42,8 @@ jobs:
         run: bun fmt --check
 
       - name: Type check
-        if: matrix.check == 'tsgo'
-        run: bun tsgo -b
+        if: matrix.check == 'typescript'
+        run: bun check
 
       - name: Test
         if: matrix.check == 'vitest'
