@@ -125,6 +125,9 @@ const activity = css`
               }
             }
           }
+          code {
+            font-size: 12px;
+          }
           relative-time {
             color: ${themeVars.color.text.light.num1};
             font-size: 12px;
