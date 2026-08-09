@@ -79,7 +79,7 @@ exports[`gitea2ThemeVars > dark 输出含 color 和 github 顶层键 1`] = `
     "danger": "var(--color-red)",
     "diff": {
       "added": {
-        "fg": "#87ab63",
+        "fg": "#93b373",
         "linenum": {
           "bg": "#274227",
         },
@@ -99,7 +99,7 @@ exports[`gitea2ThemeVars > dark 输出含 color 和 github 顶层键 1`] = `
         },
       },
       "removed": {
-        "fg": "#cc4848",
+        "fg": "#fb5f5b",
         "linenum": {
           "bg": "#482121",
         },
@@ -694,7 +694,7 @@ exports[`gitea2ThemeVars > dark 输出含 color 和 github 顶层键 2`] = `
     "danger": "var(--color-red)",
     "diff": {
       "added": {
-        "fg": "#21ba45",
+        "fg": "#177231",
         "linenum": {
           "bg": "#d1f8d9",
         },
@@ -714,7 +714,7 @@ exports[`gitea2ThemeVars > dark 输出含 color 和 github 顶层键 2`] = `
         },
       },
       "removed": {
-        "fg": "#db2828",
+        "fg": "#c61f2b",
         "linenum": {
           "bg": "#ffcecb",
         },

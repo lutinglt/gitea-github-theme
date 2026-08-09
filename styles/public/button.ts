@@ -27,9 +27,9 @@ import {
 // 普通按钮和主色调按钮
 const baseButton = css`
   .ui.button {
-    min-height: 30px;
+    min-height: 32px;
     font-weight: 500;
-    padding: 9px 16px;
+    padding: 0px 12px;
     &.ui {
       gap: 8px;
     }

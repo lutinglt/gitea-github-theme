@@ -24,7 +24,8 @@ const repoHeader = css`
   .page-content.repository .repo-header {
     /* 点星/关注/克隆/RSS 按钮 */
     .ui.compact.button {
-      padding: 3px 12px;
+      padding: 3px 8px;
+      gap: 4px;
     }
     > .flex-text-block:first-child {
       /* 仓库名称 */

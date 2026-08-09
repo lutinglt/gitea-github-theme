@@ -183,7 +183,7 @@ const ansi: Ansi = {
 };
 const diff: Diff = {
   added: {
-    fg: "#87ab63",
+    fg: "#93b373",
     linenum: { bg: "#274227" },
     row: { bg: "#203224", border: "#314a37" },
     word: { bg: "#3c653c" },
@@ -192,7 +192,7 @@ const diff: Diff = {
     row: { bg: "#818044", border: "#bcca6f" },
   },
   removed: {
-    fg: "#cc4848",
+    fg: "#fb5f5b",
     linenum: { bg: "#482121" },
     row: { bg: "#301e1e", border: "#634343" },
     word: { bg: "#6f3333" },
@@ -332,7 +332,7 @@ export const giteaDarkSyntax: Syntax = {
   keyword: "#ff8854",
   bool: "#25bbc9",
   control: "#dd9e17",
-  name: "#c7a618",
+  name: "#fabd2f",
   type: "#eb8cb3",
   number: "#63b2dd",
   operator: "#ff8854",

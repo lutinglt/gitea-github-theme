@@ -183,7 +183,7 @@ const ansi: Ansi = {
 };
 const diff: Diff = {
   added: {
-    fg: "#21ba45",
+    fg: "#177231",
     linenum: { bg: "#d1f8d9" },
     row: { bg: "#e6ffed", border: "#e6ffed" },
     word: { bg: "#acf2bd" },
@@ -192,7 +192,7 @@ const diff: Diff = {
     row: { bg: "#f1f8d1", border: "#d0e27f" },
   },
   removed: {
-    fg: "#db2828",
+    fg: "#c61f2b",
     linenum: { bg: "#ffcecb" },
     row: { bg: "#ffeef0", border: "#f1c0c0" },
     word: { bg: "#fdb8c0" },

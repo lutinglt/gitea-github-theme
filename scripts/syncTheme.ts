@@ -34,7 +34,7 @@ const sync_tmpl = process.env.SYNC_TMPL === "true";
 if (server) {
   try {
     if (theme_path) {
-      const cmd = `scp dist/${PREFIX}*.css ${user}@${server}:${theme_path}`;
+      const cmd = `scp -O dist/${PREFIX}*.css ${user}@${server}:${theme_path}`;
       console.log(`[${NAME}]:`, cmd);
       execSync(cmd, { stdio: "inherit" });
     } else {
@@ -42,7 +42,7 @@ if (server) {
     }
     if (gitea_path) {
       if (sync_tmpl) {
-        const cmd = `scp -r templates ${user}@${server}:${gitea_path}`;
+        const cmd = `scp -Or templates ${user}@${server}:${gitea_path}`;
         console.log(`[${NAME}]:`, cmd);
         execSync(cmd, { stdio: "inherit" });
       } else {
