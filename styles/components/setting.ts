@@ -68,9 +68,7 @@ const button = css`
     .ui.attached.header > .ui.right {
       .ui.primary.button.tiny {
         ${primaryButtonStyle}
-        padding: 3px 12px;
-        min-height: 20px;
-        line-height: 20px;
+        padding: 0 12px;
         &:hover {
           ${primaryButtonHoverStyle}
         }

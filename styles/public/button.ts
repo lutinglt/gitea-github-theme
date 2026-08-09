@@ -31,7 +31,7 @@ const baseButton = css`
     font-weight: 500;
     padding: 0px 12px;
     &.ui {
-      gap: 8px;
+      gap: 4px;
     }
   }
   .ui.button:not(.primary):not(.red) svg {
@@ -126,7 +126,7 @@ const fixButtonHeight = css`
   /* 修复一些主色调或者其他小按钮的高度避免过高 */
   .ui.small.buttons .button,
   .ui.ui.ui.ui.small.button {
-    min-height: 26px;
+    min-height: 28px;
     height: 32px;
   }
   /* 修复仓库页仓库操作按钮高度对齐和修正 */
@@ -145,7 +145,7 @@ const fixButtonHeight = css`
   }
   .ui.ui.ui.ui.small.button.compact .ui.tiny.buttons .button,
   .ui.ui.ui.ui.tiny.button {
-    min-height: 20px;
+    min-height: 28px;
   }
 `;
 
