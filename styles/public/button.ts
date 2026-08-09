@@ -155,9 +155,11 @@ const fixButton = css`
     z-index: 0;
   }
   /* 代码复制按钮 */
-  .ui.button.code-copy {
-    padding: 4px 6px;
+  .ui.icon.button.code-copy {
+    padding: 0;
     min-height: 28px;
+    height: 28px;
+    width: 28px;
   }
 `;
 
