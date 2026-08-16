@@ -80,6 +80,13 @@ export default defineThemeConfig({
       },
     },
     {
+      themeSeriesName: "miku",
+      themes: {
+        dark: { theme: themes.miku.dark },
+        light: { theme: themes.miku.light },
+      },
+    },
+    {
       themeSeriesName: "catppuccin",
       themes: {
         dark: { themeName: "mocha", theme: themes.catppuccin.mocha },
