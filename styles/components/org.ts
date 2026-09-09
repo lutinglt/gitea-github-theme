@@ -43,7 +43,8 @@ const org = css`
           }
           /* 组织页面的 RSS 订阅按钮 */
           .ui.label.button {
-            padding: 4px 16px;
+            padding: 0px 12px;
+            height: 32px;
             .svg {
               width: 20px;
               min-width: 20px;
