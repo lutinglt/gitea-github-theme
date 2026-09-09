@@ -47,6 +47,7 @@ const actions = css`
       /* 事件触发器 */
       .ui.info.attached.message {
         padding: 18px 16px;
+        max-width: calc(100% + 2px); /* Gitea 布局问题, 目的: 对齐边框 */
         /* 事件触发器按钮 */
         .ui.mini.button {
           padding: 3px 12px;

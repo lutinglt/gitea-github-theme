@@ -1,5 +1,3 @@
 ### 🐞 Fix
 
-- Fix the height issue of the global small button.
-- Fix the height issue of the administrator interface button.
-- Fix the height issue of the code copy button.
+- Fix the border alignment issue of the Actions page event trigger.
