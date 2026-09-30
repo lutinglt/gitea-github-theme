@@ -49,11 +49,10 @@ const tippyBox = css`
     /* 差异对比中文件路径行右侧的三个点菜单 */
     &[data-theme="menu"] {
       .tippy-content {
-        padding: 8px;
+        padding: 8px 4px;
         .item {
           border-radius: ${otherThemeVars.border.radius};
           padding: 6px 8px;
-          height: 32px;
           &:hover {
             background-color: ${themeVars.github.control.transparent.bgColor.hover};
             box-shadow: inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active};

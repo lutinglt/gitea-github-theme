@@ -98,7 +98,7 @@ const navbarRight = css`
         /* 头像菜单 */
         &:last-child {
           padding: 0;
-          .text {
+          .flex-text-block {
             /* 不显示头像右侧的小箭头下拉菜单标识 */
             > .not-mobile {
               display: none;

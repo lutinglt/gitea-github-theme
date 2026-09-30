@@ -18,6 +18,7 @@
  */
 
 import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { activeItemAfterStyle } from "@lutinglt/gitea-github-theme/styles/common";
 
 // 仓库头信息
 const repoHeader = css`
@@ -26,29 +27,68 @@ const repoHeader = css`
     .ui.compact.button {
       padding: 3px 8px;
       gap: 4px;
+      &.dropdown {
+        padding-right: 22px;
+      }
     }
     > .flex-text-block:first-child {
       /* 仓库名称 */
       > .flex-text-block:first-of-type {
+        gap: 0;
         /* 间隔线颜色 */
         color: ${themeVars.color.text.light.num1};
+        font-size: 14px !important;
         /* 仓库名称 */
-        a {
+        > a {
           display: flex;
           align-items: center;
           color: ${themeVars.color.text.self};
-          font-size: 18px;
+          font-size: 18px !important;
           text-decoration: none !important;
-          min-width: 3ch;
-          padding: 0px 6px;
+          height: 32px;
+          padding: 4px;
           border-radius: ${otherThemeVars.border.radius};
-          margin-top: 8px;
-          margin-bottom: 8px;
           &:hover {
             background: ${themeVars.github.control.transparent.bgColor.hover};
           }
           &.muted:not(.tw-font-normal) {
             font-weight: 600;
+          }
+          &:first-of-type {
+            margin-right: 4px;
+          }
+          &:last-of-type {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            margin-left: 4px;
+            &:hover + .ui.custom.dropdown {
+              background: ${themeVars.github.control.transparent.bgColor.hover};
+            }
+          }
+        }
+        /* 仓库名称下拉菜单 */
+        > .ui.custom.dropdown {
+          border-top-right-radius: ${otherThemeVars.border.radius};
+          border-bottom-right-radius: ${otherThemeVars.border.radius};
+          padding: 4px;
+          height: 32px;
+          &:hover {
+            background: ${themeVars.github.control.transparent.bgColor.hover};
+          }
+          .menu {
+            > .item {
+              /* 选中图标 */
+              .octicon-check {
+                margin-top: 0;
+              }
+              /* 居中 */
+              > span {
+                display: inline-flex;
+              }
+              &:hover:after {
+                ${activeItemAfterStyle}
+              }
+            }
           }
         }
       }

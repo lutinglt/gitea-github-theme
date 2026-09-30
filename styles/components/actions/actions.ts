@@ -24,13 +24,30 @@ const actions = css`
   /* 避免锚中设置界面里的 Actions */
   .page-content.repository.actions:not(.settings) .flex-container {
     /* Actions 列表 */
-    .flex-container-nav:before {
-      content: "Actions";
-      display: block;
-      font-size: 20px;
-      font-weight: 600;
-      margin-top: 6px;
-      margin-bottom: 8px;
+    .flex-container-nav {
+      &:before {
+        content: "Actions";
+        display: block;
+        font-size: 20px;
+        font-weight: 600;
+        margin-top: 6px;
+        margin-bottom: 8px;
+      }
+      .ui.menu {
+        &:first-child {
+          margin-bottom: 8px;
+        }
+        &:last-child {
+          border-top: 1px solid ${themeVars.color.light.border};
+          margin-top: 8px;
+          > div:not([class]) {
+            font-size: 12px;
+            font-weight: 600;
+            color: ${themeVars.color.text.light.num1};
+            padding: 6px 8px;
+          }
+        }
+      }
     }
     /* 工作流列表 */
     .flex-container-main {
@@ -118,6 +135,15 @@ const actions = css`
         /* 分页按钮, GitHub Gitea 修正, 不影响其他配色 */
         .center.page.buttons {
           background: ${themeVars.color.body};
+        }
+      }
+      /* 工作流队列 */
+      #actions-job-queue {
+        .ui.attached.table.segment {
+          border-bottom-left-radius: ${otherThemeVars.border.radius};
+          border-bottom-right-radius: ${otherThemeVars.border.radius};
+          border: 1px solid ${themeVars.color.light.border};
+          border-top: 0;
         }
       }
     }
