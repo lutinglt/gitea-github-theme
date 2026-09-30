@@ -58,13 +58,8 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
       subtle: flavor.colors.subtext0.hex,
     },
     bg: flavor.colors.crust.hex,
-    border: flavor.colors.overlay0.hex,
     activeBg: flavor.colors.surface1.hex,
     hoverBg: rgba(flavor.colors.surface2.hex, 0.2),
-    menu: {
-      bg: themeVars.color.menu,
-      border: themeVars.color.secondary.self,
-    },
     link: flavor.colors.blue.hex,
   };
   const diff: Diff = {

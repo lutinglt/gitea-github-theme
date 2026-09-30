@@ -115,13 +115,8 @@ const console: Console = {
     subtle: "#40474d",
   },
   bg: "#ffffff",
-  border: "#d0d7de",
   activeBg: "#d0d7de",
   hoverBg: "#f1f3f5",
-  menu: {
-    bg: "#f8f9fb",
-    border: "#d0d7de",
-  },
   link: "#5c656d",
 };
 const named: Named = {
@@ -272,7 +267,7 @@ const other: Other = {
     hoverBg: themeVars.color.primary.light.num5,
     activeBg: themeVars.color.primary.light.num6,
   },
-  tooltip: { text: "#fbfdff", bg: "#000017f0" },
+  tooltip: { text: "#fbfdff", bg: "#25292e" },
   nav: {
     bg: "#f6f7fa",
     hoverBg: themeVars.color.secondary.light.num1,

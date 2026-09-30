@@ -52,19 +52,10 @@ export const console = {
   },
   /** Action 页面日志部分背景色 */
   bg: null,
-  /** Action 页面日志部分边框色 */
-  border: null,
   /** Action 页面日志部分步骤标题激活颜色 */
   activeBg: "color-console-active-bg",
   /** Action 页面日志部分步骤标题悬停颜色 */
   hoverBg: "color-console-hover-bg",
-  /** Action 页面日志部分设置菜单颜色 */
-  menu: {
-    /** 菜单背景色 */
-    bg: null,
-    /** 菜单边框色 */
-    border: null,
-  },
   /** Action 页面日志部分里链接颜色*/
   link: null,
 };

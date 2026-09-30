@@ -64,17 +64,12 @@ exports[`github2ThemeColor > dark isDarkTheme 为 true 1`] = `
     "console": {
       "activeBg": "#2a313c",
       "bg": "#010409",
-      "border": "#3d444db3",
       "fg": {
         "self": "#f0f6fc",
         "subtle": "#9198a1",
       },
       "hoverBg": "#656c7633",
       "link": "#9198a1",
-      "menu": {
-        "bg": "#010409",
-        "border": "#3d444db3",
-      },
     },
     "danger": "var(--color-red)",
     "diff": {
@@ -679,17 +674,12 @@ exports[`github2ThemeColor > dark isDarkTheme 为 true 2`] = `
     "console": {
       "activeBg": "#e6eaef",
       "bg": "#f6f8fa",
-      "border": "#d1d9e0b3",
       "fg": {
         "self": "#1f2328",
         "subtle": "#59636e",
       },
       "hoverBg": "#818b981a",
       "link": "#59636e",
-      "menu": {
-        "bg": "#ffffff",
-        "border": "#d1d9e0b3",
-      },
     },
     "danger": "var(--color-red)",
     "diff": {

@@ -45,6 +45,10 @@ const actions = css`
             font-weight: 600;
             color: ${themeVars.color.text.light.num1};
             padding: 6px 8px;
+            margin-top: 8px;
+          }
+          > .item {
+            font-weight: 400;
           }
         }
       }

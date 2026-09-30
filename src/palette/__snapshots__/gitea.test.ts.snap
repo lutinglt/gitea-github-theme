@@ -64,17 +64,12 @@ exports[`gitea2ThemeVars > dark 输出含 color 和 github 顶层键 1`] = `
     "console": {
       "activeBg": "#313338",
       "bg": "#191a1c",
-      "border": "#313338",
       "fg": {
         "self": "#f8f8f8",
         "subtle": "#c1c3c8",
       },
       "hoverBg": "#2a2c30",
       "link": "#969aa1",
-      "menu": {
-        "bg": "#292b2e",
-        "border": "#46494f",
-      },
     },
     "danger": "var(--color-red)",
     "diff": {
@@ -382,7 +377,7 @@ exports[`gitea2ThemeVars > dark 输出含 color 和 github 顶层键 1`] = `
     },
     "timeline": "#383b40",
     "tooltip": {
-      "bg": "#0b0b0cf0",
+      "bg": "#2b2e33",
       "text": "#fafafa",
     },
     "transparency": {
@@ -679,17 +674,12 @@ exports[`gitea2ThemeVars > dark 输出含 color 和 github 顶层键 2`] = `
     "console": {
       "activeBg": "#d0d7de",
       "bg": "#ffffff",
-      "border": "#d0d7de",
       "fg": {
         "self": "#0d1117",
         "subtle": "#40474d",
       },
       "hoverBg": "#f1f3f5",
       "link": "#5c656d",
-      "menu": {
-        "bg": "#f8f9fb",
-        "border": "#d0d7de",
-      },
     },
     "danger": "var(--color-red)",
     "diff": {
@@ -997,7 +987,7 @@ exports[`gitea2ThemeVars > dark 输出含 color 和 github 顶层键 2`] = `
     },
     "timeline": "#d0d7de",
     "tooltip": {
-      "bg": "#000017f0",
+      "bg": "#25292e",
       "text": "#fbfdff",
     },
     "transparency": {

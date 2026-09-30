@@ -182,7 +182,7 @@ const summaryView = css`
                 opacity: 0.5;
                 .job-rect {
                   fill: ${themeVars.color.console.bg};
-                  stroke: ${themeVars.color.console.border};
+                  stroke: ${themeVars.color.light.border};
                 }
               }
               .node-edge:not(.highlighted-edge) {

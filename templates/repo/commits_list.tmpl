@@ -16,7 +16,7 @@
 						</span>
 					{{end}}
 					{{if $gitCommit.MessageBody}}
-					<button class="ui button ellipsis-button" aria-expanded="false" data-global-click="onRepoEllipsisButtonClick">{{svg "octicon-ellipsis" 16}}</button>
+					<button type="button" class="ui button ellipsis-button" aria-expanded="false" data-global-click="onRepoEllipsisButtonClick">{{svg "octicon-ellipsis" 16}}</button>
 					{{end}}
 					{{if $gitCommit.MessageBody}}
 					<pre class="commit-body tw-hidden">{{ctx.RenderUtils.RenderCommitBody $gitCommit.MessageUTF8 $.Repository}}</pre>
@@ -51,7 +51,7 @@
 				</div>
 				{{/* 操作 */}}
 				<div class="actions">
-					<button class="btn interact-bg copy-commit-id gitea-github-theme-action" data-tooltip-content="{{ctx.Locale.Tr "copy_hash"}}" data-clipboard-text="{{$commitID}}">{{svg "octicon-copy"}}</button>
+					<button type="button" class="btn interact-bg copy-commit-id gitea-github-theme-action" data-tooltip-content="{{ctx.Locale.Tr "copy_hash"}}" data-clipboard-text="{{$commitID}}">{{svg "octicon-copy"}}</button>
 					{{/* at the moment, wiki doesn't support these "view" links like "view at history point" */}}
 					{{if not $.PageIsWiki}}
 						{{/* view single file diff */}}

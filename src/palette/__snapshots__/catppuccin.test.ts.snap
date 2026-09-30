@@ -248,17 +248,12 @@ exports[`catppuccin2ThemeColor > mocha 结构完整 1`] = `
     "console": {
       "activeBg": "#45475a",
       "bg": "#11111b",
-      "border": "#6c7086",
       "fg": {
         "self": "#cdd6f4",
         "subtle": "#a6adc8",
       },
       "hoverBg": "rgba(88, 91, 112, 0.2)",
       "link": "#89b4fa",
-      "menu": {
-        "bg": "var(--color-menu)",
-        "border": "var(--color-secondary)",
-      },
     },
     "danger": "var(--color-red)",
     "diff": {
@@ -863,17 +858,12 @@ exports[`catppuccin2ThemeColor > mocha 结构完整 2`] = `
     "console": {
       "activeBg": "#bcc0cc",
       "bg": "#dce0e8",
-      "border": "#9ca0b0",
       "fg": {
         "self": "#4c4f69",
         "subtle": "#6c6f85",
       },
       "hoverBg": "rgba(172, 176, 190, 0.2)",
       "link": "#1e66f5",
-      "menu": {
-        "bg": "var(--color-menu)",
-        "border": "var(--color-secondary)",
-      },
     },
     "danger": "var(--color-red)",
     "diff": {
@@ -1478,17 +1468,12 @@ exports[`catppuccin2ThemeColor > mocha 结构完整 3`] = `
     "console": {
       "activeBg": "#51576d",
       "bg": "#232634",
-      "border": "#737994",
       "fg": {
         "self": "#c6d0f5",
         "subtle": "#a5adce",
       },
       "hoverBg": "rgba(98, 104, 128, 0.2)",
       "link": "#8caaee",
-      "menu": {
-        "bg": "var(--color-menu)",
-        "border": "var(--color-secondary)",
-      },
     },
     "danger": "var(--color-red)",
     "diff": {
@@ -2093,17 +2078,12 @@ exports[`catppuccin2ThemeColor > mocha 结构完整 4`] = `
     "console": {
       "activeBg": "#494d64",
       "bg": "#181926",
-      "border": "#6e738d",
       "fg": {
         "self": "#cad3f5",
         "subtle": "#a5adcb",
       },
       "hoverBg": "rgba(91, 96, 120, 0.2)",
       "link": "#8aadf4",
-      "menu": {
-        "bg": "var(--color-menu)",
-        "border": "var(--color-secondary)",
-      },
     },
     "danger": "var(--color-red)",
     "diff": {
