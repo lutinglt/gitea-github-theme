@@ -18,15 +18,21 @@ A Gitea theme that pursues GitHub style not only in colors but also in styling d
 
 The theme version number is kept consistent with the Gitea version number
 
-Gitea version number format: `1.major.minor`
+Gitea version number format: `major.minor.patch`
 
 Theoretically, minor version changes in Gitea do not modify the frontend layout, so the minor version of the theme is
 applicable to all Gitea versions with the same major version number.
 
-For example: Theme version `1.24.5` is applicable to Gitea versions `>=1.24.0` `<1.25.0`
+For example: Theme version `28.2.1` is applicable to Gitea versions `>=28.0.0` `<29.0.0`
 
 Only the latest released Gitea version is maintained. Issues and PRs for other older theme versions will not be
 accepted.
+
+> [!IMPORTANT]
+>
+> Gitea version number format for 1.27 and earlier: `1.major.minor`
+>
+> For example: Theme version `1.24.5` is applicable to Gitea versions `>=1.24.0` `<1.25.0`
 
 ## Installation
 
