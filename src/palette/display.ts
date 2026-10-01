@@ -41,24 +41,6 @@ export function display2GitHubColor(
     },
     borderColor: { accent: { emphasis: soft ? displayColor[6] : displayColor[5] } },
     button: {
-      primary: {
-        fgColor: {
-          rest: baseGitHubColor.button.primary.fgColor.rest,
-        },
-        bgColor: {
-          rest: soft ? saturate(scaleColorLight(displayColor[5], -2), -0.1) : displayColor[5],
-          hover: soft
-            ? saturate(scaleColorLight(displayColor[5], 4), -0.1)
-            : baseGitHubColor.isDarkTheme
-              ? scaleColorLight(displayColor[5], 7)
-              : scaleColorLight(displayColor[5], -5),
-          active: soft
-            ? saturate(scaleColorLight(displayColor[5], 9), -0.1)
-            : baseGitHubColor.isDarkTheme
-              ? scaleColorLight(displayColor[5], 15)
-              : scaleColorLight(displayColor[5], -10),
-        },
-      },
       star: {
         iconColor: soft ? scaleColorLight(displayColor[6], -2) : saturate(scaleColorLight(displayColor[6], -2), 0.1),
       },
@@ -80,6 +62,5 @@ export function display2GitHubColor(
         borderColor: baseGitHubColor.contribution.default.borderColor,
       },
     },
-    themeExtra: { button: { primary: { fgColor: { accent: soft ? displayColor[7] : displayColor[6] } } } },
   });
 }
