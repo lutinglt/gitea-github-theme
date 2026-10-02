@@ -347,7 +347,7 @@ exports[`catppuccin2ThemeColor > mocha 结构完整 1`] = `
     },
     "label": {
       "activeBg": "rgba(108, 112, 134, 0.5)",
-      "bg": "rgba(49, 50, 68, 0.4)",
+      "bg": "rgba(49, 50, 68, 0.8)",
       "hoverBg": "rgba(88, 91, 112, 0.2)",
       "text": "#cdd6f4",
     },
@@ -550,11 +550,11 @@ exports[`catppuccin2ThemeColor > mocha 结构完整 1`] = `
       "self": "#94e2d5",
     },
     "text": {
-      "dark": "#a6adc8",
+      "dark": "#cdd6f4",
       "light": {
-        "num1": "#bac2de",
-        "num2": "#bac2de",
-        "num3": "#bac2de",
+        "num1": "#a6adc8",
+        "num2": "#a6adc8",
+        "num3": "#a6adc8",
         "self": "#bac2de",
       },
       "self": "#cdd6f4",
@@ -785,7 +785,7 @@ exports[`catppuccin2ThemeColor > mocha 结构完整 1`] = `
     },
     "underlineNav": {
       "borderColor": {
-        "active": "#cba6f7",
+        "active": "#fab387",
       },
     },
     "workflowCardBg": "#181825",
@@ -957,7 +957,7 @@ exports[`catppuccin2ThemeColor > mocha 结构完整 2`] = `
     },
     "label": {
       "activeBg": "rgba(156, 160, 176, 0.5)",
-      "bg": "rgba(204, 208, 218, 0.4)",
+      "bg": "rgba(204, 208, 218, 0.8)",
       "hoverBg": "rgba(172, 176, 190, 0.2)",
       "text": "#4c4f69",
     },
@@ -1160,11 +1160,11 @@ exports[`catppuccin2ThemeColor > mocha 结构完整 2`] = `
       "self": "#179299",
     },
     "text": {
-      "dark": "#6c6f85",
+      "dark": "#4c4f69",
       "light": {
-        "num1": "#5c5f77",
-        "num2": "#5c5f77",
-        "num3": "#5c5f77",
+        "num1": "#6c6f85",
+        "num2": "#6c6f85",
+        "num3": "#6c6f85",
         "self": "#5c5f77",
       },
       "self": "#4c4f69",
@@ -1395,7 +1395,7 @@ exports[`catppuccin2ThemeColor > mocha 结构完整 2`] = `
     },
     "underlineNav": {
       "borderColor": {
-        "active": "#8839ef",
+        "active": "#fe640b",
       },
     },
     "workflowCardBg": "#e6e9ef",
@@ -1567,7 +1567,7 @@ exports[`catppuccin2ThemeColor > mocha 结构完整 3`] = `
     },
     "label": {
       "activeBg": "rgba(115, 121, 148, 0.5)",
-      "bg": "rgba(65, 69, 89, 0.4)",
+      "bg": "rgba(65, 69, 89, 0.8)",
       "hoverBg": "rgba(98, 104, 128, 0.2)",
       "text": "#c6d0f5",
     },
@@ -1770,11 +1770,11 @@ exports[`catppuccin2ThemeColor > mocha 结构完整 3`] = `
       "self": "#81c8be",
     },
     "text": {
-      "dark": "#a5adce",
+      "dark": "#c6d0f5",
       "light": {
-        "num1": "#b5bfe2",
-        "num2": "#b5bfe2",
-        "num3": "#b5bfe2",
+        "num1": "#a5adce",
+        "num2": "#a5adce",
+        "num3": "#a5adce",
         "self": "#b5bfe2",
       },
       "self": "#c6d0f5",
@@ -2005,7 +2005,7 @@ exports[`catppuccin2ThemeColor > mocha 结构完整 3`] = `
     },
     "underlineNav": {
       "borderColor": {
-        "active": "#ca9ee6",
+        "active": "#ef9f76",
       },
     },
     "workflowCardBg": "#292c3c",
@@ -2177,7 +2177,7 @@ exports[`catppuccin2ThemeColor > mocha 结构完整 4`] = `
     },
     "label": {
       "activeBg": "rgba(110, 115, 141, 0.5)",
-      "bg": "rgba(54, 58, 79, 0.4)",
+      "bg": "rgba(54, 58, 79, 0.8)",
       "hoverBg": "rgba(91, 96, 120, 0.2)",
       "text": "#cad3f5",
     },
@@ -2380,11 +2380,11 @@ exports[`catppuccin2ThemeColor > mocha 结构完整 4`] = `
       "self": "#8bd5ca",
     },
     "text": {
-      "dark": "#a5adcb",
+      "dark": "#cad3f5",
       "light": {
-        "num1": "#b8c0e0",
-        "num2": "#b8c0e0",
-        "num3": "#b8c0e0",
+        "num1": "#a5adcb",
+        "num2": "#a5adcb",
+        "num3": "#a5adcb",
         "self": "#b8c0e0",
       },
       "self": "#cad3f5",
@@ -2615,7 +2615,7 @@ exports[`catppuccin2ThemeColor > mocha 结构完整 4`] = `
     },
     "underlineNav": {
       "borderColor": {
-        "active": "#c6a0f6",
+        "active": "#f5a97f",
       },
     },
     "workflowCardBg": "#1e2030",
