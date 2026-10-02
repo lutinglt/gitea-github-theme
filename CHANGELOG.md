@@ -13,3 +13,4 @@
 ### 🐞 Fix
 
 - Fix the issue of menu occlusion in the operation buttons on the differential page.
+- Remove unnecessary styles from robot label.
