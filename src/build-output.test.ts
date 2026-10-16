@@ -47,6 +47,19 @@ const EXPECTED_THEME_FILES = [
   `${PREFIX}tritanopia-dark.css`,
   `${PREFIX}tritanopia-light.css`,
   `${PREFIX}tritanopia-auto.css`,
+  // high contrast
+  `${PREFIX}high-contrast-dark.css`,
+  `${PREFIX}high-contrast-light.css`,
+  `${PREFIX}high-contrast-soft-dark.css`,
+  `${PREFIX}high-contrast-auto.css`,
+  // high contrast colorblind
+  `${PREFIX}high-contrast-colorblind-dark.css`,
+  `${PREFIX}high-contrast-colorblind-light.css`,
+  `${PREFIX}high-contrast-colorblind-auto.css`,
+  // high contrast tritanopia
+  `${PREFIX}high-contrast-tritanopia-dark.css`,
+  `${PREFIX}high-contrast-tritanopia-light.css`,
+  `${PREFIX}high-contrast-tritanopia-auto.css`,
   // pink
   `${PREFIX}pink-dark.css`,
   `${PREFIX}pink-light.css`,
@@ -62,19 +75,8 @@ const EXPECTED_THEME_FILES = [
   `${PREFIX}catppuccin-frappe.css`,
   `${PREFIX}catppuccin-macchiato.css`,
   `${PREFIX}catppuccin-auto.css`,
-  // high contrast
-  `${PREFIX}high-contrast-dark.css`,
-  `${PREFIX}high-contrast-light.css`,
-  `${PREFIX}high-contrast-soft-dark.css`,
-  `${PREFIX}high-contrast-auto.css`,
-  // high contrast colorblind
-  `${PREFIX}high-contrast-colorblind-dark.css`,
-  `${PREFIX}high-contrast-colorblind-light.css`,
-  `${PREFIX}high-contrast-colorblind-auto.css`,
-  // high contrast tritanopia
-  `${PREFIX}high-contrast-tritanopia-dark.css`,
-  `${PREFIX}high-contrast-tritanopia-light.css`,
-  `${PREFIX}high-contrast-tritanopia-auto.css`,
+  // arc green
+  `${PREFIX}arc-green.css`
 ];
 
 /** auto 主题文件名列表 */

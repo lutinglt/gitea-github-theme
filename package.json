@@ -32,6 +32,7 @@
     "update:primer": "bun scripts/buildPrimerTSToken.ts",
     "update:locale": "bun scripts/translate.ts",
     "update:gitea": "bun scripts/updateGitea.ts",
+    "update:arcgreen": "bun scripts/updateArcGreen.ts",
     "update:snapshot": "bun vitest --update",
     "install:clean": "rm -rf node_modules bun.lock bun.lockb && bun install"
   },

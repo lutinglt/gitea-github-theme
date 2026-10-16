@@ -65,30 +65,6 @@ export default defineThemeConfig({
       },
     },
     {
-      themeSeriesName: "pink",
-      themes: {
-        dark: { theme: themes.github.pink.dark },
-        light: { theme: themes.github.pink.light },
-        "soft-dark": { theme: themes.github.pink.softDark },
-      },
-    },
-    {
-      themeSeriesName: "gitea",
-      themes: {
-        dark: { theme: themes.gitea.dark },
-        light: { theme: themes.gitea.light },
-      },
-    },
-    {
-      themeSeriesName: "catppuccin",
-      themes: {
-        dark: { themeName: "mocha", theme: themes.catppuccin.mocha },
-        light: { themeName: "latte", theme: themes.catppuccin.latte },
-        frappe: { theme: themes.catppuccin.frappe },
-        macchiato: { theme: themes.catppuccin.macchiato },
-      },
-    },
-    {
       themeSeriesName: "high-contrast",
       themes: {
         dark: { theme: themes.github.highContrast.dark },
@@ -126,6 +102,36 @@ export default defineThemeConfig({
           colorblindType: "blue-yellow",
           theme: themes.github.highContrast.tritanopia.light,
         },
+      },
+    },
+    {
+      themeSeriesName: "pink",
+      themes: {
+        dark: { theme: themes.github.pink.dark },
+        light: { theme: themes.github.pink.light },
+        "soft-dark": { theme: themes.github.pink.softDark },
+      },
+    },
+    {
+      themeSeriesName: "gitea",
+      themes: {
+        dark: { theme: themes.gitea.dark },
+        light: { theme: themes.gitea.light },
+      },
+    },
+    {
+      themeSeriesName: "catppuccin",
+      themes: {
+        dark: { themeName: "mocha", theme: themes.catppuccin.mocha },
+        light: { themeName: "latte", theme: themes.catppuccin.latte },
+        frappe: { theme: themes.catppuccin.frappe },
+        macchiato: { theme: themes.catppuccin.macchiato },
+      },
+    },
+    {
+      themeSeriesName: "arc",
+      themes: {
+        dark: { themeName: "green", theme: themes.arcGreen },
       },
     },
   ],

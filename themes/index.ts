@@ -44,6 +44,7 @@ import {
   githubTritanopiaDarkTheme,
   githubTritanopiaLightTheme,
 } from "./github";
+import { arcGreenTheme } from "./arcGreen";
 
 export const giteaColor = {
   dark: giteaDarkColor,
@@ -63,11 +64,6 @@ export default {
       dark: githubTritanopiaDarkTheme,
       light: githubTritanopiaLightTheme,
     },
-    pink: {
-      dark: githubPinkDarkTheme,
-      light: githubPinkLightTheme,
-      softDark: githubPinkSoftDarkTheme,
-    },
     highContrast: {
       dark: githubDarkHighContrastTheme,
       light: githubLightHighContrastTheme,
@@ -81,6 +77,11 @@ export default {
         light: githubLightTritanopiaHighContrastTheme,
       },
     },
+    pink: {
+      dark: githubPinkDarkTheme,
+      light: githubPinkLightTheme,
+      softDark: githubPinkSoftDarkTheme,
+    },
   },
   gitea: {
     dark: giteaDarkTheme,
@@ -92,4 +93,5 @@ export default {
     macchiato: catppuccinMacchiatoTheme,
     mocha: catppuccinMochaTheme,
   },
+  arcGreen: arcGreenTheme,
 };
