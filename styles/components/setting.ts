@@ -68,9 +68,7 @@ const button = css`
     .ui.attached.header > .ui.right {
       .ui.primary.button.tiny {
         ${primaryButtonStyle}
-        padding: 3px 12px;
-        min-height: 20px;
-        line-height: 20px;
+        padding: 0 12px;
         &:hover {
           ${primaryButtonHoverStyle}
         }
@@ -84,8 +82,6 @@ const button = css`
   .admin-setting-content {
     .ui.primary.button {
       ${tinyStyle}
-      padding: 5px 16px;
-      line-height: 22px;
       box-shadow: none;
       &:hover {
         ${tinyHoverStyle}
@@ -98,10 +94,6 @@ const button = css`
         border-color: ${themeVars.github.button.primary.borderColor.hover};
         color: ${themeVars.github.button.primary.fgColor.rest};
       }
-    }
-    .ui.red.button {
-      padding: 5px 16px;
-      line-height: 22px;
     }
   }
 `;

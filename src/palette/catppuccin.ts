@@ -58,13 +58,8 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
       subtle: flavor.colors.subtext0.hex,
     },
     bg: flavor.colors.crust.hex,
-    border: flavor.colors.overlay0.hex,
     activeBg: flavor.colors.surface1.hex,
     hoverBg: rgba(flavor.colors.surface2.hex, 0.2),
-    menu: {
-      bg: themeVars.color.menu,
-      border: themeVars.color.secondary.self,
-    },
     link: flavor.colors.blue.hex,
   };
   const diff: Diff = {
@@ -96,11 +91,11 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
       self: flavor.colors.text.hex,
       light: {
         self: flavor.colors.subtext1.hex,
-        num1: flavor.colors.subtext1.hex,
-        num2: flavor.colors.subtext1.hex,
-        num3: flavor.colors.subtext1.hex,
+        num1: flavor.colors.subtext0.hex,
+        num2: flavor.colors.subtext0.hex,
+        num3: flavor.colors.subtext0.hex,
       },
-      dark: flavor.colors.subtext0.hex,
+      dark: flavor.colors.text.hex,
     },
     footer: flavor.colors.mantle.hex,
     timeline: flavor.colors.surface0.hex,
@@ -141,7 +136,7 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
     secondaryNavBg: themeVars.color.body,
     label: {
       text: flavor.colors.text.hex,
-      bg: rgba(flavor.colors.surface0.hex, 0.4),
+      bg: rgba(flavor.colors.surface0.hex, 0.8),
       hoverBg: rgba(flavor.colors.surface2.hex, 0.2),
       activeBg: rgba(flavor.colors.overlay0.hex, 0.5),
     },
@@ -235,7 +230,7 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
         medium: `drop-shadow(0 1px 1px ${flavor.colors.crust.hex}) drop-shadow(0 3px 6px ${flavor.colors.crust.hex})`,
       },
     },
-    underlineNav: { borderColor: { active: accentColor } },
+    underlineNav: { borderColor: { active: flavor.colors.peach.hex } },
     contribution: {
       default: {
         bgColor: {

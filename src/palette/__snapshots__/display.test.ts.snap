@@ -306,10 +306,10 @@ exports[`display2GitHubColor > cover 后 contribution 颜色被改写 1`] = `
     },
     "primary": {
       "bgColor": {
-        "active": "hsla(328, 62%, 62%, 1)",
+        "active": "#2e9a40",
         "disabled": "#105823",
-        "hover": "hsla(328, 62%, 58%, 1)",
-        "rest": "#d34591",
+        "hover": "#29903b",
+        "rest": "#238636",
       },
       "borderColor": {
         "active": "#ffffff26",
@@ -1768,7 +1768,7 @@ exports[`display2GitHubColor > cover 后 contribution 颜色被改写 1`] = `
     "button": {
       "primary": {
         "fgColor": {
-          "accent": "#e57bb2",
+          "accent": "#3fb950",
         },
       },
     },
@@ -2108,10 +2108,10 @@ exports[`display2GitHubColor > cover 后 contribution 颜色被改写 2`] = `
     },
     "primary": {
       "bgColor": {
-        "active": "hsla(327, 65%, 44%, 1)",
+        "active": "#197935",
         "disabled": "#95d8a6",
-        "hover": "hsla(327, 65%, 47%, 1)",
-        "rest": "#ce2c85",
+        "hover": "#1c8139",
+        "rest": "#1f883d",
       },
       "borderColor": {
         "active": "#1f232826",
@@ -3570,7 +3570,7 @@ exports[`display2GitHubColor > cover 后 contribution 颜色被改写 2`] = `
     "button": {
       "primary": {
         "fgColor": {
-          "accent": "#b12f79",
+          "accent": "#1a7f37",
         },
       },
     },
@@ -3910,10 +3910,10 @@ exports[`display2GitHubColor > cover 后 contribution 颜色被改写 3`] = `
     },
     "primary": {
       "bgColor": {
-        "active": "hsla(328, 52%, 59%, 1)",
+        "active": "#428f46",
         "disabled": "#105823",
-        "hover": "hsla(328, 52%, 57%, 1)",
-        "rest": "hsla(328, 52%, 54%, 1)",
+        "hover": "#3b8640",
+        "rest": "#347d39",
       },
       "borderColor": {
         "active": "#cdd9e526",
@@ -5372,7 +5372,7 @@ exports[`display2GitHubColor > cover 后 contribution 颜色被改写 3`] = `
     "button": {
       "primary": {
         "fgColor": {
-          "accent": "#ec8dbd",
+          "accent": "#57ab5a",
         },
       },
     },

@@ -94,8 +94,9 @@ const transition = css`
       transform: translateY(0.5px);
     }
     /* 下拉图标的过渡会导致在下移过程中出现的菜单被短暂遮挡 */
+    /* 需要高于 .repository .diff-detail-box 的 z-index, 否则父级的优先级会导致子元素菜单的优先级被覆盖 */
     &.dropdown {
-      z-index: 1;
+      z-index: 9;
     }
     .button:active {
       transform: none;

@@ -1,6 +1,190 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`catppuccin 暗/亮模式语义 > light 主题 base.black 应为深色 1`] = `
+exports[`catppuccin2Syntax > 所有风味 syntax 含核心键 1`] = `
+{
+  "attribute": "#df8e1d",
+  "bool": "#04a5e5",
+  "comment": "#7c7f93",
+  "commentSpecial": "#9ca0b0",
+  "control": "#fe640b",
+  "decorator": "#ea76cb",
+  "deletedBg": "rgba(210, 15, 57, 0.4)",
+  "diffFg": "rgba(223, 142, 29, 0.4)",
+  "emph": "#df8e1d",
+  "entity": "#1e66f5",
+  "escape": "#1e66f5",
+  "heading": "#d20f39",
+  "insertedBg": "rgba(64, 160, 43, 0.4)",
+  "invalid": "#d20f39",
+  "keyword": "#8839ef",
+  "link": "#1e66f5",
+  "matchingBracketBg": "rgba(23, 146, 153, 0.4)",
+  "name": "#7287fd",
+  "namePseudo": "#fe640b",
+  "namespace": "#df8e1d",
+  "nonmatchingBracketBg": "rgba(210, 15, 57, 0.4)",
+  "number": "#fe640b",
+  "operator": "#04a5e5",
+  "output": "#fe640b",
+  "preproc": "#1e66f5",
+  "preprocFile": "#1e66f5",
+  "prompt": "#9ca0b0",
+  "property": "#1e66f5",
+  "punctuation": "#7c7f93",
+  "regexp": "#1e66f5",
+  "string": "#40a02b",
+  "stringSpecial": "#40a02b",
+  "strong": "#df8e1d",
+  "subheading": "#04a5e5",
+  "tag": "#df8e1d",
+  "text": "#4c4f69",
+  "textAlt": "#6c6f85",
+  "traceback": "#e64553",
+  "type": "#df8e1d",
+  "variable": "#fe640b",
+  "whitespace": "#9ca0b0",
+}
+`;
+
+exports[`catppuccin2Syntax > 所有风味 syntax 含核心键 2`] = `
+{
+  "attribute": "#e5c890",
+  "bool": "#99d1db",
+  "comment": "#949cbb",
+  "commentSpecial": "#737994",
+  "control": "#ef9f76",
+  "decorator": "#f4b8e4",
+  "deletedBg": "rgba(231, 130, 132, 0.4)",
+  "diffFg": "rgba(229, 200, 144, 0.4)",
+  "emph": "#e5c890",
+  "entity": "#8caaee",
+  "escape": "#8caaee",
+  "heading": "#e78284",
+  "insertedBg": "rgba(166, 209, 137, 0.4)",
+  "invalid": "#e78284",
+  "keyword": "#ca9ee6",
+  "link": "#8caaee",
+  "matchingBracketBg": "rgba(129, 200, 190, 0.4)",
+  "name": "#babbf1",
+  "namePseudo": "#ef9f76",
+  "namespace": "#e5c890",
+  "nonmatchingBracketBg": "rgba(231, 130, 132, 0.4)",
+  "number": "#ef9f76",
+  "operator": "#99d1db",
+  "output": "#ef9f76",
+  "preproc": "#8caaee",
+  "preprocFile": "#8caaee",
+  "prompt": "#737994",
+  "property": "#8caaee",
+  "punctuation": "#949cbb",
+  "regexp": "#8caaee",
+  "string": "#a6d189",
+  "stringSpecial": "#a6d189",
+  "strong": "#e5c890",
+  "subheading": "#99d1db",
+  "tag": "#e5c890",
+  "text": "#c6d0f5",
+  "textAlt": "#a5adce",
+  "traceback": "#ea999c",
+  "type": "#e5c890",
+  "variable": "#ef9f76",
+  "whitespace": "#737994",
+}
+`;
+
+exports[`catppuccin2Syntax > 所有风味 syntax 含核心键 3`] = `
+{
+  "attribute": "#eed49f",
+  "bool": "#91d7e3",
+  "comment": "#939ab7",
+  "commentSpecial": "#6e738d",
+  "control": "#f5a97f",
+  "decorator": "#f5bde6",
+  "deletedBg": "rgba(237, 135, 150, 0.4)",
+  "diffFg": "rgba(238, 212, 159, 0.4)",
+  "emph": "#eed49f",
+  "entity": "#8aadf4",
+  "escape": "#8aadf4",
+  "heading": "#ed8796",
+  "insertedBg": "rgba(166, 218, 149, 0.4)",
+  "invalid": "#ed8796",
+  "keyword": "#c6a0f6",
+  "link": "#8aadf4",
+  "matchingBracketBg": "rgba(139, 213, 202, 0.4)",
+  "name": "#b7bdf8",
+  "namePseudo": "#f5a97f",
+  "namespace": "#eed49f",
+  "nonmatchingBracketBg": "rgba(237, 135, 150, 0.4)",
+  "number": "#f5a97f",
+  "operator": "#91d7e3",
+  "output": "#f5a97f",
+  "preproc": "#8aadf4",
+  "preprocFile": "#8aadf4",
+  "prompt": "#6e738d",
+  "property": "#8aadf4",
+  "punctuation": "#939ab7",
+  "regexp": "#8aadf4",
+  "string": "#a6da95",
+  "stringSpecial": "#a6da95",
+  "strong": "#eed49f",
+  "subheading": "#91d7e3",
+  "tag": "#eed49f",
+  "text": "#cad3f5",
+  "textAlt": "#a5adcb",
+  "traceback": "#ee99a0",
+  "type": "#eed49f",
+  "variable": "#f5a97f",
+  "whitespace": "#6e738d",
+}
+`;
+
+exports[`catppuccin2Syntax > 所有风味 syntax 含核心键 4`] = `
+{
+  "attribute": "#f9e2af",
+  "bool": "#89dceb",
+  "comment": "#9399b2",
+  "commentSpecial": "#6c7086",
+  "control": "#fab387",
+  "decorator": "#f5c2e7",
+  "deletedBg": "rgba(243, 139, 168, 0.4)",
+  "diffFg": "rgba(249, 226, 175, 0.4)",
+  "emph": "#f9e2af",
+  "entity": "#89b4fa",
+  "escape": "#89b4fa",
+  "heading": "#f38ba8",
+  "insertedBg": "rgba(166, 227, 161, 0.4)",
+  "invalid": "#f38ba8",
+  "keyword": "#cba6f7",
+  "link": "#89b4fa",
+  "matchingBracketBg": "rgba(148, 226, 213, 0.4)",
+  "name": "#b4befe",
+  "namePseudo": "#fab387",
+  "namespace": "#f9e2af",
+  "nonmatchingBracketBg": "rgba(243, 139, 168, 0.4)",
+  "number": "#fab387",
+  "operator": "#89dceb",
+  "output": "#fab387",
+  "preproc": "#89b4fa",
+  "preprocFile": "#89b4fa",
+  "prompt": "#6c7086",
+  "property": "#89b4fa",
+  "punctuation": "#9399b2",
+  "regexp": "#89b4fa",
+  "string": "#a6e3a1",
+  "stringSpecial": "#a6e3a1",
+  "strong": "#f9e2af",
+  "subheading": "#89dceb",
+  "tag": "#f9e2af",
+  "text": "#cdd6f4",
+  "textAlt": "#a6adc8",
+  "traceback": "#eba0ac",
+  "type": "#f9e2af",
+  "variable": "#fab387",
+  "whitespace": "#6c7086",
+}
+`;
+
+exports[`catppuccin2ThemeColor > mocha 结构完整 1`] = `
 {
   "color": {
     "accent": "#cba6f7",
@@ -64,17 +248,12 @@ exports[`catppuccin 暗/亮模式语义 > light 主题 base.black 应为深色 1
     "console": {
       "activeBg": "#45475a",
       "bg": "#11111b",
-      "border": "#6c7086",
       "fg": {
         "self": "#cdd6f4",
         "subtle": "#a6adc8",
       },
       "hoverBg": "rgba(88, 91, 112, 0.2)",
       "link": "#89b4fa",
-      "menu": {
-        "bg": "var(--color-menu)",
-        "border": "var(--color-secondary)",
-      },
     },
     "danger": "var(--color-red)",
     "diff": {
@@ -168,7 +347,7 @@ exports[`catppuccin 暗/亮模式语义 > light 主题 base.black 应为深色 1
     },
     "label": {
       "activeBg": "rgba(108, 112, 134, 0.5)",
-      "bg": "rgba(49, 50, 68, 0.4)",
+      "bg": "rgba(49, 50, 68, 0.8)",
       "hoverBg": "rgba(88, 91, 112, 0.2)",
       "text": "#cdd6f4",
     },
@@ -371,11 +550,11 @@ exports[`catppuccin 暗/亮模式语义 > light 主题 base.black 应为深色 1
       "self": "#94e2d5",
     },
     "text": {
-      "dark": "#a6adc8",
+      "dark": "#cdd6f4",
       "light": {
-        "num1": "#bac2de",
-        "num2": "#bac2de",
-        "num3": "#bac2de",
+        "num1": "#a6adc8",
+        "num2": "#a6adc8",
+        "num3": "#a6adc8",
         "self": "#bac2de",
       },
       "self": "#cdd6f4",
@@ -606,7 +785,7 @@ exports[`catppuccin 暗/亮模式语义 > light 主题 base.black 应为深色 1
     },
     "underlineNav": {
       "borderColor": {
-        "active": "#cba6f7",
+        "active": "#fab387",
       },
     },
     "workflowCardBg": "#181825",
@@ -615,7 +794,7 @@ exports[`catppuccin 暗/亮模式语义 > light 主题 base.black 应为深色 1
 }
 `;
 
-exports[`catppuccin 暗/亮模式语义 > light 主题 base.black 应为深色 2`] = `
+exports[`catppuccin2ThemeColor > mocha 结构完整 2`] = `
 {
   "color": {
     "accent": "#8839ef",
@@ -679,17 +858,12 @@ exports[`catppuccin 暗/亮模式语义 > light 主题 base.black 应为深色 2
     "console": {
       "activeBg": "#bcc0cc",
       "bg": "#dce0e8",
-      "border": "#9ca0b0",
       "fg": {
         "self": "#4c4f69",
         "subtle": "#6c6f85",
       },
       "hoverBg": "rgba(172, 176, 190, 0.2)",
       "link": "#1e66f5",
-      "menu": {
-        "bg": "var(--color-menu)",
-        "border": "var(--color-secondary)",
-      },
     },
     "danger": "var(--color-red)",
     "diff": {
@@ -783,7 +957,7 @@ exports[`catppuccin 暗/亮模式语义 > light 主题 base.black 应为深色 2
     },
     "label": {
       "activeBg": "rgba(156, 160, 176, 0.5)",
-      "bg": "rgba(204, 208, 218, 0.4)",
+      "bg": "rgba(204, 208, 218, 0.8)",
       "hoverBg": "rgba(172, 176, 190, 0.2)",
       "text": "#4c4f69",
     },
@@ -986,11 +1160,11 @@ exports[`catppuccin 暗/亮模式语义 > light 主题 base.black 应为深色 2
       "self": "#179299",
     },
     "text": {
-      "dark": "#6c6f85",
+      "dark": "#4c4f69",
       "light": {
-        "num1": "#5c5f77",
-        "num2": "#5c5f77",
-        "num3": "#5c5f77",
+        "num1": "#6c6f85",
+        "num2": "#6c6f85",
+        "num3": "#6c6f85",
         "self": "#5c5f77",
       },
       "self": "#4c4f69",
@@ -1221,7 +1395,7 @@ exports[`catppuccin 暗/亮模式语义 > light 主题 base.black 应为深色 2
     },
     "underlineNav": {
       "borderColor": {
-        "active": "#8839ef",
+        "active": "#fe640b",
       },
     },
     "workflowCardBg": "#e6e9ef",
@@ -1230,7 +1404,7 @@ exports[`catppuccin 暗/亮模式语义 > light 主题 base.black 应为深色 2
 }
 `;
 
-exports[`catppuccin 暗/亮模式语义 > light 主题 base.black 应为深色 3`] = `
+exports[`catppuccin2ThemeColor > mocha 结构完整 3`] = `
 {
   "color": {
     "accent": "#ca9ee6",
@@ -1294,17 +1468,12 @@ exports[`catppuccin 暗/亮模式语义 > light 主题 base.black 应为深色 3
     "console": {
       "activeBg": "#51576d",
       "bg": "#232634",
-      "border": "#737994",
       "fg": {
         "self": "#c6d0f5",
         "subtle": "#a5adce",
       },
       "hoverBg": "rgba(98, 104, 128, 0.2)",
       "link": "#8caaee",
-      "menu": {
-        "bg": "var(--color-menu)",
-        "border": "var(--color-secondary)",
-      },
     },
     "danger": "var(--color-red)",
     "diff": {
@@ -1398,7 +1567,7 @@ exports[`catppuccin 暗/亮模式语义 > light 主题 base.black 应为深色 3
     },
     "label": {
       "activeBg": "rgba(115, 121, 148, 0.5)",
-      "bg": "rgba(65, 69, 89, 0.4)",
+      "bg": "rgba(65, 69, 89, 0.8)",
       "hoverBg": "rgba(98, 104, 128, 0.2)",
       "text": "#c6d0f5",
     },
@@ -1601,11 +1770,11 @@ exports[`catppuccin 暗/亮模式语义 > light 主题 base.black 应为深色 3
       "self": "#81c8be",
     },
     "text": {
-      "dark": "#a5adce",
+      "dark": "#c6d0f5",
       "light": {
-        "num1": "#b5bfe2",
-        "num2": "#b5bfe2",
-        "num3": "#b5bfe2",
+        "num1": "#a5adce",
+        "num2": "#a5adce",
+        "num3": "#a5adce",
         "self": "#b5bfe2",
       },
       "self": "#c6d0f5",
@@ -1836,7 +2005,7 @@ exports[`catppuccin 暗/亮模式语义 > light 主题 base.black 应为深色 3
     },
     "underlineNav": {
       "borderColor": {
-        "active": "#ca9ee6",
+        "active": "#ef9f76",
       },
     },
     "workflowCardBg": "#292c3c",
@@ -1845,7 +2014,7 @@ exports[`catppuccin 暗/亮模式语义 > light 主题 base.black 应为深色 3
 }
 `;
 
-exports[`catppuccin 暗/亮模式语义 > light 主题 base.black 应为深色 4`] = `
+exports[`catppuccin2ThemeColor > mocha 结构完整 4`] = `
 {
   "color": {
     "accent": "#c6a0f6",
@@ -1909,17 +2078,12 @@ exports[`catppuccin 暗/亮模式语义 > light 主题 base.black 应为深色 4
     "console": {
       "activeBg": "#494d64",
       "bg": "#181926",
-      "border": "#6e738d",
       "fg": {
         "self": "#cad3f5",
         "subtle": "#a5adcb",
       },
       "hoverBg": "rgba(91, 96, 120, 0.2)",
       "link": "#8aadf4",
-      "menu": {
-        "bg": "var(--color-menu)",
-        "border": "var(--color-secondary)",
-      },
     },
     "danger": "var(--color-red)",
     "diff": {
@@ -2013,7 +2177,7 @@ exports[`catppuccin 暗/亮模式语义 > light 主题 base.black 应为深色 4
     },
     "label": {
       "activeBg": "rgba(110, 115, 141, 0.5)",
-      "bg": "rgba(54, 58, 79, 0.4)",
+      "bg": "rgba(54, 58, 79, 0.8)",
       "hoverBg": "rgba(91, 96, 120, 0.2)",
       "text": "#cad3f5",
     },
@@ -2216,11 +2380,11 @@ exports[`catppuccin 暗/亮模式语义 > light 主题 base.black 应为深色 4
       "self": "#8bd5ca",
     },
     "text": {
-      "dark": "#a5adcb",
+      "dark": "#cad3f5",
       "light": {
-        "num1": "#b8c0e0",
-        "num2": "#b8c0e0",
-        "num3": "#b8c0e0",
+        "num1": "#a5adcb",
+        "num2": "#a5adcb",
+        "num3": "#a5adcb",
         "self": "#b8c0e0",
       },
       "self": "#cad3f5",
@@ -2451,195 +2615,11 @@ exports[`catppuccin 暗/亮模式语义 > light 主题 base.black 应为深色 4
     },
     "underlineNav": {
       "borderColor": {
-        "active": "#c6a0f6",
+        "active": "#f5a97f",
       },
     },
     "workflowCardBg": "#1e2030",
   },
   "isDarkTheme": true,
-}
-`;
-
-exports[`catppuccin 暗/亮模式语义 > light 主题 base.black 应为深色 5`] = `
-{
-  "attribute": "#df8e1d",
-  "bool": "#04a5e5",
-  "comment": "#7c7f93",
-  "commentSpecial": "#9ca0b0",
-  "control": "#fe640b",
-  "decorator": "#ea76cb",
-  "deletedBg": "rgba(210, 15, 57, 0.4)",
-  "diffFg": "rgba(223, 142, 29, 0.4)",
-  "emph": "#df8e1d",
-  "entity": "#1e66f5",
-  "escape": "#1e66f5",
-  "heading": "#d20f39",
-  "insertedBg": "rgba(64, 160, 43, 0.4)",
-  "invalid": "#d20f39",
-  "keyword": "#8839ef",
-  "link": "#1e66f5",
-  "matchingBracketBg": "rgba(23, 146, 153, 0.4)",
-  "name": "#7287fd",
-  "namePseudo": "#fe640b",
-  "namespace": "#df8e1d",
-  "nonmatchingBracketBg": "rgba(210, 15, 57, 0.4)",
-  "number": "#fe640b",
-  "operator": "#04a5e5",
-  "output": "#fe640b",
-  "preproc": "#1e66f5",
-  "preprocFile": "#1e66f5",
-  "prompt": "#9ca0b0",
-  "property": "#1e66f5",
-  "punctuation": "#7c7f93",
-  "regexp": "#1e66f5",
-  "string": "#40a02b",
-  "stringSpecial": "#40a02b",
-  "strong": "#df8e1d",
-  "subheading": "#04a5e5",
-  "tag": "#df8e1d",
-  "text": "#4c4f69",
-  "textAlt": "#6c6f85",
-  "traceback": "#e64553",
-  "type": "#df8e1d",
-  "variable": "#fe640b",
-  "whitespace": "#9ca0b0",
-}
-`;
-
-exports[`catppuccin 暗/亮模式语义 > light 主题 base.black 应为深色 6`] = `
-{
-  "attribute": "#e5c890",
-  "bool": "#99d1db",
-  "comment": "#949cbb",
-  "commentSpecial": "#737994",
-  "control": "#ef9f76",
-  "decorator": "#f4b8e4",
-  "deletedBg": "rgba(231, 130, 132, 0.4)",
-  "diffFg": "rgba(229, 200, 144, 0.4)",
-  "emph": "#e5c890",
-  "entity": "#8caaee",
-  "escape": "#8caaee",
-  "heading": "#e78284",
-  "insertedBg": "rgba(166, 209, 137, 0.4)",
-  "invalid": "#e78284",
-  "keyword": "#ca9ee6",
-  "link": "#8caaee",
-  "matchingBracketBg": "rgba(129, 200, 190, 0.4)",
-  "name": "#babbf1",
-  "namePseudo": "#ef9f76",
-  "namespace": "#e5c890",
-  "nonmatchingBracketBg": "rgba(231, 130, 132, 0.4)",
-  "number": "#ef9f76",
-  "operator": "#99d1db",
-  "output": "#ef9f76",
-  "preproc": "#8caaee",
-  "preprocFile": "#8caaee",
-  "prompt": "#737994",
-  "property": "#8caaee",
-  "punctuation": "#949cbb",
-  "regexp": "#8caaee",
-  "string": "#a6d189",
-  "stringSpecial": "#a6d189",
-  "strong": "#e5c890",
-  "subheading": "#99d1db",
-  "tag": "#e5c890",
-  "text": "#c6d0f5",
-  "textAlt": "#a5adce",
-  "traceback": "#ea999c",
-  "type": "#e5c890",
-  "variable": "#ef9f76",
-  "whitespace": "#737994",
-}
-`;
-
-exports[`catppuccin 暗/亮模式语义 > light 主题 base.black 应为深色 7`] = `
-{
-  "attribute": "#eed49f",
-  "bool": "#91d7e3",
-  "comment": "#939ab7",
-  "commentSpecial": "#6e738d",
-  "control": "#f5a97f",
-  "decorator": "#f5bde6",
-  "deletedBg": "rgba(237, 135, 150, 0.4)",
-  "diffFg": "rgba(238, 212, 159, 0.4)",
-  "emph": "#eed49f",
-  "entity": "#8aadf4",
-  "escape": "#8aadf4",
-  "heading": "#ed8796",
-  "insertedBg": "rgba(166, 218, 149, 0.4)",
-  "invalid": "#ed8796",
-  "keyword": "#c6a0f6",
-  "link": "#8aadf4",
-  "matchingBracketBg": "rgba(139, 213, 202, 0.4)",
-  "name": "#b7bdf8",
-  "namePseudo": "#f5a97f",
-  "namespace": "#eed49f",
-  "nonmatchingBracketBg": "rgba(237, 135, 150, 0.4)",
-  "number": "#f5a97f",
-  "operator": "#91d7e3",
-  "output": "#f5a97f",
-  "preproc": "#8aadf4",
-  "preprocFile": "#8aadf4",
-  "prompt": "#6e738d",
-  "property": "#8aadf4",
-  "punctuation": "#939ab7",
-  "regexp": "#8aadf4",
-  "string": "#a6da95",
-  "stringSpecial": "#a6da95",
-  "strong": "#eed49f",
-  "subheading": "#91d7e3",
-  "tag": "#eed49f",
-  "text": "#cad3f5",
-  "textAlt": "#a5adcb",
-  "traceback": "#ee99a0",
-  "type": "#eed49f",
-  "variable": "#f5a97f",
-  "whitespace": "#6e738d",
-}
-`;
-
-exports[`catppuccin 暗/亮模式语义 > light 主题 base.black 应为深色 8`] = `
-{
-  "attribute": "#f9e2af",
-  "bool": "#89dceb",
-  "comment": "#9399b2",
-  "commentSpecial": "#6c7086",
-  "control": "#fab387",
-  "decorator": "#f5c2e7",
-  "deletedBg": "rgba(243, 139, 168, 0.4)",
-  "diffFg": "rgba(249, 226, 175, 0.4)",
-  "emph": "#f9e2af",
-  "entity": "#89b4fa",
-  "escape": "#89b4fa",
-  "heading": "#f38ba8",
-  "insertedBg": "rgba(166, 227, 161, 0.4)",
-  "invalid": "#f38ba8",
-  "keyword": "#cba6f7",
-  "link": "#89b4fa",
-  "matchingBracketBg": "rgba(148, 226, 213, 0.4)",
-  "name": "#b4befe",
-  "namePseudo": "#fab387",
-  "namespace": "#f9e2af",
-  "nonmatchingBracketBg": "rgba(243, 139, 168, 0.4)",
-  "number": "#fab387",
-  "operator": "#89dceb",
-  "output": "#fab387",
-  "preproc": "#89b4fa",
-  "preprocFile": "#89b4fa",
-  "prompt": "#6c7086",
-  "property": "#89b4fa",
-  "punctuation": "#9399b2",
-  "regexp": "#89b4fa",
-  "string": "#a6e3a1",
-  "stringSpecial": "#a6e3a1",
-  "strong": "#f9e2af",
-  "subheading": "#89dceb",
-  "tag": "#f9e2af",
-  "text": "#cdd6f4",
-  "textAlt": "#a6adc8",
-  "traceback": "#eba0ac",
-  "type": "#f9e2af",
-  "variable": "#fab387",
-  "whitespace": "#6c7086",
 }
 `;

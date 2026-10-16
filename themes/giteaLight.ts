@@ -115,13 +115,8 @@ const console: Console = {
     subtle: "#40474d",
   },
   bg: "#ffffff",
-  border: "#d0d7de",
   activeBg: "#d0d7de",
   hoverBg: "#f1f3f5",
-  menu: {
-    bg: "#f8f9fb",
-    border: "#d0d7de",
-  },
   link: "#5c656d",
 };
 const named: Named = {
@@ -183,7 +178,7 @@ const ansi: Ansi = {
 };
 const diff: Diff = {
   added: {
-    fg: "#21ba45",
+    fg: "#177231",
     linenum: { bg: "#d1f8d9" },
     row: { bg: "#e6ffed", border: "#e6ffed" },
     word: { bg: "#acf2bd" },
@@ -192,7 +187,7 @@ const diff: Diff = {
     row: { bg: "#f1f8d1", border: "#d0e27f" },
   },
   removed: {
-    fg: "#db2828",
+    fg: "#c61f2b",
     linenum: { bg: "#ffcecb" },
     row: { bg: "#ffeef0", border: "#f1c0c0" },
     word: { bg: "#fdb8c0" },
@@ -272,7 +267,7 @@ const other: Other = {
     hoverBg: themeVars.color.primary.light.num5,
     activeBg: themeVars.color.primary.light.num6,
   },
-  tooltip: { text: "#fbfdff", bg: "#000017f0" },
+  tooltip: { text: "#fbfdff", bg: "#25292e" },
   nav: {
     bg: "#f6f7fa",
     hoverBg: themeVars.color.secondary.light.num1,

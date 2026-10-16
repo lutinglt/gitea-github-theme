@@ -1,29 +1,16 @@
 ### 🌈 Style
 
-- Reduce the displacement when the button is clicked.
-- Remove the shadow of the administrator interface button.
-- Fine tune the font size of the dashboard code.
+- The primary button color in the pink theme has been reverted from pink back to green.
 
-#### Adaptation for version 1.27
+> The initial idea was to emphasize pink more, but when primary buttons like the PR merge button don’t match the PR
+> status border color, it looks especially jarring. I think this breaks the semantics of the button’s behavior, so I’ve
+> reverted it to the GitHub style.
 
-- Fine tune the global spacing of elements.
-- Fine tune menu item height.
-- Fix some border corner issues.
-- Fix the horizontal alignment issue of check boxes in some drop-down menus.
-- Optimize heat map style.
-- Optimize transparency when stacking avatars.
-- Synchronize the color of branches in Git commit graph.
-- Synchronize PR operation comment panel style.
-
-#### More GitHub-like style
-
-- Fine tune the spacing of elements in menu sub items.
-- Optimize the spacing of warehouse themes on exploration pages.
-- Increase the corner angle of the pop-up window.
-- Synchronize the style of the search bar.
-- Synchronize workflow summary style.
+- Restore the underline emphasis color of catppccin theme to peach color to maintain consistency with GitHub.
+- Fine tune the font and background color of the catppucin theme to enhance the contrast (while still maintaining the
+  weak contrast of the catppucin color)
 
 ### 🐞 Fix
 
-- Fix filter button overlaps with profile menu. #39
-- Fix the issue where the branch menu under the manual workflow pop-up window is obscured.
+- Fix the issue of menu occlusion in the operation buttons on the differential page.
+- Remove unnecessary styles from robot label.

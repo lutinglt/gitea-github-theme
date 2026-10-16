@@ -18,7 +18,6 @@
  */
 
 import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
-import { botLabelStyle } from "@lutinglt/gitea-github-theme/styles/common";
 
 // 时间线
 const timeline = css`
@@ -48,10 +47,6 @@ const timeline = css`
           /* 头部居中偏移量(头像高度 - 标准行信息高度) / 2: (40px - 32px) / 2 = 4px */
           .timeline-avatar {
             top: -4px;
-          }
-          /* bot 标签 */
-          .comment-text-line .ui.basic.label {
-            ${botLabelStyle}
           }
           .badge {
             border: 2px solid ${themeVars.color.body};

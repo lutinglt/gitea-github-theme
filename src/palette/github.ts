@@ -84,10 +84,8 @@ export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
   const console: Console = {
     fg: { self: githubColor.fgColor.default, subtle: githubColor.fgColor.muted },
     bg: githubColor.bgColor.inset,
-    border: githubColor.borderColor.muted,
     activeBg: githubColor.control.bgColor.active,
     hoverBg: githubColor.control.transparent.bgColor.hover,
-    menu: { bg: githubColor.overlay.bgColor, border: githubColor.borderColor.muted },
     link: githubColor.fgColor.muted,
   };
 

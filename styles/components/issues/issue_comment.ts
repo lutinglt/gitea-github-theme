@@ -18,7 +18,7 @@
  */
 
 import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
-import { botLabelStyle, deleteHoverActiveStyle } from "@lutinglt/gitea-github-theme/styles/common";
+import { deleteHoverActiveStyle } from "@lutinglt/gitea-github-theme/styles/common";
 
 // 评论
 const comment = css`
@@ -45,10 +45,6 @@ const comment = css`
       padding: 4px 4px 4px 16px;
       min-height: 38px;
       .comment-header-left {
-        /* bot 标签 */
-        .ui.basic.label {
-          ${botLabelStyle}
-        }
         a:has(relative-time) {
           text-decoration: underline;
         }

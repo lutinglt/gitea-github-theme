@@ -29,7 +29,8 @@ const dropdown = css`
       background-color: ${themeVars.color.menu};
       border: none !important;
       border-radius: 12px !important;
-      box-shadow: ${themeVars.github.shadow.floating.small};
+      /* 菜单统一阴影, 避免 Gitea 样式覆盖导致边框线丢失 */
+      box-shadow: ${themeVars.github.shadow.floating.small} !important;
       /* 修复 lightingcss 导致的优先级问题 */
       &.scrolling {
         box-shadow: none !important;
@@ -165,10 +166,12 @@ const dropdown = css`
   .ui.dropdown .menu .menu {
     border-radius: 12px !important;
   }
-  /* 修复按钮阴影被覆盖缺少边框线的问题 */
-  /* 仓库动态页面的右侧按钮, 比如时间周期 */
-  .ui.floating.dropdown .menu {
-    box-shadow: ${themeVars.github.shadow.floating.small} !important;
+  /* 修复下拉菜单的边距问题 */
+  .ui.ui.dropdown .menu {
+    padding: 0;
+    > .item {
+      width: auto;
+    }
   }
 `;
 

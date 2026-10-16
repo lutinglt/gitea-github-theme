@@ -84,10 +84,8 @@ const stars = css`
 const profileCard = css`
   .page-content.user.profile {
     #profile-avatar-card {
-      #profile-avatar {
-        img.ui.avatar {
-          border-radius: 9999px;
-        }
+      .ui.avatar.profile-avatar-image {
+        border-radius: 9999px;
       }
     }
   }

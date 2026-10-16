@@ -99,4 +99,13 @@ const secondarySmallFilterMenu = css`
   }
 `;
 
-export default cssCombine(secondaryMenu, secondarySmallFilterMenu);
+// 修复 Gitea 28.0.0 引入的多余右边距
+const fixSecondaryFilterMenu = css`
+  .ui.ui.secondary.filter.menu {
+    .item > .svg {
+      margin-right: 0;
+    }
+  }
+`;
+
+export default cssCombine(secondaryMenu, secondarySmallFilterMenu, fixSecondaryFilterMenu);

@@ -72,6 +72,7 @@ const repoSidebarTop = css`
         color: ${themeVars.color.text.light.num1};
         font-size: 14px;
         font-weight: 600;
+        gap: 4px;
         margin-top: 10px;
         &.muted {
           margin-top: 2px;
@@ -105,7 +106,7 @@ const repoSidebarBottom = css`
         margin: 8px 0;
       }
       /* 版本 */
-      .repo-home-sidebar-header + .flex-relaxed-list {
+      .repo-home-sidebar-header + div {
         gap: 0px;
         margin-bottom: 8px;
         .flex-text-block {

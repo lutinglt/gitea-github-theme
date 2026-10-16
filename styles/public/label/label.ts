@@ -34,6 +34,10 @@ const label = css`
       border-radius: 9999px;
       ${labelStyle}
       line-height: 18px;
+      &.small {
+        line-height: 1;
+        padding: 2px 6px;
+      }
       &.mini {
         line-height: 16px;
       }

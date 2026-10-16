@@ -8,7 +8,7 @@
 
 ### 🌈 Style
 
-#### Adaptation for version 1.26
+### 🎉 Adaptation for Gitea 1.26
 
 #### More GitHub-like style
 
