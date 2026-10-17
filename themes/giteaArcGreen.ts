@@ -339,7 +339,7 @@ const series16: Series16 = {
   num15: "#982e85",
 };
 
-export const arcGreenColor: GiteaColor = {
+export const giteaArcGreenColor: GiteaColor = {
   isDarkTheme: true,
   primary,
   secondary,
@@ -352,7 +352,7 @@ export const arcGreenColor: GiteaColor = {
   series16,
 };
 
-export const arcGreenSyntax: Syntax = {
+export const giteaArcGreenSyntax: Syntax = {
   keyword: "#ff7540",
   bool: "#649bc4",
   control: "#ffaa10",
@@ -396,8 +396,8 @@ export const arcGreenSyntax: Syntax = {
   nonmatchingBracketBg: "#cc484848",
 };
 
-export const arcGreenTheme = defineTheme({
+export const giteaArcGreenTheme = defineTheme({
   colorType: "gitea",
-  themeColor: arcGreenColor,
-  syntaxColor: arcGreenSyntax,
+  themeColor: giteaArcGreenColor,
+  syntaxColor: giteaArcGreenSyntax,
 });

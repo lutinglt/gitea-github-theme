@@ -68,6 +68,7 @@ const EXPECTED_THEME_FILES = [
   // gitea
   `${PREFIX}gitea-dark.css`,
   `${PREFIX}gitea-light.css`,
+  `${PREFIX}gitea-arc-green.css`,
   `${PREFIX}gitea-auto.css`,
   // catppuccin
   `${PREFIX}catppuccin-mocha.css`,
@@ -75,8 +76,6 @@ const EXPECTED_THEME_FILES = [
   `${PREFIX}catppuccin-frappe.css`,
   `${PREFIX}catppuccin-macchiato.css`,
   `${PREFIX}catppuccin-auto.css`,
-  // arc green
-  `${PREFIX}arc-green.css`
 ];
 
 /** auto 主题文件名列表 */

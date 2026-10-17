@@ -117,6 +117,7 @@ export default defineThemeConfig({
       themes: {
         dark: { theme: themes.gitea.dark },
         light: { theme: themes.gitea.light },
+        "arc-green": { theme: themes.gitea.arcGreen },
       },
     },
     {
@@ -126,12 +127,6 @@ export default defineThemeConfig({
         light: { themeName: "latte", theme: themes.catppuccin.latte },
         frappe: { theme: themes.catppuccin.frappe },
         macchiato: { theme: themes.catppuccin.macchiato },
-      },
-    },
-    {
-      themeSeriesName: "arc",
-      themes: {
-        dark: { themeName: "green", theme: themes.arcGreen },
       },
     },
   ],
