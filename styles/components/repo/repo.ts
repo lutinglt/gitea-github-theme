@@ -50,6 +50,7 @@ const repoHeader = css`
           border-radius: ${otherThemeVars.border.radius};
           &:hover {
             background: ${themeVars.github.control.transparent.bgColor.hover};
+            box-shadow: inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active};
           }
           &.muted:not(.tw-font-normal) {
             font-weight: 600;
@@ -63,6 +64,7 @@ const repoHeader = css`
             margin-left: 4px;
             &:hover + .ui.custom.dropdown {
               background: ${themeVars.github.control.transparent.bgColor.hover};
+              box-shadow: inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active};
             }
           }
         }
@@ -74,6 +76,7 @@ const repoHeader = css`
           height: 32px;
           &:hover {
             background: ${themeVars.github.control.transparent.bgColor.hover};
+            box-shadow: inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active};
           }
           .menu {
             > .item {

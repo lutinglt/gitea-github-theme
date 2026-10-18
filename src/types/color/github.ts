@@ -272,6 +272,8 @@ export const github = {
          * @commit `commit` 提交信息的 Action 按钮的悬停边框色
          * @repo_files `fileSearch` 文件搜索框子项的悬停边框色 `repoFiles` README 右侧操作悬停边框色
          * @clone `clone` 克隆按钮和面板操作列表的悬停边框色
+         * @brach_dropdown `branchDropdown` 菜单中分支切换按钮的悬停边框色
+         * @repo `repoHeader` 仓库标题的悬停边框色
          * @templates @commit_sign_badge `commitSignBadge` SHA 标签悬停时的边框色
          * @templates @commits_list `commitsList` 提交操作按钮悬停时的边框色
          * @templates @view_list `repoFileLastCommit` 提交历史按钮悬停时的边框色
