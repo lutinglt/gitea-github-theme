@@ -26,7 +26,7 @@ setGlobalProxy();
 const githubSite = "https://raw.githubusercontent.com";
 const giteaRepo = "go-gitea/gitea";
 const githubTagPath = "refs/tags";
-const localGiteaPath = path.join(rootDir, "gitea");
+const localGiteaPath = path.join(rootDir, "assets/gitea");
 const [major, minor, patch = ""] = pkg.version.split(".");
 console.log("Version:", pkg.version);
 const versionPath = `${githubTagPath}/v${major}.${minor}.${patch}`;

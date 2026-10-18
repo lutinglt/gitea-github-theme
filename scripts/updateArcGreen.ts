@@ -26,7 +26,7 @@ setGlobalProxy();
 const githubSite = "https://raw.githubusercontent.com";
 const githubRepo = "lsd-techno/gitea-theme";
 const githubBranchPath = "refs/heads/main";
-const localGiteaPath = path.join(rootDir, "assets");
+const localGiteaPath = path.join(rootDir, "assets/gitea-theme");
 const githubBaseUrl = `${githubSite}/${githubRepo}/${githubBranchPath}`;
 const file = "theme-arc-green-updated.css";
 const fileUrl = `${githubBaseUrl}/${file}`;

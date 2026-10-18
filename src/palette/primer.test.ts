@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import defaultPrimer from "@lutinglt/gitea-github-theme/primer";
+import { primer } from "@lutinglt/gitea-github-theme/assets";
 import { describe, expect, it } from "vitest";
 import { primer2Chroma, primer2CodeMirror, primer2GitHubColor } from "./primer";
 
@@ -27,23 +27,23 @@ import { primer2Chroma, primer2CodeMirror, primer2GitHubColor } from "./primer";
 
 describe("primer2GitHubColor", () => {
   it("dark 快照", () => {
-    expect(primer2GitHubColor(defaultPrimer.dark, true)).toMatchSnapshot();
+    expect(primer2GitHubColor(primer.dark, true)).toMatchSnapshot();
   });
 
   it("light 快照", () => {
-    expect(primer2GitHubColor(defaultPrimer.light)).toMatchSnapshot();
+    expect(primer2GitHubColor(primer.light)).toMatchSnapshot();
   });
 
   it("dark isDarkTheme 为 true", () => {
-    expect(primer2GitHubColor(defaultPrimer.dark, true).isDarkTheme).toBe(true);
+    expect(primer2GitHubColor(primer.dark, true).isDarkTheme).toBe(true);
   });
 
   it("light isDarkTheme 为 false", () => {
-    expect(primer2GitHubColor(defaultPrimer.light).isDarkTheme).toBe(false);
+    expect(primer2GitHubColor(primer.light).isDarkTheme).toBe(false);
   });
 
   it("dark 包含 fgColor/bgColor/borderColor", () => {
-    const result = primer2GitHubColor(defaultPrimer.dark, true);
+    const result = primer2GitHubColor(primer.dark, true);
     expect(result.fgColor).toBeDefined();
     expect(result.bgColor).toBeDefined();
     expect(result.borderColor).toBeDefined();
@@ -56,15 +56,15 @@ describe("primer2GitHubColor", () => {
 
 describe("primer2Chroma", () => {
   it("dark 快照", () => {
-    expect(primer2Chroma(defaultPrimer.dark)).toMatchSnapshot();
+    expect(primer2Chroma(primer.dark)).toMatchSnapshot();
   });
 
   it("light 快照", () => {
-    expect(primer2Chroma(defaultPrimer.light)).toMatchSnapshot();
+    expect(primer2Chroma(primer.light)).toMatchSnapshot();
   });
 
   it("包含所有语法分组", () => {
-    const result = primer2Chroma(defaultPrimer.dark);
+    const result = primer2Chroma(primer.dark);
     const groups = [
       "textWhiteSpace",
       "err",
@@ -84,14 +84,14 @@ describe("primer2Chroma", () => {
   });
 
   it("keyword 含子级分组", () => {
-    const kw = primer2Chroma(defaultPrimer.dark).keyword as Record<string, unknown>;
+    const kw = primer2Chroma(primer.dark).keyword as Record<string, unknown>;
     for (const sub of ["self", "constant", "declaration", "namespace", "pseudo", "reserved", "type"]) {
       expect(kw[sub], `缺少 keyword.${sub}`).toBeDefined();
     }
   });
 
   it("generic 含 deleted/emph/inserted/heading", () => {
-    const g = primer2Chroma(defaultPrimer.dark).generic as Record<string, unknown>;
+    const g = primer2Chroma(primer.dark).generic as Record<string, unknown>;
     for (const sub of ["deleted", "emph", "inserted", "heading", "subheading"]) {
       expect(g[sub], `缺少 generic.${sub}`).toBeDefined();
     }
@@ -104,28 +104,28 @@ describe("primer2Chroma", () => {
 
 describe("primer2CodeMirror", () => {
   it("dark 快照", () => {
-    expect(primer2CodeMirror(defaultPrimer.dark)).toMatchSnapshot();
+    expect(primer2CodeMirror(primer.dark)).toMatchSnapshot();
   });
 
   it("light 快照", () => {
-    expect(primer2CodeMirror(defaultPrimer.light)).toMatchSnapshot();
+    expect(primer2CodeMirror(primer.light)).toMatchSnapshot();
   });
 
   it("含 token 和 language 分组", () => {
-    const result = primer2CodeMirror(defaultPrimer.dark);
+    const result = primer2CodeMirror(primer.dark);
     expect(result.token).toBeDefined();
     expect(result.language).toBeDefined();
   });
 
   it("token 含核心语法键", () => {
-    const t = primer2CodeMirror(defaultPrimer.dark).token as Record<string, unknown>;
+    const t = primer2CodeMirror(primer.dark).token as Record<string, unknown>;
     for (const key of ["keyword", "atom", "string", "number", "comment", "variableName", "typeName"]) {
       expect(t[key], `缺少 token.${key}`).toBeDefined();
     }
   });
 
   it("language 含 json/html/css/xml", () => {
-    const l = primer2CodeMirror(defaultPrimer.dark).language;
+    const l = primer2CodeMirror(primer.dark).language;
     for (const key of ["json", "html", "css", "xml"]) {
       expect(l[key as keyof typeof l], `缺少 language.${key}`).toBeDefined();
     }

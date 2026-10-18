@@ -22,7 +22,7 @@ import { typescript } from "@primer/primitives/dist/build/platforms/typescript.j
 import { PrimerStyleDictionary } from "@primer/primitives/dist/build/primerStyleDictionary.js";
 import { themes as primerThemes } from "./themes.config.ts";
 
-const buildPath = "primer";
+const buildPath = "assets/primer";
 const primerModulePath = "node_modules/@primer/primitives";
 
 const themes = primerThemes.map(({ filename, source, include, theme }) => ({

@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import defaultPrimer from "@lutinglt/gitea-github-theme/primer";
+import { primer } from "@lutinglt/gitea-github-theme/assets";
 import { describe, expect, it } from "vitest";
 import { github2ThemeColor } from "./github";
 import { primer2GitHubColor } from "./primer";
@@ -109,30 +109,30 @@ function assertThemeColorStructure(themeColor: ThemeColor, flavor: string) {
 
 describe("github2ThemeColor", () => {
   it("dark 全链快照", () => {
-    const githubColor = primer2GitHubColor(defaultPrimer.dark, true);
+    const githubColor = primer2GitHubColor(primer.dark, true);
     expect(theme2ThemeVars(github2ThemeColor(githubColor))).toMatchSnapshot();
   });
 
   it("light 全链快照", () => {
-    const githubColor = primer2GitHubColor(defaultPrimer.light);
+    const githubColor = primer2GitHubColor(primer.light);
     expect(theme2ThemeVars(github2ThemeColor(githubColor))).toMatchSnapshot();
   });
 
   it("dark 结构完整", () => {
-    assertThemeColorStructure(github2ThemeColor(primer2GitHubColor(defaultPrimer.dark, true)), "github-dark");
+    assertThemeColorStructure(github2ThemeColor(primer2GitHubColor(primer.dark, true)), "github-dark");
   });
 
   it("light 结构完整", () => {
-    assertThemeColorStructure(github2ThemeColor(primer2GitHubColor(defaultPrimer.light)), "github-light");
+    assertThemeColorStructure(github2ThemeColor(primer2GitHubColor(primer.light)), "github-light");
   });
 
   it("dark isDarkTheme 为 true", () => {
-    const githubColor = primer2GitHubColor(defaultPrimer.dark, true);
+    const githubColor = primer2GitHubColor(primer.dark, true);
     expect(github2ThemeColor(githubColor).isDarkTheme).toBe(true);
   });
 
   it("light isDarkTheme 为 false", () => {
-    const githubColor = primer2GitHubColor(defaultPrimer.light);
+    const githubColor = primer2GitHubColor(primer.light);
     expect(github2ThemeColor(githubColor).isDarkTheme).toBe(false);
   });
 });

@@ -842,7 +842,7 @@ export default {
     danger: "#f0883e",
     closed: "#9198a1",
     draft: "#9198a1",
-    done: "#ab7df8",
+    done: "#b7bdc8",
     upsell: "#ab7df8",
     sponsors: "#db61a2",
   },

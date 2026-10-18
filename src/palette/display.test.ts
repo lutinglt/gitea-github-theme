@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import defaultPrimer from "@lutinglt/gitea-github-theme/primer";
+import { primer } from "@lutinglt/gitea-github-theme/assets";
 import { describe, expect, it } from "vitest";
 import { display2GitHubColor } from "./display";
 import { primer2GitHubColor } from "./primer";
@@ -27,35 +27,35 @@ import { primer2GitHubColor } from "./primer";
 // ============================================================================
 
 describe("display2GitHubColor", () => {
-  const darkBase = primer2GitHubColor(defaultPrimer.dark, true);
-  const lightBase = primer2GitHubColor(defaultPrimer.light);
+  const darkBase = primer2GitHubColor(primer.dark, true);
+  const lightBase = primer2GitHubColor(primer.light);
 
   it("pink dark 快照", () => {
-    expect(display2GitHubColor(defaultPrimer.dark.display.pink.scale, darkBase)).toMatchSnapshot();
+    expect(display2GitHubColor(primer.dark.display.pink.scale, darkBase)).toMatchSnapshot();
   });
 
   it("pink light 快照", () => {
-    expect(display2GitHubColor(defaultPrimer.light.display.pink.scale, lightBase)).toMatchSnapshot();
+    expect(display2GitHubColor(primer.light.display.pink.scale, lightBase)).toMatchSnapshot();
   });
 
   it("pink soft-dark 快照", () => {
-    const softDarkBase = primer2GitHubColor(defaultPrimer.darkDimmed, true);
-    expect(display2GitHubColor(defaultPrimer.dark.display.pink.scale, softDarkBase, true)).toMatchSnapshot();
+    const softDarkBase = primer2GitHubColor(primer.darkDimmed, true);
+    expect(display2GitHubColor(primer.dark.display.pink.scale, softDarkBase, true)).toMatchSnapshot();
   });
 
   it("cover 后 accent 字段与 base 不同", () => {
-    const result = display2GitHubColor(defaultPrimer.dark.display.pink.scale, darkBase);
+    const result = display2GitHubColor(primer.dark.display.pink.scale, darkBase);
     expect(result.fgColor.accent).not.toBe(darkBase.fgColor.accent);
     expect(result.bgColor.accent.emphasis).not.toBe(darkBase.bgColor.accent.emphasis);
   });
 
   it("cover 后 contribution 颜色被改写", () => {
-    const result = display2GitHubColor(defaultPrimer.light.display.pink.scale, lightBase);
+    const result = display2GitHubColor(primer.light.display.pink.scale, lightBase);
     expect(result.contribution.default.bgColor[1]).not.toBe(lightBase.contribution.default.bgColor[1]);
   });
 
   it("isDarkTheme 遵循 base", () => {
-    expect(display2GitHubColor(defaultPrimer.dark.display.pink.scale, darkBase).isDarkTheme).toBe(true);
-    expect(display2GitHubColor(defaultPrimer.light.display.pink.scale, lightBase).isDarkTheme).toBe(false);
+    expect(display2GitHubColor(primer.dark.display.pink.scale, darkBase).isDarkTheme).toBe(true);
+    expect(display2GitHubColor(primer.light.display.pink.scale, lightBase).isDarkTheme).toBe(false);
   });
 });

@@ -16,7 +16,7 @@
     "./styles": "./styles/index.ts",
     "./styles/common": "./styles/common/index.ts",
     "./themes": "./themes/index.ts",
-    "./primer": "./primer/index.ts"
+    "./assets": "./assets/index.ts"
   },
   "scripts": {
     "lint": "bunx --bun eslint .",

@@ -23,7 +23,7 @@
 
 import type { GitHubColor } from "@lutinglt/gitea-github-theme/core";
 import { deepOverride, defineTheme, display2GitHubColor, primer2GitHubColor } from "@lutinglt/gitea-github-theme/core";
-import { default as primer } from "@lutinglt/gitea-github-theme/primer";
+import { primer } from "@lutinglt/gitea-github-theme/assets";
 
 /** - 仅适用于 Dark 主题的颜色转换 */
 function darkConvert(color: GitHubColor) {

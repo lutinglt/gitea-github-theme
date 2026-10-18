@@ -33,7 +33,7 @@
       "@lutinglt/gitea-github-theme/styles": ["./styles"],
       "@lutinglt/gitea-github-theme/styles/common": ["./styles/common"],
       "@lutinglt/gitea-github-theme/themes": ["./themes"],
-      "@lutinglt/gitea-github-theme/primer": ["./primer"]
+      "@lutinglt/gitea-github-theme/assets": ["./assets"]
     }
   },
   "include": [
@@ -41,7 +41,7 @@
     "styles",
     "themes",
     "scripts",
-    "primer",
+    "assets/primer",
     "eslint.config.ts",
     "vite.config.ts",
     "theme.config.ts",

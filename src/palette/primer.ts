@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import type { Primer } from "@lutinglt/gitea-github-theme/primer";
+import type { Primer } from "@lutinglt/gitea-github-theme/assets";
 import type { Chroma, CodeMirror } from "../types";
 import { deepOverride } from "../utils";
 import type { GitHubColor } from "./github";
