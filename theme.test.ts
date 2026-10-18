@@ -24,7 +24,7 @@ import { fileURLToPath } from "node:url";
 import { beforeAll, describe, expect, it } from "vitest";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const ROOT_DIR = path.resolve(__dirname, "..");
+const ROOT_DIR = path.resolve(__dirname);
 const DIST_DIR = path.join(ROOT_DIR, "dist");
 const PREFIX = "theme-github-";
 

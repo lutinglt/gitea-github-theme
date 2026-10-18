@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`gitea2ThemeVars > dark 输出含 color 和 github 顶层键 1`] = `
+exports[`gitea2ThemeVars > light isDarkTheme 为 false 1`] = `
 {
   "color": {
     "accent": "var(--color-primary-light-1)",
@@ -610,7 +610,7 @@ exports[`gitea2ThemeVars > dark 输出含 color 和 github 顶层键 1`] = `
 }
 `;
 
-exports[`gitea2ThemeVars > dark 输出含 color 和 github 顶层键 2`] = `
+exports[`gitea2ThemeVars > light isDarkTheme 为 false 2`] = `
 {
   "color": {
     "accent": "var(--color-primary-light-1)",
@@ -1217,5 +1217,615 @@ exports[`gitea2ThemeVars > dark 输出含 color 和 github 顶层键 2`] = `
     "workflowCardBg": "#f8f9fb",
   },
   "isDarkTheme": false,
+}
+`;
+
+exports[`gitea2ThemeVars > light isDarkTheme 为 false 3`] = `
+{
+  "color": {
+    "accent": "var(--color-primary-light-1)",
+    "active": "#ffffff24",
+    "ansi": {
+      "black": "var(--color-black)",
+      "blue": "var(--color-blue)",
+      "bright": {
+        "black": "var(--color-black-light)",
+        "blue": "var(--color-blue-light)",
+        "cyan": "var(--color-teal-light)",
+        "green": "var(--color-green-light)",
+        "magenta": "var(--color-pink-light)",
+        "red": "var(--color-red-light)",
+        "white": "var(--color-console-fg)",
+        "yellow": "var(--color-yellow-light)",
+      },
+      "cyan": "var(--color-teal)",
+      "green": "var(--color-green)",
+      "magenta": "var(--color-pink)",
+      "red": "var(--color-red)",
+      "white": "var(--color-console-fg-subtle)",
+      "yellow": "var(--color-yellow)",
+    },
+    "black": {
+      "dark": {
+        "num1": "#292d38",
+        "num2": "#252832",
+      },
+      "light": "#3f4555",
+      "self": "#2e323e",
+    },
+    "blue": {
+      "dark": {
+        "num1": "#347cb3",
+        "num2": "#2e6e9f",
+      },
+      "light": "#4e96cc",
+      "self": "#3a8ac6",
+    },
+    "body": "#2e323e",
+    "box": {
+      "body": {
+        "highlight": "#262b36",
+        "self": "#222733",
+      },
+      "header": "#303340",
+    },
+    "brown": {
+      "dark": {
+        "num1": "#94674a",
+        "num2": "#835b42",
+      },
+      "light": "#b08061",
+      "self": "#a47252",
+    },
+    "button": "#1e252e",
+    "card": "#1e252e",
+    "caret": "var(--color-text)",
+    "codeBg": "#222733",
+    "console": {
+      "activeBg": "#454a57",
+      "bg": "#262936",
+      "fg": {
+        "self": "#eeeff2",
+        "subtle": "#959cab",
+      },
+      "hoverBg": "#ffffff16",
+      "link": "#969aa1",
+    },
+    "danger": "var(--color-red)",
+    "diff": {
+      "added": {
+        "fg": "var(--color-green)",
+        "linenum": {
+          "bg": "#3c653c",
+        },
+        "row": {
+          "bg": "#283e2d",
+          "border": "#314a37",
+        },
+        "word": {
+          "bg": "#3c653c",
+        },
+      },
+      "inactive": "#353846",
+      "moved": {
+        "row": {
+          "bg": "#818044",
+          "border": "#bcca6f",
+        },
+      },
+      "removed": {
+        "fg": "var(--color-red)",
+        "linenum": {
+          "bg": "#6f3333",
+        },
+        "row": {
+          "bg": "#3c2626",
+          "border": "#634343",
+        },
+        "word": {
+          "bg": "#6f3333",
+        },
+      },
+    },
+    "editor": {
+      "lineHighlight": "var(--color-primary-light-5)",
+      "selection": "var(--color-primary-alpha-50)",
+    },
+    "error": {
+      "bg": {
+        "active": "#774444",
+        "hover": "#663333",
+        "self": "#552222",
+      },
+      "border": "#a04141",
+      "text": "#f9cbcb",
+    },
+    "expandButton": "#3c404d",
+    "footer": "#232834",
+    "gold": "#b1983b",
+    "green": {
+      "badge": {
+        "bg": "#21ba451a",
+        "hover": {
+          "bg": "#21ba454d",
+        },
+        "self": "#21ba45",
+      },
+      "dark": {
+        "num1": "#7a9e55",
+        "num2": "#6c8c4c",
+      },
+      "light": "#93b373",
+      "self": "#87ab63",
+    },
+    "grey": {
+      "light": "#a1a6b7",
+      "self": "#505665",
+    },
+    "highlight": {
+      "bg": "#364626",
+      "fg": "#7a9e55",
+    },
+    "hover": {
+      "opaque": "#434651",
+      "self": "#ffffff19",
+    },
+    "info": {
+      "bg": "#26354c",
+      "border": "#306090",
+      "text": "#38a8e8",
+    },
+    "input": {
+      "background": "#1e252e",
+      "border": "var(--color-secondary)",
+      "text": "#dfe3ec",
+      "toggleBackground": "#454a57",
+    },
+    "label": {
+      "activeBg": "#7c8497ff",
+      "bg": "#7c84974b",
+      "hoverBg": "#7c8497a0",
+      "text": "#dfe3ec",
+    },
+    "light": {
+      "border": "#ffffff28",
+      "self": "#00000028",
+    },
+    "logo": "#609926",
+    "markup": {
+      "code": {
+        "block": "#ffffff16",
+        "inline": "#2e4433",
+      },
+      "tableRow": "#ffffff06",
+    },
+    "menu": "#1e252e",
+    "nav": {
+      "bg": "#232834",
+      "hoverBg": "#383c47",
+      "text": "var(--color-text)",
+    },
+    "olive": {
+      "dark": {
+        "num1": "#839311",
+        "num2": "#74820f",
+      },
+      "light": "#abc016",
+      "self": "#91a313",
+    },
+    "orange": {
+      "badge": {
+        "bg": "#f2711c1a",
+        "hover": {
+          "bg": "#f2711c4d",
+        },
+        "self": "#f2711c",
+      },
+      "dark": {
+        "num1": "#f38236",
+        "num2": "#f16e17",
+      },
+      "light": "#f6a066",
+      "self": "#cc580c",
+    },
+    "overlayBackdrop": "#080808c0",
+    "pink": {
+      "dark": {
+        "num1": "#be297d",
+        "num2": "#a9246f",
+      },
+      "light": "#d74397",
+      "self": "#d22e8b",
+    },
+    "placeholderText": "#8a8e99",
+    "primary": {
+      "active": "var(--color-primary-light-2)",
+      "alpha": {
+        "num10": "#87ab6319",
+        "num20": "#87ab6333",
+        "num30": "#87ab634b",
+        "num40": "#87ab6366",
+        "num50": "#87ab6380",
+        "num60": "#87ab6399",
+        "num70": "#87ab63b3",
+        "num80": "#87ab63cc",
+        "num90": "#87ab63e1",
+      },
+      "contrast": "#ffffff",
+      "dark": {
+        "num1": "#93b373",
+        "num2": "#9fbc82",
+        "num3": "#abc492",
+        "num4": "#b7cda1",
+        "num5": "#cfddc1",
+        "num6": "#e7eee0",
+        "num7": "#f8faf6",
+      },
+      "hover": "var(--color-primary-light-1)",
+      "light": {
+        "num1": "#7a9e55",
+        "num2": "#6c8c4c",
+        "num3": "#5f7b42",
+        "num4": "#516939",
+        "num5": "#364626",
+        "num6": "#1b2313",
+        "num7": "#080b06",
+      },
+      "self": "#87ab63",
+    },
+    "priority": {
+      "bg": "#281e38",
+      "border": "#522a92",
+      "text": "#b89de4",
+    },
+    "projectColumnBg": "var(--color-secondary-light-2)",
+    "purple": {
+      "dark": {
+        "num1": "#a742c9",
+        "num2": "#9834b9",
+      },
+      "light": "#ba6ad5",
+      "self": "#b259d0",
+    },
+    "reaction": {
+      "activeBg": "var(--color-primary-light-5)",
+      "bg": "#ffffff12",
+      "hoverBg": "var(--color-primary-light-4)",
+    },
+    "red": {
+      "badge": {
+        "bg": "#db28281a",
+        "hover": {
+          "bg": "#db28284d",
+        },
+        "self": "#db2828",
+      },
+      "dark": {
+        "num1": "#c23636",
+        "num2": "#ad3030",
+      },
+      "light": "#d15a5a",
+      "self": "#cc4848",
+    },
+    "secondary": {
+      "active": "var(--color-secondary-dark-2)",
+      "alpha": {
+        "num10": "#52576719",
+        "num20": "#52576733",
+        "num30": "#5257674b",
+        "num40": "#52576766",
+        "num50": "#52576780",
+        "num60": "#52576799",
+        "num70": "#525767b3",
+        "num80": "#525767cc",
+        "num90": "#525767e1",
+      },
+      "button": "var(--color-secondary-dark-4)",
+      "dark": {
+        "num1": "#5c6374",
+        "num10": "#d6d7de",
+        "num11": "#e2e3e8",
+        "num12": "#eeeff2",
+        "num13": "#fbfbfc",
+        "num2": "#666e81",
+        "num3": "#7c8497",
+        "num4": "#8990a1",
+        "num5": "#959cab",
+        "num6": "#a2a8b5",
+        "num7": "#afb4c0",
+        "num8": "#bcc0ca",
+        "num9": "#c9cbd4",
+      },
+      "hover": "var(--color-secondary-dark-3)",
+      "light": {
+        "num1": "#454a57",
+        "num2": "#383c47",
+        "num3": "#2c2f37",
+        "num4": "#1f2226",
+      },
+      "self": "#525767",
+    },
+    "secondaryBg": "#2a2e3a",
+    "secondaryNavBg": "#232834",
+    "series": {
+      "num16": {
+        "num0": "#7db233",
+        "num1": "#499a37",
+        "num10": "#c45327",
+        "num11": "#3d965c",
+        "num12": "#792a93",
+        "num13": "#439d73",
+        "num14": "#103aad",
+        "num15": "#982e85",
+        "num2": "#ce4751",
+        "num3": "#8f9121",
+        "num4": "#ac32a6",
+        "num5": "#7445e9",
+        "num6": "#c67d28",
+        "num7": "#4db392",
+        "num8": "#aa4d30",
+        "num9": "#2a6f84",
+      },
+    },
+    "shadow": {
+      "opaque": "#000000",
+      "self": "#00000058",
+    },
+    "smallAccent": "var(--color-primary-light-5)",
+    "success": {
+      "bg": "#284034",
+      "border": "#458a57",
+      "text": "#6cc664",
+    },
+    "teal": {
+      "dark": {
+        "num1": "#00837c",
+        "num2": "#00746e",
+      },
+      "light": "#00b6ad",
+      "self": "#00918a",
+    },
+    "text": {
+      "dark": "#dbe0ea",
+      "light": {
+        "num1": "#aaafb9",
+        "num2": "#9a9ea9",
+        "num3": "#8a8e99",
+        "self": "#bbbfca",
+      },
+      "self": "#cbd0da",
+    },
+    "timeline": "#4c525e",
+    "tooltip": {
+      "bg": "#000000f0",
+      "text": "#ffffff",
+    },
+    "transparency": {
+      "grid": {
+        "dark": "#2a2e3a",
+        "light": "#3a3e4a",
+      },
+    },
+    "violet": {
+      "dark": {
+        "num1": "#7b4edb",
+        "num2": "#6733d6",
+      },
+      "light": "#9b79e4",
+      "self": "#906ae1",
+    },
+    "warning": {
+      "bg": "#3a3a30",
+      "border": "#bb9d00",
+      "text": "#fbbd08",
+    },
+    "white": "#ffffff",
+    "workflowEdgeHover": "#87ab63",
+    "yellow": {
+      "badge": {
+        "bg": "#fbbd081a",
+        "hover": {
+          "bg": "#fbbd084d",
+        },
+        "self": "#fbbd08",
+      },
+      "dark": {
+        "num1": "#b88a03",
+        "num2": "#a37a02",
+      },
+      "light": "#eaaf03",
+      "self": "#cc9903",
+    },
+  },
+  "github": {
+    "avatar": {
+      "bgColor": "#2e323e",
+      "borderColor": "#ffffff28",
+    },
+    "bgColor": {
+      "accent": {
+        "emphasis": "#87ab63",
+        "muted": "#364626",
+      },
+      "attention": {
+        "emphasis": "#b88a03",
+      },
+      "danger": {
+        "emphasis": "#d15a5a",
+      },
+      "done": {
+        "emphasis": "#a742c9",
+      },
+      "neutral": {
+        "emphasis": "#525767",
+      },
+      "success": {
+        "emphasis": "#7a9e55",
+      },
+    },
+    "borderColor": {
+      "accent": {
+        "emphasis": "#7a9e55",
+      },
+      "attention": {
+        "emphasis": "#b88a03",
+      },
+      "done": {
+        "emphasis": "#a742c9",
+      },
+      "emphasis": "#ffffff28",
+      "success": {
+        "emphasis": "#7a9e55",
+      },
+    },
+    "button": {
+      "danger": {
+        "bgColor": {
+          "active": "#c23636",
+          "hover": "#cc4848",
+          "rest": "#1e252e",
+        },
+        "borderColor": {
+          "hover": "#52576733",
+        },
+        "fgColor": {
+          "hover": "#ffffff",
+          "rest": "#d15a5a",
+        },
+      },
+      "default": {
+        "bgColor": {
+          "active": "#ffffff24",
+        },
+      },
+      "invisible": {
+        "iconColor": {
+          "rest": "#cbd0da",
+        },
+      },
+      "primary": {
+        "bgColor": {
+          "active": "#6c8c4c",
+          "hover": "#7a9e55",
+          "rest": "#87ab63",
+        },
+        "borderColor": {
+          "hover": "#52576733",
+          "rest": "#52576733",
+        },
+        "fgColor": {
+          "rest": "#ffffff",
+        },
+      },
+      "star": {
+        "iconColor": "#cc9903",
+      },
+    },
+    "contribution": {
+      "default": {
+        "bgColor": {
+          "num0": "#52576799",
+          "num1": "#516939",
+          "num2": "#6c8c4c",
+          "num3": "#87ab63",
+          "num4": "#9fbc82",
+        },
+        "borderColor": {
+          "num0": "#52576719",
+          "num1": "var(--github-contribution-default-borderColor-0)",
+          "num2": "var(--github-contribution-default-borderColor-0)",
+          "num3": "var(--github-contribution-default-borderColor-0)",
+          "num4": "var(--github-contribution-default-borderColor-0)",
+        },
+      },
+    },
+    "control": {
+      "bgColor": {
+        "rest": "#4c525e",
+      },
+      "danger": {
+        "bgColor": {
+          "active": "rgba(219, 40, 40, 0.402)",
+          "hover": "#db28281a",
+        },
+        "fgColor": {
+          "hover": "#d15a5a",
+        },
+      },
+      "transparent": {
+        "bgColor": {
+          "active": "#ffffff24",
+          "hover": "#ffffff19",
+        },
+        "borderColor": {
+          "active": "#0000",
+        },
+      },
+    },
+    "controlKnob": {
+      "bgColor": {
+        "rest": "#1e252e",
+      },
+    },
+    "controlTrack": {
+      "bgColor": {
+        "rest": "#ffffff24",
+      },
+    },
+    "counter": {
+      "borderColor": "#0000",
+    },
+    "fgColor": {
+      "accent": "#9fbc82",
+      "done": "#b259d0",
+      "onEmphasis": "#ffffff",
+      "success": "#87ab63",
+    },
+    "progressBar": {
+      "track": {
+        "bgColor": "#0000",
+        "borderColor": "#0000",
+      },
+    },
+    "shadow": {
+      "floating": {
+        "small": "0px 0px 0px 1px var(--color-secondary), 0px 6px 12px -3px var(--color-shadow), 0px 6px 18px 0px var(--color-shadow);",
+      },
+      "inset": "inset 0px 1px 0px 0px #00000058",
+      "resting": {
+        "medium": "drop-shadow(0 1px 1px #00000058) drop-shadow(0 3px 6px #000000)",
+        "small": "0px 1px 1px 0px #00000058, 0px 1px 3px 0px #00000058;",
+      },
+    },
+    "themeExtra": {
+      "button": {
+        "primary": {
+          "fgColor": {
+            "accent": "hsla(90, 40%, 58%, 1)",
+          },
+        },
+      },
+      "contribution": {
+        "default": {
+          "bgColor": {
+            "num5": "#b7cda1",
+          },
+          "borderColor": {
+            "num5": "var(--github-contribution-default-borderColor-0)",
+          },
+        },
+      },
+    },
+    "topicTag": {
+      "borderColor": "#0000",
+    },
+    "underlineNav": {
+      "borderColor": {
+        "active": "#87ab63",
+      },
+    },
+    "workflowCardBg": "#1e252e",
+  },
+  "isDarkTheme": true,
 }
 `;
