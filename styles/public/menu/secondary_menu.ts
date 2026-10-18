@@ -19,6 +19,7 @@
 
 import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 import { basicButtonStyle } from "@lutinglt/gitea-github-theme/styles/common";
+import { underlineNavActiveItemAfterStyle } from "@lutinglt/gitea-github-theme/styles/common";
 
 const secondaryMenu = css`
   /* 二级菜单, 比如 Issue/PR/Actions 的筛选菜单 */
@@ -60,15 +61,8 @@ const secondaryMenu = css`
       border-color: #ffffff00;
       /* 模仿 github 的下划线 */
       span:after {
-        content: "";
-        background: ${themeVars.github.underlineNav.borderColor.active};
-        border-radius: ${otherThemeVars.border.radius};
-        bottom: calc(50% - 26px);
-        height: 2px;
-        position: absolute;
-        right: 50%;
-        transform: translate(50%, -50%);
-        width: 100%;
+        ${underlineNavActiveItemAfterStyle}
+        bottom: -10px;
         z-index: 1;
       }
     }

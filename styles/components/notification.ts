@@ -65,7 +65,7 @@ const notification = css`
                   color: ${themeVars.color.text.self};
                   font-weight: 700;
                 }
-                .svg{
+                .svg {
                   margin-right: 0 !important;
                 }
               }

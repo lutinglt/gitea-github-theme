@@ -32,3 +32,17 @@ export const activeItemAfterStyle = cssStyle({
   top: "calc(50% - 12px)",
   width: "4px",
 });
+
+/** 激活项悬浮下划线样式
+ * @example 悬浮在激活项下面的下划线
+ */
+export const underlineNavActiveItemAfterStyle = cssStyle({
+  content: `""`,
+  backgroundColor: themeVars.github.underlineNav.borderColor.active,
+  borderRadius: otherThemeVars.border.radius,
+  position: "absolute",
+  width: "100%",
+  height: "2px",
+  left: "0",
+  bottom: "-8px",
+});

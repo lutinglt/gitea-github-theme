@@ -12,6 +12,7 @@
 
 - Synchronize GitHub new version of Actions list page.
 - Synchronize GitHub new pagination button floating effect.
+- Synchronize GitHub new branch menu style.
 - Synchronize Clone Button Styles.
 
 ### 🐞 Fix

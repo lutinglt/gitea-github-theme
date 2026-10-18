@@ -18,7 +18,7 @@
  */
 
 import { css, cssCombine, customThemeVars, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
-import { animationDown } from "@lutinglt/gitea-github-theme/styles/common";
+import { animationDown, underlineNavActiveItemAfterStyle } from "@lutinglt/gitea-github-theme/styles/common";
 import { fallbackVar } from "@vanilla-extract/css";
 
 // 分支菜单
@@ -33,27 +33,30 @@ const branchDropdown = css`
     /* 分支/标签切换 */
     > .branch-tag-tab {
       > .branch-tag-item {
-        font-weight: 500;
-        padding: 8px 12px;
+        border: 0;
+        border-radius: ${otherThemeVars.border.radius};
+        font-weight: 400;
+        padding: 6px 8px;
         height: 32px;
-        line-height: 1.15;
+        margin-bottom: 8px;
+        position: relative;
         svg {
           display: none;
         }
         &.active {
-          background: ${themeVars.color.body};
-        }
-        &:hover {
-          color: inherit;
-          &:not(.active) {
-            background: ${themeVars.color.hover.self};
-            border: 1px solid ${themeVars.color.secondary.self};
-            border-bottom: 0;
-            border-top-left-radius: ${otherThemeVars.border.radius};
-            border-top-right-radius: ${otherThemeVars.border.radius};
+          font-weight: 600;
+          &:after {
+            ${underlineNavActiveItemAfterStyle}
           }
         }
+        &:hover {
+          background: ${themeVars.github.control.transparent.bgColor.hover};
+        }
       }
+    }
+    /* 分支/标签切换下的分割线 */
+    .branch-tag-divider {
+      margin-top: 0 !important;
     }
   }
 `;

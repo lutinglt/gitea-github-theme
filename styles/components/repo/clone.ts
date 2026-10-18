@@ -18,6 +18,7 @@
  */
 
 import { css, cssCombine, customThemeVars, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { underlineNavActiveItemAfterStyle } from "@lutinglt/gitea-github-theme/styles/common";
 
 /** 克隆按钮 */
 const cloneButton = css`
@@ -48,7 +49,7 @@ const clonePanel = css`
         /* 按钮 */
         .item {
           color: ${themeVars.color.text.self};
-          font-weight: 600;
+          font-weight: 400;
           padding: 6px 8px;
           margin: 8px 0;
           &:hover {
@@ -56,16 +57,11 @@ const clonePanel = css`
             box-shadow: inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active};
             border-radius: ${otherThemeVars.border.radius};
           }
-          &.active:after {
-            content: "";
-            display: block;
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: ${themeVars.github.underlineNav.borderColor.active};
-            border-radius: ${otherThemeVars.border.radius};
+          &.active {
+            font-weight: 600;
+            &:after {
+              ${underlineNavActiveItemAfterStyle}
+            }
           }
         }
         .item.active {
