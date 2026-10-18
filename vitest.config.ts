@@ -21,7 +21,7 @@ import { defineConfig } from "vitest/config";
 
 export default defineConfig({
   test: {
-    include: ["src/**/*.test.ts"],
+    include: ["src/**/*.test.ts", "theme.test.ts"],
     testTimeout: 20000,
     open: false,
     allowOnly: true,

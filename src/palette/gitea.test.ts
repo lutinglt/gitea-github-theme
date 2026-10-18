@@ -34,12 +34,20 @@ describe("gitea2ThemeVars", () => {
     expect(gitea2ThemeVars(giteaColor.light)).toMatchSnapshot();
   });
 
+  it("arc-green 快照", () => {
+    expect(gitea2ThemeVars(giteaColor.arcGreen)).toMatchSnapshot();
+  });
+
   it("dark isDarkTheme 为 true", () => {
     expect(gitea2ThemeVars(giteaColor.dark).isDarkTheme).toBe(true);
   });
 
   it("light isDarkTheme 为 false", () => {
     expect(gitea2ThemeVars(giteaColor.light).isDarkTheme).toBe(false);
+  });
+
+  it("arc-green isDarkTheme 为 true", () => {
+    expect(gitea2ThemeVars(giteaColor.arcGreen).isDarkTheme).toBe(true);
   });
 
   it("dark 输出含 color 和 github 顶层键", () => {

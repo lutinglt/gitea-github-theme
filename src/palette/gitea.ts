@@ -120,7 +120,7 @@ export function gitea2ThemeVars(giteaColor: GiteaColor): ThemeVars {
     controlKnob: { bgColor: { rest: giteaColor.other.menu } },
     shadow: {
       floating: {
-        small: `0px 0px 0px 1px ${themeVars.color.light.border}, 0px 6px 12px -3px ${themeVars.color.shadow.self}, 0px 6px 18px 0px ${themeVars.color.shadow.self};`,
+        small: `0px 0px 0px 1px ${themeVars.color.secondary.self}, 0px 6px 12px -3px ${themeVars.color.shadow.self}, 0px 6px 18px 0px ${themeVars.color.shadow.self};`,
       },
       inset: `inset 0px 1px 0px 0px ${giteaColor.other.shadow.self}`,
       resting: {
@@ -129,7 +129,7 @@ export function gitea2ThemeVars(giteaColor: GiteaColor): ThemeVars {
         medium: `drop-shadow(0 1px 1px ${giteaColor.other.shadow.self}) drop-shadow(0 3px 6px ${giteaColor.other.shadow.opaque})`,
       },
     },
-    underlineNav: { borderColor: { active: giteaColor.other.text.dark } },
+    underlineNav: { borderColor: { active: themeVars.github.borderColor.accent.emphasis } },
     contribution: {
       default: {
         bgColor: {

@@ -24,7 +24,7 @@ import { fileURLToPath } from "node:url";
 import { beforeAll, describe, expect, it } from "vitest";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const ROOT_DIR = path.resolve(__dirname, "..");
+const ROOT_DIR = path.resolve(__dirname);
 const DIST_DIR = path.join(ROOT_DIR, "dist");
 const PREFIX = "theme-github-";
 
@@ -47,21 +47,6 @@ const EXPECTED_THEME_FILES = [
   `${PREFIX}tritanopia-dark.css`,
   `${PREFIX}tritanopia-light.css`,
   `${PREFIX}tritanopia-auto.css`,
-  // pink
-  `${PREFIX}pink-dark.css`,
-  `${PREFIX}pink-light.css`,
-  `${PREFIX}pink-soft-dark.css`,
-  `${PREFIX}pink-auto.css`,
-  // gitea
-  `${PREFIX}gitea-dark.css`,
-  `${PREFIX}gitea-light.css`,
-  `${PREFIX}gitea-auto.css`,
-  // catppuccin
-  `${PREFIX}catppuccin-mocha.css`,
-  `${PREFIX}catppuccin-latte.css`,
-  `${PREFIX}catppuccin-frappe.css`,
-  `${PREFIX}catppuccin-macchiato.css`,
-  `${PREFIX}catppuccin-auto.css`,
   // high contrast
   `${PREFIX}high-contrast-dark.css`,
   `${PREFIX}high-contrast-light.css`,
@@ -75,6 +60,22 @@ const EXPECTED_THEME_FILES = [
   `${PREFIX}high-contrast-tritanopia-dark.css`,
   `${PREFIX}high-contrast-tritanopia-light.css`,
   `${PREFIX}high-contrast-tritanopia-auto.css`,
+  // pink
+  `${PREFIX}pink-dark.css`,
+  `${PREFIX}pink-light.css`,
+  `${PREFIX}pink-soft-dark.css`,
+  `${PREFIX}pink-auto.css`,
+  // gitea
+  `${PREFIX}gitea-dark.css`,
+  `${PREFIX}gitea-light.css`,
+  `${PREFIX}gitea-arc-green.css`,
+  `${PREFIX}gitea-auto.css`,
+  // catppuccin
+  `${PREFIX}catppuccin-mocha.css`,
+  `${PREFIX}catppuccin-latte.css`,
+  `${PREFIX}catppuccin-frappe.css`,
+  `${PREFIX}catppuccin-macchiato.css`,
+  `${PREFIX}catppuccin-auto.css`,
 ];
 
 /** auto 主题文件名列表 */

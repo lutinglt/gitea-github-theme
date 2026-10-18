@@ -17,6 +17,7 @@
  * limitations under the License.
  */
 
+import type { GiteaColor } from "@lutinglt/gitea-github-theme/core";
 import {
   catppuccinFrappeTheme,
   catppuccinLatteTheme,
@@ -44,10 +45,12 @@ import {
   githubTritanopiaDarkTheme,
   githubTritanopiaLightTheme,
 } from "./github";
+import { giteaArcGreenColor, giteaArcGreenTheme } from "./giteaArcGreen";
 
-export const giteaColor = {
+export const giteaColor: Record<string, GiteaColor> = {
   dark: giteaDarkColor,
   light: giteaLightColor,
+  arcGreen: giteaArcGreenColor,
 };
 
 export default {
@@ -63,11 +66,6 @@ export default {
       dark: githubTritanopiaDarkTheme,
       light: githubTritanopiaLightTheme,
     },
-    pink: {
-      dark: githubPinkDarkTheme,
-      light: githubPinkLightTheme,
-      softDark: githubPinkSoftDarkTheme,
-    },
     highContrast: {
       dark: githubDarkHighContrastTheme,
       light: githubLightHighContrastTheme,
@@ -81,10 +79,16 @@ export default {
         light: githubLightTritanopiaHighContrastTheme,
       },
     },
+    pink: {
+      dark: githubPinkDarkTheme,
+      light: githubPinkLightTheme,
+      softDark: githubPinkSoftDarkTheme,
+    },
   },
   gitea: {
     dark: giteaDarkTheme,
     light: giteaLightTheme,
+    arcGreen: giteaArcGreenTheme,
   },
   catppuccin: {
     latte: catppuccinLatteTheme,
