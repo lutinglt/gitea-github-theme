@@ -19,3 +19,4 @@
 
 - Fix unnecessary background colors on subscription list pages under certain themes.
 - Fix unnecessary spacing in the title icon of the subscription list page.
+- Fix the missing floating border color of some elements in high contrast themes.
