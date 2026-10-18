@@ -41,8 +41,8 @@ export const underlineNavActiveItemAfterStyle = cssStyle({
   backgroundColor: themeVars.github.underlineNav.borderColor.active,
   borderRadius: otherThemeVars.border.radius,
   position: "absolute",
-  width: "100%",
+  pointerEvents: "none",
   height: "2px",
-  left: "0",
-  bottom: "-8px",
+  inset: "auto 0 0",
+  marginBottom: "-8px",
 });

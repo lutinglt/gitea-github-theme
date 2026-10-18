@@ -62,7 +62,7 @@ const secondaryMenu = css`
       /* 模仿 github 的下划线 */
       span:after {
         ${underlineNavActiveItemAfterStyle}
-        bottom: -10px;
+        margin-bottom: -9px;
         z-index: 1;
       }
     }
