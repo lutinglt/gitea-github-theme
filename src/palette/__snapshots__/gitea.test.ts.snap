@@ -601,7 +601,7 @@ exports[`gitea2ThemeVars > light isDarkTheme 为 false 1`] = `
     },
     "underlineNav": {
       "borderColor": {
-        "active": "#4183c4",
+        "active": "var(--github-borderColor-accent-emphasis)",
       },
     },
     "workflowCardBg": "#191a1c",
@@ -1211,7 +1211,7 @@ exports[`gitea2ThemeVars > light isDarkTheme 为 false 2`] = `
     },
     "underlineNav": {
       "borderColor": {
-        "active": "#4183c4",
+        "active": "var(--github-borderColor-accent-emphasis)",
       },
     },
     "workflowCardBg": "#f8f9fb",
@@ -1821,7 +1821,7 @@ exports[`gitea2ThemeVars > light isDarkTheme 为 false 3`] = `
     },
     "underlineNav": {
       "borderColor": {
-        "active": "#87ab63",
+        "active": "var(--github-borderColor-accent-emphasis)",
       },
     },
     "workflowCardBg": "#1e252e",
