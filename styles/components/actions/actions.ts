@@ -25,14 +25,6 @@ const actions = css`
   .page-content.repository.actions:not(.settings) .flex-container {
     /* Actions 列表 */
     .flex-container-nav {
-      &:before {
-        content: "Actions";
-        display: block;
-        font-size: 20px;
-        font-weight: 600;
-        margin-top: 6px;
-        margin-bottom: 8px;
-      }
       .ui.menu {
         &:first-child {
           margin-bottom: 8px;
@@ -57,10 +49,12 @@ const actions = css`
     .flex-container-main {
       /* 工作流列表标题栏菜单 */
       .ui.top.attached.header {
-        padding: 16px;
+        padding: 8px;
+        padding-left: 16px;
         &:has(+ .ui.info.attached.message) {
           border-bottom: 0;
         }
+        > strong,
         .ui.secondary.menu > .ui.dropdown {
           color: ${themeVars.color.text.light.num1};
         }
@@ -106,19 +100,20 @@ const actions = css`
             color: ${themeVars.color.text.light.num1};
           }
 
-          .item {
-            padding: 16px;
-            line-height: 18px;
+          > .item {
+            padding: 9px 16px;
+            line-height: 1.5;
+            &:hover {
+              background-color: ${themeVars.color.hover.opaque};
+            }
             .item-leading {
               align-self: flex-start;
+              margin-top: 2px;
             }
             .item-main {
-              gap: 0.5rem;
+              gap: 4px;
             }
-            .item-trailing {
-              > .ui.label {
-                border-radius: ${otherThemeVars.border.radius};
-              }
+            .run-list-item-trailing {
               > .ui.dropdown.jump {
                 border-radius: ${otherThemeVars.border.radius};
                 color: ${themeVars.color.text.light.num1};
@@ -126,7 +121,6 @@ const actions = css`
                   background-color: ${themeVars.github.control.transparent.bgColor.hover};
                 }
                 .menu > .item {
-                  font-size: 12px;
                   gap: 4px;
                   &:hover {
                     color: ${themeVars.color.text.self} !important;

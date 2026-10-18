@@ -40,7 +40,7 @@ const dashboard = css`
       > .item {
         background: unset;
         border-radius: 12px;
-        padding: 6px 12px !important;
+        padding: 5px 12px !important;
         position: relative;
         z-index: 2;
         &.active {
