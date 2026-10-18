@@ -133,6 +133,7 @@ const fixButtonHeight = css`
   .repo-button-row .ui.button {
     min-height: 32px;
     height: 32px;
+    gap: 8px;
   }
   /* 修复因上面小按钮高度导致仓库星标克隆等按钮高度过高 */
   .repo-header {

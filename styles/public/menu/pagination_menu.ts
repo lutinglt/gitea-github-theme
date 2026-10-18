@@ -43,8 +43,7 @@ const paginationMenu = css`
       &:not(.active) {
         border: 1px solid #ffffff00;
         &:hover {
-          background: unset;
-          border-color: ${themeVars.color.secondary.self};
+          background: ${themeVars.github.control.transparent.bgColor.hover};
         }
       }
       &.navigation {

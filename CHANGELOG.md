@@ -11,3 +11,10 @@
 #### More GitHub-like style
 
 - Synchronize GitHub new version of Actions list page.
+- Synchronize GitHub new pagination button floating effect.
+- Synchronize Clone Button Styles.
+
+### 🐞 Fix
+
+- Fix unnecessary background colors on subscription list pages under certain themes.
+- Fix unnecessary spacing in the title icon of the subscription list page.

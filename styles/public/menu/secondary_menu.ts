@@ -42,9 +42,7 @@ const secondaryMenu = css`
       gap: 4px;
       .item {
         padding: 5px 8px !important;
-        margin-block-start: 0.5rem;
-        margin-block-end: 0.5rem;
-        margin-bottom: 0.5rem !important;
+        margin: 8px 0 !important;
       }
     }
     .item {
@@ -65,7 +63,7 @@ const secondaryMenu = css`
         content: "";
         background: ${themeVars.github.underlineNav.borderColor.active};
         border-radius: ${otherThemeVars.border.radius};
-        bottom: calc(50% - 1.65rem);
+        bottom: calc(50% - 26px);
         height: 2px;
         position: absolute;
         right: 50%;

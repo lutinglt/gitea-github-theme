@@ -24,10 +24,14 @@ const notification = css`
   .page-content.user.notification {
     > .ui.container {
       > .ui.attached.segment {
+        background: unset;
         border: 0;
         padding: 0;
         > .divider {
           display: none;
+        }
+        > .items-with-main {
+          background: ${themeVars.color.box.body.self};
         }
         /* 订阅列表 */
         &:has(#issue-list) {
@@ -61,6 +65,9 @@ const notification = css`
                   color: ${themeVars.color.text.self};
                   font-weight: 700;
                 }
+                .svg{
+                  margin-right: 0 !important;
+                }
               }
             }
             /* 右侧菜单 */
@@ -82,6 +89,18 @@ const notification = css`
           border-radius: ${otherThemeVars.border.radius};
           > .item {
             padding: 16px;
+            &:first-of-type {
+              border-top-left-radius: ${otherThemeVars.border.radius};
+              border-top-right-radius: ${otherThemeVars.border.radius};
+            }
+            &:has(+ .ui.small.modal), /* Gitea BUG, 右侧通知按钮触发后, 尾部不在加载, 首页加载会占用尾部 */
+            &:last-of-type {
+              border-bottom-left-radius: ${otherThemeVars.border.radius};
+              border-bottom-right-radius: ${otherThemeVars.border.radius};
+            }
+            &:hover {
+              background: ${themeVars.github.control.transparent.bgColor.hover};
+            }
             > .item-main {
               gap: 4px;
               > .item-header {

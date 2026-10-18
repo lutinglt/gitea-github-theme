@@ -61,7 +61,7 @@ const actions = css`
       }
       /* 事件触发器 */
       .ui.info.attached.message {
-        padding: 18px 16px;
+        padding: 16px;
         max-width: calc(100% + 2px); /* Gitea 布局问题, 目的: 对齐边框 */
         /* 事件触发器按钮 */
         .ui.mini.button {
@@ -72,9 +72,11 @@ const actions = css`
       }
       /* 工作流列表 */
       .ui.attached.segment {
+        background: unset;
         padding: 0;
         border: 0;
         .run-list {
+          background: ${themeVars.color.box.body.self};
           border: 1px solid ${themeVars.color.light.border};
           border-bottom-left-radius: ${otherThemeVars.border.radius};
           border-bottom-right-radius: ${otherThemeVars.border.radius};
@@ -106,6 +108,10 @@ const actions = css`
             &:hover {
               background-color: ${themeVars.color.hover.opaque};
             }
+            &:last-child {
+              border-bottom-left-radius: ${otherThemeVars.border.radius};
+              border-bottom-right-radius: ${otherThemeVars.border.radius};
+            }
             .item-leading {
               align-self: flex-start;
               margin-top: 2px;
@@ -129,10 +135,6 @@ const actions = css`
               }
             }
           }
-        }
-        /* 分页按钮, GitHub Gitea 修正, 不影响其他配色 */
-        .center.page.buttons {
-          background: ${themeVars.color.body};
         }
       }
       /* 工作流队列 */

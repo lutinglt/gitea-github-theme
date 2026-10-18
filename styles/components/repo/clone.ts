@@ -19,8 +19,15 @@
 
 import { css, cssCombine, customThemeVars, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
 
-// 克隆按钮的弹窗
-const clone = css`
+/** 克隆按钮 */
+const cloneButton = css`
+  .ui.ui.ui.compact.primary.button[data-global-init="initRepoClonePanel"] {
+    padding: 0 12px;
+  }
+`;
+
+/** 克隆按钮的弹窗 */
+const clonePanel = css`
   .tippy-box {
     .clone-panel-popup {
       /*标题和克隆地址 */
@@ -137,4 +144,4 @@ const clone = css`
   }
 `;
 
-export default cssCombine(clone);
+export default cssCombine(cloneButton, clonePanel);
