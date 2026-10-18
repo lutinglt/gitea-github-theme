@@ -569,7 +569,7 @@ exports[`gitea2ThemeVars > dark 输出含 color 和 github 顶层键 1`] = `
     },
     "shadow": {
       "floating": {
-        "small": "0px 0px 0px 1px var(--color-light-border), 0px 6px 12px -3px var(--color-shadow), 0px 6px 18px 0px var(--color-shadow);",
+        "small": "0px 0px 0px 1px var(--color-secondary), 0px 6px 12px -3px var(--color-shadow), 0px 6px 18px 0px var(--color-shadow);",
       },
       "inset": "inset 0px 1px 0px 0px #0b0b0c58",
       "resting": {
@@ -601,7 +601,7 @@ exports[`gitea2ThemeVars > dark 输出含 color 和 github 顶层键 1`] = `
     },
     "underlineNav": {
       "borderColor": {
-        "active": "#f8f8f8",
+        "active": "#4183c4",
       },
     },
     "workflowCardBg": "#191a1c",
@@ -1179,7 +1179,7 @@ exports[`gitea2ThemeVars > dark 输出含 color 和 github 顶层键 2`] = `
     },
     "shadow": {
       "floating": {
-        "small": "0px 0px 0px 1px var(--color-light-border), 0px 6px 12px -3px var(--color-shadow), 0px 6px 18px 0px var(--color-shadow);",
+        "small": "0px 0px 0px 1px var(--color-secondary), 0px 6px 12px -3px var(--color-shadow), 0px 6px 18px 0px var(--color-shadow);",
       },
       "inset": "inset 0px 1px 0px 0px #00001726",
       "resting": {
@@ -1211,7 +1211,7 @@ exports[`gitea2ThemeVars > dark 输出含 color 和 github 顶层键 2`] = `
     },
     "underlineNav": {
       "borderColor": {
-        "active": "#01050a",
+        "active": "#4183c4",
       },
     },
     "workflowCardBg": "#f8f9fb",

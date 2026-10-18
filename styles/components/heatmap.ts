@@ -33,7 +33,7 @@ const heatmap = css`
     > div {
       padding: 12px 20px;
       box-shadow:
-        0px 0px 0px 1px ${themeVars.color.light.border},
+        0px 0px 0px 1px ${themeVars.color.secondary.self},
         ${themeVars.github.shadow.resting.small};
       border-radius: 12px;
       /* 覆盖热力图和图例的背景色 */
@@ -93,7 +93,7 @@ const activity = css`
   #activity-feed {
     border-radius: 12px;
     box-shadow:
-      0px 0px 0px 1px ${themeVars.color.light.border},
+      0px 0px 0px 1px ${themeVars.color.secondary.self},
       ${themeVars.github.shadow.resting.small};
     > .item {
       gap: 12px;
