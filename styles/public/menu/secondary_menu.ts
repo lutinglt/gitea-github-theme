@@ -56,9 +56,6 @@ const secondaryMenu = css`
     a.item {
       border-radius: ${otherThemeVars.border.radius};
       color: ${themeVars.color.text.self};
-      svg {
-        margin-right: 8px;
-      }
     }
     .active.item {
       /* 取消激活时的下划线, 需要为透明, 保持间距 */
@@ -68,7 +65,7 @@ const secondaryMenu = css`
         content: "";
         background: ${themeVars.github.underlineNav.borderColor.active};
         border-radius: ${otherThemeVars.border.radius};
-        bottom: calc(50% - 1.8rem);
+        bottom: calc(50% - 1.65rem);
         height: 2px;
         position: absolute;
         right: 50%;

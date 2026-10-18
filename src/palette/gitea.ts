@@ -129,7 +129,7 @@ export function gitea2ThemeVars(giteaColor: GiteaColor): ThemeVars {
         medium: `drop-shadow(0 1px 1px ${giteaColor.other.shadow.self}) drop-shadow(0 3px 6px ${giteaColor.other.shadow.opaque})`,
       },
     },
-    underlineNav: { borderColor: { active: giteaColor.primary.self } },
+    underlineNav: { borderColor: { active: themeVars.github.borderColor.accent.emphasis } },
     contribution: {
       default: {
         bgColor: {
