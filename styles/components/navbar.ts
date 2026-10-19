@@ -77,18 +77,6 @@ const navbarRight = css`
         /* 带下拉菜单的按钮 */
         &.ui.dropdown {
           padding: 0 8px;
-          .text {
-            display: grid;
-            grid-auto-flow: column;
-            align-items: center;
-            > svg {
-              margin-right: 4px;
-            }
-            /* 三角号纠正高度保持居中 */
-            .not-mobile {
-              height: 16px;
-            }
-          }
           &:hover {
             background-color: ${themeVars.color.nav.hoverBg};
           }

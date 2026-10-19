@@ -101,6 +101,7 @@ const packagesDetail = css`
         }
       }
       .packages-content-right {
+        background: unset;
         border: 0;
         padding: 0px 16px;
         width: 304px;
