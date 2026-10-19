@@ -176,7 +176,7 @@ THEMES = github-pink-auto, github-pink-light, github-pink-dark, github-pink-soft
 ### Gitea Themes
 
 ```ini
-THEMES = github-gitea-auto, github-gitea-light, github-gitea-dark
+THEMES = github-gitea-auto, github-gitea-light, github-gitea-dark, github-gitea-arc-green
 ```
 
 <details>
@@ -185,6 +185,8 @@ THEMES = github-gitea-auto, github-gitea-light, github-gitea-dark
 <img src="https://raw.githubusercontent.com/lutinglt/gitea-github-theme/assets/screenshots/gitea/gitea-light.png"/>
 <h4>theme-github-gitea-dark.css</h4>
 <img src="https://raw.githubusercontent.com/lutinglt/gitea-github-theme/assets/screenshots/gitea/gitea-dark.png"/>
+<h4>theme-github-gitea-arc-green.css</h4>
+<img src="https://raw.githubusercontent.com/lutinglt/gitea-github-theme/assets/screenshots/gitea/gitea-arc-green.png"/>
 </details>
 
 ### Catppuccin Themes
