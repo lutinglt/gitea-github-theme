@@ -67,7 +67,7 @@ const locales = fs.readdirSync(path.join(rootDir, localePath)).filter(file => fi
   }
 
   if (process.env.SSH_SERVER && process.env.GITEA_PATH && process.env.SSH_USER) {
-    const cmd = `scp -r dist/options ${process.env.SSH_USER}@${process.env.SSH_SERVER}:${process.env.GITEA_PATH}`;
+    const cmd = `scp -Or dist/options ${process.env.SSH_USER}@${process.env.SSH_SERVER}:${process.env.GITEA_PATH}`;
     console.log("[translate] exec:", cmd);
     child_process.execSync(cmd, { stdio: "inherit" });
   }
