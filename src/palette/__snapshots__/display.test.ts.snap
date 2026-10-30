@@ -37,7 +37,7 @@ exports[`display2GitHubColor > cover 后 contribution 颜色被改写 1`] = `
   "bgColor": {
     "accent": {
       "emphasis": "#d34591",
-      "muted": "#2d1524",
+      "muted": "rgba(211, 69, 145, 0.15)",
     },
     "attention": {
       "emphasis": "#9e6a03",
@@ -152,7 +152,7 @@ exports[`display2GitHubColor > cover 后 contribution 颜色被改写 1`] = `
   "borderColor": {
     "accent": {
       "emphasis": "#d34591",
-      "muted": "#388bfd66",
+      "muted": "rgba(211, 69, 145, 0.4)",
     },
     "attention": {
       "emphasis": "#9e6a03",
@@ -1839,7 +1839,7 @@ exports[`display2GitHubColor > cover 后 contribution 颜色被改写 2`] = `
   "bgColor": {
     "accent": {
       "emphasis": "#ce2c85",
-      "muted": "#ffe5f1",
+      "muted": "rgba(206, 44, 133, 0.15)",
     },
     "attention": {
       "emphasis": "#9a6700",
@@ -1954,7 +1954,7 @@ exports[`display2GitHubColor > cover 后 contribution 颜色被改写 2`] = `
   "borderColor": {
     "accent": {
       "emphasis": "#ce2c85",
-      "muted": "#54aeff66",
+      "muted": "rgba(206, 44, 133, 0.4)",
     },
     "attention": {
       "emphasis": "#9a6700",
@@ -3641,7 +3641,7 @@ exports[`display2GitHubColor > cover 后 contribution 颜色被改写 3`] = `
   "bgColor": {
     "accent": {
       "emphasis": "hsla(328, 52%, 54%, 1)",
-      "muted": "#451c35",
+      "muted": "rgba(211, 69, 145, 0.15)",
     },
     "attention": {
       "emphasis": "#966600",
@@ -3756,7 +3756,7 @@ exports[`display2GitHubColor > cover 后 contribution 颜色被改写 3`] = `
   "borderColor": {
     "accent": {
       "emphasis": "#e57bb2",
-      "muted": "#4184e466",
+      "muted": "rgba(211, 69, 145, 0.4)",
     },
     "attention": {
       "emphasis": "#966600",

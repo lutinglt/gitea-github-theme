@@ -19,7 +19,7 @@
 
 import type { Primer } from "@lutinglt/gitea-github-theme/assets";
 import { saturate } from "color2k";
-import { scaleColorLight } from "../functions";
+import { scaleColorLight, rgba } from "../functions";
 import { deepOverride } from "../utils";
 import type { GitHubColor } from "./github";
 
@@ -36,10 +36,10 @@ export function display2GitHubColor(
     bgColor: {
       accent: {
         emphasis: soft ? saturate(scaleColorLight(displayColor[5], -2), -0.1) : displayColor[5],
-        muted: soft ? displayColor[1] : displayColor[0],
+        muted: rgba(displayColor[5], 0.15),
       },
     },
-    borderColor: { accent: { emphasis: soft ? displayColor[6] : displayColor[5] } },
+    borderColor: { accent: { emphasis: soft ? displayColor[6] : displayColor[5], muted: rgba(displayColor[5], 0.4) } },
     button: {
       star: {
         iconColor: soft ? scaleColorLight(displayColor[6], -2) : saturate(scaleColorLight(displayColor[6], -2), 0.1),
