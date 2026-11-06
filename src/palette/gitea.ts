@@ -19,9 +19,9 @@
 
 import { opacify, saturate } from "color2k";
 import type { ThemeVars } from "../core";
-import { scaleColorLight } from "../functions";
-import type { Ansi, Console, Diff, GitHub, Message, Named, Other, Primary, Secondary, Series16 } from "../types";
-import { themeVars } from "../types";
+import { scaleColorLight } from "../core/functions";
+import type { Ansi, Console, Diff, GitHub, Message, Named, Other, Primary, Secondary, Series16 } from "../core/gitea";
+import { themeVars } from "../core/gitea";
 import { type DeepPartial, deepOverride } from "../utils";
 
 export type GiteaColor = {

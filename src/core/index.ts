@@ -23,3 +23,6 @@ export { css, cssCombine, cssStyle, type CSSString } from "./css";
 export { createThemeMetaInfo, type ColorblindType, type GiteaThemeMeta } from "./meta";
 export { createTheme, defineTheme, type Theme, type ThemeVars } from "./theme";
 export type { CSSVarFunction, MapLeafNodes } from "./types";
+export { themeVars, otherThemeVars, customThemeVars } from "./gitea";
+export { extractVarName } from "./functions";
+export { default as selectors } from "./selectors";

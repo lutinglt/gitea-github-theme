@@ -18,7 +18,7 @@
  */
 
 import type { Primer } from "@lutinglt/gitea-github-theme/assets";
-import type { Chroma, CodeMirror } from "../types";
+import type { Chroma, CodeMirror } from "../core/gitea";
 import { deepOverride } from "../utils";
 import type { GitHubColor } from "./github";
 

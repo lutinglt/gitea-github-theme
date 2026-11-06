@@ -18,7 +18,7 @@
  */
 
 import { assertVarName } from "@vanilla-extract/css";
-import type { CSSVarFunction } from "../core";
+import type { CSSVarFunction } from "..";
 
 type CSSVarName = `--${string}`;
 /** 提取 CSS 变量名

@@ -49,20 +49,10 @@
  * @author lutinglt
  */
 
-import type {
-  Ansi,
-  Console,
-  Diff,
-  GiteaColor,
-  Message,
-  Named,
-  Other,
-  Primary,
-  Secondary,
-  Series16,
-  Syntax,
-} from "@lutinglt/gitea-github-theme/core";
-import { defineTheme, themeVars } from "@lutinglt/gitea-github-theme/core";
+import type { Ansi, Console, Diff, Message, Named, Other, Primary, Secondary, Series16, Syntax } from "../core/gitea";
+import type { GiteaColor } from "../palette";
+import { defineTheme } from "../core";
+import { themeVars } from "../core/gitea";
 
 const primary: Primary = {
   self: "#87ab63",

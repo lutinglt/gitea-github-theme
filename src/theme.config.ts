@@ -17,9 +17,9 @@
  * limitations under the License.
  */
 
-import { defineThemeConfig } from "@lutinglt/gitea-github-theme/core";
-import styles from "@lutinglt/gitea-github-theme/styles";
-import themes from "@lutinglt/gitea-github-theme/themes";
+import { defineThemeConfig } from "./vite-plugin";
+import styles from "./styles";
+import themes from "./themes";
 
 export default defineThemeConfig({
   globalStyles: styles,

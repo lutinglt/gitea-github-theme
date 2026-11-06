@@ -22,7 +22,8 @@
  */
 
 import { flavors, type CatppuccinFlavor } from "@catppuccin/palette";
-import { catppuccin2Syntax, catppuccin2ThemeColor, defineTheme } from "@lutinglt/gitea-github-theme/core";
+import { catppuccin2Syntax, catppuccin2ThemeColor } from "../palette";
+import { defineTheme } from "../core";
 
 function defineCatppuccinTheme(flavor: CatppuccinFlavor) {
   return defineTheme({

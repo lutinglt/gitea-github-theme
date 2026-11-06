@@ -17,7 +17,8 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, cssStyle, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, cssStyle } from "@lutinglt/gitea-github-theme/core";
+import { themeVars } from "@lutinglt/gitea-github-theme/core/gitea";
 
 const exampleStyle = cssStyle({
   backgroundColor: themeVars.color.body,

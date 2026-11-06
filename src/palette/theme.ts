@@ -19,9 +19,9 @@
 
 import { saturate } from "color2k";
 import type { ThemeVars } from "../core";
-import { rgba, scaleColorLight } from "../functions";
-import type { Ansi, Console, Diff, GitHub, Message, Named, Other, Primary, Secondary, Series16 } from "../types";
-import { themeVars } from "../types";
+import { rgba, scaleColorLight } from "../core/functions";
+import type { Ansi, Console, Diff, GitHub, Message, Named, Other, Primary, Secondary, Series16 } from "../core/gitea";
+import { themeVars } from "../core/gitea";
 
 type OverrideColor = {
   ansi?: Ansi;

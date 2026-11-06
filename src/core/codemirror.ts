@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 import { createGlobalTheme, globalStyle, type StyleRule } from "@vanilla-extract/css";
-import selectors from "../selectors";
-import { codeMirrorVars, type CodeMirror } from "../types";
+import selectors from "./selectors";
+import { codeMirrorVars, type CodeMirror } from "./gitea";
 
 function codeMirrorStyle(selector: string, style: StyleRule): void;
 function codeMirrorStyle(selector: string[], style: StyleRule): void;

@@ -21,8 +21,10 @@
  * @author lutinglt
  */
 
-import type { GitHubColor } from "@lutinglt/gitea-github-theme/core";
-import { deepOverride, defineTheme, display2GitHubColor, primer2GitHubColor } from "@lutinglt/gitea-github-theme/core";
+import type { GitHubColor } from "../palette";
+import { defineTheme } from "../core";
+import { display2GitHubColor, primer2GitHubColor } from "../palette";
+import { deepOverride } from "../utils";
 import { primer } from "@lutinglt/gitea-github-theme/assets";
 
 /** - 仅适用于 Dark 主题的颜色转换 */
@@ -44,8 +46,12 @@ export const githubColorblindLightColor = primer2GitHubColor(primer.lightColorbl
 export const githubTritanopiaLightColor = primer2GitHubColor(primer.lightTritanopia);
 // 高对比度主题
 export const githubDarkHighContrastColor = darkConvert(primer2GitHubColor(primer.darkHighContrast, true));
-export const githubDarkColorblindHighContrastColor = darkConvert(primer2GitHubColor(primer.darkColorblindHighContrast, true));
-export const githubDarkTritanopiaHighContrastColor = darkConvert(primer2GitHubColor(primer.darkTritanopiaHighContrast, true));
+export const githubDarkColorblindHighContrastColor = darkConvert(
+  primer2GitHubColor(primer.darkColorblindHighContrast, true)
+);
+export const githubDarkTritanopiaHighContrastColor = darkConvert(
+  primer2GitHubColor(primer.darkTritanopiaHighContrast, true)
+);
 export const githubSoftDarkHighContrastColor = primer2GitHubColor(primer.darkDimmedHighContrast, true);
 export const githubLightHighContrastColor = primer2GitHubColor(primer.lightHighContrast);
 export const githubLightColorblindHighContrastColor = primer2GitHubColor(primer.lightColorblindHighContrast);

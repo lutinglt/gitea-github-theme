@@ -19,9 +19,9 @@
 
 import type { Primer } from "@lutinglt/gitea-github-theme/assets";
 import { mix, saturate } from "color2k";
-import { scaleColorLight } from "../functions";
-import type { Ansi, Console, Diff, GitHub, Message, Other, Series16 } from "../types";
-import { themeVars } from "../types";
+import { scaleColorLight } from "../core/functions";
+import type { Ansi, Console, Diff, GitHub, Message, Other, Series16 } from "../core/gitea";
+import { themeVars } from "../core/gitea";
 import type { ThemeColor } from "./theme";
 
 export type GitHubColor = {

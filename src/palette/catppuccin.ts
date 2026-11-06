@@ -19,9 +19,9 @@
 
 import type { CatppuccinFlavor } from "@catppuccin/palette";
 import { darken, lighten, mix, saturate } from "color2k";
-import { rgba, scaleColorLight } from "../functions";
-import type { Ansi, Console, Diff, GitHub, Other } from "../types";
-import { themeVars } from "../types";
+import { rgba, scaleColorLight } from "../core/functions";
+import type { Ansi, Console, Diff, GitHub, Other } from "../core/gitea";
+import { themeVars } from "../core/gitea";
 import type { ThemeColor } from "./theme";
 
 // 颜色映射标准: https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md

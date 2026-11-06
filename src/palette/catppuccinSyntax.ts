@@ -18,8 +18,8 @@
  */
 
 import type { CatppuccinFlavor } from "@catppuccin/palette";
-import { rgba } from "../functions";
-import type { Syntax } from "../types";
+import { rgba } from "../core/functions";
+import type { Syntax } from "../core/gitea";
 
 /**
  * @source https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md

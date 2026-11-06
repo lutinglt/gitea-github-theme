@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { giteaColor } from "@lutinglt/gitea-github-theme/themes";
+import { giteaArcGreenColor, giteaDarkColor, giteaLightColor } from "../themes";
 import { describe, expect, it } from "vitest";
 import { gitea2ThemeVars } from "./gitea";
 
@@ -27,37 +27,37 @@ import { gitea2ThemeVars } from "./gitea";
 
 describe("gitea2ThemeVars", () => {
   it("dark 快照", () => {
-    expect(gitea2ThemeVars(giteaColor.dark)).toMatchSnapshot();
+    expect(gitea2ThemeVars(giteaDarkColor)).toMatchSnapshot();
   });
 
   it("light 快照", () => {
-    expect(gitea2ThemeVars(giteaColor.light)).toMatchSnapshot();
+    expect(gitea2ThemeVars(giteaLightColor)).toMatchSnapshot();
   });
 
   it("arc-green 快照", () => {
-    expect(gitea2ThemeVars(giteaColor.arcGreen)).toMatchSnapshot();
+    expect(gitea2ThemeVars(giteaArcGreenColor)).toMatchSnapshot();
   });
 
   it("dark isDarkTheme 为 true", () => {
-    expect(gitea2ThemeVars(giteaColor.dark).isDarkTheme).toBe(true);
+    expect(gitea2ThemeVars(giteaDarkColor).isDarkTheme).toBe(true);
   });
 
   it("light isDarkTheme 为 false", () => {
-    expect(gitea2ThemeVars(giteaColor.light).isDarkTheme).toBe(false);
+    expect(gitea2ThemeVars(giteaLightColor).isDarkTheme).toBe(false);
   });
 
   it("arc-green isDarkTheme 为 true", () => {
-    expect(gitea2ThemeVars(giteaColor.arcGreen).isDarkTheme).toBe(true);
+    expect(gitea2ThemeVars(giteaArcGreenColor).isDarkTheme).toBe(true);
   });
 
   it("dark 输出含 color 和 github 顶层键", () => {
-    const result = gitea2ThemeVars(giteaColor.dark);
+    const result = gitea2ThemeVars(giteaDarkColor);
     expect(result.color).toBeDefined();
     expect(result.github).toBeDefined();
   });
 
   it("color 含基础颜色键", () => {
-    const result = gitea2ThemeVars(giteaColor.dark);
+    const result = gitea2ThemeVars(giteaDarkColor);
     const requiredColors = ["primary", "secondary", "red", "green", "blue", "body", "text", "box"];
     for (const key of requiredColors) {
       expect((result.color as Record<string, unknown>)[key], `gitea-dark: 缺少 color.${key}`).toBeDefined();
@@ -65,7 +65,7 @@ describe("gitea2ThemeVars", () => {
   });
 
   it("github 对象含必须键", () => {
-    const result = gitea2ThemeVars(giteaColor.dark);
+    const result = gitea2ThemeVars(giteaDarkColor);
     expect(result.github.fgColor).toBeDefined();
     expect(result.github.bgColor).toBeDefined();
     expect(result.github.button).toBeDefined();

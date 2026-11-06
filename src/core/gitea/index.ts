@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import type { MapLeafNodes } from "../core";
+import type { MapLeafNodes } from "..";
 import color from "./color";
 
 /** GitHub 预览代码高亮色 */

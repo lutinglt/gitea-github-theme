@@ -19,7 +19,7 @@
 
 import type { Primer } from "@lutinglt/gitea-github-theme/assets";
 import { saturate } from "color2k";
-import { scaleColorLight, rgba } from "../functions";
+import { scaleColorLight, rgba } from "../core/functions";
 import { deepOverride } from "../utils";
 import type { GitHubColor } from "./github";
 

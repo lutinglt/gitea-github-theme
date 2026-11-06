@@ -28,23 +28,9 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
     "paths": {
-      "@lutinglt/gitea-github-theme/core": ["./src"],
-      "@lutinglt/gitea-github-theme/vite-plugin": ["./src/vite-plugin"],
-      "@lutinglt/gitea-github-theme/styles": ["./styles"],
-      "@lutinglt/gitea-github-theme/styles/common": ["./styles/common"],
-      "@lutinglt/gitea-github-theme/themes": ["./themes"],
+      "@lutinglt/gitea-github-theme/*": ["./src/*"],
       "@lutinglt/gitea-github-theme/assets": ["./assets"]
     }
   },
-  "include": [
-    "src",
-    "styles",
-    "themes",
-    "scripts",
-    "assets/primer",
-    "eslint.config.ts",
-    "vite.config.ts",
-    "theme.config.ts",
-    "theme.test.ts"
-  ]
+  "include": ["src", "scripts", "assets/primer", "vite.config.ts", "vitest.config.ts"]
 }

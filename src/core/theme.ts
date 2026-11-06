@@ -21,8 +21,8 @@ import { createGlobalTheme, globalKeyframes, globalStyle } from "@vanilla-extrac
 import pkg from "../../package.json";
 import type { GiteaColor, GitHubColor, ThemeColor } from "../palette";
 import { gitea2ThemeVars, github2ThemeColor, primer2Chroma, primer2CodeMirror, theme2ThemeVars } from "../palette";
-import selectors from "../selectors";
-import { otherThemeVars, syntaxVars, themeVars, type Syntax } from "../types";
+import selectors from "./selectors";
+import { otherThemeVars, syntaxVars, themeVars, type Syntax } from "./gitea";
 import { createChroma } from "./chroma";
 import { createCodeMirror } from "./codemirror";
 import type { MapLeafNodes } from "./types";

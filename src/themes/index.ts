@@ -17,7 +17,6 @@
  * limitations under the License.
  */
 
-import type { GiteaColor } from "@lutinglt/gitea-github-theme/core";
 import {
   catppuccinFrappeTheme,
   catppuccinLatteTheme,
@@ -47,12 +46,7 @@ import {
 } from "./github";
 import { giteaArcGreenColor, giteaArcGreenTheme } from "./giteaArcGreen";
 
-export const giteaColor: Record<string, GiteaColor> = {
-  dark: giteaDarkColor,
-  light: giteaLightColor,
-  arcGreen: giteaArcGreenColor,
-};
-
+export { giteaDarkColor, giteaLightColor, giteaArcGreenColor };
 export default {
   github: {
     dark: githubDarkTheme,

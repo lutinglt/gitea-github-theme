@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import type { CSSVarFunction } from "@lutinglt/gitea-github-theme/core";
+import type { CSSVarFunction } from "..";
 import { describe, expect, it } from "vitest";
 import { extractVarName } from "./var";
 

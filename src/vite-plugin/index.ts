@@ -129,3 +129,5 @@ export function giteaGitHubTheme(themeConfig: ThemeConfig): PluginOption {
     },
   };
 }
+
+export { defineThemeConfig } from "./themeConfig";
