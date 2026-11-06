@@ -4,6 +4,7 @@
 .github/** linguist-vendored
 .vscode/** linguist-generated
 assets/** linguist-generated
+docs/** linguist-vendored
 dist/** linguist-generated
 gitea/** linguist-generated
 primer/** linguist-generated
