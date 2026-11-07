@@ -4,8 +4,9 @@
 
 Gitea GitHub Theme is a build-time CSS generation framework that produces static `.css` theme files for the
 [Gitea](https://github.com/go-gitea/gitea) self-hosted code platform. The project takes design tokens and color
-definitions as input, transforms them through a layered pipeline, and outputs 30+ minified CSS files covering 7 theme
-series (default, colorblind, tritanopia, pink, gitea, catppuccin, high-contrast).
+definitions as input, transforms them through a layered pipeline, and outputs 33 minified CSS files (24 solid themes
+plus 9 auto-derived `auto` themes) covering 9 theme series (default, colorblind, tritanopia, high-contrast,
+high-contrast-colorblind, high-contrast-tritanopia, pink, gitea, catppuccin).
 
 **Core principle:** Full type safety and CSS-in-JS developer experience at build time, pure static CSS delivered to the
 browser with zero runtime overhead.
@@ -15,95 +16,37 @@ browser with zero runtime overhead.
 ## Architecture Layers
 
 ```
-┌──────────────────────────────────────────────────────────────┐
-│                  Theme Configuration Layer                     │
-│  theme.config.ts: declares theme series, color types,         │
-│  display names, accessibility metadata                        │
-└──────────────────────────┬───────────────────────────────────┘
-                           │
-┌──────────────────────────▼───────────────────────────────────┐
-│                  Color Definition Layer                        │
-│  ┌──────────┐  ┌──────────────┐  ┌───────────────────┐      │
-│  │ primer/  │  │  themes/     │  │ themes/catppuccin  │      │
-│  │ (auto-   │  │  github.ts   │  │ .ts               │      │
-│  │ generated│  │  gitea*.ts   │  │                    │      │
-│  │ Primer   │  │              │  │                    │      │
-│  │ tokens)  │  │              │  │                    │      │
-│  └────┬─────┘  └──────┬───────┘  └─────────┬─────────┘      │
-│       │               │                    │                 │
-│  primer2GitHubColor   defineTheme   catppuccin2ThemeColor    │
-│       │               │                    │                 │
-│       ▼               ▼                    ▼                 │
-│  GitHubColor      Theme             ThemeColor               │
-│                   (colorType:                                │
-│                    "github")                                 │
-└──────────────────────────┬───────────────────────────────────┘
-                           │
-┌──────────────────────────▼───────────────────────────────────┐
-│                  Color Transformation Layer                    │
-│  src/palette/                                                │
-│  ┌────────────┐  ┌────────────┐  ┌──────────────────┐      │
-│  │ github.ts  │  │ theme.ts   │  │ gitea.ts         │      │
-│  │ GitHubColor│  │ ThemeColor │  │ GiteaColor       │      │
-│  │    →       │  │    →       │  │    →             │      │
-│  │ ThemeColor │  │ ThemeVars  │  │ ThemeVars        │      │
-│  └────────────┘  └────────────┘  └──────────────────┘      │
-│                                                              │
-│  Unified output: ThemeVars (flat key-value map of CSS vars)   │
-└──────────────────────────┬───────────────────────────────────┘
-                           │
-┌──────────────────────────▼───────────────────────────────────┐
-│                  Core Framework Layer                          │
-│  src/core/                                                   │
-│  ┌──────────────┐  ┌──────────┐  ┌───────────────────┐      │
-│  │ theme.ts     │  │ css.ts   │  │ chroma.ts         │      │
-│  │ createTheme()│  │ css()    │  │ codemirror.ts     │      │
-│  │ defineTheme()│  │cssCombine│  │ meta.ts           │      │
-│  └──────┬───────┘  │cssStyle()│  └───────────────────┘      │
-│         │          └────┬─────┘                              │
-│         │               │                                    │
-│  vanilla-extract adapter (src/vanilla-extract.ts)             │
-│  ┌──────────────────────────────────────────────────┐       │
-│  │  setAdapter() → intercepts appendCss,            │       │
-│  │  registerClassName, registerComposition          │       │
-│  │  → serializes all CSS to strings at build time   │       │
-│  └──────────────────────────────────────────────────┘       │
-└──────────────────────────┬───────────────────────────────────┘
-                           │
-┌──────────────────────────▼───────────────────────────────────┐
-│                  Style Override Layer                          │
-│  styles/                                                     │
-│  ┌──────────┐  ┌──────────────┐  ┌──────────────────┐      │
-│  │ public/  │  │ components/  │  │ templates/       │      │
-│  │ (base    │  │ (page-level  │  │ (template-       │      │
-│  │  elements│  │  styles)     │  │  specific styles) │      │
-│  └──────────┘  └──────────────┘  └──────────────────┘      │
-│  common/ (reusable CSS fragments: buttons, labels, anims)    │
-│                                                              │
-│  Each file uses css`...` template literals                   │
-│  → composed with cssCombine() at export boundary             │
-└──────────────────────────┬───────────────────────────────────┘
-                           │
-┌──────────────────────────▼───────────────────────────────────┐
-│                  Build Pipeline                                │
-│  src/vite-plugin/index.ts (Vite plugin)                      │
-│                                                              │
-│  config() hook:                                              │
-│    1. Dynamically import theme.config.ts                      │
-│    2. Resolve all theme entries + generate auto themes        │
-│                                                              │
-│  generateBundle() hook:                                      │
-│    1. Import styles/ → CSS string (public + components)      │
-│    2. For each theme entry:                                  │
-│       a. compileCSS(createThemeMetaInfo + createTheme)       │
-│       b. lightningcss.transform() → minify                   │
-│       c. Append style overrides (non-auto themes only)       │
-│       d. emitFile → output .css asset                        │
-│    3. For auto themes: generate @import declarations         │
-└──────────────────────────┬───────────────────────────────────┘
-                           │
-                           ▼
-                    dist/theme-github-*.css
+Upstream data: @primer/primitives, @catppuccin/palette, Gitea reference files
+   │ scripts/ (buildPrimerTSToken.ts, updateGitea.ts, updateArcGreen.ts)
+   ▼
+assets/: primer/*.ts (generated tokens), gitea*/ (upstream reference snapshots)
+   │
+   ▼
+① Theme configuration  src/themeConfig.ts (9 series) + src/themes/ (color declarations)
+   │
+   ▼
+② Color transformation  src/palette/ (github / theme / gitea paths → ThemeVars)
+   │
+   ▼
+③ Core framework  src/core/color.ts (GitHubColor / GiteaColor / ThemeColor input types)
+                  src/core/gitea/vars.ts (CSS variable contract)
+                  src/core/theme.ts (createTheme, discriminated-union dispatch)
+                  src/core/css.ts (css, cssCombine, cssStyle)
+                  src/vanilla-extract.ts (adapter hijacking → CSS strings)
+   │
+   ▼
+④ Style overrides  src/styles/ (public, components, templates, common, themes)
+   │
+   ▼
+⑤ Build orchestration  src/vite-plugin/index.ts
+                       vite.config.ts statically imports themeConfig and passes it to the plugin
+                       config(): registers a virtual placeholder input
+                       generateBundle(): clear placeholder output → expand themes and
+                           derive auto themes → compileCSS() → lightningcss minify →
+                           concatenate three style levels → emitFile
+   │
+   ▼
+dist/theme-github-*.css (33 static CSS files, no JS output)
 ```
 
 ---
@@ -118,7 +61,7 @@ generation process (one output file per theme, auto theme generation, etc.).
 
 **Solution:** Bypass vanilla-extract's default plugin and use its low-level adapter API directly.
 
-In [src/vanilla-extract.ts](src/vanilla-extract.ts):
+In [src/vanilla-extract.ts](../src/vanilla-extract.ts):
 
 ```typescript
 export function compileCSS(compileFn: () => void): string {
@@ -177,6 +120,11 @@ Catppuccin flavor ──────────────→ ThemeColor ─�
 GiteaColor ────────────────────────────────────→ ThemeVars
 ```
 
+The three input types `GitHubColor`, `GiteaColor`, and `ThemeColor` are defined in
+[src/core/color.ts](../src/core/color.ts) and exported from `@lutinglt/gitea-github-theme/core`; `src/palette/` contains
+only the conversion functions and no longer re-exports these types. Both theme declarations and conversion chains import
+the types from `core`.
+
 Each path has different complexity requirements:
 
 | Path     | Use case                     | Complexity                       | Examples                           |
@@ -195,7 +143,7 @@ Each path has different complexity requirements:
 - ANSI console colors
 - Direction-aware (scale direction reversed for dark/light themes)
 
-Implemented in `theme2ThemeVars()` in [src/palette/theme.ts](src/palette/theme.ts).
+Implemented in `theme2ThemeVars()` in [src/palette/theme.ts](../src/palette/theme.ts).
 
 ### 3. CSS Variable Naming Convention
 
@@ -204,7 +152,7 @@ Implemented in `theme2ThemeVars()` in [src/palette/theme.ts](src/palette/theme.t
 
 **Solution:** Use vanilla-extract's `createGlobalThemeContract` with a custom `varMapper`.
 
-In [src/types/vars.ts](src/types/vars.ts):
+In [src/core/gitea/vars.ts](../src/core/gitea/vars.ts):
 
 ```typescript
 function varMapper(prefix: string | null = null) {
@@ -237,55 +185,50 @@ This creates a bidirectional mapping:
 
 **Solution:** The `css()` template tag validates CSS syntax at build time using lightningcss.
 
-In [src/core/css.ts](src/core/css.ts):
+In [src/core/css.ts](../src/core/css.ts):
 
 ```typescript
 export function css(strings: TemplateStringsArray, ...values: CSSInterpolation[]): CSSString {
   const result = strings.reduce((acc, s, i) => acc + s + String(values[i] ?? ""), "")
   // Build-time validation: lightningcss parses and reports syntax errors
   transform({ filename: getCallerInfo(1), code: Buffer.from(result) })
-  return result as CSSString
+  return brandCSS(result)
 }
 ```
 
 If a developer writes invalid CSS, the build fails immediately with `file:line` info pointing to the problematic
 template literal. This catches errors that would otherwise only be discovered through browser DevTools.
 
-**Trade-off:** Each `css` template call invokes `transform()` once. For ~60 style files, this adds ~200ms to the initial
+**Trade-off:** Each `css` template call invokes `transform()` once. For 79 style files, this adds ~200ms to the initial
 build (one-time cost, subsequent builds benefit from Bun's module cache).
 
 ---
 
 ## Vite Build Pipeline
 
-The build is orchestrated by a custom Vite plugin in [src/vite-plugin/index.ts](src/vite-plugin/index.ts):
+The build is orchestrated by a custom Vite plugin in [src/vite-plugin/index.ts](../src/vite-plugin/index.ts). The
+configuration is not imported dynamically by the plugin: `vite.config.ts` statically imports
+`@lutinglt/gitea-github-theme/themeConfig` and passes it to `giteaGitHubTheme(themeConfig)`.
 
-### Phase 1: Configuration Resolution (`config` hook)
+### Phase 1: Input Setup (`config` hook)
 
-1. Dynamically import `theme.config.ts` via Bun native TypeScript + package exports self-reference
-   (`@lutinglt/gitea-github-theme/theme.config.ts`)
-2. Iterate over each theme series, generating entries for each theme variant (dark, light, soft-dark, frappe, macchiato,
-   etc.)
-3. When a series has both dark and light variants, auto-generate an `auto` theme entry
-4. Provide a virtual module entry (Vite needs at least one input to trigger `generateBundle`)
+`config()` only returns `build.rolldownOptions.input = virtual:gitea-github-theme-placeholder`; the plugin provides that
+virtual module through `resolveId` and `load`. Vite needs at least one input to trigger `generateBundle`, while all
+final artifacts are produced via `emitFile`.
 
-### Phase 2: CSS Generation (`generateBundle` hook)
+### Phase 2: Theme Resolution and CSS Generation (`generateBundle` hook)
 
-For each **non-auto theme**:
-
-1. Call `compileCSS()` with a function that:
-   - Creates Gitea theme meta info (`createThemeMetaInfo`) — sets `--theme-color-scheme`, `--theme-display-name`,
-     `--theme-colorblind-type`
-   - Creates theme CSS variables (`createTheme`) — generates all `--color-*` and `--github-*` variables, global styles,
-     keyframe animations, code highlighting
-2. Minify captured CSS via `lightningcss.transform()`
-3. Append public style overrides (`styles/`)
-
-For each **auto theme**:
-
-1. Generate `@import` declarations with `prefers-color-scheme` media queries referencing the corresponding dark/light
-   theme files
-2. Include theme meta info so Gitea recognizes it as an auto color theme
+1. Delete all chunks/assets produced by the placeholder entry
+2. Walk `themeConfig.themeSeries` to expand theme entries; when a series has both dark and light variants, append an
+   `auto` theme entry
+3. Minify `globalStyles` with lightningcss
+4. For each theme, call `compileCSS()` which runs `createThemeMetaInfo` (`--theme-color-scheme`, `--theme-display-name`,
+   `--theme-colorblind-type`); solid themes also run `createTheme` (all `--color-*` / `--github-*` variables, global
+   styles, keyframes, code highlighting), while auto themes only emit meta info. Then minify the result
+5. Concatenate style overrides by priority: `globalStyles` < `themeSeries.styles` < `entry.styles` (solid themes only)
+6. For `auto` themes, emit two `@import` declarations with `prefers-color-scheme` referencing the dark/light theme
+   files, plus the theme meta info
+7. `emitFile({ type: "asset", fileName })` writes the CSS asset; no JS chunk is produced
 
 ### CSS Output Structure
 
@@ -293,7 +236,7 @@ For each **auto theme**:
 theme-github-dark.css:
   ├── @keyframes (overlayAppear, overlayAppearDown, overlayAppearUp)
   ├── gitea-theme-meta-info { --theme-color-scheme: dark; ... }
-  ├── :root { --theme-version: "1.26.2.260605"; --is-dark-theme: true; ... }
+  ├── :root { --theme-version: "<version>.YYMMDD"; --is-dark-theme: true; ... }
   ├── :root { --color-primary: #4493f8; --color-primary-contrast: ... }
   ├── ... (200+ CSS variable declarations)
   ├── .chroma { ... } (syntax highlighting)
@@ -306,13 +249,16 @@ theme-github-auto.css:
   └── gitea-theme-meta-info { --theme-color-scheme: auto; ... }
 ```
 
+`--theme-version` is produced by `getThemeVersion()` in `src/core/theme.ts` as `${pkg.version}.YYMMDD`.
+
 ---
 
 ## Color System Deep Dive
 
 ### Color Scale Calculation
 
-`scaleColorLight()` in [src/functions/color.ts](src/functions/color.ts) implements the Sass `color.scale()` algorithm:
+`scaleColorLight()` in [src/core/functions/color.ts](../src/core/functions/color.ts) implements the Sass `color.scale()`
+algorithm:
 
 ```
 darken:  newL = currentL × (1 + scale/100)         [scale < 0]
@@ -327,8 +273,8 @@ This is **proportional scaling**, not linear offset. Its significance:
 
 ### ThemeColor → ThemeVars Derivation
 
-`theme2ThemeVars()` in [src/palette/theme.ts](src/palette/theme.ts) takes `ThemeColor` (15 base colors + metadata) and
-derives the full `ThemeVars` (200+ CSS variable values):
+`theme2ThemeVars()` in [src/palette/theme.ts](../src/palette/theme.ts) takes `ThemeColor` (15 base colors + metadata)
+and derives the full `ThemeVars` (200+ CSS variable values):
 
 1. **Primary scale**: 7 dark variants, 7 light variants, 9 alpha variants, hover/active states — all from a single hex
    color
@@ -358,7 +304,7 @@ Style overrides use Gitea's existing DOM selectors. The override strategy follow
 Styles are composed together via a `cssCombine()` call tree:
 
 ```
-styles/index.ts
+src/styles/index.ts
   ├── public/index.ts    (base elements, buttons, inputs, dropdowns, menus, tables)
   ├── components/index.ts (navbar, heatmap, issues, repo files, Actions, etc.)
   └── templates/index.ts  (template-specific styles)
@@ -369,11 +315,11 @@ dependency graph visible and avoids the implicit ordering issues of CSS `@import
 
 ### cssStyle() Reusable Fragments
 
-`cssStyle()` in [src/core/css.ts](src/core/css.ts) enables extracting reusable CSS property sets while retaining
+`cssStyle()` in [src/core/css.ts](../src/core/css.ts) enables extracting reusable CSS property sets while retaining
 vanilla-extract's type checking:
 
 ```typescript
-// In styles/common/button.ts:
+// In src/styles/common/button.ts:
 export const primaryButtonStyle = cssStyle({
   color: themeVars.github.button.primary.fgColor.rest,
   backgroundColor: themeVars.github.button.primary.bgColor.rest,
@@ -381,7 +327,7 @@ export const primaryButtonStyle = cssStyle({
   boxShadow: themeVars.github.shadow.resting.small,
 })
 
-// In styles/public/button.ts:
+// In src/styles/public/button.ts:
 const baseButton = css`
   .ui.primary.button {
     ${primaryButtonStyle}
@@ -397,56 +343,73 @@ outputs static CSS strings.
 ## Directory Structure
 
 ```
-├── theme.config.ts         # Theme series declaration (framework entry point)
 ├── src/
-│   ├── index.ts            # Public API exports
-│   ├── core/               # Core framework
-│   │   ├── theme.ts        # createTheme, defineTheme (color → CSS variables)
-│   │   ├── css.ts          # css(), cssCombine(), cssStyle()
-│   │   ├── chroma.ts       # Chroma (server-side) syntax highlighting
-│   │   ├── codemirror.ts   # CodeMirror (client-side) syntax highlighting
-│   │   ├── meta.ts         # Gitea theme meta info (color scheme, display name)
-│   │   └── types.d.ts      # MapLeafNodes, CSSVarFunction, Tokens
-│   ├── palette/            # Color conversion and transformation
-│   │   ├── theme.ts        # ThemeColor → ThemeVars (simplified API)
-│   │   ├── github.ts       # GitHubColor → ThemeColor (Primer path)
-│   │   ├── gitea.ts        # GiteaColor → ThemeVars (native path)
-│   │   ├── catppuccin.ts   # CatppuccinFlavor → ThemeColor
-│   │   ├── primer.ts       # Primer tokens → GitHubColor / Chroma / CodeMirror
-│   │   ├── display.ts      # Display color scale → GitHubColor overrides
+│   ├── themeConfig.ts       # Theme series declaration (9 series)
+│   ├── themeConfig.test.ts  # Build artifact contract tests
+│   ├── env.d.ts             # Deployment / development env var types
+│   ├── utils.ts             # deepOverride, getCallerInfo
+│   ├── vanilla-extract.ts   # Adapter hijacking (compileCSS, captureStyle)
+│   ├── core/                # Core framework
+│   │   ├── index.ts         # Public API exports
+│   │   ├── theme.ts         # createTheme, defineTheme (color → CSS variables)
+│   │   ├── css.ts           # css(), cssCombine(), cssStyle()
+│   │   ├── chroma.ts        # Chroma (server-side) syntax highlighting
+│   │   ├── codemirror.ts    # CodeMirror (client-side) syntax highlighting
+│   │   ├── meta.ts          # Gitea theme meta info
+│   │   ├── selectors.ts     # Shared CSS selectors
+│   │   ├── types.ts         # MapLeafNodes, CSSVarFunction, Tokens
+│   │   ├── color.ts         # GitHubColor / GiteaColor / ThemeColor input types (public API)
+│   │   ├── functions/       # Utility functions
+│   │   │   ├── color.ts     # scaleColorLight (Sass color.scale) + rgba wrapper
+│   │   │   └── var.ts       # extractVarName (CSS variable name extraction)
+│   │   └── gitea/           # Type definitions and CSS variable contracts
+│   │       ├── index.ts     # Types derived from the contract shape
+│   │       ├── vars.ts      # createGlobalThemeContract + varMapper
+│   │       └── color/       # Color structure definitions (primary, secondary, named, etc.)
+│   ├── palette/             # Color conversion and transformation (incl. __snapshots__/)
+│   │   ├── theme.ts         # ThemeColor → ThemeVars (simplified API)
+│   │   ├── github.ts        # GitHubColor → ThemeColor (Primer path)
+│   │   ├── gitea.ts         # GiteaColor → ThemeVars (native path)
+│   │   ├── catppuccin.ts    # CatppuccinFlavor → ThemeColor
+│   │   ├── primer.ts        # Primer tokens → GitHubColor / Chroma / CodeMirror
+│   │   ├── display.ts       # Display color scale → GitHubColor overrides
 │   │   └── catppuccinSyntax.ts  # Catppuccin syntax highlighting
-│   ├── functions/          # Utility functions
-│   │   ├── color.ts         # scaleColorLight (Sass color.scale) + rgba wrapper
-│   │   └── var.ts          # extractVarName (CSS variable name extraction)
-│   ├── types/              # Type definitions and CSS variable contracts
-│   │   ├── color/          # Color structure definitions (primary, secondary, named, etc.)
-│   │   └── vars.ts         # createGlobalThemeContract + varMapper
-│   ├── vite-plugin/        # Build tooling
-│   │   ├── index.ts        # Main Vite plugin
-│   │   ├── themeConfig.ts  # defineThemeConfig, TypeScript types
-│   │   └── utils.ts        # buildFullThemeName, buildFullDisplayName
-│   ├── vanilla-extract.ts  # Adapter hijacking (compileCSS, captureStyle)
-│   ├── selectors.ts        # Shared CSS selectors (root, chroma, codeMirror, emoji)
-│   └── utils.ts            # deepOverride, getCallerInfo
-├── styles/                 # CSS style overrides
-│   ├── common/             # Reusable CSS fragments (buttons, labels, animations)
-│   ├── public/             # Base elements (buttons, inputs, dropdowns, menus, tables)
-│   ├── components/         # Page-specific styles (navbar, heatmap, repo, issues, Actions)
-│   └── templates/          # Template-specific styles
-├── themes/                 # Color theme definitions
-│   ├── github.ts           # GitHub theme colors (from Primer tokens)
-│   ├── giteaDark.ts        # Gitea dark theme colors (native format)
-│   ├── giteaLight.ts       # Gitea light theme colors (native format)
-│   └── catppuccin.ts       # Catppuccin theme colors
-├── primer/                 # Auto-generated Primer design tokens (from @primer/primitives)
-├── scripts/                # Build and utility scripts
-│   ├── buildPrimerTSToken.ts  # Generate primer/ TypeScript tokens from @primer/primitives
-│   ├── syncTheme.ts        # Sync build artifacts to remote Gitea instance
-│   ├── updateGitea.ts      # Update Gitea reference files
-│   ├── translate.ts        # Generate localization/translation files
-│   └── version.ts          # Version management
-├── dist/                   # Build output (30+ CSS files)
-└── templates/              # Optional Gitea Go template overrides
+│   ├── styles/              # CSS style overrides
+│   │   ├── common/          # Reusable CSS fragments (buttons, labels, animations)
+│   │   ├── public/          # Base elements (buttons, inputs, dropdowns, menus, tables)
+│   │   ├── components/      # Page-specific styles (navbar, heatmap, repo, issues, Actions)
+│   │   ├── templates/       # Template-specific styles
+│   │   └── themes/          # Third-party theme extension examples
+│   ├── themes/              # Color theme definitions
+│   │   ├── github.ts        # GitHub theme colors (from Primer tokens)
+│   │   ├── giteaDark.ts     # Gitea dark theme colors (native format)
+│   │   ├── giteaLight.ts    # Gitea light theme colors (native format)
+│   │   ├── giteaArcGreen.ts # Arc Green theme colors
+│   │   ├── catppuccin.ts    # Catppuccin theme colors
+│   │   └── index.ts         # Aggregation of the three theme families
+│   └── vite-plugin/         # Build tooling
+│       ├── index.ts         # Main Vite plugin
+│       ├── themeConfig.ts   # defineThemeConfig, TypeScript types
+│       └── utils.ts         # buildFullThemeName, buildFullDisplayName
+├── assets/                  # Upstream data and generated tokens
+│   ├── index.ts             # Data entry point (primer / Primer)
+│   ├── primer/              # Auto-generated Primer design tokens (from @primer/primitives)
+│   ├── gitea/               # Upstream Gitea reference templates and theme CSS
+│   └── gitea-theme/         # Third-party Arc Green color source
+├── scripts/                 # Upstream sync, generation and deployment scripts
+│   ├── buildPrimerTSToken.ts  # Generate assets/primer/*.ts from @primer/primitives
+│   ├── themes.config.ts     # Primer token build inputs
+│   ├── updateGitea.ts       # Sync Gitea reference files by version
+│   ├── updateArcGreen.ts    # Sync third-party Arc Green CSS
+│   ├── translate.ts         # Merge upstream translations → dist/options/locale
+│   ├── syncTheme.ts         # scp build artifacts to a Gitea instance
+│   ├── version.ts           # Print version for releases
+│   └── utils.ts             # pkg, rootDir, proxy
+├── templates/               # Optional Gitea Go template overrides
+├── options/locale/          # Custom translation keys used by templates
+├── docs/                    # Bilingual (EN/ZH) documentation
+├── dist/                    # Build output (33 CSS files)
+└── *.config.ts              # vite / vitest / oxlint / oxfmt configs
 ```
 
 ---
@@ -461,8 +424,9 @@ but serialize to static CSS strings at build time via adapter hijacking.
 **Rejected:** Using vanilla-extract's built-in Vite plugin (outputs per-module CSS files, unsuitable for single-file
 theme output).
 
-**Trade-off:** Adapter API is undocumented and may change between vanilla-extract versions. Mitigated by locking
-`@vanilla-extract/css` version and using snapshot tests to detect CSS output changes.
+**Trade-off:** Adapter API is undocumented and may change between vanilla-extract versions. Mitigated by palette
+snapshot tests and build artifact contract tests that detect CSS output changes, plus focused regression testing when
+upgrading `@vanilla-extract/css`.
 
 ### Decision 2: Single-file CSS output
 
@@ -471,9 +435,9 @@ theme output).
 **Rejected:** Splitting into multiple CSS files via `@import` chains (Gitea's theme system loads one CSS file per
 theme).
 
-**Trade-off:** Style overrides are duplicated across all theme files (~60KB × 30 themes ≈ 1.8MB redundancy). This is a
-Gitea constraint, not a design choice. The alternative (separate common.css) would require Gitea to support multi-file
-theme loading.
+**Trade-off:** Style overrides are duplicated across the 24 solid theme files (~60KB × 24 ≈ 1.4MB redundancy, ~2.6MB
+total in `dist`). This is a Gitea constraint, not a design choice. The alternative (separate common.css) would require
+Gitea to support multi-file theme loading.
 
 ### Decision 3: LightningCSS for both syntax validation and output minification
 
@@ -483,8 +447,8 @@ Vite plugin).
 **Rejected:** PostCSS (slower), esbuild CSS (less feature-complete), no validation at all.
 
 **Trade-off:** LightningCSS is lenient—it recovers from many syntax errors rather than throwing. This means validation
-in `css()` catches severe errors but may silently accept certain edge cases. Build output snapshot tests partially
-compensate for this.
+in `css()` catches severe errors but may silently accept certain edge cases. Palette snapshot tests and structural
+assertions on the build artifacts partially compensate for this.
 
 ### Decision 4: Bun-only runtime
 
@@ -503,8 +467,8 @@ in `package.json`.
 **Rejected:** Relative path imports everywhere.
 
 **Trade-off:** Requires `paths` mappings in `tsconfig.json` for IDE support. Benefits: import paths are consistent
-whether used as a dependency or developed locally; no path confusion between `src/`, `styles/`, and `themes/`
-directories.
+whether used as a dependency or developed locally; no path confusion between the `src/core`, `src/styles`, and
+`src/themes` modules.
 
 ---
 
@@ -512,7 +476,7 @@ directories.
 
 ### Quick Path (15 color definitions)
 
-1. Create `themes/my-theme.ts`:
+1. Create `src/themes/my-theme.ts`:
 
 ```typescript
 import { defineTheme } from "@lutinglt/gitea-github-theme/core"
@@ -552,7 +516,7 @@ const syntaxColor: Syntax = {/* Code highlighting colors */}
 export default defineTheme({ colorType: "theme", themeColor, syntaxColor })
 ```
 
-2. Register in `theme.config.ts`:
+2. Register in `src/themeConfig.ts`:
 
 ```typescript
 {
@@ -570,20 +534,20 @@ export default defineTheme({ colorType: "theme", themeColor, syntaxColor })
 ### Full Path (Primer tokens)
 
 For pixel-perfect GitHub color matching, use the `github` path with direct Primer design token mapping. See
-`themes/github.ts` and `src/palette/github.ts` for the full mapping reference.
+`src/themes/github.ts` and `src/palette/github.ts` for the full mapping reference.
 
 ---
 
 ## Testing Strategy
 
-| Layer        | Test type       | Location                     | What it verifies                                                                                                                 |
-| ------------ | --------------- | ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| Utility      | Unit tests      | `src/utils.test.ts`          | `deepOverride` behavior, `getCallerInfo` stack parsing                                                                           |
-| Functions    | Unit tests      | `src/functions/*.test.ts`    | `scaleColorLight` numeric computation, `extractVarName` parsing                                                                  |
-| Core         | Unit tests      | `src/core/css.test.ts`       | `css()` validation, `cssCombine()` composition, `cssStyle()` serialization                                                       |
-| Palette      | Snapshot tests  | `src/palette/*.test.ts`      | Full color conversion chains (Primer → ThemeColor → ThemeVars, Catppuccin → ThemeColor → ThemeVars, etc.)                        |
-| Palette      | Structure tests | `src/palette/github.test.ts` | Color value validity (all leaf nodes are valid CSS color strings), required keys exist                                           |
-| Build output | Integration     | `src/build-output.test.ts`   | Expected files exist, CSS content validity (vars present, no debug residue, hex lowercase, color-scheme match), file size limits |
+| Layer        | Test type       | Location                       | What it verifies                                                                                                                 |
+| ------------ | --------------- | ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
+| Utility      | Unit tests      | `src/utils.test.ts`            | `deepOverride` behavior, `getCallerInfo` stack parsing                                                                           |
+| Functions    | Unit tests      | `src/core/functions/*.test.ts` | `scaleColorLight` numeric computation, `extractVarName` parsing                                                                  |
+| Core         | Unit tests      | `src/core/css.test.ts`         | `css()` validation, `cssCombine()` composition, `cssStyle()` serialization                                                       |
+| Palette      | Snapshot tests  | `src/palette/*.test.ts`        | Full color conversion chains (Primer → ThemeColor → ThemeVars, Catppuccin → ThemeColor → ThemeVars, etc.)                        |
+| Palette      | Structure tests | `src/palette/github.test.ts`   | Color value validity (all leaf nodes are valid CSS color strings), required keys exist                                           |
+| Build output | Integration     | `src/themeConfig.test.ts`      | Expected files exist, CSS content validity (vars present, no debug residue, hex lowercase, color-scheme match), file size limits |
 
 ---
 
@@ -592,5 +556,5 @@ For pixel-perfect GitHub color matching, use the `github` path with direct Prime
 - [CONTRIBUTING.md](CONTRIBUTING.md) — Development environment setup and contribution guide
 - [README.md](README.md) — User-facing installation and usage
 - [README_CN.md](README_CN.md) — Chinese user installation and usage
-- [primer/README.md](primer/README.md) — Auto-generated Primer token documentation
+- [assets/primer/README.md](../assets/primer/README.md) — Auto-generated Primer token documentation
 - [CHANGELOG.md](CHANGELOG.md) — Release history

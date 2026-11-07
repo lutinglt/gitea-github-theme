@@ -19,9 +19,8 @@
 
 import type { Primer } from "@lutinglt/gitea-github-theme/assets"
 
-import type { Chroma, CodeMirror } from "../core"
+import type { Chroma, CodeMirror, GitHubColor } from "../core"
 import { deepOverride } from "../utils"
-import type { GitHubColor } from "./github"
 
 export function primer2GitHubColor(primer: Primer, dark: boolean = false): GitHubColor {
   return {

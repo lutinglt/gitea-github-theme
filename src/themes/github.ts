@@ -23,8 +23,7 @@
 
 import { primer } from "@lutinglt/gitea-github-theme/assets"
 
-import { defineTheme } from "../core"
-import type { GitHubColor } from "../palette"
+import { defineTheme, type GitHubColor } from "../core"
 import { display2GitHubColor, primer2GitHubColor } from "../palette"
 import { deepOverride } from "../utils"
 

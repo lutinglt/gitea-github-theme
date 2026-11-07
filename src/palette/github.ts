@@ -17,17 +17,10 @@
  * limitations under the License.
  */
 
-import type { Primer } from "@lutinglt/gitea-github-theme/assets"
 import { mix, saturate } from "color2k"
 
 import { scaleColorLight, themeVars } from "../core"
-import type { Ansi, Console, Diff, GitHub, Message, Other, Series16 } from "../core"
-import type { ThemeColor } from "./theme"
-
-export type GitHubColor = {
-  isDarkTheme: boolean
-  themeExtra: { button: { primary: { fgColor: { accent: string } } } }
-} & Primer
+import type { Ansi, Console, Diff, GitHub, Message, Other, Series16, GitHubColor, ThemeColor } from "../core"
 
 export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
   const ansi: Ansi = {

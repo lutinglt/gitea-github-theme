@@ -20,9 +20,10 @@
 import { primer } from "@lutinglt/gitea-github-theme/assets"
 import { describe, expect, it } from "vitest"
 
+import type { ThemeColor } from "../core"
 import { github2ThemeColor } from "./github"
 import { primer2GitHubColor } from "./primer"
-import { theme2ThemeVars, type ThemeColor } from "./theme"
+import { theme2ThemeVars } from "./theme"
 
 // ============================================================================
 // 辅助工具

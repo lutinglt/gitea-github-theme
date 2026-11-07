@@ -20,9 +20,8 @@
 import type { Primer } from "@lutinglt/gitea-github-theme/assets"
 import { saturate } from "color2k"
 
-import { scaleColorLight, rgba } from "../core"
+import { scaleColorLight, rgba, type GitHubColor } from "../core"
 import { deepOverride } from "../utils"
-import type { GitHubColor } from "./github"
 
 export type DisplayColor = Primer["display"]["pink"]["scale"]
 

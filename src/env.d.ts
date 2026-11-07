@@ -19,8 +19,6 @@
 
 declare namespace NodeJS {
   interface ProcessEnv {
-    /** 开发环境主题名称 */
-    DEV_THEME?: string
     /** 主题编译后上传的服务器地址 (通过 SCP 上传) */
     SSH_SERVER?: string
     /** 主题编译后上传的服务器用户名 (不支持密码, 请确保有 SSH 免密登录) */

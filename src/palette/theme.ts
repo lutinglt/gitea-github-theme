@@ -19,82 +19,9 @@
 
 import { saturate } from "color2k"
 
-import type {
-  ThemeVars,
-  Ansi,
-  Console,
-  Diff,
-  GitHub,
-  Message,
-  Named,
-  Other,
-  Primary,
-  Secondary,
-  Series16,
-} from "../core"
+import type { ThemeVars, Ansi, ThemeColor, Message, Named, Primary, Secondary, Series16 } from "../core"
 import { rgba, scaleColorLight, themeVars } from "../core"
 
-type OverrideColor = {
-  ansi?: Ansi
-  message?: Message
-  named?: Named
-  series16?: Series16
-}
-export type ThemeColor = {
-  /** 用于标识当前是否为暗色主题: `true` 暗色 `false` 亮色 */
-  isDarkTheme: boolean
-  /** 主色调(强调色) */
-  primary: string
-  /** 主色调的对比色, 一般用于 `color` 属性, primary 用于 `background-color` */
-  primaryContrast: string
-  /** 副色调(边框色) */
-  secondary: string
-  /** 基础颜色 */
-  base: {
-    /** 红色 */
-    red: string
-    /** 橙色 */
-    orange: string
-    /** 黄色 */
-    yellow: string
-    /** 黄绿色/橄榄色 */
-    olive: string
-    /** 绿色 */
-    green: string
-    /** 蓝绿色/青色(偏绿) */
-    teal: string
-    /** 蓝绿色/青色(偏蓝) */
-    cyan: string
-    /** 蓝色 */
-    blue: string
-    /** 蓝紫色/紫罗兰色 */
-    violet: string
-    /** 紫色 */
-    purple: string
-    /** 粉红色 */
-    pink: string
-    /** 棕色 */
-    brown: string
-    /** 黑色 */
-    black: string
-    /** 灰色 */
-    grey: string
-    /** 金色 */
-    gold: string
-    /** 白色 */
-    white: string
-  }
-  /** Action 日志 */
-  console: Console
-  /** 提交代码对比 */
-  diff: Diff
-  /** 其他 */
-  other: Other
-  /** 仅适用于本主题的全局变量, 取自 Github */
-  github: GitHub
-  /** 覆盖默认生成的颜色 */
-  override?: OverrideColor
-}
 export function theme2ThemeVars(themeColor: ThemeColor): ThemeVars {
   const brightDir = themeColor.isDarkTheme ? -1 : 1
 

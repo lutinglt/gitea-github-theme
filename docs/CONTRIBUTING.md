@@ -2,25 +2,26 @@
 
 ## Directory Structure
 
-| Directory         | Description                                                       |
-| ----------------- | ----------------------------------------------------------------- |
-| src               | Theme generation framework and utilities                          |
-| src/core          | Theme generation framework (CSS vars, syntax highlighting styles) |
-| src/functions     | Theme utilities (color calculations, etc.)                        |
-| src/palette       | Theme palettes (GitHub / Gitea / Catppuccin)                      |
-| src/types         | Theme color variable type definitions                             |
-| src/vite-plugin   | Theme Vite build plugin                                           |
-| styles            | Theme style overrides                                             |
-| styles/common     | Reusable CSS style fragments                                      |
-| styles/public     | Base element or cross-page element styles                         |
-| styles/components | Page-specific styles                                              |
-| styles/templates  | Template-specific styles                                          |
-| themes            | Color theme definitions                                           |
-| primer            | Auto-generated Primer design tokens                               |
-| scripts           | Build and utility scripts                                         |
-| templates         | Gitea template overrides (optional)                               |
-| gitea             | Upstream Gitea reference files                                    |
-| screenshots       | Theme screenshots                                                 |
+| Directory             | Description                                                       |
+| --------------------- | ----------------------------------------------------------------- |
+| src                   | Theme generation framework and utilities                          |
+| src/core              | Theme generation framework (CSS vars, syntax highlighting styles) |
+| src/core/functions    | Theme utilities (color calculations, etc.)                        |
+| src/core/gitea        | CSS variable contracts and color type definitions                 |
+| src/palette           | Theme palettes (GitHub / Gitea / Catppuccin)                      |
+| src/styles            | Theme style overrides                                             |
+| src/styles/common     | Reusable CSS style fragments                                      |
+| src/styles/public     | Base element or cross-page element styles                         |
+| src/styles/components | Page-specific styles                                              |
+| src/styles/templates  | Template-specific styles                                          |
+| src/themes            | Color theme definitions                                           |
+| src/vite-plugin       | Theme Vite build plugin                                           |
+| assets/primer         | Auto-generated Primer design tokens                               |
+| assets/gitea          | Upstream Gitea reference files                                    |
+| scripts               | Build and utility scripts                                         |
+| templates             | Gitea template overrides (optional)                               |
+| options               | Custom translation keys used by templates                         |
+| docs                  | Bilingual (EN/ZH) documentation                                   |
 
 ## Contribution Notes
 
@@ -44,7 +45,7 @@ If you believe you have a better approach, feel free to submit an Issue.
 The theme depends on the Bun runtime. Please ensure Bun is installed in your environment. Bun 1.3.14 or later is
 recommended.
 
-Please use VSCode for development and install the recommended extensions in the repository.
+Please use VSCode for development and install the extensions described below.
 
 If you prefer fewer extensions, you must install the `vscode-styled-components` extension, which is used for rendering
 and checking CSS template strings in TypeScript.
@@ -71,7 +72,7 @@ Environment variables are used to send compiled themes to a server for quick pre
 Compile and sync to remote server for preview:
 
 ```bash
-bun bundle:dev
+bun dev
 ```
 
 Compile all themes:
@@ -94,7 +95,8 @@ bun commit
 
 ## Development Conventions
 
-`src`, `styles`, and `themes` are the project's main directories.
+`src/core`, `src/palette`, `src/styles`, `src/themes`, and `src/vite-plugin` are the project's main modules, all located
+under `src/`.
 
 When referencing across modules, use package exports paths. For example:
 `import { defineTheme } from "@lutinglt/gitea-github-theme/core"`
@@ -103,7 +105,7 @@ When referencing files within the same module, use relative paths. For example: 
 
 ## Color Theme Contributions
 
-Theme file naming format: `themeName.ts`, used together with `theme.config.ts` registration.
+Theme file naming format: `themeName.ts`, used together with `src/themeConfig.ts` registration.
 
 If a theme has both dark and light variants, the framework automatically generates an auto color theme.
 
@@ -118,7 +120,7 @@ automatically compute and generate all Gitea CSS variables.
 Color calculation functions can be imported from `@lutinglt/gitea-github-theme/core` (`scaleColorLight`, `rgba`), or use
 the `color2k` library for additional color manipulation.
 
-Example: `themes/my-theme.ts`
+Example: `src/themes/my-theme.ts`
 
 ```ts
 /**
@@ -156,13 +158,14 @@ const syntaxColor: Syntax = {/* ... */}
 export default defineTheme({ colorType: "gitea", themeColor: giteaColor, syntaxColor })
 ```
 
-After completing theme color development, register the theme series in `theme.config.ts`, compile it, and take
-screenshots in a Gitea instance. Place them in the `screenshots` directory with filenames matching the theme names.
-(Cloning the repository is recommended to avoid leaking personal information.)
+After completing theme color development, register the theme series in `src/themeConfig.ts`, compile it, and take
+screenshots in a Gitea instance. Screenshots are hosted on the repository's `assets` branch and referenced from the
+README via raw links, with filenames matching the theme names. (Cloning the repository is recommended to avoid leaking
+personal information.)
 
 Then add screenshot information to `README.md`.
 
-For color reuse patterns, see the colorblind theme implementation in `themes/github.ts`.
+For color reuse patterns, see the colorblind theme implementation in `src/themes/github.ts`.
 
 ## Theme Style Contributions
 
@@ -170,13 +173,13 @@ Theme styles use the `css()` template string for development. Strings are proces
 nesting syntax. Do not use SCSS functions; for complex processing, use TypeScript libraries such as the bundled
 `color2k` library.
 
-For complex logic, it is recommended to extract it into functions under the `src/functions` directory.
+For complex logic, it is recommended to extract it into functions under the `src/core/functions` directory.
 
 All colors used in theme styles must use color variables. Import them via
 `import { themeVars } from "@lutinglt/gitea-github-theme/core"`.
 
 When using theme-specific color variables like `${themeVars.github.xxx}`, please add the file and variable to the
-corresponding variable's comment in `src/types/color/github`.
+corresponding variable's comment in `src/core/gitea/color/github.ts`.
 
 For small border-radius values (6px), use the global border-radius variable. Import via
 `import { otherThemeVars } from "@lutinglt/gitea-github-theme/core"` and use `${otherThemeVars.border.radius}`.

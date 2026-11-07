@@ -49,9 +49,20 @@
  * @author lutinglt
  */
 
-import type { Ansi, Console, Diff, Message, Named, Other, Primary, Secondary, Series16, Syntax } from "../core"
+import type {
+  Ansi,
+  Console,
+  Diff,
+  Message,
+  Named,
+  Other,
+  Primary,
+  Secondary,
+  Series16,
+  Syntax,
+  GiteaColor,
+} from "../core"
 import { defineTheme, themeVars } from "../core"
-import type { GiteaColor } from "../palette"
 
 const primary: Primary = {
   self: "#87ab63",

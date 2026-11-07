@@ -20,9 +20,10 @@
 import { flavors } from "@catppuccin/palette"
 import { describe, expect, it } from "vitest"
 
+import type { ThemeColor } from "../core"
 import { catppuccin2ThemeColor } from "./catppuccin"
 import { catppuccin2Syntax } from "./catppuccinSyntax"
-import { theme2ThemeVars, type ThemeColor } from "./theme"
+import { theme2ThemeVars } from "./theme"
 
 // ============================================================================
 // 辅助工具

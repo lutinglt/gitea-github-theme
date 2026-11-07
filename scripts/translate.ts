@@ -48,7 +48,7 @@ const locales = fs.readdirSync(path.join(rootDir, localePath)).filter(file => fi
 fs.mkdirSync(path.join(rootDir, "dist", localePath), { recursive: true })
 for (const locale of locales) {
   const localUrl = `${githubUrl}/${locale}`
-  const localFile = path.join(rootDir, "dist", localePath, locale)
+  const localFile = path.join(rootDir, localePath, locale)
   const themeLocale = JSON.parse(fs.readFileSync(localFile, "utf-8")) as Record<string, string>
 
   const response = await fetch(localUrl)

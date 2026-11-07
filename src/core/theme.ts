@@ -20,10 +20,10 @@
 import { createGlobalTheme, globalKeyframes, globalStyle } from "@vanilla-extract/css"
 
 import pkg from "../../package.json"
-import type { GiteaColor, GitHubColor, ThemeColor } from "../palette"
 import { gitea2ThemeVars, github2ThemeColor, primer2Chroma, primer2CodeMirror, theme2ThemeVars } from "../palette"
 import { createChroma } from "./chroma"
 import { createCodeMirror } from "./codemirror"
+import type { GiteaColor, GitHubColor, ThemeColor } from "./color"
 import { otherThemeVars, syntaxVars, themeVars, type Syntax } from "./gitea"
 import selectors from "./selectors"
 import type { MapLeafNodes } from "./types"

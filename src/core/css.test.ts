@@ -288,7 +288,7 @@ describe("cssStyle", () => {
   describe("特殊值处理", () => {
     it("null 和 undefined 被过滤", () => {
       // 使用 as any 绕过类型检查，仅测试运行时 null/undefined 过滤行为
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      // oxlint-disable-next-line typescript/no-explicit-any
       const input: Record<string, any> = {
         color: "red",
         backgroundColor: null,

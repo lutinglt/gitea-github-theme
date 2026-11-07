@@ -19,36 +19,9 @@
 
 import { opacify, saturate } from "color2k"
 
-import type {
-  ThemeVars,
-  Ansi,
-  Console,
-  Diff,
-  GitHub,
-  Message,
-  Named,
-  Other,
-  Primary,
-  Secondary,
-  Series16,
-} from "../core"
+import type { ThemeVars, GiteaColor, GitHub } from "../core"
 import { scaleColorLight, themeVars } from "../core"
-import { type DeepPartial, deepOverride } from "../utils"
-
-export type GiteaColor = {
-  isDarkTheme: boolean
-  primary: Primary
-  secondary: Secondary
-  named: Named
-  message: Message
-  ansi: Ansi
-  console: Console
-  diff: Diff
-  other: Other
-  series16: Series16
-  /** 自定义 GitHub 主题变量映射，未填写的字段自动使用默认值 */
-  github?: DeepPartial<GitHub>
-}
+import { deepOverride } from "../utils"
 
 export function gitea2ThemeVars(giteaColor: GiteaColor): ThemeVars {
   const github: GitHub = {

@@ -88,7 +88,7 @@ export function cssStyle<T extends SelectorStyleRule>(input: T): T & CSSObject {
     cssParts.push(`${key}{${String(val)}}`)
   }
   const cssText = cssParts.join("")
-  input.toString = () => cssText
+  const output = { ...input, toString: () => cssText }
 
-  return brandCSS(input)
+  return brandCSS(output)
 }

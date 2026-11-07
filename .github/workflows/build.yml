@@ -16,13 +16,10 @@ jobs:
           filters: |
             src:
               - ".github/workflows/*.yml"
-              - "primer/**/*.ts"
+              - "assets/primer/**/*.ts"
               - "scripts/*"
               - "src/**/*.ts"
-              - "styles/**/*.ts"
-              - "themes/*.ts"
-              - "theme.config.ts"
-              - "vite.config.ts"
+              - "*.config.ts"
               - "package.json"
 
       - uses: oven-sh/setup-bun@v2

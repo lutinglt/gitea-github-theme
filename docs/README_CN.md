@@ -231,7 +231,7 @@ THEMES = github-catppuccin-auto, github-catppuccin-latte, github-catppuccin-frap
 | :-------------------------------- | :-------------------------- | :---- | :----- | :---- | :---- | :---- |
 | --custom-branch-menu-width        | 分支菜单的宽度              | 320px | 320px  | 320px | Gitea | 640px |
 | --custom-clone-menu-width         | 克隆按钮的菜单宽度          | Gitea | 332px  | 200px | 150px | 400px |
-| --custom-user-menu-width          | 用户菜单的宽度              | 192px | 256px  |       | Gitea | 320px |
+| --custom-user-menu-width          | 用户菜单的宽度              | 192px | 200px  |       | Gitea | 320px |
 | --custom-explore-repolist-columns | 探索页面的仓库列表列数      | 2     | 2      | 2     |       |       |
 | --custom-explore-userlist-columns | 探索页面的用户/组织列表列数 | 3     | 1      | 2/3   |       |       |
 | --custom-user-repolist-columns    | 用户页面的仓库列表列数      | 2     | 2      | 1/2   |       |       |

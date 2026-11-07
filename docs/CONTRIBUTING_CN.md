@@ -2,25 +2,26 @@
 
 ## 目录结构
 
-| 目录              | 说明                                      |
-| ----------------- | ----------------------------------------- |
-| src               | 主题生成框架与辅助工具的包                |
-| src/core          | 主题生成框架（CSS 变量、语法高亮样式）    |
-| src/functions     | 主题辅助工具（颜色计算等）                |
-| src/palette       | 主题调色板（GitHub / Gitea / Catppuccin） |
-| src/types         | 主题颜色变量类型定义                      |
-| src/vite-plugin   | 主题的 Vite 构建插件                      |
-| styles            | 主题样式覆盖                              |
-| styles/common     | 可复用的 CSS 样式片段                     |
-| styles/public     | 基础元素或跨页面元素的样式                |
-| styles/components | 具体页面的样式                            |
-| styles/templates  | 模板专属样式                              |
-| themes            | 颜色主题定义                              |
-| primer            | 自动生成的 Primer 设计令牌                |
-| scripts           | 构建和工具脚本                            |
-| templates         | Gitea 模板覆盖（可选）                    |
-| gitea             | 上游 Gitea 参考文件                       |
-| screenshots       | 主题截图                                  |
+| 目录                  | 说明                                      |
+| --------------------- | ----------------------------------------- |
+| src                   | 主题生成框架与辅助工具的包                |
+| src/core              | 主题生成框架（CSS 变量、语法高亮样式）    |
+| src/core/functions    | 主题辅助工具（颜色计算等）                |
+| src/core/gitea        | CSS 变量契约与颜色类型定义                |
+| src/palette           | 主题调色板（GitHub / Gitea / Catppuccin） |
+| src/styles            | 主题样式覆盖                              |
+| src/styles/common     | 可复用的 CSS 样式片段                     |
+| src/styles/public     | 基础元素或跨页面元素的样式                |
+| src/styles/components | 具体页面的样式                            |
+| src/styles/templates  | 模板专属样式                              |
+| src/themes            | 颜色主题定义                              |
+| src/vite-plugin       | 主题的 Vite 构建插件                      |
+| assets/primer         | 自动生成的 Primer 设计令牌                |
+| assets/gitea          | 上游 Gitea 参考文件                       |
+| scripts               | 构建和工具脚本                            |
+| templates             | Gitea 模板覆盖（可选）                    |
+| options               | 模板使用的自定义翻译词条                  |
+| docs                  | 中英双语文档                              |
 
 ## 贡献说明
 
@@ -40,7 +41,7 @@
 
 主题依赖于 Bun 环境, 请确保你的环境中已经安装了 Bun, 推荐使用 Bun 1.3.14 或以上版本.
 
-请使用 VSCode 开发, 并安装仓库中推荐的插件.
+请使用 VSCode 开发, 并按下方说明安装所需插件.
 
 如果不喜欢多余的插件, 请务必安装 `vscode-styled-components` 插件, 此插件用于渲染和检查 TypeScript 中的 CSS 模板字符串.
 
@@ -65,7 +66,7 @@ bun install
 编译并同步到远程服务器预览
 
 ```bash
-bun bundle:dev
+bun dev
 ```
 
 编译所有主题
@@ -88,7 +89,7 @@ bun commit
 
 ## 开发规范
 
-`src`, `styles`, `themes` 为项目的主目录.
+`src/core`、`src/palette`、`src/styles`、`src/themes`、`src/vite-plugin` 为项目的主要模块, 均位于 `src/` 下.
 
 跨模块引用时使用 package exports 路径, 例如 `import { defineTheme } from "@lutinglt/gitea-github-theme/core"`
 
@@ -96,7 +97,7 @@ bun commit
 
 ## 颜色主题贡献
 
-主题文件命名格式: `主题名称.ts`，配合 `theme.config.ts` 注册使用。
+主题文件命名格式: `主题名称.ts`，配合 `src/themeConfig.ts` 注册使用。
 
 如果主题同时有深色和亮色变体, 框架会自动生成 auto 自动颜色主题.
 
@@ -109,7 +110,7 @@ bun commit
 颜色计算函数可从 `@lutinglt/gitea-github-theme/core` 导入 `scaleColorLight` 和 `rgba`, 或使用 `color2k`
 库进行额外颜色操作.
 
-例: `themes/主题名称.ts`
+例: `src/themes/主题名称.ts`
 
 ```ts
 /**
@@ -147,12 +148,12 @@ const syntaxColor: Syntax = {/* ... */}
 export default defineTheme({ colorType: "gitea", themeColor: giteaColor, syntaxColor })
 ```
 
-完成主题颜色开发后, 在 `theme.config.ts` 中注册主题系列, 编译后在 Gitea 实例中截图放入 `screenshots`
-目录, 截图名与主题名相同. (推荐克隆本仓库, 避免泄露个人隐私)
+完成主题颜色开发后, 在 `src/themeConfig.ts` 中注册主题系列, 编译后在 Gitea 实例中截图. 截图托管在仓库的 `assets`
+分支, README 通过 raw 链接引用, 文件名与主题名对应. (推荐克隆本仓库, 避免泄露个人隐私)
 
 然后将截图信息添加到 `README.md` 文件中.
 
-颜色复用案例可参考 `themes/github.ts` 的色盲主题实现.
+颜色复用案例可参考 `src/themes/github.ts` 的色盲主题实现.
 
 ## 主题样式贡献
 
@@ -160,12 +161,12 @@ export default defineTheme({ colorType: "gitea", themeColor: giteaColor, syntaxC
 模板字符串开发，字符串经过 LightningCSS 处理, 支持 CSS 嵌套语法。请勿使用 SCSS 函数，如需复杂处理请使用 TypeScript 相关库，比如项目自带的
 `color2k` 库。
 
-推荐需要复杂处理时，提取逻辑到 `src/functions` 目录下的函数中。
+推荐需要复杂处理时，提取逻辑到 `src/core/functions` 目录下的函数中。
 
 主题样式中使用到的所有颜色必须使用颜色变量，导入 `import { themeVars } from "@lutinglt/gitea-github-theme/core"`
 
 涉及到主题自己的颜色变量 `${themeVars.github.xxx}`，在使用时请将使用的文件和变量添加到对应变量的注释中
-`src/types/color/github`
+`src/core/gitea/color/github.ts`
 
 小型圆角 (6px) 请使用全局圆角变量，导入
 `import { otherThemeVars } from "@lutinglt/gitea-github-theme/core"`，`${otherThemeVars.border.radius}`
