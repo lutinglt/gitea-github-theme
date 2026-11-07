@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core"
 
 // 任务状态标签, 目前仅在管理员页面 Runner 状态中看到
 const taskStatusLabel = css`
@@ -45,6 +45,6 @@ const taskStatusLabel = css`
       background: ${themeVars.color.warning.bg};
     }
   }
-`;
+`
 
-export default cssCombine(taskStatusLabel);
+export default cssCombine(taskStatusLabel)

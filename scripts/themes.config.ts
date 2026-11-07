@@ -1,6 +1,6 @@
 // @source https://github.com/primer/primitives/blob/main/scripts/themes.config.ts
 
-import type { TokenBuildInput } from "@primer/primitives/dist/build/types/tokenBuildInput";
+import type { TokenBuildInput } from "@primer/primitives/dist/build/types/tokenBuildInput"
 
 export const themes: TokenBuildInput[] = [
   {
@@ -241,4 +241,4 @@ export const themes: TokenBuildInput[] = [
       `src/tokens/base/color/dark/display-dark.json5`,
     ],
   },
-];
+]

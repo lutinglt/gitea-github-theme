@@ -17,27 +17,38 @@
  * limitations under the License.
  */
 
-import { opacify, saturate } from "color2k";
-import type { ThemeVars } from "../core";
-import { scaleColorLight } from "../core/functions";
-import type { Ansi, Console, Diff, GitHub, Message, Named, Other, Primary, Secondary, Series16 } from "../core/gitea";
-import { themeVars } from "../core/gitea";
-import { type DeepPartial, deepOverride } from "../utils";
+import { opacify, saturate } from "color2k"
+
+import type {
+  ThemeVars,
+  Ansi,
+  Console,
+  Diff,
+  GitHub,
+  Message,
+  Named,
+  Other,
+  Primary,
+  Secondary,
+  Series16,
+} from "../core"
+import { scaleColorLight, themeVars } from "../core"
+import { type DeepPartial, deepOverride } from "../utils"
 
 export type GiteaColor = {
-  isDarkTheme: boolean;
-  primary: Primary;
-  secondary: Secondary;
-  named: Named;
-  message: Message;
-  ansi: Ansi;
-  console: Console;
-  diff: Diff;
-  other: Other;
-  series16: Series16;
+  isDarkTheme: boolean
+  primary: Primary
+  secondary: Secondary
+  named: Named
+  message: Message
+  ansi: Ansi
+  console: Console
+  diff: Diff
+  other: Other
+  series16: Series16
   /** 自定义 GitHub 主题变量映射，未填写的字段自动使用默认值 */
-  github?: DeepPartial<GitHub>;
-};
+  github?: DeepPartial<GitHub>
+}
 
 export function gitea2ThemeVars(giteaColor: GiteaColor): ThemeVars {
   const github: GitHub = {
@@ -167,7 +178,7 @@ export function gitea2ThemeVars(giteaColor: GiteaColor): ThemeVars {
         },
       },
     },
-  };
+  }
   return {
     isDarkTheme: giteaColor.isDarkTheme,
     color: {
@@ -182,5 +193,5 @@ export function gitea2ThemeVars(giteaColor: GiteaColor): ThemeVars {
       series: { num16: giteaColor.series16 },
     },
     github: deepOverride(github, giteaColor.github ?? {}),
-  };
+  }
 }

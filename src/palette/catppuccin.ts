@@ -17,20 +17,20 @@
  * limitations under the License.
  */
 
-import type { CatppuccinFlavor } from "@catppuccin/palette";
-import { darken, lighten, mix, saturate } from "color2k";
-import { rgba, scaleColorLight } from "../core/functions";
-import type { Ansi, Console, Diff, GitHub, Other } from "../core/gitea";
-import { themeVars } from "../core/gitea";
-import type { ThemeColor } from "./theme";
+import type { CatppuccinFlavor } from "@catppuccin/palette"
+import { darken, lighten, mix, saturate } from "color2k"
+
+import { rgba, scaleColorLight, themeVars } from "../core"
+import type { Ansi, Console, Diff, GitHub, Other } from "../core"
+import type { ThemeColor } from "./theme"
 
 // 颜色映射标准: https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md
 // 颜色映射参考: https://github.com/catppuccin/gitea/blob/main/src/_theme.scss
 // 颜色映射参考: https://github.com/catppuccin/userstyles/blob/main/styles/github/catppuccin.user.less
 export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
-  const accentColor = flavor.colors.mauve.hex;
+  const accentColor = flavor.colors.mauve.hex
   // 颜色偏向 base, 避免 latte 下与背景色相同
-  const buttonColor = mix(flavor.colors.base.hex, flavor.colors.surface0.hex, 0.4);
+  const buttonColor = mix(flavor.colors.base.hex, flavor.colors.surface0.hex, 0.4)
 
   const ansi: Ansi = {
     black: flavor.ansiColors.black.normal.hex,
@@ -51,7 +51,7 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
       cyan: flavor.ansiColors.cyan.bright.hex,
       white: flavor.ansiColors.white.bright.hex,
     },
-  };
+  }
   const console: Console = {
     fg: {
       self: flavor.colors.text.hex,
@@ -61,7 +61,7 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
     activeBg: flavor.colors.surface1.hex,
     hoverBg: rgba(flavor.colors.surface2.hex, 0.2),
     link: flavor.colors.blue.hex,
-  };
+  }
   const diff: Diff = {
     added: {
       fg: flavor.colors.green.hex,
@@ -79,7 +79,7 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
       row: { bg: rgba(flavor.colors.yellow.hex, 0.2), border: rgba(flavor.colors.yellow.hex, 0.2) },
     },
     inactive: flavor.colors.overlay2.hex,
-  };
+  }
   const other: Other = {
     logo: themeVars.color.primary.self,
     body: flavor.colors.base.hex,
@@ -147,7 +147,7 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
     danger: themeVars.color.red.self,
     transparency: { grid: { light: "#ffffff", dark: "#e5e5e5" } },
     workflowEdgeHover: accentColor,
-  };
+  }
   // 颜色映射参考: https://github.com/catppuccin/userstyles/blob/main/styles/github/catppuccin.user.less
   const github: GitHub = {
     avatar: { bgColor: rgba(flavor.colors.surface1.hex, 0.26), borderColor: flavor.colors.surface0.hex },
@@ -262,7 +262,7 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
         },
       },
     },
-  };
+  }
   return {
     isDarkTheme: flavor.dark,
     primary: accentColor,
@@ -293,5 +293,5 @@ export function catppuccin2ThemeColor(flavor: CatppuccinFlavor): ThemeColor {
     override: {
       ansi,
     },
-  };
+  }
 }

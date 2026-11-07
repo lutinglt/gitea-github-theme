@@ -17,33 +17,34 @@
  * limitations under the License.
  */
 
-import { createGlobalTheme, globalKeyframes, globalStyle } from "@vanilla-extract/css";
-import pkg from "../../package.json";
-import type { GiteaColor, GitHubColor, ThemeColor } from "../palette";
-import { gitea2ThemeVars, github2ThemeColor, primer2Chroma, primer2CodeMirror, theme2ThemeVars } from "../palette";
-import selectors from "./selectors";
-import { otherThemeVars, syntaxVars, themeVars, type Syntax } from "./gitea";
-import { createChroma } from "./chroma";
-import { createCodeMirror } from "./codemirror";
-import type { MapLeafNodes } from "./types";
+import { createGlobalTheme, globalKeyframes, globalStyle } from "@vanilla-extract/css"
+
+import pkg from "../../package.json"
+import type { GiteaColor, GitHubColor, ThemeColor } from "../palette"
+import { gitea2ThemeVars, github2ThemeColor, primer2Chroma, primer2CodeMirror, theme2ThemeVars } from "../palette"
+import { createChroma } from "./chroma"
+import { createCodeMirror } from "./codemirror"
+import { otherThemeVars, syntaxVars, themeVars, type Syntax } from "./gitea"
+import selectors from "./selectors"
+import type { MapLeafNodes } from "./types"
 
 function getThemeVersion(): string {
   // 版本号: 版本号.YYMMDD
-  const now = new Date();
-  const year = now.getFullYear().toString().slice(-2);
-  const month = (now.getMonth() + 1).toString().padStart(2, "0");
-  const day = now.getDate().toString().padStart(2, "0");
-  return `${pkg.version}.${year}${month}${day}`;
+  const now = new Date()
+  const year = now.getFullYear().toString().slice(-2)
+  const month = (now.getMonth() + 1).toString().padStart(2, "0")
+  const day = now.getDate().toString().padStart(2, "0")
+  return `${pkg.version}.${year}${month}${day}`
 }
 
-export type ThemeVars = { isDarkTheme: boolean } & MapLeafNodes<typeof themeVars, string>;
+export type ThemeVars = { isDarkTheme: boolean } & MapLeafNodes<typeof themeVars, string>
 export type ThemeColors =
   | { colorType: "github"; themeColor: GitHubColor }
   | { colorType: "gitea"; themeColor: GiteaColor; syntaxColor: Syntax }
-  | { colorType: "theme"; themeColor: ThemeColor; syntaxColor: Syntax };
+  | { colorType: "theme"; themeColor: ThemeColor; syntaxColor: Syntax }
 export type Theme = {
-  isDarkTheme: boolean;
-} & ThemeColors;
+  isDarkTheme: boolean
+} & ThemeColors
 
 /** 定义颜色, 用于生成颜色主题
  *
@@ -85,7 +86,7 @@ export function defineTheme(themeColors: ThemeColors): Theme {
   return {
     isDarkTheme: themeColors.themeColor.isDarkTheme,
     ...themeColors,
-  };
+  }
 }
 
 export function createTheme(theme: Theme): void {
@@ -94,45 +95,45 @@ export function createTheme(theme: Theme): void {
       ? theme2ThemeVars(github2ThemeColor(theme.themeColor))
       : theme.colorType === "theme"
         ? theme2ThemeVars(theme.themeColor)
-        : gitea2ThemeVars(theme.themeColor);
+        : gitea2ThemeVars(theme.themeColor)
 
   // 注入主题标识和版本号
   createGlobalTheme(selectors.root, {
     theme: { version: `"${getThemeVersion()}"` },
     is: { dark: { theme: isDarkTheme.toString() } },
-  });
+  })
   // 全局主题变量
-  createGlobalTheme(selectors.root, themeVars, themeVarsColor);
+  createGlobalTheme(selectors.root, themeVars, themeVarsColor)
   createGlobalTheme(selectors.root, otherThemeVars, {
     border: { radius: "6px" },
     color: { git: "#f05133" },
     checkbox: { size: "14px" },
     gap: { inline: "4px", block: "8px" },
-  });
+  })
   // 全局样式
   globalStyle(selectors.root, {
     accentColor: themeVars.color.accent,
     colorScheme: isDarkTheme ? "dark" : "light",
-  });
-  if (isDarkTheme) globalStyle(selectors.emoji, { filter: "invert(100%) hue-rotate(180deg)" });
+  })
+  if (isDarkTheme) globalStyle(selectors.emoji, { filter: "invert(100%) hue-rotate(180deg)" })
   // 全局动画
   globalKeyframes(selectors.overlayAppear, {
     "0%": { opacity: 0 },
     "100%": { opacity: 1 },
-  });
+  })
   globalKeyframes(selectors.overlayAppearDown, {
     "0%": { opacity: 0, transform: "translateY(-8px)" },
     "100%": { opacity: 1, transform: "translateY(0)" },
-  });
+  })
   globalKeyframes(selectors.overlayAppearUp, {
     "0%": { opacity: 0, transform: "translateY(8px)" },
     "100%": { opacity: 1, transform: "translateY(0)" },
-  });
+  })
   // 代码高亮
   if (theme.colorType === "github") {
-    createChroma(primer2Chroma(theme.themeColor));
-    createCodeMirror(primer2CodeMirror(theme.themeColor));
+    createChroma(primer2Chroma(theme.themeColor))
+    createCodeMirror(primer2CodeMirror(theme.themeColor))
   } else {
-    createGlobalTheme(selectors.root, syntaxVars, theme.syntaxColor);
+    createGlobalTheme(selectors.root, syntaxVars, theme.syntaxColor)
   }
 }

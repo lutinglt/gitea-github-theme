@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core"
 
 // 提交列表
 const commit = css`
@@ -82,7 +82,7 @@ const commit = css`
       }
     }
   }
-`;
+`
 
 const commitStatus = css`
   .flex-text-inline[data-global-init="initCommitStatuses"] {
@@ -99,7 +99,7 @@ const commitStatus = css`
       min-height: 16px;
     }
   }
-`;
+`
 
 // 提交图
 const commitGraph = css`
@@ -118,6 +118,6 @@ const commitGraph = css`
       }
     }
   }
-`;
+`
 
-export default cssCombine(commit, commitStatus, commitGraph);
+export default cssCombine(commit, commitStatus, commitGraph)

@@ -128,24 +128,24 @@ export function compileCSS(compileFn: () => void): string {
     registerClassName: className => localClassNames.add(className),
     registerComposition: composition => composedClassLists.push(composition),
     // ... other callbacks implemented as no-ops
-  });
+  })
 
   // 2. Set file scope for debugging
-  setFileScope(getCallerInfo(1));
+  setFileScope(getCallerInfo(1))
 
   // 3. Execute the caller's vanilla-extract API calls
-  compileFn();
+  compileFn()
 
   // 4. Tear down adapter
-  endFileScope();
-  removeAdapter();
+  endFileScope()
+  removeAdapter()
 
   // 5. Serialize captured CSS objects to strings
   return transformCss({
     localClassNames: Array.from(localClassNames),
     composedClassLists,
     cssObjs: capturedCssObjs,
-  }).join("\n");
+  }).join("\n")
 }
 ```
 
@@ -211,13 +211,13 @@ function varMapper(prefix: string | null = null) {
   return (value: string | null, path: string[]) => {
     if (value === null) {
       // Auto-generate name from path: ["color","primary","dark","num1"] → "color-primary-dark-1"
-      path = path.filter(item => item !== "self"); // remove "self" key
-      path = path.map(item => item.replace(/^num/, "")); // strip "num" prefix
-      value = path.join("-");
+      path = path.filter(item => item !== "self") // remove "self" key
+      path = path.map(item => item.replace(/^num/, "")) // strip "num" prefix
+      value = path.join("-")
     }
-    if (prefix) value = `${prefix}-${value}`;
-    return value;
-  };
+    if (prefix) value = `${prefix}-${value}`
+    return value
+  }
 }
 ```
 
@@ -241,10 +241,10 @@ In [src/core/css.ts](src/core/css.ts):
 
 ```typescript
 export function css(strings: TemplateStringsArray, ...values: CSSInterpolation[]): CSSString {
-  const result = strings.reduce((acc, s, i) => acc + s + String(values[i] ?? ""), "");
+  const result = strings.reduce((acc, s, i) => acc + s + String(values[i] ?? ""), "")
   // Build-time validation: lightningcss parses and reports syntax errors
-  transform({ filename: getCallerInfo(1), code: Buffer.from(result) });
-  return result as CSSString;
+  transform({ filename: getCallerInfo(1), code: Buffer.from(result) })
+  return result as CSSString
 }
 ```
 
@@ -379,14 +379,14 @@ export const primaryButtonStyle = cssStyle({
   backgroundColor: themeVars.github.button.primary.bgColor.rest,
   borderColor: themeVars.github.button.primary.borderColor.rest,
   boxShadow: themeVars.github.shadow.resting.small,
-});
+})
 
 // In styles/public/button.ts:
 const baseButton = css`
   .ui.primary.button {
     ${primaryButtonStyle}
   }
-`;
+`
 ```
 
 This preserves type safety (vanilla-extract validates property names and value types) in a system that ultimately
@@ -515,8 +515,8 @@ directories.
 1. Create `themes/my-theme.ts`:
 
 ```typescript
-import { defineTheme } from "@lutinglt/gitea-github-theme/core";
-import type { ThemeColor, Syntax } from "@lutinglt/gitea-github-theme/core";
+import { defineTheme } from "@lutinglt/gitea-github-theme/core"
+import type { ThemeColor, Syntax } from "@lutinglt/gitea-github-theme/core"
 
 const themeColor: ThemeColor = {
   isDarkTheme: true,
@@ -541,25 +541,15 @@ const themeColor: ThemeColor = {
     gold: "#eab308",
     white: "#fafafa",
   },
-  console: {
-    /* Actions log colors */
-  },
-  diff: {
-    /* Code diff colors */
-  },
-  other: {
-    /* body, text, input, shadow, etc. */
-  },
-  github: {
-    /* GitHub-specific variables */
-  },
-};
+  console: {/* Actions log colors */},
+  diff: {/* Code diff colors */},
+  other: {/* body, text, input, shadow, etc. */},
+  github: {/* GitHub-specific variables */},
+}
 
-const syntaxColor: Syntax = {
-  /* Code highlighting colors */
-};
+const syntaxColor: Syntax = {/* Code highlighting colors */}
 
-export default defineTheme({ colorType: "theme", themeColor, syntaxColor });
+export default defineTheme({ colorType: "theme", themeColor, syntaxColor })
 ```
 
 2. Register in `theme.config.ts`:

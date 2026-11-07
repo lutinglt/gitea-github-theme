@@ -17,10 +17,11 @@
  * limitations under the License.
  */
 
-import type { Primer } from "@lutinglt/gitea-github-theme/assets";
-import type { Chroma, CodeMirror } from "../core/gitea";
-import { deepOverride } from "../utils";
-import type { GitHubColor } from "./github";
+import type { Primer } from "@lutinglt/gitea-github-theme/assets"
+
+import type { Chroma, CodeMirror } from "../core"
+import { deepOverride } from "../utils"
+import type { GitHubColor } from "./github"
 
 export function primer2GitHubColor(primer: Primer, dark: boolean = false): GitHubColor {
   return {
@@ -33,7 +34,7 @@ export function primer2GitHubColor(primer: Primer, dark: boolean = false): GitHu
       },
     }),
     themeExtra: { button: { primary: { fgColor: { accent: primer.fgColor.success } } } },
-  };
+  }
 }
 
 export function primer2Chroma(primer: Primer): Chroma {
@@ -130,7 +131,7 @@ export function primer2Chroma(primer: Primer): Chroma {
       traceback: primer.prettylights.syntax.invalid.illegal.text,
       underline: primer.prettylights.syntax.markup.italic,
     },
-  };
+  }
 }
 
 export function primer2CodeMirror(primer: Primer): CodeMirror {
@@ -170,5 +171,5 @@ export function primer2CodeMirror(primer: Primer): CodeMirror {
       html: primer.codeMirror.syntax.fgColor.constant,
       xml: primer.codeMirror.syntax.fgColor.constant,
     },
-  };
+  }
 }

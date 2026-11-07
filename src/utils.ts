@@ -19,8 +19,8 @@
 
 /** 递归可选: 将 T 的所有属性(含嵌套)变为可选 */
 export type DeepPartial<T> = {
-  [K in keyof T]?: T[K] extends object ? DeepPartial<T[K]> : T[K];
-};
+  [K in keyof T]?: T[K] extends object ? DeepPartial<T[K]> : T[K]
+}
 
 /**
  * 深度覆盖对象属性
@@ -35,21 +35,21 @@ export type DeepPartial<T> = {
  * 这是 TS 类型系统的已知限制, 运行时类型守卫已保证安全性。
  */
 export function deepOverride<T extends object>(target: T, patch: DeepPartial<T>): T {
-  const result = { ...target } as T;
+  const result = { ...target }
   for (const key of Object.keys(patch) as (keyof T)[]) {
-    const patchVal = patch[key];
-    if (patchVal === undefined) continue;
-    const targetVal = target[key];
+    const patchVal = patch[key]
+    if (patchVal === undefined) continue
+    const targetVal = target[key]
     if (typeof patchVal === "object" && patchVal !== null && typeof targetVal === "object" && targetVal !== null) {
       // 两者均为对象, 递归覆盖
-      result[key] = deepOverride(targetVal, patchVal as DeepPartial<typeof targetVal>) as T[keyof T];
+      result[key] = deepOverride(targetVal, patchVal as DeepPartial<typeof targetVal>)
     } else if (typeof patchVal !== "object" || patchVal === null) {
       // patchVal 为原始值, 直接覆盖
-      result[key] = patchVal as T[keyof T];
+      result[key] = patchVal as T[keyof T]
     }
     // else: patchVal 是对象但 targetVal 不是, 结构不匹配, 跳过
   }
-  return result;
+  return result
 }
 /**
  * 从调用堆栈中获取调用者信息（文件名:行号）。
@@ -72,30 +72,30 @@ export function deepOverride<T extends object>(target: T, patch: DeepPartial<T>)
  */
 
 // 预编译正则：匹配 "at funcName (file:line:col)" 或 "(file:line:col)"
-const STACK_FRAME_WITH_PARENS_RE = /\((.+?):(\d+):(\d+)\)/;
+const STACK_FRAME_WITH_PARENS_RE = /\((.+?):(\d+):(\d+)\)/
 // 匹配 "at file:line:col"（无函数名或匿名场景）
-const STACK_FRAME_BARE_RE = /at\s+(.+?):(\d+):(\d+)/;
+const STACK_FRAME_BARE_RE = /at\s+(.+?):(\d+):(\d+)/
 
 export function getCallerInfo(skipFrames: number = 0): string {
   // 限制 Error 堆栈深度以减少字符串内存开销，仅需要定位调用者
-  const prevLimit = Error.stackTraceLimit;
-  Error.stackTraceLimit = Math.max(3, 3 + Math.max(0, skipFrames));
+  const prevLimit = Error.stackTraceLimit
+  Error.stackTraceLimit = Math.max(3, 3 + Math.max(0, skipFrames))
 
-  const stack = new Error().stack?.split("\n") || [];
+  const stack = new Error().stack?.split("\n") || []
 
   // 恢复堆栈深度限制，避免影响其他依赖完整堆栈的代码
-  Error.stackTraceLimit = prevLimit;
+  Error.stackTraceLimit = prevLimit
 
-  const index = 2 + Math.max(0, skipFrames);
-  const frame = stack[index] || stack[stack.length - 1] || "";
+  const index = 2 + Math.max(0, skipFrames)
+  const frame = stack[index] || stack[stack.length - 1] || ""
 
   // 优先匹配括号内的 file:line:col 格式（V8 / Bun 通用）
-  const parensMatch = frame.match(STACK_FRAME_WITH_PARENS_RE);
-  if (parensMatch) return `${parensMatch[1]}:${parensMatch[2]}`;
+  const parensMatch = frame.match(STACK_FRAME_WITH_PARENS_RE)
+  if (parensMatch) return `${parensMatch[1]}:${parensMatch[2]}`
 
   // 回退：匹配不带括号的格式（匿名函数 / eval 场景）
-  const bareMatch = frame.match(STACK_FRAME_BARE_RE);
-  if (bareMatch) return `${bareMatch[1]}:${bareMatch[2]}`;
+  const bareMatch = frame.match(STACK_FRAME_BARE_RE)
+  if (bareMatch) return `${bareMatch[1]}:${bareMatch[2]}`
 
-  return frame.trim() || "unknown";
+  return frame.trim() || "unknown"
 }

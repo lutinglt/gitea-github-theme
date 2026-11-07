@@ -17,36 +17,37 @@
  * limitations under the License.
  */
 
-import type { StyleRule } from "@vanilla-extract/css";
-import { transform } from "lightningcss";
-import { getCallerInfo } from "../utils";
-import { captureStyle } from "../vanilla-extract";
+import type { StyleRule } from "@vanilla-extract/css"
+import { transform } from "lightningcss"
 
-declare const CSSBrand: unique symbol;
-type CSSObject = { [CSSBrand]: true };
-type CSSPrimitive = string | number;
-type CSSInterpolation = CSSPrimitive | CSSObject | undefined;
+import { getCallerInfo } from "../utils"
+import { captureStyle } from "../vanilla-extract"
+
+declare const CSSBrand: unique symbol
+type CSSObject = { [CSSBrand]: true; toString(): string }
+type CSSPrimitive = string | number
+type CSSInterpolation = CSSPrimitive | CSSObject | undefined
 type SelectorStyleRule =
   | StyleRule
   | {
-      [key: string]: StyleRule | SelectorStyleRule;
-    };
+      [key: string]: StyleRule | SelectorStyleRule
+    }
 
-export type CSSString = string & CSSObject;
+export type CSSString = string & CSSObject
 
 /** 将类型标记为品牌类型 */
 function brandCSS<T>(input: T): T & CSSObject {
-  return input as T & CSSObject;
+  return input as T & CSSObject
 }
 /**
  * css 模板字符串 —— 类式 linaria 的 css tag，用于 vscode-styled-components 高亮。
  * 构建时校验 CSS 语法并返回 CSS 字符串。
  */
 export function css(strings: TemplateStringsArray, ...values: CSSInterpolation[]): CSSString {
-  const result = strings.reduce((acc, s, i) => acc + s + String(values[i] ?? ""), "");
+  const result = strings.reduce((acc, s, i) => acc + s + String(values[i] ?? ""), "")
   // 构建时校验 CSS 语法
-  transform({ filename: getCallerInfo(1), code: Buffer.from(result) });
-  return brandCSS(result);
+  transform({ filename: getCallerInfo(1), code: Buffer.from(result) })
+  return brandCSS(result)
 }
 
 /**
@@ -55,7 +56,7 @@ export function css(strings: TemplateStringsArray, ...values: CSSInterpolation[]
  * 合并按参数顺序排列
  */
 export function cssCombine(...styles: (CSSString | undefined)[]): CSSString {
-  return brandCSS(styles.filter(Boolean).join("\n"));
+  return brandCSS(styles.filter(Boolean).join("\n"))
 }
 
 /** cssStyle 用于 css 模板字符串的插值
@@ -64,30 +65,30 @@ export function cssCombine(...styles: (CSSString | undefined)[]): CSSString {
  * - 字符串插值：自动输出 CSS 片段（如 `${style}` → "padding:0px 6px;"）
  */
 export function cssStyle<T extends SelectorStyleRule>(input: T): T & CSSObject {
-  const flat: Record<string, CSSPrimitive> = {};
-  const nested: Record<string, SelectorStyleRule> = {};
+  const flat: Record<string, CSSPrimitive> = {}
+  const nested: Record<string, SelectorStyleRule & CSSObject> = {}
 
   // Object.entries 对无索引签名的 StyleRule 只能返回 any/unknown，
   // 这里做最小断言：entry 的值是 CSS 叶子值（string|number）或嵌套对象
   for (const [key, val] of Object.entries(input) as [string, CSSPrimitive | SelectorStyleRule][]) {
-    if (val === null || val === undefined) continue;
+    if (val === null || val === undefined) continue
     if (typeof val === "object") {
-      nested[key] = cssStyle(val);
+      nested[key] = cssStyle(val)
     } else {
-      flat[key] = val;
+      flat[key] = val
     }
   }
 
   // 构建 CSS 字符串
-  const cssParts: string[] = [];
+  const cssParts: string[] = []
   if (Object.keys(flat).length > 0) {
-    cssParts.push(captureStyle(flat));
+    cssParts.push(captureStyle(flat))
   }
   for (const [key, val] of Object.entries(nested)) {
-    cssParts.push(`${key}{${String(val)}}`);
+    cssParts.push(`${key}{${String(val)}}`)
   }
-  const cssText = cssParts.join("");
-  input.toString = () => cssText;
+  const cssText = cssParts.join("")
+  input.toString = () => cssText
 
-  return brandCSS(input);
+  return brandCSS(input)
 }

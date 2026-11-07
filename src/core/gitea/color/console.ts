@@ -34,13 +34,13 @@ const ansiColor = {
   cyan: null,
   /** 白色 */
   white: null,
-};
+}
 
 export const ansi = {
   /** 亮色 */
   bright: ansiColor,
   ...ansiColor,
-};
+}
 
 export const console = {
   /** Action 页面日志部分字体颜色 */
@@ -58,4 +58,4 @@ export const console = {
   hoverBg: "color-console-hover-bg",
   /** Action 页面日志部分里链接颜色*/
   link: null,
-};
+}

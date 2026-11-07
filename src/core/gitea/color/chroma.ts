@@ -275,4 +275,4 @@ export const chroma = {
     /** 下划线文本 */
     underline: null,
   },
-};
+}

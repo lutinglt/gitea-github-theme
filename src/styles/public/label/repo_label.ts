@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core"
 
 // 仓库标签 (私有/公开/内部)
 const repoLabel = css`
@@ -31,6 +31,6 @@ const repoLabel = css`
       font-weight: 500;
     }
   }
-`;
+`
 
-export default cssCombine(repoLabel);
+export default cssCombine(repoLabel)

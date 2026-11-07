@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core"
 
 // 单行双选项菜单
 const smallCompactMenu = css`
@@ -81,6 +81,6 @@ const smallCompactMenu = css`
       }
     }
   }
-`;
+`
 
-export default cssCombine(smallCompactMenu);
+export default cssCombine(smallCompactMenu)

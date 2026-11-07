@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, customThemeVars, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
-import { fallbackVar } from "@vanilla-extract/css";
+import { css, cssCombine, customThemeVars, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core"
+import { fallbackVar } from "@vanilla-extract/css"
 
 const navbarRight = css`
   #navbar {
@@ -190,7 +190,7 @@ const navbarRight = css`
       }
     }
   }
-`;
+`
 
 // 二级导航栏
 const secondaryNav = css`
@@ -218,6 +218,6 @@ const secondaryNav = css`
       }
     }
   }
-`;
+`
 
-export default cssCombine(navbarRight, secondaryNav);
+export default cssCombine(navbarRight, secondaryNav)

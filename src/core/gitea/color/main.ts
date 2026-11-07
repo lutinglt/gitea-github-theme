@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-const num = { num1: null, num2: null, num3: null, num4: null, num5: null, num6: null, num7: null };
+const num = { num1: null, num2: null, num3: null, num4: null, num5: null, num6: null, num7: null }
 
 const alpha = {
   num10: null,
@@ -29,9 +29,9 @@ const alpha = {
   num70: null,
   num80: null,
   num90: null,
-};
+}
 
-export const primary = { self: null, contrast: null, dark: num, light: num, alpha: alpha, hover: null, active: null };
+export const primary = { self: null, contrast: null, dark: num, light: num, alpha: alpha, hover: null, active: null }
 
 export const secondary = {
   self: null,
@@ -41,4 +41,4 @@ export const secondary = {
   button: null,
   hover: null,
   active: null,
-};
+}

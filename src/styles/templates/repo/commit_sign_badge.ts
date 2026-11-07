@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core"
 
 const commitSignBadge = css`
   a.ui.label.commit-id-short.gitea-github-theme-commit-sha {
@@ -59,6 +59,6 @@ const commitSignBadge = css`
       "Segoe UI Emoji";
     font-weight: 500;
   }
-`;
+`
 
-export default cssCombine(commitSignBadge);
+export default cssCombine(commitSignBadge)

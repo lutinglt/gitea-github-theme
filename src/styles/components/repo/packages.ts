@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core"
 
 // 组织/仓库的软件包列表(包含用户但未测试)
 const packagesList = css`
@@ -62,7 +62,7 @@ const packagesList = css`
       }
     }
   }
-`;
+`
 
 // 软件包详细信息页
 const packagesDetail = css`
@@ -143,7 +143,7 @@ const packagesDetail = css`
       }
     }
   }
-`;
+`
 
 // 手机页面下的软件包详细信息页
 const packagesListMobile = css`
@@ -155,6 +155,6 @@ const packagesListMobile = css`
       }
     }
   }
-`;
+`
 
-export default cssCombine(packagesList, packagesDetail, packagesListMobile);
+export default cssCombine(packagesList, packagesDetail, packagesListMobile)

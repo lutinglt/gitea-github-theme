@@ -17,9 +17,9 @@
  * limitations under the License.
  */
 
-import { cssStyle } from "@lutinglt/gitea-github-theme/core";
+import { cssStyle } from "@lutinglt/gitea-github-theme/core"
 
 /** 基本标签样式 */
 export const labelStyle = cssStyle({
   padding: "0px 6px",
-});
+})

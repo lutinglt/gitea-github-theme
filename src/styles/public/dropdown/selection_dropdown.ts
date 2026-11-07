@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
-import { activeItemAfterStyle } from "@lutinglt/gitea-github-theme/styles/common";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core"
+import { activeItemAfterStyle } from "@lutinglt/gitea-github-theme/styles/common"
 
 // 选择框的下拉菜单看起来像普通按钮
 const selectionDropdown = css`
@@ -127,7 +127,7 @@ const selectionDropdown = css`
       }
     }
   }
-`;
+`
 
 const fixSelectionDropdown = css`
   /* 具体工单页面下依赖菜单选择框 */
@@ -135,6 +135,6 @@ const fixSelectionDropdown = css`
     /* 高度对齐问题, 应该与 input 框高度一致 */
     min-height: 32px;
   }
-`;
+`
 
-export default cssCombine(selectionDropdown, fixSelectionDropdown);
+export default cssCombine(selectionDropdown, fixSelectionDropdown)

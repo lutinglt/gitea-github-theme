@@ -17,75 +17,86 @@
  * limitations under the License.
  */
 
-import { saturate } from "color2k";
-import type { ThemeVars } from "../core";
-import { rgba, scaleColorLight } from "../core/functions";
-import type { Ansi, Console, Diff, GitHub, Message, Named, Other, Primary, Secondary, Series16 } from "../core/gitea";
-import { themeVars } from "../core/gitea";
+import { saturate } from "color2k"
+
+import type {
+  ThemeVars,
+  Ansi,
+  Console,
+  Diff,
+  GitHub,
+  Message,
+  Named,
+  Other,
+  Primary,
+  Secondary,
+  Series16,
+} from "../core"
+import { rgba, scaleColorLight, themeVars } from "../core"
 
 type OverrideColor = {
-  ansi?: Ansi;
-  message?: Message;
-  named?: Named;
-  series16?: Series16;
-};
+  ansi?: Ansi
+  message?: Message
+  named?: Named
+  series16?: Series16
+}
 export type ThemeColor = {
   /** 用于标识当前是否为暗色主题: `true` 暗色 `false` 亮色 */
-  isDarkTheme: boolean;
+  isDarkTheme: boolean
   /** 主色调(强调色) */
-  primary: string;
+  primary: string
   /** 主色调的对比色, 一般用于 `color` 属性, primary 用于 `background-color` */
-  primaryContrast: string;
+  primaryContrast: string
   /** 副色调(边框色) */
-  secondary: string;
+  secondary: string
   /** 基础颜色 */
   base: {
     /** 红色 */
-    red: string;
+    red: string
     /** 橙色 */
-    orange: string;
+    orange: string
     /** 黄色 */
-    yellow: string;
+    yellow: string
     /** 黄绿色/橄榄色 */
-    olive: string;
+    olive: string
     /** 绿色 */
-    green: string;
+    green: string
     /** 蓝绿色/青色(偏绿) */
-    teal: string;
+    teal: string
     /** 蓝绿色/青色(偏蓝) */
-    cyan: string;
+    cyan: string
     /** 蓝色 */
-    blue: string;
+    blue: string
     /** 蓝紫色/紫罗兰色 */
-    violet: string;
+    violet: string
     /** 紫色 */
-    purple: string;
+    purple: string
     /** 粉红色 */
-    pink: string;
+    pink: string
     /** 棕色 */
-    brown: string;
+    brown: string
     /** 黑色 */
-    black: string;
+    black: string
     /** 灰色 */
-    grey: string;
+    grey: string
     /** 金色 */
-    gold: string;
+    gold: string
     /** 白色 */
-    white: string;
-  };
+    white: string
+  }
   /** Action 日志 */
-  console: Console;
+  console: Console
   /** 提交代码对比 */
-  diff: Diff;
+  diff: Diff
   /** 其他 */
-  other: Other;
+  other: Other
   /** 仅适用于本主题的全局变量, 取自 Github */
-  github: GitHub;
+  github: GitHub
   /** 覆盖默认生成的颜色 */
-  override?: OverrideColor;
-};
+  override?: OverrideColor
+}
 export function theme2ThemeVars(themeColor: ThemeColor): ThemeVars {
-  const brightDir = themeColor.isDarkTheme ? -1 : 1;
+  const brightDir = themeColor.isDarkTheme ? -1 : 1
 
   const primary: Primary = {
     self: themeColor.primary,
@@ -121,7 +132,7 @@ export function theme2ThemeVars(themeColor: ThemeColor): ThemeVars {
     },
     hover: themeColor.isDarkTheme ? themeVars.color.primary.light.num1 : themeVars.color.primary.dark.num1,
     active: themeColor.isDarkTheme ? themeVars.color.primary.light.num2 : themeVars.color.primary.dark.num2,
-  };
+  }
 
   const secondary: Secondary = {
     self: themeColor.secondary,
@@ -160,7 +171,7 @@ export function theme2ThemeVars(themeColor: ThemeColor): ThemeVars {
     button: themeVars.color.secondary.dark.num4,
     hover: themeColor.isDarkTheme ? themeVars.color.secondary.dark.num3 : themeVars.color.secondary.dark.num5,
     active: themeColor.isDarkTheme ? themeVars.color.secondary.dark.num2 : themeVars.color.secondary.dark.num6,
-  };
+  }
 
   const named: Named = themeColor.override?.named ?? {
     red: {
@@ -319,7 +330,7 @@ export function theme2ThemeVars(themeColor: ThemeColor): ThemeVars {
     },
     gold: themeColor.base.gold,
     white: themeColor.base.white,
-  };
+  }
 
   const message: Message = themeColor.override?.message ?? {
     error: {
@@ -351,7 +362,7 @@ export function theme2ThemeVars(themeColor: ThemeColor): ThemeVars {
       border: rgba(themeColor.base.purple, 0.4),
       text: saturate(themeColor.base.purple, 0.2),
     },
-  };
+  }
 
   const ansi: Ansi = themeColor.override?.ansi ?? {
     black: themeVars.color.black.self,
@@ -374,7 +385,7 @@ export function theme2ThemeVars(themeColor: ThemeColor): ThemeVars {
         : scaleColorLight(themeColor.base.cyan, 25),
       white: themeVars.color.console.fg.self,
     },
-  };
+  }
   /** AI 仿照 Gitea 的色值映射 */
   const series16: Series16 = themeColor.override?.series16 ?? {
     num0: themeColor.base.green,
@@ -393,7 +404,7 @@ export function theme2ThemeVars(themeColor: ThemeColor): ThemeVars {
     num13: scaleColorLight(themeColor.base.teal, -12),
     num14: themeColor.base.blue,
     num15: scaleColorLight(themeColor.base.pink, -12),
-  };
+  }
 
   return {
     isDarkTheme: themeColor.isDarkTheme,
@@ -409,5 +420,5 @@ export function theme2ThemeVars(themeColor: ThemeColor): ThemeVars {
       ...themeColor.other,
     },
     github: themeColor.github,
-  };
+  }
 }

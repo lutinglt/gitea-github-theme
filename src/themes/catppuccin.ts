@@ -21,19 +21,20 @@
  * @author lutinglt
  */
 
-import { flavors, type CatppuccinFlavor } from "@catppuccin/palette";
-import { catppuccin2Syntax, catppuccin2ThemeColor } from "../palette";
-import { defineTheme } from "../core";
+import { flavors, type CatppuccinFlavor } from "@catppuccin/palette"
+
+import { defineTheme } from "../core"
+import { catppuccin2Syntax, catppuccin2ThemeColor } from "../palette"
 
 function defineCatppuccinTheme(flavor: CatppuccinFlavor) {
   return defineTheme({
     colorType: "theme",
     themeColor: catppuccin2ThemeColor(flavor),
     syntaxColor: catppuccin2Syntax(flavor),
-  });
+  })
 }
 
-export const catppuccinLatteTheme = defineCatppuccinTheme(flavors.latte);
-export const catppuccinFrappeTheme = defineCatppuccinTheme(flavors.frappe);
-export const catppuccinMacchiatoTheme = defineCatppuccinTheme(flavors.macchiato);
-export const catppuccinMochaTheme = defineCatppuccinTheme(flavors.mocha);
+export const catppuccinLatteTheme = defineCatppuccinTheme(flavors.latte)
+export const catppuccinFrappeTheme = defineCatppuccinTheme(flavors.frappe)
+export const catppuccinMacchiatoTheme = defineCatppuccinTheme(flavors.macchiato)
+export const catppuccinMochaTheme = defineCatppuccinTheme(flavors.mocha)

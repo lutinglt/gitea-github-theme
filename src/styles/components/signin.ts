@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, cssCombine } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine } from "@lutinglt/gitea-github-theme/core"
 
 // 注册/登录界面
 const signIn = css`
@@ -78,6 +78,6 @@ const signIn = css`
       }
     }
   }
-`;
+`
 
-export default cssCombine(signIn);
+export default cssCombine(signIn)

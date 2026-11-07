@@ -22,9 +22,10 @@ import {
   catppuccinLatteTheme,
   catppuccinMacchiatoTheme,
   catppuccinMochaTheme,
-} from "./catppuccin";
-import { giteaDarkColor, giteaDarkTheme } from "./giteaDark";
-import { giteaLightColor, giteaLightTheme } from "./giteaLight";
+} from "./catppuccin"
+import { giteaArcGreenColor, giteaArcGreenTheme } from "./giteaArcGreen"
+import { giteaDarkColor, giteaDarkTheme } from "./giteaDark"
+import { giteaLightColor, giteaLightTheme } from "./giteaLight"
 import {
   githubColorblindDarkTheme,
   githubColorblindLightTheme,
@@ -43,10 +44,9 @@ import {
   githubSoftDarkTheme,
   githubTritanopiaDarkTheme,
   githubTritanopiaLightTheme,
-} from "./github";
-import { giteaArcGreenColor, giteaArcGreenTheme } from "./giteaArcGreen";
+} from "./github"
 
-export { giteaDarkColor, giteaLightColor, giteaArcGreenColor };
+export { giteaDarkColor, giteaLightColor, giteaArcGreenColor }
 export default {
   github: {
     dark: githubDarkTheme,
@@ -90,4 +90,4 @@ export default {
     macchiato: catppuccinMacchiatoTheme,
     mocha: catppuccinMochaTheme,
   },
-};
+}

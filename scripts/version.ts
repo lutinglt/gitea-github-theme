@@ -17,6 +17,6 @@
  * limitations under the License.
  */
 
-import { pkg } from "./utils";
+import { pkg } from "./utils"
 
-console.log(pkg.version);
+console.log(pkg.version)

@@ -17,58 +17,59 @@
  * limitations under the License.
  */
 
-import dotenv from "dotenv";
-import child_process from "node:child_process";
-import fs from "node:fs";
-import path from "node:path";
-import { pkg, rootDir, setGlobalProxy } from "./utils";
+import child_process from "node:child_process"
+import fs from "node:fs"
+import path from "node:path"
 
-dotenv.config({ quiet: true });
-setGlobalProxy();
+import dotenv from "dotenv"
 
-const githubSite = "https://raw.githubusercontent.com";
-const giteaRepo = "go-gitea/gitea";
-const githubBranchPath = "refs/heads/release";
-const githubTagPath = "refs/tags";
-const localePath = "options/locale";
+import { pkg, rootDir, setGlobalProxy } from "./utils"
 
-const [major, minor, patch, tag = ""] = pkg.version.split(".");
-console.log("Version:", pkg.version);
+dotenv.config({ quiet: true })
+setGlobalProxy()
+
+const githubSite = "https://raw.githubusercontent.com"
+const giteaRepo = "go-gitea/gitea"
+const githubBranchPath = "refs/heads/release"
+const githubTagPath = "refs/tags"
+const localePath = "options/locale"
+
+const [major, minor, patch, tag = ""] = pkg.version.split(".")
+console.log("Version:", pkg.version)
 
 const versionPath =
   tag.includes("rc") || patch.includes("latest")
     ? `${githubBranchPath}/v${major}.${minor}`
-    : `${githubTagPath}/v${major}.${minor}.${patch}`;
+    : `${githubTagPath}/v${major}.${minor}.${patch}`
 
-const githubUrl = `${githubSite}/${giteaRepo}/${versionPath}/${localePath}`;
-const locales = fs.readdirSync(path.join(rootDir, localePath)).filter(file => file.endsWith(".json"));
+const githubUrl = `${githubSite}/${giteaRepo}/${versionPath}/${localePath}`
+const locales = fs.readdirSync(path.join(rootDir, localePath)).filter(file => file.endsWith(".json"))
 
-(async () => {
-  fs.mkdirSync(path.join(rootDir, "dist", localePath), { recursive: true });
-  for (const locale of locales) {
-    const localUrl = `${githubUrl}/${locale}`;
-    const themeLocale = JSON.parse(fs.readFileSync(path.join(rootDir, localePath, locale), "utf-8"));
+fs.mkdirSync(path.join(rootDir, "dist", localePath), { recursive: true })
+for (const locale of locales) {
+  const localUrl = `${githubUrl}/${locale}`
+  const localFile = path.join(rootDir, "dist", localePath, locale)
+  const themeLocale = JSON.parse(fs.readFileSync(localFile, "utf-8")) as Record<string, string>
 
-    const response = await fetch(localUrl);
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const content = (await response.json()) as Record<string, string>;
-    if (locale.includes("zh-CN")) {
-      for (const key of Object.keys(content)) {
-        if (typeof content[key] === "string") {
-          content[key] = content[key].replaceAll("工单", "议题").replaceAll("合并请求", "拉取请求");
-        }
+  const response = await fetch(localUrl)
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`)
+  }
+  const content = (await response.json()) as Record<string, string>
+  if (locale.includes("zh-CN")) {
+    for (const key of Object.keys(content)) {
+      if (typeof content[key] === "string") {
+        content[key] = content[key].replaceAll("工单", "议题").replaceAll("合并请求", "拉取请求")
       }
     }
-    Object.assign(content, themeLocale);
-    fs.writeFileSync(path.join(rootDir, "dist", localePath, locale), JSON.stringify(content, null, 2));
-    console.log("✔︎ LocaleUrl:", localUrl);
   }
+  Object.assign(content, themeLocale)
+  fs.writeFileSync(path.join(rootDir, "dist", localePath, locale), JSON.stringify(content, null, 2))
+  console.log("✔︎ LocaleUrl:", localUrl)
+}
 
-  if (process.env.SSH_SERVER && process.env.GITEA_PATH && process.env.SSH_USER) {
-    const cmd = `scp -Or dist/options ${process.env.SSH_USER}@${process.env.SSH_SERVER}:${process.env.GITEA_PATH}`;
-    console.log("[translate] exec:", cmd);
-    child_process.execSync(cmd, { stdio: "inherit" });
-  }
-})();
+if (process.env.SSH_SERVER && process.env.GITEA_PATH && process.env.SSH_USER) {
+  const cmd = `scp -Or dist/options ${process.env.SSH_USER}@${process.env.SSH_SERVER}:${process.env.GITEA_PATH}`
+  console.log("[translate] exec:", cmd)
+  child_process.execSync(cmd, { stdio: "inherit" })
+}

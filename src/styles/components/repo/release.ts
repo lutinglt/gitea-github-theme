@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core"
 
 // release 顶部栏左侧按钮组
 const releaseTagMenu = css`
@@ -36,7 +36,7 @@ const releaseTagMenu = css`
       }
     }
   }
-`;
+`
 
 // 顶部右侧按钮组
 const rightButton = css`
@@ -57,7 +57,7 @@ const rightButton = css`
       }
     }
   }
-`;
+`
 
 // 标签页样式
 const tags = css`
@@ -80,7 +80,7 @@ const tags = css`
       }
     }
   }
-`;
+`
 
 // 发布页样式
 const releases = css`
@@ -198,6 +198,6 @@ const releases = css`
       }
     }
   }
-`;
+`
 
-export default cssCombine(releaseTagMenu, rightButton, tags, releases);
+export default cssCombine(releaseTagMenu, rightButton, tags, releases)

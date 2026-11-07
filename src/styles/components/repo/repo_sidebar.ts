@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core"
 
 // 仓库代码布局调整, 侧边栏宽度调整
 const repoGrid = css`
@@ -37,7 +37,7 @@ const repoGrid = css`
       padding-left: 24px;
     }
   }
-`;
+`
 
 // 仓库代码页面侧边栏上半部, 版本发布以上
 const repoSidebarTop = css`
@@ -90,7 +90,7 @@ const repoSidebarTop = css`
       }
     }
   }
-`;
+`
 
 // 仓库代码页面侧边栏下半部, 版本发布以下
 const repoSidebarBottom = css`
@@ -149,6 +149,6 @@ const repoSidebarBottom = css`
       }
     }
   }
-`;
+`
 
-export default cssCombine(repoGrid, repoSidebarTop, repoSidebarBottom);
+export default cssCombine(repoGrid, repoSidebarTop, repoSidebarBottom)

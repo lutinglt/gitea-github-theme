@@ -17,19 +17,20 @@
  * limitations under the License.
  */
 
-import { createGlobalTheme, globalStyle, type StyleRule } from "@vanilla-extract/css";
-import selectors from "./selectors";
-import { chromaVars, type Chroma } from "./gitea";
+import { createGlobalTheme, globalStyle, type StyleRule } from "@vanilla-extract/css"
 
-function chromaStyle(selector: string, style: StyleRule): void;
-function chromaStyle(selector: string[], style: StyleRule): void;
+import { chromaVars, type Chroma } from "./gitea"
+import selectors from "./selectors"
+
+function chromaStyle(selector: string, style: StyleRule): void
+function chromaStyle(selector: string[], style: StyleRule): void
 function chromaStyle(selector: string | string[], style: StyleRule): void {
-  globalStyle((Array.isArray(selector) ? selector : [selector]).map(s => `${selectors.chroma} ${s}`).join(","), style);
+  globalStyle((Array.isArray(selector) ? selector : [selector]).map(s => `${selectors.chroma} ${s}`).join(","), style)
 }
 // 样式来源: https://github.com/go-gitea/gitea/blob/main/web_src/css/chroma/base.css
 function createChromaBase(): void {
   // LineTableTD
-  chromaStyle(".lntd", { verticalAlign: "top", padding: 0, margin: 0, border: 0 });
+  chromaStyle(".lntd", { verticalAlign: "top", padding: 0, margin: 0, border: 0 })
   // LineTable
   chromaStyle(".lntable", {
     borderSpacing: 0,
@@ -39,109 +40,109 @@ function createChromaBase(): void {
     width: "auto",
     overflow: "auto",
     display: "block",
-  });
+  })
   // LineHighlight
-  chromaStyle(".hl", { display: "block", width: "100%" });
+  chromaStyle(".hl", { display: "block", width: "100%" })
   // LineNumbersTable
-  chromaStyle([".lnt", ".ln"], { marginRight: "0.4em", padding: "0 0.4em" });
+  chromaStyle([".lnt", ".ln"], { marginRight: "0.4em", padding: "0 0.4em" })
   // GenericStrong
-  chromaStyle(".gs", { fontWeight: "var(--font-weight-semibold)" });
+  chromaStyle(".gs", { fontWeight: "var(--font-weight-semibold)" })
   // GenericUnderline
-  chromaStyle(".gl", { textDecoration: "underline" });
+  chromaStyle(".gl", { textDecoration: "underline" })
 }
 // 样式来源: https://github.com/alecthomas/chroma/blob/6428fb4e65f3c1493491571c8a6a8f1add1da822/types.go#L208
 function createChromaCode(): void {
   // TextWhiteSpace
-  chromaStyle(".w", { color: chromaVars.textWhiteSpace });
+  chromaStyle(".w", { color: chromaVars.textWhiteSpace })
   // Errorvoid
-  chromaStyle(".err", { color: chromaVars.err });
+  chromaStyle(".err", { color: chromaVars.err })
   // Keyword
-  chromaStyle(".k", { color: chromaVars.keyword.self });
-  chromaStyle(".kc", { color: chromaVars.keyword.constant });
-  chromaStyle(".kd", { color: chromaVars.keyword.declaration });
-  chromaStyle(".kn", { color: chromaVars.keyword.namespace });
-  chromaStyle(".kp", { color: chromaVars.keyword.pseudo });
-  chromaStyle(".kr", { color: chromaVars.keyword.reserved });
-  chromaStyle(".kt", { color: chromaVars.keyword.type });
+  chromaStyle(".k", { color: chromaVars.keyword.self })
+  chromaStyle(".kc", { color: chromaVars.keyword.constant })
+  chromaStyle(".kd", { color: chromaVars.keyword.declaration })
+  chromaStyle(".kn", { color: chromaVars.keyword.namespace })
+  chromaStyle(".kp", { color: chromaVars.keyword.pseudo })
+  chromaStyle(".kr", { color: chromaVars.keyword.reserved })
+  chromaStyle(".kt", { color: chromaVars.keyword.type })
   // Name
-  chromaStyle(".n", { color: chromaVars.name.self });
-  chromaStyle(".na", { color: chromaVars.name.attribute });
-  chromaStyle(".nb", { color: chromaVars.name.builtin });
-  chromaStyle(".bp", { color: chromaVars.name.builtinPseudo });
-  chromaStyle(".nc", { color: chromaVars.name.class });
-  chromaStyle(".no", { color: chromaVars.name.constant });
-  chromaStyle(".nd", { color: chromaVars.name.decorator });
-  chromaStyle(".ni", { color: chromaVars.name.entity });
-  chromaStyle(".ne", { color: chromaVars.name.exception });
-  chromaStyle(".nf", { color: chromaVars.name.function });
-  chromaStyle(".fm", { color: chromaVars.name.functionMagic });
-  chromaStyle(".py", { color: chromaVars.name.property });
-  chromaStyle(".nl", { color: chromaVars.name.label });
-  chromaStyle(".nn", { color: chromaVars.name.namespace });
-  chromaStyle(".nx", { color: chromaVars.name.other });
-  chromaStyle(".nt", { color: chromaVars.name.tag });
-  chromaStyle(".nv", { color: chromaVars.name.variable });
-  chromaStyle(".vc", { color: chromaVars.name.variableClass });
-  chromaStyle(".vg", { color: chromaVars.name.variableGlobal });
-  chromaStyle(".vi", { color: chromaVars.name.variableInstance });
-  chromaStyle(".vm", { color: chromaVars.name.variableMagic });
+  chromaStyle(".n", { color: chromaVars.name.self })
+  chromaStyle(".na", { color: chromaVars.name.attribute })
+  chromaStyle(".nb", { color: chromaVars.name.builtin })
+  chromaStyle(".bp", { color: chromaVars.name.builtinPseudo })
+  chromaStyle(".nc", { color: chromaVars.name.class })
+  chromaStyle(".no", { color: chromaVars.name.constant })
+  chromaStyle(".nd", { color: chromaVars.name.decorator })
+  chromaStyle(".ni", { color: chromaVars.name.entity })
+  chromaStyle(".ne", { color: chromaVars.name.exception })
+  chromaStyle(".nf", { color: chromaVars.name.function })
+  chromaStyle(".fm", { color: chromaVars.name.functionMagic })
+  chromaStyle(".py", { color: chromaVars.name.property })
+  chromaStyle(".nl", { color: chromaVars.name.label })
+  chromaStyle(".nn", { color: chromaVars.name.namespace })
+  chromaStyle(".nx", { color: chromaVars.name.other })
+  chromaStyle(".nt", { color: chromaVars.name.tag })
+  chromaStyle(".nv", { color: chromaVars.name.variable })
+  chromaStyle(".vc", { color: chromaVars.name.variableClass })
+  chromaStyle(".vg", { color: chromaVars.name.variableGlobal })
+  chromaStyle(".vi", { color: chromaVars.name.variableInstance })
+  chromaStyle(".vm", { color: chromaVars.name.variableMagic })
   // Literal
-  chromaStyle(".l", { color: chromaVars.literal.self });
-  chromaStyle(".ld", { color: chromaVars.literal.date });
+  chromaStyle(".l", { color: chromaVars.literal.self })
+  chromaStyle(".ld", { color: chromaVars.literal.date })
   // String
-  chromaStyle(".s", { color: chromaVars.string.self });
-  chromaStyle(".sa", { color: chromaVars.string.affix });
-  chromaStyle(".sb", { color: chromaVars.string.backtick });
-  chromaStyle(".sc", { color: chromaVars.string.char });
-  chromaStyle(".dl", { color: chromaVars.string.delimiter });
-  chromaStyle(".sd", { color: chromaVars.string.doc });
-  chromaStyle(".s2", { color: chromaVars.string.double });
-  chromaStyle(".se", { color: chromaVars.string.escape });
-  chromaStyle(".sh", { color: chromaVars.string.heredoc });
-  chromaStyle(".si", { color: chromaVars.string.interpol });
-  chromaStyle(".sx", { color: chromaVars.string.other });
-  chromaStyle(".sr", { color: chromaVars.string.regex });
-  chromaStyle(".s1", { color: chromaVars.string.single });
-  chromaStyle(".ss", { color: chromaVars.string.symbol });
+  chromaStyle(".s", { color: chromaVars.string.self })
+  chromaStyle(".sa", { color: chromaVars.string.affix })
+  chromaStyle(".sb", { color: chromaVars.string.backtick })
+  chromaStyle(".sc", { color: chromaVars.string.char })
+  chromaStyle(".dl", { color: chromaVars.string.delimiter })
+  chromaStyle(".sd", { color: chromaVars.string.doc })
+  chromaStyle(".s2", { color: chromaVars.string.double })
+  chromaStyle(".se", { color: chromaVars.string.escape })
+  chromaStyle(".sh", { color: chromaVars.string.heredoc })
+  chromaStyle(".si", { color: chromaVars.string.interpol })
+  chromaStyle(".sx", { color: chromaVars.string.other })
+  chromaStyle(".sr", { color: chromaVars.string.regex })
+  chromaStyle(".s1", { color: chromaVars.string.single })
+  chromaStyle(".ss", { color: chromaVars.string.symbol })
   // Number
-  chromaStyle(".m", { color: chromaVars.number.self });
-  chromaStyle(".mb", { color: chromaVars.number.bin });
-  chromaStyle(".mf", { color: chromaVars.number.float });
-  chromaStyle(".mh", { color: chromaVars.number.hex });
-  chromaStyle(".mi", { color: chromaVars.number.integer });
-  chromaStyle(".il", { color: chromaVars.number.integerLong });
-  chromaStyle(".mo", { color: chromaVars.number.oct });
+  chromaStyle(".m", { color: chromaVars.number.self })
+  chromaStyle(".mb", { color: chromaVars.number.bin })
+  chromaStyle(".mf", { color: chromaVars.number.float })
+  chromaStyle(".mh", { color: chromaVars.number.hex })
+  chromaStyle(".mi", { color: chromaVars.number.integer })
+  chromaStyle(".il", { color: chromaVars.number.integerLong })
+  chromaStyle(".mo", { color: chromaVars.number.oct })
   // Operator
-  chromaStyle(".o", { color: chromaVars.operator.self });
-  chromaStyle(".ow", { color: chromaVars.operator.word });
-  chromaStyle(".or", { color: chromaVars.operator.reserved });
+  chromaStyle(".o", { color: chromaVars.operator.self })
+  chromaStyle(".ow", { color: chromaVars.operator.word })
+  chromaStyle(".or", { color: chromaVars.operator.reserved })
   // Punctuation
-  chromaStyle(".p", { color: chromaVars.punctuation });
+  chromaStyle(".p", { color: chromaVars.punctuation })
   // Comment
-  chromaStyle(".c", { color: chromaVars.comment.self });
-  chromaStyle(".ch", { color: chromaVars.comment.hashbang });
-  chromaStyle(".cm", { color: chromaVars.comment.multiline });
-  chromaStyle(".cp", { color: chromaVars.comment.preproc });
-  chromaStyle(".cpf", { color: chromaVars.comment.preprocFile });
-  chromaStyle(".c1", { color: chromaVars.comment.single });
-  chromaStyle(".cs", { color: chromaVars.comment.special });
+  chromaStyle(".c", { color: chromaVars.comment.self })
+  chromaStyle(".ch", { color: chromaVars.comment.hashbang })
+  chromaStyle(".cm", { color: chromaVars.comment.multiline })
+  chromaStyle(".cp", { color: chromaVars.comment.preproc })
+  chromaStyle(".cpf", { color: chromaVars.comment.preprocFile })
+  chromaStyle(".c1", { color: chromaVars.comment.single })
+  chromaStyle(".cs", { color: chromaVars.comment.special })
   // Generic
-  chromaStyle(".g", { color: chromaVars.generic.self });
-  chromaStyle(".gd", { color: chromaVars.generic.deleted });
-  chromaStyle(".ge", { color: chromaVars.generic.emph });
-  chromaStyle(".gr", { color: chromaVars.generic.error });
-  chromaStyle(".gh", { color: chromaVars.generic.heading });
-  chromaStyle(".gi", { color: chromaVars.generic.inserted });
-  chromaStyle(".go", { color: chromaVars.generic.output });
-  chromaStyle(".gp", { color: chromaVars.generic.prompt });
-  chromaStyle(".gs", { color: chromaVars.generic.strong });
-  chromaStyle(".gu", { color: chromaVars.generic.subheading });
-  chromaStyle(".gt", { color: chromaVars.generic.traceback });
-  chromaStyle(".gl", { color: chromaVars.generic.underline });
+  chromaStyle(".g", { color: chromaVars.generic.self })
+  chromaStyle(".gd", { color: chromaVars.generic.deleted })
+  chromaStyle(".ge", { color: chromaVars.generic.emph })
+  chromaStyle(".gr", { color: chromaVars.generic.error })
+  chromaStyle(".gh", { color: chromaVars.generic.heading })
+  chromaStyle(".gi", { color: chromaVars.generic.inserted })
+  chromaStyle(".go", { color: chromaVars.generic.output })
+  chromaStyle(".gp", { color: chromaVars.generic.prompt })
+  chromaStyle(".gs", { color: chromaVars.generic.strong })
+  chromaStyle(".gu", { color: chromaVars.generic.subheading })
+  chromaStyle(".gt", { color: chromaVars.generic.traceback })
+  chromaStyle(".gl", { color: chromaVars.generic.underline })
 }
 /** 创建 chroma 样式 */
 export function createChroma(chroma: Chroma): void {
-  createChromaBase();
-  createChromaCode();
-  createGlobalTheme(selectors.chroma, chromaVars, chroma);
+  createChromaBase()
+  createChromaCode()
+  createGlobalTheme(selectors.chroma, chromaVars, chroma)
 }

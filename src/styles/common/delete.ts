@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { cssStyle, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { cssStyle, themeVars } from "@lutinglt/gitea-github-theme/core"
 
 export const deleteHoverActiveStyle = cssStyle({
   "&:hover": {
@@ -29,4 +29,4 @@ export const deleteHoverActiveStyle = cssStyle({
     color: `${themeVars.github.control.danger.fgColor.hover} !important`,
     boxShadow: `inset 0 0 0 1px ${themeVars.github.control.transparent.borderColor.active}`,
   },
-});
+})

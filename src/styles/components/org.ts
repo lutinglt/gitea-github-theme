@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core"
 
 const org = css`
   .page-content.organization {
@@ -71,6 +71,6 @@ const org = css`
       }
     }
   }
-`;
+`
 
-export default cssCombine(org);
+export default cssCombine(org)

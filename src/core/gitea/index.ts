@@ -17,34 +17,34 @@
  * limitations under the License.
  */
 
-import type { MapLeafNodes } from "..";
-import color from "./color";
+import type { MapLeafNodes } from ".."
+import color from "./color"
 
 /** GitHub 预览代码高亮色 */
-export type Chroma = MapLeafNodes<typeof color.chroma, string>;
+export type Chroma = MapLeafNodes<typeof color.chroma, string>
 /** GitHub 编辑代码高亮色 */
-export type CodeMirror = MapLeafNodes<typeof color.codeMirror, string>;
+export type CodeMirror = MapLeafNodes<typeof color.codeMirror, string>
 /** Gitea 代码高亮色 */
-export type Syntax = MapLeafNodes<typeof color.syntax, string>;
+export type Syntax = MapLeafNodes<typeof color.syntax, string>
 /** 主色调(强调色) */
-export type Primary = MapLeafNodes<typeof color.primary, string>;
+export type Primary = MapLeafNodes<typeof color.primary, string>
 /** 副色调(边框色) */
-export type Secondary = MapLeafNodes<typeof color.secondary, string>;
+export type Secondary = MapLeafNodes<typeof color.secondary, string>
 /** 基础颜色 */
-export type Named = MapLeafNodes<typeof color.named, string>;
+export type Named = MapLeafNodes<typeof color.named, string>
 /** 提示消息 */
-export type Message = MapLeafNodes<typeof color.message, string>;
+export type Message = MapLeafNodes<typeof color.message, string>
 /** Actions 日志 ANSI 颜色 */
-export type Ansi = MapLeafNodes<typeof color.ansi, string>;
+export type Ansi = MapLeafNodes<typeof color.ansi, string>
 /** Actions 颜色 */
-export type Console = MapLeafNodes<typeof color.console, string>;
+export type Console = MapLeafNodes<typeof color.console, string>
 /** 代码差异对比颜色 */
-export type Diff = MapLeafNodes<typeof color.diff, string>;
+export type Diff = MapLeafNodes<typeof color.diff, string>
 /** 其他颜色 */
-export type Other = MapLeafNodes<typeof color.other, string>;
+export type Other = MapLeafNodes<typeof color.other, string>
 /** 16 色调色板 */
-export type Series16 = MapLeafNodes<typeof color.series16, string>;
+export type Series16 = MapLeafNodes<typeof color.series16, string>
 /** 仅限本主题的 GitHub 颜色 */
-export type GitHub = MapLeafNodes<typeof color.github, string>;
+export type GitHub = MapLeafNodes<typeof color.github, string>
 
-export { chromaVars, codeMirrorVars, customThemeVars, otherThemeVars, syntaxVars, themeVars } from "./vars";
+export { chromaVars, codeMirrorVars, customThemeVars, otherThemeVars, syntaxVars, themeVars } from "./vars"

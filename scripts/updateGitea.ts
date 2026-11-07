@@ -17,55 +17,55 @@
  * limitations under the License.
  */
 
-import fs from "node:fs";
-import path from "node:path";
-import { pkg, rootDir, setGlobalProxy } from "./utils";
+import fs from "node:fs"
+import path from "node:path"
 
-setGlobalProxy();
+import { pkg, rootDir, setGlobalProxy } from "./utils"
 
-const githubSite = "https://raw.githubusercontent.com";
-const giteaRepo = "go-gitea/gitea";
-const githubTagPath = "refs/tags";
-const localGiteaPath = path.join(rootDir, "assets/gitea");
-const [major, minor, patch = ""] = pkg.version.split(".");
-console.log("Version:", pkg.version);
-const versionPath = `${githubTagPath}/v${major}.${minor}.${patch}`;
-const githubBaseUrl = `${githubSite}/${giteaRepo}/${versionPath}`;
+setGlobalProxy()
+
+const githubSite = "https://raw.githubusercontent.com"
+const giteaRepo = "go-gitea/gitea"
+const githubTagPath = "refs/tags"
+const localGiteaPath = path.join(rootDir, "assets/gitea")
+const [major, minor, patch = ""] = pkg.version.split(".")
+console.log("Version:", pkg.version)
+const versionPath = `${githubTagPath}/v${major}.${minor}.${patch}`
+const githubBaseUrl = `${githubSite}/${giteaRepo}/${versionPath}`
 
 // 递归读取所有子目录中的文件
 function readFilesRecursively(dir: string) {
-  const results: string[] = [];
-  const files = fs.readdirSync(dir);
+  const results: string[] = []
+  const files = fs.readdirSync(dir)
 
   for (const file of files) {
-    const filePath = path.join(dir, file);
-    const stat = fs.statSync(filePath);
+    const filePath = path.join(dir, file)
+    const stat = fs.statSync(filePath)
 
     if (stat.isDirectory()) {
       // 如果是目录，递归读取
-      results.push(...readFilesRecursively(filePath));
+      results.push(...readFilesRecursively(filePath))
     } else {
       // 添加到结果中（相对于 gitea 目录的相对路径）
-      const relativePath = path.relative(localGiteaPath, filePath);
-      results.push(relativePath);
+      const relativePath = path.relative(localGiteaPath, filePath)
+      results.push(relativePath)
     }
   }
 
-  return results;
+  return results
 }
 
 // 读取 gitea 目录下所有文件
-const files = readFilesRecursively(localGiteaPath);
-(async () => {
-  for (const file of files) {
-    const fileUrl = `${githubBaseUrl}/${file}`;
+const files = readFilesRecursively(localGiteaPath)
 
-    const response = await fetch(fileUrl);
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const content = await response.text();
-    fs.writeFileSync(path.join(localGiteaPath, file), content);
-    console.log("✔︎ FileUrl:", fileUrl);
+for (const file of files) {
+  const fileUrl = `${githubBaseUrl}/${file}`
+
+  const response = await fetch(fileUrl)
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`)
   }
-})();
+  const content = await response.text()
+  fs.writeFileSync(path.join(localGiteaPath, file), content)
+  console.log("✔︎ FileUrl:", fileUrl)
+}

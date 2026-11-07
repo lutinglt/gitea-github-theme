@@ -17,12 +17,12 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core"
 import {
   basicButtonStyle,
   primaryButtonHoverStyle,
   primaryButtonStyle,
-} from "@lutinglt/gitea-github-theme/styles/common";
+} from "@lutinglt/gitea-github-theme/styles/common"
 
 // 普通按钮和主色调按钮
 const baseButton = css`
@@ -87,7 +87,7 @@ const baseButton = css`
   .ui.basic.active.button:hover {
     background-color: ${themeVars.github.button.default.bgColor.active};
   }
-`;
+`
 // 绿色按钮
 const greenButton = css`
   .ui.green.button,
@@ -96,7 +96,7 @@ const greenButton = css`
     color: ${themeVars.github.button.primary.fgColor.rest};
     box-shadow: ${primaryButtonStyle.boxShadow};
   }
-`;
+`
 // 红色按钮
 const redButton = css`
   .ui.red.button,
@@ -119,7 +119,7 @@ const redButton = css`
       box-shadow: ${themeVars.github.shadow.resting.small};
     }
   }
-`;
+`
 
 // 修复按钮高度
 const fixButtonHeight = css`
@@ -148,7 +148,7 @@ const fixButtonHeight = css`
   .ui.ui.ui.ui.tiny.button {
     min-height: 28px;
   }
-`;
+`
 
 const fixButton = css`
   /* 修复关注&派生 hover 意外点亮右侧 label 左边框 */
@@ -162,6 +162,6 @@ const fixButton = css`
     height: 28px;
     width: 28px;
   }
-`;
+`
 
-export default cssCombine(baseButton, greenButton, redButton, fixButtonHeight, fixButton);
+export default cssCombine(baseButton, greenButton, redButton, fixButtonHeight, fixButton)

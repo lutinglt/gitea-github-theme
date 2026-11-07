@@ -17,33 +17,34 @@
  * limitations under the License.
  */
 
-import { primer } from "@lutinglt/gitea-github-theme/assets";
-import { describe, expect, it } from "vitest";
-import { github2ThemeColor } from "./github";
-import { primer2GitHubColor } from "./primer";
-import { theme2ThemeVars, type ThemeColor } from "./theme";
+import { primer } from "@lutinglt/gitea-github-theme/assets"
+import { describe, expect, it } from "vitest"
+
+import { github2ThemeColor } from "./github"
+import { primer2GitHubColor } from "./primer"
+import { theme2ThemeVars, type ThemeColor } from "./theme"
 
 // ============================================================================
 // 辅助工具
 // ============================================================================
 
 function collectLeafPaths(obj: unknown, prefix = ""): string[] {
-  if (obj === null || obj === undefined) return [];
-  if (typeof obj === "string" || typeof obj === "boolean" || typeof obj === "number") return [prefix];
+  if (obj === null || obj === undefined) return []
+  if (typeof obj === "string" || typeof obj === "boolean" || typeof obj === "number") return [prefix]
   if (typeof obj === "object") {
-    return Object.entries(obj).flatMap(([key, val]) => collectLeafPaths(val, prefix ? `${prefix}.${key}` : key));
+    return Object.entries(obj).flatMap(([key, val]) => collectLeafPaths(val, prefix ? `${prefix}.${key}` : key))
   }
-  return [];
+  return []
 }
 
 function getByPath(obj: unknown, path: string): unknown {
-  const keys = path.split(".");
-  let current = obj;
+  const keys = path.split(".")
+  let current = obj
   for (const key of keys) {
-    if (current === null || current === undefined || typeof current !== "object") return undefined;
-    current = (current as Record<string, unknown>)[key];
+    if (current === null || current === undefined || typeof current !== "object") return undefined
+    current = (current as Record<string, unknown>)[key]
   }
-  return current;
+  return current
 }
 
 function assertThemeColorStructure(themeColor: ThemeColor, flavor: string) {
@@ -57,7 +58,7 @@ function assertThemeColorStructure(themeColor: ThemeColor, flavor: string) {
     "diff",
     "other",
     "github",
-  ] as const;
+  ] as const
   const requiredBaseColors = [
     "red",
     "orange",
@@ -75,17 +76,17 @@ function assertThemeColorStructure(themeColor: ThemeColor, flavor: string) {
     "grey",
     "gold",
     "white",
-  ] as const;
+  ] as const
 
   for (const key of requiredKeys) {
-    expect(themeColor[key], `${flavor}: 缺少顶层键 '${key}'`).toBeDefined();
+    expect(themeColor[key], `${flavor}: 缺少顶层键 '${key}'`).toBeDefined()
   }
   for (const color of requiredBaseColors) {
-    expect(themeColor.base[color], `${flavor}: 缺少 base.${color}`).toBeDefined();
+    expect(themeColor.base[color], `${flavor}: 缺少 base.${color}`).toBeDefined()
   }
 
   for (const path of collectLeafPaths(themeColor)) {
-    const value = getByPath(themeColor, path);
+    const value = getByPath(themeColor, path)
     if (typeof value === "string") {
       const isValid =
         /^#[0-9a-f]{3,8}$/i.test(value) ||
@@ -94,13 +95,13 @@ function assertThemeColorStructure(themeColor: ThemeColor, flavor: string) {
         ["unset", "initial", "inherit"].includes(value) ||
         value.startsWith("drop-shadow(") ||
         value.startsWith("inset ") ||
-        /^\d/.test(value);
-      expect(isValid, `${flavor}: 路径 '${path}' 的值 '${value}' 不是合法颜色值`).toBe(true);
+        /^\d/.test(value)
+      expect(isValid, `${flavor}: 路径 '${path}' 的值 '${value}' 不是合法颜色值`).toBe(true)
     }
   }
 
-  expect(themeColor.primaryContrast, `${flavor}: primaryContrast 不应等于 primary`).not.toBe(themeColor.primary);
-  expect(typeof themeColor.isDarkTheme, `${flavor}: isDarkTheme 应为布尔值`).toBe("boolean");
+  expect(themeColor.primaryContrast, `${flavor}: primaryContrast 不应等于 primary`).not.toBe(themeColor.primary)
+  expect(typeof themeColor.isDarkTheme, `${flavor}: isDarkTheme 应为布尔值`).toBe("boolean")
 }
 
 // ============================================================================
@@ -109,30 +110,30 @@ function assertThemeColorStructure(themeColor: ThemeColor, flavor: string) {
 
 describe("github2ThemeColor", () => {
   it("dark 全链快照", () => {
-    const githubColor = primer2GitHubColor(primer.dark, true);
-    expect(theme2ThemeVars(github2ThemeColor(githubColor))).toMatchSnapshot();
-  });
+    const githubColor = primer2GitHubColor(primer.dark, true)
+    expect(theme2ThemeVars(github2ThemeColor(githubColor))).toMatchSnapshot()
+  })
 
   it("light 全链快照", () => {
-    const githubColor = primer2GitHubColor(primer.light);
-    expect(theme2ThemeVars(github2ThemeColor(githubColor))).toMatchSnapshot();
-  });
+    const githubColor = primer2GitHubColor(primer.light)
+    expect(theme2ThemeVars(github2ThemeColor(githubColor))).toMatchSnapshot()
+  })
 
   it("dark 结构完整", () => {
-    assertThemeColorStructure(github2ThemeColor(primer2GitHubColor(primer.dark, true)), "github-dark");
-  });
+    assertThemeColorStructure(github2ThemeColor(primer2GitHubColor(primer.dark, true)), "github-dark")
+  })
 
   it("light 结构完整", () => {
-    assertThemeColorStructure(github2ThemeColor(primer2GitHubColor(primer.light)), "github-light");
-  });
+    assertThemeColorStructure(github2ThemeColor(primer2GitHubColor(primer.light)), "github-light")
+  })
 
   it("dark isDarkTheme 为 true", () => {
-    const githubColor = primer2GitHubColor(primer.dark, true);
-    expect(github2ThemeColor(githubColor).isDarkTheme).toBe(true);
-  });
+    const githubColor = primer2GitHubColor(primer.dark, true)
+    expect(github2ThemeColor(githubColor).isDarkTheme).toBe(true)
+  })
 
   it("light isDarkTheme 为 false", () => {
-    const githubColor = primer2GitHubColor(primer.light);
-    expect(github2ThemeColor(githubColor).isDarkTheme).toBe(false);
-  });
-});
+    const githubColor = primer2GitHubColor(primer.light)
+    expect(github2ThemeColor(githubColor).isDarkTheme).toBe(false)
+  })
+})

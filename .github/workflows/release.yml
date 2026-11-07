@@ -17,7 +17,7 @@ jobs:
       - name: Build theme
         run: |
           bun install
-          bun release
+          bun bundle:release
       - name: Create release
         run: |
           tar -zcf dist/theme-github-base.tar.gz \

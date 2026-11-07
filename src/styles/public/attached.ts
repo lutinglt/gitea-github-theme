@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core"
 
 const attached = css`
   /* 设置右面板的内容 */
@@ -78,7 +78,7 @@ const attached = css`
       border: 1px solid ${themeVars.color.error.border} !important;
     }
   }
-`;
+`
 
 // 仓库活动页面下的边框线修复
 const fixActivity = css`
@@ -94,6 +94,6 @@ const fixActivity = css`
       }
     }
   }
-`;
+`
 
-export default cssCombine(attached, fixActivity);
+export default cssCombine(attached, fixActivity)

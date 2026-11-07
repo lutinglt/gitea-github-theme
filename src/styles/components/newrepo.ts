@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
-import { css, cssCombine } from "@lutinglt/gitea-github-theme/core";
-import { activeItemAfterStyle } from "@lutinglt/gitea-github-theme/styles/common";
+import { css, cssCombine } from "@lutinglt/gitea-github-theme/core"
+import { activeItemAfterStyle } from "@lutinglt/gitea-github-theme/styles/common"
 
 // 新建仓库页面下拉菜单
 const newRepo = css`
@@ -29,6 +29,6 @@ const newRepo = css`
       }
     }
   }
-`;
+`
 
-export default cssCombine(newRepo);
+export default cssCombine(newRepo)

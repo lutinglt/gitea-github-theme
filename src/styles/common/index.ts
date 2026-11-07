@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
-export { activeItemAfterStyle, underlineNavActiveItemAfterStyle } from "./after";
-export { animation, animationDown, animationUp } from "./animation";
-export { basicButtonStyle, primaryButtonHoverStyle, primaryButtonStyle } from "./button";
-export { deleteHoverActiveStyle } from "./delete";
-export { labelStyle } from "./label";
+export { activeItemAfterStyle, underlineNavActiveItemAfterStyle } from "./after"
+export { animation, animationDown, animationUp } from "./animation"
+export { basicButtonStyle, primaryButtonHoverStyle, primaryButtonStyle } from "./button"
+export { deleteHoverActiveStyle } from "./delete"
+export { labelStyle } from "./label"

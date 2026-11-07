@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core"
 
 const summaryView = css`
   .action-view-right:has(.action-run-summary-view) {
@@ -194,6 +194,6 @@ const summaryView = css`
       }
     }
   }
-`;
+`
 
-export default cssCombine(summaryView);
+export default cssCombine(summaryView)

@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-const baseColor = { self: null, light: null, dark: { num1: null, num2: null } };
+const baseColor = { self: null, light: null, dark: { num1: null, num2: null } }
 
 const commitColor = {
   /** 提交哈希值颜色 */
@@ -31,7 +31,7 @@ const commitColor = {
       bg: null,
     },
   },
-};
+}
 
 export const named = {
   /** 红色/提交警告签名颜色 */
@@ -53,4 +53,4 @@ export const named = {
   grey: { self: null, light: null },
   gold: null,
   white: null,
-};
+}

@@ -17,15 +17,16 @@
  * limitations under the License.
  */
 
-import { createGlobalTheme } from "@vanilla-extract/css";
-import selectors from "./selectors";
+import { createGlobalTheme } from "@vanilla-extract/css"
 
-export type ColorblindType = "red-green" | "blue-yellow";
+import selectors from "./selectors"
+
+export type ColorblindType = "red-green" | "blue-yellow"
 export type GiteaThemeMeta = {
-  colorScheme: "dark" | "light" | "auto";
-  displayName: string;
-  colorblindType?: ColorblindType;
-};
+  colorScheme: "dark" | "light" | "auto"
+  displayName: string
+  colorblindType?: ColorblindType
+}
 /** 创建 Gitea 主题元信息 */
 export function createThemeMetaInfo(meta: GiteaThemeMeta) {
   createGlobalTheme(selectors.metaInfo, {
@@ -44,5 +45,5 @@ export function createThemeMetaInfo(meta: GiteaThemeMeta) {
           }
         : {}),
     },
-  });
+  })
 }

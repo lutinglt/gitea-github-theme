@@ -20,7 +20,7 @@
 const row = {
   bg: null,
   border: null,
-};
+}
 
 const line = {
   /** 对比状态栏上统计所有行数的文字颜色 */
@@ -35,7 +35,7 @@ const line = {
   word: {
     bg: null,
   },
-};
+}
 
 export const diff = {
   /** 添加 */
@@ -48,4 +48,4 @@ export const diff = {
   removed: line,
   /** 对比空白部分背景色 */
   inactive: null,
-};
+}

@@ -17,9 +17,9 @@
  * limitations under the License.
  */
 
-import { defineThemeConfig } from "./vite-plugin";
-import styles from "./styles";
-import themes from "./themes";
+import styles from "./styles"
+import themes from "./themes"
+import { defineThemeConfig } from "./vite-plugin"
 
 export default defineThemeConfig({
   globalStyles: styles,
@@ -130,4 +130,4 @@ export default defineThemeConfig({
       },
     },
   ],
-});
+})

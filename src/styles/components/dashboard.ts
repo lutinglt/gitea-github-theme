@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
-import { labelStyle } from "@lutinglt/gitea-github-theme/styles/common";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core"
+import { labelStyle } from "@lutinglt/gitea-github-theme/styles/common"
 
 const dashboard = css`
   .page-content.dashboard {
@@ -150,7 +150,7 @@ const dashboard = css`
       border-top-right-radius: 12px;
     }
   }
-`;
+`
 
 // 导航栏的工单/PR/里程碑仪表板
 const dashboardIssues = css`
@@ -197,7 +197,7 @@ const dashboardIssues = css`
       }
     }
   }
-`;
+`
 
 // 避免手机/平板下菜单错位
 const issueListMobile = css`
@@ -206,13 +206,13 @@ const issueListMobile = css`
       height: auto;
     }
   }
-`;
+`
 
 // 修复仪表板下二级面板选择菜单组织的标签间隔
 const fixOrgLabel = css`
   .dashboard .secondary-nav .org-visibility .label {
     margin-right: 0;
   }
-`;
+`
 
-export default cssCombine(dashboard, dashboardIssues, issueListMobile, fixOrgLabel);
+export default cssCombine(dashboard, dashboardIssues, issueListMobile, fixOrgLabel)

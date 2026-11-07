@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
-import { labelStyle } from "@lutinglt/gitea-github-theme/styles/common";
+import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core"
+import { labelStyle } from "@lutinglt/gitea-github-theme/styles/common"
 
 const label = css`
   .ui.label {
@@ -111,6 +111,6 @@ const label = css`
   .ui.mini.label {
     font-size: 10px;
   }
-`;
+`
 
-export default cssCombine(label);
+export default cssCombine(label)

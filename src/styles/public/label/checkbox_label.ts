@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, cssCombine } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine } from "@lutinglt/gitea-github-theme/core"
 
 const checkboxLabel = css`
   .ui.checkbox label:not(:has(+ *)) {
@@ -25,6 +25,6 @@ const checkboxLabel = css`
     align-items: center;
     gap: 2px;
   }
-`;
+`
 
-export default cssCombine(checkboxLabel);
+export default cssCombine(checkboxLabel)

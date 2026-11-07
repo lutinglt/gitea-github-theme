@@ -17,18 +17,20 @@
  * limitations under the License.
  */
 
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-import { ProxyAgent, setGlobalDispatcher } from "undici";
-import pkg from "../package.json";
+import path from "node:path"
+import { fileURLToPath } from "node:url"
+
+import { ProxyAgent, setGlobalDispatcher } from "undici"
+
+import pkg from "../package.json"
 
 export function setGlobalProxy() {
-  const proxyUrl = process.env.HTTPS_PROXY || process.env.HTTP_PROXY || process.env.ALL_PROXY;
+  const proxyUrl = process.env.HTTPS_PROXY || process.env.HTTP_PROXY || process.env.ALL_PROXY
   if (proxyUrl) {
-    setGlobalDispatcher(new ProxyAgent(proxyUrl));
+    setGlobalDispatcher(new ProxyAgent(proxyUrl))
   }
 }
 
-export { pkg };
-export const __dirname = path.dirname(fileURLToPath(import.meta.url));
-export const rootDir = path.join(__dirname, "..");
+export { pkg }
+export const __dirname = path.dirname(fileURLToPath(import.meta.url))
+export const rootDir = path.join(__dirname, "..")

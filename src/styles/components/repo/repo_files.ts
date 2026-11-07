@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
-import { animationDown } from "@lutinglt/gitea-github-theme/styles/common";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core"
+import { animationDown } from "@lutinglt/gitea-github-theme/styles/common"
 
 // 文件列表页面下的分支按钮
 const branchButton = css`
@@ -34,7 +34,7 @@ const branchButton = css`
       }
     }
   }
-`;
+`
 // 仓库同步派生
 const syncFork = css`
   .page-content.repository.file.list {
@@ -47,7 +47,7 @@ const syncFork = css`
       }
     }
   }
-`;
+`
 // 转到文件搜索结果弹窗
 const fileSearch = css`
   .file-search-popup.file-search-popup.file-search-popup {
@@ -80,7 +80,7 @@ const fileSearch = css`
       }
     }
   }
-`;
+`
 // 仓库文件列表
 const repoFiles = css`
   /* 文件列表和提交列表的按钮组 */
@@ -226,7 +226,7 @@ const repoFiles = css`
       }
     }
   }
-`;
+`
 // 手机下隐藏提交信息
 const repoFilesMobile = css`
   @media (max-width: 767.98px) {
@@ -245,6 +245,6 @@ const repoFilesMobile = css`
       }
     }
   }
-`;
+`
 
-export default cssCombine(branchButton, syncFork, fileSearch, repoFiles, repoFilesMobile);
+export default cssCombine(branchButton, syncFork, fileSearch, repoFiles, repoFilesMobile)

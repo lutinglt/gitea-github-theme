@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, otherThemeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars } from "@lutinglt/gitea-github-theme/core"
 
 // 全部圆角替换
 const radius = css`
@@ -83,7 +83,7 @@ const radius = css`
   .ui.segments:not(.horizontal) > .segment:has(~ .tw-hidden) {
     border-radius: ${otherThemeVars.border.radius};
   }
-`;
+`
 
 // 全部圆角替换(原CSS带!important)
 const radiusImportant = css`
@@ -106,7 +106,7 @@ const radiusImportant = css`
       border-radius: ${otherThemeVars.border.radius} !important;
     }
   }
-`;
+`
 
 // 上半部分圆角替换
 const radiusTop = css`
@@ -131,7 +131,7 @@ const radiusTop = css`
   .ui.modal > :first-child:not(.icon):not(.dimmer) {
     border-radius: ${otherThemeVars.border.radius} ${otherThemeVars.border.radius} 0 0;
   }
-`;
+`
 
 // 上半部分圆角替换(原CSS带!important)
 const radiusTopImportant = css`
@@ -143,7 +143,7 @@ const radiusTopImportant = css`
       border-radius: ${otherThemeVars.border.radius} ${otherThemeVars.border.radius} 0 0 !important;
     }
   }
-`;
+`
 
 // 下半部分圆角替换
 const radiusBottom = css`
@@ -179,7 +179,7 @@ const radiusBottom = css`
   .ui.segment:has(+ .ui.segment:not(.attached)) {
     border-radius: 0 0 ${otherThemeVars.border.radius} ${otherThemeVars.border.radius};
   }
-`;
+`
 
 // 下半部分圆角替换(原CSS带!important)
 const radiusBottomImportant = css`
@@ -187,7 +187,7 @@ const radiusBottomImportant = css`
   .ui.active.upward.selection.dropdown {
     border-radius: 0 0 ${otherThemeVars.border.radius} ${otherThemeVars.border.radius} !important;
   }
-`;
+`
 
 // 左半部分圆角替换
 const radiusLeft = css`
@@ -204,7 +204,7 @@ const radiusLeft = css`
   .ui.action.input > .buttons:first-child > .button {
     border-radius: ${otherThemeVars.border.radius} 0 0 ${otherThemeVars.border.radius};
   }
-`;
+`
 
 // 右半部分圆角替换
 const radiusRight = css`
@@ -224,7 +224,7 @@ const radiusRight = css`
   .ui.action.input > .buttons:last-child > .button {
     border-radius: 0 ${otherThemeVars.border.radius} ${otherThemeVars.border.radius} 0;
   }
-`;
+`
 
 // 左上圆角替换
 const radiusTopLeft = css`
@@ -232,7 +232,7 @@ const radiusTopLeft = css`
   .ui.table > thead > tr:first-child > th:first-child {
     border-top-left-radius: ${otherThemeVars.border.radius};
   }
-`;
+`
 
 // 右上圆角替换
 const radiusTopRight = css`
@@ -240,7 +240,7 @@ const radiusTopRight = css`
   .ui.category.search > .results .category:first-child .name + .result {
     border-top-right-radius: ${otherThemeVars.border.radius};
   }
-`;
+`
 
 // 左下圆角替换
 const radiusBottomLeft = css`
@@ -252,7 +252,7 @@ const radiusBottomLeft = css`
       }
     }
   }
-`;
+`
 
 // 右下圆角替换
 const radiusBottomRight = css`
@@ -268,7 +268,7 @@ const radiusBottomRight = css`
   .ui.category.search > .results .category:last-child .result:last-child {
     border-bottom-right-radius: ${otherThemeVars.border.radius};
   }
-`;
+`
 
 // only-child 顺序最后生效
 const onlyChild = css`
@@ -288,7 +288,7 @@ const onlyChild = css`
       }
     }
   }
-`;
+`
 
 // 修复一些情况下圆角边框线被覆盖的问题
 const fixRadius = css`
@@ -302,7 +302,7 @@ const fixRadius = css`
     border-bottom-left-radius: ${otherThemeVars.border.radius};
     border-bottom-right-radius: ${otherThemeVars.border.radius};
   }
-`;
+`
 
 // 修复一些根本无法理解的生效顺序
 const fixWhyRadius = css`
@@ -310,7 +310,7 @@ const fixWhyRadius = css`
   .ui.secondary.menu .item {
     border-radius: ${otherThemeVars.border.radius};
   }
-`;
+`
 
 export default cssCombine(
   radius,
@@ -328,4 +328,4 @@ export default cssCombine(
   onlyChild,
   fixRadius,
   fixWhyRadius
-);
+)

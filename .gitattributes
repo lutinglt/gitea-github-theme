@@ -6,7 +6,4 @@
 assets/** linguist-generated
 docs/** linguist-vendored
 dist/** linguist-generated
-gitea/** linguist-generated
-primer/** linguist-generated
-primer/index.ts -linguist-generated
 src/**/__snapshots__/** linguist-generated

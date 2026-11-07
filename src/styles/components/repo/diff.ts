@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
-import { activeItemAfterStyle } from "@lutinglt/gitea-github-theme/styles/common";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core"
+import { activeItemAfterStyle } from "@lutinglt/gitea-github-theme/styles/common"
 
 const diff = css`
   /* 这里的折叠行和代码行高度与 GitHub 的 release 和 review 的差异对比时的高度一致, 不需要像 commit 中的差异对比那样行高过高 */
@@ -81,7 +81,7 @@ const diff = css`
       color: ${themeVars.color.text.self} !important;
     }
   }
-`;
+`
 // 差异对比文件盒子头
 const diffFileBoxHeader = css`
   /* 差异对比文件盒子 */
@@ -133,7 +133,7 @@ const diffFileBoxHeader = css`
       }
     }
   }
-`;
+`
 // 差异对比文件盒子内容
 const diffFileBoxCodeDiff = css`
   /* 差异对比文件盒子 */
@@ -188,7 +188,7 @@ const diffFileBoxCodeDiff = css`
       overflow: hidden;
     }
   }
-`;
+`
 // 差异对比左侧文件树
 const diffFileTree = css`
   #diff-file-tree {
@@ -209,5 +209,5 @@ const diffFileTree = css`
       }
     }
   }
-`;
-export default cssCombine(diff, diffFileBoxHeader, diffFileBoxCodeDiff, diffFileTree);
+`
+export default cssCombine(diff, diffFileBoxHeader, diffFileBoxCodeDiff, diffFileTree)

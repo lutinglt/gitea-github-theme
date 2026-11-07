@@ -17,21 +17,22 @@
  * limitations under the License.
  */
 
-import { cssCombine } from "@lutinglt/gitea-github-theme/core";
-import actions from "./actions";
-import dashboard from "./dashboard";
-import explore from "./explore";
-import footer from "./footer";
-import heatmap from "./heatmap";
-import issues from "./issues";
-import navbar from "./navbar";
-import newrepo from "./newrepo";
-import notification from "./notification";
-import org from "./org";
-import repo from "./repo";
-import setting from "./setting";
-import signin from "./signin";
-import user from "./user";
+import { cssCombine } from "@lutinglt/gitea-github-theme/core"
+
+import actions from "./actions"
+import dashboard from "./dashboard"
+import explore from "./explore"
+import footer from "./footer"
+import heatmap from "./heatmap"
+import issues from "./issues"
+import navbar from "./navbar"
+import newrepo from "./newrepo"
+import notification from "./notification"
+import org from "./org"
+import repo from "./repo"
+import setting from "./setting"
+import signin from "./signin"
+import user from "./user"
 
 export default cssCombine(
   actions,
@@ -48,4 +49,4 @@ export default cssCombine(
   setting,
   signin,
   user
-);
+)

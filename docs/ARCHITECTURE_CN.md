@@ -123,24 +123,24 @@ export function compileCSS(compileFn: () => void): string {
     registerClassName: className => localClassNames.add(className),
     registerComposition: composition => composedClassLists.push(composition),
     // ... 其他回调实现为空操作
-  });
+  })
 
   // 2. 设置文件作用域用于调试
-  setFileScope(getCallerInfo(1));
+  setFileScope(getCallerInfo(1))
 
   // 3. 执行调用方的 vanilla-extract API 调用
-  compileFn();
+  compileFn()
 
   // 4. 拆除适配器
-  endFileScope();
-  removeAdapter();
+  endFileScope()
+  removeAdapter()
 
   // 5. 将捕获的 CSS 对象序列化为字符串
   return transformCss({
     localClassNames: Array.from(localClassNames),
     composedClassLists,
     cssObjs: capturedCssObjs,
-  }).join("\n");
+  }).join("\n")
 }
 ```
 
@@ -204,13 +204,13 @@ function varMapper(prefix: string | null = null) {
   return (value: string | null, path: string[]) => {
     if (value === null) {
       // 从路径自动生成名称: ["color","primary","dark","num1"] → "color-primary-dark-1"
-      path = path.filter(item => item !== "self"); // 移除 "self" 键
-      path = path.map(item => item.replace(/^num/, "")); // 去掉 "num" 前缀
-      value = path.join("-");
+      path = path.filter(item => item !== "self") // 移除 "self" 键
+      path = path.map(item => item.replace(/^num/, "")) // 去掉 "num" 前缀
+      value = path.join("-")
     }
-    if (prefix) value = `${prefix}-${value}`;
-    return value;
-  };
+    if (prefix) value = `${prefix}-${value}`
+    return value
+  }
 }
 ```
 
@@ -234,10 +234,10 @@ function varMapper(prefix: string | null = null) {
 
 ```typescript
 export function css(strings: TemplateStringsArray, ...values: CSSInterpolation[]): CSSString {
-  const result = strings.reduce((acc, s, i) => acc + s + String(values[i] ?? ""), "");
+  const result = strings.reduce((acc, s, i) => acc + s + String(values[i] ?? ""), "")
   // 构建时校验: lightningcss 解析并报告语法错误
-  transform({ filename: getCallerInfo(1), code: Buffer.from(result) });
-  return result as CSSString;
+  transform({ filename: getCallerInfo(1), code: Buffer.from(result) })
+  return result as CSSString
 }
 ```
 
@@ -365,14 +365,14 @@ export const primaryButtonStyle = cssStyle({
   backgroundColor: themeVars.github.button.primary.bgColor.rest,
   borderColor: themeVars.github.button.primary.borderColor.rest,
   boxShadow: themeVars.github.shadow.resting.small,
-});
+})
 
 // 在 styles/public/button.ts 中:
 const baseButton = css`
   .ui.primary.button {
     ${primaryButtonStyle}
   }
-`;
+`
 ```
 
 这在最终输出静态 CSS 字符串的系统中保留了类型安全（vanilla-extract 校验属性名和值类型）。
@@ -495,8 +495,8 @@ const baseButton = css`
 1. 创建 `themes/my-theme.ts`：
 
 ```typescript
-import { defineTheme } from "@lutinglt/gitea-github-theme/core";
-import type { ThemeColor, Syntax } from "@lutinglt/gitea-github-theme/core";
+import { defineTheme } from "@lutinglt/gitea-github-theme/core"
+import type { ThemeColor, Syntax } from "@lutinglt/gitea-github-theme/core"
 
 const themeColor: ThemeColor = {
   isDarkTheme: true,
@@ -521,25 +521,15 @@ const themeColor: ThemeColor = {
     gold: "#eab308",
     white: "#fafafa",
   },
-  console: {
-    /* Actions 日志颜色 */
-  },
-  diff: {
-    /* 代码差异颜色 */
-  },
-  other: {
-    /* body、text、input、shadow 等 */
-  },
-  github: {
-    /* GitHub 专有变量 */
-  },
-};
+  console: {/* Actions 日志颜色 */},
+  diff: {/* 代码差异颜色 */},
+  other: {/* body、text、input、shadow 等 */},
+  github: {/* GitHub 专有变量 */},
+}
 
-const syntaxColor: Syntax = {
-  /* 代码高亮色 */
-};
+const syntaxColor: Syntax = {/* 代码高亮色 */}
 
-export default defineTheme({ colorType: "theme", themeColor, syntaxColor });
+export default defineTheme({ colorType: "theme", themeColor, syntaxColor })
 ```
 
 2. 在 `theme.config.ts` 中注册：

@@ -17,12 +17,12 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, cssStyle, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
-import { deleteHoverActiveStyle } from "@lutinglt/gitea-github-theme/styles/common";
+import { css, cssCombine, cssStyle, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core"
+import { deleteHoverActiveStyle } from "@lutinglt/gitea-github-theme/styles/common"
 
 const sidebarPadding = cssStyle({
   padding: "4px 8px",
-});
+})
 
 // 侧边栏
 const issueSidebar = css`
@@ -216,6 +216,6 @@ const issueSidebar = css`
       }
     }
   }
-`;
+`
 
-export default cssCombine(issueSidebar);
+export default cssCombine(issueSidebar)

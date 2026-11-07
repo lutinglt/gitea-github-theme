@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core"
 
 const heatmap = css`
   #user-heatmap {
@@ -83,7 +83,7 @@ const heatmap = css`
       }
     }
   }
-`;
+`
 
 // 动态
 const activity = css`
@@ -173,6 +173,6 @@ const activity = css`
       padding: 12px 0px;
     }
   }
-`;
+`
 
-export default cssCombine(heatmap, activity);
+export default cssCombine(heatmap, activity)

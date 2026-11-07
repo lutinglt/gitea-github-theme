@@ -17,13 +17,13 @@
  * limitations under the License.
  */
 
-const root = ":root";
-const metaInfo = "gitea-theme-meta-info";
-const chroma = ".chroma";
-const codeMirror = ".code-editor-container";
-const overlayAppear = "overlayAppear";
-const overlayAppearDown = "overlayAppearDown";
-const overlayAppearUp = "overlayAppearUp";
+const root = ":root"
+const metaInfo = "gitea-theme-meta-info"
+const chroma = ".chroma"
+const codeMirror = ".code-editor-container"
+const overlayAppear = "overlayAppear"
+const overlayAppearDown = "overlayAppearDown"
+const overlayAppearUp = "overlayAppearUp"
 const emoji = `.emoji[data-alias="heavy_check_mark"],
 .emoji[data-alias="currency_exchange"],
 .emoji[data-alias="top"],
@@ -44,7 +44,7 @@ const emoji = `.emoji[data-alias="heavy_check_mark"],
 .emoji[data-alias="feet"],
 .emoji[data-alias="musical_note"],
 .emoji[data-alias="notes"]
-`;
+`
 
 export default {
   root,
@@ -55,4 +55,4 @@ export default {
   overlayAppearDown,
   overlayAppearUp,
   emoji,
-} as const;
+} as const

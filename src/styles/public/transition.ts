@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, cssCombine } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine } from "@lutinglt/gitea-github-theme/core"
 
 // 简单的渐变过渡
 const transition = css`
@@ -102,6 +102,6 @@ const transition = css`
       transform: none;
     }
   }
-`;
+`
 
-export default cssCombine(transition);
+export default cssCombine(transition)

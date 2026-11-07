@@ -17,51 +17,52 @@
  * limitations under the License.
  */
 
-import type { CSSVarFunction } from "..";
-import { describe, expect, it } from "vitest";
-import { extractVarName } from "./var";
+import { describe, expect, it } from "vitest"
+
+import type { CSSVarFunction } from ".."
+import { extractVarName } from "./var"
 
 describe("extractVarName", () => {
   it("提取简单 CSS 变量名", () => {
-    const input = "var(--color-primary)" as CSSVarFunction;
-    expect(extractVarName(input)).toBe("--color-primary");
-  });
+    const input = "var(--color-primary)" as CSSVarFunction
+    expect(extractVarName(input)).toBe("--color-primary")
+  })
 
   it("提取连字符分隔的 CSS 变量名", () => {
-    const input = "var(--color-primary-dark-1)" as CSSVarFunction;
-    expect(extractVarName(input)).toBe("--color-primary-dark-1");
-  });
+    const input = "var(--color-primary-dark-1)" as CSSVarFunction
+    expect(extractVarName(input)).toBe("--color-primary-dark-1")
+  })
 
   it("提取 github 命名空间的变量", () => {
-    const input = "var(--github-button-primary-bgColor-rest)" as CSSVarFunction;
-    expect(extractVarName(input)).toBe("--github-button-primary-bgColor-rest");
-  });
+    const input = "var(--github-button-primary-bgColor-rest)" as CSSVarFunction
+    expect(extractVarName(input)).toBe("--github-button-primary-bgColor-rest")
+  })
 
   it("提取 chroma 高亮变量", () => {
-    const input = "var(--chroma-keyword)" as CSSVarFunction;
-    expect(extractVarName(input)).toBe("--chroma-keyword");
-  });
+    const input = "var(--chroma-keyword)" as CSSVarFunction
+    expect(extractVarName(input)).toBe("--chroma-keyword")
+  })
 
   it("提取 custom 自定义变量", () => {
-    const input = "var(--custom-clone-menu-width)" as CSSVarFunction;
-    expect(extractVarName(input)).toBe("--custom-clone-menu-width");
-  });
+    const input = "var(--custom-clone-menu-width)" as CSSVarFunction
+    expect(extractVarName(input)).toBe("--custom-clone-menu-width")
+  })
 
   it("提取有数字后缀的变量", () => {
-    const input = "var(--color-primary-alpha-10)" as CSSVarFunction;
-    expect(extractVarName(input)).toBe("--color-primary-alpha-10");
-  });
+    const input = "var(--color-primary-alpha-10)" as CSSVarFunction
+    expect(extractVarName(input)).toBe("--color-primary-alpha-10")
+  })
 
   it("非法格式会触发 assertVarName 断言失败", () => {
     // 不是 var(--xxx) 格式会抛出异常
-    expect(() => extractVarName("not-a-var" as unknown as CSSVarFunction)).toThrow();
-  });
+    expect(() => extractVarName("not-a-var" as unknown as CSSVarFunction)).toThrow()
+  })
 
   it("没有闭合括号的格式会抛出异常", () => {
-    expect(() => extractVarName("var(--color" as unknown as CSSVarFunction)).toThrow();
-  });
+    expect(() => extractVarName("var(--color" as unknown as CSSVarFunction)).toThrow()
+  })
 
   it("空 var() 会抛出异常", () => {
-    expect(() => extractVarName("var()" as unknown as CSSVarFunction)).toThrow();
-  });
-});
+    expect(() => extractVarName("var()" as unknown as CSSVarFunction)).toThrow()
+  })
+})

@@ -17,19 +17,20 @@
  * limitations under the License.
  */
 
-import { createGlobalThemeContract } from "@vanilla-extract/css";
-import color from "./color";
+import { createGlobalThemeContract } from "@vanilla-extract/css"
+
+import color from "./color"
 
 function varMapper(prefix: string | null = null) {
   return (value: string | null, path: string[]) => {
     if (value === null) {
-      path = path.filter(item => item !== "self");
-      path = path.map(item => item.replace(/^num/, ""));
-      value = path.join("-");
+      path = path.filter(item => item !== "self")
+      path = path.map(item => item.replace(/^num/, ""))
+      value = path.join("-")
     }
-    if (prefix) value = `${prefix}-${value}`;
-    return value;
-  };
+    if (prefix) value = `${prefix}-${value}`
+    return value
+  }
 }
 
 const vars = {
@@ -47,14 +48,14 @@ const vars = {
     series: { num16: color.series16 },
   },
   github: color.github,
-};
+}
 
 const otherVars = {
   border: { radius: null },
   color: { ...color.otherAuto },
   checkbox: { size: null },
   gap: { inline: null, block: null },
-};
+}
 
 const customVars = {
   branchMenuWidth: "branch-menu-width",
@@ -63,11 +64,11 @@ const customVars = {
   explore: { repolistColumns: "explore-repolist-columns", userlistColumns: "explore-userlist-columns" },
   userRepolistColumns: "user-repolist-columns",
   org: { repolistColumns: "org-repolist-columns", userlistColumns: "org-userlist-columns" },
-};
+}
 
-export const themeVars = createGlobalThemeContract(vars, varMapper());
-export const otherThemeVars = createGlobalThemeContract(otherVars, varMapper());
-export const customThemeVars = createGlobalThemeContract(customVars, varMapper("custom"));
-export const chromaVars = createGlobalThemeContract(color.chroma, varMapper("chroma"));
-export const codeMirrorVars = createGlobalThemeContract(color.codeMirror, varMapper("codeMirror"));
-export const syntaxVars = createGlobalThemeContract(color.syntax, varMapper("color-syntax"));
+export const themeVars = createGlobalThemeContract(vars, varMapper())
+export const otherThemeVars = createGlobalThemeContract(otherVars, varMapper())
+export const customThemeVars = createGlobalThemeContract(customVars, varMapper("custom"))
+export const chromaVars = createGlobalThemeContract(color.chroma, varMapper("chroma"))
+export const codeMirrorVars = createGlobalThemeContract(color.codeMirror, varMapper("codeMirror"))
+export const syntaxVars = createGlobalThemeContract(color.syntax, varMapper("color-syntax"))

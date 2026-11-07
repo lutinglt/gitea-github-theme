@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
-import { animationDown } from "@lutinglt/gitea-github-theme/styles/common";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core"
+import { animationDown } from "@lutinglt/gitea-github-theme/styles/common"
 
 // 工作流右侧作业步骤日志详情
 const actionViewRight = css`
@@ -116,6 +116,6 @@ const actionViewRight = css`
       }
     }
   }
-`;
+`
 
-export default cssCombine(actionViewRight);
+export default cssCombine(actionViewRight)

@@ -17,9 +17,8 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
-import { basicButtonStyle } from "@lutinglt/gitea-github-theme/styles/common";
-import { underlineNavActiveItemAfterStyle } from "@lutinglt/gitea-github-theme/styles/common";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core"
+import { basicButtonStyle, underlineNavActiveItemAfterStyle } from "@lutinglt/gitea-github-theme/styles/common"
 
 const secondaryMenu = css`
   /* 二级菜单, 比如 Issue/PR/Actions 的筛选菜单 */
@@ -71,7 +70,7 @@ const secondaryMenu = css`
   .page-content.repository .ui.secondary.pointing.menu {
     border-bottom: none !important;
   }
-`;
+`
 
 // 小型的一般带搜索框和下拉菜单按钮的二级菜单栏
 // 例: 探索页面搜索框和筛选菜单/排序菜单, 关注/用户/组织仓库的搜索栏和筛选菜单/排序菜单
@@ -86,7 +85,7 @@ const secondarySmallFilterMenu = css`
       background: unset;
     }
   }
-`;
+`
 
 // 修复 Gitea 28.0.0 引入的多余右边距
 const fixSecondaryFilterMenu = css`
@@ -95,6 +94,6 @@ const fixSecondaryFilterMenu = css`
       margin-right: 0;
     }
   }
-`;
+`
 
-export default cssCombine(secondaryMenu, secondarySmallFilterMenu, fixSecondaryFilterMenu);
+export default cssCombine(secondaryMenu, secondarySmallFilterMenu, fixSecondaryFilterMenu)

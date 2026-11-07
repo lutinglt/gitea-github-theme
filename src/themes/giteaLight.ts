@@ -21,10 +21,9 @@
  * @author lutinglt
  */
 
-import type { Ansi, Console, Diff, Message, Named, Other, Primary, Secondary, Series16, Syntax } from "../core/gitea";
-import type { GiteaColor } from "../palette";
-import { defineTheme } from "../core";
-import { themeVars } from "../core/gitea";
+import type { Ansi, Console, Diff, Message, Named, Other, Primary, Secondary, Series16, Syntax } from "../core"
+import { defineTheme, themeVars } from "../core"
+import type { GiteaColor } from "../palette"
 
 const primary: Primary = {
   self: "#4183c4",
@@ -60,7 +59,7 @@ const primary: Primary = {
   },
   hover: themeVars.color.primary.dark.num1,
   active: themeVars.color.primary.dark.num2,
-};
+}
 const secondary: Secondary = {
   self: "#d0d7de",
   dark: {
@@ -98,7 +97,7 @@ const secondary: Secondary = {
   button: themeVars.color.secondary.dark.num4,
   hover: themeVars.color.secondary.dark.num5,
   active: themeVars.color.secondary.dark.num6,
-};
+}
 const console: Console = {
   fg: {
     self: "#0d1117",
@@ -108,7 +107,7 @@ const console: Console = {
   activeBg: "#d0d7de",
   hoverBg: "#f1f3f5",
   link: "#5c656d",
-};
+}
 const named: Named = {
   red: {
     self: "#db2828",
@@ -145,7 +144,7 @@ const named: Named = {
   grey: { self: "#697077", light: "#7c838a" },
   gold: "#a1882b",
   white: "#ffffff",
-};
+}
 const ansi: Ansi = {
   black: "#1e2327",
   red: "#cc4848",
@@ -165,7 +164,7 @@ const ansi: Ansi = {
     cyan: "#00b6ad",
     white: themeVars.color.console.fg.self,
   },
-};
+}
 const diff: Diff = {
   added: {
     fg: "#177231",
@@ -183,7 +182,7 @@ const diff: Diff = {
     word: { bg: "#fdb8c0" },
   },
   inactive: "#f0f2f4",
-};
+}
 const message: Message = {
   error: {
     bg: { self: "#ffebe9", active: "#ffcecb", hover: "#ffdcd7" },
@@ -210,7 +209,7 @@ const message: Message = {
     border: "#b9a1ff66",
     text: "#8250df",
   },
-};
+}
 const other: Other = {
   logo: "#609926",
   body: "#ffffff",
@@ -279,7 +278,7 @@ const other: Other = {
   // workflowEdgeHover: "#b1b7bd",
   // 此颜色在 Gitea 中使用在 1.27 版本中出现偏差, CSS 高亮使用 primary 覆盖, 这里还原视觉效果与主题文件有偏差
   workflowEdgeHover: primary.self,
-};
+}
 
 const series16: Series16 = {
   num0: "#7db233",
@@ -298,7 +297,7 @@ const series16: Series16 = {
   num13: "#439d73",
   num14: "#103aad",
   num15: "#982e85",
-};
+}
 
 export const giteaLightColor: GiteaColor = {
   isDarkTheme: false,
@@ -311,7 +310,7 @@ export const giteaLightColor: GiteaColor = {
   diff,
   other,
   series16,
-};
+}
 
 export const giteaLightSyntax: Syntax = {
   keyword: "#a73a00",
@@ -355,10 +354,10 @@ export const giteaLightSyntax: Syntax = {
   traceback: "#c00000",
   matchingBracketBg: "#00b5ad38",
   nonmatchingBracketBg: "#db282838",
-};
+}
 
 export const giteaLightTheme = defineTheme({
   colorType: "gitea",
   themeColor: giteaLightColor,
   syntaxColor: giteaLightSyntax,
-});
+})

@@ -17,12 +17,12 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core"
 
-const primary = "primary" as const;
-const secondary = "secondary" as const;
-const metadata = "metadata" as const;
-const actions = "actions" as const;
+const primary = "primary" as const
+const secondary = "secondary" as const
+const metadata = "metadata" as const
+const actions = "actions" as const
 
 const commitsList = css`
   ul.gitea-github-theme-templates-commits-list {
@@ -135,6 +135,6 @@ const commitsList = css`
       }
     }
   }
-`;
+`
 
-export default cssCombine(commitsList);
+export default cssCombine(commitsList)

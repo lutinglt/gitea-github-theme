@@ -10,8 +10,8 @@
     ],
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
     "useDefineForClassFields": true,
-    "target": "ES2022",
-    "lib": ["ES2023"],
+    "target": "ESNext",
+    "lib": ["ESNext"],
     "module": "ESNext",
     "skipLibCheck": true,
     /* Bundler mode */
@@ -32,5 +32,5 @@
       "@lutinglt/gitea-github-theme/assets": ["./assets"]
     }
   },
-  "include": ["src", "scripts", "assets/primer", "vite.config.ts", "vitest.config.ts"]
+  "include": ["src", "scripts", "assets/primer", "*.config.ts"]
 }

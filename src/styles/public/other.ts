@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core"
 
 const text = css`
   /* 默认颜色是 --color-text-light, 主题下此颜色是亮白色, 修改为灰色 */
@@ -25,14 +25,14 @@ const text = css`
   .tw-text-text-light {
     color: ${themeVars.color.text.light.num1} !important;
   }
-`;
+`
 // 一些列表头, 比如工单的搜索标签里程碑栏
 const listHeader = css`
   .list-header {
     align-items: center;
     align-content: center;
   }
-`;
+`
 
 const svg = css`
   /* 已标星的图标 */
@@ -62,7 +62,7 @@ const svg = css`
   .tw-text-red.octicon-git-pull-request-closed {
     color: ${themeVars.color.red.self} !important;
   }
-`;
+`
 // 头像
 const avatar = css`
   img.ui.avatar,
@@ -72,7 +72,7 @@ const avatar = css`
     box-shadow: 0 0 0 1px ${themeVars.github.avatar.borderColor};
     backdrop-filter: blur(12px);
   }
-`;
+`
 // 切换按钮
 const toggle = css`
   .ui.toggle.checkbox {
@@ -102,6 +102,6 @@ const toggle = css`
       left: 19.5px;
     }
   }
-`;
+`
 
-export default cssCombine(text, listHeader, svg, avatar, toggle);
+export default cssCombine(text, listHeader, svg, avatar, toggle)

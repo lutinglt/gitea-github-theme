@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
-import { deleteHoverActiveStyle } from "@lutinglt/gitea-github-theme/styles/common";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core"
+import { deleteHoverActiveStyle } from "@lutinglt/gitea-github-theme/styles/common"
 
 // 评论
 const comment = css`
@@ -138,7 +138,7 @@ const comment = css`
       }
     }
   }
-`;
+`
 
 // 评论书写框
 const commentForm = css`
@@ -148,7 +148,7 @@ const commentForm = css`
       display: none;
     }
   }
-`;
+`
 
 // PR 界面的 PR 操作评论
 const prMerge = css`
@@ -263,5 +263,5 @@ const prMerge = css`
       }
     }
   }
-`;
-export default cssCombine(comment, commentForm, prMerge);
+`
+export default cssCombine(comment, commentForm, prMerge)

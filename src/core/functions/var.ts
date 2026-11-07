@@ -17,16 +17,17 @@
  * limitations under the License.
  */
 
-import { assertVarName } from "@vanilla-extract/css";
-import type { CSSVarFunction } from "..";
+import { assertVarName } from "@vanilla-extract/css"
 
-type CSSVarName = `--${string}`;
+import type { CSSVarFunction } from ".."
+
+type CSSVarName = `--${string}`
 /** 提取 CSS 变量名
  * @param cssvar `var(--${string})`
  * @returns `--${string}`
  */
 export function extractVarName(cssvar: CSSVarFunction): CSSVarName {
-  assertVarName(cssvar);
-  const varName = cssvar.replace("var(--", "").replace(")", "");
-  return `--${varName}`;
+  assertVarName(cssvar)
+  const varName = cssvar.replace("var(--", "").replace(")", "")
+  return `--${varName}`
 }

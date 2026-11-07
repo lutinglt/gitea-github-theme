@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core"
 
 // 用户点星仓库列表
 const stars = css`
@@ -78,7 +78,7 @@ const stars = css`
       }
     }
   }
-`;
+`
 
 // 用户信息卡片
 const profileCard = css`
@@ -89,6 +89,6 @@ const profileCard = css`
       }
     }
   }
-`;
+`
 
-export default cssCombine(stars, profileCard);
+export default cssCombine(stars, profileCard)

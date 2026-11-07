@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
-import { activeItemAfterStyle, deleteHoverActiveStyle } from "@lutinglt/gitea-github-theme/styles/common";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core"
+import { activeItemAfterStyle, deleteHoverActiveStyle } from "@lutinglt/gitea-github-theme/styles/common"
 
 // 仓库打开文件时的视图
 const repoFileView = css`
@@ -278,7 +278,7 @@ const repoFileView = css`
       min-width: 32px;
     }
   }
-`;
+`
 
 // 避免手机/平板下路径容器过长导致换行, 取消固定
 const repoFileViewMobile = css`
@@ -299,7 +299,7 @@ const repoFileViewMobile = css`
       }
     }
   }
-`;
+`
 
 // 代码编辑器
 const codeEditorContainer = css`
@@ -360,7 +360,7 @@ const codeEditorContainer = css`
         monospace;
     }
   }
-`;
+`
 
 // 文件编辑器
 const fileEditor = css`
@@ -428,7 +428,7 @@ const fileEditor = css`
       }
     }
   }
-`;
+`
 
 // 提交表单(编译修改时底部的提交信息)
 const commitForm = css`
@@ -443,6 +443,6 @@ const commitForm = css`
       }
     }
   }
-`;
+`
 
-export default cssCombine(repoFileView, repoFileViewMobile, codeEditorContainer, fileEditor, commitForm);
+export default cssCombine(repoFileView, repoFileViewMobile, codeEditorContainer, fileEditor, commitForm)

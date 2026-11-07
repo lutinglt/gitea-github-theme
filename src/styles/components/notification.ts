@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core"
 
 // 用户订阅/关注页面
 const notification = css`
@@ -221,6 +221,6 @@ const notification = css`
       }
     }
   }
-`;
+`
 
-export default cssCombine(notification);
+export default cssCombine(notification)

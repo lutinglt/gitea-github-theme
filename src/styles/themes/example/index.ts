@@ -17,7 +17,8 @@
  * limitations under the License.
  */
 
-import { cssCombine } from "@lutinglt/gitea-github-theme/core";
-import button from "./button";
+import { cssCombine } from "@lutinglt/gitea-github-theme/core"
 
-export default cssCombine(button);
+import button from "./button"
+
+export default cssCombine(button)

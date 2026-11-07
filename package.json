@@ -7,81 +7,51 @@
     "url": "https://github.com/lutinglt"
   },
   "type": "module",
-  "engines": {
-    "bun": ">=1.3.14"
-  },
   "exports": {
     "./*": "./src/*/index.ts",
-    "./*.ts": "./src/*.ts",
+    "./themeConfig": "./src/themeConfig.ts",
     "./assets": "./assets/index.ts"
   },
   "scripts": {
-    "lint": "bunx --bun eslint .",
-    "fmt": "bunx --bun prettier --write .",
-    "check": "tsc -b",
-    "bundle": "bun check && bunx --bun vite build",
-    "dev": "bun bundle && bun sync:theme",
-    "commit": "bun fmt && bun bundle && bun vitest",
-    "version": "bun scripts/version.ts",
-    "release": "bun bundle && bun update:locale",
+    "build": "bun run --bun vite build",
+    "bundle": "bun check && bun run build",
     "bundle:ci": "bun bundle && bun vitest",
-    "sync:theme": "bun scripts/syncTheme.ts",
-    "update:primer": "bun scripts/buildPrimerTSToken.ts",
-    "update:locale": "bun scripts/translate.ts",
-    "update:gitea": "bun scripts/updateGitea.ts",
+    "bundle:release": "bun bundle && bun update:locale",
+    "check": "tsc -b && oxlint",
+    "commit": "bun fmt && bun bundle && bun vitest",
+    "dev": "bun bundle && bun update:theme",
+    "fix": "oxlint --fix",
+    "fix:imports": "oxlint --fix -A all -D import/no-duplicates",
+    "fmt": "oxfmt && bun fix:imports",
+    "fmt:check": "oxfmt --check",
+    "install:clean": "rm -rf node_modules bun.lock bun.lockb && bun install",
     "update:arcgreen": "bun scripts/updateArcGreen.ts",
+    "update:gitea": "bun scripts/updateGitea.ts",
+    "update:locale": "bun scripts/translate.ts",
+    "update:primer": "bun scripts/buildPrimerTSToken.ts",
     "update:snapshot": "bun vitest --update",
-    "install:clean": "rm -rf node_modules bun.lock bun.lockb && bun install"
+    "update:theme": "bun scripts/syncTheme.ts",
+    "version": "bun scripts/version.ts"
   },
   "devDependencies": {
     "@catppuccin/palette": "1.8.0",
-    "@eslint/js": "^10.0.1",
     "@primer/primitives": "11.10.0",
+    "@styled/typescript-styled-plugin": "^1.1.1",
     "@types/node": "^25.9.5",
     "@vanilla-extract/css": "^1.21.2",
     "color2k": "^2.0.4",
     "dotenv": "^17.4.2",
-    "eslint": "^10.10.0",
-    "globals": "^17.12.0",
-    "jiti": "^2.7.0",
     "lightningcss": "^1.33.0",
-    "prettier": "3.8.1",
-    "prettier-plugin-organize-imports": "^4.3.0",
+    "oxfmt": "^0.77.0",
+    "oxlint": "^1.92.0",
+    "oxlint-tsgolint": "^7.0.2006",
     "style-dictionary": "^5.5.3",
     "typescript": "^7.0.2",
-    "typescript-eslint": "^8.70.0",
     "undici": "^7.29.1",
     "vite": "^8.2.2",
     "vitest": "^4.1.11"
   },
-  "prettier": {
-    "printWidth": 120,
-    "tabWidth": 2,
-    "useTabs": false,
-    "semi": true,
-    "singleQuote": false,
-    "quoteProps": "as-needed",
-    "jsxSingleQuote": false,
-    "trailingComma": "es5",
-    "bracketSpacing": true,
-    "bracketSameLine": true,
-    "arrowParens": "avoid",
-    "proseWrap": "always",
-    "htmlWhitespaceSensitivity": "css",
-    "endOfLine": "lf",
-    "plugins": [
-      "prettier-plugin-organize-imports"
-    ],
-    "organizeImportsSkipDestructiveCodeActions": false,
-    "overrides": [
-      {
-        "files": [
-          "themes/github.ts"
-        ],
-        "options": {
-          "printWidth": 150
-        }
-      }
-    ]
+  "engines": {
+    "bun": ">=1.3.14"
   }
 }

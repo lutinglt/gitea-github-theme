@@ -17,15 +17,15 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, customThemeVars, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
-import { underlineNavActiveItemAfterStyle } from "@lutinglt/gitea-github-theme/styles/common";
+import { css, cssCombine, customThemeVars, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core"
+import { underlineNavActiveItemAfterStyle } from "@lutinglt/gitea-github-theme/styles/common"
 
 /** 克隆按钮 */
 const cloneButton = css`
   .ui.ui.ui.compact.primary.button[data-global-init="initRepoClonePanel"] {
     padding: 0 12px;
   }
-`;
+`
 
 /** 克隆按钮的弹窗 */
 const clonePanel = css`
@@ -138,6 +138,6 @@ const clonePanel = css`
       }
     }
   }
-`;
+`
 
-export default cssCombine(cloneButton, clonePanel);
+export default cssCombine(cloneButton, clonePanel)

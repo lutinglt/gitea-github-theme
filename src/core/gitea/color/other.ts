@@ -20,7 +20,7 @@
 export const otherAuto = {
   /** 未知 */
   git: null,
-};
+}
 
 export const other = {
   /** 未登录时的介绍首页的 SVG 和链接文字颜色 */
@@ -189,4 +189,4 @@ export const other = {
   },
   /** Action 页面工作流可视化图像中悬停任务时与其他任务连接的线的颜色 */
   workflowEdgeHover: "color-workflow-edge-hover",
-};
+}

@@ -17,10 +17,11 @@
  * limitations under the License.
  */
 
-import { cssCombine } from "@lutinglt/gitea-github-theme/core";
-import componentStyles from "./components";
-import publicStyles from "./public";
-import templateStyles from "./templates";
+import { cssCombine } from "@lutinglt/gitea-github-theme/core"
 
-export * as themeStyles from "./themes";
-export default cssCombine(publicStyles, componentStyles, templateStyles);
+import componentStyles from "./components"
+import publicStyles from "./public"
+import templateStyles from "./templates"
+
+export * as themeStyles from "./themes"
+export default cssCombine(publicStyles, componentStyles, templateStyles)

@@ -17,24 +17,24 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, cssStyle, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, cssStyle, themeVars } from "@lutinglt/gitea-github-theme/core"
 import {
   basicButtonStyle,
   primaryButtonHoverStyle,
   primaryButtonStyle,
-} from "@lutinglt/gitea-github-theme/styles/common";
+} from "@lutinglt/gitea-github-theme/styles/common"
 
 const tinyStyle = cssStyle({
   color: themeVars.github.themeExtra.button.primary.fgColor.accent,
   backgroundColor: themeVars.color.button,
   borderColor: themeVars.color.light.border,
-});
+})
 
 const tinyHoverStyle = cssStyle({
   color: themeVars.github.button.primary.fgColor.rest,
   backgroundColor: themeVars.github.button.primary.bgColor.hover,
   borderColor: themeVars.github.button.primary.borderColor.hover,
-});
+})
 
 // 设置界面下的按钮
 const button = css`
@@ -96,7 +96,7 @@ const button = css`
       }
     }
   }
-`;
+`
 
 const label = css`
   /* Runner 标签 */
@@ -106,7 +106,7 @@ const label = css`
       border: 1px solid ${themeVars.color.light.border};
     }
   }
-`;
+`
 
 // 修复组织设置界面的组织设置中多余的边框
 const fixOrgSetting = css`
@@ -115,6 +115,6 @@ const fixOrgSetting = css`
       border: 0;
     }
   }
-`;
+`
 
-export default cssCombine(button, label, fixOrgSetting);
+export default cssCombine(button, label, fixOrgSetting)

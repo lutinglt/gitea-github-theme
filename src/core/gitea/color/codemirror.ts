@@ -147,4 +147,4 @@ export const codeMirror = {
      */
     xml: null,
   },
-};
+}

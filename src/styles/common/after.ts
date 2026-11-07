@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { cssStyle, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { cssStyle, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core"
 
 /** 激活项后缀样式
  * @example 菜单激活子项前面的竖线, 方便识别
@@ -31,7 +31,7 @@ export const activeItemAfterStyle = cssStyle({
   position: "absolute",
   top: "calc(50% - 12px)",
   width: "4px",
-});
+})
 
 /** 激活项悬浮下划线样式
  * @example 悬浮在激活项下面的下划线
@@ -45,4 +45,4 @@ export const underlineNavActiveItemAfterStyle = cssStyle({
   height: "2px",
   inset: "auto 0 0",
   marginBottom: "-8px",
-});
+})

@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { cssStyle, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { cssStyle, themeVars } from "@lutinglt/gitea-github-theme/core"
 
 /** 普通按钮样式 */
 export const basicButtonStyle = cssStyle({
@@ -35,7 +35,7 @@ export const basicButtonStyle = cssStyle({
     color: themeVars.color.text.self,
     borderColor: themeVars.color.light.border,
   },
-});
+})
 
 /** 主色调按钮样式 */
 export const primaryButtonStyle = cssStyle({
@@ -43,11 +43,11 @@ export const primaryButtonStyle = cssStyle({
   backgroundColor: themeVars.github.button.primary.bgColor.rest,
   borderColor: themeVars.github.button.primary.borderColor.rest,
   boxShadow: themeVars.github.shadow.resting.small,
-});
+})
 
 /** 主色调按钮悬停样式 */
 export const primaryButtonHoverStyle = cssStyle({
   color: themeVars.github.button.primary.fgColor.rest,
   backgroundColor: themeVars.github.button.primary.bgColor.hover,
   borderColor: themeVars.github.button.primary.borderColor.hover,
-});
+})

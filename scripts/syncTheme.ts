@@ -17,43 +17,44 @@
  * limitations under the License.
  */
 
-import * as dotenv from "dotenv";
-import { execSync } from "node:child_process";
+import { execSync } from "node:child_process"
 
-dotenv.config({ quiet: true });
+import * as dotenv from "dotenv"
 
-const PREFIX = "theme-github-";
-const NAME = "SyncTheme";
+dotenv.config({ quiet: true })
+
+const PREFIX = "theme-github-"
+const NAME = "SyncTheme"
 
 // 上传到服务器
-const server = process.env.SSH_SERVER;
-const user = process.env.SSH_USER || "root";
-const theme_path = process.env.GITEA_THEME_PATH;
-const gitea_path = process.env.GITEA_PATH;
-const sync_tmpl = process.env.SYNC_TMPL === "true";
+const server = process.env.SSH_SERVER
+const user = process.env.SSH_USER || "root"
+const theme_path = process.env.GITEA_THEME_PATH
+const gitea_path = process.env.GITEA_PATH
+const sync_tmpl = process.env.SYNC_TMPL === "true"
 if (server) {
   try {
     if (theme_path) {
-      const cmd = `scp -O dist/${PREFIX}*.css ${user}@${server}:${theme_path}`;
-      console.log(`[${NAME}]:`, cmd);
-      execSync(cmd, { stdio: "inherit" });
+      const cmd = `scp -O dist/${PREFIX}*.css ${user}@${server}:${theme_path}`
+      console.log(`[${NAME}]:`, cmd)
+      execSync(cmd, { stdio: "inherit" })
     } else {
-      console.log(`[${NAME}] no GITEA_THEME_PATH, skip upload theme`);
+      console.log(`[${NAME}] no GITEA_THEME_PATH, skip upload theme`)
     }
     if (gitea_path) {
       if (sync_tmpl) {
-        const cmd = `scp -Or templates ${user}@${server}:${gitea_path}`;
-        console.log(`[${NAME}]:`, cmd);
-        execSync(cmd, { stdio: "inherit" });
+        const cmd = `scp -Or templates ${user}@${server}:${gitea_path}`
+        console.log(`[${NAME}]:`, cmd)
+        execSync(cmd, { stdio: "inherit" })
       } else {
-        console.log(`[${NAME}] not set SYNC_TMPL=true, skip upload templates`);
+        console.log(`[${NAME}] not set SYNC_TMPL=true, skip upload templates`)
       }
     } else {
-      console.log(`[${NAME}] no GITEA_PATH, skip upload templates`);
+      console.log(`[${NAME}] no GITEA_PATH, skip upload templates`)
     }
   } catch (e) {
-    console.warn(`[${NAME}] upload failed:`, e);
+    console.warn(`[${NAME}] upload failed:`, e)
   }
 } else {
-  console.log(`[${NAME}] no SSH_SERVER, skip upload`);
+  console.log(`[${NAME}] no SSH_SERVER, skip upload`)
 }

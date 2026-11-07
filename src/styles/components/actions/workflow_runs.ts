@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core"
 
 // 工作流详情页标题
 const actionViewHeader = css`
@@ -70,7 +70,7 @@ const actionViewHeader = css`
       }
     }
   }
-`;
+`
 
 // 工作流左侧作业列表
 const actionViewLeft = css`
@@ -146,7 +146,7 @@ const actionViewLeft = css`
       }
     }
   }
-`;
+`
 
 const actionViewLeftMobile = css`
   @media (max-width: 767.98px) {
@@ -154,7 +154,7 @@ const actionViewLeftMobile = css`
       max-width: none;
     }
   }
-`;
+`
 // 工作流顶部作业输出的总结信息
 const actionViewJobSummary = css`
   .action-view-right.action-view-right {
@@ -202,6 +202,6 @@ const actionViewJobSummary = css`
       }
     }
   }
-`;
+`
 
-export default cssCombine(actionViewHeader, actionViewLeft, actionViewLeftMobile, actionViewJobSummary);
+export default cssCombine(actionViewHeader, actionViewLeft, actionViewLeftMobile, actionViewJobSummary)

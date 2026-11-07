@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, cssCombine } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine } from "@lutinglt/gitea-github-theme/core"
 
 const body = css`
   body {
@@ -42,6 +42,6 @@ const body = css`
     min-width: 20px;
     line-height: 10px;
   }
-`;
+`
 
-export default cssCombine(body);
+export default cssCombine(body)

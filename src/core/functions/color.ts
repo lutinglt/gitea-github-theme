@@ -17,12 +17,12 @@
  * limitations under the License.
  */
 
-import { rgba as c2kRgba, hsla, parseToHsla, parseToRgba } from "color2k";
+import { rgba as c2kRgba, hsla, parseToHsla, parseToRgba } from "color2k"
 
 /** 解析颜色后设置指定透明度，返回 rgba 字符串 */
 export function rgba(color: string, alpha: number): string {
-  const [r, g, b] = parseToRgba(color);
-  return c2kRgba(r, g, b, alpha);
+  const [r, g, b] = parseToRgba(color)
+  return c2kRgba(r, g, b, alpha)
 }
 
 /**
@@ -38,15 +38,15 @@ export function rgba(color: string, alpha: number): string {
  * color: color.scale(#ff0000, $lightness: -20%)
  */
 export function scaleColorLight(color: string, lightness: number) {
-  const [h, s, l] = parseToHsla(color);
-  let newLightness;
+  const [h, s, l] = parseToHsla(color)
+  let newLightness
 
   if (lightness < 0) {
-    newLightness = l * (1 + lightness / 100); // 变暗
+    newLightness = l * (1 + lightness / 100) // 变暗
   } else {
-    newLightness = l + (1 - l) * (lightness / 100); // 变亮
+    newLightness = l + (1 - l) * (lightness / 100) // 变亮
   }
 
-  newLightness = Math.min(1, Math.max(0, newLightness)); // 确保亮度值在 0 到 1 之间
-  return hsla(h, s, newLightness, 1);
+  newLightness = Math.min(1, Math.max(0, newLightness)) // 确保亮度值在 0 到 1 之间
+  return hsla(h, s, newLightness, 1)
 }

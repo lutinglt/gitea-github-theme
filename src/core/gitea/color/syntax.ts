@@ -101,4 +101,4 @@ export const syntax = {
   matchingBracketBg: "color-syntax-matching-bracket-bg",
   /** 不匹配括号背景色 */
   nonmatchingBracketBg: "color-syntax-nonmatching-bracket-bg",
-};
+}

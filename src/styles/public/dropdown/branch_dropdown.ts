@@ -17,9 +17,9 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, customThemeVars, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
-import { animationDown, underlineNavActiveItemAfterStyle } from "@lutinglt/gitea-github-theme/styles/common";
-import { fallbackVar } from "@vanilla-extract/css";
+import { css, cssCombine, customThemeVars, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core"
+import { animationDown, underlineNavActiveItemAfterStyle } from "@lutinglt/gitea-github-theme/styles/common"
+import { fallbackVar } from "@vanilla-extract/css"
 
 // 分支菜单
 const branchDropdown = css`
@@ -60,7 +60,7 @@ const branchDropdown = css`
       margin-top: 0 !important;
     }
   }
-`;
+`
 
 // 手机页面下的分支菜单
 const branchDropdownMobile = css`
@@ -70,6 +70,6 @@ const branchDropdownMobile = css`
       width: auto;
     }
   }
-`;
+`
 
-export default cssCombine(branchDropdown, branchDropdownMobile);
+export default cssCombine(branchDropdown, branchDropdownMobile)

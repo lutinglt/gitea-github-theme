@@ -1787,4 +1787,4 @@ export default {
       rest: "#9198a1",
     },
   },
-};
+}

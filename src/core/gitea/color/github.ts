@@ -429,4 +429,4 @@ export const github = {
       },
     },
   },
-};
+}

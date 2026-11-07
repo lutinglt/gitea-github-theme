@@ -17,11 +17,12 @@
  * limitations under the License.
  */
 
-import { cssCombine } from "@lutinglt/gitea-github-theme/core";
-import compactMenu from "./compact_menu";
-import menu from "./menu";
-import paginationMenu from "./pagination_menu";
-import secondaryMenu from "./secondary_menu";
-import verticalMenu from "./vertical_menu";
+import { cssCombine } from "@lutinglt/gitea-github-theme/core"
 
-export default cssCombine(compactMenu, menu, paginationMenu, secondaryMenu, verticalMenu);
+import compactMenu from "./compact_menu"
+import menu from "./menu"
+import paginationMenu from "./pagination_menu"
+import secondaryMenu from "./secondary_menu"
+import verticalMenu from "./vertical_menu"
+
+export default cssCombine(compactMenu, menu, paginationMenu, secondaryMenu, verticalMenu)

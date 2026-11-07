@@ -17,20 +17,21 @@
  * limitations under the License.
  */
 
-import { globalStyle, type StyleRule } from "@vanilla-extract/css";
-import { removeAdapter, setAdapter } from "@vanilla-extract/css/adapter";
-import { endFileScope, setFileScope } from "@vanilla-extract/css/fileScope";
-import { transformCss } from "@vanilla-extract/css/transformCss";
-import { getCallerInfo } from "./utils";
+import { globalStyle, type StyleRule } from "@vanilla-extract/css"
+import { removeAdapter, setAdapter } from "@vanilla-extract/css/adapter"
+import { endFileScope, setFileScope } from "@vanilla-extract/css/fileScope"
+import { transformCss } from "@vanilla-extract/css/transformCss"
 
-type CSS = Parameters<typeof transformCss>[0]["cssObjs"][number];
-type Composition = Parameters<typeof transformCss>[0]["composedClassLists"][number];
+import { getCallerInfo } from "./utils"
+
+type CSS = Parameters<typeof transformCss>[0]["cssObjs"][number]
+type Composition = Parameters<typeof transformCss>[0]["composedClassLists"][number]
 
 /** 执行 vanilla-extract API 并序列化为 CSS 字符串 */
 export function compileCSS(compileFn: () => void): string {
-  const capturedCssObjs: CSS[] = [];
-  const localClassNames = new Set<string>();
-  const composedClassLists: Composition[] = [];
+  const capturedCssObjs: CSS[] = []
+  const localClassNames = new Set<string>()
+  const composedClassLists: Composition[] = []
 
   setAdapter({
     appendCss: css => capturedCssObjs.push(css),
@@ -42,27 +43,27 @@ export function compileCSS(compileFn: () => void): string {
       () =>
       ({ debugId }) =>
         `${debugId}`,
-  });
-  setFileScope(getCallerInfo(1));
+  })
+  setFileScope(getCallerInfo(1))
 
-  compileFn();
+  compileFn()
 
-  endFileScope();
-  removeAdapter();
+  endFileScope()
+  removeAdapter()
 
   return transformCss({
     localClassNames: Array.from(localClassNames),
     composedClassLists,
     cssObjs: capturedCssObjs,
-  }).join("\n");
+  }).join("\n")
 }
 
 /** 使用 vanilla-extract 适配器序列化一个扁平 StyleRule 为 CSS 属性行 */
 export function captureStyle(style: StyleRule): string {
-  const css = compileCSS(() => globalStyle("_CAPTURED_STYLE", style));
+  const css = compileCSS(() => globalStyle("_CAPTURED_STYLE", style))
   const inner = css
     .replace(/^_CAPTURED_STYLE\s*\{/, "")
     .replace(/\}\s*$/, "")
-    .trim();
-  return inner ? inner + ";" : "";
+    .trim()
+  return inner ? inner + ";" : ""
 }

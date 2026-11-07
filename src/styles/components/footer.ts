@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core"
 
 const footer = css`
   .page-footer {
@@ -70,6 +70,6 @@ const footer = css`
       }
     }
   }
-`;
+`
 
-export default cssCombine(footer);
+export default cssCombine(footer)

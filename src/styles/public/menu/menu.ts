@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
-import { labelStyle } from "@lutinglt/gitea-github-theme/styles/common";
+import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core"
+import { labelStyle } from "@lutinglt/gitea-github-theme/styles/common"
 
 const menu = css`
   .ui.menu {
@@ -61,6 +61,6 @@ const menu = css`
   .ui.menu .item > .label:not(.floating) {
     ${labelStyle}
   }
-`;
+`
 
-export default cssCombine(menu);
+export default cssCombine(menu)

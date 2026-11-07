@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
-import { activeItemAfterStyle, animationDown, animationUp } from "@lutinglt/gitea-github-theme/styles/common";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core"
+import { activeItemAfterStyle, animationDown, animationUp } from "@lutinglt/gitea-github-theme/styles/common"
 
 const dropdown = css`
   .ui.dropdown,
@@ -173,6 +173,6 @@ const dropdown = css`
       width: auto;
     }
   }
-`;
+`
 
-export default cssCombine(dropdown);
+export default cssCombine(dropdown)

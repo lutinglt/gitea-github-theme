@@ -17,10 +17,10 @@
  * limitations under the License.
  */
 
-import { giteaGitHubTheme } from "@lutinglt/gitea-github-theme/vite-plugin";
-import themeConfig from "@lutinglt/gitea-github-theme/theme.config.ts";
-import { defineConfig } from "vite";
+import themeConfig from "@lutinglt/gitea-github-theme/themeConfig"
+import { giteaGitHubTheme } from "@lutinglt/gitea-github-theme/vite-plugin"
+import { defineConfig } from "vite"
 
 export default defineConfig({
   plugins: [giteaGitHubTheme(themeConfig)],
-});
+})

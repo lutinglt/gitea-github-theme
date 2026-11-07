@@ -17,4 +17,4 @@
  * limitations under the License.
  */
 
-export { default as primer, type Primer } from "./primer";
+export { default as primer, type Primer } from "./primer"

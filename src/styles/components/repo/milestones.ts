@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core"
 
 const milestone = css`
   /* 里程碑头部 */
@@ -66,7 +66,7 @@ const milestone = css`
       }
     }
   }
-`;
+`
 
 // 避免手机/平板下菜单错位
 const milestoneMobile = css`
@@ -75,6 +75,6 @@ const milestoneMobile = css`
       flex-direction: column !important;
     }
   }
-`;
+`
 
-export default cssCombine(milestone, milestoneMobile);
+export default cssCombine(milestone, milestoneMobile)

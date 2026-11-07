@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core"
 
 // 包含表情的下拉菜单
 const emojiDropdown = css`
@@ -37,6 +37,6 @@ const emojiDropdown = css`
       }
     }
   }
-`;
+`
 
-export default cssCombine(emojiDropdown);
+export default cssCombine(emojiDropdown)

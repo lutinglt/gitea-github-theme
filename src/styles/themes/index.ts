@@ -17,7 +17,8 @@
  * limitations under the License.
  */
 
-import { cssCombine } from "@lutinglt/gitea-github-theme/core";
-import example from "./example";
+import { cssCombine } from "@lutinglt/gitea-github-theme/core"
 
-export const exampleThemeStyles = cssCombine(example);
+import example from "./example"
+
+export const exampleThemeStyles = cssCombine(example)

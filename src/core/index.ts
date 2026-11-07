@@ -17,12 +17,13 @@
  * limitations under the License.
  */
 
-export { createChroma } from "./chroma";
-export { createCodeMirror } from "./codemirror";
-export { css, cssCombine, cssStyle, type CSSString } from "./css";
-export { createThemeMetaInfo, type ColorblindType, type GiteaThemeMeta } from "./meta";
-export { createTheme, defineTheme, type Theme, type ThemeVars } from "./theme";
-export type { CSSVarFunction, MapLeafNodes } from "./types";
-export { themeVars, otherThemeVars, customThemeVars } from "./gitea";
-export { extractVarName } from "./functions";
-export { default as selectors } from "./selectors";
+export { createChroma } from "./chroma"
+export { createCodeMirror } from "./codemirror"
+export { css, cssCombine, cssStyle, type CSSString } from "./css"
+export { createThemeMetaInfo, type ColorblindType, type GiteaThemeMeta } from "./meta"
+export { createTheme, defineTheme, type Theme, type ThemeVars } from "./theme"
+export type { CSSVarFunction, MapLeafNodes } from "./types"
+export { themeVars, otherThemeVars, customThemeVars } from "./gitea"
+export type * from "./gitea"
+export { extractVarName, rgba, scaleColorLight } from "./functions"
+export { default as selectors } from "./selectors"

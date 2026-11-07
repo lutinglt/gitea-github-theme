@@ -125,8 +125,8 @@ Example: `themes/my-theme.ts`
  * @author your-name
  * @description theme description
  */
-import { defineTheme, scaleColorLight } from "@lutinglt/gitea-github-theme/core";
-import type { ThemeColor, Syntax } from "@lutinglt/gitea-github-theme/core";
+import { defineTheme, scaleColorLight } from "@lutinglt/gitea-github-theme/core"
+import type { ThemeColor, Syntax } from "@lutinglt/gitea-github-theme/core"
 
 const themeColor: ThemeColor = {
   isDarkTheme: true,
@@ -134,40 +134,26 @@ const themeColor: ThemeColor = {
   primaryContrast: "#f0f6fc",
   secondary: "#30363d",
   base: { red: "#f85149", orange: "#d29922" /* ... */ },
-  console: {
-    /* ... */
-  },
-  diff: {
-    /* ... */
-  },
-  other: {
-    /* ... */
-  },
-  github: {
-    /* ... */
-  },
-};
+  console: {/* ... */},
+  diff: {/* ... */},
+  other: {/* ... */},
+  github: {/* ... */},
+}
 
-const syntaxColor: Syntax = {
-  /* Custom code highlight colors, or import from another theme */
-};
+const syntaxColor: Syntax = {/* Custom code highlight colors, or import from another theme */}
 
-export default defineTheme({ colorType: "theme", themeColor, syntaxColor });
+export default defineTheme({ colorType: "theme", themeColor, syntaxColor })
 ```
 
 To use Gitea's native color format, use `colorType: "gitea"` with the `GiteaColor` type:
 
 ```ts
-import type { GiteaColor, Syntax } from "@lutinglt/gitea-github-theme/core";
-import { defineTheme } from "@lutinglt/gitea-github-theme/core";
+import type { GiteaColor, Syntax } from "@lutinglt/gitea-github-theme/core"
+import { defineTheme } from "@lutinglt/gitea-github-theme/core"
 
-const giteaColor: GiteaColor = {
-  /* ... */
-};
-const syntaxColor: Syntax = {
-  /* ... */
-};
-export default defineTheme({ colorType: "gitea", themeColor: giteaColor, syntaxColor });
+const giteaColor: GiteaColor = {/* ... */}
+const syntaxColor: Syntax = {/* ... */}
+export default defineTheme({ colorType: "gitea", themeColor: giteaColor, syntaxColor })
 ```
 
 After completing theme color development, register the theme series in `theme.config.ts`, compile it, and take

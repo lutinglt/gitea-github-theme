@@ -17,5 +17,5 @@
  * limitations under the License.
  */
 
-export { rgba, scaleColorLight } from "./color";
-export { extractVarName } from "./var";
+export { rgba, scaleColorLight } from "./color"
+export { extractVarName } from "./var"

@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core"
 
 // 提交中的 SHA 标签
 const shaLabel = css`
@@ -105,6 +105,6 @@ const shaLabel = css`
       border-radius: 9999px;
     }
   }
-`;
+`
 
-export default cssCombine(shaLabel);
+export default cssCombine(shaLabel)

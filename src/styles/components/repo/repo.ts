@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
-import { activeItemAfterStyle } from "@lutinglt/gitea-github-theme/styles/common";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core"
+import { activeItemAfterStyle } from "@lutinglt/gitea-github-theme/styles/common"
 
 // 仓库头信息
 const repoHeader = css`
@@ -97,7 +97,7 @@ const repoHeader = css`
       }
     }
   }
-`;
+`
 
 // 顶部提交, 标签, 分支统计
 const repoMenu = css`
@@ -122,7 +122,7 @@ const repoMenu = css`
       }
     }
   }
-`;
+`
 
 const repoTopic = css`
   /* 理应只能覆盖探索/组织/用户下仓库的 topic 标签 */
@@ -143,13 +143,13 @@ const repoTopic = css`
       color: ${themeVars.github.button.primary.fgColor.rest};
     }
   }
-`;
+`
 
 // 仓库动态页面关闭工单状态条颜色
 const closedIssueTableCell = css`
   .stats-table .table-cell.tw-bg-red[href="#closed-issues"] {
     background-color: ${themeVars.color.purple.self} !important;
   }
-`;
+`
 
-export default cssCombine(repoHeader, repoMenu, repoTopic, closedIssueTableCell);
+export default cssCombine(repoHeader, repoMenu, repoTopic, closedIssueTableCell)

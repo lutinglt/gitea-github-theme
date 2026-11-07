@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
-import { activeItemAfterStyle } from "@lutinglt/gitea-github-theme/styles/common";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core"
+import { activeItemAfterStyle } from "@lutinglt/gitea-github-theme/styles/common"
 
 const button = css`
   /* 工单&PR标题右侧按钮 */
@@ -26,7 +26,7 @@ const button = css`
     padding: 0 12px;
     height: 32px;
   }
-`;
+`
 
 const babel = css`
   .issue-content-left {
@@ -71,7 +71,7 @@ const babel = css`
       box-shadow: inset 0 0 0 1px ${themeVars.github.borderColor.done.emphasis};
     }
   }
-`;
+`
 
 // PR 分支标签
 const prBranch = css`
@@ -93,7 +93,7 @@ const prBranch = css`
       text-decoration-line: none;
     }
   }
-`;
+`
 
 const dropdown = css`
   .repository {
@@ -106,7 +106,7 @@ const dropdown = css`
       }
     }
   }
-`;
+`
 
 // 工单标题
 const issueTitle = css`
@@ -122,6 +122,6 @@ const issueTitle = css`
       }
     }
   }
-`;
+`
 
-export default cssCombine(button, babel, prBranch, dropdown, issueTitle);
+export default cssCombine(button, babel, prBranch, dropdown, issueTitle)

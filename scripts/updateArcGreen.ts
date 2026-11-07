@@ -17,24 +17,25 @@
  * limitations under the License.
  */
 
-import fs from "node:fs";
-import path from "node:path";
-import { rootDir, setGlobalProxy } from "./utils";
+import fs from "node:fs"
+import path from "node:path"
 
-setGlobalProxy();
+import { rootDir, setGlobalProxy } from "./utils"
 
-const githubSite = "https://raw.githubusercontent.com";
-const githubRepo = "lsd-techno/gitea-theme";
-const githubBranchPath = "refs/heads/main";
-const localGiteaPath = path.join(rootDir, "assets/gitea-theme");
-const githubBaseUrl = `${githubSite}/${githubRepo}/${githubBranchPath}`;
-const file = "theme-arc-green-updated.css";
-const fileUrl = `${githubBaseUrl}/${file}`;
+setGlobalProxy()
 
-const response = await fetch(fileUrl);
+const githubSite = "https://raw.githubusercontent.com"
+const githubRepo = "lsd-techno/gitea-theme"
+const githubBranchPath = "refs/heads/main"
+const localGiteaPath = path.join(rootDir, "assets/gitea-theme")
+const githubBaseUrl = `${githubSite}/${githubRepo}/${githubBranchPath}`
+const file = "theme-arc-green-updated.css"
+const fileUrl = `${githubBaseUrl}/${file}`
+
+const response = await fetch(fileUrl)
 if (!response.ok) {
-  throw new Error(`HTTP error! status: ${response.status}`);
+  throw new Error(`HTTP error! status: ${response.status}`)
 }
-const content = await response.text();
-fs.writeFileSync(path.join(localGiteaPath, file), content);
-console.log("✔︎ FileUrl:", fileUrl);
+const content = await response.text()
+fs.writeFileSync(path.join(localGiteaPath, file), content)
+console.log("✔︎ FileUrl:", fileUrl)

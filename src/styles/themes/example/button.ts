@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, cssStyle } from "@lutinglt/gitea-github-theme/core";
-import { themeVars } from "@lutinglt/gitea-github-theme/core/gitea";
+import { css, cssCombine, cssStyle } from "@lutinglt/gitea-github-theme/core"
+import { themeVars } from "@lutinglt/gitea-github-theme/core/gitea"
 
 const exampleStyle = cssStyle({
   backgroundColor: themeVars.color.body,
@@ -27,19 +27,19 @@ const exampleStyle = cssStyle({
   "&:hover": {
     backgroundColor: themeVars.color.hover.self,
   },
-});
+})
 
 const exampleCSS1 = css`
   .ui.button {
     ${exampleStyle}
     font-size: 16px;
   }
-`;
+`
 
 const exampleCSS2 = css`
   .ui.button {
     font-weight: 600;
   }
-`;
+`
 
-export default cssCombine(exampleCSS1, exampleCSS2);
+export default cssCombine(exampleCSS1, exampleCSS2)

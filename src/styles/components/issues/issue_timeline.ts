@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core"
 
 // 时间线
 const timeline = css`
@@ -81,6 +81,6 @@ const timeline = css`
       }
     }
   }
-`;
+`
 
-export default cssCombine(timeline);
+export default cssCombine(timeline)

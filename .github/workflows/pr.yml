@@ -12,10 +12,9 @@ jobs:
       fail-fast: false
       matrix:
         check:
-          # - eslint
-          - prettier
-          - typescript
-          - vitest
+          - check
+          - format
+          - test
           - build
     steps:
       - uses: actions/checkout@v7
@@ -33,26 +32,22 @@ jobs:
 
       - run: bun install
 
-      # - name: Lint
-      #   if: matrix.check == 'eslint'
-      #   run: bun lint
-
-      - name: Format check
-        if: matrix.check == 'prettier'
-        run: bun fmt --check
-
-      - name: Type check
-        if: matrix.check == 'typescript'
+      - name: Check
+        if: matrix.check == 'check'
         run: bun check
 
+      - name: Format
+        if: matrix.check == 'format'
+        run: bun fmt:check
+
       - name: Test
-        if: matrix.check == 'vitest'
+        if: matrix.check == 'test'
         run: bun vitest --run
 
       - name: Build
         id: build
         if: matrix.check == 'build'
-        run: bun bundle
+        run: bun run build
 
       - name: Upload css assets
         if: steps.build.outcome == 'success'

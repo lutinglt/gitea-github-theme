@@ -17,13 +17,14 @@
  * limitations under the License.
  */
 
-import type { Primer } from "@lutinglt/gitea-github-theme/assets";
-import { saturate } from "color2k";
-import { scaleColorLight, rgba } from "../core/functions";
-import { deepOverride } from "../utils";
-import type { GitHubColor } from "./github";
+import type { Primer } from "@lutinglt/gitea-github-theme/assets"
+import { saturate } from "color2k"
 
-export type DisplayColor = Primer["display"]["pink"]["scale"];
+import { scaleColorLight, rgba } from "../core"
+import { deepOverride } from "../utils"
+import type { GitHubColor } from "./github"
+
+export type DisplayColor = Primer["display"]["pink"]["scale"]
 
 export function display2GitHubColor(
   displayColor: DisplayColor,
@@ -62,5 +63,5 @@ export function display2GitHubColor(
         borderColor: baseGitHubColor.contribution.default.borderColor,
       },
     },
-  });
+  })
 }

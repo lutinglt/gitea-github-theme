@@ -17,17 +17,17 @@
  * limitations under the License.
  */
 
-import { chroma } from "./chroma";
-import { codeMirror } from "./codemirror";
-import { ansi, console } from "./console";
-import { diff } from "./diff";
-import { github } from "./github";
-import { primary, secondary } from "./main";
-import { message } from "./message";
-import { named } from "./named";
-import { other, otherAuto } from "./other";
-import { series16 } from "./series";
-import { syntax } from "./syntax";
+import { chroma } from "./chroma"
+import { codeMirror } from "./codemirror"
+import { ansi, console } from "./console"
+import { diff } from "./diff"
+import { github } from "./github"
+import { primary, secondary } from "./main"
+import { message } from "./message"
+import { named } from "./named"
+import { other, otherAuto } from "./other"
+import { series16 } from "./series"
+import { syntax } from "./syntax"
 
 export default {
   chroma,
@@ -44,4 +44,4 @@ export default {
   otherAuto,
   syntax,
   series16,
-};
+}

@@ -20,18 +20,18 @@
 declare namespace NodeJS {
   interface ProcessEnv {
     /** 开发环境主题名称 */
-    DEV_THEME?: string;
+    DEV_THEME?: string
     /** 主题编译后上传的服务器地址 (通过 SCP 上传) */
-    SSH_SERVER?: string;
+    SSH_SERVER?: string
     /** 主题编译后上传的服务器用户名 (不支持密码, 请确保有 SSH 免密登录) */
-    SSH_USER?: string;
+    SSH_USER?: string
     /** 上传到服务器的主题目录 (请确保目录存在并使用绝对路径) */
-    GITEA_THEME_PATH?: string;
+    GITEA_THEME_PATH?: string
     /** 上传到服务器的 Gitea 目录 (请使用绝对路径)
      * 用于上传模板, 翻译文件
      */
-    GITEA_PATH?: string;
+    GITEA_PATH?: string
     /** 是否同步模板 */
-    SYNC_TMPL?: string;
+    SYNC_TMPL?: string
   }
 }

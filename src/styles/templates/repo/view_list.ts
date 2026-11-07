@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core"
 
 const repoFileLastCommit = css`
   /* 仓库页和文件列表文件夹页的最后一次提交 */
@@ -50,6 +50,6 @@ const repoFileLastCommit = css`
       }
     }
   }
-`;
+`
 
-export default cssCombine(repoFileLastCommit);
+export default cssCombine(repoFileLastCommit)

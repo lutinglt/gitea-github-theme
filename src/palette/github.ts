@@ -17,17 +17,17 @@
  * limitations under the License.
  */
 
-import type { Primer } from "@lutinglt/gitea-github-theme/assets";
-import { mix, saturate } from "color2k";
-import { scaleColorLight } from "../core/functions";
-import type { Ansi, Console, Diff, GitHub, Message, Other, Series16 } from "../core/gitea";
-import { themeVars } from "../core/gitea";
-import type { ThemeColor } from "./theme";
+import type { Primer } from "@lutinglt/gitea-github-theme/assets"
+import { mix, saturate } from "color2k"
+
+import { scaleColorLight, themeVars } from "../core"
+import type { Ansi, Console, Diff, GitHub, Message, Other, Series16 } from "../core"
+import type { ThemeColor } from "./theme"
 
 export type GitHubColor = {
-  isDarkTheme: boolean;
-  themeExtra: { button: { primary: { fgColor: { accent: string } } } };
-} & Primer;
+  isDarkTheme: boolean
+  themeExtra: { button: { primary: { fgColor: { accent: string } } } }
+} & Primer
 
 export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
   const ansi: Ansi = {
@@ -49,7 +49,7 @@ export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
       cyan: githubColor.ansi.cyanBright,
       white: githubColor.ansi.whiteBright,
     },
-  };
+  }
   const message: Message = {
     error: {
       bg: {
@@ -80,14 +80,14 @@ export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
       border: githubColor.borderColor.done.muted,
       text: githubColor.fgColor.done, // Gitea 用处更多, 不与 GitHub 保持一致
     },
-  };
+  }
   const console: Console = {
     fg: { self: githubColor.fgColor.default, subtle: githubColor.fgColor.muted },
     bg: githubColor.bgColor.inset,
     activeBg: githubColor.control.bgColor.active,
     hoverBg: githubColor.control.transparent.bgColor.hover,
     link: githubColor.fgColor.muted,
-  };
+  }
 
   const diff: Diff = {
     added: {
@@ -106,7 +106,7 @@ export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
       row: { bg: githubColor.bgColor.attention.muted, border: githubColor.bgColor.attention.muted },
     },
     inactive: githubColor.bgColor.muted,
-  };
+  }
 
   const other: Other = {
     logo: themeVars.color.primary.self,
@@ -172,7 +172,7 @@ export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
     danger: themeVars.color.red.self,
     transparency: { grid: { light: "#ffffff", dark: "#e5e5e5" } },
     workflowEdgeHover: githubColor.bgColor.accent.emphasis,
-  };
+  }
 
   const series16: Series16 = {
     num0: githubColor.display.lime.fgColor,
@@ -191,7 +191,7 @@ export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
     num13: githubColor.display.pine.bgColor.emphasis,
     num14: githubColor.display.blue.fgColor,
     num15: githubColor.display.pink.bgColor.emphasis,
-  };
+  }
 
   const github: GitHub = {
     avatar: { bgColor: githubColor.avatar.bgColor, borderColor: githubColor.avatar.borderColor },
@@ -327,7 +327,7 @@ export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
         },
       },
     },
-  };
+  }
   return {
     isDarkTheme: githubColor.isDarkTheme,
     primary: githubColor.fgColor.accent,
@@ -356,5 +356,5 @@ export function github2ThemeColor(githubColor: GitHubColor): ThemeColor {
     other,
     github,
     override: { message, ansi, series16 },
-  };
+  }
 }

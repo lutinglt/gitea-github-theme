@@ -34,4 +34,4 @@ export const series16 = {
   num13: null,
   num14: null,
   num15: null,
-};
+}

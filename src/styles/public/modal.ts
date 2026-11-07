@@ -17,8 +17,8 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core";
-import { animationDown } from "@lutinglt/gitea-github-theme/styles/common";
+import { css, cssCombine, themeVars } from "@lutinglt/gitea-github-theme/core"
+import { animationDown } from "@lutinglt/gitea-github-theme/styles/common"
 
 const modal = css`
   .ui.ui.modal {
@@ -53,13 +53,13 @@ const modal = css`
       padding: 8px 12px;
     }
   }
-`;
+`
 
 const modalFix = css`
   /* 覆盖默认的动画 */
   .ui.modal.transition {
     ${animationDown}
   }
-`;
+`
 
-export default cssCombine(modal, modalFix);
+export default cssCombine(modal, modalFix)

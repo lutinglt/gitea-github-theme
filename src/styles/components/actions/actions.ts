@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core"
 
 // 仓库 Actions 页面
 const actions = css`
@@ -148,7 +148,7 @@ const actions = css`
       }
     }
   }
-`;
+`
 
 // 工作流禁用标签
 const label = css`
@@ -157,7 +157,7 @@ const label = css`
     border: 1px solid ${themeVars.color.error.border};
     background: ${themeVars.color.error.bg.self};
   }
-`;
+`
 
 // 手动工作流
 const runWorkflow = css`
@@ -198,6 +198,6 @@ const runWorkflow = css`
       }
     }
   }
-`;
+`
 
-export default cssCombine(actions, label, runWorkflow);
+export default cssCombine(actions, label, runWorkflow)

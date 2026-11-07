@@ -17,9 +17,10 @@
  * limitations under the License.
  */
 
-import type { CatppuccinFlavor } from "@catppuccin/palette";
-import { rgba } from "../core/functions";
-import type { Syntax } from "../core/gitea";
+import type { CatppuccinFlavor } from "@catppuccin/palette"
+
+import { rgba } from "../core"
+import type { Syntax } from "../core"
 
 /**
  * @source https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md
@@ -69,5 +70,5 @@ export function catppuccin2Syntax(flavor: CatppuccinFlavor): Syntax {
     traceback: flavor.colors.maroon.hex,
     matchingBracketBg: rgba(flavor.colors.teal.hex, 0.4),
     nonmatchingBracketBg: rgba(flavor.colors.red.hex, 0.4),
-  };
+  }
 }

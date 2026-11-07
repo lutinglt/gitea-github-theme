@@ -17,12 +17,12 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, customThemeVars, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
-import { fallbackVar } from "@vanilla-extract/css";
+import { css, cssCombine, customThemeVars, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core"
+import { fallbackVar } from "@vanilla-extract/css"
 
-const userRepoVar = fallbackVar(customThemeVars.userRepolistColumns, "2");
-const exploreRepoVar = fallbackVar(customThemeVars.explore.repolistColumns, "2");
-const orgRepoVar = fallbackVar(customThemeVars.org.repolistColumns, "1");
+const userRepoVar = fallbackVar(customThemeVars.userRepolistColumns, "2")
+const exploreRepoVar = fallbackVar(customThemeVars.explore.repolistColumns, "2")
+const orgRepoVar = fallbackVar(customThemeVars.org.repolistColumns, "1")
 
 // 仓库列表
 const repoList = css`
@@ -106,10 +106,10 @@ const repoList = css`
     grid-template-columns: repeat(${exploreRepoVar}, 1fr);
     gap: min(${exploreRepoVar} * 8px, 16px);
   }
-`;
+`
 
-const exploreUserVar = fallbackVar(customThemeVars.explore.userlistColumns, "3");
-const orgUserVar = fallbackVar(customThemeVars.org.userlistColumns, "2");
+const exploreUserVar = fallbackVar(customThemeVars.explore.userlistColumns, "3")
+const orgUserVar = fallbackVar(customThemeVars.org.userlistColumns, "2")
 
 // 用户列表
 const userList = css`
@@ -156,7 +156,7 @@ const userList = css`
     grid-template-columns: repeat(${exploreUserVar}, 1fr);
     gap: min(${exploreUserVar} * 8px, 16px);
   }
-`;
+`
 
 // 手机下的仓库和用户列表
 const mobileList = css`
@@ -178,7 +178,7 @@ const mobileList = css`
       }
     }
   }
-`;
+`
 
 // 统一无搜索结果时的样式
 const notMatch = css`
@@ -208,6 +208,6 @@ const notMatch = css`
       }
     }
   }
-`;
+`
 
-export default cssCombine(repoList, userList, mobileList, notMatch);
+export default cssCombine(repoList, userList, mobileList, notMatch)

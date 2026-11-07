@@ -116,8 +116,8 @@ bun commit
  * @author 你的名字
  * @description 主题描述
  */
-import { defineTheme, scaleColorLight } from "@lutinglt/gitea-github-theme/core";
-import type { ThemeColor, Syntax } from "@lutinglt/gitea-github-theme/core";
+import { defineTheme, scaleColorLight } from "@lutinglt/gitea-github-theme/core"
+import type { ThemeColor, Syntax } from "@lutinglt/gitea-github-theme/core"
 
 const themeColor: ThemeColor = {
   isDarkTheme: true,
@@ -125,40 +125,26 @@ const themeColor: ThemeColor = {
   primaryContrast: "#f0f6fc",
   secondary: "#30363d",
   base: { red: "#f85149", orange: "#d29922" /* ... */ },
-  console: {
-    /* ... */
-  },
-  diff: {
-    /* ... */
-  },
-  other: {
-    /* ... */
-  },
-  github: {
-    /* ... */
-  },
-};
+  console: {/* ... */},
+  diff: {/* ... */},
+  other: {/* ... */},
+  github: {/* ... */},
+}
 
-const syntaxColor: Syntax = {
-  /* 自定义代码高亮色, 或导入使用其他主题的代码高亮色 */
-};
+const syntaxColor: Syntax = {/* 自定义代码高亮色, 或导入使用其他主题的代码高亮色 */}
 
-export default defineTheme({ colorType: "theme", themeColor, syntaxColor });
+export default defineTheme({ colorType: "theme", themeColor, syntaxColor })
 ```
 
 如需使用 Gitea 原生颜色格式, 使用 `colorType: "gitea"` 配合 `GiteaColor` 类型:
 
 ```ts
-import type { GiteaColor, Syntax } from "@lutinglt/gitea-github-theme/core";
-import { defineTheme } from "@lutinglt/gitea-github-theme/core";
+import type { GiteaColor, Syntax } from "@lutinglt/gitea-github-theme/core"
+import { defineTheme } from "@lutinglt/gitea-github-theme/core"
 
-const giteaColor: GiteaColor = {
-  /* ... */
-};
-const syntaxColor: Syntax = {
-  /* ... */
-};
-export default defineTheme({ colorType: "gitea", themeColor: giteaColor, syntaxColor });
+const giteaColor: GiteaColor = {/* ... */}
+const syntaxColor: Syntax = {/* ... */}
+export default defineTheme({ colorType: "gitea", themeColor: giteaColor, syntaxColor })
 ```
 
 完成主题颜色开发后, 在 `theme.config.ts` 中注册主题系列, 编译后在 Gitea 实例中截图放入 `screenshots`

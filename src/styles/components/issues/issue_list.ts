@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-import { css, cssCombine, extractVarName, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core";
+import { css, cssCombine, extractVarName, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core"
 
 // 工单&PR 列表
 const issueList = css`
@@ -176,7 +176,7 @@ const issueList = css`
       }
     }
   }
-`;
+`
 
 // 避免手机/平板下菜单错位
 const issueListMobile = css`
@@ -189,7 +189,7 @@ const issueListMobile = css`
       }
     }
   }
-`;
+`
 
 // 置顶 Issue
 const issuePins = css`
@@ -221,6 +221,6 @@ const issuePins = css`
       border-radius: 9999px;
     }
   }
-`;
+`
 
-export default cssCombine(issueList, issueListMobile, issuePins);
+export default cssCombine(issueList, issueListMobile, issuePins)
