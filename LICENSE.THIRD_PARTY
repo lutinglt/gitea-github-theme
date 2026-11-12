@@ -1,9 +1,16 @@
-# Third-Party Licenses
+Third-Party Licenses
+====================
 
-This project is licensed under the Apache License 2.0 (see [LICENSE](./LICENSE) and [NOTICE](./NOTICE)). The third-party
-works below keep their original copyright and license.
+This project is licensed under the Apache License 2.0 (see LICENSE file and NOTICE file n the root directory).
 
-| Path                 | Upstream                                                 | Licence |
-| -------------------- | -------------------------------------------------------- | ------- |
-| `assets/gitea`       | [Gitea](https://github.com/go-gitea/gitea)               | MIT     |
-| `assets/gitea-theme` | [gitea-theme](https://github.com/lsd-techno/gitea-theme) | MIT     |
+The third-party works below keep their original copyright and license.
+
+1. Gitea
+   Path:     assets/gitea/
+   Upstream: https://github.com/go-gitea/gitea
+   License:  MIT
+
+2. gitea-theme
+   Path:     assets/gitea-theme/
+   Upstream: https://github.com/lsd-techno/gitea-theme
+   License:  MIT
