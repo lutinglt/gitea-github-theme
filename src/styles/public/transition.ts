@@ -91,7 +91,7 @@ const transition = css`
     transition-duration: 80ms;
     /* 避免在下拉菜单中点击按钮时出现的抖动 */
     &:active:not(:has(.menu:active)) {
-      transform: translateY(0.5px);
+      transform: scale(0.98);
     }
     /* 下拉图标的过渡会导致在下移过程中出现的菜单被短暂遮挡 */
     /* 需要高于 .repository .diff-detail-box 的 z-index, 否则父级的优先级会导致子元素菜单的优先级被覆盖 */

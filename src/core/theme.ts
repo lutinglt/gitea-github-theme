@@ -118,15 +118,15 @@ export function createTheme(theme: Theme): void {
   if (isDarkTheme) globalStyle(selectors.emoji, { filter: "invert(100%) hue-rotate(180deg)" })
   // 全局动画
   globalKeyframes(selectors.overlayAppear, {
-    "0%": { opacity: 0 },
+    "0%": { opacity: 0, transform: "scale(0.95)" },
     "100%": { opacity: 1 },
   })
   globalKeyframes(selectors.overlayAppearDown, {
-    "0%": { opacity: 0, transform: "translateY(-8px)" },
+    "0%": { opacity: 0, transform: "translateY(-8px) scale(0.98)" },
     "100%": { opacity: 1, transform: "translateY(0)" },
   })
   globalKeyframes(selectors.overlayAppearUp, {
-    "0%": { opacity: 0, transform: "translateY(8px)" },
+    "0%": { opacity: 0, transform: "translateY(8px) scale(0.98)" },
     "100%": { opacity: 1, transform: "translateY(0)" },
   })
   // 代码高亮
