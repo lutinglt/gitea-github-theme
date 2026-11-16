@@ -18,7 +18,6 @@
  */
 
 import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core"
-import { animationDown } from "@lutinglt/gitea-github-theme/styles/common"
 
 // 工作流右侧作业步骤日志详情
 const actionViewRight = css`
@@ -95,7 +94,6 @@ const actionViewRight = css`
           }
           /* 步骤日志 */
           .job-step-logs {
-            ${animationDown};
             /* 日志字体颜色白色 */
             .job-log-line {
               color: ${themeVars.color.console.fg.self};

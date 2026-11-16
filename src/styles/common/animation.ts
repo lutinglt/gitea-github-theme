@@ -30,13 +30,13 @@ export const animation = cssStyle({
 // 向下出现动画
 export const animationDown = cssStyle({
   animation: selectors.overlayAppearDown,
-  animationDuration: "200ms",
+  animationDuration: "120ms",
   animationTimingFunction: "cubic-bezier(0.33, 1, 0.68, 1)",
 })
 
 // 向上出现动画
 export const animationUp = cssStyle({
   animation: selectors.overlayAppearUp,
-  animationDuration: "200ms",
+  animationDuration: "120ms",
   animationTimingFunction: "cubic-bezier(0.33, 1, 0.68, 1)",
 })

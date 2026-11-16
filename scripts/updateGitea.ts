@@ -28,7 +28,7 @@ const githubSite = "https://raw.githubusercontent.com"
 const giteaRepo = "go-gitea/gitea"
 const githubTagPath = "refs/tags"
 const localGiteaPath = path.join(rootDir, "assets/gitea")
-const [major, minor, patch = ""] = pkg.version.split(".")
+const [major, minor, patch = "", _] = pkg.version.split(".")
 console.log("Version:", pkg.version)
 const versionPath = `${githubTagPath}/v${major}.${minor}.${patch}`
 const githubBaseUrl = `${githubSite}/${giteaRepo}/${versionPath}`

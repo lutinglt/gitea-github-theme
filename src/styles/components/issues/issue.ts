@@ -18,7 +18,7 @@
  */
 
 import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core"
-import { activeItemAfterStyle } from "@lutinglt/gitea-github-theme/styles/common"
+import { activeItemAfterStyle, underlineNavActiveItemAfterStyle } from "@lutinglt/gitea-github-theme/styles/common"
 
 const button = css`
   /* 工单&PR标题右侧按钮 */
@@ -82,13 +82,13 @@ const prBranch = css`
     border-radius: ${otherThemeVars.border.radius};
     font-family: var(--fontStack-monospace, ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, monospace);
     font-size: 12px;
-    padding: 0 5px;
+    padding: 0 6px;
     line-height: 18px;
   }
 
   .repository.view.issue .pull-desc code {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 4px;
+    padding-bottom: 4px;
     a:hover {
       text-decoration-line: none;
     }
@@ -112,12 +112,48 @@ const dropdown = css`
 const issueTitle = css`
   .page-content.repository.issue {
     .issue-title-header {
+      .issue-title {
+        align-items: center;
+        h1 {
+          line-height: 1.25;
+        }
+      }
       .issue-title-meta {
         .issue-state-label {
           padding: 6px 9px !important;
         }
-        .time-desc {
+        > .flex-text-block {
           color: ${themeVars.color.text.light.num1};
+          gap: 4px;
+          /* 作者名称 (Gitea 的实现, 开启时在描述里边, 关闭后在描述外边, 很神奇吧) */
+          > a:first-child,
+          > .pull-desc > a:first-child {
+            color: ${themeVars.color.text.light.num1};
+            font-weight: 600;
+            &:hover {
+              color: ${themeVars.color.primary.self};
+              text-decoration-line: none;
+            }
+          }
+        }
+      }
+      /* 工单内容切换面板 */
+      + .ui.pull.tabs.container {
+        /* 工单内容切换面板的选项菜单 */
+        > .ui.pull.tabular.menu {
+          gap: 8px;
+          > .item {
+            border: 0;
+            border-radius: ${otherThemeVars.border.radius} !important;
+            color: ${themeVars.color.text.self};
+            padding: 6px 8px !important;
+            height: 32px;
+            margin-bottom: 8px;
+            position: relative;
+            &.active::after {
+              ${underlineNavActiveItemAfterStyle}
+            }
+          }
         }
       }
     }

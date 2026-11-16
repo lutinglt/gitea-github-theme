@@ -18,7 +18,7 @@
  */
 
 import { css, cssCombine, customThemeVars, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core"
-import { animationDown, underlineNavActiveItemAfterStyle } from "@lutinglt/gitea-github-theme/styles/common"
+import { underlineNavActiveItemAfterStyle } from "@lutinglt/gitea-github-theme/styles/common"
 import { fallbackVar } from "@vanilla-extract/css"
 
 // 分支菜单
@@ -27,7 +27,6 @@ const branchDropdown = css`
     width: ${fallbackVar(customThemeVars.branchMenuWidth, "320px")};
     max-width: 640px;
     > .menu > .item {
-      ${animationDown};
       height: 32px;
     }
     /* 分支/标签切换 */

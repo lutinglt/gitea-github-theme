@@ -35,7 +35,7 @@ const transition = css`
   .ui.borderless.pagination.menu .item,
   /* 迁移的元素 */
   #navbar .item,
-  .header-wrapper .ui.tabular.menu .item,
+  .ui.tabular.menu .item,
   .job-step-summary,
   .job-step-logs,
   .job-brief-item,
@@ -91,7 +91,7 @@ const transition = css`
     transition-duration: 80ms;
     /* 避免在下拉菜单中点击按钮时出现的抖动 */
     &:active:not(:has(.menu:active)) {
-      transform: scale(0.98);
+      transform: translateY(0.5px);
     }
     /* 下拉图标的过渡会导致在下移过程中出现的菜单被短暂遮挡 */
     /* 需要高于 .repository .diff-detail-box 的 z-index, 否则父级的优先级会导致子元素菜单的优先级被覆盖 */
