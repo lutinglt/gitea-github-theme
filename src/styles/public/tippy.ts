@@ -18,7 +18,7 @@
  */
 
 import { css, cssCombine, otherThemeVars, themeVars } from "@lutinglt/gitea-github-theme/core"
-import { animation, animationDown } from "@lutinglt/gitea-github-theme/styles/common"
+import { animation, animationDown, animationUp } from "@lutinglt/gitea-github-theme/styles/common"
 
 // 一些界面内的提示框, 比如克隆按钮, PR信息, Runner信息 等
 const tippyBox = css`
@@ -27,6 +27,11 @@ const tippyBox = css`
     border-radius: ${otherThemeVars.border.radius};
     overflow: hidden;
     ${animationDown};
+    /* PR 提示框 */
+    &[role="dialog"] {
+      ${animationUp}
+      animation-duration: 80ms;
+    }
     /* 克隆菜单和PR提示框为 default */
     &[data-theme="default"],
     /* 带标题的提示框 (Runner信息) */

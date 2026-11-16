@@ -1,3 +1,3 @@
 ### 🌈 Style
 
-- Buttons and dropdown menus now feature new animations.
+- Optimize the animation effect of PR prompt box.
