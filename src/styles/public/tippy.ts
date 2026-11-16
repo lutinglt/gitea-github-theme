@@ -27,9 +27,11 @@ const tippyBox = css`
     border-radius: ${otherThemeVars.border.radius};
     overflow: hidden;
     ${animationDown};
+    &[data-placement*="top"] {
+      ${animationUp};
+    }
     /* PR 提示框 */
     &[role="dialog"] {
-      ${animationUp}
       animation-duration: 80ms;
     }
     /* 克隆菜单和PR提示框为 default */
